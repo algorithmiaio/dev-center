@@ -1,0 +1,40 @@
+# Site wide configuration
+
+title: Algorithmia Developer Center
+description: Resources tutorials and guides for Algorithmia.
+logo: AlgorithmiaLogo120x120.png # 120x120 px default image used for Twitter summary card
+teaser: AlgorithmiaLogo420x87.png # 400x250 px default teaser image used in image archive grid
+locale: en
+url: http://localhost:4000
+# url: http://algorithmia.com
+# Used to generate absolute URLs in sitemap.xml, atom.xml, and for generating canonical URLs in <head>. 
+# When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly. 
+# Don’t include a trailing /.
+
+# Jekyll configuration
+
+sass:
+    sass_dir: _sass
+    style: compressed
+permalink: /:categories/:title/
+kramdown:
+  toc_levels: 1..2
+highlighter: pygments
+gems:
+  - jekyll-sitemap
+
+
+# Site owner
+owner:
+  name:
+  email: mia@algorithmia.com
+  twitter: twitter.com/algorithmia
+  google:
+    ad-client:
+    ad-slot:
+  bio:
+  avatar: bio-photo.jpg # 160x160 px image for author byline
+  disqus-shortname: # disabled for now. Each post can use the comments feature flag to allow or disallow commenting via diqus.
+
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

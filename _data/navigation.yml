@@ -1,0 +1,18 @@
+# Site navigation links
+
+# - title:
+#   url:
+#   excerpt:
+#   image:
+
+- title: Quick Start Guides
+  url: /guides/
+
+- title: Recipes
+  url: /recipes/
+
+- title: Sample Apps
+  url: /sampleapps/
+
+- title: API Documentation
+  url: http://docs.algorithmia.com
