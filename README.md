@@ -2,11 +2,7 @@
 Algorithmia Developer Center
 ========
 
-
-
-Welcome to the repository for Algorithmia's API. Here you will find the API reference, as well as some documentation on getting started with the API and basic set up.
-
-
+Welcome to the repository for Algorithmia's Developer Center. Here you will find guides, tutorials, sample apps, as well as some documentation on getting started with the API and basic set up.
 
 These docs are built on Jekyll. Learn more over at [the official Jekyll page](http://jekyllrb.com/).
 
