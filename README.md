@@ -53,10 +53,13 @@ categories: guides example
 comments: false #true by default but currently disabled in config (optional field)
 share: false #true by default (optional field)
 sitemap: false #true by default (optional field)
+author: liz_rush
 ---
 ```
 
-For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default.
+For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default. 
+
+In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post. 
 
 Posts are organized according to category as a subdirectory of `_posts`. Each post follows the same naming convention: `YYYY-MM-DD-post-title.md`.
 
