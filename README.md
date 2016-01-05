@@ -69,6 +69,8 @@ _posts/guides/2016-01-05-example-post.md
 ```
 
 
+If you are unfamiliar with Jekyll and the templating engine, please take a look at the `_drafts` folder for instructions on how to view drafts as well as many sample posts explaining how to do common tasks. 
+
 
 Contributing
 -------------

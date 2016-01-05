@@ -2,7 +2,7 @@
 layout: article
 title:  "Example draft post!"
 date:   2016-01-05 11:39:38
-categories: guides example
+categories: example
 ---
 
 
