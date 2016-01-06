@@ -54,10 +54,13 @@ comments: false #true by default but currently disabled in config (optional fiel
 share: false #true by default (optional field)
 sitemap: false #true by default (optional field)
 author: liz_rush
+excerpt: "This is an example post."
 ---
 ```
 
 For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default. 
+
+Use `excerpt` to set the text that appears in under the article title in the view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. Note: If the first line of your post is a templating tag, it will not automatically pick up an excerpt. 
 
 In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post. 
 
