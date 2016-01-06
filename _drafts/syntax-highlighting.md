@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "How to display code in your post"
+title: "Display code in your post"
 categories: example
 excerpt: "Demo post to test the various ways of using syntax highlighting."
 date: 2016-01-05 15:00:00

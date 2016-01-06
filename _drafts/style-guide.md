@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Sample Post Style Guide"
+title: "Style Guide"
 categories: articles
 modified: 2016-01-05 16:36
 author: liz_rush
