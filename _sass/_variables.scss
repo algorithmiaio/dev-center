@@ -6,13 +6,15 @@
    Typography variables
    ========================================================================== */
 
-$base-font                   	: Georgia,Times,"Times New Roman",serif;
+$font-family-sans-serif       : "Open Sans", Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif            : Georgia, "Times New Roman", Times, serif;
 $heading-font                	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
-$caption-font                	: $base-font;
-$code-font                   	: monospace;
-$alt-font                    	: $heading-font;
+$code-font                   	: Menlo, Monaco, 'Ubuntu Mono', 'Droid Sans Mono', Consolas, 'Courier New', Courier, monospace;
+$base-font                    : $font-family-sans-serif;
+$caption-font                 : $base-font;
+$alt-font                    	: Georgia, Palatino, serif;
 
-$doc-font-size               	: 16;
+$doc-font-size               	: 14;
 $doc-line-height             	: 24;
 
 $border-radius               	: 3px;
@@ -21,24 +23,40 @@ $border-radius               	: 3px;
    Color variables
    ========================================================================== */
 
+
 $white                        : #fff;
 $black                        : #000;
+$purple                       : #5000be;
+$purple-light                 : #9963ff;
+$purple-lighter               : #b996fc;
+$purple-highlight             : #f6f1ff;
+$gray-darker                  : #222;
+$gray-dark                    : #555;
+$gray                         : #999;
+$gray-medium                  : #ddd;
+$gray-light                   : #aaa;
+$gray-lighter                 : #eee;
 
 $body-color                  	: #ebebeb;
 
-$text-color                  	: #313130;
+$text-color                  	: $gray-dark;
 $caption-color                : mix($white, $text-color, 25%);
 
 $base-color                  	: #343434;
 $comp-color                  	: complement($base-color);
 $border-color                	: #ddd;
-$link-color                  	: #222;
+$link-color                  	: $purple;
+$link-hover-color             : darken($link-color, 15%);
+$link-hover-decoration        : underline;
+
 
 $primary-color               	: $black;
-$success-color               	: #2ecc71;
-$warning-color               	: #f1c40f;
-$danger-color                	: #e74c3c;
-$info-color                  	: #3498db;
+$brand-primary                : $purple-light;
+$success-color               	: #5cb85c;
+$warning-color               	: #f0ad4e;
+$danger-color                	: #d9534f;
+$info-color                  	: #5d9cec;
+$disabled-color               : #434a54;
 
 $table-border-color          	: $border-color;
 $table-border                	: 1px solid $table-border-color;
@@ -48,19 +66,18 @@ $table-hover-color           	: darken($table-background, 2);
 $table-stripe-color          	: darken($table-background, 4);
 $table-stripe-color-hover    	: darken($table-stripe-color, 5);
 
-$facebook-color					      : #3b5998;
-$flickr-color					        : #ff0084;
-$foursquare-color				      : #0cbadf;
-$google-plus-color				    : #dd4b39;
-$instagram-color				      : #4e433c;
-$linkedin-color					      : #4875b4;
-$pinterest-color				      : #cb2027;
-$rss-color						        : #fa9b39;
-$tumblr-color					        : #2c4762;
-$twitter-color					      : #55acee;
-$vimeo-color					        : #1ab7ea;
+$facebook-color				   : #3b5998;
+$flickr-color					   : #ff0084;
+$foursquare-color				   : #0cbadf;
+$google-plus-color			   : #dd4b39;
+$instagram-color				   : #4e433c;
+$linkedin-color				   : #4875b4;
+$pinterest-color				   : #cb2027;
+$rss-color						   : #fa9b39;
+$tumblr-color					   : #2c4762;
+$twitter-color					   : #55acee;
+$vimeo-color					   : #1ab7ea;
 $youtube-color		            : #ff3333;
-
 
 /*
    Form variables
@@ -80,14 +97,14 @@ $form-font-size              	: $doc-font-size;
    Sliding menu navigation variables
    ========================================================================== */
 
-$sliding-menu-border-color	 	 : $black;
-$sliding-menu-background 		   : $black;
-$sliding-menu-color 	 		     : $white;
-$sliding-menu-background-hover : $black;
-$sliding-menu-color-hover	 	   : $white;
-$sliding-menu-border   			   : 1px solid $sliding-menu-border-color;
-$button-size		         	     : 30px;
-$transition						         : 0.3s; // increase this to see the transformations in slow-motion
+$sliding-menu-border-color	 	 : $purple;
+$sliding-menu-background 		 : $purple;
+$sliding-menu-color 	 		    : $black;
+$sliding-menu-background-hover : $purple;
+$sliding-menu-color-hover	 	 : $black;
+$sliding-menu-border   			 : 1px solid $sliding-menu-border-color;
+$button-size		         	 : 30px;
+$transition						    : 0.3s; // increase this to see the transformations in slow-motion
 $sliding-menu-animation        : all 500ms cubic-bezier(.86,.01,.77,.78);
 
 /*
@@ -107,4 +124,4 @@ $badge-font-color              : $white;
    Masthead variables
    ========================================================================== */
 
-$masthead-height: $button-size * 2;
+$masthead-height: 30px;

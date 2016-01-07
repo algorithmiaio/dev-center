@@ -7,26 +7,37 @@
    ========================================================================== */
 
 #masthead {
-	padding: $gutter;
+	padding: $gutter / 2.5;
+	background-color: #282828;
+  border-bottom: 1px solid $black;
 	z-index: 5;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
 	&.slide {
 		@include transform(translate(-1600px,0));
 	}
 	.inner-wrap {
 		@include outer-container;
 	}
+  .nav-image {
+    display: inline-block;
+    height: 18px;
+  }
+
 }
+
 .site-title {
 	@include row;
 	@include media($large) {
-		@include span-columns(4);
+		@include span-columns(6);
 	}
 	padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
 	height: $masthead-height;
 	text-decoration: none;
-	color: $black;
+	color: $white;
 	font-family: $alt-font;
 	font-weight: 700;
 	@include font-size(20,no);
@@ -54,7 +65,10 @@
 			margin-right: $gutter;
 			padding: (.25 * $masthead-height) 0 (.25 * $masthead-height) ;
 			height: $masthead-height;
-			font-family: $alt-font;
+			font-family: $font-family-sans-serif;
+      &:hover {
+        color: $gray-lighter;
+      }
 			&:before,
 			&:after {
 				content: '';
@@ -71,7 +85,7 @@
 			}
 			&:after {
 				width: 0;
-				background: $black;
+				background: $brand-primary;
 			}
 			&:active:after,
 			&:hover:after {
@@ -86,11 +100,12 @@
 .top-menu {
 	display: none;
 	position: relative;
+
 	@include media($medium) {
-		@include span-columns(12);
+		@include span-columns(6);
 	}
 	@include media($large) {
-		@include span-columns(7);
+		@include span-columns(6);
 		ul {
 			position: absolute;
 			right: 0;
@@ -102,11 +117,9 @@
 	}
 	li {
 		a {
-			font-weight: 700;
-			@include font-size(16,no);
+			@include font-size(14,no);
 			line-height: .5 * $masthead-height; // half the height to center vertically
-			color: $black;
-			text-transform: uppercase;
+			color: $gray-medium;
 		}
 	}
 }
@@ -115,9 +128,9 @@
 
 .bottom-menu {
 	@include clearfix;
-	font-weight: 700;
+	font-weight: 500;
 	a {
-		color: lighten($black,60);
+		color: $gray;
 	}
 }
 
@@ -151,6 +164,7 @@
 	.page-title {
 		@include fill-parent;
 	}
+
 	@at-root {
 		.page-content {
 			@include fill-parent;
@@ -197,35 +211,8 @@
 			}
 		}
 	}
-  /* advertisements */
-	.ads {
-		position: relative;
-		text-align: center;
-		margin-top: $gutter;
-		margin-left: -$gutter;
-		margin-right: -$gutter;
-		padding: 10px 0 20px;
-		background: lighten($border-color,5);
-		@include media($medium) {
-			@include span-columns(3);
-			margin-left: 0;
-			margin-right: 0;
-		}
-		&:after {
-			content: 'Advertisement';
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			text-align: center;
-			display: block;
-			@include font-size(9,no);
-			font-family: $alt-font;
-		}
-		ins {
-			border-width: 0;
-		}
-	}
 }
+
 // page lead
 .page-lead {
 	background-position: center top;
@@ -335,16 +322,16 @@
 
 #site-footer {
 	@include outer-container;
-	margin-top: (3 * (0px + $doc-line-height));
-	margin-top: (3 * (0rem + ($doc-line-height / $doc-font-size)));
+	margin-top: (5 * (0px + $doc-line-height));
+	margin-top: (5 * (0rem + ($doc-line-height / $doc-font-size)));
 	padding-bottom: $gutter;
 	font-family: $alt-font;
   /* Copyright text */
 	.copyright {
 		@include font-size(12);
-		color: lighten($black,60);
+		color: $gray-light;
 		a {
-			color: lighten($black,60);
+			color: $gray-light;
 			text-decoration: none;
 		}
 	}
