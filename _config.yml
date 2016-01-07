@@ -29,9 +29,6 @@ owner:
   name: Algorithmia
   email: mia@algorithmia.com
   twitter: twitter.com/algorithmia
-  google:
-    ad-client:
-    ad-slot:
   bio:
   avatar: bio-photo.jpg # 160x160 px image for author byline
   disqus-shortname: # disabled for now. Each post can use the comments feature flag to allow or disallow commenting via diqus.
