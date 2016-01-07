@@ -36,6 +36,9 @@
   cursor: pointer;
   z-index: 20;
   box-sizing: border-box;
+  @include media($medium, $large) {
+    display: none;
+  }
   &:hover {
     background: $black;
   }
