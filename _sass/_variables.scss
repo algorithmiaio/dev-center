@@ -12,10 +12,10 @@ $heading-font                	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
 $code-font                   	: Menlo, Monaco, 'Ubuntu Mono', 'Droid Sans Mono', Consolas, 'Courier New', Courier, monospace;
 $base-font                    : $font-family-sans-serif;
 $caption-font                 : $base-font;
-$alt-font                    	: Georgia, Palatino, serif;
+$alt-font                    	: $heading-font;
 
 $doc-font-size               	: 14;
-$doc-line-height             	: 24;
+$doc-line-height             	: 20;
 
 $border-radius               	: 3px;
 
@@ -26,16 +26,17 @@ $border-radius               	: 3px;
 
 $white                        : #fff;
 $black                        : #000;
+$black-nav                    : #282828;
 $purple                       : #5000be;
 $purple-light                 : #9963ff;
 $purple-lighter               : #b996fc;
 $purple-highlight             : #f6f1ff;
-$gray-darker                  : #222;
-$gray-dark                    : #555;
 $gray                         : #999;
 $gray-medium                  : #ddd;
 $gray-light                   : #aaa;
 $gray-lighter                 : #eee;
+$gray-dark                    : #555;
+$gray-darker                  : #222;
 
 $body-color                  	: #ebebeb;
 
@@ -97,9 +98,9 @@ $form-font-size              	: $doc-font-size;
    Sliding menu navigation variables
    ========================================================================== */
 
-$sliding-menu-border-color	 	 : $purple;
-$sliding-menu-background 		 : $purple;
-$sliding-menu-color 	 		    : $black;
+$sliding-menu-border-color	 	 : $brand-primary;
+$sliding-menu-background 		 : $brand-primary;
+$sliding-menu-color 	 		    : $brand-primary;
 $sliding-menu-background-hover : $purple;
 $sliding-menu-color-hover	 	 : $black;
 $sliding-menu-border   			 : 1px solid $sliding-menu-border-color;

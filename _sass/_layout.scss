@@ -8,7 +8,7 @@
 
 #masthead {
 	padding: $gutter / 2.5;
-	background-color: #282828;
+	background-color: $black-nav;
   border-bottom: 1px solid $black;
 	z-index: 5;
 	@include transform(translate(0,0));
