@@ -38,3 +38,7 @@ owner:
 
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+
+# Generate_category_page plugin configuration:
+category_dir: / # sets the root folder for where to output the category directories. 
+# If you change this (not recommended), you will have to update the navigation data as well.
