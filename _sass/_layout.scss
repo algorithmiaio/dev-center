@@ -126,20 +126,10 @@
 	}
 }
 
-/* Bottom menu navigation */
-
 .bottom-menu {
-	@include clearfix;
-	font-weight: 500;
-	a {
-		color: $gray;
-	 
-    &:hover {
-    color: $black;
-    }
-  }
+  @include clearfix;
+  display: inline-block;
 }
-
 
 /*
    Page wrapper
@@ -327,18 +317,20 @@
    ========================================================================== */
 
 #site-footer {
-	@include outer-container;
-	margin-top: (5 * (0px + $doc-line-height));
-	margin-top: (5 * (0rem + ($doc-line-height / $doc-font-size)));
-	padding-bottom: $gutter;
+  @include stickyfooter(50px);
+
+  background-color: $gray-dark;
+  color: $white;
+	margin-top: (5 * (10px + $doc-line-height));
 	font-family: $alt-font;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
   /* Copyright text */
 	.copyright {
-		@include font-size(12);
-		color: $gray-light;
-		a {
-			color: $gray-light;
-			text-decoration: none;
-		}
+		@include font-size(14);
+    display: inline-block;
 	}
 }

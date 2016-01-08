@@ -1,7 +1,25 @@
 # Footer navigation links
 
-- title: Algorithmia
-  url: https://algorithmia.com
+- title: About
+  url: https://algorithmia.com/about
 
-- title: API Docs
-  url: https://docs.algorithmia.com
+- title: Terms
+  url: https://algorithmia.com/terms
+
+- title: Pricing
+  url: https://algorithmia.com/pricing
+
+- title: Privacy
+  url: https://algorithmia.com/privacy
+
+- title: Partners
+  url: https://algorithmia.com/partners
+
+- title: Blog
+  url: http://blog.algorithmia.com
+
+- title: Jobs
+  url: https://angel.co/algorithmia/jobs/
+
+- title: Contact
+  url: https://algorithmia.com/contact
