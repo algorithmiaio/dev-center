@@ -14,5 +14,8 @@
 - title: Sample Apps
   url: /sample-apps/
 
-- title: API Documentation
+- title: Clients
+  url: /clients/
+
+- title: API Docs
   url: http://docs.algorithmia.com

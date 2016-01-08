@@ -22,7 +22,7 @@ kramdown:
 highlighter: pygments
 gems:
   - jekyll-sitemap
-
+  - jekyll-lunr-js-search 
 
 # Site owner
 owner:
