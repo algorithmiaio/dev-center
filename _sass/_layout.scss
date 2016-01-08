@@ -66,9 +66,7 @@
 			padding: (.25 * $masthead-height) 0 (.25 * $masthead-height) ;
 			height: $masthead-height;
 			font-family: $font-family-sans-serif;
-      &:hover {
-        color: $gray-lighter;
-      }
+
 			&:before,
 			&:after {
 				content: '';
@@ -120,6 +118,10 @@
 			@include font-size(14,no);
 			line-height: .5 * $masthead-height; // half the height to center vertically
 			color: $gray-medium;
+
+      &:hover {
+        color: $white;
+      }
 		}
 	}
 }
@@ -131,7 +133,11 @@
 	font-weight: 500;
 	a {
 		color: $gray;
-	}
+	 
+    &:hover {
+    color: $black;
+    }
+  }
 }
 
 
