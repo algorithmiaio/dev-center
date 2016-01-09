@@ -133,28 +133,20 @@
     }
     .teaser {
       position: absolute;
-      left: 0;
+      left: 10;
       margin-bottom: 0;
       width: 50px;
-      border: 2px solid $white;
       margin-bottom: ($gutter / 2);
-      opacity: 0.6;
-      @include media($small) {
-        width: 150px;
-      }
     }
-    a:hover .teaser {
-      opacity: 1;
-    }
+
     .title {
       display: block;
       margin-left: 60px;
       font-family: $alt-font;
-      @include font-size(24,no);
-      font-weight: 700;
+      @include font-size(22,no);
       @include media($small) {
-        margin-left: 170px;
-        @include font-size(32,no);
+        margin-left: 160px;
+        @include font-size(26,no);
       }
     }
     .excerpt {

@@ -7,15 +7,20 @@
 
 - title: Quick Start Guides
   url: /guides/
+  image: /icons/fa-bolt.png
 
 - title: Recipes
   url: /recipes/
+  image: /icons/fa-birthday-cake.png
 
 - title: Sample Apps
   url: /sample-apps/
+  image: /icons/fa-gift.png
 
 - title: Clients
   url: /clients/
+  image: /icons/fa-paper-plane.png
 
 - title: API Docs
   url: http://docs.algorithmia.com
+  image: /icons/fa-book.png
