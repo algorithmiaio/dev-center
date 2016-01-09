@@ -1,31 +1,9 @@
 ---
-layout: default
+layout: archive
 ---
 
-<div id="main" role="main">
-	<article class="wrap" itemscope itemtype="http://schema.org/Article">
-		{% if page.image.feature %}
-		<div class="page-feature">
-			<div class="page-image">
-				<img src="{{ site.url }}/images/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" itemprop="image">
-				{% if page.image.credit %}{% include image-credit.html %}{% endif %}
-			</div><!-- /.page-image -->
-		</div><!-- /.page-feature -->
-		{% endif %}
-		{% include breadcrumbs.html %}
-		<div class="page-title">
-			<h1 class="category">{{ page.title }}</h1>
-		</div>
-		<div class="inner-wrap">
-			<div id="content" class="page-content" itemprop="articleBody">
-			<ul class="posts">
-				{% for post in site.categories[page.category] %}
-			    <div>{{ post.date | date_to_html_string }}</div>
-			    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-			    <div class="categories">Filed under {{ post.categories | category_links }}</div>
-				{% endfor %}
-				</ul>
-			</div><!-- /.content -->
-		</div><!-- /.inner-wrap -->
-	</article><!-- ./wrap -->
-</div><!-- /#main -->
+<div class="tiles">
+{% for post in site.categories[page.category] %}
+  {% include post-grid.html %}
+{% endfor %}
+</div><!-- /.tiles -->
