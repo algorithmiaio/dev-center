@@ -21,6 +21,10 @@
   url: /clients/
   image: /icons/fa-paper-plane.png
 
+- title: FAQs
+  url: /faqs/
+  image: /icons/fa-map-signs.png
+
 - title: API Docs
   url: http://docs.algorithmia.com
   image: /icons/fa-book.png
