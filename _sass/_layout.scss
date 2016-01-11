@@ -127,8 +127,33 @@
 }
 
 .bottom-menu {
-  @include clearfix;
-  display: inline-block;
+	@include media($medium) {
+		@include span-columns(6);
+	}
+
+	@include media($large) {
+		@include span-columns(6);
+
+		ul {
+			position: absolute;
+			right: .5 * $footer-height;
+		}
+	.sub-menu-item {
+		display: none;
+	}
+
+	li {
+		a {
+			@include font-size(14,no);
+			line-height: .5 * $footer-height; // half the height to center vertically
+			color: $gray-medium;
+
+      &:hover {
+        color: $white;
+      }
+		}
+	}
+	}
 }
 
 /*
@@ -317,17 +342,13 @@
    ========================================================================== */
 
 #site-footer {
-  @include stickyfooter(50px);
+  @include stickyfooter($footer-height);
 
   background-color: $gray-dark;
   color: $white;
-	margin-top: (5 * (10px + $doc-line-height));
+	margin-top: (5 * (15px + $doc-line-height));
 	font-family: $alt-font;
 
-  a {
-    color: $white;
-    text-decoration: none;
-  }
   /* Copyright text */
 	.copyright {
 		@include font-size(14);

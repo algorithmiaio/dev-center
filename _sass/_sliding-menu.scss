@@ -143,10 +143,10 @@
       display: block;
       margin-left: 60px;
       font-family: $alt-font;
-      @include font-size(22,no);
+      @include font-size(20,no);
       @include media($small) {
-        margin-left: 160px;
-        @include font-size(26,no);
+        margin-left: 140px;
+        @include font-size(24,no);
       }
     }
     .excerpt {
@@ -154,7 +154,7 @@
       margin-left: 60px;
       @include font-size(14,no);
       @include media($small) {
-        margin-left: 170px;
+        margin-left: 140px;
         @include font-size(16,no);
       }
     }
@@ -166,19 +166,5 @@
   }
   .menu-item .home a {
     @include font-size(32);
-  }
-}
-
-/* Dim content when off canvas nav slides in */
-
-.menu-screen {
-  @include position(fixed, 0 0 0 0);
-  visibility: hidden;
-  z-index: 4;
-  &.is-visible {
-    visibility: visible;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }

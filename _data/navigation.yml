@@ -7,24 +7,30 @@
 
 - title: Quick Start Guides
   url: /guides/
+  excerpt: "Get up and running with Algorithmia"
   image: /icons/fa-bolt.png
 
 - title: Recipes
   url: /recipes/
+  excerpt: "Learn how to solve problems with Algorithmia"
   image: /icons/fa-birthday-cake.png
 
 - title: Sample Apps
   url: /sample-apps/
+  excerpt: "See fully developed example apps"
   image: /icons/fa-gift.png
 
 - title: Clients
   url: /clients/
+  excerpt: "Use Algorithmia clients & libraries"
   image: /icons/fa-paper-plane.png
 
 - title: FAQs
   url: /faqs/
+  excerpt: "Find answers to your questions"
   image: /icons/fa-map-signs.png
 
 - title: API Docs
   url: http://docs.algorithmia.com
+  excerpt: "Read the specifics of the API here"
   image: /icons/fa-book.png

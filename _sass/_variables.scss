@@ -14,8 +14,8 @@ $base-font                    : $font-family-sans-serif;
 $caption-font                 : $base-font;
 $alt-font                    	: $heading-font;
 
-$doc-font-size               	: 14;
-$doc-line-height             	: 20;
+$doc-font-size               	: 12;
+$doc-line-height             	: 16;
 
 $border-radius               	: 3px;
 
@@ -126,3 +126,4 @@ $badge-font-color              : $white;
    ========================================================================== */
 
 $masthead-height: 30px;
+$footer-height:   50px;
