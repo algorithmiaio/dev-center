@@ -10,15 +10,15 @@
   excerpt: "Get up and running with Algorithmia"
   image: /icons/fa-bolt.png
 
-- title: Recipes
-  url: /recipes/
-  excerpt: "Learn how to solve problems with Algorithmia"
-  image: /icons/fa-birthday-cake.png
+# - title: Recipes
+#   url: /recipes/
+#   excerpt: "Learn how to solve problems with Algorithmia"
+#   image: /icons/fa-birthday-cake.png
 
-- title: Sample Apps
-  url: /sample-apps/
-  excerpt: "See fully developed example apps"
-  image: /icons/fa-gift.png
+# - title: Sample Apps
+#   url: /sample-apps/
+#   excerpt: "See fully developed example apps"
+#   image: /icons/fa-gift.png
 
 - title: Clients
   url: /clients/
