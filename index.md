@@ -1,11 +1,10 @@
 ---
-layout: archive
+layout: landing-page
 permalink: /
-title: "Latest Posts"
+title: "Welcome to the Algorithmia Developer Center"
+excerpt: "Find the resources you need to get up and running"
 ---
 
 <div class="tiles">
-{% for post in site.posts %}
-	{% include post-grid.html %}
-{% endfor %}
+{% include navigation-grid.html %}
 </div><!-- /.tiles -->

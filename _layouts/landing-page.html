@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>{{ page.title }}</h1>
+      {% if page.excerpt %}<h2>{{ page.excerpt }}</h2>{% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="landing-page-wrap">
+    <div class="page-content">
+      {{ content }}
+    </div><!-- /.page-content -->
+  </div><!-- /.landing-page-wrap -->
+</div>

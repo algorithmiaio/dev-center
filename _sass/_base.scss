@@ -9,15 +9,15 @@
 body {
 	font-family: $base-font;
 	color: $text-color;
-	@include font-size(16);
+	@include font-size(14);
 }
 
 p {
-	@include font-size(18,yes,28);
+	@include font-size(14,yes,26);
 }
 
 li {
-	@include font-size(16,12,24);
+	@include font-size(14,12,22);
 }
 
 /* Headings */
@@ -27,22 +27,22 @@ h1, h2, h3, h4, h5, h6 {
 	text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 h1 {
-	@include font-size(34);
+	@include font-size(28);
 }
 h2 {
-	@include font-size(30);
+	@include font-size(24);
 }
 h3 {
-	@include font-size(26);
-}
-h4 {
 	@include font-size(22);
 }
-h5 {
+h4 {
 	@include font-size(18);
 }
-h6 {
+h5 {
 	@include font-size(16);
+}
+h6 {
+	@include font-size(14);
 }
 
 /* Underlined text */
@@ -77,13 +77,13 @@ blockquote {
   border-left: 6px solid $info-color;
   p {
     font-family: $alt-font;
-    @include font-size(24);
+    @include font-size(20);
   }
   cite {
     font-family: $base-font;
     font-weight: 700;
     font-style: normal;
-    @include font-size(18);
+    @include font-size(16);
   }
 }
 
@@ -96,7 +96,7 @@ pre {
 }
 p code,
 li code {
-	@include font-size(16,no);
+	@include font-size(14,no);
 	color: $text-color;
 	white-space: nowrap;
 	margin: 0 2px;
