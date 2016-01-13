@@ -1,7 +1,12 @@
-.hero {  
+.hero {
   min-height: 100%;
   min-width: 100%;
-  background-color: $hero-background-top;
+  @include background(linear-gradient($hero-background-angle,
+                      $hero-background-top,
+                      $hero-background-bottom),
+                      no-repeat $hero-background-top scroll);
+  background-size: cover;
+  margin-bottom: 3em;
 
   .hero-inner {
     padding: 0 em(16);
@@ -10,29 +15,29 @@
 
   .hero-copy {
     @include span-columns(12);
-    margin-top: em(100);
+    margin-top: em(60);
     color: $white;
     text-align: center;
+    margin-bottom: 3em;
+
     h1 {
-      font-size: 2.2em;
-      line-height: 1;
-      margin-bottom: 1em;
-    }
-    p {
-      font-size: 1em;
-      margin-bottom: 1em;
+      font-size: 2em;
     }
 
-    @include media($medium){
+    @include media($medium) {
       @include span-columns(8);
       @include shift(2);
-      margin-top: em(180);
+      margin-top: em(100);
+
         h1 {
-          font-size: 4em;
+          font-size: 3em;
+
         }
         p {
-          font-size: 1.2em;
+          font-size: 5em;
         }
     }
   }
 }
+
+
