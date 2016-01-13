@@ -2,6 +2,10 @@
    Page layout
    ========================================================================== */
 
+html, body {
+	height: 100%;
+}
+
 /*
    Masthead
    ========================================================================== */
@@ -123,36 +127,6 @@
         color: $white;
       }
 		}
-	}
-}
-
-.bottom-menu {
-	@include media($medium) {
-		@include span-columns(6);
-	}
-
-	@include media($large) {
-		@include span-columns(6);
-
-		ul {
-			position: absolute;
-			right: .5 * $footer-height;
-		}
-	.sub-menu-item {
-		display: none;
-	}
-
-	li {
-		a {
-			@include font-size(14,no);
-			line-height: .5 * $footer-height; // half the height to center vertically
-			color: $gray-medium;
-
-      &:hover {
-        color: $white;
-      }
-		}
-	}
 	}
 }
 
@@ -342,16 +316,54 @@
    ========================================================================== */
 
 #site-footer {
-  @include stickyfooter($footer-height);
-
   background-color: $gray-dark;
   color: $white;
-	margin-top: (5 * (15px + $doc-line-height));
-	font-family: $alt-font;
 
-  /* Copyright text */
 	.copyright {
-		@include font-size(14);
+		@include font-size(12);
     display: inline-block;
+    padding-left: .5 * $footer-height;
+	}
+}
+
+// wrapper  for sticky footer
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2.5em;
+}
+#site-footer, .push {
+	height: 2.5em;
+}
+
+.bottom-menu {
+	@include media($medium) {
+		@include span-columns(5);
+	}
+
+	@include media($large) {
+		@include span-columns(5);
+
+		ul {
+			position: absolute;
+			right: .5 * $footer-height;
+		}
+
+	.sub-menu-item {
+		display: none;
+	}
+
+	li {
+		a {
+			@include font-size(12,no);
+			line-height: .5 * $footer-height; // half the height to center vertically
+			color: $gray-medium;
+
+      &:hover {
+        color: $white;
+      }
+		}
+	}
 	}
 }
