@@ -4,7 +4,10 @@ title:  "Algorithm Development FAQs"
 date:   2016-01-08 15:00:38
 categories: faqs
 author: liz_rush
+excerpt: "Find quick answers to common questions about algorithm development on Algorithmia"
 ---
+
+With the Algorithmia platform, you can get your algorithms in to the hands of developers, researchers, and businesses. In this FAQ, you can find quick answers to common questions about algorithm development.
 
 ## What languages can I write my algorithm in?
 
