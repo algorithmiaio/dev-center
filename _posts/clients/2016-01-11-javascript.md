@@ -4,6 +4,8 @@ title:  "The Javascript Library"
 date:   2016-01-11 15:00:38
 categories: clients
 author: liz_rush
+image:
+    teaser: /language_logos/javascript.png
 ---
 
 We offer a vanilla JavaScript client for calling algorithms in the marketplace.

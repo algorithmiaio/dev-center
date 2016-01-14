@@ -5,6 +5,8 @@ date:   2016-01-08 15:00:38
 categories: faqs
 author: liz_rush
 excerpt: "Find quick answers to common questions about algorithm development on Algorithmia"
+image:
+  teaser: /icons/fa-map-signs.png
 ---
 
 With the Algorithmia platform, you can get your algorithms in to the hands of developers, researchers, and businesses. In this FAQ, you can find quick answers to common questions about algorithm development.

@@ -4,6 +4,8 @@ title:  "An Introduction to Bounties"
 date:   2016-01-11 01:19:38
 categories: guides 
 author: liz_rush
+image:
+  teaser: /icons/fa-bolt.png
 ---
 
 Bounties are part of the Algorithmia Marketplace and allow users to post their algorithmic needs for particular problems they may have. Bounties are a great way to get tailored solutions written by subject matter experts and algorithm developers. 

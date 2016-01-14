@@ -4,6 +4,8 @@ title:  "AWS Lambda"
 date:   2016-01-11 15:00:38
 categories: clients
 author: liz_rush
+image:
+    teaser: /language_logos/lambda.png
 ---
 
 AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.

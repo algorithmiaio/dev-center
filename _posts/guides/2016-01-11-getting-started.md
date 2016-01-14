@@ -4,6 +4,8 @@ title:  "Getting Started with Algorithmia"
 date:   2016-01-11 01:19:38
 categories: guides 
 author: liz_rush
+image:
+    teaser: /icons/fa-bolt.png
 ---
 
 This is a quick guide to get you started using the Algorithmia API. We'll walk through how to get started with an algorithm and make your first API call.
