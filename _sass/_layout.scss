@@ -327,10 +327,14 @@ html, body {
   color: $white;
   margin-top: 4em;
 
-	.copyright {
+  .copyright {
 		@include font-size(12);
-    display: inline-block;
-    padding-left: .5 * $footer-height;
+  	text-align: center;
+
+    @include media($medium) {
+    	display: inline-block;
+    	padding-left: .5 * $footer-height;
+    }
 	}
 }
 
@@ -340,11 +344,30 @@ html, body {
 }
 
 .bottom-menu {
-	@include media($medium) {
-		@include span-columns(5);
+
+	ul {
+		text-align: center;
+	}
+	
+	a {
+		@include font-size(12,no);
+		padding: (.25 * $footer-height);
+		font-family: $font-family-sans-serif;
+		color: $gray-medium;
+		display: inline-block;
+
+    &:hover {
+      color: $white;
+    }
+   }
+
+	&:last-child a {
+		@include media($medium) {
+			margin-right: 0; // remove spacing from last menu link
+		}
 	}
 
-	@include media($large) {
+	@include media($medium) {
 		@include span-columns(5);
 
 		ul {
@@ -352,33 +375,8 @@ html, body {
 			right: .5 * $footer-height;
 		}
 
-	.sub-menu-item {
-		display: none;
-	}
-
-	li {
-		float: left;
-
-		a {
-			@include font-size(12,no);
-			position: relative;
-			display: block;
-			margin-right: $gutter;
-			padding: (.25 * $footer-height) 0 (.25 * $footer-height) ;
-			height: $footer-height;
-			font-family: $font-family-sans-serif;
-			color: $gray-medium;
-
-      &:hover {
-        color: $white;
-      }
-    }
-
-		&:last-child a {
-			@include media($medium) {
-				margin-right: 0; // remove spacing from last menu link
-			}
+		li {
+			float: left;
 		}
 	}
-}
 }
