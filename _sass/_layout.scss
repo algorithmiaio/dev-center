@@ -7,7 +7,10 @@
 }
 
 html, body {
-	height: 100%;
+	// height: 100%;
+	display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /*
@@ -322,6 +325,7 @@ html, body {
 #site-footer {
   background-color: $gray-dark;
   color: $white;
+  margin-top: 4em;
 
 	.copyright {
 		@include font-size(12);
@@ -332,13 +336,7 @@ html, body {
 
 // wrapper  for sticky footer
 #wrapper {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -2.5em;
-}
-#site-footer, .push {
-	height: 2.5em;
+  flex: 1;
 }
 
 .bottom-menu {
