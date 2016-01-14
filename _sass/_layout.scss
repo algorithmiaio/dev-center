@@ -359,15 +359,28 @@ html, body {
 	}
 
 	li {
+		float: left;
+
 		a {
 			@include font-size(12,no);
-			line-height: .5 * $footer-height; // half the height to center vertically
+			position: relative;
+			display: block;
+			margin-right: $gutter;
+			padding: (.25 * $footer-height) 0 (.25 * $footer-height) ;
+			height: $footer-height;
+			font-family: $font-family-sans-serif;
 			color: $gray-medium;
 
       &:hover {
         color: $white;
       }
+    }
+
+		&:last-child a {
+			@include media($medium) {
+				margin-right: 0; // remove spacing from last menu link
+			}
 		}
 	}
-	}
+}
 }
