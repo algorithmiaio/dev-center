@@ -1,5 +1,4 @@
 .hero {
-  min-height: 100%;
   min-width: 100%;
   @include background(linear-gradient($hero-background-angle,
                       $hero-background-top,
