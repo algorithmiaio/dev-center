@@ -22,12 +22,14 @@ Bounties are great for problems that have concrete inputs and outputs. A bounty 
 
 The bounty system is not a good fit for problems that are fuzzy in nature or not well defined. In order to get the best solution, the problem needs to be scoped to a clearly definable piece of work that can be solved by an algorithm.
 
+
 Examples of problems that are not a good fit for the Bounty system include:
+
 * Tasks that require substantial human intervention, such as 3D animation
 * Research level problems that even experts have yet to solve
 * Problems that would require infrastructure to complete, e.g., "a mobile app that does X". 
 
-The best bounties are things you don’t quite know how to solve, but you are reasonably confident that a subject expert probably knows.
+The best bounties are things you don't quite know how to solve, but you are reasonably confident that a subject expert probably knows.
 
 ## How to Write a Good Bounty
 

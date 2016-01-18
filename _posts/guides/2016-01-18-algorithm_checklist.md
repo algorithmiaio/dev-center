@@ -51,9 +51,7 @@ The tagline is a succinct way to describe your algorithm. The tagline will appea
 
 > Ex. Tagline for Sentiment Analysis:
 
-```
 Determine sentiment from text
-```
 
 ### Add Tags:
 
@@ -61,12 +59,10 @@ Tags are an important part of your algorithm profile page. These tags help make 
 
 > Ex. Tags for Sentiment Analysis:
 
-```
 nlp
 sentiment analysis
 stanford corenlp
 text analysis
-```
 
 ### Include Sample Input:
 
@@ -74,15 +70,11 @@ Sample input is one of the most important parts of your algorithm profile. Users
 
 > Ex. Sample input for Sentiment Analysis:
 
-```
 "Algorithmia loves you!"
-```
 
 > Ex. Sample output for Sentiment Analysis:
 
-```
-4
-```
+`4`
 
 ### Update Pricing:
 

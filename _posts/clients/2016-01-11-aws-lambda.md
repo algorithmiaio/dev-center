@@ -42,10 +42,10 @@ Also set `kmsEncryptedApiKey` to `null`.
 
 > Basic authentication:
 
-```
+{% highlight bash %}
 apiKey = "YOUR_API_KEY";
 kmsEncryptedApiKey =  null;
-```
+{% endhighlight %}
 
 #### Advanced authentication (more secure)
 
@@ -59,7 +59,7 @@ Follow [this AWS guide](http://docs.aws.amazon.com/kms/latest/developerguide/cre
 
 > Example Role:
 
-```
+{% highlight bash %}
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -75,14 +75,18 @@ Follow [this AWS guide](http://docs.aws.amazon.com/kms/latest/developerguide/cre
     }
     ]
 }
-```
+{% endhighlight %}
 
 ###### 3. Encrypt the event collector token using the AWS CLI
 
-`aws kms encrypt --key-id alias/<KMS key name> --plaintext "<ALGORITHMIA_API_KEY>"`
+{% highlight bash %}
+aws kms encrypt --key-id alias/<KMS key name> --plaintext "<ALGORITHMIA_API_KEY>"
+{% endhighlight %}
 
 ###### 4. Copy the base-64 encoded, encrypted key (CiphertextBlob) to the `kmsEncryptedApiKey` variable
 
-`kmsEncryptedApiKey = "<kmsEncryptedApiKey>";`
+{% highlight bash %}
+kmsEncryptedApiKey = "<kmsEncryptedApiKey>";
+{% endhighlight %}
 
 For more information, follow [this AWS Lambda walk through on our blog](http://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).
