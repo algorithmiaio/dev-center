@@ -1,12 +1,12 @@
 {% for link in site.data.navigation %}
 <div class="navigation tile">
-  <a href="{{ site.url }}{{ link.url }}" title="{{ link.title }}" class="post-teaser">
+  <a href="{{ link.url }}" title="{{ link.title }}" class="post-teaser">
 
   {% if link.image %}
     <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
   {% endif %}
 
-    <h2 class="post-title" itemprop="name"><a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a></h2>
+    <h2 class="post-title" itemprop="name"><a href="{{ link.url }}">{{ link.title }}</a></h2>
     <p class="post-excerpt" itemprop="description">{{ link.excerpt | strip_html | truncate: 160 }}</p>
   </a>
 </div><!-- /.tile -->
