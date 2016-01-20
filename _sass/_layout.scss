@@ -7,10 +7,10 @@
 }
 
 html, body {
-	// height: 100%;
 	display: flex;
   min-height: 100vh;
   flex-direction: column;
+   margin: 0; padding: 0;
 }
 
 /*
@@ -323,7 +323,7 @@ html, body {
    Site footer
    ========================================================================== */
 
-#site-footer {
+#site-footer { 	
   background-color: $gray-dark;
   color: $white;
   margin-top: 4em;
@@ -367,9 +367,10 @@ html, body {
     }
    }
 
-   li {
+  li {
 		margin: 0 25px 0 0;
-   }
+  }
+
 	li:last-child a {
 		@include media($medium) {
 			margin-right: 0; // remove spacing from last menu link
