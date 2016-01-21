@@ -6,8 +6,13 @@
     <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
   {% endif %}
 
-    <a href="{{ link.url }}"><h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+  {% if link.url contains 'http' %}
+    <a href="{{ link.url }}" target="_blank"><h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+  {% else %}
+    <a href="{{ site.url }}{{ link.url }}"><h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+  {% endif %}
     <p class="post-excerpt" itemprop="description">{{ link.excerpt | strip_html | truncate: 160 }}</p>
+
   </a>
 </div><!-- /.tile -->
 {% endfor %}
