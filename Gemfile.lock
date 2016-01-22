@@ -70,6 +70,7 @@ GEM
     pygments.rb (0.6.3)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
+    rake (10.4.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -92,3 +93,7 @@ DEPENDENCIES
   jekyll (= 2.5.3)
   jekyll-sitemap
   octopress (~> 3.0)
+  rake
+
+BUNDLED WITH
+   1.10.6
