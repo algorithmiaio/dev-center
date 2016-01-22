@@ -1,6 +1,6 @@
 {% for link in site.data.navigation %}
 <div class="navigation tile">
-  <a href="{{ link.url }}" title="{{ link.title }}" class="post-teaser">
+  <a href="{{ site.url }}{{ link.url }}" title="{{ link.title }}" class="post-teaser">
 
   {% if link.image %}
     <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
