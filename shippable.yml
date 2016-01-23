@@ -5,3 +5,8 @@ language: ruby
 rvm: 2.0.0-p247
 
 script: bundle exec rake publish
+
+# exclude
+branches:
+  except:
+    - gh-pages
