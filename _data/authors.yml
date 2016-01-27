@@ -5,3 +5,11 @@ liz_rush:
   bio: "Developer Evangelist & Software Engineer"
   avatar: /authors/lizrush.jpeg
   twitter: lizmrush
+
+matt_kiser:
+  name: Matt Kiser
+  email: matt@algorithmia.com
+  bio: "Product marketing manager at Algorithmia, helping developers give their apps super powers."
+  avatar: /authors/mattkiser.jpeg
+  twitter: matt_kiser
+
