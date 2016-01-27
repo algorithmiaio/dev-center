@@ -2,7 +2,7 @@
 layout: article
 title:  "An Introduction to Bounties"
 date:   2016-01-11 01:19:38
-categories: guides 
+categories: basics 
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

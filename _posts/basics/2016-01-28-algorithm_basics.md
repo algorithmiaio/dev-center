@@ -2,11 +2,11 @@
 layout: article
 title:  "Algorithm Basics"
 date:   2016-01-25 01:19:38
-categories: faqs 
+categories: basics 
 author: liz_rush
 excerpt: "All about pricing, permissions, and versioning on the platform."
 image:
-    teaser: /icons/fa-map-signs.png
+    teaser: /icons/fa-bolt.png
 ---
 
 

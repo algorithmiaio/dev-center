@@ -2,11 +2,11 @@
 layout: article
 title:  "Understanding the Algorithm Profile"
 date:   2016-01-28 01:30:38
-categories: guides 
+categories: basics 
 author: liz_rush
 excerpt: "A walk through of the algorithm profile page."
 image:
-    teaser: /icons/fa-map-signs.png
+    teaser: /icons/fa-bolt.png
 ---
 
 Each algorithm is showcased on the marketplace through the profile page. Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of one of the most popular algorithms: [Nudity Detection](https://algorithmia.com/algorithms/sfw/NudityDetection)

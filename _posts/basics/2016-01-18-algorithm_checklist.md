@@ -2,7 +2,7 @@
 layout: article
 title:  "Algorithm Profile Checklist"
 date:   2016-01-18 01:19:38
-categories: guides 
+categories: basics 
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

@@ -6,10 +6,10 @@ logo: AlgorithmiaLogo120x120.png # 120x120 px default image used for Twitter sum
 teaser: AlgorithmiaLogo120x120.png # 400x250 px max default teaser image used in image archive grid
 locale: en
 
-# URL used to generate absolute URLs in sitemap.xml, atom.xml, and for generating canonical URLs in <head>. 
-# When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly. 
+# URL used to generate absolute URLs in sitemap.xml, atom.xml, and for generating canonical URLs in <head>.
+# When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly.
 # Don’t include a trailing /.
-# url: http://developers.algorithmia.com
+url: http://developers.algorithmia.com
 
 
 # Jekyll configuration
@@ -23,7 +23,7 @@ kramdown:
 highlighter: pygments
 gems:
   - jekyll-sitemap
-  # - jekyll-lunr-js-search 
+  # - jekyll-lunr-js-search
 
 # Site owner
 owner:
@@ -38,5 +38,5 @@ owner:
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
 
 # Generate_category_page plugin configuration:
-category_dir: / # sets the root folder for where to output the category directories. 
+category_dir: / # sets the root folder for where to output the category directories.
 # If you change this (not recommended), you will have to update the navigation data as well.

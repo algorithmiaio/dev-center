@@ -1,14 +1,24 @@
 # Site navigation links
 
-# - title:
-#   url:
-#   excerpt:
-#   image:
+- title: Basics
+  url: /basics/
+  excerpt: "Get up and running with Algorithmia"
+  image: /icons/fa-bolt.png
 
 - title: Guides
   url: /guides/
-  excerpt: "Get up and running with Algorithmia"
-  image: /icons/fa-bolt.png
+  excerpt: "Overviews & topic guides"
+  image: /icons/fa-compass.png
+
+- title: Clients
+  url: /clients/
+  excerpt: "Use Algorithmia clients & libraries"
+  image: /icons/fa-paper-plane.png
+
+- title: API Docs
+  url: http://docs.algorithmia.com
+  excerpt: "Read the specifics of the API here"
+  image: /icons/fa-book.png
 
 # - title: Recipes
 #   url: /recipes/
@@ -19,18 +29,3 @@
 #   url: /sample-apps/
 #   excerpt: "See fully developed example apps"
 #   image: /icons/fa-gift.png
-
-- title: Clients
-  url: /clients/
-  excerpt: "Use Algorithmia clients & libraries"
-  image: /icons/fa-paper-plane.png
-
-- title: FAQs
-  url: /faqs/
-  excerpt: "Find answers to your questions"
-  image: /icons/fa-map-signs.png
-
-- title: API Docs
-  url: http://docs.algorithmia.com
-  excerpt: "Read the specifics of the API here"
-  image: /icons/fa-book.png

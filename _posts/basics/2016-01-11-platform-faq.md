@@ -2,11 +2,11 @@
 layout: article
 title:  "Platform FAQs"
 date:   2016-01-08 15:00:38
-categories: faqs
+categories: basics
 author: liz_rush
 excerpt: "Learn about Algorithmia & get answers to common usage question"
 image:
-  teaser: /icons/fa-map-signs.png
+  teaser: /icons/fa-bolt.png
 ---
 
 Algorithmia is a platform for sharing the world's algorithmic knowledge in a way that is scalable, composable, easy-to-integrate, and always live. We want to place the cutting edge of algorithms technology in the hands of every developer, researcher, and business. In this FAQ, you can find quick answers to common questions.
