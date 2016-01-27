@@ -6,7 +6,8 @@ categories: guides
 author: matt_kiser
 excerpt: "New to Sentiment Analysis? Start here to learn the basics and get started."
 image:
-    teaser: /icons/fa-map-signs.png
+  feature: /post_images/sentiment_analysis/SentimentAnalysis_1600x800.png
+  teaser: /post_images/sentiment_analysis/SentimentAnalysis_400x250.png
 ---
 
 ## Sentiment Analysis Overview

@@ -10,7 +10,7 @@ html, body {
 	display: flex;
   min-height: 100vh;
   flex-direction: column;
-   margin: 0; padding: 0;
+  margin: 0; padding: 0;
 }
 
 /*
@@ -21,6 +21,7 @@ html, body {
 	padding: $gutter / 2.5;
 	background-color: $black-nav;
   border-bottom: 1px solid $black;
+  position: relative;
 	z-index: 5;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
@@ -261,11 +262,21 @@ html, body {
 		width: 100%;
 	}
 }
-// make image flush with edges on small screens
+
 .page-image {
+	// make image flush with edges on small screens
 	position: relative;
 	margin-left: -1 * $gutter;
 	margin-right: -1 * $gutter;
+
+	@include media($medium) {
+		margin: 0px;
+		img {
+			width: 80%;
+			z-index: 1;
+		}
+	}
+
 	// feature image caption
 	.image-credit {
 		position: absolute;
@@ -323,7 +334,7 @@ html, body {
    Site footer
    ========================================================================== */
 
-#site-footer { 	
+#site-footer {
   background-color: $gray-dark;
   color: $white;
   margin-top: 4em;
