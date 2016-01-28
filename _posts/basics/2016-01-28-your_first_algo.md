@@ -1,10 +1,10 @@
 ---
 layout: article
 title:  "Publishing Your First Algorithm"
-date:   2016-01-28 01:19:38
+excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
+date:   2016-01-28 03:19:38
 categories: basics 
 author: liz_rush
-excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
 image:
   teaser: /icons/fa-bolt.png
 ---

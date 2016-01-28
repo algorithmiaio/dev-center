@@ -1,6 +1,7 @@
 ---
 layout: article
 title:  "Algorithm Profile Checklist"
+excerpt: "Follow these tips to create the best algorithm profile possible."
 date:   2016-01-18 01:19:38
 categories: basics 
 author: liz_rush

@@ -1,10 +1,10 @@
 ---
 layout: article
 title:  "Understanding the Algorithm Profile"
-date:   2016-01-28 01:30:38
+excerpt: "A walk through of the algorithm profile page."
+date:   2016-01-27 01:30:38
 categories: basics 
 author: liz_rush
-excerpt: "A walk through of the algorithm profile page."
 image:
     teaser: /icons/fa-bolt.png
 ---

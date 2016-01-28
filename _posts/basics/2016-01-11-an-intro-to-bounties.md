@@ -1,6 +1,7 @@
 ---
 layout: article
-title:  "An Introduction to Bounties"
+title:  "All About Bounties"
+excerpt: "An introduction to the bounty system."
 date:   2016-01-11 01:19:38
 categories: basics 
 author: liz_rush

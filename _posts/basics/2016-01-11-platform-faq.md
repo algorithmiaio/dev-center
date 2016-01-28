@@ -1,10 +1,10 @@
 ---
 layout: article
 title:  "Platform FAQs"
+excerpt: "Learn about Algorithmia & get answers to common usage questions."
 date:   2016-01-08 15:00:38
 categories: basics
 author: liz_rush
-excerpt: "Learn about Algorithmia & get answers to common usage question"
 image:
   teaser: /icons/fa-bolt.png
 ---

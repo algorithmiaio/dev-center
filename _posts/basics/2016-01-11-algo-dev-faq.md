@@ -1,10 +1,10 @@
 ---
 layout: article
 title:  "Algorithm Development FAQs"
+excerpt: "Find quick answers to common questions about algorithm development on Algorithmia."
 date:   2016-01-08 15:00:38
 categories: basics
 author: liz_rush
-excerpt: "Find quick answers to common questions about algorithm development on Algorithmia"
 image:
   teaser: /icons/fa-bolt.png
 ---
