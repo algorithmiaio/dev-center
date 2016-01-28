@@ -10,7 +10,7 @@ This is what a sample draft should look like!
 
 Save the file and run Jekyll with the `--drafts` flag to preview your work.
 
-{% hightlight bash lineanchors %}
+{% highlight bash lineanchors %}
 $ bundle exec jekyll serve -w --drafts
 {% endhighlight %}
 

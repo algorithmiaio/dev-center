@@ -38,7 +38,7 @@ Algorithmia provides several powerful sentiment analysis algorithms to developer
 
 Input Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 {
   "sentenceList": [
     "I like double cheese pizza",
@@ -50,7 +50,7 @@ Input Example:
 
 Output Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 [
   {
     "positive": 0.455,
@@ -80,13 +80,13 @@ Algorithmia also features a flexible, multi-use [Sentiment Analysis algorithm](h
 
 Input Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 "Algorithmia loves sentiment analysis!"
 {% endhighlight %}
 
 Output Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 {
   "result": 3
 }
@@ -96,7 +96,7 @@ In addition, Algorithmia provides a [Sentiment By Term algorithm](https://algori
 
 Input Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 [
   "John Brown (Johnny to his friends) is amazing! Johnny is by far the best mechanic in the tri-state area. Bob Bozo is the worst.",
   ["john brown","bob"],
@@ -106,7 +106,7 @@ Input Example:
 
 Output Example:
 
-{% highlight json %}
+{% highlight json lineanchors %}
 {
   "john brown": 3.5, "bob": 1
 }
