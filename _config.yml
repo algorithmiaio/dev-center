@@ -13,7 +13,6 @@ url: http://developers.algorithmia.com
 
 
 # Jekyll configuration
-
 sass:
     sass_dir: _sass
     style: compressed
@@ -34,9 +33,11 @@ owner:
   avatar: /authors/bio-photo.jpg # 160x160 px image for author byline
   disqus-shortname: # disabled for now. Each post can use the comments feature flag to allow or disallow commenting via diqus.
 
-
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
-
 # Generate_category_page plugin configuration:
 category_dir: / # sets the root folder for where to output the category directories.
 # If you change this (not recommended), you will have to update the navigation data as well.
+
+# For use with gemoji gem. Raw emojis will break the GH-pages deployment. See the plugin emoji.rb
+emoji_dir: /images/emoji
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

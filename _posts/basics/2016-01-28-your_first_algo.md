@@ -38,7 +38,7 @@ After a successful compilation, click the purple "Publish" button. Select "Publi
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you're an algorithm developer! 🎉
+If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you're an algorithm developer! :tada:
 
 #### Editing Your Algorithm
 
