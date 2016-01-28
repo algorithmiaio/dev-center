@@ -151,3 +151,8 @@ Headline Notice:
 
 **Success Notice:** `.notice-success` Maecenas ornare tortor. Donec sed tellus eget [sapien fringilla]() nonummy. Mauris a ante. Suspendisse quam sem, consequat at.
 {: .notice-success}
+
+
+## Emojis
+
+Emojis are rendered through a Liquid template filter. Use the github/slack format within your markdown, like so: :scream: :older_woman: :green_book:
