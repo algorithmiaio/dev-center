@@ -31,8 +31,7 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
 Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
 
 {% highlight bash %}
-curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' 
-  -H 'Authorization: Simple YOUR_API_KEY'
+curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY'
 {% endhighlight %}
 
 Make sure to replace `YOUR_NAME` with your name & `YOUR_API_KEY` with your API key.
@@ -43,9 +42,7 @@ You can also use one of the clients to make your call. See below for examples or
 > cURL:
 
 {% highlight bash %}
-curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' 
-  -H 'Authorization: Simple YOUR_API_KEY' 
-  https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
+curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 {% endhighlight %}
 
 > Python:
@@ -103,9 +100,7 @@ Algorithmia.client("YOUR_API_KEY")
 Each algorithm returns a response in JSON. It will include the `"result"` as well as metadata about the API call you made. The metadata will include the `content_type` as well as a duration.
 
 {% highlight bash %}
-curl -X POST -d 'Liz' -H 'Content-Type: application/json' 
-  -H 'Authorization: Simple API_KEY' 
-  https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
+curl -X POST -d 'Liz' -H 'Content-Type: application/json' -H 'Authorization: Simple API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 
 
 { "result": "Hello Liz",
