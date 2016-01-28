@@ -1,17 +1,22 @@
 {% for link in site.data.navigation %}
 <div class="navigation tile">
-  <a href="{{ site.url }}{{ link.url }}" title="{{ link.title }}" class="post-teaser">
-
-  {% if link.image %}
-    <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
-  {% endif %}
 
   {% if link.url contains 'http' %}
-    <a href="{{ link.url }}" target="_blank"><h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+    <a href="{{ link.url }}" title="{{ link.title }}" class="post-teaser">
+    {% if link.image %}
+      <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
+    {% endif %}
+    <h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+
   {% else %}
-    <a href="{{ site.url }}{{ link.url }}"><h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
+    <a href="{{ site.url }}{{ link.url }}" title="{{ link.title }}" class="post-teaser">
+    {% if link.image %}
+      <img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="navigation teaser" itemprop="image">
+    {% endif %}
+    <h2 class="post-title" itemprop="name">{{ link.title }}</h2></a>
   {% endif %}
-    <p class="post-excerpt" itemprop="description">{{ link.excerpt | strip_html | truncate: 160 }}</p>
+
+  <p class="post-excerpt" itemprop="description">{{ link.excerpt | strip_html | truncate: 160 }}</p>
 
   </a>
 </div><!-- /.tile -->
