@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Style Guide"
-categories: articles
+categories: example
 modified: 2016-01-05 16:36
 author: liz_rush
 ---

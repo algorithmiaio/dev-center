@@ -21,11 +21,11 @@ your code here
 {% endhighlight %}
 
 
-You can also pass in the parameter of `linenos` to include line numbers, e.g.:
+You can also pass in the parameter of `lineanchors` to include line numbers, e.g.:
 
-{% highlight css %}
+{% highlight css lineanchors %}
 {% raw %}
-{% highlight scala linenos %}
+{% highlight scala lineanchors %}
 ...
 your code here
 ...
@@ -35,7 +35,7 @@ your code here
 
 
 
-To modify styling & highlight colors edit `/assets/less/pygments.less` and compile `main.less` with your favorite preprocessor. Or edit `main.css` if that's your thing, the classes you want to modify all begin with `.highlight`.
+To modify styling & highlight colors edit `/_sass/_syntax.scss`. We are using GH flavored syntax highlighting with custom line numbering.
 
 Find the list of supported languages [here](http://pygments.org/languages/). 
 
@@ -53,7 +53,7 @@ CSS:
 
 HTML with line numbering enabled:
 
-{% highlight html linenos %}
+{% highlight html lineanchors %}
 {% raw %}
 <nav class="pagination" role="navigation">
     {% if page.previous %}

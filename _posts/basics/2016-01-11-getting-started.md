@@ -30,7 +30,7 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
 
 Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
 
-{% highlight bash %}
+{% highlight bash lineanchors %}
 curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY'
 {% endhighlight %}
 
@@ -41,13 +41,13 @@ You can also use one of the clients to make your call. See below for examples or
 
 > cURL:
 
-{% highlight bash %}
+{% highlight bash lineanchors %}
 curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 {% endhighlight %}
 
 > Python:
 
-{% highlight python %}
+{% highlight python lineanchors %}
 import Algorithmia
 
 input = "YOUR_NAME"
@@ -58,7 +58,7 @@ print algo.pipe(input)
 
 > Java:
 
-{% highlight java %}
+{% highlight java lineanchors %}
 import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
@@ -71,7 +71,7 @@ System.out.println(result.asJson());
 
 > Scala:
 
-{% highlight scala %}
+{% highlight scala lineanchors %}
 import com.algorithmia._
 import com.algorithmia.algo._
 
@@ -84,7 +84,7 @@ System.out.println(result.asJson)
 
 > JavaScript:
 
-{% highlight javascript %}
+{% highlight javascript lineanchors %}
 // include the algorithmia.js library
 var input = "YOUR_NAME";
 Algorithmia.client("YOUR_API_KEY")
@@ -99,7 +99,7 @@ Algorithmia.client("YOUR_API_KEY")
 
 Each algorithm returns a response in JSON. It will include the `"result"` as well as metadata about the API call you made. The metadata will include the `content_type` as well as a duration.
 
-{% highlight bash %}
+{% highlight bash lineanchors %}
 curl -X POST -d 'Liz' -H 'Content-Type: application/json' -H 'Authorization: Simple API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 
 

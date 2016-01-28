@@ -10,9 +10,9 @@ This is what a sample draft should look like!
 
 Save the file and run Jekyll with the `--drafts` flag to preview your work.
 
-```
+{% hightlight bash lineanchors %}
 $ bundle exec jekyll serve -w --drafts
-```
+{% endhighlight %}
 
 Go back to `localhost:4000` and you should see your new post listed under today’s date. Jekyll infers the post title from the filename if none is provided, and uses the file’s last-modified date as the publication date.
 
