@@ -1,12 +1,16 @@
 ---
 layout: archive
 ---
-<div id="page-wrapper">
 
-  <div class="tiles">
-    {% for post in site.categories[page.category] %}
-      {% include post-grid.html %}
-    {% endfor %}
-  </div><!-- /.tiles -->
+{% if page.category == "basics" %}
+  {% include category_index_pages/basics_index.html %}
 
-</div>
+{% elsif page.category == "clients" %}
+  {% include category_index_pages/clients_index.html %}
+
+{% elsif page.category == "guides" %}
+  {% include category_index_pages/guides_index.html %}
+
+{% else %}
+  {% include post_grid.html %}
+{% endif %}
