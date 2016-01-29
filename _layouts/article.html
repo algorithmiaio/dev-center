@@ -5,6 +5,7 @@ layout: default
 
 	<div id="main" role="main">
 		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+			
 			{% if page.image.feature %}
 			<div class="page-feature">
 				<div class="page-image">
@@ -13,22 +14,29 @@ layout: default
 				</div><!-- /.page-image -->
 			</div><!-- /.page-feature -->
 			{% endif %}
+
 			{% include breadcrumbs.html %}
+
 			<div class="page-title">
 				<h1>{{ page.title }}</h1>
+				<p class="reading-time"> Estimated reading time: {{ page.content | reading_time }}</p>
 			</div>
+
 			<div class="inner-wrap">
 				<div id="content" class="page-content" itemprop="articleBody">
 					{{ content }}
 					<hr />
+
 					<footer class="page-footer">
 						{% if page.categories %}{% include page-author.html %}{% endif %}
 						{% if page.share != false %}{% include share-this.html %}{% endif %}
 						{% include page-meta.html %}
 					</footer><!-- /.footer -->
+
 					<aside>
 						{% if page.comments == true %}{% include comments.html %}{% endif %}
 					</aside>
+
 				</div><!-- /.content -->
 			</div><!-- /.inner-wrap -->
 		</article><!-- ./wrap -->
