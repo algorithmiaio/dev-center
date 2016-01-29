@@ -1,9 +1,8 @@
 <div id="page-wrapper">
 
-  <div class="tiles">
-    {% for post in site.categories["basics"] %}
-      {% include post-grid.html %}
-    {% endfor %}
-  </div><!-- /.tiles -->
+
+  {% for post in site.categories["basics"] %}
+    {% include post-list.html %}
+  {% endfor %}
 
 </div>
