@@ -4,6 +4,7 @@ title:  "Publishing Your First Algorithm"
 excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
 date:   2016-01-28 03:19:38
 categories: basics 
+tags: [algo-dev]
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

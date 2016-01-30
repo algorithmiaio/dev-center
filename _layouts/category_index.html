@@ -2,15 +2,15 @@
 layout: archive
 ---
 
-{% if page.category == "basics" %}
+{% case page.category %}
+
+{% when 'basics' %}
   {% include category_index_pages/basics_index.html %}
-
-{% elsif page.category == "clients" %}
+{% when 'clients' %}
   {% include category_index_pages/clients_index.html %}
-
-{% elsif page.category == "guides" %}
+{% when 'guides' %}
   {% include category_index_pages/guides_index.html %}
-
 {% else %}
   {% include post_grid.html %}
-{% endif %}
+
+{% endcase %}

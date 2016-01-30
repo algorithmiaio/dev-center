@@ -297,6 +297,24 @@ html, body {
 	}
 }
 
+#basics-index {
+	@include outer-container;
+
+	.three-columns {
+		@include span-columns(12);
+		text-align: center;
+
+		@include media($medium) {
+			@include span-columns(4);
+			text-align: left;
+		}
+	}
+}
+
+.list-index {
+	list-style-type: none;
+}
+
 /*
    Page footer
    ========================================================================== */

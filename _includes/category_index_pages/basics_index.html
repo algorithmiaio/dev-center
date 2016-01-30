@@ -1,8 +1,33 @@
-<div id="page-wrapper">
+<div id="basics-index">
+  <section class="row">
 
+  {% for tag in site.tags reversed %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+    {% assign new_tag = site.data.tags[t] %}
 
-  {% for post in site.categories["basics"] %}
-    {% include post-list.html %}
-  {% endfor %}
+    <div class="three-columns">
 
+    {% if t == 'getting-started' %}
+      <img src="{{ site.url }}/images/algodev_market.png" alt="teaser" itemprop="image">
+    {% elsif t == 'faq' %}
+      <img src="{{ site.url }}/images/algodev_live.png" alt="teaser" itemprop="image">
+    {% elsif t == 'algo-dev' %}
+      <img src="{{ site.url }}/images/algodev_develop.png" alt="teaser" itemprop="image">
+    {% endif %}
+
+      <h2> {{ new_tag.name }}</h2>
+
+      <section class="basics-posts">
+      {% for post in site.categories["basics"] %}
+        {% if post.tags contains t %}
+          {% include post-list.html %}
+        {% endif %}
+      {% endfor %}
+      </section>
+
+    </div> <!-- end .three-columns -->
+    {% endfor %}
+  </section>
 </div>

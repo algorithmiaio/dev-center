@@ -4,6 +4,7 @@ title:  "Algorithm Development FAQs"
 excerpt: "Find quick answers to common questions about algorithm development on Algorithmia."
 date:   2016-01-08 15:00:38
 categories: basics
+tags: [algo-dev, faq]
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

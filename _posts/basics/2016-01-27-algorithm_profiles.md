@@ -4,6 +4,7 @@ title:  "Understanding the Algorithm Profile"
 excerpt: "A walk through of the algorithm profile page."
 date:   2016-01-27 01:30:38
 categories: basics 
+tags: [getting-started]
 author: liz_rush
 image:
     teaser: /icons/fa-bolt.png
