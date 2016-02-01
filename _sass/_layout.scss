@@ -127,7 +127,7 @@ html, body {
 	}
 	li {
 		a {
-			@include font-size(14,no);
+			@include font-size(12,no);
 			line-height: .5 * $masthead-height; // half the height to center vertically
 			color: $gray-medium;
 
@@ -174,7 +174,7 @@ html, body {
 			// larger font for intro paragraph
 			> p {
 				&:first-child {
-					@include font-size(20,yes,30);
+					@include font-size(16,yes,26);
 				}
 			}
 			// cleaner underlines for links
@@ -198,7 +198,7 @@ html, body {
 			}
 			.page-meta {
 				p{
-					@include font-size(14,no);
+					@include font-size(12,no);
 					font-family: $alt-font;
 					color: lighten($black,60);
 				}
@@ -304,6 +304,10 @@ html, body {
 		@include span-columns(12);
 		text-align: center;
 
+		img {
+			max-width: 60%;
+		}
+
 		@include media($medium) {
 			@include span-columns(4);
 			text-align: left;
@@ -312,6 +316,7 @@ html, body {
 }
 
 .list-index {
+	@include font-size(10, no);
 	list-style-type: none;
 }
 
@@ -341,11 +346,11 @@ html, body {
 	min-height: 80px; //mirrors avatar height
 }
 .author-name {
-	@include font-size(20,no);
+	@include font-size(16,no);
 }
 .author-bio {
 	margin-top: 0;
-	@include font-size(16);
+	@include font-size(12);
 }
 
 /*
