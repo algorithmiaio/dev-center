@@ -1,0 +1,23 @@
+---
+layout: archive
+---
+
+<div id="author-archives" class="author">
+
+  {% assign index = true %}
+        {% for post in site.posts %}
+          {% if post.author contains page.author %}
+
+            {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+            {% unless year == this_year %}
+              {% assign year = this_year %}
+              <h2>{{ year }}</h2>
+            {% endunless %}
+
+            {% assign content = post.content %}
+      <article>
+          {% include post-list.html %}
+      </article>
+          {% endif %}
+  {% endfor %}
+</div>

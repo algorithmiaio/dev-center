@@ -1,4 +1,5 @@
 liz_rush:
+  slug: liz_rush
   name: Liz Rush
   web: https://lizmrush.com
   email: lizr@algorithmia.com
@@ -7,6 +8,7 @@ liz_rush:
   twitter: lizmrush
 
 matt_kiser:
+  slug: matt_kiser
   name: Matt Kiser
   email: matt@algorithmia.com
   bio: "Product marketing manager at Algorithmia, helping developers give their apps super powers."

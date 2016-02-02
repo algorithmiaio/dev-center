@@ -9,11 +9,7 @@
 <div class="author-content">
   <h4 class="author-name" >{{ site.data.messages.locales[site.locale].written_by }}
 
-  {% if author.web %}
-    <a href="{{ author.web }}" itemprop="author">{{ author.name }}</a>
-  {% else %}
-    <span itemprop="author">{{ author.name }}</span>
-  {% endif %}</h4>
+    <a href="{{ site.url }}/authors/{{ author.slug }}" itemprop="author">{{ author.name }}</a>
 
   <p class="author-bio">{{ author.bio }}</p>
 </div><!-- ./author-content -->
