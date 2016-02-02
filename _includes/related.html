@@ -6,7 +6,7 @@
   <h4>{{ new_tag.name }}</h4>
   <ul>
   {% for post in site.posts %}
-    {% if post.tags contains tag %}
+    {% if post.tags contains tag and post.url != page.url %}
       {% include post-list.html %}
     {% endif %}
   {% endfor %}
