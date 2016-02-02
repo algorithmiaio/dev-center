@@ -5,6 +5,7 @@ excerpt: "An introduction to the bounty system."
 date:   2016-01-11 01:19:38
 categories: basics 
 tags: [getting-started]
+show_related: true
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

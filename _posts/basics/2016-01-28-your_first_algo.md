@@ -5,6 +5,7 @@ excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this 
 date:   2016-01-28 03:19:38
 categories: basics 
 tags: [algo-dev]
+show_related: true
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

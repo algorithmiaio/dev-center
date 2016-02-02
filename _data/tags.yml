@@ -1,3 +1,5 @@
+# Specify tags here to customize text from slug
+
 getting-started:
   name: Getting Started
 
@@ -7,3 +9,11 @@ algo-dev:
 faq:
   name: FAQs
 
+guides:
+  name: Guides
+
+sentiment-analysis:
+  name: Sentiment Analysis
+
+clients:
+  name: Clients

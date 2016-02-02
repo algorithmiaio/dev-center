@@ -51,6 +51,8 @@ layout: article
 title:  "Example post!"
 date:   2016-01-05 11:39:38
 categories: guides example
+tags: [stuff, things]
+show_related: true # show sidebar of posts with same tags
 comments: false #true by default but currently disabled in config (optional field)
 share: false #true by default (optional field)
 sitemap: false #true by default (optional field)

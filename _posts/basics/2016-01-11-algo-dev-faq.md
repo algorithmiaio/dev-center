@@ -5,6 +5,7 @@ excerpt: "Find quick answers to common questions about algorithm development on 
 date:   2016-01-08 15:00:38
 categories: basics
 tags: [algo-dev, faq]
+show_related: true
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png

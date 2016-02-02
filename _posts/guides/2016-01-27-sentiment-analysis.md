@@ -3,6 +3,8 @@ layout: article
 title:  "The Algorithmia Guide to Sentiment Analysis"
 date:   2016-01-28 01:30:38
 categories: guides 
+tags: [guides, sentiment-analysis]
+show_related: false
 author: matt_kiser
 excerpt: "New to Sentiment Analysis? Start here to learn the basics and get started."
 image:

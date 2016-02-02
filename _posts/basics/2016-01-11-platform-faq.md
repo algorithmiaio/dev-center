@@ -5,6 +5,7 @@ excerpt: "Learn about Algorithmia & get answers to common usage questions."
 date:   2016-01-08 15:00:38
 categories: basics
 tags: [faq]
+show_related: true
 author: liz_rush
 image:
   teaser: /icons/fa-bolt.png
