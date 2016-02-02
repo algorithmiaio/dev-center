@@ -22,14 +22,13 @@ module Jekyll
       @base = base
       @dir  = author_dir
       @name = 'index.html'
-      puts "author #{author} @dir #{author_dir}"
       self.process(@name)
       # Read the YAML data from the layout page.
       self.read_yaml(File.join(base, '_layouts'), 'author_index.html')
       self.data['author']      = author
       # Set the title for this page.
       author                   = site.data["authors"][author]
-      self.data['title']       = "#{ author["name"] }"
+      self.data['title']       = "Posts by #{author["name"]}"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['author_meta_description_prefix'] || 'Author: '
       self.data['description'] = "#{meta_description_prefix}#{author}"
