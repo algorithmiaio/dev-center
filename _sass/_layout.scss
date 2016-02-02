@@ -297,6 +297,35 @@ html, body {
 	}
 }
 
+// related posts sidebar, _includes/related.html
+.related-posts {
+	position: relative;
+	margin-top: $gutter;
+	padding: 10px 15px;
+	border: 1px $gray-medium solid;
+	border-radius: 4 * $border-radius;
+
+	ul {
+		padding-left: 0px;
+	}
+
+	h3 {
+		@include font-size(18, no, 1);
+	}
+	h4 {
+		@include font-size(14, no, 1);
+	}
+	h5 {
+		@include font-size(12, no, 1);
+	}
+
+	@include media($medium) {
+		@include span-columns(3);
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 #basics-index {
 	@include outer-container;
 
