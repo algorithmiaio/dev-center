@@ -205,13 +205,9 @@ html, body {
 			}
 		}
 	}
-	@at-root {
-		.archive-wrap {
-			@include fill-parent;
-			.page-content {
-				@include reset-all;
-				@include fill-parent;
-			}
+	.archive-wrap {
+		@include media($medium) {
+			@include span-columns(9);
 		}
 	}
 }
@@ -297,11 +293,11 @@ html, body {
 	}
 }
 
-// related posts sidebar, _includes/related.html
-.related-posts {
+// related sidebar, _includes/related-posts.html, related-authors.html
+.sidebar {
 	position: relative;
 	margin-top: $gutter;
-	padding: 10px 15px;
+	padding: 10px 15px 25px;
 	border: 1px $gray-medium solid;
 	border-radius: 4 * $border-radius;
 

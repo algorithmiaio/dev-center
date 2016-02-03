@@ -23,7 +23,7 @@ layout: default
 					{{ content }}
 				</div><!-- /.page-content -->
 			</div class="archive-wrap"><!-- /.archive-wrap -->
+			{% if page.show_related == true %}<div class="sidebar">{% include related-authors.html %}</div>{% endif %}
 		</div><!-- /.wrap -->
 	</div><!-- /#main -->
-
 </div>

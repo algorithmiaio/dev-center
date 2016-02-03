@@ -1,0 +1,9 @@
+<h3>Explore Other Authors:</h3>
+
+{% for person in site.data.authors %}
+{%assign other_author = person[1] %}
+  {% unless other_author == author %}
+    <h4><a href="{{ site.url }}/authors/{{ other_author.slug }}" itemprop="author">{{ other_author.name }}</a></h4>
+  {% endunless %}
+{% endfor %}
+
