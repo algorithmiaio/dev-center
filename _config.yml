@@ -36,6 +36,7 @@ owner:
 # Generate_category_page plugin configuration:
 category_dir: / # sets the root folder for where to output the category directories.
 # If you change this (not recommended), you will have to update the navigation data as well.
+author_dir: / # sets the root folder for where to output the author pages.
 
 # For use with gemoji gem. Raw emojis will break the GH-pages deployment. See the plugin emoji.rb
 emoji_dir: /images/emoji
