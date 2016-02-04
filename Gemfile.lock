@@ -36,19 +36,30 @@ GEM
       coffee-script (~> 2.2)
     jekyll-gist (1.4.0)
       octokit (~> 4.2)
+    jekyll-lunr-js-search (3.0.0)
+      json (~> 1.8)
+      nokogiri (~> 1.6)
+      therubyracer (~> 0.12)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.4.0)
       sass (~> 3.4)
     jekyll-sitemap (0.9.0)
     jekyll-watch (1.3.0)
       listen (~> 3.0)
+    json (1.8.3)
     kramdown (1.9.0)
+    libv8 (3.16.14.13)
     liquid (2.6.3)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
+    mini_portile2 (2.0.0)
     multipart-post (2.0.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.7.2-x64-mingw32)
+      mini_portile2 (~> 2.0.0.rc2)
     octokit (4.2.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     octopress (3.0.11)
@@ -76,11 +87,15 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
+    ref (2.0.0)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sawyer (0.6.0)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     titlecase (0.1.1)
     toml (0.1.2)
       parslet (~> 1.5.0)
@@ -93,9 +108,10 @@ PLATFORMS
 DEPENDENCIES
   gemoji
   jekyll (= 2.5.3)
+  jekyll-lunr-js-search
   jekyll-sitemap
   octopress (~> 3.0)
   rake
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
