@@ -17,3 +17,6 @@ sentiment-analysis:
 
 clients:
   name: Clients
+
+sample-apps:
+  name: Sample Apps

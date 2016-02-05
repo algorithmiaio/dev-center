@@ -15,6 +15,11 @@
   excerpt: "Use Algorithmia clients & libraries"
   image: /icons/fa-paper-plane.png
 
+- title: Sample Apps
+  url: /samples/
+  excerpt: "See fully developed example apps"
+  image: /icons/fa-gift.png
+
 - title: API Docs
   url: http://docs.algorithmia.com
   excerpt: "Read the specifics of the API here"
@@ -25,7 +30,3 @@
 #   excerpt: "Learn how to solve problems with Algorithmia"
 #   image: /icons/fa-birthday-cake.png
 
-# - title: Sample Apps
-#   url: /sample-apps/
-#   excerpt: "See fully developed example apps"
-#   image: /icons/fa-gift.png
