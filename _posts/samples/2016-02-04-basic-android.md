@@ -71,7 +71,7 @@ Make sure you've replaced `YOUR_API_KEY` with the API key under your account so 
 
 We'll need some views that we can connect to our code. Under `res/layout/activity_main.xml` add the following TextViews, EditText fields, and Button. You can also do this through the visual editor, but since we just have a few simple things to add to the layout we'll add them to the xml:
 
-{% highlight xml %}
+{% highlight xml lineanchors %}
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -116,77 +116,99 @@ We'll need some views that we can connect to our code. Under `res/layout/activit
 
 ## Let's code!
 
-1. Add run function (linked to from the button)
-2.  Use async task to split network stuff from ui stuff
-  Why to use asynctask: http://developer.android.com/training/basics/network-ops/connecting.html
-3. Make algorithmia network call in doInBackground, return AlgoResponse
-4. Update UI in onPostExecute
+To make our sample app run, we'll need to do four things: first, we'll need to add a function that gets called when the button is tapped, we'll need to add in an async task, make the Algorithmia API call, and finally update the UI with the results.
 
-
-{% highlight java %}
-package com.algorithmia.androidsample;
-
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import com.algorithmia.APIException;
-import com.algorithmia.AlgorithmException;
-import com.algorithmia.Algorithmia;
-import com.algorithmia.algo.AlgoFailure;
-import com.algorithmia.algo.AlgoResponse;
-import com.algorithmia.algo.AlgoSuccess;
-
+Let's start by getting references to the views. Add the references at the start of the public class, then inside of the `onCreate` method make sure you set them to the views with their ids:
+{% highlight java lineanchors %}
 public class MainActivity extends AppCompatActivity {
-
-    private EditText algoUrl;
-    private EditText algoInput;
-    private TextView algoOutput;
+  private EditText algoUrl;
+  private EditText algoInput;
+  private TextView algoOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
 
-        // Find views
-        algoUrl = (EditText) findViewById(R.id.algo_url);
-        algoInput = (EditText) findViewById(R.id.algo_input);
-        algoOutput = (TextView) findViewById(R.id.algo_output);
-    }
-
-    public void onClickRun(View v) {
-        final String algo = algoUrl.getText().toString();
-        final String input = algoInput.getText().toString();
-        new AsyncTask<Void,Void,AlgoResponse>() {
-
-            @Override
-            protected AlgoResponse doInBackground(Void... params) {
-                try {
-                    return Algorithmia.client(getString(R.string.algorithmia_api_key)).algo(algo).pipe(input);
-                } catch (APIException e) {
-                    return new AlgoFailure(new AlgorithmException(e));
-                }
-            }
-            @Override
-            protected void onPostExecute(AlgoResponse response) {
-                if(response == null) {
-                    algoOutput.setText("Algorithm Error: network connection failed");
-                } else if(response.isSuccess()) {
-                    AlgoSuccess success = (AlgoSuccess) response;
-                    algoOutput.setText(success.asJsonString());
-                } else {
-                    AlgoFailure failure = (AlgoFailure) response;
-                    algoOutput.setText("Algorithm Error: " + failure.error);
-                }
-            }
-        }.execute();
+      // Find views
+      algoUrl = (EditText) findViewById(R.id.algo_url);
+      algoInput = (EditText) findViewById(R.id.algo_input);
+      algoOutput = (TextView) findViewById(R.id.algo_output);
     }
 }
 {% endhighlight %}
 
+If you noticed when we added the views to the app, we already set the button to handle the onClick event with this line: `android:onClick="onClickRun"`. Android Studio will complain that this method doesn't exist, so let's create it now. We'll also have grab the values of the EditText views so we can work with them.
+
+{% highlight java lineanchors %}
+public void onClickRun(View v) {
+  final String algo = algoUrl.getText().toString();
+  final String input = algoInput.getText().toString();
+}
+{% endhighlight %}
+
+Next we'll want to make sure that our API call happens inside of an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html). Set up the AsyncTask:
+
+{% highlight java lineanchors %}
+public void onClickRun(View v) {
+  final String algo = algoUrl.getText().toString();
+  final String input = algoInput.getText().toString();
+  new AsyncTask<Void,Void,AlgoResponse>() {
+    @Override
+    protected AlgoResponse doInBackground(Void... params) {
+      try {
+        // make API call
+      } catch (APIException e) {
+       // handle exception
+      }
+    }
+    @Override
+    protected void onPostExecute(AlgoResponse response) {
+        if(response == null) {
+        } else if(response.isSuccess()) {
+            // handle successful response
+        } else {
+           // handle failure message
+        }
+    }
+  }.execute();
+}
+{% endhighlight %}
+
+Let's start by making the filling out the `try`
+ and `catch`. We want to first make the API call. Be sure to pass in the API key from the strings resource that we set before:
+
+ {% highlight java lineanchors %}
+protected AlgoResponse doInBackground(Void... params) {
+  try {
+    return Algorithmia.client(getString(R.string.algorithmia_api_key)).algo(algo).pipe(input);
+  } catch (APIException e) {
+    return new AlgoFailure(new AlgorithmException(e));
+  }
+}
+{% endhighlight %}
+
+Notice that we are catching the API exception and creating a new Algorithmia Exception from it. We do this so that we can update the UI with the exception message in the `onPostExecute` method. Let's do that now!
+
+{% highlight java lineanchors %}
+@Override
+  protected void onPostExecute(AlgoResponse response) {
+    if(response == null) {
+      algoOutput.setText("Algorithm Error: network connection failed");
+    } else if(response.isSuccess()) {
+      AlgoSuccess success = (AlgoSuccess) response;
+      algoOutput.setText(success.asJsonString());
+    } else {
+      AlgoFailure failure = (AlgoFailure) response;
+      algoOutput.setText("Algorithm Error: " + failure.error);
+    }
+  }
+{% endhighlight %}
+
+What the above code does is set the `algoOutput` text view to display the results of the call. If the response is null, we've set the output to show a generic "network connection failed" message. Following this, we've got a check on line 5 to see if the condition is successful, and if so we'll set the text to the success response. Of course, we'll also need to handle the failures, which you'll see in the final `else` of the method on lines 8-10.
+
+You can find the full code for `MainActivity.java`
+on [GitHub](https://github.com/algorithmiaio/sample-apps/blob/master/android/basic_integration/app/src/main/java/com/algorithmia/androidsample/MainActivity.java). Double check that your code matches the code in the repo!
 
 When you run the app in the emulator, you'll see this:
 
