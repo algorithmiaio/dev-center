@@ -41,8 +41,9 @@
       {% include browser-upgrade.html %}
       {% include header.html %}
       {% include navigation-sliding.html %}
-
+      {% strip %}
       {{ content | emojify }}
+      {% endstrip %}
     </div> <!-- end wrapper -->
 
     {% include footer.html %}
