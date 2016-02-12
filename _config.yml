@@ -22,7 +22,6 @@ kramdown:
 highlighter: pygments
 gems:
   - jekyll-sitemap
-  # - jekyll-lunr-js-search
 
 # Site owner
 owner:
@@ -40,5 +39,8 @@ author_dir: / # sets the root folder for where to output the author pages.
 
 # For use with gemoji gem. Raw emojis will break the GH-pages deployment. See the plugin emoji.rb
 emoji_dir: /images/emoji
+
+lunr_search:
+  excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

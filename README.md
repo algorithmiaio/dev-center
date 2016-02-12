@@ -49,15 +49,19 @@ The first thing that goes in each new post is the [YAML front-matter](http://jek
 ---
 layout: article
 title:  "Example post!"
+excerpt: "This is an example post."
 date:   2016-01-05 11:39:38
 categories: guides example
+author: liz_rush
+
 tags: [stuff, things]
 show_related: true # show sidebar of posts with same tags
-comments: false #true by default but currently disabled in config (optional field)
-share: false #true by default (optional field)
-sitemap: false #true by default (optional field)
-author: liz_rush
-excerpt: "This is an example post."
+
+# optional fields:
+exclude_from_search: true #false by default
+comments: false #true by default but currently disabled in config
+share: false #true by default
+sitemap: false #true by default
 ---
 ```
 
