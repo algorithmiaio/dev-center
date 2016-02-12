@@ -25,6 +25,11 @@
   excerpt: "Read the specifics of the API here"
   image: /icons/fa-book.png
 
+- title: Search
+  url: /search/
+  excerpt: "Search"
+  image: /icons/fa-search.png
+
 # - title: Recipes
 #   url: /recipes/
 #   excerpt: "Learn how to solve problems with Algorithmia"
