@@ -3,7 +3,7 @@
 title: Algorithmia Developer Center
 description: Resources tutorials and guides for Algorithmia.
 logo: logos/AlgorithmiaLogo120x120.png # 120x120 px default image used for Twitter summary card
-image: logos/AlgorithmiaLogo120x120.png # 120x120 px default image used for FB summary card
+image: logos/AlgorithmiaLogo.png # default image used for FB summary card
 teaser: logos/AlgorithmiaLogo120x120.png # 400x250 px max default teaser image used in image archive grid
 locale: en
 
