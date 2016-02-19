@@ -24,7 +24,6 @@
 # {% for post in site.categories[page.category] %}
 #     <div>{{ post.date | date_to_html_string }}</div>
 #     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-#     <div class="categories">Filed under {{ post.categories | category_links }}</div>
 # {% endfor %}
 # </ul>
 # ================================== COPY ABOVE THIS LINE ==================================
@@ -160,6 +159,7 @@ module Jekyll
     def write_category_indexes
       if self.layouts.key? 'category_index'
         self.categories.keys.each do |category|
+          puts "Writing index for #{category}..."
           self.write_category_index(category)
         end
 
@@ -196,31 +196,6 @@ module Jekyll
 
   # Adds some extra filters used during the category creation process.
   module Filters
-
-    # Outputs a list of categories as comma-separated <a> links. This is used
-    # to output the category list for each post on a category page.
-    #
-    #  +categories+ is the list of categories to format.
-    #
-    # Returns string
-    def category_links(categories)
-      base_dir = @context.registers[:site].config['category_dir']
-      categories = categories.sort!.map do |category|
-        category_dir = GenerateCategories.category_dir(base_dir, category)
-        # Make sure the category directory begins with a slash.
-        category_dir = "/#{category_dir}" unless category_dir =~ /^\//
-        "<a class='category' href='#{category_dir}/'>#{category}</a>"
-      end
-
-      case categories.length
-      when 0
-        ""
-      when 1
-        categories[0].to_s
-      else
-        categories.join(', ')
-      end
-    end
 
     # Outputs the post.date as formatted html, with hooks for CSS styling.
     #

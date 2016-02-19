@@ -45,7 +45,7 @@ The compiled Jekyll site outputs to _site/.
 
 The first thing that goes in each new post is the [YAML front-matter](http://jekyllrb.com/docs/frontmatter/). Below is an example of front-matter:
 
-```
+```ruby
 ---
 layout: article
 title:  "Example post!"
@@ -74,7 +74,7 @@ In the case of `author`, the default author can be found in `_config.yml`. The d
 Posts are organized according to category as a subdirectory of `_posts`. Each post follows the same naming convention: `YYYY-MM-DD-post-title.md`.
 
 Here is an example:
-```
+```ruby
 _posts/guides/2016-01-05-example-post.md
 ```
 
