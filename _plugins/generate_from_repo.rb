@@ -30,38 +30,34 @@ module Jekyll
   class ProjectIndex < Post
 
     # Initialize a new ProjectIndex.
-    #  `base_dir`            is the String path to the <source>
-    #  `project_dir`         is the relative path from the base directory to the project folder.
-    #  `project_config_path` is the String path to the project's yaml config file.
-    #  `project_name`        is the name of the project to process.
-    def initialize(site, base_dir, project_dir, project_config_path, project_name)
-      @site = site
-      @base = base_dir 
-      @dir  = project_dir 
+    #  `base_dir`         is the String path to the <source>
+    #  `output_dir`       is the relative path from the base directory to the project folder.
+    #  `project_md_path`  is the String path to the project's yaml config file.
+    #  `post_name`        is the name of the project to process.  
 
-      self.data = load_config(base_dir, project_config_path)
+    def initialize(site, output_dir, base_dir, project_md_path, post_name)
+      self.data = load_config(project_md_path)
 
-      puts "%%%%%%%%"   
-      puts "%%%%%%%%"
-      puts project_config_path
-      puts "%%%%%%%%"
-      puts "%%%%%%%%"
+      puts "^" * 90
+      puts self.data['title']
 
-      unless self.data['published']
+      unless self.data['repository']
         return false
       end
 
-      repo_dir = clone_repo(project_name)
+      repo_dir = clone_repo(post_name)
       readme = get_readme_path(repo_dir)
 
+      super(site, site.source, '', File.join(base_dir, post_name))      
+
       # Decide the extension - if it's not textile, markdown or HTML treat it as textile.
-      ext = File.extname(readme)
+      ext = File.extname(readme) unless readme.nil?
       unless ['.textile', '.markdown', '.md', '.html'].include?(ext)
         ext = '.textile'
       end
 
       # Try to get the readme data for this path.
-      self.content = File.read(readme)
+      self.content = File.read(readme) unless readme.nil?
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
       self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m, 
@@ -70,28 +66,17 @@ module Jekyll
       link_to_repo = "<a href='#{self.data['repository']}' target='_blank'>GitHub</a>"
       self.content.prepend("Below, you'll find a guide to the #{self.data['title']}. 
         You can also find the source code directly on #{link_to_repo}.\n\n")
-
-      puts "%%%%%%%%"   
-      puts "%%%%%%%%"
-      puts @dir
-      puts project_config_path
-      puts project_name
-      puts "%%%%%%%%"
-      puts "%%%%%%%%"
-
-      super(@site, nil, @dir, project_config_path)
-
-      puts "%%%%%%%%"
+    
     end
 
     private
 
-    # Loads the .yml config file for this project.
+    # Loads the .md config file for this project.
     #  `base_dir`            is the base path to the jekyll project.
     #  `project_config_path` is the String path to the project's yaml config file.
     # Returns Array of project config information.
-    def load_config(base_dir, project_config_path)
-      yaml = File.read(File.join(base_dir, project_config_path))
+    def load_config(project_md_path)
+      yaml = File.read(project_md_path)
       YAML.load(yaml)
     end
 
@@ -128,7 +113,7 @@ module Jekyll
         end
       end
 
-      throw "No README file found in #{repo_dir}"
+      throw "No remote README file found in #{repo_dir}."
     end
   end  
 
@@ -140,37 +125,26 @@ module Jekyll
     def write_project_indexes
       base_dir = self.config['project_dir'] || 'projects'
       projects = self.get_project_files
-      projects.each do |project_config_path|
-        project_name = project_config_path.sub(/^#{PROJECT_FOLDER}\/([^\.]+)\..*/, '\1')
+      projects.each do |project_md_path|
+        post_name = project_md_path.sub(/^#{PROJECT_FOLDER}\/([^\.]+\..*)/, '\1')
 
-        puts "#" * 90
-        puts project_config_path
-        puts project_name
-        puts "#" * 90
-
-        self.write_project_index(File.join(base_dir, project_name), project_config_path, project_name)
+        self.write_project_index(File.join(base_dir, post_name), base_dir, project_md_path, post_name)
       end
     end
 
     # Writes each project page.
     #
-    #  `project_dir`         is the relative path from the base directory to the project folder.
-    #  `project_config_path` is the String path to the project's yaml config file.
-    #  `project_name`        is the name of the project to process.
-    def write_project_index(project_dir, project_config_path, project_name)
-      index = ProjectIndex.new(self, self.source, project_dir, project_config_path, project_name)
+    #  `output_dir`       is the relative path from the base directory to the output folder.
+    #  `project_md_path`  is the String path to the project's yaml config file.
+    #  `post_name`        is the name of the project to process.
+    def write_project_index(output_dir, base_dir, project_md_path, post_name)
+      index = ProjectIndex.new(self, output_dir, base_dir, project_md_path, post_name)
 
       if index.data['published']
         index.render(self.layouts, site_payload)
-                puts "#" * 90
-                puts index.url
-                puts "#" * 90
         index.write(self.dest)
-        # Record the fact that this page has been added, otherwise Site::cleanup will remove it.
-        # project_index = Jekyll::Post.new(self, self.dest, project_dir, 'index.html')
-        self.posts << index
-        
-        puts "#{self.data['repository']} README written"
+
+        puts "#{index.data['title']} successfully written"
       end
     end
 
@@ -191,7 +165,7 @@ module Jekyll
     priority :high
 
     def generate(site)
-      # site.write_project_indexes
+      site.write_project_indexes
     end
   end
 end
