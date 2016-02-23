@@ -12,8 +12,9 @@
 #                 .textile file.
 #
 # Available _config.yml settings :
-# - project_dir: The subfolder to compile projects to (default is 'projects').
-#
+# - project_dir: The subfolder from which to pull project definition files (default is 'projects').
+# - project_output_dir: The subfolder to which project posts are compiled (default is 'projects').
+# 
 # Available YAML settings :
 # - repository: Git repository of your project (required).
 # - layout: Layout to use when creating the project page.
