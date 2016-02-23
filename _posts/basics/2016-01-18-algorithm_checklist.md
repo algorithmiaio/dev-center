@@ -79,6 +79,9 @@ Sample input is one of the most important parts of your algorithm profile. Users
 
 `4`
 
+A common gotcha for setting and updating the sample input is that you must publish your algorithm before you can save the sample input. If you are unable to save your sample input, double check that the algorithm has been published before continuing.
+{: .notice-warning }
+
 ### Update Pricing:
 
 If you are publishing a new version of your algorithm, you can update the pricing of each call. This will be displayed on the pricing section of your algorithm profile. Remember, you can set the royalty price even if your code is open source!
