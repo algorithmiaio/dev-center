@@ -36,10 +36,9 @@ module Jekyll
     #  `post_name`        is the name of the project to process.  
 
     def initialize(site, output_dir, base_dir, project_md_path, post_name)
+      super(site, site.source, '', File.join(base_dir, post_name))      
       self.data = load_config(project_md_path)
-
-      puts "^" * 90
-      puts self.data['title']
+      puts "Fetching data for #{self.data['title']} post" 
 
       unless self.data['repository']
         return false
@@ -48,8 +47,6 @@ module Jekyll
       repo_dir = clone_repo(post_name)
       readme = get_readme_path(repo_dir)
 
-      super(site, site.source, '', File.join(base_dir, post_name))      
-
       # Decide the extension - if it's not textile, markdown or HTML treat it as textile.
       ext = File.extname(readme) unless readme.nil?
       unless ['.textile', '.markdown', '.md', '.html'].include?(ext)
@@ -57,7 +54,9 @@ module Jekyll
       end
 
       # Try to get the readme data for this path.
-      self.content = File.read(readme) unless readme.nil?
+      readme_content = File.read(readme) unless readme.nil?
+      # Append any content from README to the end of any content in the post.
+      self.content += "\n\n" + readme_content
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
       self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m, 
@@ -66,14 +65,13 @@ module Jekyll
       link_to_repo = "<a href='#{self.data['repository']}' target='_blank'>GitHub</a>"
       self.content.prepend("Below, you'll find a guide to the #{self.data['title']}. 
         You can also find the source code directly on #{link_to_repo}.\n\n")
-    
     end
 
     private
 
     # Loads the .md config file for this project.
     #  `base_dir`            is the base path to the jekyll project.
-    #  `project_config_path` is the String path to the project's yaml config file.
+    #  `project_md_path` is the String path to the project's md config file.
     # Returns Array of project config information.
     def load_config(project_md_path)
       yaml = File.read(project_md_path)
@@ -140,12 +138,15 @@ module Jekyll
     def write_project_index(output_dir, base_dir, project_md_path, post_name)
       index = ProjectIndex.new(self, output_dir, base_dir, project_md_path, post_name)
 
-      if index.data['published']
-        index.render(self.layouts, site_payload)
-        index.write(self.dest)
+      index.render(self.layouts, site_payload)
+      index.write(self.dest)
 
-        puts "#{index.data['title']} successfully written"
-      end
+      # Remove Jekyll generated post
+      self.posts.delete_if {|post| post.inspect == index.inspect }
+      # Add our new post with README
+      self.posts << index
+
+      puts "#{index.data['title']} successfully written\n\n"
     end
 
     def get_project_files
