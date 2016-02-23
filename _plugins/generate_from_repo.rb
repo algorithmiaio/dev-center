@@ -55,16 +55,18 @@ module Jekyll
 
       # Try to get the readme data for this path.
       readme_content = File.read(readme) unless readme.nil?
+
+      link_to_repo = "<a href='#{self.data['repository']}' target='_blank'>GitHub</a>"
+      self.content += "\n\nBelow, you'll find a guide to the #{self.data['title']}. 
+        You can also find the source code directly on #{link_to_repo}.\n\n"
+
       # Append any content from README to the end of any content in the post.
       self.content += "\n\n" + readme_content
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
       self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m, 
         '{% highlight ruby lineanchors %}\2{% endhighlight %}')
-      
-      link_to_repo = "<a href='#{self.data['repository']}' target='_blank'>GitHub</a>"
-      self.content.prepend("Below, you'll find a guide to the #{self.data['title']}. 
-        You can also find the source code directly on #{link_to_repo}.\n\n")
+
     end
 
     private
@@ -116,15 +118,17 @@ module Jekyll
   end  
 
   class Site
-    # Folder containing project .md files.
-    PROJECT_FOLDER = '_posts/clients2'
+
 
     # Loops through the list of project pages and processes each one.
     def write_project_indexes
-      base_dir = self.config['project_dir'] || 'projects'
-      projects = self.get_project_files
+      # Folder containing project .md files.
+      project_folder = self.config['project_dir'] || 'projects'
+      base_dir = self.config['project_output_dir'] || 'projects'
+
+      projects = self.get_project_files(project_folder)
       projects.each do |project_md_path|
-        post_name = project_md_path.sub(/^#{PROJECT_FOLDER}\/([^\.]+\..*)/, '\1')
+        post_name = project_md_path.sub(/^#{project_folder}\/([^\.]+\..*)/, '\1')
 
         self.write_project_index(File.join(base_dir, post_name), base_dir, project_md_path, post_name)
       end
@@ -149,9 +153,9 @@ module Jekyll
       puts "#{index.data['title']} successfully written\n\n"
     end
 
-    def get_project_files
+    def get_project_files(project_folder)
       projects = []
-      Find.find(PROJECT_FOLDER) do |file|
+      Find.find(project_folder) do |file|
         if file=~/.md$/
           projects << file
         end
