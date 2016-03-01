@@ -40,9 +40,11 @@ The account section of your profile is where you'll find the information about y
 
 ![Credits main](/images/post_images/your_profile/credits_main.png)
 
-These two large boxes display your current available credits and your earned credits from algorithms that you've authored. You can also purchase more credits through this page but clicking on the purple button.
+The graph on the left shows your account balance history over the last 30 day period. On the right, you'll more details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking on the purple button.
 
-Below, you'll see menu options to view your Usage, Earnings, and Transactions.
+If you have earned credits by publishing your own algorithms, you'll see the amount you've earned in USD as well.
+
+Below the account overview, you'll see menu options to view your Usage, Earnings, and Transactions.
 
 #### Usage
 ![Usage](/images/post_images/your_profile/usage.png)
