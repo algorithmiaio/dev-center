@@ -144,6 +144,7 @@ module Jekyll
     #  `project_md_path`  is the String path to the project's yaml config file.
     #  `post_name`        is the name of the project to process.
     def write_project_index(output_dir, base_dir, project_md_path, post_name)
+
       index = ProjectIndex.new(self, output_dir, base_dir, project_md_path, post_name)
 
       index.render(self.layouts, site_payload)
@@ -174,6 +175,10 @@ module Jekyll
     priority :high
 
     def generate(site)
+      unless site.config['generate_projects']
+        return false
+      end
+      
       site.write_project_indexes
     end
   end
