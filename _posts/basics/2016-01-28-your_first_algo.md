@@ -11,7 +11,7 @@ image:
   teaser: /icons/fa-bolt.png
 ---
 
-One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. 
+One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm in Python.
 
 ### Using the Algorithmia Editor
 
@@ -32,7 +32,7 @@ Algorithmia will now create the skeleton for your algorithm and bring you to the
 
 As you can see, the algorithm takes in the input and returns the string `"Hello"` plus the input. Feel free to change this code however you like.
 
-Once you have finished editing and want to run the Algorithm, go ahead and click the blue Compile button at the top right of the editor. This will save your algorithm by committing your code to your personal git and try to compile the code. You can even test out your complied algorithm but passing input though the console at the bottom of the screen. 
+Once you have finished editing and want to run the Algorithm, go ahead and click the blue Compile button at the top right of the editor. This will save your algorithm by committing your code to your personal git and try to compile the code. You can even test out your complied algorithm by passing input though the console at the bottom of the screen. 
 
 After a successful compilation, click the purple "Publish" button. Select "Publish a new revision" for your algorithm. You'll then see the following dialog:
 
