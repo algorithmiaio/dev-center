@@ -55,6 +55,7 @@ By default, any key can call any algorithm on the platform. You can see in the a
 ### Caller origin & hostname
 
 Another way to customize your API keys and the permissions is to restrict the permissions on where API calls can originate. There are two options you can check in the dialog, native clients and web browser:
+
 ![caller origin](/images/post_images/api_keys/call_origin.png)
 
 If you are only calling Algorithmia through a client, you can leave that box checked and your key will work as you make API calls. However, if you plan to use this key on a website where you will be making CORS requests, select the web browser permission. When you check that box, another field will appear allowing for more customization:
