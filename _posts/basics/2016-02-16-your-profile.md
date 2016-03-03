@@ -30,9 +30,10 @@ The main area of your profile also includes some basis stats like the number of 
 ## Credentials
 
 The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, labeled "default-key", is the key that will show up in the algorithm console when trying out algorithms in the browser. 
+
 ![Credentials](/images/post_images/your_profile/credentials.png)
 
-Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. 
+Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide](/basics/customizing-api-keys/) to learn more.
 
 ## Account
 
