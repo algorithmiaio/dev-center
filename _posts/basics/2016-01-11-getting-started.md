@@ -34,7 +34,7 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
 Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
 
 {% highlight bash lineanchors %}
-curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY'
+curl -X POST -d '"YOUR_NAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 {% endhighlight %}
 
 Make sure to replace `YOUR_NAME` with your name & `YOUR_API_KEY` with your API key.
