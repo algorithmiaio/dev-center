@@ -46,7 +46,7 @@ It is also helpful to explain what the output of the algorithm should be. If you
 
 #### Link to any papers or external documentation
 
-If your algorithm is based off an academic paper or external library, you can also include a link to this documentation to give the users a chance to read more. This is great for users who want to take a deeper dive into what the internal workings are of the algorithm.
+If your algorithm is based off an academic paper or external library, you should also include a link to this documentation to give the users a chance to read more. Giving credit to the original source that your algorithm is based on is a best practice and allows curious users to take a deeper dive into the internal workings of the algorithm. Plus it's good karma!
 
 ### Give It a Tagline:
 
