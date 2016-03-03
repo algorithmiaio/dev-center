@@ -17,10 +17,10 @@
     color: lighten($text-color,25);
   }
   .post-title {
-    @include font-size(12,no);
+    @include font-size(14,no);
   }
   .post-excerpt {
-    @include font-size(10);
+    @include font-size(12,yes,16);
   }
   .post-teaser {
     position: relative;

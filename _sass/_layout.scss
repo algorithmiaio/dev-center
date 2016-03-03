@@ -333,12 +333,19 @@ html, body {
 		text-align: center;
 
 		img {
-			max-width: 50%;
+			display: block;
+			max-width: 30%;
+			margin: auto;
 		}
 
 		@include media($medium) {
 			@include span-columns(6);
 			text-align: left;
+
+			img {
+				margin-left: 20%;
+    		margin-right: 80%;
+			}
 		}
 	}
 
