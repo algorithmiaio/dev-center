@@ -43,8 +43,8 @@ html, body {
 
 .site-title {
 	@include row;
-	@include media($large) {
-		@include span-columns(6);
+	@include media($medium) {
+		@include span-columns(4);
 	}
 	padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
 	height: $masthead-height;
@@ -110,17 +110,20 @@ html, body {
 .top-menu {
 	display: none;
 	position: relative;
-
+	
 	@include media($medium) {
-		@include span-columns(6);
+		@include span-columns(7);
 	}
+
 	@include media($large) {
-		@include span-columns(6);
-		ul {
-			position: absolute;
-			right: 0;
-		}
+		@include span-columns(7);
 	}
+	
+	ul {
+		position: absolute;
+		right: 0;
+	}
+
 	.home,
 	.sub-menu-item {
 		display: none;
@@ -207,7 +210,7 @@ html, body {
 	}
 	.archive-wrap {
 		@include media($medium) {
-			@include span-columns(9);
+			@include span-columns(12);
 		}
 	}
 }
@@ -325,16 +328,44 @@ html, body {
 #basics-index {
 	@include outer-container;
 
-	.three-columns {
+	.two-columns {
 		@include span-columns(12);
 		text-align: center;
 
 		img {
-			max-width: 60%;
+			max-width: 50%;
 		}
 
 		@include media($medium) {
-			@include span-columns(4);
+			@include span-columns(6);
+			text-align: left;
+		}
+	}
+
+	.basics-intro {
+		@include span-columns(12);
+		padding-bottom: 3em;
+	}
+}
+
+#faqs-index {
+	@include outer-container;
+
+	.two-columns {
+		@include span-columns(12);
+		text-align: center;
+
+		@include media($medium) {
+			@include span-columns(6);
+			text-align: left;
+		}
+	}
+	.one-column {
+		@include span-columns(12);
+		text-align: left;
+
+		@include media($medium) {
+			@include span-columns(12);
 			text-align: left;
 		}
 	}

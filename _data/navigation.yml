@@ -25,6 +25,11 @@
   excerpt: "Read the specifics of the API here"
   image: /icons/fa-book.png
 
+- title: FAQs
+  url: /faqs/
+  excerpt: "Find quick answers to common questions"
+  image: /icons/fa-bolt.png
+
 - title: Search
   url: /search/
   excerpt: "Search"

@@ -9,6 +9,12 @@ algo-dev:
 faq:
   name: FAQs
 
+platform-faq:
+  name: Platform FAQs
+  
+algo-dev-faq:
+  name: Algorithm Development FAQs
+
 guides:
   name: Guides
 

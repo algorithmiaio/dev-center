@@ -1,10 +1,11 @@
 <!-- create array of 'basics' tags -->
-{% assign basics_tags = "getting-started|algo-dev|faq" | split:"|" %}
+{% assign basics_tags = "getting-started|algo-dev" | split:"|" %}
 
 <div id="basics-index">
+
   <section class="row">
 
-  {% for tag in site.tags reversed %}
+  {% for tag in site.tags %}
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
     <!-- Pulls from data/tags.yml to allow for data defined name attr -->
@@ -12,12 +13,10 @@
 
     {% if basics_tags contains t %}
 
-      <div class="three-columns">
+      <div class="two-columns">
 
       {% if t == 'getting-started' %}
         <img src="{{ site.url }}/images/algodev_market.png" alt="teaser" itemprop="image">
-      {% elsif t == 'faq' %}
-        <img src="{{ site.url }}/images/algodev_live.png" alt="teaser" itemprop="image">
       {% elsif t == 'algo-dev' %}
         <img src="{{ site.url }}/images/algodev_develop.png" alt="teaser" itemprop="image">
       {% endif %}
@@ -31,7 +30,7 @@
           {% endif %}
         {% endfor %}
         </section>
-      </div> <!-- end .three-columns -->
+      </div> <!-- end .two-columns -->
 
     {% else %}
     <!-- skip tag if not in basics-tags -->

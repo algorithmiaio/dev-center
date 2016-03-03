@@ -1,0 +1,64 @@
+<div id="faqs-index">
+  <section class="row">
+
+<div class="two-columns">
+   <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  {% assign platform_tag = site.data.tags["platform-faq"] %}
+  <h2>{{ platform_tag.name }}</h2>  
+
+  <p>Algorithmia is a platform for sharing the world's algorithmic knowledge in a way that is scalable, composable, easy-to-integrate, and always live. We want to place the cutting edge of algorithms technology in the hands of every developer, researcher, and business. Find quick answers to common questions about the platform below.</p>
+  <a href="{{site.url}}#platform-faq">Jump to {{ platform_tag.name }}</a>  
+</div>
+
+<div class="two-columns">
+  {% assign algo_dev_tag = site.data.tags["algo-dev-faq"] %}
+  <h2>{{ algo_dev_tag.name }}</h2>  
+
+  <p>With the Algorithmia platform, you can get your algorithms in to the hands of developers, researchers, and businesses. In the Algorithm Developer FAQs, you'll get fast answers to your algorithm development questions.</p>
+  <a href="{{site.url}}#algo-dev-faq">Jump to {{ algo_dev_tag.name }}</a>  
+</div>
+</section>
+
+<section class="row">
+<div class="one-column">
+
+{% assign faq_tags = "platform-faq|algo-dev-faq" | split:"|" %}
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+  {% assign new_tag = site.data.tags[t] %}
+
+  {% if faq_tags contains t %}
+      <h2 id="{{t}}">{{ new_tag.name }}</h2>
+      <!-- create TOC for each post -->
+      <section class="faq-toc">
+      <nav class="toc">
+        <ul id="markdown-toc">
+          {% for post in site.categories["faqs"] %}
+            {% if post.tags contains t %}
+            <li>
+              <a href="{{site.url}}/faqs#{{post.title | slugify }}">{{ post.title }}</a>  
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+      </section>
+
+      <!-- list posts in tag -->
+      <section class="faq-posts">
+      {% for post in site.categories["faqs"] %}
+        {% if post.tags contains t %}          
+          {% include faq-list-item.html %}
+        {% endif %}
+      {% endfor %}
+      </section>
+
+  {% else %}
+  <!-- skip tag if not in faq-tags -->
+  {% continue %}
+  {% endif %}
+{% endfor %}
+</div>
+</section>
+</div>
