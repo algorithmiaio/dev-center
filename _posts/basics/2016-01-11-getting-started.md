@@ -13,7 +13,7 @@ image:
 
 This is a quick guide to get you started using the Algorithmia API. We'll walk through how to get started with an algorithm and make your first API call.
 
-You can follow this guide immediately by making a call on the command line via cURL. If you'd like to get up and running with another language, check out our client guides for instructions on how to install a language-specific client.
+You can follow this guide immediately by making a call on the command line via cURL. If you'd like to get up and running with another language, check out our [client guides](/clients) for instructions on how to install a language-specific client.
 
 ## Finding an Algorithm
 
@@ -40,7 +40,7 @@ curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorizatio
 Make sure to replace `YOUR_NAME` with your name & `YOUR_API_KEY` with your API key.
 {: .notice-warning}
 
-You can also use one of the clients to make your call. See below for examples or visit one of the client guides for more detail specific to your language.
+You can also use one of the clients to make your call. See below for examples or visit one of the [client guides](/clients) for more detail specific to your language.
 
 > cURL:
 
