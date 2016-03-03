@@ -22,7 +22,7 @@ The profile overview provides a rich source of information about the algorithm. 
 
 The tagline lives underneath the title of the algorithm and is a succinct way to let you quickly understand what it does. This tagline also appears under the title of the algorithm in marketplace search results for quick reference. In the case of Nudity Detection, you can see that the author has provided the tagline "Detect nudity in pictures" so you know exactly what to expect!
 
-You can also see that the number of stars, followers, and number of API calls the algorithm has in the statistics bar below below the purple section. You can star or follow the algorithm by clicking on one of those two icons!
+You can also see that the number of stars, followers, and number of API calls the algorithm has in the statistics bar below below the purple section. You can star or follow the algorithm by clicking on one of those two icons! Following will subscribe you to comments and help you keep up to date with activity on that particular algorithm. Starring an algorithm is like giving the author a virtual high-five! :pray:
 
 #### Description, Pricing, & Permissions:
 
@@ -36,9 +36,9 @@ By using the left-hand navigation on the profile page, you can see see the prici
 
 ![Algorithm Profile pricing](/images/post_images/algorithm_profiles/pricing.png)
 
-The pricing page, shown above, is an interactive section of the profile where you can estimate the cost of the algorithm. It uses the average duration of the call and a number of API calls to calculate the cost in credits. 
+The pricing page, shown above, is an interactive section of the profile where you can estimate the cost of the algorithm. It uses the average duration of calls across the system and the number of API calls to calculate the estimated cost in credits.
 
-The estimate is based off the average duration of the call. Your call duration may vary slightly. 
+The estimate is based off the average duration of API calls. Your call duration may vary slightly.
 {: .notice-warning }
 
 ![Algorithm Profile permissions](/images/post_images/algorithm_profiles/permissions.png)
@@ -63,4 +63,4 @@ If the algorithm is open-source, you will see a tab in the purple overview secti
 
 #### Wrapping Up
 
-You should not have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call](http://developers.algorithmia.com/guides/getting-started/) or learn more about [algorithm pricing, permissions, and versioning](http://developers.algorithmia.com/faqs/algorithm_basics/).
+You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call](http://developers.algorithmia.com/guides/getting-started/) or learn more about [algorithm pricing, permissions, and versioning](http://developers.algorithmia.com/faqs/algorithm_basics/).
