@@ -18,24 +18,24 @@ You can also upload data to your data collection by hand. Uploading through the 
 
 To upload a file through the web browser, first navigate to your data collections by clicking on your profile drop down:
 
-![access data](/images/post_images/uploading_data/nav_bar_dropdown.png)
+![access data](/images/post_images/faqs/uploading_data/nav_bar_dropdown.png)
 
 
 After you click on "Manage Data", you'll be brought to your data collections. If you already have collections or data created by algorithm calls, you'll see those on the left hand panels. Since we are uploading a new file, first we'll create a new collection by clicking the "Add Collection" button:
 
-![new collection](/images/post_images/uploading_data/click_add_collection.png)
+![new collection](/images/post_images/faqs/uploading_data/click_add_collection.png)
 
 Next, choose a name for your collection. The name should be alphanumeric and can't contain spaces. Be sure to give it a descriptive name!
 
-![name_collection](/images/post_images/uploading_data/name_collection.png)
+![name_collection](/images/post_images/faqs/uploading_data/name_collection.png)
 
 Next, to start adding files to your new collection, you can either drag and drop from your computer to the box labeled "Drop files here to upload" and the uploading process will begin immediately. Alternatively, you can also click on the uploading box to bring up a file navigator so that you can select files.
 
-![add file](/images/post_images/uploading_data/add_file.png)
+![add file](/images/post_images/faqs/uploading_data/add_file.png)
 
 Finally, be sure to check the permissions on your collection. You can select Private, My Algorithms, or Public. 
 
-![make public](/images/post_images/uploading_data/make_public.png)
+![make public](/images/post_images/faqs/uploading_data/make_public.png)
 
 * "Private" means that only your account will have access to the collection.
 * "My algorithms" means that any algorithm that you have authored will be able to access the collection. An example of this would be if you write an algorithm that uses a trained model. You can store the model file in your collection and any time a user calls your algorithm, it will be able to access that file. Users trying to access the file directly or from another algorithm would not have permissions to do so.
