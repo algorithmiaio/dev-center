@@ -44,7 +44,8 @@ There are a few levels to consider when writing a bounty and depending on your p
 
 The problem can range from something as mundane as converting between file formats to something as abstract as a combinatorial optimization problem. Describe the problem briefly, include any relevant links to research, papers, similar examples or even Wikipedia if these resources can help clarify the problem. 
 
-Be sure to provide example data. To make this easier, you can put files in the Data API and make them publicly readable. If you don't have example data available, please provide a very clear examples of what you expect the data to be and how it will look as input.
+Be sure to provide example data. To make this easier, you can put files in the Data API and make them publicly readable. For more information on how to upload your sample data through the web browser, follow [this step-by-step guide](/faqs/how-do-i-get-my-data-into-algorithmia/). If you don't have example data available, please provide a very clear examples of what you expect the data to be and how it will look as input.
+
 
 **2. Specify the interface**
 
