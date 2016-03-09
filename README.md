@@ -1,4 +1,4 @@
-[![Build Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge/master)](https://app.shippable.com/projects/56a12f721895ca447472408e/builds/latest)
+[![Run Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge?branch=master)](https://app.shippable.com/projects/56a12f721895ca447472408e)
 
 Algorithmia Developer Center
 ========
