@@ -2,7 +2,7 @@
 layout: article
 title:  "All About Bounties"
 excerpt: "An introduction to the bounty system."
-date:   2016-01-11 01:19:38
+date:   2016-03-10 01:19:38
 categories: basics 
 tags: [getting-started]
 show_related: true
@@ -64,6 +64,11 @@ If your bounty is a particularly difficult problem, your odds of getting a succe
 In order to incentivize algorithm developers to develop an algorithm that fulfills your bounty, you can pledge between $10 and $10,000 USD to the solution. Bounties offered with a monetary value are far more likely to interest algorithm developers. 
 
 Pledging a bounty will start a 60-day countdown on your bounties page, and if your bounty is not fulfilled within those 60 days you will have the choice of either receiving a refund or renewing your bounty pledge. Algorithmia collects a 20% fee when you pledge a bounty. Bounties may be pledged in USD, Algorithmia credits, or both.
+
+When you pledge a monetary bounty, you will we see a charge for the amount pledged. We hold the money in escrow while the bounty is live. If no solution is found, you have the option to receive a full refund after 60 days or extend the bounty for more time.
+{: .notice-info }
+
+Find more details in the [Bounty Terms and Conditions](https://algorithmia.com/bounty_terms). 
 
 ## The Bounty Review Process
 
