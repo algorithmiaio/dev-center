@@ -38,7 +38,9 @@ All posts, layouts, includes, stylesheets, assets, and whatever else is grouped 
 
 Find all posts under the `_posts` directory.
 
-The compiled Jekyll site outputs to _site/.
+If you are unfamiliar with Jekyll and the templating engine, please take a look at the `_drafts` folder for instructions on how to view drafts as well as many sample posts explaining how to do common tasks. 
+
+The compiled Jekyll site outputs to `_site/`.
 
 
 ### Writing Posts
@@ -67,7 +69,7 @@ sitemap: false #true by default
 
 For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default. 
 
-Use `excerpt` to set the text that appears in under the article title in the view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. Note: If the first line of your post is a templating tag, it will not automatically pick up an excerpt. 
+Use `excerpt` to set the text that appears in under the article title in the collection view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. _Note:_ If the first line of your post is a templating tag, it will not automatically pick up an excerpt. 
 
 In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post. 
 
@@ -79,7 +81,11 @@ _posts/guides/2016-01-05-example-post.md
 ```
 
 
-If you are unfamiliar with Jekyll and the templating engine, please take a look at the `_drafts` folder for instructions on how to view drafts as well as many sample posts explaining how to do common tasks. 
+### Pulling content from GitHub
+
+Each client for the Algorithmia API is represented under the clients directory and has a special front-matter field of `repository`. When you compile your jekyll site, a plugin will download the git repository and create an index page from the README. The goal is to automate the construction of client documentation pages and keep them in sync with README documentation.
+
+Please see the draft post `pulling-readmes-from-github` for more information.
 
 
 Contributing
