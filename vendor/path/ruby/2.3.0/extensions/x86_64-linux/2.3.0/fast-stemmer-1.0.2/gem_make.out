@@ -1,0 +1,559 @@
+current directory: /home/parallels/dev-center/vendor/path/ruby/2.3.0/gems/fast-stemmer-1.0.2/ext
+/home/parallels/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160331-11072-1u8qm3k.rb extconf.rb
+creating Makefile
+
+current directory: /home/parallels/dev-center/vendor/path/ruby/2.3.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR=" clean
+
+current directory: /home/parallels/dev-center/vendor/path/ruby/2.3.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR="
+compiling porter.c
+porter.c: In function ‘step1ab’:
+porter.c:233:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    {  if (ends(z, "\04" "sses")) z->k -= 2; else
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:234:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\03" "ies")) setto(z, "\01" "i"); else
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:234:7: warning: passing argument 2 of ‘setto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\03" "ies")) setto(z, "\01" "i"); else
+       ^
+porter.c:196:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void setto(struct stemmer * z, char * s)
+             ^
+porter.c:237:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    if (ends(z, "\03" "eed")) { if (m(z) > 0) z->k--; } else
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:238:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    if ((ends(z, "\02" "ed") || ends(z, "\03" "ing")) && vowelinstem(z))
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:238:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    if ((ends(z, "\02" "ed") || ends(z, "\03" "ing")) && vowelinstem(z))
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:240:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "at")) setto(z, "\03" "ate"); else
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:240:7: warning: passing argument 2 of ‘setto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "at")) setto(z, "\03" "ate"); else
+       ^
+porter.c:196:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void setto(struct stemmer * z, char * s)
+             ^
+porter.c:241:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "bl")) setto(z, "\03" "ble"); else
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:241:7: warning: passing argument 2 of ‘setto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "bl")) setto(z, "\03" "ble"); else
+       ^
+porter.c:196:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void setto(struct stemmer * z, char * s)
+             ^
+porter.c:242:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "iz")) setto(z, "\03" "ize"); else
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:242:7: warning: passing argument 2 of ‘setto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       if (ends(z, "\02" "iz")) setto(z, "\03" "ize"); else
+       ^
+porter.c:196:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void setto(struct stemmer * z, char * s)
+             ^
+porter.c:249:7: warning: passing argument 2 of ‘setto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       else if (m(z) == 1 && cvc(z, z->k)) setto(z, "\01" "e");
+       ^
+porter.c:196:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void setto(struct stemmer * z, char * s)
+             ^
+porter.c: In function ‘step1c’:
+porter.c:257:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    if (ends(z, "\01" "y") && vowelinstem(z)) z->b[z->k] = 'i';
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c: In function ‘step2’:
+porter.c:267:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'a': if (ends(z, "\07" "ational")) { r(z, "\03" "ate"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:267:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'a': if (ends(z, "\07" "ational")) { r(z, "\03" "ate"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:268:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\06" "tional")) { r(z, "\04" "tion"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:268:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\06" "tional")) { r(z, "\04" "tion"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:270:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'c': if (ends(z, "\04" "enci")) { r(z, "\04" "ence"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:270:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'c': if (ends(z, "\04" "enci")) { r(z, "\04" "ence"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:271:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "anci")) { r(z, "\04" "ance"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:271:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "anci")) { r(z, "\04" "ance"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:273:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'e': if (ends(z, "\04" "izer")) { r(z, "\03" "ize"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:273:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'e': if (ends(z, "\04" "izer")) { r(z, "\03" "ize"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:275:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'l': if (ends(z, "\03" "bli")) { r(z, "\03" "ble"); break; } /*-DEPARTURE-*/
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:275:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'l': if (ends(z, "\03" "bli")) { r(z, "\03" "ble"); break; } /*-DEPARTURE-*/
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:280:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "alli")) { r(z, "\02" "al"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:280:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "alli")) { r(z, "\02" "al"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:281:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "entli")) { r(z, "\03" "ent"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:281:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "entli")) { r(z, "\03" "ent"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:282:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\03" "eli")) { r(z, "\01" "e"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:282:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\03" "eli")) { r(z, "\01" "e"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:283:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ousli")) { r(z, "\03" "ous"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:283:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ousli")) { r(z, "\03" "ous"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:285:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'o': if (ends(z, "\07" "ization")) { r(z, "\03" "ize"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:285:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'o': if (ends(z, "\07" "ization")) { r(z, "\03" "ize"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:286:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ation")) { r(z, "\03" "ate"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:286:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ation")) { r(z, "\03" "ate"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:287:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "ator")) { r(z, "\03" "ate"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:287:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\04" "ator")) { r(z, "\03" "ate"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:289:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 's': if (ends(z, "\05" "alism")) { r(z, "\02" "al"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:289:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 's': if (ends(z, "\05" "alism")) { r(z, "\02" "al"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:290:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "iveness")) { r(z, "\03" "ive"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:290:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "iveness")) { r(z, "\03" "ive"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:291:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "fulness")) { r(z, "\03" "ful"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:291:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "fulness")) { r(z, "\03" "ful"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:292:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "ousness")) { r(z, "\03" "ous"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:292:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\07" "ousness")) { r(z, "\03" "ous"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:294:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 't': if (ends(z, "\05" "aliti")) { r(z, "\02" "al"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:294:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 't': if (ends(z, "\05" "aliti")) { r(z, "\02" "al"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:295:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "iviti")) { r(z, "\03" "ive"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:295:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "iviti")) { r(z, "\03" "ive"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:296:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\06" "biliti")) { r(z, "\03" "ble"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:296:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\06" "biliti")) { r(z, "\03" "ble"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:298:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'g': if (ends(z, "\04" "logi")) { r(z, "\03" "log"); break; } /*-DEPARTURE-*/
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:298:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'g': if (ends(z, "\04" "logi")) { r(z, "\03" "log"); break; } /*-DEPARTURE-*/
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c: In function ‘step3’:
+porter.c:308:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'e': if (ends(z, "\05" "icate")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:308:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'e': if (ends(z, "\05" "icate")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:309:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ative")) { r(z, "\00" ""); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:309:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "ative")) { r(z, "\00" ""); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:310:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "alize")) { r(z, "\02" "al"); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:310:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\05" "alize")) { r(z, "\02" "al"); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:312:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'i': if (ends(z, "\05" "iciti")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:312:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'i': if (ends(z, "\05" "iciti")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:314:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'l': if (ends(z, "\04" "ical")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:314:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 'l': if (ends(z, "\04" "ical")) { r(z, "\02" "ic"); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:315:14: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\03" "ful")) { r(z, "\00" ""); break; }
+              ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:315:14: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+              if (ends(z, "\03" "ful")) { r(z, "\00" ""); break; }
+              ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c:317:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 's': if (ends(z, "\04" "ness")) { r(z, "\00" ""); break; }
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:317:4: warning: passing argument 2 of ‘r’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    case 's': if (ends(z, "\04" "ness")) { r(z, "\00" ""); break; }
+    ^
+porter.c:205:13: note: expected ‘char *’ but argument is of type ‘const char *’
+ static void r(struct stemmer * z, char * s) { if (m(z) > 0) setto(z, s); }
+             ^
+porter.c: In function ‘step4’:
+porter.c:325:4: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    {  case 'a': if (ends(z, "\02" "al")) break; return;
+    ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:326:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'c': if (ends(z, "\04" "ance")) break;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:327:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\04" "ence")) break; return;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:328:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'e': if (ends(z, "\02" "er")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:329:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'i': if (ends(z, "\02" "ic")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:330:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'l': if (ends(z, "\04" "able")) break;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:331:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\04" "ible")) break; return;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:332:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'n': if (ends(z, "\03" "ant")) break;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:333:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\05" "ement")) break;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:334:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\04" "ment")) break;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:335:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\03" "ent")) break; return;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:336:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'o': if (ends(z, "\03" "ion") && (z->b[z->j] == 's' || z->b[z->j] == 't')) break;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:337:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\02" "ou")) break; return;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:339:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 's': if (ends(z, "\03" "ism")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:340:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 't': if (ends(z, "\03" "ate")) break;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:341:17: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+                 if (ends(z, "\03" "iti")) break; return;
+                 ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:342:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'u': if (ends(z, "\03" "ous")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:343:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'v': if (ends(z, "\03" "ive")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+porter.c:344:7: warning: passing argument 2 of ‘ends’ discards ‘const’ qualifier from pointer target type [enabled by default]
+       case 'z': if (ends(z, "\03" "ize")) break; return;
+       ^
+porter.c:182:12: note: expected ‘char *’ but argument is of type ‘const char *’
+ static int ends(struct stemmer * z, char * s)
+            ^
+compiling porter_wrap.c
+porter_wrap.c: In function ‘stem_word’:
+porter_wrap.c:20:17: warning: unused variable ‘i’ [-Wunused-variable]
+  size_t length, i;
+                 ^
+linking shared-object stemmer.so
+
+current directory: /home/parallels/dev-center/vendor/path/ruby/2.3.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR=" install
+/usr/bin/install -m 0755 stemmer.so ./.gem.20160331-11072-yhqqvp

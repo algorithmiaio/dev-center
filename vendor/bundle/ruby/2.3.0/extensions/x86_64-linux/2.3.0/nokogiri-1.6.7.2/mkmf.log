@@ -1,0 +1,38 @@
+"gcc -o conftest -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x86_64-linux -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I.     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC  conftest.c  -L. -L/home/parallels/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/parallels/.rvm/rubies/ruby-2.3.0/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,'/../lib' -Wl,-R'/../lib' -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x86_64-linux -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I.     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC    -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for libxml-2.0 is not found
+package configuration for libxslt is not found
+package configuration for libexslt is not found
+"gcc -E -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x86_64-linux -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/parallels/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I.     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline  conftest.c -o conftest.i"
+conftest.c:3:31: fatal error: libxml/xmlversion.h: No such file or directory
+ #include <libxml/xmlversion.h>
+                               ^
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+4: 
+5: #if LIBXML_VERSION < 20621
+6: #error libxml2 is way too old
+7: #endif
+/* end */
+
