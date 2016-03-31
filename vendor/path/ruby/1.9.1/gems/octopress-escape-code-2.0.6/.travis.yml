@@ -1,8 +1,0 @@
-language: ruby
-rvm:
-  - 2.0.0
-  - 1.9.3
-script: bundle exec clash test
-notifications:
-  slack:
-    secure: Y3PHypO1A9pd1RneZdRhGIJVb/uchEzjCjHa3myz3UjAY9opjHJRnL4EKoNO6WHAOi0ON9Za2GwAeiT+Sl8YxSsAy8mna33P7gORT4i0it9VFfbOSAe5OBwSbO6H54CZUofWAF5aYGpIfhrPbBek9i0tlT3SH+V259vV/FVDkpw=
