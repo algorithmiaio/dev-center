@@ -25,6 +25,9 @@
   .post-teaser {
     position: relative;
     display: block;
+    img {
+          width: 75%;
+        }
   }
 
   &.navigation {
