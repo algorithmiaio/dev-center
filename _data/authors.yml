@@ -1,7 +1,6 @@
 liz_rush:
   slug: liz_rush
   name: Liz Rush
-  web: https://lizmrush.com
   email: lizr@algorithmia.com
   bio: "Developer Evangelist & Software Engineer"
   avatar: /authors/lizrush.jpeg
@@ -15,4 +14,12 @@ matt_kiser:
   bio: "Product marketing manager at Algorithmia, helping developers give their apps super powers."
   avatar: /authors/mattkiser.jpeg
   twitter: matt_kiser
+
+diego_oppenheimer:
+  slug: diego_oppenheimer
+  name: Diego Opppenheimer
+  email: diego@algorithmia.com
+  bio: "CEO and Co-Founder of Algorithmia"
+  avatar: /authors/diegooppenheimer.jpeg
+  twitter: doppenhe
 
