@@ -69,7 +69,7 @@ String input = "\"YOUR_NAME\"";
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 Algorithm algo = client.algo("algo://demo/Hello/0.1.1");
 AlgoResponse result = algo.pipeJson(input);
-System.out.println(result.asJson());
+System.out.println(result.asJsonString());
 {% endhighlight %}
 
 > Scala:
@@ -82,7 +82,7 @@ val input = "YOUR_NAME"
 val client = Algorithmia.client("YOUR_API_KEY")
 val algo = client.algo("algo://demo/Hello/0.1.1")
 val result = algo.pipeJson(input)
-System.out.println(result.asJson)
+System.out.println(result.asJsonString)
 {% endhighlight %}
 
 > JavaScript:
