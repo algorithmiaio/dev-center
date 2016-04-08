@@ -1,11 +1,9 @@
 liz_rush:
   slug: liz_rush
-  name: Liz Rush
+  name: Algorithmia Developers
   email: developers@algorithmia.com
-  bio: "Developer Evangelist & Software Engineer"
   avatar: /authors/lizrush.jpeg
-  twitter: lizmrush
-  linkedin: lizrush
+  twitter: algorithmia
 
 matt_kiser:
   slug: matt_kiser

@@ -26,3 +26,6 @@ clients:
 
 sample-apps:
   name: Sample Apps
+
+how-to:
+  name: How-to
