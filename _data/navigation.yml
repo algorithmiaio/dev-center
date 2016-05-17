@@ -25,7 +25,7 @@
   excerpt: "Read the specifics of the API here"
   image: /icons/Algorithmia_API Docs.png
 
-  - title: Alogrithm Developer Docs
+- title: Algorithm Developer Docs
   url: /algorithm-development
   excerpt: "Read the specifics of how to build an algorithm of your choice."
   image: /icons/Algorithmia_Guides.png

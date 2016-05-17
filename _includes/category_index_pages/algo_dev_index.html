@@ -1,0 +1,12 @@
+{% assign basics_tags = "getting-started|guides" | split:"|" %}
+
+<div id="page-wrapper">
+  <div class="tiles">
+    <!-- <a href="{{ site.url }}/algorithm-development/guides">Test</a> -->
+    {% assign sorted_languages = site.categories["algorithm-development"] | sort:"title" %}
+    {% for post in sorted_languages %}
+      {% include post-grid.html %}
+    {% endfor %}
+  </div><!-- /.tiles -->
+
+</div>
