@@ -7,6 +7,8 @@ permalink: /algorithm-development/guides/scala-guide
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
+image:
+    teaser: /language_logos/scala.png
 ---
 
 Algorithmia supports algorithm development in Scala.

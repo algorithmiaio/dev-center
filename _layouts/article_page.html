@@ -25,17 +25,6 @@ layout: default
 			<div class="inner-wrap">
 				<div id="content" class="page-content" itemprop="articleBody">
 					{{ content }}
-					<hr />
-
-					<footer class="page-footer">
-						{% if page.share != false %}{% include share-this.html %}{% endif %}
-						{% include page-meta.html %}<hr />
-						{% if page.categories %}{% include page-author.html %}{% endif %}
-					</footer><!-- /.footer -->
-
-					<aside>
-						{% if page.comments == true %}{% include comments.html %}{% endif %}
-					</aside>
 
 				</div><!-- /.content -->
 			</div><!-- /.inner-wrap -->

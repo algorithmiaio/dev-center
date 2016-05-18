@@ -7,6 +7,8 @@ permalink: /algorithm-development/guides/java-guide
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
+image:
+    teaser: /language_logos/java.png
 ---
 
 Algorithmia supports algorithm development in Java.

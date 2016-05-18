@@ -7,6 +7,8 @@ permalink: /algorithm-development/guides/ruby-guide
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
+image:
+    teaser: /language_logos/ruby.png
 ---
 
 

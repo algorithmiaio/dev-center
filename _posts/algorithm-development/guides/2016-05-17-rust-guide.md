@@ -7,6 +7,8 @@ permalink: /algorithm-development/guides/rust-guide
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
+image:
+    teaser: /language_logos/rust.png
 ---
 
 Algorithmia supports development of algorithms in Rust.
