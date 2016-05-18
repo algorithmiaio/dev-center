@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "JavaScript Algorithm"
+title:  "JavaScript Algorithm Development"
 excerpt: "Build your algorithm in JavaScript"
 date:   2016-05-16 14:28:42
 permalink: /algorithm-development/guides/javascript-guide
@@ -9,7 +9,7 @@ show_related: true
 author: liz_rush
 ---
 
-## Javascript Algorithm Development
+Algorithmia supports algorithm development in JavaScript.
 
 #### Available APIs
 
@@ -35,64 +35,55 @@ Note that you will still need to import your package to your algorithm file. For
 
 `lodash = require("lodash")();`
 
-> #### I/O for Your Algorithms:
+#### I/O for Your Algorithms:
 
-> Datatypes that are either sequences that you don't wish to iterate over such as strings or inputs that are scalar in nature such as a numeric data type can be accessed via input, however you will probably want to check for the data type you are expecing to receive.
+Datatypes that are either sequences that you don't wish to iterate over such as strings, or inputs that are scalar in nature such as numeric data types can be accessed via input, however you will probably want to check for the data type you are expecting to receive.
 
-```
+{% highlight javascript %}
 exports.apply = function(input, cb) {
 	if (typeof input == String){
     	cb(null, input);
     }
 };
-```
+{% endhighlight %}
 
-> A string input:
+A string input:
 
-```
-"~3.14159"
-```
+{% highlight javascript %}
+input_string = "~3.14159"
+{% endhighlight %}
 
+Inputs that are sequences such as: arrays, objects and buffers (binary buffer sequence such as an image file) can be handled as you would any JavaScript sequence. For example:
 
-> Inputs that are sequences such as: arrays, objects and buffer (binary buffer sequence such as an image file) can be handled as you would any Python sequence, however you will probably want to check for the data type you are expecing to receive. For example:
-
-```
+{% highlight javascript %}
 exports.apply = function(input, cb) {
 	if (typeof input == Array){
 	    cb(null, "A few of the most starred node.js packages: " + input[0] + ", " + input[1] + ", " + input[2]);
 	}    
 };
-```
+{% endhighlight %}
 
-> Here is an example of an array input:
+Here is an example of an array input:
 
-```
-["express", "gulp", "async"]
-```
+{% highlight javascript %}
+input_array = ["express", "gulp", "async"]
+{% endhighlight %}
 
-> Which will return:
+Which will return:
 
-```
-"A few of the most starred node.js packages: express, gulp, async"
-```
+`"A few of the most starred node.js packages: express, gulp, async"`
 
-#### I/O for Your Algorithms
-
-When you are creating an algorithm that takes input from other algorithms it's important to understand what data types to expect and what data types you may return as output that the user of your algorithm will ingest.
-
-Note that you can also return any of these data structures in your algorithm.
+When you are creating an algorithm that takes input from other algorithms it's important to understand the data types your algorithm ingests and be thoughtful of the data types you output that others will ingest as input.
 
 #### Error Handling
 
 Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
-> #### Error Handling:
-
-```
+{% highlight javascript %}
 var error = "Invalid graph structure"
 // Where cb is a callback function passed into your apply method
 cb(error, input)
-```
+{% endhighlight %}
 
 #### Calling Other Algorithms and Managing Data
 
