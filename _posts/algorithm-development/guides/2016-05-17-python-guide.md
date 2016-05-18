@@ -16,7 +16,7 @@ Algorithmia supports algorithm development in Python.
 #### Available APIs
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
-The full <a href="https://docs.python.org/2.7/">Python 2.7 language and standard library</a>
+The full <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="http://developers.algorithmia.com/clients/python/">Algorithmia Python Client</a>.
 
