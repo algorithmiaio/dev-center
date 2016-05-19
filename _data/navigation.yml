@@ -5,25 +5,30 @@
   excerpt: "Get up and running with Algorithmia"
   image: /icons/Algorithmia_Basics.png
 
-- title: Guides
-  url: /guides/
-  excerpt: "Overviews & topic guides"
-  image: /icons/Algorithmia_Guides.png
+# - title: Guides
+#   url: /algorithm-development/guides/
+#   excerpt: "Overviews & topic guides"
+#   image: /icons/Algorithmia_Guides.png
 
 - title: Clients
   url: /clients/
   excerpt: "Use Algorithmia clients & libraries"
   image: /icons/Algorithmia_Clients.png
 
-- title: Sample Apps
-  url: /samples/
-  excerpt: "See fully developed example apps"
-  image: /icons/Algorithmia_Sample Apps.png
+# - title: Sample Apps
+#   url: /samples/
+#   excerpt: "See fully developed example apps"
+#   image: /icons/Algorithmia_Sample Apps.png
 
 - title: API Docs
   url: http://docs.algorithmia.com
   excerpt: "Read the specifics of the API here"
   image: /icons/Algorithmia_API Docs.png
+
+- title: Algorithm Development
+  url: /algorithm-development
+  excerpt: "Read the specifics of how to build an algorithm of your choice."
+  image: /icons/Algorithmia_Guides.png
 
 - title: FAQs
   url: /faqs/
