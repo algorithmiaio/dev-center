@@ -15,6 +15,24 @@ Algorithmia supports development of algorithms in Rust.
 
 #### Handling Input and Output
 
+Rust algorithms are expected to have a public type named `Algo` that implements the [`algorithmia::algo::EntryPoint`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html) trait.
+In many cases, you may prefer to implement [`algorithmia::algo::DecodedEntryPoint`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html) which provides an alternate implementation of `EntryPoint`.
+
+How you implement `EntryPoint` depends entirely on the input you want your algorithm to receive.
+
+- For text input, override [`apply_str`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_str)
+- For binary input, override [`apply_bytes`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_bytes)
+- For JSON input:
+  - Override [`apply_json`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_json) if you want to work with the `rustc_serialize` [`Json` enum](https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/enum.Json.html) as input
+  - Implement `DecodedEntryPoint` and override [`apply_decoded`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html#tymethod.apply_decoded) if you want to automatically decode the input to a type that you define
+
+In all cases, the output of your algorithm will be `Result`-wrapped [`algorithmia::algo::AlgoOutput`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/enum.AlgoOutput.html) which can represent text, json, or binary output.
+There are several `From` conversions implemented to make it possible to simply `return Ok("Some text".into())`
+
+There are several examples below to demonstrate the possibilities.
+
+#### Handle text input:
+
 Text input is handled implementing `EntryPoint` to override `apply_str`.
 
 {% highlight rust %}
@@ -104,21 +122,6 @@ impl DecodedEntryPoint for Algo {
 }
 {% endhighlight %}
 
-Rust algorithms are expected to have a public type named `Algo` that implements the [`algorithmia::algo::EntryPoint`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html) trait.
-In many cases, you may prefer to implement [`algorithmia::algo::DecodedEntryPoint`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html) which provides an alternate implementation of `EntryPoint`.
-
-How you implement `EntryPoint` depends entirely on the input you want your algorithm to receive.
-
-- For text input, override [`apply_str`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_str)
-- For binary input, override [`apply_bytes`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_bytes)
-- For JSON input:
-  - Override [`apply_json`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_json) if you want to work with the `rustc_serialize` [`Json` enum](https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/enum.Json.html) as input
-  - Implement `DecodedEntryPoint` and override [`apply_decoded`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html#tymethod.apply_decoded) if you want to automatically decode the input to a type that you define
-
-In all cases, the output of your algorithm will be `Result`-wrapped [`algorithmia::algo::AlgoOutput`](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/enum.AlgoOutput.html) which can represent text, json, or binary output.
-There are several `From` conversions implemented to make it possible to simply `return Ok("Some text".into())`
-
-There are several code snippets on the right to demonstrate the possibilities.
 
 #### Error Handling
 
