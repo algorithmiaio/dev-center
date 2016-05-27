@@ -1,7 +1,6 @@
 {% assign basics_tags = "getting-started|guides" | split:"|" %}
-
-{% assign sorted_languages = site.categories["algorithm-development"] | sort:"title" %}
-{% for post in sorted_languages %}
+{% assign categories = site.categories["algorithm-development"] | sort:"title" %}
+{% for post in categories %}
   {% include post-grid.html %}
 {% endfor %}
 
