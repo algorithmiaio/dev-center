@@ -14,9 +14,9 @@ repository: https://github.com/algorithmiaio/algorithmia-cli.git
 
 # Hosting Model Overview
 
-Here you will find guides to hosting your scikit-learn, nltk, tensorflow or caffe model.
+Here you will find guides to hosting your model in the library of your choice.
 
-If you have any questions about Algorithmia or hosting your model <a href="mailto:support@algorithmia.com">get in touch</a>!
+If you have any questions about Algorithmia or <a href="http://blog.algorithmia.com/2016/05/how-we-hosted-our-model-as-a-microservice/">hosting your model</a> on the Algorithmia platform please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 
 ### Guides to Currently Supported Frameworks:
@@ -24,7 +24,7 @@ If you have any questions about Algorithmia or hosting your model <a href="mailt
 <div>
   {% for post in site.posts %}
   	{% if lang_tags == post.tags %}
-  		<div class="tile">
+  		<div class="tile-guides">
 	      	<a  href="{{ post.url }}">{{ post.title }}
 	      	{% if post.image.teaser %}
 	  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">

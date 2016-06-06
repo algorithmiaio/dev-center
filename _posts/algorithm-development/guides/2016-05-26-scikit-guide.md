@@ -7,10 +7,12 @@ permalink: /algorithm-development/guides/scikit-guide
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
+image:
+    teaser: /language_logos/python.png
 ---
 
 
-Welcome to hosting your scikit-learn model on Algorithmia!
+Welcome to hosting your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
 This guide is designed as an introduction to hosting a scikit-learn model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
@@ -120,4 +122,5 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 
-That's it for hosting your scikit-learn model on Algorithmia!
+That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
+

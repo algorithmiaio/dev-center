@@ -7,10 +7,12 @@ permalink: /algorithm-development/guides/nltk-guide
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
+image:
+    teaser: /language_logos/python.png
 ---
 
 
-Welcome to hosting your nltk model on Algorithmia!
+Welcome to hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!
 This guide is designed as an introduction to hosting a nltk model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
@@ -101,4 +103,4 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 
-That's it for hosting your nltk model on Algorithmia!
+That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">nltk</a> model on Algorithmia!

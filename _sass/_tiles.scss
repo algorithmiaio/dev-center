@@ -41,3 +41,12 @@
     }
   }
 }
+
+.tile-guides {
+  @include outer-container;
+  @include span-columns(3);
+  text-align: center;
+}
+
+
+
