@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tiles
+   Tiles and Tile-Guides
    ========================================================================== */
 
 .tile {
@@ -43,10 +43,20 @@
 }
 
 .tile-guides {
-  @include outer-container;
-  @include span-columns(3);
-  text-align: center;
+  a {
+    @include outer-container;
+    @include span-columns(3);
+    text-align: center;
+    margin: 10px $gutter $gutter 0;
+  }
 }
 
-
-
+// These icons are larger so cannot use above styles with same grid
+.data-connectors .tile-guides {
+  a {
+    margin: 10px $gutter $gutter 0;
+    }
+  img {
+    margin-top: 10px;
+  }
+}

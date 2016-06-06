@@ -8,8 +8,7 @@ tags: [model-guide-overview]
 show_related: false
 author: steph_kim
 image:
-    teaser: /language_logos/cli.png
-repository: https://github.com/algorithmiaio/algorithmia-cli.git
+    teaser: /icons/Algorithmia_Sample_Apps.png
 ---
 
 # Hosting Model Overview
@@ -20,10 +19,10 @@ If you have any questions about Algorithmia or <a href="http://blog.algorithmia.
 
 
 ### Guides to Currently Supported Frameworks:
-{% assign lang_tags = "algo-model-guide" | split:"|" %}
+{% assign model_tags = "algo-model-guide" | split:"|" %}
 <div>
   {% for post in site.posts %}
-  	{% if lang_tags == post.tags %}
+  	{% if model_tags == post.tags %}
   		<div class="tile-guides">
 	      	<a  href="{{ post.url }}">{{ post.title }}
 	      	{% if post.image.teaser %}
