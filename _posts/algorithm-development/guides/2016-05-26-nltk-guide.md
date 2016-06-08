@@ -56,9 +56,9 @@ Now is the time to set your dependencies that your model relies on.
 <img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Create your Algorithm
-Creating your alogorithm is easy!
+Creating your algorithm is easy!
 
-- To add an algorithm, simply click “Add Algortithm” from the user profile icon.
+- To add an algorithm, simply click “Add Algorithm” from the user profile icon.
 - Name, select the language, choose permissions and make the code either open or closed source.
 
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
