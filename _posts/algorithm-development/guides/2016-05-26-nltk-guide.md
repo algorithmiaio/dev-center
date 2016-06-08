@@ -48,13 +48,6 @@ Next, upload your pickled model to your newly created data collection.
 
 <img src="/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" style="width: 700px;"/>
 
-### Set your Dependencies
-Now is the time to set your dependencies that your model relies on.
-
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
-
-<img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" style="width: 700px;"/>
-
 ## Create your Algorithm
 Creating your algorithm is easy!
 
@@ -89,6 +82,13 @@ def apply(input):
     # Return output to user
     return model.classify(gender_features(input))
 {% endhighlight %}
+
+### Set your Dependencies
+Now is the time to set your dependencies that your model relies on.
+
+- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
+
+<img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use!
