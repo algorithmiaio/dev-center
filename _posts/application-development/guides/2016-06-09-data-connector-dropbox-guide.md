@@ -2,9 +2,9 @@
 layout: article_page
 title:  "Dropbox Data Source"
 excerpt: "How to configure your Dropbox data source and access your data via the Algorithmia Data API."
-date:   2016-06-06 11:46:03
-permalink: /algorithm-development/data-connector-guides/dropbox-guide
-tags: [alg-data-connectors]
+date:   2016-06-09 11:46:03
+permalink: /application-development/data-connector-guides/dropbox-guide
+tags: [app-data-connectors]
 show_related: false
 author: steph_kim
 image:
@@ -12,11 +12,11 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/dropbox.png
 ---
 
-# Dropbox Data Connector
-As an algorithm developer you can easily access the data you need from your S3 account. For example if you're building an algorithm that requires a large data file that is stored in your Dropbox account you can authorize Algorithmia to have read and write access to your Dropbox account. This guide will tell you how to authorize acess to your data source and what you can expect setting various permissions.
+# Dropbox Data Source Connection
+As an application developer you can easily access the data you need from your Dropbox account. For example if you're building an application that requires a large data file that is stored in your Dropbox account you can authorize Algorithmia to have read and write access to your Dropbox account. This guide will tell you how to authorize access to your data source and what you can expect setting various permissions.
 
 ## Data Source Basics
-All data sources have a protocol and a label that you will use to reference your data with. For instance Dropbox is the protocol we'll use in this guide and the label you will get later when you create your data connection. The label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
+All data sources have a protocol and a label that you will use to reference your data with. For instance S3 is the protocol we'll use in this guide and the label you will get later when you create your data connection. The label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Configure a New Data Connection to Dropbox
 To configure a new data connection you'll want to first navigate to 'https://algorithmia.com/data' where you will notice there is a panel that says 'Add Source'. Click that and it will bring up a panel that lets you chose between creating a new data source for AWS S3 or Dropbox. 
@@ -66,8 +66,6 @@ Accessing your data connection via the <a href="http://docs.algorithmia.com/#dat
 
 As long as you have your Dropbox data connection set up you can read and write data to it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data.
 
-**Note** As an algorithm author please be sure to host any data needed by your algorithms in the Algorithmia Data API.
-
 For example, to retrieve and print a file's contents in Python:
 
 - client = Algorithmia.client(“YOUR_API_KEY”)
@@ -77,28 +75,22 @@ For example, to retrieve and print a file's contents in Python:
 import Algorithmia
 import csv
 
-client = Algorithmia.client()
+client = Algorithmia.client("your_api_key")
 
 def dropbox_data():
-    # Get file by name
-    cf = client.file("dropbox:///Algorithmia/test_data.csv").getFile().name
-    # Open file
-    with open(cf, 'r') as f:
-        file_data = csv.reader(f, delimiter=','')
-        for row in file_data:
-            print(row)
-        
+    # Get file from Dropbox default data connector
+    data_file = client.file("dropbox:///Algorithmia/test_data.csv").get()
+    # Pass in file and pass in args required from the algorithm FpGrowth
+    input = [data_file, 5, 2]
+    algo = client.algo('paranoia/FpGrowth/0.2.0')
+    return algo.pipe(input)
 
-data = dropbox_data()
-
-def apply(input):
-    print(input)
-    return data
+dropbox_data()
 
 {% endhighlight %}
 
-## Details about Working with Data Connectors and the Data API
-If you're working with or building an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data connectors:
+## Details about Working with Data Sources and the Data API
+If you're working with or building an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data connections:
 
 {% highlight python %}
 algo.pipeJson({'inputFile':'dropbox:///Algorithmia/test_data.csv'})

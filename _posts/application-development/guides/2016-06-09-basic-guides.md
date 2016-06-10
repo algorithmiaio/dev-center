@@ -1,3 +1,16 @@
+---
+layout: article_page
+title:  "Basics"
+excerpt: "Basic Guides for Using Algorithmia in your Application"
+date:  2016-06-09 17:01:37
+categories: application-development
+tags: [app-guide-overview]
+show_related: false
+author: steph_kim
+image:
+    teaser: /icons/Algorithmia_Basics.png
+---
+
 <!-- create array of 'basics' tags -->
 {% assign basics_tags = "getting-started|algo-dev|how-to" | split:"|" %}
 

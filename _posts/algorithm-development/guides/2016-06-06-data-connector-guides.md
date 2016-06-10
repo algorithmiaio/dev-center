@@ -1,8 +1,8 @@
 ---
 layout: article_page
-title:  "Guide to Data Connectors"
-excerpt: "How to get your data in and out of the Data API"
-date:   2016-05-26 11:46:03
+title:  "Data Portal Guides"
+excerpt: "Here you'll find guides to hosting your data on Algorithmia or you can create a connection to your hosted files on Dropbox or S3."
+date:   2016-06-06 11:46:03
 categories: algorithm-development
 tags: [data-connectors-overview]
 show_related: false
@@ -12,16 +12,15 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/connectors.png
 ---
 
-# Data Connectors
-- Algorithmia supports reading and writing data to the Algorithmia Data API, S3, and Dropbox
-- Why would you want to do this???
-- By creating an Algorithmia account you automatically have access to the Data API, and can store data or algorithm outputs there
-- If you have a Dropbox account or S3 account, you can create a data connector to permit Algorithmia to read and write files on your behalf
+# Data Portal Connections
+<a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> makes it easy to connect your algorithm to data sources with connections to <a href="https://aws.amazon.com/s3/">Amazon's S3 service</a>, <a href="https://www.dropbox.com/">Dropbox</a> or you can host your files for free on the <a href="https://algorithmia.com/data/hosted">Algorithmia platform</a>. With these options it's easy to integrate your data into the algorithm you're creating.
+
+How easy is it? By creating an Algorithmia account you automatically have access to <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> platform where you can store your data or algorithm output and if you have a <a href="https://www.dropbox.com/">Dropbox</a> or an <a href="https://aws.amazon.com/s3/">Amazon S3</a> account you can configure a new data source to permit Algorithmia to read and write files on your behalf. Once you've set up your data connections all three file hosting options are accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
-### Guides to Currently Supported Frameworks:
-{% assign data_connector_tags = "data-connectors" | split:"|" %}
+## Data Portal Guides:
+{% assign data_connector_tags = "alg-data-connectors" | split:"|" %}
 <div class="data-connectors">
   {% for post in site.posts %}
   	{% if data_connector_tags == post.tags %}

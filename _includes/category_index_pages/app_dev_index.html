@@ -1,0 +1,6 @@
+{% assign basics_tags = "getting-started|guides" | split:"|" %}
+{% assign categories = site.categories["application-development"] | sort:"title" %}
+{% for post in categories %}
+  {% include post-grid.html %}
+{% endfor %}
+

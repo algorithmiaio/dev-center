@@ -3,8 +3,8 @@ layout: article_page
 title:  "AWS S3 Data Source"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
-permalink: /algorithm-development/data-connector-guides/s3-guide
-tags: [alg-data-connectors]
+permalink: /application-development/data-connector-guides/s3-guide
+tags: [app-data-connectors]
 show_related: false
 author: steph_kim
 image:
@@ -14,7 +14,7 @@ repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/imag
 
 
 # Amazon's AWS Data Source Connection
-As an algorithm developer you can easily access the data you need from your S3 account. For example if you're building an algorithm that requires a large data file that is stored in your S3 account you can authorize Algorithmia to have read and write access to your S3 account. This guide will tell you how to authorize acess to your data source and what you can expect setting various permissions.
+As an application developer you can easily access the data you need from your S3 account. For example if you're building an application that requires a large data file that is stored in your S3 account you can authorize Algorithmia to have read and write access to your S3 account. This guide will tell you how to authorize acess to your data source and what you can expect setting various permissions.
 
 ## Data Source Basics
 All data sources have a protocol and a label that you will use to reference your data with. For instance S3 is the protocol we'll use in this guide and the label you will get later when you create your data connection. The label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
@@ -55,7 +55,7 @@ The default path restrictions are set to allow acces to all paths in your S3 acc
 <img src="/images/post_images/data_connectors/s3_restricted_paths.png" alt="Add path restrictions" style="width: 700px;"/>
 
 ### Setting Read and Write Access
-The default access for your data source is set to read only, but you change this to write and read access by checking the 'Write Access' box.
+The default access for your data connection is set to read only, but you change this to write and read access by checking the 'Write Access' box.
 
 **Note:** There are some important considerations with changing this. Write access also means you can ***delete*** anything in the path you've specified when setting the path restrictions in the previous step so be careful that you want read-write-delete access to the path you set in 'Path Restriction'.
 
@@ -69,34 +69,28 @@ As long as you have your S3 data connection set up you can read and write data t
 For example, to retrieve and print a file's contents in Python:
 
 - client = Algorithmia.client(“YOUR_API_KEY”)
-- client.file(“S3+unique_label://my_bucket/my_file.csv).getFile().name
+- client.file(“s3+unique_label://my_bucket/my_file.csv").getFile().name
 
 {% highlight python %}
 import Algorithmia
 import csv
 
-client = Algorithmia.client(your_api_key)
+client = Algorithmia.client("your_api_key")
 
-def s3_data():
-    # The protocol is 's3', the unique label is 'saha', the bucket is called Algorithmia
-    cf = client.file("s3+saha://Algorithmia/test_data.csv").getFile().name
-    # Open file
-    with open(cf, 'r') as f:
-        file_data = csv.reader(f, delimiter=",")
-        for row in file_data:
-            print(row)
-        
+def dropbox_data():
+    # Get file from Dropbox default data source
+    data_file = client.file("s3+saha://Algorithmia/test_data.csv").get()
+    # Pass in file and pass in args required from the algorithm FpGrowth
+    input = [data_file, 5, 2]
+    algo = client.algo('paranoia/FpGrowth/0.2.0')
+    return algo.pipe(input)
 
-data = s3_data()
-
-def apply(input):
-    print(input)
-    return data
+dropbox_data()
 
 {% endhighlight %}
 
 ## Details about Working with Data Sources and the Data API
-If you're working with or building an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data sources:
+If you're working with or building an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data connections:
 
 {% highlight python %}
 algo.pipeJson({'inputFile':'s3+saha://Algorithmia/test_data.csv'})
@@ -118,7 +112,7 @@ Once a data source has been created, all of the Algorithmia client code for inte
 {% endhighlight %}
 
 ## Algorithm support
-We have tested to ensure that data source data paths function in all of our Algorithmia clients, however:
+We have tested to ensure that connector data paths function in all of our Algorithmia clients, however:
 
 - Python support was added in version 1.0.4
 - NodeJS support was added in version 0.3.5
