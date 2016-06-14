@@ -8,7 +8,7 @@ tags: [model-guide-overview]
 show_related: false
 author: steph_kim
 image:
-    teaser: /icons/Algorithmia_Sample_Apps.png
+    teaser: /icons/Algorithmia_Basics.png
 ---
 
 # Hosting Model Overview

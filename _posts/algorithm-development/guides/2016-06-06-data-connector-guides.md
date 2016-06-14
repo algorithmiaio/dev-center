@@ -1,7 +1,7 @@
 ---
 layout: article_page
-title:  "Data Portal Guides"
-excerpt: "Host your data on Algorithmia for free or create a connection to your hosted files on Dropbox or S3."
+title:  "Data Portal Guide"
+excerpt: "Host your data files or trained models on the Algorithmia platform for free."
 date:   2016-06-06 11:46:03
 categories: algorithm-development
 tags: [data-connectors-overview]
@@ -13,9 +13,10 @@ repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/imag
 ---
 
 # Data Portal Connections
-Using <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> you can easily connect your algorithm to various data sources such as <a href="https://aws.amazon.com/s3/">Amazon's S3 service</a>, <a href="https://www.dropbox.com/">Dropbox</a> or you can host your files for free on the <a href="https://algorithmia.com/data/hosted">Algorithmia platform</a>. With these options it's easy to integrate your data into the algorithm you're building.
 
-How easy is it? By creating an Algorithmia account you automatically have access to <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> platform where you can store your data files or even your algorithm's output. Other options include hooking up your <a href="https://www.dropbox.com/">Dropbox</a> or <a href="https://aws.amazon.com/s3/">Amazon S3</a> account which you can configure as a new data source to permit Algorithmia to read and write files on your behalf. Once you've set up your data connections all three file hosting options are accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
+As an algorithm developer you might require large data files such as trained models or other large files that your algorithm depends on. With <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> option you can host these files on our platform for free. Plus, it's easy to integrate your data into the algorithm you're building using the Algorithmia Data API.
+
+How easy is it? By creating an Algorithmia account you automatically have access to <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> platform where you can store your data files or even your algorithm's output. Once you've set up your data collections our file hosting option is accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 

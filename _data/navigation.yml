@@ -28,12 +28,12 @@
 - title: Algorithm Development
   url: /algorithm-development
   excerpt: "Find out how to host your models and build an algorithm on Algorithmia."
-  image: /icons/Algorithmia_Guides.png
+  image: /icons/Algorithmia_Sample_Apps.png
 
 - title: Application Development
   url: /application-development
   excerpt: "Discover how to use algorithms in your application."
-  image: /icons/Algorithmia_Guides.png
+  image: /icons/Algorithmia_Clients.png
 
 - title: FAQs
   url: /faqs/

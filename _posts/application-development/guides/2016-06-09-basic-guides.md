@@ -8,7 +8,7 @@ tags: [app-guide-overview]
 show_related: false
 author: steph_kim
 image:
-    teaser: /icons/Algorithmia_Basics.png
+    teaser: /icons/Algorithmia_Guides.png
 ---
 
 <!-- create array of 'basics' tags -->

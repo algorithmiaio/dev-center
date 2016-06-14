@@ -47,7 +47,8 @@ The default path restrictions are set to allow access to all paths in your Dropb
 
 **NOTE:** '/Algorithmia*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
 
-Here we are setting our path restrictions to everything in the Dropbox folder 'Algorithmia':
+Here we are setting our path restrictions to everything in the Dropbox folder '/Algorithmia'.
+Dropbox file paths have to start with a ‘/’.  When accessing data paths through an Algorithmia client, we will make sure the path includes a ‘/’.  However, be sure to include these when you set up path restrictions on your dropbox connector.
 
 <img>Take screenshot</>
 

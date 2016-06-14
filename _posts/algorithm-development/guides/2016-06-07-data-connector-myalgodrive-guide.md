@@ -16,7 +16,7 @@ repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/imag
 <a href="https://algorithmia.com/data/hosted">Algorithmia's Data Source</a> makes it easy to host your data files on the Algorithmia platform for free while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a sinch to work with your hosted data.
 
 ## Data Source Basics
-For simple cases, you can feed data to an algorithm at request time. For algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.
+For simple cases, you can feed data to an algorithm at request time, but for algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data files hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.
 
 There are many different collection types that have different features and security measures in place. Data in your temporary and user collections can be downloaded to be saved locally.
 
@@ -31,7 +31,7 @@ Other collection types have system-defined permissions:
 - Temporary and Permanent Algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
 
 ## Create a Data Collection
-To create a new data collection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a> On the panel that says 'Algorithmia Hosted Data' and click the button that says **'Browse Files'** which takes you to <a href="https://algorithmia.com/data/hosted">Data Collections</a>.
+To create a new data collection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says 'Algorithmia Hosted Data' click the button that says **'Browse Files'** which takes you to <a href="https://algorithmia.com/data/hosted">Data Collections</a>.
 
 <img src="/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" style="width: 700px;"/>
 
