@@ -353,6 +353,13 @@ html, body {
 		@include span-columns(12);
 		padding-bottom: 3em;
 	}
+	.basics-posts {
+		@include span-columns(4);
+	}
+}
+
+.larger_icon {
+	max-width: 66%;
 }
 
 #faqs-index {

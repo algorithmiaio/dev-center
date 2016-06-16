@@ -29,3 +29,13 @@ sample-apps:
 
 how-to:
   name: How-to
+
+bounties:
+  name: Bounties
+
+# These are for algo dev and app dev getting started sections
+app-dev-getting-started:
+  name: Getting Started
+
+alg-dev-getting-started:
+  name: Getting Started

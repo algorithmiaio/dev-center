@@ -60,9 +60,9 @@ The default access for your data source is set to read only, but you can change 
 <img src="/images/post_images/data_connectors/dropbox_manage_connector_access.png" alt="Manage a data connector" style="width: 700px;"/>
 
 ### Setting your Default Dropbox
-The benefit to setting a data connection as your default Dropbox data source is when you choose **'Make Default'** you can access this data source by a shortened path: 'dropbox:///' rather than: 'dropbox+your_unique_label:///'.
+The benefit to setting a data connection as your default Dropbox data source is when you choose **'Make Default'** you can access this data source by a shortened path: 'dropbox://' rather than: 'dropbox+your_unique_label://'.
 
-In the example below, 'archimedes' is the default Dropbox data source's unique label, the path restriction is set as '/Algorithmia/\*' to access all files in the 'Algorithmia' folder and it can be accessed via the path: 'dropbox:///Algorithmia/\*'.
+In the example below, 'archimedes' is the default Dropbox data source's unique label, the path restriction is set as '/Algorithmia/\*' to access all files in the 'Algorithmia' folder and it can be accessed via the path: 'dropbox://Algorithmia/\*'.
 
 <img src="/images/post_images/data_connectors/dropbox_manage_connector_modal.png" alt="Manage a data connector" style="width: 700px;"/>
 
@@ -70,7 +70,7 @@ In the example below, 'archimedes' is the default Dropbox data source's unique l
 Accessing your Dropbox data via the <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia Data API</a> is easy. Whether you're writing your application in Rust, Ruby, Python, Scala, Java or JavaScript simply import your data with a couple lines of code. With your Dropbox data connection now configured you can read and write data to and from it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data:
 
 - client = Algorithmia.client('YOUR_API_KEY')
-- client.file('dropbox:///my_restricted_path/my_file.csv').getFile().name
+- client.file('dropbox://my_restricted_path/my_file.csv').getFile().name
 
 For example, to retrieve and print a file's contents in Python:
 
@@ -82,7 +82,7 @@ client = Algorithmia.client("your_api_key")
 
 def dropbox_data():
     # Get file from Dropbox default data connector
-    data_file = client.file("dropbox:///Algorithmia/test_data.csv").get()
+    data_file = client.file("dropbox://Algorithmia/test_data.csv").get()
     # Pass in file and pass in args required from the algorithm FpGrowth
     input = [data_file, 5, 2]
     algo = client.algo('paranoia/FpGrowth/0.2.0')
@@ -95,7 +95,7 @@ dropbox_data()
 If you're working with an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data sources:
 
 {% highlight python %}
-algo.pipeJson({'inputFile':'dropbox:///Algorithmia/test_data.csv'})
+algo.pipeJson({'inputFile':'dropbox://Algorithmia/test_data.csv'})
 {% endhighlight %}
 
 **NOTE:** If you call an algorithm it can only access your data source. This means that it is NOT possible for an algorithm to read data from your Dropbox and write that data to an account controlled by an another algorithm author. Algorithms do NOT have direct access to any credentials associated with your data sources, and can only access data from a data source using the Algorithmia API.

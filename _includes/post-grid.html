@@ -3,7 +3,7 @@
     {% if post.image.teaser %}
       <img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
     {% else %}
-      <!--<img src="{{ site.url }}/images/{{ site.teaser }}" alt="teaser" itemprop="image">-->
+      <img class="larger_icon" src="{{ site.url }}/images/{{ post.image.teaser }}" alt="icon" itemprop="image">
     {% endif %}
   </a>
 

@@ -13,7 +13,7 @@ repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/imag
 ---
 
 # Algorithmia's Hosted Data Source
-<a href="https://algorithmia.com/data/hosted">Algorithmia's Data Source</a> makes it easy to host your data files on the Algorithmia platform for free while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a sinch to work with your hosted data.
+<a href="https://algorithmia.com/data/hosted">Algorithmia's Data Source</a> makes it easy to host your data files on the Algorithmia platform for free while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a cinch to work with your hosted data.
 
 ## Data Source Basics
 For simple cases, you can feed data to an algorithm at request time, but for algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data files hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.

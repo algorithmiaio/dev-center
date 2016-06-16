@@ -4,7 +4,7 @@ title:  "How to Solve a bounty in Algorithmia"
 excerpt: "Quick steps for fulfilling a Bounty"
 date:   2016-04-01 01:30:38
 categories: basics 
-tags: [how-to]
+tags: [bounties]
 show_related: true
 author: diego_oppenheimer
 ---

@@ -4,7 +4,7 @@ title:  "Customizing API Keys & Access"
 excerpt: "Did you know you can have multiple API keys with different access permissions?"
 date:   2016-02-17 15:00:38
 categories: basics
-tags: [getting-started]
+tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
