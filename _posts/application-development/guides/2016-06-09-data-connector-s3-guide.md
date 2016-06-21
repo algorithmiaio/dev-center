@@ -1,29 +1,32 @@
 ---
-layout: article_page
-title:  "AWS S3 Data Source"
+layout: article
+title:  "Amazon S3 Data Source"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
-permalink: /application-development/data-connector-guides/s3-guide
+permalink: /application-development/data-sources/s3-guide
 tags: [app-data-connectors]
-show_related: false
+show_related: true
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/s3.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/s3.png
 ---
 
-# Amazon S3 Data Source
 As an application developer you can access the data you need from your S3 account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.
 
 ## Data Source Basics
 All data sources have a protocol and a label that you will use to reference your data. For instance S3 is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Configure a New Data Connection to S3
-To configure a new data connection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a> where you'll notice there is a panel that says **'Add Source'**. Click that button and it will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox. 
+To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source': 
+
+<img src="/images/post_images/data_connectors/data_portal.png" alt="Data Portal" style="width: 700px;"/>
+
+On that panel click the button that says **'Add Data Source'** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
 
 <img src="/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" style="width: 700px;"/>
 
-Select **'Connect to S3'** and a modal window will open to configure an S3 connection. Here you will need to enter your AWS credentials. S3 authorization is done by adding your AWS Access Key ID and AWS Secret Access Key. AWS supports setting restrictions on access tokens by service and operation. 
+Select **'Connect to Amazon S3'** and a modal window will open to configure an S3 connection. Here you will need to enter your AWS credentials. S3 authorization is done by adding your AWS Access Key ID and AWS Secret Access Key. AWS supports setting restrictions on access tokens by service and operation. 
 
 <img src="/images/post_images/data_connectors/s3_create_data_connector.png" alt="Create a data connector in modal" style="width: 700px;"/>
 

@@ -1,56 +1,58 @@
 ---
-layout: article_page
+layout: article
 title:  "Dropbox Data Source"
 excerpt: "How to configure your Dropbox data source and access your data via the Algorithmia Data API."
 date:   2016-06-09 11:46:03
-permalink: /application-development/data-connector-guides/dropbox-guide
+permalink: /application-development/data-sources/dropbox-guide
 tags: [app-data-connectors]
-show_related: false
+show_related: true
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/dropbox.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/dropbox.png
 ---
 
-# Dropbox Data Source
 As an application developer you can access the data you need from your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.
 
 ## Data Source Basics
 All data sources have a protocol and a label that you will use to reference your data. For instance Dropbox is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Create a New Data Connection to Dropbox
-To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says **'Add Source'**. Click that and it will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox. 
+To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source': 
+
+<img src="/images/post_images/data_connectors/data_portal.png" alt="Data Portal" style="width: 700px;"/>
+
+On that panel click the button that says **'Add Data Source'** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
 
 <img src="/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" style="width: 700px;"/>
 
 Select **'Connect to Dropbox'** and you will be prompted to login to your Dropbox account. You'll be asked if you want to grant Algorithmia access to your account via OAuth authentication. Once that's done a new panel will be created which will have the Dropbox icon on it and a unique label for that Dropbox connection. 
-
-**NOTE:** the unique label follows the protocol: 'dropbox+unique_connection_name://'
 
 ## Configure a Data Source
 Set path restrictions and manage the read and write permissions by clicking the button **'Manage Dropbox'** on the middle panel holding the unique data connector that was just created.
 
 <img src="/images/post_images/data_connectors/manage_connector_all.png" alt="Manage a data connector" style="width: 700px;"/>
 
-### Update Labels For Data Connections
-If you would like to change the unique label that was automatically provided when you created the data connection, simply update it under **'Label'** and give it a unique name.
+**NOTE:** the unique label on your new Dropbox connection follows the protocol: 'dropbox+unique_connection_name://*' that defaults to allowing everything to be accessible in your Dropbox path.
 
-We create these unique labels because you may want to add multiple connections to the same Dropbox account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
+### Update Labels For Data Connections
+If you would like to change the unique label that was automatically provided when you created the data connection, simply update it under **'Label'** and give it a unique name:
 
 <img src="/images/post_images/data_connectors/dropbox_manage_connector_change_label.png" alt="Change a data connector's label" style="width: 700px;"/>
+
+**Note** We create these unique labels because you may want to add multiple connections to the same Dropbox account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
 
 ### Setting Path Restrictions for Dropbox Folder and File Access
 The default path restrictions are set to allow access to all paths in your Dropbox account, however you may want to restrict your application's access to specific folders or files:
 
-- Access to a single file: '/Algorithmia/test_data.csv'
-- Access to everything in a specific folder: '/Algorithmia/*'
+- Access to a single file: 'Algorithmia/test_data.csv'
+- Access to everything in a specific folder: 'Algorithmia/*'
 
-**NOTE:** '/Algorithmia*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
+Here we are setting our path restrictions to everything in the Dropbox folder 'Algorithmia':
 
-Here we are setting our path restrictions to everything in the Dropbox folder '/Algorithmia'.
-Dropbox file paths have to start with a ‘/’.  When accessing data paths through an Algorithmia client, we will make sure the path includes a ‘/’.  However, be sure to include these when you set up path restrictions on your dropbox connector.
+<img src="/images/post_images/data_connectors/dropbox_path_restrictions.png" alt="Change a data connector's label" style="width: 700px;"/>
 
-<img>Take screenshot</>
+**NOTE:** 'Algorithmia*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
 
 ### Setting Read and Write Access
 The default access for your data source is set to read only, but you can change this to read *and* write access by checking the **'Write Access'** box.
@@ -62,7 +64,7 @@ The default access for your data source is set to read only, but you can change 
 ### Setting your Default Dropbox
 The benefit to setting a data connection as your default Dropbox data source is when you choose **'Make Default'** you can access this data source by a shortened path: 'dropbox://' rather than: 'dropbox+your_unique_label://'.
 
-In the example below, 'archimedes' is the default Dropbox data source's unique label, the path restriction is set as '/Algorithmia/\*' to access all files in the 'Algorithmia' folder and it can be accessed via the path: 'dropbox://Algorithmia/\*'.
+In the example below, 'archimedes' is the default Dropbox data source's unique label, the path restriction is set as 'Algorithmia/\*' to access all files in the 'Algorithmia' folder and it can be accessed via the path: 'dropbox://Algorithmia/\*'.
 
 <img src="/images/post_images/data_connectors/dropbox_manage_connector_modal.png" alt="Manage a data connector" style="width: 700px;"/>
 

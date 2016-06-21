@@ -1,6 +1,7 @@
 ---
 layout: article
 title:  "The Javascript Library"
+permalink: /application-development/lang-guides/javascript
 date:   2016-01-11 15:00:38
 categories: clients
 tags: [clients]

@@ -3,7 +3,7 @@ layout: article_page
 title:  "Algorithmia's Hosted Data Source"
 excerpt: "Store your data for free on the Algorithmia platform."
 date:   2016-06-07 11:46:03
-permalink: /algorithm-development/data-connector-guides/my-algodrive-guide
+permalink: /algorithm-development/data-sources/hosted-data-guide
 tags: [alg-data-connectors]
 show_related: false
 author: steph_kim

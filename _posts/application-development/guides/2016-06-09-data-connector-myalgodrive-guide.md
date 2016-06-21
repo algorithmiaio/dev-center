@@ -1,18 +1,18 @@
 ---
-layout: article_page
+layout: article
 title:  "Algorithmia's Hosted Data Source"
 excerpt: "How to set up and configure Algorithmia's free file hosting platform."
 date:   2016-06-07 11:46:03
-permalink: /application-development/data-connector-guides/my-algodrive-guide
+permalink: /application-development/data-sources/hosted-data-guide
 tags: [app-data-connectors]
-show_related: false
+show_related: true
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/algodrive.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/algodrive.png
 ---
 
-# Algorithmia's Hosted Data Source
+
 <a href="https://algorithmia.com/data/hosted">Algorithmia's Data Source</a> makes it easy to host your data files on the Algorithmia platform for free while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a cinch to work with your hosted data.
 
 ## Data Source Basics
