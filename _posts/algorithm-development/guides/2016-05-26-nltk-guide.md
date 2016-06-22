@@ -61,26 +61,52 @@ Here is where you load your pickled model that is to be called by the apply() fu
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
 {% highlight python %}
-import pickle
-import zipfile
+"""
+Algorithm to label names female or male
+Test set must be a list of features: [({'last_letter': 'e'}, 'female'), 
+({'last_letter': 'e'}, 'male'), ({'last_letter': 'e'}, 'female'), 
+({'last_letter': 'w'}, 'male'), ({'last_letter': 'a'}, 'female')]
+"""
+
 import Algorithmia
-import nltk
+import csv
+import pickle
+from nltk.classify import accuracy
+
+client = Algorithmia.client()
+
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://.my/another_test/nltk-model.pkl'
+    file_path = 'data://.my/demos/gender_model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
         return model
 
-model = load_model()
+classifier = load_model()
+
+
+def gender_features(word):
+    # Last letter as feature.
+    return {'last_letter': word[-1]}
+
+def test_data():
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+        return model
 
 def apply(input):
-    # Return output to user
-    return model.classify(gender_features(input))
+    name = input
+    informative_features = classifier.show_most_informative_features(5)
+    test_set = client.file('data://.my/demos/gender_test_data.csv').get()
+    output = {'gender': classifier.classify(gender_features(
+        name)), 'accuracy': accuracy(classifier, test_set),
+        'informative_features': informative_features}
+    return output
+
 {% endhighlight %}
 
 ### Set your Dependencies
@@ -88,7 +114,7 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
 
-<img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use!
