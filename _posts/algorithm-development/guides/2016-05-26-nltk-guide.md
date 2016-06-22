@@ -94,14 +94,16 @@ def gender_features(word):
     return {'last_letter': word[-1]}
 
 def test_data():
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
-        return model
+    test_file = client.file('data://.my/demos/gender_test_data.csv').getFile().name
+    with open(test_file, 'rb') as f:
+        test_data = csv.reader(f, delimiter=',')
+        data = [row for row in test_data]
+        return data
 
 def apply(input):
     name = input
     informative_features = classifier.show_most_informative_features(5)
-    test_set = client.file('data://.my/demos/gender_test_data.csv').get()
+    test_set = test_data()
     output = {'gender': classifier.classify(gender_features(
         name)), 'accuracy': accuracy(classifier, test_set),
         'informative_features': informative_features}
