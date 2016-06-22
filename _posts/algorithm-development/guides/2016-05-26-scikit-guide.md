@@ -28,7 +28,7 @@ Various programming languages have different picklers to choose from. To prepare
 ### Create a Data Collection
 Now you'll want to create a data collection to host your pickled model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
 
 - Click the “Manage Data” link from the user profile icon dropdown in the upper right-hand corner.
 
