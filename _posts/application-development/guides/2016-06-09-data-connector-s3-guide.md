@@ -40,7 +40,7 @@ If you would like to change the unique label that was automatically provided whe
 
 We create these unique labels because you may want to add multiple connections to the same S3 account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
 
-<img src="/images/post_images/data_connectors/S3_manage_connector_change_label.png" alt="Change a data connector's label" style="width: 700px;"/>
+<img src="/images/post_images/data_connectors/s3_manage_connector_change_label.png" alt="Change a data connector's label" style="width: 700px;"/>
 
 **NOTE:** The unique label follows the protocol: '+unique_label://restricted_path'
 

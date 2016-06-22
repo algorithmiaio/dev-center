@@ -34,7 +34,7 @@ Now you'll want to create a data collection to host your pickled model.
 
 - Click on “Add Collection” under the “My Collections” section on your data collections page.
 
-- Set the read and write access on your collection. For more information check out: <a href="http://docs.algorithmia.com/?shell#collection-types">Data Collection Types</a>
+- Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
 <img src="/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" style="width: 700px;"/>
