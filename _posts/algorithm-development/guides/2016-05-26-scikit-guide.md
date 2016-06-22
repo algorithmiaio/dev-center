@@ -20,7 +20,7 @@ This guide is designed as an introduction to hosting a scikit-learn model and pu
 Maybe you've got a great idea or have tirelessly worked on a project in your spare time and you want it to be useful to others. Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
 #### Train your model. 
-Say you have a regression model that is predicting the popularity of a product based on various features. You have your training data that has ratings of such products and their associated features. You also have your test data that has the products minus the ratings. You do some data preprocessing and then train your model and validate it with your test data. You're happy with your results and now need to pickle the trained model so you can upload it to Algorithmia. 
+Say you have a regression model that is predicting the popularity of a product based on various features. You have your training data that has ratings of such products and their associated features. You also have your test data that has the products minus the ratings. You do some data preprocessing and then train your model and validate it. You're happy with your results and now need to pickle the trained model so you can upload it to Algorithmia. 
 
 #### Pickle your trained model.
 Various programming languages have different picklers to choose from. To prepare your model for uploading via our Data API, pick a pickler and save the pickled model locally.
