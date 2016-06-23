@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Algorithmia's Hosted Data Source"
+title:  "Hosted Data"
 excerpt: "How to set up and configure Algorithmia's free file hosting platform."
 date:   2016-06-07 11:46:03
 permalink: /application-development/data-sources/hosted-data-guide
@@ -8,7 +8,7 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/algodrive.png
+    teaser: /post_images/data_connectors/hosted-data-box.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/algodrive.png
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Amazon S3 Data Source"
+title:  "Amazon S3"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
 permalink: /application-development/data-sources/s3-guide
@@ -8,7 +8,7 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/s3.png
+    teaser: /post_images/data_connectors/amazon-s3-data-box.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/s3.png
 ---
 

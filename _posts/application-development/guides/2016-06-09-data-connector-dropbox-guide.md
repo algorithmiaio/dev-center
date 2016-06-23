@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Dropbox Data Source"
+title:  "Dropbox"
 excerpt: "How to configure your Dropbox data source and access your data via the Algorithmia Data API."
 date:   2016-06-09 11:46:03
 permalink: /application-development/data-sources/dropbox-guide
@@ -8,7 +8,7 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/dropbox.png
+    teaser: /post_images/data_connectors/dropbox-data-connector-box.png
 repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/dropbox.png
 ---
 
