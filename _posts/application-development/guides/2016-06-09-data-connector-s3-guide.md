@@ -9,7 +9,6 @@ show_related: true
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/amazon-s3-data-box.png
-repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/s3.png
 ---
 
 As an application developer you can access the data you need from your S3 account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

@@ -9,7 +9,6 @@ show_related: true
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/hosted-data-box.png
-repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/algodrive.png
 ---
 
 
