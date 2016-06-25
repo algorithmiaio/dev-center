@@ -77,7 +77,7 @@ client = Algorithmia.client()
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://.my/demos/gender_model.pkl'
+    file_path = 'data://your_name/demos/gender_model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
@@ -92,7 +92,7 @@ def gender_features(word):
     return {'last_letter': word[-1]}
 
 def test_data():
-    test_file = client.file('data://.my/demos/gender_test_data.csv').getFile().name
+    test_file = client.file('data://your_name/demos/gender_test_data.csv').getFile().name
     with open(test_file, 'rb') as f:
         test_data = csv.reader(f, delimiter=',')
         data = [row for row in test_data]
@@ -108,6 +108,8 @@ def apply(input):
     return output
 
 {% endhighlight %}
+
+**NOTE** If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.

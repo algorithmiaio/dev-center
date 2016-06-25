@@ -69,13 +69,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 client = Algorithmia.client()
-test_data_path = 'data://.my/another_test/day.csv'
+test_data_path = 'data://your_name/another_test/day.csv'
 test_data_name = client.file(test_data_path).getFile().name
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://.my/another_test/scikit-model.pkl'
+    file_path = 'data://your_name/another_test/scikit-model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
@@ -99,6 +99,8 @@ def apply(input):
     # Do something with your model and return useful output for the user
     return some_data
 {% endhighlight %}
+
+**NOTE** If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
