@@ -30,8 +30,6 @@ Now you'll want to create a data collection to host your pickled model.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
 
-- Click the “Manage Data” link from the user profile icon dropdown in the upper right-hand corner.
-
 - Click on “Add Collection” under the “My Collections” section on your data collections page.
 
 - Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
