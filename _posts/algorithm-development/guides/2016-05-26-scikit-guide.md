@@ -50,13 +50,15 @@ Next, upload your pickled model to your newly created data collection.
 Creating your algorithm is easy!
 
 - To add an algorithm, simply click “Add Algorithm” from the user profile icon.
-- Name, select the language, choose permissions and make the code either open or closed source.
+- Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
 
 ### Load your Model
 Here is where you load your pickled model that is to be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
+
+Now to check out a code example using the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Random Forest Regressor</a> to build a prediction model in Scikit-learn
 
 {% highlight python %}
 import pickle
@@ -69,13 +71,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 client = Algorithmia.client()
-test_data_path = 'data://your_name/another_test/day.csv'
+test_data_path = 'data://user_name/another_test/day.csv'
 test_data_name = client.file(test_data_path).getFile().name
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://your_name/another_test/scikit-model.pkl'
+    file_path = 'data://user_name/another_test/scikit-model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
@@ -110,7 +112,7 @@ Now is the time to set your dependencies that your model relies on.
 <img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ### Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use!
+Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 - Set version permissions to public or private use
 
@@ -118,7 +120,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
-- For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 

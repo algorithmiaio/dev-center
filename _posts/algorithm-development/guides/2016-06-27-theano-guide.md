@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Hosting your Tensorflow model"
-excerpt: "Guide to hosting your Tensorflow model on Algorithmia."
+title:  "Hosting your Theano model"
+excerpt: "Guide to hosting your theano model on Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/guides/tensorflow-guide
+permalink: /algorithm-development/guides/theano-guide
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
@@ -12,8 +12,7 @@ image:
 ---
 
 
-Welcome to hosting your <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
-This guide is designed as an introduction to hosting a Tensorflow model and publishing an algorithm even if you’ve never used Algorithmia before.
+Welcome to hosting your <a href="http://deeplearning.net/software/theano/">theano</a> model on Algorithmia! This guide is designed as an introduction to hosting a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
 ## Prerequisites
@@ -32,7 +31,7 @@ Here you'll want to create a data collection to host your graph and variable che
 - Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/tensorflow_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/theano_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -41,7 +40,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
-<img src="/images/post_images/model_hosting/tensorflow_update_collections.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/theano_update_collections.png" alt="Create a data collection" style="width: 700px;"/>
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -56,70 +55,56 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
 
-<img src="/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/theano_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Load your Model
-Here is where you load your graph and run your model which will be called by the apply() function.
+Now you'll want to load your graph and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Now to check out the <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginneers</a> tutorial from Tensorflow.
+Here is an example for loading your model based on the <a href="http://deeplearning.net/tutorial/logreg.html">Classifying MNIST digits using Logistic Regression</a> using their <a href="http://deeplearning.net/tutorial/code/logistic_sgd.py">Logistic Regression model</a>.
 
 {% highlight python %}
 import Algorithmia
-from tensorflow.examples.tutorials.mnist import input_data
-import tensorflow as tf
 
-client = Algorithmia.client()
+def load_model():
+    """Load model from user collections"""
+    file_path = 'data://user_name/demos/theano_model.pkl'
+    pickled_model = client.file(file_path).getFile().name
+    # Open file and load model
+    with open(pickled_model, 'rb') as f:
+        model = pickle.load(f)
+        return model
 
-def load_data():
-    """Retrieve variable checkpoints and graph from user collection"""
-    vc_uri = 'data://user_name/demos/variable_checkpoint_tensorflow.ckpt'
-    checkpoint_file = client.file(vc_uri).getFile().name
+# Function to load model gets called one time
+classifier = load_model()
 
-    graph_uri = 'data://user_name/models/graph_model_tensorflow.pb'
-    graph_file = client.file(graph_uri).getFile().name
-
-    return (checkpoint_file, graph_file)
-
- 
-# Get called once   
-saver = tf.train.Saver()
-checkpoints, graph = load_data()
-
-def inject_data(input):
+def predict(input):
     """
-    Finds the prediction and accuracy of digit image
+    An example of how to load a trained model and use it
+    to predict labels.
 
-    Prints accuracy and predictions on user input
+    Adopted from http://deeplearning.net/tutorial/logreg.html
     """
-    # Inject data into Tensor graph
-    with tf.Session() as sess:
-        # Load previously saved graph
-        with tf.gfile.FastGFile(graph, 'rb') as f:
-            graph_def = tf.GraphDef()
-            graph_def.ParseFromString(f.read())
-            tf.import_graph_def(graph_def, name='')
-        # Map variables
-        saver.restore(sess, checkpoints)
-        y_ = sess.graph.get_tensor_by_name('Placeholder_1:0')
-        y = sess.graph.get_tensor_by_name('Softmax:0')
-        x = sess.graph.get_tensor_by_name('Placeholder:0')
+    # compile a predictor function
+    predict_model = theano.function(
+        inputs=[classifier.input],
+        outputs=classifier.y_pred)
 
-        correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-        accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-        print(sess.run(accuracy, feed_dict={
-              x: input, y_: mnist.test.labels}))
-        prediction = tf.argmax(y, 1)
-        print(prediction.eval(feed_dict={x: input}))
-    
+    predicted_values = predict_model(input[:10])
+    print("Predicted values for the first 10 examples in test set:")
+    print(predicted_values)
+    return predicted_values
+
+
 def apply(input):
     """
-    Input would be an image file either from:
+    Input is an image file
 
-    data sources via https://algorithmia.com/data using the Data API
+    Input examples:
+    Data Sources via https://algorithmia.com/data using the Data API
     or as an http request using urllib
     """
-    output = inject_data(input)
+    output = predict(input)
     return output
 {% endhighlight %}
 
@@ -136,4 +121,4 @@ For more information and detailed steps: <a href="http://developers.algorithmia.
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 
-That's it for hosting your <a href="https://www.tensorflow.org/">tensorflow</a> model on Algorithmia!
+That's it for hosting your <a href="http://deeplearning.net/software/theano/">theano</a> model on Algorithmia!

@@ -50,13 +50,22 @@ Next, upload your pickled model to your newly created data collection.
 Creating your algorithm is easy!
 
 - To add an algorithm, simply click “Add Algorithm” from the user profile icon.
-- Name, select the language, choose permissions and make the code either open or closed source.
+- Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
+
+### Set your Dependencies
+Now is the time to set your dependencies that your model relies on.
+
+- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
+
+<img src="/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Load your Model
 Here is where you load your pickled model that is to be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
+
+Here is some code that has been adapted from the NLTK online books tutorial <a href="www.nltk.org/book/ch06.html">Learning to Classify Text</a>
 
 {% highlight python %}
 """
@@ -77,7 +86,7 @@ client = Algorithmia.client()
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://your_name/demos/gender_model.pkl'
+    file_path = 'data://user_name/demos/gender_model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
@@ -92,7 +101,7 @@ def gender_features(word):
     return {'last_letter': word[-1]}
 
 def test_data():
-    test_file = client.file('data://your_name/demos/gender_test_data.csv').getFile().name
+    test_file = client.file('data://user_name/demos/gender_test_data.csv').getFile().name
     with open(test_file, 'rb') as f:
         test_data = csv.reader(f, delimiter=',')
         data = [row for row in test_data]
@@ -111,15 +120,8 @@ def apply(input):
 
 **NOTE** If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 
-### Set your Dependencies
-Now is the time to set your dependencies that your model relies on.
-
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
-
-<img src="/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" style="width: 700px;"/>
-
 ## Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use!
+Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 - Set version permissions to public or private use
 
@@ -127,8 +129,8 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
-- For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 
-That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">nltk</a> model on Algorithmia!
+That's it for hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!

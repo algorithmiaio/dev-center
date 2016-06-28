@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Hosting your Tensorflow model"
-excerpt: "Guide to hosting your Tensorflow model on Algorithmia."
+title:  "Hosting your Caffe model"
+excerpt: "Guide to hosting your Caffe model on Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/guides/tensorflow-guide
+permalink: /algorithm-development/guides/caffe-guide
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
@@ -12,8 +12,8 @@ image:
 ---
 
 
-Welcome to hosting your <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
-This guide is designed as an introduction to hosting a Tensorflow model and publishing an algorithm even if you’ve never used Algorithmia before.
+Welcome to hosting your <a href="http://caffe.berkeleyvision.org/">Caffe</a> model on Algorithmia!
+This guide is designed as an introduction to hosting a Caffe model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
 ## Prerequisites
@@ -32,7 +32,7 @@ Here you'll want to create a data collection to host your graph and variable che
 - Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/tensorflow_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/caffe_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -41,7 +41,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
-<img src="/images/post_images/model_hosting/tensorflow_update_collections.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" style="width: 700px;"/>
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -56,35 +56,38 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
 
-<img src="/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Load your Model
-Here is where you load your graph and run your model which will be called by the apply() function.
+Now you'll want to load your graph and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Now to check out the <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginneers</a> tutorial from Tensorflow.
+Here is a code example taken from the begi
 
 {% highlight python %}
 import Algorithmia
-from tensorflow.examples.tutorials.mnist import input_data
-import tensorflow as tf
+import csv
+from Caffe.examples.tutorials.mnist import input_data
+import Caffe as tf
 
 client = Algorithmia.client()
 
-def load_data():
-    """Retrieve variable checkpoints and graph from user collection"""
-    vc_uri = 'data://user_name/demos/variable_checkpoint_tensorflow.ckpt'
-    checkpoint_file = client.file(vc_uri).getFile().name
-
-    graph_uri = 'data://user_name/models/graph_model_tensorflow.pb'
-    graph_file = client.file(graph_uri).getFile().name
-
-    return (checkpoint_file, graph_file)
-
+def variable_checkpoint():
+    """Retrieve variable checkpoints from user collection"""
+    file_path = 'data://user_name/Caffe_model_demo/variable_checkpoint.ckpt'
+    checkpoint_path = client.file(file_path).getFile().name
+    return checkpoint_path
+    
+def saved_graph():
+    """Retrieve graph from model stored in user collection"""
+    file_path = 'data://user_name/Caffe_model_demo/graph_model.pb'
+    graph_path = client.file(file_path).getFile().name
+    return graph_path 
  
 # Get called once   
 saver = tf.train.Saver()
-checkpoints, graph = load_data()
+checkpoints = variable_checkpoint()
+graph = saved_graph()
 
 def inject_data(input):
     """
@@ -113,12 +116,6 @@ def inject_data(input):
         print(prediction.eval(feed_dict={x: input}))
     
 def apply(input):
-    """
-    Input would be an image file either from:
-
-    data sources via https://algorithmia.com/data using the Data API
-    or as an http request using urllib
-    """
     output = inject_data(input)
     return output
 {% endhighlight %}
@@ -136,4 +133,4 @@ For more information and detailed steps: <a href="http://developers.algorithmia.
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
 
-That's it for hosting your <a href="https://www.tensorflow.org/">tensorflow</a> model on Algorithmia!
+That's it for hosting your <a href="http://caffe.berkeleyvision.org/">Caffe</a> model on Algorithmia!
