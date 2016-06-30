@@ -1,8 +1,8 @@
 # Generator that creates project pages for jekyll sites from git repositories.
 #
 # When you compile your jekyll site, the plugin will download the git repository of each project
-# in your _projects folder and create an index page from the README (using the specified layout). 
-# The goal is to automate the construction of online project pages, keep them in sync with README 
+# in your _projects folder and create an index page from the README (using the specified layout).
+# The goal is to automate the construction of online project pages, keep them in sync with README
 # documentation.
 #
 # Required files :
@@ -14,7 +14,7 @@
 # Available _config.yml settings :
 # - project_dir: The subfolder from which to pull project definition files (default is 'projects').
 # - project_output_dir: The subfolder to which project posts are compiled (default is 'projects').
-# 
+#
 # Available YAML settings :
 # - repository: Git repository of your project (required).
 # - layout: Layout to use when creating the project page.
@@ -34,12 +34,12 @@ module Jekyll
     #  `base_dir`         is the String path to the <source>
     #  `output_dir`       is the relative path from the base directory to the project folder.
     #  `project_md_path`  is the String path to the project's yaml config file.
-    #  `post_name`        is the name of the project to process.  
+    #  `post_name`        is the name of the project to process.
 
     def initialize(site, output_dir, base_dir, project_md_path, post_name)
-      super(site, site.source, '', File.join(base_dir, post_name))      
+      super(site, site.source, '', File.join(base_dir, post_name))
       self.data = load_config(project_md_path)
-      puts "Fetching data for #{self.data['title']} post" 
+      puts "Fetching data for #{self.data['title']} post"
 
       unless self.data['repository']
         return false
@@ -54,19 +54,15 @@ module Jekyll
         ext = '.textile'
       end
 
-      # Try to get the readme data for this path.
-      readme_content = File.read(readme) unless readme.nil?
-
-      link_to_repo = "<a href='#{self.data['repository']}' target='_blank'>GitHub</a>"
-      self.content += "\n\nBelow, you'll find a guide to the #{self.data['title']}. 
-        You can also find the source code directly on #{link_to_repo}.\n\n"
+      # Try to get the readme data for this path and strip first two lines (redundant title)
+      readme_content = File.readlines(readme)[2..-1].join() unless readme.nil?
 
       # Append any content from README to the end of any content in the post.
       self.content += "\n\n" + readme_content
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
-      self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m, 
-        '{% highlight \1 lineanchors %} \2 {% endhighlight %}')
+      self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m,
+        '{% highlight \1 %} \2 {% endhighlight %}')
 
       # For cases of {{ }} in README, remove one { to prevent liquid from doin' its thang.
       self.content.gsub! '{{', '{'
@@ -119,7 +115,7 @@ module Jekyll
 
       throw "No remote README file found in #{repo_dir}."
     end
-  end  
+  end
 
   class Site
 
@@ -178,7 +174,7 @@ module Jekyll
       unless site.config['generate_projects']
         return false
       end
-      
+
       site.write_project_indexes
     end
   end

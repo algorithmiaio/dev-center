@@ -14,10 +14,16 @@ body {
 
 p {
 	@include font-size(12,yes,18);
+
+  &.github-note {
+    font-style: italic;
+    font-size: .75em;
+    margin-bottom: .5em;
+  }
 }
 
 li {
-	@include font-size(12,12,18);
+	@include font-size(12);
 }
 
 /* Headings */

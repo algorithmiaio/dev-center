@@ -19,6 +19,11 @@ layout: default
 
 			<div class="page-title">
 				<h1>{{ page.title }}</h1>
+				{% if page.repository %}
+				      <p class="github-note">
+						Available on <a href='{{ page.repository }}']}' target='_blank' rel='nofollow'>GitHub</a>.
+					  </p>
+				{% endif %}
 			</div>
 
 			<div class="inner-wrap">
