@@ -110,7 +110,7 @@ html, body {
 .top-menu {
 	display: none;
 	position: relative;
-	
+
 	@include media($medium) {
 		@include span-columns(7);
 	}
@@ -118,7 +118,7 @@ html, body {
 	@include media($large) {
 		@include span-columns(7);
 	}
-	
+
 	ul {
 		position: absolute;
 		right: 0;
@@ -174,12 +174,6 @@ html, body {
 	@at-root {
 		.page-content {
 			@include fill-parent;
-			// larger font for intro paragraph
-			> p {
-				&:first-child {
-					@include font-size(16,yes,26);
-				}
-			}
 			// cleaner underlines for links
 			a { text-decoration: none; }
 			p a,
