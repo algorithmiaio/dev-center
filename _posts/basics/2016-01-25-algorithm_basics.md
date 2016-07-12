@@ -49,7 +49,7 @@ Some algorithms call other algorithms in order to combine algorithms and paralle
 
 #### GPU Execution Environment
 
-Many algorithms can benefit from using a Graphics Processing Unit (GPU) to accelerate certain kinds of computation, such as image processing and deep learning. Algorithms can be marked as requiring "Advanced GPU" execution environment. When this flag is set, the algorithm will run on computers with GPU hardware. For algorithms with this flag set, we also install several existing drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano and Torch.
+Many algorithms can benefit from using a Graphics Processing Unit (GPU) to accelerate certain kinds of computation, such as image processing and deep learning. Algorithms can be marked as requiring "Advanced GPU" execution environment. When this flag is set, the algorithm will run on servers with GPU hardware. For algorithms with this flag set, we also install several existing drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
 
 #### Source Code Visibility
 
