@@ -32,7 +32,7 @@ Now you'll want to create a data collection to host your pickled model.
 
 - Click on “Add Collection” under the “My Collections” section on your data collections page.
 
-- Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
 <img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" style="width: 700px;"/>
@@ -52,12 +52,14 @@ Creating your algorithm is easy!
 - To add an algorithm, simply click “Add Algorithm” from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
+**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For machine learning models you will want to check 'Standard Execution Environment'.
+
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
+- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
 
 <img src="/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" style="width: 700px;"/>
 

@@ -12,26 +12,29 @@ image:
 ---
 
 
-Welcome to hosting your <a href="http://deeplearning.net/software/theano/">theano</a> model on Algorithmia! This guide is designed as an introduction to hosting a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
+Welcome to hosting your <a href="http://deeplearning.net/software/theano/">Theano</a> model on Algorithmia! This guide is designed as an introduction to hosting a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
 ## Prerequisites
 Maybe you've got a great idea or have tirelessly worked on a project in your spare time and you want it to be useful to others. Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
 #### Train your model.
-You have a model that labels images. You've discovered the features you want to include, you've trained your model and validated it with your validation data set. You're happy with your results and now need to save your variable checkpoints and the graph from your trained model so you can upload it to Algorithmia.
+You have a model that labels images. You've discovered the features you want to include, you've trained your model and validated it with your validation data set. You're happy with your results and now need to pickle the trained model so you can upload it to Algorithmia.
+
+#### Pickle your trained model.
+Various programming languages have different picklers to choose from. To prepare your model for uploading via our Data API, pick a pickler and save the pickled model locally.
 
 ## Create a Data Collection
-Here you'll want to create a data collection to host your graph and variable checkpoint data.
+Here you'll want to create a data collection to host your pickled model.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
 
 - Click on “Add Collection” under the “My Collections” section on your data collections page.
 
-- Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/theano_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" style="width: 700px;"/>
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -48,28 +51,35 @@ Creating your algorithm is easy!
 - To add an algorithm, simply click “Add Algorithm” from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
+**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
+
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
+- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
 
 <img src="/images/post_images/model_hosting/theano_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
 
 ## Load your Model
-Now you'll want to load your graph and run your model which will be called by the apply() function.
+Now you'll want to load and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Here is an example for loading your model based on the <a href="http://deeplearning.net/tutorial/logreg.html">Classifying MNIST digits using Logistic Regression</a> using their <a href="http://deeplearning.net/tutorial/code/logistic_sgd.py">Logistic Regression model</a>.
+Here is an example for loading your model based on the <a href="http://deeplearning.net/tutorial/logreg.html">Classifying MNIST digits</a> using a <a href="http://deeplearning.net/tutorial/code/logistic_sgd.py">Logistic Regression model</a>.
 
 {% highlight python %}
 import Algorithmia
+import pickle
+import theano
+import theano.tensor as T
+
+client = Algorithmia.client()
 
 def load_model():
     """Load model from user collections"""
-    file_path = 'data://user_name/demos/theano_model.pkl'
-    pickled_model = client.file(file_path).getFile().name
+    file_uri = 'data://user_name/theano_demo/theano_model.pkl'
+    pickled_model = client.file(file_uri).getFile().name
     # Open file and load model
     with open(pickled_model, 'rb') as f:
         model = pickle.load(f)

@@ -29,10 +29,10 @@ Here you'll want to create a data collection to host your graph and variable che
 
 - Click on “Add Collection” under the “My Collections” section on your data collections page.
 
-- Set the read and write access on your collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/tensorflow_add_collection.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" style="width: 700px;"/>
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -49,12 +49,14 @@ Creating your algorithm is easy!
 - To add an algorithm, simply click “Add Algorithm” from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
+**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
+
 <img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and save at the button on the bottom right corner.
+- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
 
 <img src="/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
 
@@ -62,7 +64,7 @@ Now is the time to set your dependencies that your model relies on.
 Here is where you load your graph and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Now to check out the <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginneers</a> tutorial from Tensorflow.
+Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
 
 {% highlight python %}
 import Algorithmia
