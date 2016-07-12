@@ -8,5 +8,5 @@ script: bundle exec rake publish
 
 # exclude
 branches:
-  except:
-    - gh-pages
+  only:
+    - master
