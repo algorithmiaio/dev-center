@@ -47,6 +47,10 @@ Many of the algorithms in the marketplace can be run without accessing the Inter
 
 Some algorithms call other algorithms in order to combine algorithms and parallelize workloads. This permission is listed on the description page so that you can determine if the algorithm will incur additional usage and royalty costs.
 
+#### GPU Execution Environment
+
+Many algorithms can benefit from using a Graphics Processing Unit (GPU) to accelerate certain kinds of computation, such as image processing and deep learning. Algorithms can be marked as requiring "Advanced GPU" execution environment. When this flag is set, the algorithm will run on computers with GPU hardware. For algorithms with this flag set, we also install several existing drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano and Torch.
+
 #### Source Code Visibility
 
 Algorithm authors have the option of choosing to open source their algorithm. Open source algorithms have a button on the description to "View Source" and anyone can see the internal code of the algorithm. If an algorithm is closed source, this means that only the author has the ability to view the code. Note that open source algorithms still accrue fees for usage and may have a royalty fee.
