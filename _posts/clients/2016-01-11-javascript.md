@@ -6,7 +6,6 @@ date:   2016-01-11 15:00:38
 categories: clients
 tags: [clients]
 show_related: true
-author: liz_rush
 image:
     teaser: /language_logos/javascript.png
 ---

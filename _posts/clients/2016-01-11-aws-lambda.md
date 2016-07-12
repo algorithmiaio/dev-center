@@ -3,16 +3,16 @@ layout: article
 title:  "AWS Lambda"
 excerpt: "Run Algorithmia code in response to events with AWS Lambda."
 permalink: /application-development/lang-guides/aws-lambda
-date:   2016-01-11 15:00:38
+date: 2016-07-12
 categories: clients
 tags: [clients]
 show_related: true
-author: liz_rush
 image:
     teaser: /language_logos/lambda.png
 ---
 
-AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
+AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,
+making it easy to build applications that respond quickly to new information.
 
 ### Algorithmia + Lambda
 
@@ -93,4 +93,9 @@ aws kms encrypt --key-id alias/<KMS key name> --plaintext "<ALGORITHMIA_API_KEY>
 kmsEncryptedApiKey = "<kmsEncryptedApiKey>";
 {% endhighlight %}
 
-For more information, follow [this AWS Lambda walk through on our blog](http://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).
+
+## Additional information
+
+See the [NodeJS guide](../node) for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.
+
+See also the [AWS Lambda walk through on our blog](http://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).

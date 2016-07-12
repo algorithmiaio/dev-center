@@ -37,9 +37,11 @@ h1 {
 }
 h2 {
 	@include font-size(20);
+	margin-top: 36px;
 }
 h3 {
-	@include font-size(18);
+	@include font-size(16);
+	margin-top: 32px;
 }
 h4 {
 	@include font-size(14);

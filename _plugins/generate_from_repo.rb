@@ -20,6 +20,7 @@
 # - layout: Layout to use when creating the project page.
 # - title: Project title, which can be accessed in the layout.
 # - published: Project won't be published if this is false.
+# - ignore_sections: lower-cased, dashified sections of the README to exclude from this documentation (e.g. build-&-test )
 
 require 'fileutils'
 require 'find'
@@ -55,10 +56,26 @@ module Jekyll
       end
 
       # Try to get the readme data for this path and strip first two lines (redundant title)
-      readme_content = File.readlines(readme)[2..-1].join() unless readme.nil?
+      readme_content = File.readlines(readme) unless readme.nil?
+
+      # use the `ignore_section`
+      ignore_sections = self.data['ignore_sections'] || []
+
+      # by setting this to false, the first section will get skipped by default
+      # READMEs tend to favor build status, doc links, and such in the first section
+      # where the guides should provide an brief intro/overview of what the client is for
+      select_state = false
+      filtered_content = readme_content[2..-1].select do |line|
+        # check h2 and lower headers... this also allows bash snippets to include comments
+        if line.start_with?('##')
+          # puts "Checking section: #{Utils.slugify(line)}"
+          select_state = !ignore_sections.include?(Utils.slugify(line))
+        end
+        select_state
+      end
 
       # Append any content from README to the end of any content in the post.
-      self.content += "\n\n" + readme_content
+      self.content += "\n\n" + filtered_content.join
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
       self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m,
