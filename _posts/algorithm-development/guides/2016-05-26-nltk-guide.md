@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "NLTK"
-excerpt: "Guide to hosting your nltk model on Algorithmia."
+excerpt: "Hosting your nltk powered model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/nltk
 tags: [algo-model-guide]
