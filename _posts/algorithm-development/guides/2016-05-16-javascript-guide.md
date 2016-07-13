@@ -18,7 +18,7 @@ Algorithmia supports algorithm development in JavaScript.
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="https://nodejs.org/api/">Javascript Node language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="http://developers.algorithmia.com/clients/javascript/">Algorithmia Javascript Client</a>.
+via the <a href="http://developers.algorithmia.com/application-development/guides/javascript/">Algorithmia Javascript Client</a>.
 
 #### Managing Dependencies
 
@@ -89,7 +89,7 @@ cb(error, input)
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the [Algorithmia Javascript Client](#javascript-client) which is automatically available to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 

@@ -18,7 +18,7 @@ Algorithmia supports algorithm development in Scala.
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html">Java 8 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="http://developers.algorithmia.com/clients/scala/">Algorithmia & Scala</a>.
+via the <a href="http://developers.algorithmia.com/application-development/guides/scala/">Algorithmia & Scala</a>.
 
 #### Managing Dependencies
 
@@ -69,7 +69,7 @@ Algorithms can throw any exception, and they will be returned as an error via th
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the [Algorithmia Java Client](#java-client) which is automatically available to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/guides/scala/">Algorithmia & Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 

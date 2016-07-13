@@ -18,7 +18,7 @@ Algorithmia supports algorithm development in Python.
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="http://developers.algorithmia.com/clients/python/">Algorithmia Python Client</a>.
+via the <a href="http://developers.algorithmia.com/application-development/guides/python/">Algorithmia Python Client</a>.
 
 #### Managing Dependencies
 
@@ -78,7 +78,7 @@ When you are creating an algorithm that takes input from other algorithms it's i
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the [Algorithmia Python Client](#python-client) which is automatically available to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
