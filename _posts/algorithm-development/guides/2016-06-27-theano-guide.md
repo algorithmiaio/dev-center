@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Hosting your Theano model"
-excerpt: "Guide to hosting your theano model on Algorithmia."
+title:  "Theano"
+excerpt: "Host your Theano deep learning model on Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/guides/theano-guide
+permalink: /algorithm-development/model-guides/theano
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim

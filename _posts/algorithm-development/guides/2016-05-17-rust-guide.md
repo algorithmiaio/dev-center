@@ -3,7 +3,7 @@ layout: article
 title:  "Rust Algorithm Development"
 excerpt: "Build your algorithm in Rust"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/guides/rust-guide
+permalink: /algorithm-development/client-guides/rust
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
@@ -150,13 +150,13 @@ See the [Cargo Manifest](http://doc.crates.io/manifest.html#the-dependencies-sec
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/clients/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/client-guides/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
 
 #### Additional Resources
 
-* [Algorithmia Rust Client](http://developers.algorithmia.com/clients/rust/)
+* [Algorithmia Rust Client](http://developers.algorithmia.com/client-guides/rust/)
 * [Rust standard library](https://doc.rust-lang.org/std/)
 * [Crates.io](https://crates.io/)
