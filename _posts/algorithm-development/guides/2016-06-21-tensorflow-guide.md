@@ -3,7 +3,7 @@ layout: article
 title:  "Hosting your Tensorflow model"
 excerpt: "Guide to hosting your Tensorflow model on Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/guides/tensorflow-guide
+permalink: /algorithm-development/model-guides/tensorflow
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
