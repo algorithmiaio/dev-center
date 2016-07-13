@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Hosting your scikit-learn model"
+title:  "Scikit-Learn"
 excerpt: "Guide to hosting your scikit-learn model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/scikit

@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "NLTK Model"
+title:  "NLTK"
 excerpt: "Guide to hosting your nltk model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/nltk
