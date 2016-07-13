@@ -32,7 +32,7 @@ Here you'll want to create a data collection to host your graph and variable che
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot">
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -41,7 +41,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
-<img src="/images/post_images/model_hosting/tensorflow_update_collections.png" alt="Create a data collection" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/tensorflow_update_collections.png" alt="Create a data collection" class="screenshot">
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -51,14 +51,14 @@ Creating your algorithm is easy!
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
-<img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
 
-<img src="/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" style="width: 700px;"/>
+<img src="/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" class="screenshot">
 
 ## Load your Model
 Here is where you load your graph and run your model which will be called by the apply() function.
@@ -136,6 +136,6 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
-<img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" style="width: 700px"/>
+<img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
 
 That's it for hosting your <a href="https://www.tensorflow.org/">tensorflow</a> model on Algorithmia!
