@@ -150,7 +150,7 @@ See the [Cargo Manifest](http://doc.crates.io/manifest.html#the-dependencies-sec
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the [Algorithmia Rust Client](http://developers.algorithmia.com/clients/rust/) which is available by default to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/clients/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 

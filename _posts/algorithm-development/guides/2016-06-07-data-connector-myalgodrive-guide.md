@@ -1,6 +1,6 @@
 ---
 layout: article_page
-title:  "Algorithmia's Hosted Data Source"
+title:  "Hosted Data"
 excerpt: "Store your data for free on the Algorithmia platform."
 date:   2016-06-07 11:46:03
 permalink: /algorithm-development/data-sources/hosted-data-guide
@@ -8,8 +8,7 @@ tags: [alg-data-connectors]
 show_related: false
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/algodrive.png
-repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/algodrive.png
+    teaser: /post_images/data_connectors/hosted-data-box.png
 ---
 
 # Algorithmia's Hosted Data Source

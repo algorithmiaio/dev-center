@@ -69,7 +69,7 @@ Algorithms can throw any exception, and they will be returned as an error via th
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the [Algorithmia Java Client](#java-client) which is automatically available to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/clients/java/">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
