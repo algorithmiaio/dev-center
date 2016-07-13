@@ -4,6 +4,8 @@ title:  "NLTK"
 excerpt: "Hosting your nltk powered model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/nltk
+redirect_from:
+  - /algorithm-development/guides/nltk/
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
@@ -19,7 +21,7 @@ This guide is designed as an introduction to hosting a nltk model and publishing
 ## Prerequisites
 Maybe you've got a great idea or have tirelessly worked on a project in your spare time and you want it to be useful to others. Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
-#### Train your model. 
+#### Train your model.
 Say you have a model that predicts the gender of a name. You've discovered the features you want to include, you've done some data processing and have trained your model and validated it. You're happy with your results and now need to pickle the trained model so you can upload it to Algorithmia.
 
 #### Pickle your trained model.
@@ -72,8 +74,8 @@ Here is some code that has been adapted from the NLTK online books tutorial <a h
 {% highlight python %}
 """
 Algorithm to label names female or male
-Test set must be a list of features: [({'last_letter': 'e'}, 'female'), 
-({'last_letter': 'e'}, 'male'), ({'last_letter': 'e'}, 'female'), 
+Test set must be a list of features: [({'last_letter': 'e'}, 'female'),
+({'last_letter': 'e'}, 'male'), ({'last_letter': 'e'}, 'female'),
 ({'last_letter': 'w'}, 'male'), ({'last_letter': 'a'}, 'female')]
 """
 
