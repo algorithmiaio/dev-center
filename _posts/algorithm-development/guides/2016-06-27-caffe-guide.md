@@ -39,8 +39,8 @@ Next, upload your model files to your newly created data collection.
 
 - Load model by clicking box “Drop files here to upload”
 
-- Note the path to your files: 
-    - data://username/collections_name/file_name.prototxt.txt, 
+- Note the path to your files:
+    - data://username/collections_name/file_name.prototxt.txt,
     - data://username/collections_name/file_name.caffemodel
 
 <img src="/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot">
@@ -59,6 +59,7 @@ Creating your algorithm is easy!
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
+- Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
 
 <img src="/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot">
 
@@ -81,7 +82,7 @@ def initialize_model():
     """
     Load caffe.Net model with layers
     """
-    
+
     # Load model files from user collections
     model_uri = "data://user_name/caffe_demo/lenet.prototxt.txt"
     pretrained_uri = "data://user_name/caffe_demo/lenet_iter_10000.caffemodel"
@@ -94,10 +95,10 @@ def initialize_model():
     net = caffe.Net(model_file, pretrained_file, caffe.TEST, raw_scale=1, image_dims=(28, 28))
 
     return net
- 
+
 # Gets called once   
 net = initialize_model()
-    
+
 def apply(input):
     """
     Input is an image file
