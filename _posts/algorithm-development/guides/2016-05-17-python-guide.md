@@ -4,6 +4,8 @@ title:  "Python Algorithm Development"
 excerpt: "Build your algorithm in Python"
 date: 2016-05-17  09:50:46
 permalink: /algorithm-development/client-guides/python
+redirect_from:
+  - /algorithm-development/guides/python/
 tags: [algo-guide-lang]
 show_related: true
 author: steph_kim

@@ -3,7 +3,7 @@ layout: article
 title:  "Getting Started with Algorithmia"
 excerpt: "Make your first API call with this quick start guide."
 date:   2016-01-11 01:19:38
-categories: basics 
+categories: basics
 tags: [app-dev-getting-started]
 show_related: true
 author: liz_rush

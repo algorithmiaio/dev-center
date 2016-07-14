@@ -2,6 +2,8 @@
 layout: article
 title:  "The Javascript Library"
 permalink: /application-development/client-guides/javascript
+redirect_from:
+  - /clients/javascript/
 date:   2016-01-11 15:00:38
 categories: clients
 tags: [clients]
