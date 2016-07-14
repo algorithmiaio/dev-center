@@ -3,7 +3,9 @@ layout: article
 title:  "JavaScript Algorithm Development"
 excerpt: "Build your algorithm in JavaScript"
 date:   2016-05-16 14:28:42
-permalink: /algorithm-development/guides/javascript
+permalink: /algorithm-development/client-guides/javascript
+redirect_from:
+  - /algorithm-development/guides/javascript/
 tags: [algo-guide-lang]
 show_related: true
 author: steph_kim
