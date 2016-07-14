@@ -56,7 +56,7 @@ Creating your algorithm is easy!
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For machine learning models you will want to check 'Standard Execution Environment'.
 
-<img src="/images/post_images/model_hosting/create_new_alg.png" alt="Create your algorithm" class="screenshot">
+<img src="/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
 
 ### Load your Model
 Here is where you load your pickled model that is to be called by the apply() function.
