@@ -4,6 +4,8 @@ title:  "Hosted Data"
 excerpt: "How to set up and configure Algorithmia's free file hosting platform."
 date:   2016-06-07 11:46:03
 permalink: /application-development/data-sources/hosted-data-guide
+redirect_from:
+  - /application-development/data-connectors/hosted-data-guide
 tags: [app-data-connectors]
 show_related: true
 author: steph_kim

@@ -4,6 +4,8 @@ title:  "Amazon S3"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
 permalink: /application-development/data-sources/s3-guide
+redirect_from:
+  - /application-development/data-connectors/s3-guide
 tags: [app-data-connectors]
 show_related: true
 author: steph_kim
