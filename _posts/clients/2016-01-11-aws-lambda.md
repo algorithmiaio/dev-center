@@ -5,6 +5,7 @@ excerpt: "Run Algorithmia code in response to events with AWS Lambda."
 permalink: /application-development/client-guides/aws-lambda
 redirect_from:
   - /clients/aws-lambda/
+  - /application-development/guides/lambda/
 date: 2016-07-12
 categories: clients
 tags: [clients]
