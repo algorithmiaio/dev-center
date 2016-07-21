@@ -4,6 +4,7 @@ title:  "Basics"
 excerpt: "Basic Guides for Using Algorithmia in your Application"
 date:  2016-06-09 17:01:37
 categories: application-development
+permalink: /application-development/basic-guides/
 tags: [app-guide-overview]
 show_related: false
 author: steph_kim

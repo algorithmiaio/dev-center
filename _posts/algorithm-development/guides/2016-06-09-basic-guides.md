@@ -4,6 +4,7 @@ title:  "Basics"
 excerpt: "Basic Guides for Algorithm Developers"
 date:  2016-06-09 17:01:37
 categories: algorithm-development
+permalink: /algorithm-development/basic-guides/
 tags: [app-guide-overview]
 show_related: false
 author: steph_kim

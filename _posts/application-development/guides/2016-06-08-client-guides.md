@@ -3,6 +3,9 @@ layout: article_page
 title:  "Client Guides"
 excerpt: "Guides to building an app using an algorithm from Algorithmia in: Python, Scala, Rust, Java, Ruby and JavaScript."
 date:  2016-06-08 17:01:37
+permalink: /application-development/client-guides/
+redirect_from:
+  - /application-development/guides/
 categories: application-development
 tags: [app-guide-overview]
 show_related: false

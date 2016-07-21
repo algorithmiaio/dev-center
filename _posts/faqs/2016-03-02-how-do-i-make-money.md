@@ -2,6 +2,12 @@
 layout: faq
 title:  "I am an algorithm developer, how do I make money?"
 date:   2016-03-02 15:00:38
+permalink: /faqs/
+redirect_from:
+  - /basics/platform-faq/
+  - /basics/#platform-faq/
+  - /basics/algo-dev-faq/
+  - /basics/#algo-dev-faq/
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true

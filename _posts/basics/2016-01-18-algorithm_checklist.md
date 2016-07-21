@@ -3,6 +3,9 @@ layout: article
 title:  "Algorithm Profile Checklist"
 excerpt: "Follow these tips to create the best algorithm profile possible."
 date:   2016-01-18 01:19:38
+permalink: /basics/algorithm_checklist/
+redirect_from:
+  - /guides/algorithm_checklist/
 categories: basics 
 tags: [algo-dev]
 show_related: true

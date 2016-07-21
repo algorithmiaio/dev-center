@@ -3,6 +3,9 @@ layout: article
 title:  "All About Bounties"
 excerpt: "An introduction to the bounty system."
 date:   2016-03-10 01:19:38
+permalink: /basics/all-about-bounties/
+redirect_from:
+  - /basics/an-intro-to-bounties/
 categories: basics 
 tags: [bounties]
 show_related: true
