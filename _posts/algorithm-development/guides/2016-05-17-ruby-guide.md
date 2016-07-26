@@ -6,6 +6,7 @@ date: 2016-05-17  09:50:46
 permalink: /algorithm-development/client-guides/ruby
 redirect_from:
   - /algorithm-development/guides/ruby/
+  - /algorithm-development/guides/ruby-guide/
 tags: [algo-guide-lang]
 show_related: true
 author: steph_kim

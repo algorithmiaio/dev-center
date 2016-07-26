@@ -6,6 +6,7 @@ date: 2016-05-17  09:50:46
 permalink: /algorithm-development/client-guides/scala
 redirect_from:
   - /algorithm-development/guides/scala/
+  - /algorithm-development/guides/scala-guide/
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush

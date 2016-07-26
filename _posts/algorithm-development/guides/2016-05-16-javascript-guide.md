@@ -6,6 +6,7 @@ date:   2016-05-16 14:28:42
 permalink: /algorithm-development/client-guides/javascript
 redirect_from:
   - /algorithm-development/guides/javascript/
+  - /algorithm-development/guides/javascript-guide/
 tags: [algo-guide-lang]
 show_related: true
 author: steph_kim

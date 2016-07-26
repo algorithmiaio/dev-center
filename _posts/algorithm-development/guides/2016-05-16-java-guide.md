@@ -6,6 +6,7 @@ date:   2016-05-16 14:28:42
 permalink: /algorithm-development/client-guides/java
 redirect_from:
   - /algorithm-development/guides/java/
+  - /algorithm-development/guides/java-guide/
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
