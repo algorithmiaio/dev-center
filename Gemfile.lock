@@ -109,6 +109,3 @@ DEPENDENCIES
   octopress (~> 3.0)
   rake
   therubyracer
-
-BUNDLED WITH
-   1.11.2
