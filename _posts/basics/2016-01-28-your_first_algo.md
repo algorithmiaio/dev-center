@@ -22,7 +22,7 @@ When you open the navigation dropdown at the top of the page, you'll find a purp
 By clicking this button, you'll be prompted with a dialog that allows you to give your algorithm a name and set some initial properties, such as the name, language, license, and special permissions:
 
 <br>
-![New Algorithm settings](/images/post_images/your_first_algo/algo_settings.png)
+<img src="/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
 
 You can learn more about these properties in the [Algorithm Basics](http://developers.algorithmia.com/basics/algorithm_basics/) article.
 

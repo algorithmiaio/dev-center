@@ -53,7 +53,7 @@ Creating your algorithm is easy!
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
-<img src="/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
+<img src="/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.

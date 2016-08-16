@@ -66,44 +66,39 @@ Now to check out a code example using the <a href="http://scikit-learn.org/stabl
 
 {% highlight python %}
 import pickle
-
-import Algorithmia
-import pandas as pd
 import numpy as np
-from sklearn.cross_validation import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error
+import Algorithmia
 
+from sklearn.datasets import load_boston
+from sklearn.ensemble import RandomForestRegressor
+
+# For demonstration just load the sample dataset not used in model and
+# pass in 'test' as the input for the apply() function when calling the
+# algorithm in the console.
+dataset = load_boston()
 client = Algorithmia.client()
-test_data_path = 'data://user_name/another_test/day.csv'
-test_data_name = client.file(test_data_path).getFile().name
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://user_name/another_test/scikit-model.pkl'
+    file_path = 'data://stephanie/demos/scikit-demo-boston-regression.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
         return model
 
+# Load model outside of the apply function so it only gets loaded once
 model = load_model()
 
 def apply(input):
-    # input = {'features': list, 'targ': str}
-    # 'features' should be a list of columns that you want
-    # your model to use to predict your target
-    test = pd.read_csv(test_data_name)
-    columns = input['features']
-    target = input['targ']
-    # Predict our test data
-    predict = model.predict(test[columns])
-    # Compute the error
-    error = mean_squared_error(test[target], predict)
-    some_data = {'error': error, 'predict': predict)
-    # Do something with your model and return useful output for the user
-    return some_data
+    # If you want to play around with the algorithm you can
+    # create your own and pass in your own housing price dataset
+    # as input and change 'test' to input so it would be model.predict(input)
+    test = dataset.data[200:]
+    prediction = model.predict(test)
+    print(prediction)
+
 {% endhighlight %}
 
 **NOTE** If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.

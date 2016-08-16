@@ -73,51 +73,43 @@ Here is some code that has been adapted from the NLTK online books tutorial <a h
 
 {% highlight python %}
 """
-Algorithm to label names female or male
-Test set must be a list of features: [({'last_letter': 'e'}, 'female'),
-({'last_letter': 'e'}, 'male'), ({'last_letter': 'e'}, 'female'),
-({'last_letter': 'w'}, 'male'), ({'last_letter': 'a'}, 'female')]
+NLTK algorithm to label names female or male based on last letter of names
+
+Input: String
+Note when testing in console do not add quotations to input since
+it counts the quotations as part of the input.
 """
 
 import Algorithmia
 import csv
 import pickle
-from nltk.classify import accuracy
 
 client = Algorithmia.client()
-
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://user_name/demos/gender_model.pkl'
+    file_path = 'data://stephanie/demos/gender_model.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
         return model
 
+# Load model outside of apply function
+# This gets loaded once when called outside the apply function
 classifier = load_model()
 
-
 def gender_features(word):
-    # Last letter as feature.
+    # Last letter as feature
+    print("word", word[-1])
     return {'last_letter': word[-1]}
-
-def test_data():
-    test_file = client.file('data://user_name/demos/gender_test_data.csv').getFile().name
-    with open(test_file, 'rb') as f:
-        test_data = csv.reader(f, delimiter=',')
-        data = [row for row in test_data]
-        return data
 
 def apply(input):
     name = input
-    informative_features = classifier.show_most_informative_features(5)
-    test_set = test_data()
-    output = {'gender': classifier.classify(gender_features(
-        name)), 'accuracy': accuracy(classifier, test_set),
-        'informative_features': informative_features}
+    model = classifier.classify(gender_features(name))
+    output = {'gender': model}
+    print(output)
     return output
 
 {% endhighlight %}
