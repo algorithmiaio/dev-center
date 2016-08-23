@@ -125,8 +125,12 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
+
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
+
+## Working Demo
+If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/test">NLTK-demo</a>
 
 That's it for hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!

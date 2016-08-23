@@ -65,23 +65,21 @@ Our recommendation is to preload your model in a separate function before apply(
 Now to check out a code example using the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Random Forest Regressor</a> to build a prediction model in Scikit-learn
 
 {% highlight python %}
+import sys
 import pickle
+import csv
 import numpy as np
 import Algorithmia
 
 from sklearn.datasets import load_boston
 from sklearn.ensemble import RandomForestRegressor
 
-# For demonstration just load the sample dataset not used in model and
-# pass in 'test' as the input for the apply() function when calling the
-# algorithm in the console.
-dataset = load_boston()
 client = Algorithmia.client()
 
 def load_model():
     # Get file by name
     # Open file and load model
-    file_path = 'data://stephanie/demos/scikit-demo-boston-regression.pkl'
+    file_path = 'data://demo/demo/scikit-demo-boston-regression.pkl'
     model_path = client.file(file_path).getFile().name
     # Open file and load model
     with open(model_path, 'rb') as f:
@@ -91,13 +89,26 @@ def load_model():
 # Load model outside of the apply function so it only gets loaded once
 model = load_model()
 
+
+def process_input(input):
+    # Create numpy array from csv file passed as input in apply()
+    if input.startswith('data:'):
+        file_url = client.file(input).getFile().name
+        try:
+            np_array = np.genfromtxt(file_url, delimiter=',')
+            print(np_array)
+            return np_array
+        except Exception as e:
+            print("Could not create numpy array from data", e)
+            sys.exit(0)
+
+
 def apply(input):
-    # If you want to play around with the algorithm you can
-    # create your own and pass in your own housing price dataset
-    # as input and change 'test' to input so it would be model.predict(input)
-    test = dataset.data[200:]
-    prediction = model.predict(test)
-    print(prediction)
+    # Input should be a csv file - model is trained on Sklearn 
+    # Boston housing dataset using RandomForestRegressor
+    np_data = process_input(input)
+    prediction = model.predict(np_data)
+    return list(prediction)
 
 {% endhighlight %}
 
@@ -119,9 +130,13 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
+
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
 <img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
+
+## Working Demo
+If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/scikitlearnmodel">Scikit-Learn-demo</a>
 
 That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
 
