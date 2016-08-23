@@ -78,15 +78,15 @@ import csv
 
 client = Algorithmia.client('your_api_key')
 
-def dropbox_data():
-    # Get file from Dropbox default data source
+def s3_data():
+    # Get file from S3 data source
     data_file = client.file('s3+saha://Algorithmia/test_data.csv').get()
     # Pass in file and pass in args required from the algorithm FpGrowth
     input = [data_file, 5, 2]
     algo = client.algo('paranoia/FpGrowth/0.2.0')
     return algo.pipe(input)
 
-dropbox_data()
+s3_data()
 
 {% endhighlight %}
 
@@ -96,7 +96,7 @@ If you're working with an algorithm that takes a file or directory as input from
 algo.pipeJson({'inputFile':'s3+saha://Algorithmia/test_data.csv'})
 {% endhighlight %}
 
-**NOTE:** If you call an algorithm it can only access your data source. This means that it is NOT possible for an algorithm to read data from your Dropbox and write that data to an account controlled by an another algorithm author. Algorithms do NOT have direct access to any credentials associated with your data sources, and can only access data from a data source using the Algorithmia API.
+**NOTE:** If you call an algorithm it can only access your data source. This means that it is NOT possible for an algorithm to read data from your S3 and write that data to an account controlled by an another algorithm author. Algorithms do NOT have direct access to any credentials associated with your data sources, and can only access data from a data source using the Algorithmia API.
 
 ## Data Source Routes and Data API Routes
 
