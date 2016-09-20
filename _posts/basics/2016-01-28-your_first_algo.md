@@ -52,7 +52,7 @@ Because any call made from your algorithm is considered the same session as when
 
 {% highlight python %}
 if 'url' in input:      
-  text = Algorithmia.algo(util/Html2Text/0.1.3').pipe(input['url']) 
+  text = Algorithmia.algo(util/Html2Text/0.1.3').pipe(input['url']).result
 {% endhighlight %}
 
 This example shows an algorithm that checks the type of input passed in, and if it is a URL, will call into the Html2Text algorithm. The original caller of your algorithm will be charged for both the first algorithm call as well as the internal algorithm call. The algorithm will automatically use the credentials of the person calling your algorithm.
