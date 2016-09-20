@@ -1,7 +1,7 @@
 ---
 layout: article_page
 title:  "Build an algorithm in the language of your choice"
-excerpt: "Guides to building an algorithm in your favorite language including: Python, Scala, Rust, Java, Ruby and JavaScript."
+excerpt: "Guides to building an algorithm in your favorite language including: Python, R, Scala, Rust, Java, Ruby and JavaScript."
 date:   2016-05-16 14:28:42
 permalink: /algorithm-development/client-guides/
 redirect_from:

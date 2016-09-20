@@ -78,16 +78,17 @@ Which will return:
 
 `"A few of the most starred node.js packages: express, gulp, async"`
 
-When you are creating an algorithm that takes input from other algorithms it's important to understand the data types your algorithm ingests and be thoughtful of the data types you output that others will ingest as input.
+When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow a few options for input such as a file or a sequence.
 
 #### Error Handling
 
-Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
-
 {% highlight javascript %}
-var error = "Invalid graph structure"
-// Where cb is a callback function passed into your apply method
-cb(error, input)
+try {
+	x = parseInt(input)
+} catch (error) {
+	// Where cb is a callback function passed into your apply method
+	throw cb(error, input)
+}
 {% endhighlight %}
 
 #### Calling Other Algorithms and Managing Data

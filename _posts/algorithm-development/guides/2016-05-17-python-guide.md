@@ -77,7 +77,7 @@ Which will return:
 
 `"Hello Knights Who Say Ni"`
 
-When you are creating an algorithm that takes input from other algorithms it's important to understand the data types your algorithm ingests and be thoughtful of the data types you output that others will ingest as input.
+When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow a few options for input such as a file or a sequence.
 
 #### Calling Other Algorithms and Managing Data
 
@@ -87,20 +87,14 @@ When designing your algorithm, don't forget that there are special data director
 
 #### Error Handling
 
-`raise NameError('Invalid graph structure')`
-
-Exceptions will be returned as JSON, of the form:
-
-{% highlight json %}
-{
-  "error": {
-    "message": "Error running algorithm",
-    "stacktrace": ...
-  }
-}
+{% highlight python %}
+while True:
+    try:
+        x = int(input)
+        break
+    except ValueError as e:
+     	print('Invalid input, please enter a number', e)
 {% endhighlight %}
-
-Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
 #### Additional Resources
 
