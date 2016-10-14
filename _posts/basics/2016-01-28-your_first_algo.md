@@ -45,6 +45,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 #### Editing Your Algorithm
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API.
+You can also <a href="/algorithm-development/git-support/">use Git to push directly to Algorithmia</a> from your current workflow.
 
 #### Calling other algorithms
 
