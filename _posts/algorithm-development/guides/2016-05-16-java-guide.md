@@ -83,5 +83,5 @@ Some older algorithms use our deprecated Java client. If it has an import from t
 
 #### Additional Resources
 
-* <a href="http://developers.algorithmia.com/clients/java/">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
-* <a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a>
+* [Algorithmia Java client documentation](http://developers.algorithmia.com/application-development/client-guides/java/)
+* [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)
