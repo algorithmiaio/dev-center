@@ -52,11 +52,13 @@ class Example {
 }
 {% endhighlight %}
 
-By default, Algorithmia uses Google's <a href="https://code.google.com/p/google-gson/">GSON</a> library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
+By default, Algorithmia uses Google's [GSON](https://code.google.com/p/google-gson/) library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
+
+Note: GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.
 
 This example shows a function that takes two parameters, a Map from Strings to Strings (dict) and another String (key), and returns another String.
 
-Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the <a href="https://sites.google.com/site/gson/gson-user-guide">Gson User Guide</a> for reference.
+Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the [Gson User Guide](https://sites.google.com/site/gson/gson-user-guide) for reference.
 
 <aside class="notice">
   Note: Binary data is passed using <code>byte[]</code>
