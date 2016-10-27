@@ -52,14 +52,60 @@ class Example {
 }
 {% endhighlight %}
 
-By default, Algorithmia uses Google's <a href="https://code.google.com/p/google-gson/">GSON</a> library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
+By default, Algorithmia uses Google's [GSON](https://code.google.com/p/google-gson/) library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
+
+Note: GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.
 
 This example shows a function that takes two parameters, a Map from Strings to Strings (dict) and another String (key), and returns another String.
 
-Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the <a href="https://sites.google.com/site/gson/gson-user-guide">Gson User Guide</a> for reference.
+Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the [Gson User Guide](https://sites.google.com/site/gson/gson-user-guide) for reference.
 
 <aside class="notice">
   Note: Binary data is passed using <code>byte[]</code>
+</aside>
+
+#### Custom JSON parsing
+If you want more control over parsing, then use a single apply method accepting a <code>String</code> and give it the <code>@AcceptsJson</code> annotation (from the <code>com.algorithmia.algo</code> package).
+
+{% highlight scala %}
+package algorithmia.Example
+
+import com.algorithmia._
+import com.algorithmia.algo._
+import com.algorithmia.data._
+
+class Example {
+  @AcceptsJson
+  def apply(jsonString: String): String = {
+    // Do JSON parsing here
+  }
+}
+{% endhighlight %}
+
+<aside class="class">
+If you have more than 1 apply method, or your apply method does not take a <code>String</code> as an argument then you will receive an error message at runtime.  Also note that passing in a String <code>"foo"</code> becomes serialized to JSON like <code>"\"foo\""</code>.
+</aside>
+
+On the other hand, if GSON doesn't serialize your output response to JSON correctly (or you want to do some custom serialization) you can add an <code>@ReturnsJson</code> to your apply method and return a serialized JSON String.
+
+{% highlight scala %}
+package algorithmia.Example
+
+import com.algorithmia._
+import com.algorithmia.algo._
+import com.algorithmia.data._
+
+class Example {
+  @ReturnsJson
+  def apply(foo: String, bar: String): String = {
+    // Do some work
+    // Return a JSON string
+  }
+}
+{% endhighlight %}
+
+<aside class="notice">
+If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
 </aside>
 
 #### Error Handling

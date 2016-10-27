@@ -62,6 +62,49 @@ Algorithmia can automatically parse many types of native Java objects to and fro
   Note: Binary data is passed using <code>byte[]</code>
 </aside>
 
+#### Custom JSON parsing
+If you want more control over parsing, then use a single apply method accepting a <code>String</code> and give it the <code>@AcceptsJson</code> annotation (from the <code>com.algorithmia.algo</code> package).
+
+{% highlight java %}
+package algorithmia.Example
+
+import com.algorithmia.*;
+import com.algorithmia.algo.*;
+import com.algorithmia.data.*;
+
+public class JavaTest {
+    @AcceptsJson
+    public String apply(String input) throws Exception {
+        // Parse JSON here
+    }
+}
+{% endhighlight %}
+
+<aside class="class">
+If you have more than 1 apply method, or your apply method does not take a <code>String</code> as an argument then you will receive an error message at runtime.  Also note that passing in a String <code>"foo"</code> becomes serialized to JSON like <code>"\"foo\""</code>.
+</aside>
+
+On the other hand, if GSON doesn't serialize your output response to JSON correctly (or you want to do some custom serialization) you can add an <code>@ReturnsJson</code> to your apply method and return a serialized JSON String.
+
+{% highlight java %}
+package algorithmia.Example
+
+import com.algorithmia.*;
+import com.algorithmia.algo.*;
+import com.algorithmia.data.*;
+
+public class JavaTest {
+    @ReturnsJson
+    public String apply(String input) throws Exception {
+        // Do some work
+        // Return a JSON string
+    }
+}
+{% endhighlight %}
+
+<aside class="notice">
+If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
+</aside>
 #### Error Handling
 
 {% highlight java %}
@@ -83,5 +126,5 @@ Some older algorithms use our deprecated Java client. If it has an import from t
 
 #### Additional Resources
 
-* <a href="http://developers.algorithmia.com/clients/java/">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
-* <a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a>
+* [Algorithmia Java client documentation](http://developers.algorithmia.com/application-development/client-guides/java/)
+* [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)
