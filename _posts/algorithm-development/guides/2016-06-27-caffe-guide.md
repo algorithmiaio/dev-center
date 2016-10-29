@@ -104,11 +104,15 @@ def apply(input):
     Input is an image file
 
     Input examples:
-    Data Sources via https://algorithmia.com/data using the Data API
-    or as an http request using urllib
+    Data Sources via https://algorithmia.com/data, or http(s) URLs using the
+    Smart Image Downloader.
     """
 
-    image = caffe.io.load_image(input, color=False)
+    client = Algorithmia.client()
+    imgDataPath = client.algo("util/SmartImageDownloader").pipe(input).result
+    imgAbsPath = client.file(imgDataPath).getFile().name
+
+    image = caffe.io.load_image(imgAbsPath, color=False)
     out = net.forward_all(data=np.asarray([image]))
     probability_vector = out['prob'][0].argmax(axis=0)
     print(predicted_vector)
