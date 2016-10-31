@@ -109,7 +109,7 @@ def apply(input):
     """
 
     client = Algorithmia.client()
-    imgDataPath = client.algo("util/SmartImageDownloader").pipe(input).result
+    imgDataPath = client.algo("util/SmartImageDownloader").pipe(input).result["savePath"][0]
     imgAbsPath = client.file(imgDataPath).getFile().name
 
     image = caffe.io.load_image(imgAbsPath, color=False)
