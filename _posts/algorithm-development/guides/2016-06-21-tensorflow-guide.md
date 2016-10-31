@@ -83,7 +83,7 @@ def load_data():
 
     return (checkpoint_file, graph_file)
 
- 
+
 # Get called once   
 saver = tf.train.Saver()
 checkpoints, graph = load_data()
@@ -113,7 +113,7 @@ def inject_data(input):
               x: input, y_: mnist.test.labels}))
         prediction = tf.argmax(y, 1)
         print(prediction.eval(feed_dict={x: input}))
-    
+
 def apply(input):
     """
     Input would be an image file either from:
@@ -133,6 +133,8 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 - Set it to royalty free or set to per-call royalty
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
+
+If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a>
 
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
