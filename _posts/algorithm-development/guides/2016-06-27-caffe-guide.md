@@ -130,7 +130,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
-If you want to have a better idea of how a finished caffe algorithm looks like, check here: <a href="https://algorithmia.com/algorithms/deeplearning/CaffeNet/edit">CaffeNet</a>
+If you want to have a better idea of how a finished caffe algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/CaffeNet/edit">CaffeNet</a>
 
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
