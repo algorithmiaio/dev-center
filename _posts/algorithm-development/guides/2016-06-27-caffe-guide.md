@@ -104,11 +104,15 @@ def apply(input):
     Input is an image file
 
     Input examples:
-    Data Sources via https://algorithmia.com/data using the Data API
-    or as an http request using urllib
+    Data Sources via https://algorithmia.com/data, or http(s) URLs using the
+    Smart Image Downloader.
     """
 
-    image = caffe.io.load_image(input, color=False)
+    client = Algorithmia.client()
+    imgDataPath = client.algo("util/SmartImageDownloader").pipe(input).result["savePath"][0]
+    imgAbsPath = client.file(imgDataPath).getFile().name
+
+    image = caffe.io.load_image(imgAbsPath, color=False)
     out = net.forward_all(data=np.asarray([image]))
     probability_vector = out['prob'][0].argmax(axis=0)
     print(predicted_vector)
@@ -125,6 +129,8 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 - Set it to royalty free or set to per-call royalty
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
+
+If you want to have a better idea of how a finished caffe algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/CaffeNet/edit">CaffeNet</a>
 
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
