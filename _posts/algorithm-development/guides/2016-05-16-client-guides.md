@@ -22,8 +22,7 @@ We currently support algorithm development in Java, Scala, Python, Ruby, Rust an
 
 ### Using Git
 
-Behind the scenes, Algorithmia uses git to manage source code.
-Currently git access is offline but in the future you will be able to access modify and submit source code to Algorithmia via git.
+Behind the scenes, Algorithmia uses git to manage source code. Checkout <a href="/algorithm-development/git-support/">this guide</a> to learn more.
 
 ### Guides to Currently Supported Languages:
 {% assign lang_tags = "algo-guide-lang" | split:"|" %}
