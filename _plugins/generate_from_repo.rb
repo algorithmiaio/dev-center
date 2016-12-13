@@ -78,7 +78,7 @@ module Jekyll
       self.content += "\n\n" + filtered_content.join
 
       # Replace github-style '``` lang' code markup to pygments-compatible.
-      self.content = self.content.gsub(/```([ ]?[a-z0-9]+)?(.*?)```/m,
+      self.content = self.content.gsub(/```([ ]?[a-zA-Z0-9]+)?(.*?)```/m,
         '{% highlight \1 %} \2 {% endhighlight %}')
 
       # For cases of {{ }} in README, remove one { to prevent liquid from doin' its thang.
