@@ -3,20 +3,271 @@ layout: default
 exclude_from_search: true
 ---
 
-<div class="hero" id="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1>{{ page.title }}</h1>
-      {% if page.excerpt %}<h2>{{ page.excerpt }}</h2>{% endif %}
+<!-- <div class="wrap">
+  <div class="landing-page-wrap">
+    <div class="page-content">
+      {{ content }}
+    </div>
+  </div>
+</div> -->
+
+
+<div class="dev-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ page.title }}</h1>
+        {% if page.excerpt %}<h4 class="secondary-light">{{ page.excerpt }}</h4>{% endif %}
+      </div>
     </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <nav class="bs-docs-sidebar hidden-print">
+        <ul id="sidebar" class="nav nav-stacked">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#gettingStarted">Getting started</a>
+          </li>
+          <li class="active">
+            <a href="#clientGuides">Client guides</a>
+            <ul class="nav nav-stacked">
+              <li>
+                <a href="#clientGuides-overview">Overview</a>
+              </li>
+              <li>
+                <a href="#clientGuides-android">Android</a>
+              </li>
+              <li>
+                <a href="#clientGuides-awslambda">AWS Lambda</a>
+              </li>
+              <li>
+                <a href="#clientGuides-cli">CLI</a>
+              </li>
+              <li>
+                <a href="#clientGuides-curl">cURL</a>
+              </li>
+              <li>
+                <a href="#clientGuides-java">Java</a>
+              </li>
+              <li>
+                <a href="#clientGuides-javascript">JavaScript</a>
+              </li>
+              <li>
+                <a href="#clientGuides-nodejs">NodeJS</a>
+              </li>
+              <li>
+                <a href="#clientGuides-python">Python</a>
+              </li>
+              <li>
+                <a href="#clientGuides-r">R</a>
+              </li>
+              <li>
+                <a href="#clientGuides-ruby">Ruby</a>
+              </li>
+              <li>
+                <a href="#clientGuides-rust">Rust</a>
+              </li>
+              <li>
+                <a href="#clientGuides-scala">Scala</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#tutorials">Tutorials</a>
+            <ul class="nav nav-stacked">
+              <li>
+                <a href="#tutorials-recipes">Recipes</a>
+              </li>
+              <li>
+                <a href="#tutorials-sampleApps">Sample Apps</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#workingWithData">Working with data</a>
+            <ul class="nav nav-stacked">
+              <li>
+                <a href="#workingWithData-overview">Overview</a>
+              </li>
+              <li>
+                <a href="#workingWithData-hostedData">Hosted data</a>
+              </li>
+              <li>
+                <a href="#workingWithData-dropbox">Dropbox</a>
+              </li>
+              <li>
+                <a href="#workingWithData-AmazonS3">Amazon S3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#algorithmDevelopment">Algorithm development</a>
+            <ul class="nav nav-stacked">
+              <li>
+                <a href="#algorithmDevelopment-basics">Algorithm permissions, pricing, and versioning</a>
+              </li>
+              <li>
+                <a href="#algorithmDevelopment-supportedLanguages">Supported languages</a>
+                <ul class="nav nav-stacked">
+                  <li>
+                    <a href="#supportedLanguages-overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-java">Java</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-nodejs">NodeJS</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-python">Python</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-r">R</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-ruby">Ruby</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-rust">Rust</a>
+                  </li>
+                  <li>
+                    <a href="#supportedLanguages-scala">Scala</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#algorithmDevelopment-git">Using GIT with Algorithmia</a>
+              </li>
+              <li>
+                <a href="#algorithmDevelopment-hostYourModel">Host your model</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#apiDocs">API Documents</a>
+          </li>
+          <li>
+            <a href="#teamsAndOrganizations">Teams & Organizations</a>
+          </li>
+          <li>
+            <a href="#bounties">Bounties</a>
+          </li>
+          <li>
+            <a href="#pricingAndTerms">Pricing & Terms</a>
+          </li>
+          <li>
+            <a href="#faq">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+    </div> <!-- END NAV CONTAINER -->
 
-<div class="wrap">
-  <div class="landing-page-wrap">
-    <div class="page-content">
-      {{ content }}
-    </div><!-- /.page-content -->
-  </div><!-- /.landing-page-wrap -->
-</div>
+
+    <div class="col-md-9">
+
+      <div class="row">
+        <p class="lg">Home</p>
+        <h2>Welcome</h2>
+        <p>One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic “Hello World” algorithm.</p>
+        <p>This guide will show you how with a walk-through of making and publishing a classic “Hello World” algorithm.</p>
+      </div>
+
+      <div class="row">
+        <h3>Get started</h3>
+        <div class="dev-card">
+          <img src="images/get_started.png" alt="Get Started" class="img-fill">
+          <div class="dev-card-text">
+            <p class="lg whitespace-md">Get up to speed with the Algorithmia marketplace</p>
+            <a href="#getStarted" class="btn-primary-inverted flush">GET STARTED NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <img src="images/recipes.jpg" alt="Recipes" class="img-fill">
+        </div>
+        <div class="col-md-7">
+          <h3 class="whitespace">Recipes</h3>
+          <p class="lg whitespace-md">Checkout some common and useful combinations of services</p>
+          <a href="#tutorials-recipes" class="btn-primary-inverted">VIEW RECIPES</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <h3 class="whitespace">Sample apps</h3>
+          <p class="lg whitespace-md">Play with some sample apps to see the power of deep learning</p>
+          <a href="#tutorials-sampleApps" class="btn-primary-inverted">VIEW SAMPLE APPS</a>
+        </div>
+        <div class="col-md-5">
+          <img src="images/sample_apps.jpg" alt="Sample Apps" class="img-fill">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <img src="images/contribute.jpg" alt="Contribute" class="img-fill">
+        </div>
+        <div class="col-md-7">
+          <h3 class="whitespace">Contribute</h3>
+          <p class="lg whitespace-md">Add your own work or microservice to the marketplace and earn credits</p>
+          <a href="#tutorials-recipes" class="btn-primary-inverted">ADD YOUR WORK</a>
+        </div>
+      </div>
+
+      <div class="row row-sm">
+        <div class="col-md-12">
+          <h3>Featured blog posts</h3>
+        </div>
+        <div class="col-md-4">
+          <div class="dev-card">
+            <img src="http://blog.algorithmia.com/wp-content/uploads/2016/11/algorithmia-aws-ami-pipeline.jpg" class="img-fill">
+            <div class="dev-card-text">
+              <p class="secondary">November 28, 2016</p>
+              <p class="lg">
+                <a href="#">Introducing Our AWS AMI and DeepFilter Training Pipeline</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dev-card">
+            <img src="http://blog.algorithmia.com/wp-content/uploads/2016/11/aws-ami-gpu-style-transfer.jpg" class="img-fill">
+            <div class="dev-card-text">
+              <p class="secondary">November 28, 2016</p>
+              <p class="lg">
+                <a href="#">An Open Source AWS AMI for Training Style Transfer Models</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dev-card">
+            <img src="http://blog.algorithmia.com/wp-content/uploads/2016/11/neural-style-transfer-artistic.jpg" class="img-fill">
+            <div class="dev-card-text">
+              <p class="secondary">November 28, 2016</p>
+              <p class="lg">
+                <a href="#">Getting Started with Neural Style Transfer from the Command Line</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="#">Visit the blog</a>
+        </div>
+      </div>
+
+    </div> <!-- END CONTENT CONTAINER -->
+
+  </div> <!-- END CONTAINER ROW -->
+
+</div> <!-- END PAGE CONTAINER -->
