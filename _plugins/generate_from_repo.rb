@@ -40,13 +40,13 @@ module Jekyll
     def initialize(site, output_dir, base_dir, project_md_path, post_name)
       super(site, site.source, '', File.join(base_dir, post_name))
       self.data = load_config(project_md_path)
-      puts "Fetching data for #{self.data['title']} post"
 
       unless self.data['repository']
         return false
       end
 
-      repo_dir = clone_repo(post_name)
+      puts "Fetching data for #{self.data['title']} post"
+      repo_dir = sync_repo(post_name, site.config['skip_readme_updates'])
       readme = get_readme_path(repo_dir)
 
       # Decide the extension - if it's not textile, markdown or HTML treat it as textile.
@@ -100,9 +100,9 @@ module Jekyll
     # Clones the project's repository to a temp folder.
     # `project_name` is the name of the project to process.
     # Returns String path to the cloned repository.
-    def clone_repo(project_name)
+    def sync_repo(project_name, skip_readme_updates = false)
       # Make the base clone directory if necessary.
-      clone_dir = File.join(Dir.tmpdir(), 'checkout')
+      clone_dir = File.join('/tmp/client-repos')
       unless File.directory?(clone_dir)
         p = Pathname.new(clone_dir)
         p.mkdir
@@ -111,12 +111,20 @@ module Jekyll
       # Remove any old repo at this location.
       repo_dir = File.join(clone_dir, project_name)
       if File.directory?(repo_dir)
-        FileUtils.remove_dir(repo_dir)
+        if skip_readme_updates
+          puts "Using cached #{self.data['repository']}"
+        else
+          puts "Updating from #{self.data['repository']}"
+          g = Git.open(repo_dir)
+          g.fetch
+          g.reset_hard
+        end
+      else
+        puts "Cloning #{self.data['repository']}"
+        Git.clone(self.data['repository'], project_name, :path => clone_dir)
       end
 
       # Clone the repository.
-      puts "Cloning #{self.data['repository']}"
-      Git.clone(self.data['repository'], project_name, :path => clone_dir)
       repo_dir
     end
 
