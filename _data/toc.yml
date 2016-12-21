@@ -1,0 +1,47 @@
+# Site navigation links
+
+- title: Home
+  url: /
+
+- title: Getting Started
+  url: /TODO
+
+- title: Client Guides
+  url: /clients
+  category: clients
+
+- title: Tutorials
+  url: /TODO
+  links:
+    - title: Recipes
+      url: /TODO
+    - title:  Sample Apps
+      url: /samples
+
+- title: Working with Data
+  url: /application-development/app-data/data-sources/
+  category: app-data
+
+- title: Algorithm Development
+  url: /algorithm-development
+  category: algo-dev
+  links:
+    - title: Supported Languages
+      url: /TODO
+      category: algo-guide-lang
+
+- title: API Documentation
+  url: http://docs.algorithmia.com
+
+- title: Teams & Organizations
+  url: /TODO
+
+- title: Bounties
+  url: /TODO
+
+- title: Pricing & Terms
+  url: /TODO
+
+- title: FAQ
+  url: /faqs
+
