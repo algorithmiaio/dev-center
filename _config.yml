@@ -11,8 +11,14 @@ locale: en_US
 # When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly.
 # Don’t include a trailing /.
 url: http://developers.algorithmia.com
-generate_projects: true # Comment out to make development regeneration skip projects cloning.
 
+# For iterating on style shared with webserver,
+# set this to http://localhost:9000, and edit CSS in the local webserver
+webserver: https://algorithmia.com
+
+# If you aren't editting the client guides on github,
+# setting this to true can speed up hot-reloads
+skip_readme_updates: false
 
 # Jekyll configuration
 sass:
@@ -49,3 +55,4 @@ lunr_search:
   excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+

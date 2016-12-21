@@ -9,7 +9,6 @@ show_related: false
 author: steph_kim
 image:
     teaser: /post_images/data_connectors/connectors.png
-repository: https://github.com/algorithmiaio/algorithmia/blob/master/public/images/connectors/connectors.png
 ---
 
 # Data Portal Connections

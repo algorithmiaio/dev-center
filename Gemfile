@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '2.5.3'
+gem 'jekyll', '3.3.1'
 gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
 gem 'octopress', '~> 3.0'
+gem 'redcarpet'
+gem 'pygments.rb'
 gem 'rake'
 gem 'gemoji'
 gem 'therubyracer'
