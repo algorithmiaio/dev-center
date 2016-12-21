@@ -14,11 +14,11 @@ url: http://developers.algorithmia.com
 
 # For iterating on style shared with webserver,
 # set this to http://localhost:9000, and edit CSS in the local webserver
-webserver: https://algorithmia.com
+webserver: http://localhost:9000
 
 # If you aren't editting the client guides on github,
 # setting this to true can speed up hot-reloads
-skip_readme_updates: false
+skip_readme_updates: true
 
 # Jekyll configuration
 sass:
