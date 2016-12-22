@@ -17,7 +17,12 @@
     {% else %}
       <li>
     {% endif %}
-      <a href="{{link.url}}">{{link.title}}</a>
+      <a href="{{link.url}}">
+        {{link.title}}
+        {% if link.category and site.categories[link.category] %}
+          <i class="fa fa-caret-down"></i>
+        {% endif %}
+      </a>
       {% if link.category and site.categories[link.category] %}
         <ul class="nav">
           {% assign sorted = site.categories[link.category] | sort:"title" %}
