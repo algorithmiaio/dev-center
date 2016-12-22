@@ -5,7 +5,8 @@
       <a href="{{link.url}}">{{link.title}}</a>
       {% if link.category || link.links %}
         <ul class="nav nav-stacked">
-          {% for item in site.categories[link.category] %}
+          {% assign sorted = site.categories[link.category] | sort:"title" %}
+          {% for item in sorted %}
             <li>
               <a href="{{ item.url }}">{{ item.title }}</a>
             </li>
