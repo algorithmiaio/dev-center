@@ -11,7 +11,7 @@ categories: clients
 tags: [clients]
 show_related: true
 image:
-    teaser: /language_logos/lambda.png
+    teaser: /language_logos/aws_lambda.svg
 ---
 
 AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,

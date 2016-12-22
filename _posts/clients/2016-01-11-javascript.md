@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "The Javascript Library"
+title:  "Javascript"
 permalink: /application-development/client-guides/javascript
 redirect_from:
   - /clients/javascript/
@@ -10,7 +10,7 @@ categories: clients
 tags: [clients]
 show_related: true
 image:
-    teaser: /language_logos/javascript.png
+    teaser: /language_logos/js.svg
 ---
 
 We offer a vanilla JavaScript client for calling algorithms in the marketplace.
