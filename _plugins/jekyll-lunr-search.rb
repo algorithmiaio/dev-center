@@ -70,6 +70,7 @@ module Jekyll
           doc = {
             "id" => i,
             "title" => entry.title,
+            "excerpt" => entry.excerpt,
             "url" => entry.url,
             "date" => entry.date,
             "categories" => entry.categories,
@@ -209,11 +210,12 @@ module Jekyll
           end
           categories = site.data['categories']
           tags = site.data['tags']
+          excerpt =  Nokogiri::HTML(site.data['excerpt'].to_s).xpath("//text()").to_s
           title, url = extract_title_and_url(site)
           is_post = site.is_a?(Jekyll::Document)
           body = renderer.render(site)
 
-          SearchEntry.new(title, url, date, categories, tags, is_post, body, renderer)
+          SearchEntry.new(title, url, excerpt, date, categories, tags, is_post, body, renderer)
         else
           raise 'Not supported'
         end
@@ -224,10 +226,10 @@ module Jekyll
         [ data['title'], data['url'] ]
       end
 
-      attr_reader :title, :url, :date, :categories, :tags, :is_post, :body, :collection
+      attr_reader :title, :url, :excerpt, :date, :categories, :tags, :is_post, :body, :collection
 
-      def initialize(title, url, date, categories, tags, is_post, body, collection)
-        @title, @url, @date, @categories, @tags, @is_post, @body, @collection = title, url, date, categories, tags, is_post, body, collection
+      def initialize(title, url, excerpt, date, categories, tags, is_post, body, collection)
+        @title, @url, @excerpt, @date, @categories, @tags, @is_post, @body, @collection = title, url, excerpt, date, categories, tags, is_post, body, collection
       end
 
       def strip_index_suffix_from_url!

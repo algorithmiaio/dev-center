@@ -7,11 +7,11 @@
 {% raw %}
 <script id="search-results-template" type="text/mustache">
   {{#entries}}
+  <hr>
   <article>
-    <h3>
-      {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-      <a href="{{url}}">{{title}}</a>
-    </h3>
+    <h3><a href="{{url}}">{{title}}</a></h3>
+    {{categories}}
+    <p>{{excerpt}}</p>
   </article>
   {{/entries}}
 </script>
