@@ -1,13 +1,26 @@
+{% if page.categories %}
+  {% assign page_cat = page.categories %}
+{% else %}
+  {% assign page_cat = "none" %}
+{% endif %}
 
 <ul id="sidebar" class="nav nav-stacked">
   {% for link in site.data.toc %}
-    <li>
+    {% if link.url == page.url or page_cat == link.category or page_cat contains link.category%}
+      <li class="active">
+    {% else %}
+      <li>
+    {% endif %}
       <a href="{{link.url}}">{{link.title}}</a>
       {% if link.category || link.links %}
         <ul class="nav nav-stacked">
           {% assign sorted = site.categories[link.category] | sort:"title" %}
           {% for item in sorted %}
-            <li>
+            {% if item.url == page.url or page_cat == item.category or page_cat contains item.category %}
+              <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
               <a href="{{ item.url }}">{{ item.title }}</a>
             </li>
           {% endfor %}
