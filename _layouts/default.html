@@ -56,7 +56,10 @@
             </nav>
           </div> <!-- END NAV CONTAINER -->
           <div class="col-md-9">
-            {{ content | emojify }}
+            {% include search.html %}
+            <div id="main-content">
+              {{ content | emojify }}
+            </div>
           </div>
         </div>
       </div>

@@ -5,6 +5,11 @@
 {% endif %}
 
 <h3>Topics</h3>
+<div id="search">
+  <form action="/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="on">
+  </form>
+</div>
 <ul id="sidebar" class="nav nav-stacked">
   {% for link in site.data.toc %}
     {% if link.url == page.url or page_cat == link.category or page_cat contains link.category%}

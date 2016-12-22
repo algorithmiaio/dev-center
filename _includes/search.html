@@ -1,16 +1,3 @@
----
-layout: archive
-title: Search
-permalink: /search/
-exclude_from_search: true
----
-
-<div id="search">
-  <form action="/search" method="get">
-    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="on">
-  </form>
-</div>
-
 <section id="search-results" style="display: none;">
   <p>Search results</p>
   <div class="entries">
@@ -38,6 +25,14 @@ $(function() {
     results:  '#search-results',
     entries:  '.entries',
     template: '#search-results-template'
+  });
+
+  $('#search-query').on('keyup', function(el) {
+    if(el.target.value.length < 3) {
+      $('#main-content').show();
+    } else {
+      $('#main-content').hide();
+    }
   });
 });
 </script>
