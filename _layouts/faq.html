@@ -7,7 +7,7 @@ redirect_from:
 <div id="page-wrapper">
 
   <div id="main" role="main">
-    <article class="wrap" itemscope itemtype="http://schema.org/Article">
+    <article itemscope itemtype="http://schema.org/Article">
       {% include breadcrumbs.html %}
       {% assign tag = page.tags | first %}
       {% assign main_tag = site.data.tags[tag] %}
@@ -20,7 +20,6 @@ redirect_from:
         <h2>{{ page.title }}</h2>
       </div>
 
-      <div class="inner-wrap">
         <div id="content" class="page-content" itemprop="articleBody">
           {{ content }}
 
@@ -41,7 +40,6 @@ redirect_from:
           {% endif %}
           </div> <!-- .related-faqs -->
        </div><!-- /.content -->
-      </div><!-- /.inner-wrap -->
-    </article><!-- ./wrap -->
+    </article>
   </div><!-- /#main -->
 </div>

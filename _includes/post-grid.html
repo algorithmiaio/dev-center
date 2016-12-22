@@ -1,5 +1,5 @@
 <article itemscope itemtype="http://schema.org/Article">
-  <div class="col-md-3">
+  <div class="col-xs-3">
     <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser">
       {% if post.image.teaser %}
         <img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
@@ -8,15 +8,6 @@
       {% endif %}
     </a>
 
-    <!--{% if post.date %}
-      <p class="entry-date date published">
-        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
-          {{ post.date | date: "%B %d, %Y" }}
-        </time>
-      </p>
-    {% endif %}-->
-
     <a href="{{ site.url }}{{ post.url }}"><p itemprop="name">{{ post.title }}</p></a>
-    <!-- <p class="post-excerpt" itemprop="description">{{ post.title | strip_html | truncate: 160 }}</p> -->
   </div>
 </article>

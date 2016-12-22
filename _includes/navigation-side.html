@@ -10,7 +10,7 @@
     <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="on">
   </form>
 </div>
-<ul id="sidebar" class="nav nav-stacked">
+<ul id="sidebar" class="nav">
   {% for link in site.data.toc %}
     {% if link.url == page.url or page_cat == link.category or page_cat contains link.category%}
       <li class="active">
@@ -19,7 +19,7 @@
     {% endif %}
       <a href="{{link.url}}">{{link.title}}</a>
       {% if link.category and site.categories[link.category] %}
-        <ul class="nav nav-stacked">
+        <ul class="nav">
           {% assign sorted = site.categories[link.category] | sort:"title" %}
           {% for item in sorted %}
             {% if item.url == page.url or page_cat == item.category or page_cat contains item.category %}

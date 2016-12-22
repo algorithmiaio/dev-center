@@ -1,47 +1,38 @@
 ---
 layout: default
 ---
-<div id="page-wrapper">
 
-	<div id="main" role="main">
-		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+<article itemscope itemtype="http://schema.org/Article">
 
-			{% if page.image.feature %}
-			<div class="page-feature">
-				<div class="page-image">
-					<img src="{{ site.url }}/images/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" itemprop="image">
-					{% if page.image.credit %}{% include image-credit.html %}{% endif %}
-				</div><!-- /.page-image -->
-			</div><!-- /.page-feature -->
-			{% endif %}
+	{% if page.image.feature %}
+	<div class="page-feature">
+		<div class="page-image">
+			<img src="{{ site.url }}/images/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" itemprop="image">
+			{% if page.image.credit %}{% include image-credit.html %}{% endif %}
+		</div><!-- /.page-image -->
+	</div><!-- /.page-feature -->
+	{% endif %}
 
-			<div class="page-title">
-				<h2>{{ page.title }}</h2>
-				{% if page.repository %}
-				      <p class="github-note">
-						Available on <a href='{{ page.repository }}']}' target='_blank' rel='nofollow'>GitHub</a>.
-					  </p>
-				{% endif %}
-			</div>
+	<h2>{{ page.title }}</h2>
+	{% if page.repository %}
+	      <p class="github-note">
+			Available on <a href='{{ page.repository }}' target='_blank' rel='nofollow'>GitHub</a>.
+		  </p>
+	{% endif %}
 
-			<div>
-				<div id="content" class="page-content" itemprop="articleBody">
-					{{ content }}
-					<hr />
+		<div id="content" class="page-content" itemprop="articleBody">
+			{{ content }}
+			<hr />
 
-					<footer class="page-footer">
-						{% if page.share != false %}{% include share-this.html %}{% endif %}
-						{% include page-meta.html %}<hr />
-						{% if page.categories %}{% include page-author.html %}{% endif %}
-					</footer><!-- /.footer -->
+			<footer class="page-footer">
+				{% if page.share != false %}{% include share-this.html %}{% endif %}
+				{% include page-meta.html %}<hr />
+				{% if page.categories %}{% include page-author.html %}{% endif %}
+			</footer><!-- /.footer -->
 
-					<aside>
-						{% if page.comments == true %}{% include comments.html %}{% endif %}
-					</aside>
+			<aside>
+				{% if page.comments == true %}{% include comments.html %}{% endif %}
+			</aside>
 
-				</div><!-- /.content -->
-			</div><!-- /.inner-wrap -->
-		</article><!-- ./wrap -->
-	</div><!-- /#main -->
-
-</div>
+		</div><!-- /.content -->
+	</article>
