@@ -3,8 +3,9 @@ layout: article
 title:  "Scala Algorithm Development"
 excerpt: "Build your algorithm in Scala"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/client-guides/scala
+permalink: /algorithm-development/scala
 redirect_from:
+  - /algorithm-development/client-guides/scala/
   - /algorithm-development/guides/scala/
   - /algorithm-development/guides/scala-guide/
 tags: [algo-guide-lang]

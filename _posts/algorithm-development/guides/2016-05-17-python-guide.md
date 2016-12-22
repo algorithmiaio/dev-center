@@ -3,8 +3,9 @@ layout: article
 title:  "Python Algorithm Development"
 excerpt: "Build your algorithm in Python"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/client-guides/python
+permalink: /algorithm-development/python
 redirect_from:
+  - /algorithm-development/client-guides/python
   - /algorithm-development/guides/python/
   - /algorithm-development/guides/python-guide/
 tags: [algo-guide-lang]
@@ -66,7 +67,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 Now that you have created your algorithm, you can add dependencies.
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file. 
+Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file.
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
@@ -76,7 +77,7 @@ If you have any dependencies you can add them by typing in the package name to t
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-**Note:** If you did add any dependencies, you would still need to include an import statement to your algorithm file as you would do for any Python script. 
+**Note:** If you did add any dependencies, you would still need to include an import statement to your algorithm file as you would do for any Python script.
 
 For example, to make use of numpy, you would include the line:
 
@@ -164,7 +165,7 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 ### Working with Data Stored on Algorithmia
 
-This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/). 
+This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
 
 **Note:** While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/) to host data for algorithm development.
 
@@ -344,7 +345,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 ### Editing an Algorithm
 
-Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](http://developers.algorithmia.com/algorithm-development/git-support/) from your current workflow. 
+Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](http://developers.algorithmia.com/algorithm-development/git-support/) from your current workflow.
 
 ## Conclusion and Resources
 

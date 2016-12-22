@@ -3,8 +3,9 @@ layout: article
 title:  "JavaScript Algorithm Development"
 excerpt: "Build your algorithm in JavaScript"
 date:   2016-05-16 14:28:42
-permalink: /algorithm-development/client-guides/javascript
+permalink: /algorithm-development/javascript
 redirect_from:
+  - /algorithm-development/client-guides/javascript
   - /algorithm-development/guides/javascript/
   - /algorithm-development/guides/javascript-guide/
 tags: [algo-guide-lang]
@@ -34,7 +35,7 @@ Add dependencies by including the package name and version to the `package.json`
 	"algorithmia": "0.3.x",
  	"lodash": "4.11.2"
  }`
- 
+
 
 Note that you will still need to import your package to your algorithm file. For example to include your package 'lodash' add:
 
@@ -64,7 +65,7 @@ Inputs that are sequences such as: arrays, objects and buffers (binary buffer se
 exports.apply = function(input, cb) {
 	if (typeof input == Array){
 	    cb(null, "A few of the most starred node.js packages: " + input[0] + ", " + input[1] + ", " + input[2]);
-	}    
+	}
 };
 {% endhighlight %}
 

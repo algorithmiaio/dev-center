@@ -19,7 +19,7 @@
 # layout: default
 # ---
 #
-# <h1 class="category">{{ page.title }}</h1>
+# <h2 class="category">{{ page.title }}</h2>
 # <ul class="posts">
 # {% for post in site.categories[page.category] %}
 #     <div>{{ post.date | date_to_html_string }}</div>
@@ -77,7 +77,7 @@ module Jekyll
         # Read the YAML data from the layout page.
         self.read_yaml(template_dir, template)
         self.data['category']    = category
-   
+
         # Set the title for this page.
         if self.data['category'] == "faqs"
           # nasty hardcoded workaround for special case of FAQs

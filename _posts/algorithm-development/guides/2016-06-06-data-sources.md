@@ -11,8 +11,6 @@ image:
     teaser: /post_images/data_connectors/connectors.png
 ---
 
-# Data Portal Connections
-
 As an algorithm developer you might require large data files such as trained models or other large files that your algorithm depends on. With <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> option you can host these files on our platform for free. Plus, it's easy to integrate your data into the algorithm you're building using the Algorithmia Data API.
 
 How easy is it? By creating an Algorithmia account you automatically have access to <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> platform where you can store your data files or even your algorithm's output. Once you've set up your data collections our file hosting option is accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.

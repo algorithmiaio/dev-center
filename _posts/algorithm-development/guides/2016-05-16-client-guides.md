@@ -1,10 +1,11 @@
 ---
 layout: article_page
-title:  "Build an algorithm in the language of your choice"
+title:  Supported languages
 excerpt: "Guides to building an algorithm in your favorite language including: Python, R, Scala, Rust, Java, Ruby and JavaScript."
 date:   2016-05-16 14:28:42
-permalink: /algorithm-development/client-guides/
+permalink: /algorithm-development/languages/
 redirect_from:
+  - /algorithm-development/client-guides/
   - /algorithm-development/guides/
 categories: algorithm-development
 tags: [algo-guide-overview]
@@ -13,8 +14,6 @@ author: steph_kim
 image:
     teaser: /icons/Algorithmia_Microservices.png
 ---
-
-# Algorithm Development Overview
 
 As an Algorithmia user, in addition to having access to hundreds of algorithms, you also have the ability to add your own algorithms. You can write a private algorithm for your own use, contribute an open source algorithm, or monetize an algorithm you authored. Our algorithms and platform are designed with composability in mind, so think of algorithms in the marketplace as building blocks.
 
