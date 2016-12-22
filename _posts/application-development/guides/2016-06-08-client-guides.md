@@ -15,13 +15,10 @@ image:
 ---
 
 ### Guides to Currently Supported Languages:
-<div id="page-wrapper">
 
-  <div class="tiles">
-    {% assign sorted_clients = site.categories["clients"] | sort:"title" %}
-    {% for post in sorted_clients %}
-      {% include post-grid.html %}
-    {% endfor %}
-  </div><!-- /.tiles -->
+{% assign sorted_clients = site.categories["clients"] | sort:"title" %}
+{% for post in sorted_clients %}
+  {% include post-grid.html %}
+{% endfor %}
 
-</div>
+
