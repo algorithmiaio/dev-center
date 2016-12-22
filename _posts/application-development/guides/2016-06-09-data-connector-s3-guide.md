@@ -3,6 +3,7 @@ layout: article
 title:  "Amazon S3"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
+categories: app-data
 permalink: /application-development/data-sources/s3-guide
 redirect_from:
   - /application-development/data-connectors/s3-guide
@@ -19,7 +20,7 @@ As an application developer you can access the data you need from your S3 accoun
 All data sources have a protocol and a label that you will use to reference your data. For instance S3 is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Configure a New Data Connection to S3
-To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source': 
+To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source':
 
 <img src="/images/post_images/data_connectors/data_portal.png" alt="Data Portal" class="screenshot">
 
@@ -27,7 +28,7 @@ On that panel click the button that says **'Add Data Source'** which will bring 
 
 <img src="/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot">
 
-Select **'Connect to Amazon S3'** and a modal window will open to configure an S3 connection. Here you will need to enter your AWS credentials. S3 authorization is done by adding your AWS Access Key ID and AWS Secret Access Key. AWS supports setting restrictions on access tokens by service and operation. 
+Select **'Connect to Amazon S3'** and a modal window will open to configure an S3 connection. Here you will need to enter your AWS credentials. S3 authorization is done by adding your AWS Access Key ID and AWS Secret Access Key. AWS supports setting restrictions on access tokens by service and operation.
 
 <img src="/images/post_images/data_connectors/s3_create_data_connector.png" alt="Create a data connector in modal" class="screenshot">
 

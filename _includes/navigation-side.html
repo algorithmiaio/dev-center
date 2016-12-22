@@ -1,0 +1,22 @@
+
+<ul id="sidebar" class="nav nav-stacked">
+  {% for link in site.data.toc %}
+    <li>
+      <a href="{{link.url}}">{{link.title}}</a>
+      {% if link.category || link.links %}
+        <ul class="nav nav-stacked">
+          {% for item in site.categories[link.category] %}
+            <li>
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+          {% for item in link.links %}
+            <li>
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+  </li>
+{% endfor %}
+</ul>
