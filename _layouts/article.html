@@ -12,15 +12,8 @@ layout: default
 		</div><!-- /.page-image -->
 	</div><!-- /.page-feature -->
 	{% endif %}
-
-	<h2 class="whitespace-none">
-		{% if image.teaser %}
-		<img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="icon" itemprop="image" class="title-icon">
-		{% else %}
-		<img src="{{ site.url }}/images//language_logos/algo_icon.svg" alt="icon" itemprop="image" class="title-icon">
-		{% endif %}	
-		{{ page.title }}
-	</h2>
+	<p class="lg">{{ site.title }}</p>
+	<h2 class="whitespace-sm">{{ page.title }}</h2>
 	{% include page-meta.html %}
 
 	{% if page.repository %}
