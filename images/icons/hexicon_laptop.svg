@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="75px" height="86px" viewBox="0 0 75 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>hexicon_laptop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DesktopHD_Round7_Landing" transform="translate(-887.000000, -1581.000000)" stroke="#FFFFFF">
+            <g id="tutorials" transform="translate(392.000000, 1566.000000)">
+                <g id="hexicon_laptop" transform="translate(496.000000, 16.000000)">
+                    <polygon id="Polygon" stroke-width="0.763636364" points="36.5 0 73 21 73 63 36.5 84 -2.61568545e-12 63 -2.63877808e-12 21"></polygon>
+                    <g id="laptop" transform="translate(13.000000, 26.000000)">
+                        <path d="M0.31317583,28.7962424 L46.6847735,28.7962424 C46.6847735,28.7962424 46.6847735,32.4928037 45.4375466,32.4928037 L1.69216411,32.4928037 C0.31317583,32.4928037 0.31317583,28.7962424 0.31317583,28.7962424 Z" id="Path-5" stroke-linejoin="round"></path>
+                        <path d="M15.3792074,28.9450833 C15.3792074,28.9450833 15.3792074,30.5378031 16.2598694,30.5378031 L30.4790138,30.5378031 C31.6104273,30.5378031 31.6104273,28.9525447 31.6104273,28.9525447" id="Path-11" stroke-width="0.5" stroke-linejoin="round"></path>
+                        <path d="M2.64991868,28.607488 L2.64991868,1.60875319 C2.64991868,1.60875319 2.66674805,1.20843506 2.93054199,0.79284668 C3.19433594,0.377258301 3.67521335,0.230858061 3.67521335,0.230858061 L43.55896,0.230858061 C43.55896,0.230858061 43.8511369,0.200367946 44.0933228,0.441894531 C44.3355086,0.683421116 44.3742055,1.04388428 44.3742055,1.04388428 L44.3742055,28.6550777" id="Path-12" stroke-linejoin="round"></path>
+                        <polygon id="Path-13" stroke-width="0.5" stroke-linejoin="round" points="5.11722475 2.68893498 41.8846596 2.68893498 41.8846596 26.2044386 5.09971044 26.2044386"></polygon>
+                        <polyline id="Path-14" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="9.30863662 7.17012728 13.4666643 9.97687844 9.35688668 12.5080132"></polyline>
+                        <path d="M15.2200246,12.4787332 L20.2732173,12.4787332" id="Path-15" stroke-width="0.5" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="75px" height="86px" viewBox="0 0 75 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>hexicon_desktop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DesktopHD_Round7_Landing" transform="translate(-405.000000, -780.000000)">
+            <g id="getstarted" transform="translate(390.000000, 605.000000)">
+                <g id="header">
+                    <g id="hexicon_desktop" transform="translate(16.000000, 176.000000)">
+                        <polygon id="Polygon" stroke="#FFFFFF" stroke-width="0.763636364" points="36.3261905 0 72.652381 21 72.652381 63 36.3261905 84 -1.5312196e-12 63 -1.55431223e-12 21"></polygon>
+                        <path d="M54.8802083,26 L18.3802083,26 C18.1703333,26 18,26.1710545 18,26.3818182 L18,50.8181818 C18,51.0289455 18.1703333,51.2 18.3802083,51.2 L36.25,51.2 L36.25,56.5454545 L29.0260417,56.5454545 C28.8161667,56.5454545 28.6458333,56.7165091 28.6458333,56.9272727 C28.6458333,57.1380364 28.8161667,57.3090909 29.0260417,57.3090909 L44.234375,57.3090909 C44.44425,57.3090909 44.6145833,57.1380364 44.6145833,56.9272727 C44.6145833,56.7165091 44.44425,56.5454545 44.234375,56.5454545 L37.0104167,56.5454545 L37.0104167,51.2 L54.8802083,51.2 C55.0900833,51.2 55.2604167,51.0289455 55.2604167,50.8181818 L55.2604167,26.3818182 C55.2604167,26.1710545 55.0900833,26 54.8802083,26 Z M54.5,50.4363636 L18.7604167,50.4363636 L18.7604167,26.7636364 L54.5,26.7636364 L54.5,50.4363636 Z" id="Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

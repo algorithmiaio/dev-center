@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="75px" height="86px" viewBox="0 0 75 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>hexicon_box</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DesktopHD_Round7_Landing" transform="translate(-407.000000, -1926.000000)" stroke="#FFFFFF">
+            <g id="contribute" transform="translate(392.000000, 1911.000000)">
+                <g id="hexicon_box" transform="translate(16.000000, 16.000000)">
+                    <polygon id="Polygon" stroke-width="0.763636364" points="36.5 0 73 21 73 63 36.5 84 -2.61568545e-12 63 -2.63877808e-12 21"></polygon>
+                    <g id="box" transform="translate(16.000000, 19.000000)">
+                        <polygon id="Path-2" points="0.891000587 12.1885742 0.891000587 34.9275312 20.5129663 46.1963943 40.2670135 34.8457303 40.2670135 12.0041017 20.4519653 0.6171875"></polygon>
+                        <polyline id="Path-3" points="1.06636377 12.2472614 20.5402706 23.6526417 20.5402706 46.0049756"></polyline>
+                        <path d="M20.4907637,23.6416063 L40.1566029,12.0461278" id="Path-4"></path>
+                        <path d="M10.7713086,17.7200743 L30.2040448,6.33366522" id="Path-7" stroke-width="0.5"></path>
+                        <path d="M8.566445,32.0664681 L12.6668924,26.3361319" id="Path-8" stroke-width="0.5" stroke-linecap="round"></path>
+                        <polyline id="Path-9" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="7.19319359 29.5696193 4.00684364 25.4176185 7.2655943 24.9266288"></polyline>
+                        <polyline id="Path-10" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="13.9606571 28.7925184 17.1198953 33.0378699 13.8997583 33.4477298"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
