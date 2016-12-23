@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="96px" height="111px" viewBox="0 0 96 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="104px" height="119px" viewBox="0 0 104 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
     <title>scala</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <polygon id="path-1" points="48 0 96 27.75 96 83.25 48 111 -2.3581137e-12 83.25 -2.38919995e-12 27.75"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="DesktopHD_Round7_ClientGuides-Copy" transform="translate(-1194.000000, -1368.000000)">
-            <g id="clients-copy" transform="translate(390.000000, 1169.000000)">
+        <g id="DesktopHD_Round7_ClientGuides-Copy" transform="translate(-1189.000000, -1264.000000)">
+            <g id="clients-copy" transform="translate(389.000000, 1067.000000)">
                 <g id="row1">
                     <g id="scala" transform="translate(804.000000, 199.000000)">
-                        <polygon id="Polygon" fill="#FFFFFF" points="48 0 96 27.75 96 83.25 48 111 -2.3581137e-12 83.25 -2.38919995e-12 27.75"></polygon>
+                        <g id="Polygon">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
                         <g transform="translate(27.000000, 21.000000)" id="Shape">
                             <path d="M0,46.4615385 L0,41.2307692 C0,40.349094 18.7686257,38.8722736 30.9968174,36 L30.9968174,36 C36.9041951,37.3878975 41.2862745,39.1006838 41.2862745,41.2307692 L41.2862745,41.2307692 L41.2862745,46.4615385 C41.2862745,48.5904615 36.9041951,50.3044102 30.9968174,51.6923077 L30.9968174,51.6923077 C18.7686257,48.819453 0,47.3426324 0,46.4615385" fill="#000000" transform="translate(20.643137, 43.846154) scale(1, -1) translate(-20.643137, -43.846154) "></path>
                             <path d="M0,26.4615385 L0,21.2307692 C0,20.349094 18.7686257,18.8722736 30.9968174,16 L30.9968174,16 C36.9041951,17.3878975 41.2862745,19.1006838 41.2862745,21.2307692 L41.2862745,21.2307692 L41.2862745,26.4615385 C41.2862745,28.5904615 36.9041951,30.3044102 30.9968174,31.6923077 L30.9968174,31.6923077 C18.7686257,28.819453 0,27.3426324 0,26.4615385" fill="#000000" transform="translate(20.643137, 23.846154) scale(1, -1) translate(-20.643137, -23.846154) "></path>
