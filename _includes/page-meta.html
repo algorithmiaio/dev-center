@@ -1,5 +1,5 @@
 {% if page.date %}
-  <p class="secondary whitespace-md">{{ site.data.messages.locales[site.locale].updated }}
+  <p class="updated-date">{{ site.data.messages.locales[site.locale].updated }}
 
   {% if page.modified %}
     <time datetime="{{ page.modified | date: "%Y-%m-%dT%H:%M:%SZ" }}" itemprop="dateModified">{{ page.modified | date: "%B %d, %Y" }}</time>
