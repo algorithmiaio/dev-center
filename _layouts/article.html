@@ -12,7 +12,9 @@ layout: default
 		</div><!-- /.page-image -->
 	</div><!-- /.page-feature -->
 	{% endif %}
-	<p class="lg">{{ site.title }}</p>
+
+	{% include breadcrumbs.html %}
+
 	<h2 class="whitespace-sm">{{ page.title }}</h2>
 	{% include page-meta.html %}
 
