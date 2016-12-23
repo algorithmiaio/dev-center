@@ -19,16 +19,15 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
 
 ## Data Portal Guides:
 {% assign data_connector_tags = "alg-data-connectors" | split:"|" %}
-<div class="data-connectors">
+<div class="col-xs-3 lang-tile">
   {% for post in site.posts %}
   	{% if data_connector_tags == post.tags %}
-  		<div class="tile-guides">
-	      	<a  href="{{ post.url }}">{{ post.title }}
-	      	{% if post.image.teaser %}
-	  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
-			{% endif %}
-			</a>
-		</div>
+  		<a  href="{{ post.url }}">
+  		{% if post.image.teaser %}
+		<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
+		{% endif %}
+		</a>
+		<p><a  href="{{ post.url }}">{{ post.title }}</a></p>
 	{% endif %}
   {% endfor %}
 </div>

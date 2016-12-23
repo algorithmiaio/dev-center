@@ -8,7 +8,7 @@ tags: [alg-data-connectors]
 show_related: false
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/hosted-data-box.png
+    teaser: /language_logos/algo_hosted.svg
 ---
 
 <a href="https://algorithmia.com/data/hosted">Algorithmia's Data Source</a> makes it easy to host your data files on the Algorithmia platform for free while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a cinch to work with your hosted data.

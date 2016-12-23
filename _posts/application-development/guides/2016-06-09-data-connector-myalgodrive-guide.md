@@ -11,7 +11,7 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /post_images/data_connectors/hosted-data-box.png
+    teaser: /language_logos/algo_hosted.svg
 ---
 
 

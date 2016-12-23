@@ -14,7 +14,7 @@ image:
     teaser: /icons/Algorithmia_Microservices.png
 ---
 
-### Guides to Currently Supported Languages:
+### Supported languages
 
 {% assign sorted_clients = site.categories["clients"] | sort:"title" %}
 {% for post in sorted_clients %}

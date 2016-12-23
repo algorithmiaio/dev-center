@@ -16,19 +16,12 @@ Here you will find guides to hosting your machine or deep learning model. These 
 If you have any questions about Algorithmia or <a href="http://blog.algorithmia.com/2016/05/how-we-hosted-our-model-as-a-microservice/">hosting your model</a> on the Algorithmia platform please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 
-### Guides to Hosting Models in Currently Supported Frameworks:
+### Supported frameworks
 {% assign model_tags = "algo-model-guide" | split:"|" %}
 <div>
   {% for post in site.posts %}
   	{% if model_tags == post.tags %}
-  		<!--
-	      	<a  href="{{ post.url }}">{{ post.title }}
-	      	{% if post.image.teaser %}
-	  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
-			{% endif %}
-			</a> -->
-			{% include post-grid.html %}
-
+		{% include post-grid.html %}
 	{% endif %}
   {% endfor %}
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "JavaScript Algorithm Development"
+title:  "JavaScript"
 excerpt: "Build your algorithm in JavaScript"
 date:   2016-05-16 14:28:42
 permalink: /algorithm-development/javascript
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/javascript.png
+    teaser: /language_logos/js.svg
 ---
 
 Algorithmia supports algorithm development in JavaScript.

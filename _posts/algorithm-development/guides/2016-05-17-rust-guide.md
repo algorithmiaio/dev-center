@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Rust Algorithm Development"
+title:  "Rust"
 excerpt: "Build your algorithm in Rust"
 date: 2016-05-17  09:50:46
 permalink: /algorithm-development/rust
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
 image:
-    teaser: /language_logos/rust.png
+    teaser: /language_logos/rust.svg
 ---
 
 Algorithmia supports development of algorithms in Rust.

@@ -8,7 +8,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/Algorithmia_Generic_model.png
+    teaser: /language_logos/theano.svg
 ---
 
 

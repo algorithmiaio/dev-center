@@ -17,17 +17,18 @@ How easy is it? By creating an Algorithmia account you automatically have access
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
-## Data Portal Guides:
+### Application data portal guides
 {% assign data_connector_tags = "app-data-connectors" | split:"|" %}
 <div class="data-connectors">
   {% for post in site.posts %}
   	{% if data_connector_tags == post.tags %}
-  		<div class="tile-guides">
-	      	<a  href="{{ post.url }}">{{ post.title }}
+  		<div class="col-xs-3 lang-tile">
+	      	<a  href="{{ post.url }}">
 	      	{% if post.image.teaser %}
 	  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
 			{% endif %}
 			</a>
+			<p><a href="{{ post.url }}">{{ post.title }}</a></p>
 		</div>
 	{% endif %}
   {% endfor %}

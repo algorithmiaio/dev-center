@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Ruby Algorithm Development"
+title:  "Ruby"
 excerpt: "Build your algorithm in Ruby"
 date: 2016-05-17  09:50:46
 permalink: /algorithm-development/ruby
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/ruby.png
+    teaser: /language_logos/ruby.svg
 ---
 
 

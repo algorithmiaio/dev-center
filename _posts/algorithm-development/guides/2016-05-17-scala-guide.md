@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Scala Algorithm Development"
+title:  "Scala"
 excerpt: "Build your algorithm in Scala"
 date: 2016-05-17  09:50:46
 permalink: /algorithm-development/scala
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
 image:
-    teaser: /language_logos/scala.png
+    teaser: /language_logos/scala.svg
 ---
 
 Algorithmia supports algorithm development in Scala.

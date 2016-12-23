@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Python Algorithm Development"
+title:  "Python"
 excerpt: "Build your algorithm in Python"
 date: 2016-05-17  09:50:46
 permalink: /algorithm-development/python
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/python.png
+    teaser: /language_logos/python.svg
 ---
 
 Welcome to algorithm development in Python.

@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Java Algorithm Development"
+title:  "Java"
 excerpt: "Build your algorithm in Java"
 date:   2016-05-16 14:28:42
 permalink: /algorithm-development/java
@@ -12,7 +12,7 @@ tags: [algo-guide-lang]
 show_related: true
 author: liz_rush
 image:
-    teaser: /language_logos/java.png
+    teaser: /language_logos/java.svg
 ---
 
 Algorithmia supports algorithm development in Java.

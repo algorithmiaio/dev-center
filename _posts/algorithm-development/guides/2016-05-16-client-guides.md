@@ -23,17 +23,18 @@ We currently support algorithm development in Java, Scala, Python, Ruby, Rust an
 
 Behind the scenes, Algorithmia uses git to manage source code. Checkout <a href="/algorithm-development/git-support/">this guide</a> to learn more.
 
-### Guides to Currently Supported Languages:
+### Supported Languages
 {% assign lang_tags = "algo-guide-lang" | split:"|" %}
 <div>
   {% for post in site.posts %}
   	{% if lang_tags == post.tags %}
-  		<div class="tile-guides">
-	      	<a  href="{{ post.url }}">{{ post.title }}
+  		<div class="col-xs-3 lang-tile">
+	      	<a  href="{{ post.url }}">
 		      	{% if post.image.teaser %}
 		  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
 				{% endif %}
 			</a>
+			<p><a  href="{{ post.url }}">{{ post.title }}</a></p>
 		</div>
 	{% endif %}
   {% endfor %}

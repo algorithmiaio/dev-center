@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Tensorflow"
+title:  "TensorFlow"
 excerpt: "Bring your Tensorflow graph model to Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/tensorflow
@@ -8,7 +8,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/Algorithmia_Generic_model.png
+    teaser: /language_logos/tensorflow.svg
 ---
 
 
