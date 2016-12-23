@@ -4,19 +4,19 @@
   url: /
 
 - title: Getting Started
-  url: /basics/getting-started/
+  url: /getting-started/
 
 - title: Client Guides
-  url: /clients/
-  category: clients
+  url: /client-guides/overview
+  category: client-guides
 
 - title: Tutorials
-  url: /samples/
+  url: /tutorials/
   category: tutorials
 
 - title: Working with Data
-  url: /application-development/data-sources/
-  category: app-data
+  url: /working-with-data/overview
+  category: working-with-data
 
 - title: Algorithm Development
   url: /algorithm-development/
@@ -29,11 +29,11 @@
   url: /basics/organization_profiles/
 
 - title: Bounties
-  url: /basics/all-about-bounties/
+  url: /bounties/all-about-bounties
+  category: bounties
 
 - title: Pricing & Terms
   url: /TODO
 
 - title: FAQ
   url: /faqs/
-

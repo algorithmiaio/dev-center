@@ -3,10 +3,10 @@ layout: article
 title:  "Dropbox"
 excerpt: "How to configure your Dropbox data source and access your data via the Algorithmia Data API."
 date:   2016-06-09 11:46:03
-categories: app-data
-permalink: /application-development/data-sources/dropbox-guide
+categories: working-with-data
+permalink: /working-with-data/dropbox
 redirect_from:
-  - /application-development/data-connectors/dropbox-guide
+  - /working-with-data/dropbox
 tags: [app-data-connectors]
 show_related: true
 author: steph_kim

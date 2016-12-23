@@ -3,10 +3,10 @@ layout: article
 title:  "Amazon S3"
 excerpt: "How to configure your AWS S3 data source and access your data via the Algorithmia Data API."
 date:   2016-06-06 11:46:03
-categories: app-data
-permalink: /application-development/data-sources/s3-guide
+categories: working-with-data
+permalink: /working-with-data/s3
 redirect_from:
-  - /application-development/data-connectors/s3-guide
+  - /working-with-data/s3
 tags: [app-data-connectors]
 show_related: true
 author: steph_kim

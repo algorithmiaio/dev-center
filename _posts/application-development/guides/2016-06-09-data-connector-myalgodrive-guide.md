@@ -3,10 +3,10 @@ layout: article
 title:  "Hosted Data"
 excerpt: "How to set up and configure Algorithmia's free file hosting platform."
 date:   2016-06-07 11:46:03
-categories: app-data
-permalink: /application-development/data-sources/hosted-data-guide
+categories: working-with-data
+permalink: /working-with-data/hosted-data
 redirect_from:
-  - /application-development/data-connectors/hosted-data-guide
+  - /working-with-data/hosted-data
 tags: [app-data-connectors]
 show_related: true
 author: steph_kim
