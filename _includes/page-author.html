@@ -2,20 +2,16 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
 {% endif %}
 
-<!--<div class="author-image">
+<!-- <div class="author-image">
 	<img src="{{ site.url }}/images/{{ author.avatar }}" alt="{{ author.name }}">
-</div> ./author-image -->
+</div> -->
 
-<div class="author-content">
-  <h4 class="author-name" >{{ site.data.messages.locales[site.locale].written_by }}
+<p class="author-name" >{{ site.data.messages.locales[site.locale].written_by }}
+	<a href="{{ site.url }}/{{ author.slug }}" itemprop="author">{{ author.name }}</a>
+</p>
+<p class="author-bio">{{ author.bio }}</p>
 
-    <a href="{{ site.url }}/{{ author.slug }}" itemprop="author">{{ author.name }}</a>
-
-  <p class="author-bio">{{ author.bio }}</p>
-
-  {% if author.linkedin %}<a href="http://linkedin.com/in/{{ author.linkedin }}" class="btn-social linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>{% endif %}
-  {% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>{% endif %}
-  {% if author.email %}<a href="mailto:{{ author.email }}" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>{% endif %}
-  {% if author.web %}<a href="{{ author.web }}" class="btn-social rss"><i class="fa fa-globe" aria-hidden="true"></i></a>{% endif %}
-
-</div><!-- ./author-content -->
+{% if author.linkedin %}<a href="http://linkedin.com/in/{{ author.linkedin }}" class="btn-social linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>{% endif %}
+{% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>{% endif %}
+{% if author.email %}<a href="mailto:{{ author.email }}" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>{% endif %}
+{% if author.web %}<a href="{{ author.web }}" class="btn-social rss"><i class="fa fa-globe" aria-hidden="true"></i></a>{% endif %}
