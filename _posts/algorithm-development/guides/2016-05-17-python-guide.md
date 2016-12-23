@@ -23,6 +23,7 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
+* [Create an Algorithm](#create-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [I/O for your Algorithms](#io-algorithms)
@@ -41,9 +42,9 @@ is available for you to use in your algorithms.
 Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, Numpy and many others by adding them as a dependency in your algorithm.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="http://developers.algorithmia.com/application-development/client-guides/python/">Algorithmia Python Client</a>.
+via the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a>.
 
-## [Create an Algorithm](#create-an-algorithm)
+## <a id="create-algorithm">Managing Dependencies</a>
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -73,7 +74,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-## <a class="internal_anchors" id="managing-dependencies">Managing Dependencies</a>
+## <a id="managing-dependencies">Managing Dependencies</a>
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -175,9 +176,9 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 ### Working with Data Stored on Algorithmia
 
-This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/). 
+This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/). 
 
-**Note:** While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/) to host data for algorithm development.
+**Note:** While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/) to host data for algorithm development.
 
 This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and tokenizes the text:
 
@@ -217,7 +218,7 @@ def apply(input):
 
 After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.
 
-If you haven't worked with data collections before you can find more information under the [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/) documentation.
+If you haven't worked with data collections before you can find more information under the [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/) documentation.
 
 Following the example below replace the path to your data collection with your user name, data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
 
@@ -237,7 +238,7 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
+To call other algorithms or manage data from your algorithm, use the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -335,7 +336,7 @@ For more information on error handling see the [Algorithmia API Docs](http://doc
 
 ## <a id="algorithm-checklist">Algorithm Checklist</a>
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist](http://developers.algorithmia.com/basics/algorithm_checklist/).
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist](/basics/algorithm_checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -349,13 +350,13 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing](http://developers.algorithmia.com/basics/algorithm_basics/#pricing) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing](/basics/algorithm_basics/#pricing) for more information on how much algorithms will cost to run.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ### Editing an Algorithm
 
-Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](http://developers.algorithmia.com/algorithm-development/git-support/) from your current workflow. 
+Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](/algorithm-development/git-support/) from your current workflow. 
 
 ## <a id="conclusion-resources">Conclusion and Resources</a>
 
@@ -364,7 +365,7 @@ In this guide we covered how to create an algorithm, work with different types o
 For more resources:
 
 * <a href="http://developers.algorithmia.com/clients/python/">Algorithmia Client Python Docs</a>
-* [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/)
+* [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="fa fa-external-link"></i></a>
