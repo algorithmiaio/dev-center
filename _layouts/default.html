@@ -50,17 +50,22 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <nav class="bs-docs-sidebar hidden-print">
+          <div class="col-sm-3 col-md-3">
+            <nav class="bs-docs-sidebar hidden-xs hidden-print">
               {% include navigation-side.html %}
             </nav>
           </div> <!-- END NAV CONTAINER -->
-          <div class="col-md-9">
+          <div class="col-sm-9 col-md-9">
             {% include search.html %}
             <div id="main-content">
               {{ content | emojify }}
             </div>
           </div>
+          <div class="col-xs-12"> <!-- Moves nav to bottom on mobile -->
+            <nav class="bs-docs-sidebar hidden-sm hidden-md hidden-lg hidden-xl hidden-print">
+              {% include navigation-side.html %}
+            </nav>
+          </div> <!-- END NAV CONTAINER -->
         </div>
       </div>
       {% endstrip %}
