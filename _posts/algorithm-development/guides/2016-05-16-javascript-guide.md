@@ -36,7 +36,7 @@ Add dependencies by including the package name and version to the `package.json`
  }`
  
 
-Note that you will still need to import your package to your algorithm file. For example to include your package 'lodash' add:
+**Note:** that you will still need to import your package to your algorithm file. For example to include your package 'lodash' add:
 
 `lodash = require("lodash")();`
 

@@ -112,7 +112,8 @@ def apply(input):
 
 {% endhighlight %}
 
-**NOTE** If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
+If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
+{: .notice-warning}
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.

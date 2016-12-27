@@ -59,7 +59,9 @@ Creating your algorithm is easy!
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
-- Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
+
+Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
+{: .notice-warning}
 
 <img src="/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot">
 
@@ -120,6 +122,9 @@ def apply(input):
 
     return prediction
 {% endhighlight %}
+
+If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
+{: .notice-warning}
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
