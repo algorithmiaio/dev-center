@@ -4,6 +4,7 @@ title:  "Caffe"
 excerpt: "Guide to hosting your Caffe deep learning model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/caffe
+categories: host-your-model
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim

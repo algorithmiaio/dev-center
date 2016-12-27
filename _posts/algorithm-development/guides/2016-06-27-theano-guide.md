@@ -4,6 +4,7 @@ title:  "Theano"
 excerpt: "Host your Theano deep learning model on Algorithmia."
 date:   2016-05-26 14:28:42
 permalink: /algorithm-development/model-guides/theano
+categories: host-your-model
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim

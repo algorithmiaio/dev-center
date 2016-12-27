@@ -1,9 +1,8 @@
 ---
 layout: article_page
-title:  "Overview"
+title:  "Working with data"
 excerpt: "Here you'll find guides to hosting your data on Algorithmia or you can create a connection to your hosted files on Dropbox or S3."
 date:   2016-06-09 09:43:45
-categories: working-with-data
 permalink: /working-with-data/overview
 tags: [data-connectors-overview]
 show_related: false

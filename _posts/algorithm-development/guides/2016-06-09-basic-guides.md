@@ -1,9 +1,8 @@
 ---
 layout: article_snippets
-title:  "Basics"
+title:  "Algorithm development"
 excerpt: "Basic Guides for Algorithm Developers"
 date:  2016-06-09 17:01:37
-categories: algorithm-development
 permalink: /algorithm-development/basic-guides/
 tags: [app-guide-overview]
 show_related: false
@@ -13,7 +12,7 @@ image:
 ---
 
 <!-- create array of 'basics' tags -->
-{% assign basics_tags = "alg-dev-getting-started|bounties|algo-dev" | split:"|" %}
+{% assign basics_tags = "algo-dev" | split:"|" %}
 
 <div id="basics-index">
 
@@ -25,14 +24,13 @@ image:
       {% assign new_tag = site.data.tags[t] %}
 
       {% if basics_tags contains t %}
-        <section class="basics-posts">
-        <h2> {{ new_tag.name }}</h2>
+        <div class="col-md-12">
           {% for post in site.categories["basics"] %}
             {% if post.tags contains t %}
               {% include post-list-with-excerpt.html %}
             {% endif %}
           {% endfor %}
-        </section>
+        </div>
 
       {% else %}
       <!-- skip tag if not in basics-tags -->

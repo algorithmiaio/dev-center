@@ -17,7 +17,7 @@ How easy is it? By creating an Algorithmia account you automatically have access
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
-## Data Portal Guides:
+### Algorithm data portal guides:
 {% assign data_connector_tags = "alg-data-connectors" | split:"|" %}
 <div class="col-xs-3 lang-tile">
   {% for post in site.posts %}
