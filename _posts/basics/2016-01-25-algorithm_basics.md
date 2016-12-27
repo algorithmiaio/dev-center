@@ -15,13 +15,13 @@ image:
 ## Pricing
 For an overview of algorithm pricing, see the [pricing page](https://algorithmia.com/pricing).
 
-Algorithm usage is calculated in Algorithmia Credits. The current exchange rate for purchasing new credits is 10,000 credits to $1 USD.
+Algorithm usage is calculated in Algorithmia Credits. The current exchange rate for purchasing new credits is 10,000 credits to $1 USD. This was chosen to translate into 1 credit = 1 second of compute time.
 
 #### Cost of running an algorithm
 
 All algorithms in the marketplace are charged a fee of 1 credit per second (1cr/sec) of execution time on a single dedicated node. The execution time is calculated from the start of the algorithm execution until the algorithm returns.
 
-In addition to the execution charge, algorithm developers may charge a royalty on each algorithm call. This cost-per-call royalty is associated with a specific version of the algorithm and will remain fixed indefinitely.
+In addition to the execution charge, algorithm developers may charge a royalty on each algorithm call. This cost-per-call royalty is associated with a specific version of the algorithm and will remain fixed indefinitely. This ability to apply royalties to an algorithm is to reflect the fact that the value of an algorithm is more than just the seconds of computation is uses and is up to each algorithm developer to set.
 
 When an algorithm developer releases a new minor or major version of the algorithm, they have the option to include a pricing change. Make sure to include the version in your algorithm call to ensure a consistent experience.
 {: .notice-info}
@@ -37,7 +37,7 @@ You can view your last 30-days of account usage on your account page.
 
 ## Permissions
 
-Permissions can be found on the algorithm description page. The algorithm's author can indicate if the algorithm will require Internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm's permissions section on the description page for more information.
+Permissions can be found on the algorithm description page. The algorithm's author can indicate if the algorithm will require Internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm's permissions section on the description page for more information. 
 
 #### Internet Access
 

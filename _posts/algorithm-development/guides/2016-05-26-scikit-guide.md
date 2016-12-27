@@ -32,7 +32,7 @@ Now you'll want to create a data collection to host your pickled model.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
 
-- Click on “Add Collection” under the “My Collections” section on your data collections page.
+- Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
@@ -42,7 +42,7 @@ Now you'll want to create a data collection to host your pickled model.
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
 
-- Load model by clicking box “Drop files here to upload”
+- Load model by clicking box **“Drop files here to upload”**
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
@@ -51,7 +51,7 @@ Next, upload your pickled model to your newly created data collection.
 ### Create your Algorithm
 Creating your algorithm is easy!
 
-- To add an algorithm, simply click “Add Algorithm” from the user profile icon.
+- To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For machine learning models you will want to check 'Standard Execution Environment'.
@@ -117,7 +117,7 @@ def apply(input):
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
-- Click on the dependencies button at the top right of the UI and list your packages under the required ones already listed and click 'Save Dependencies' on the bottom right corner.
+- Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
 <img src="/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" class="screenshot">
 

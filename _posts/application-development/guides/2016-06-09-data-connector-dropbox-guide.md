@@ -23,14 +23,14 @@ To create a new data connection first navigate to <a href="https://algorithmia.c
 
 <img src="/images/post_images/data_connectors/data_portal.png" alt="Data Portal" class="screenshot">
 
-On that panel click the button that says **'Add Data Source'** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
+On that panel click the button that says **"Add Data Source"** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
 
 <img src="/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot">
 
 Select **'Connect to Dropbox'** and you will be prompted to login to your Dropbox account. You'll be asked if you want to grant Algorithmia access to your account via OAuth authentication. Once that's done a new panel will be created which will have the Dropbox icon on it and a unique label for that Dropbox connection. 
 
 ## Configure a Data Source
-Set path restrictions and manage the read and write permissions by clicking the button **'Manage Dropbox'** on the middle panel holding the unique data connector that was just created.
+Set path restrictions and manage the read and write permissions by clicking the button **"Manage Dropbox"** on the middle panel holding the unique data connector that was just created.
 
 <img src="/images/post_images/data_connectors/manage_connector_all.png" alt="Manage a data connector" class="screenshot">
 

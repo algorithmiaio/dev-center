@@ -23,7 +23,7 @@ To create a new data connection first navigate to <a href="https://algorithmia.c
 
 <img src="/images/post_images/data_connectors/data_portal.png" alt="Data Portal" class="screenshot">
 
-On that panel click the button that says **'Add Data Source'** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
+On that panel click the button that says **"Add Data Source"** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
 
 <img src="/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot">
 
@@ -37,7 +37,7 @@ Select **'Connect to Amazon S3'** and a modal window will open to configure an S
 - Can only access the paths in S3 that you want Algorithmia to access
 
 ### Update Labels For Data Connections
-If you would like to change the unique label that was automatically provided when you created the data connection, simply update it under **'Label'** and give it a unique name.
+If you would like to change the unique label that was automatically provided when you created the data connection, simply update it under **"Label"** and give it a unique name.
 
 We create these unique labels because you may want to add multiple connections to the same S3 account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
 
