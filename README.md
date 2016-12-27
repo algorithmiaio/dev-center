@@ -18,6 +18,12 @@ You're going to need:
  - **Ruby, version 1.9.3 or newer**
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
 
+#### Ubuntu 16.10 Notes:
+
+```bash
+sudo apt install ruby ruby-dev zlib1g-dev
+```
+
 ### Getting Set Up
 
  1. Fork this repository on Github.

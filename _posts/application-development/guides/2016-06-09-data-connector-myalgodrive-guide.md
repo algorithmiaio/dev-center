@@ -19,50 +19,63 @@ image:
 ## Data Source Basics
 For simple cases, you can feed data to an algorithm at request time, but for algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data files hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.
 
-There are many different collection types that have different features and security measures in place. Data in your temporary and user collections can be downloaded to be saved locally.
+There are four collection types that have different features and security measures in place: User collections, Session Collections, Permanent Collections, and Temporary Algorithm Collections. 
 
-## Collection Types
-There are four types of collections: User collections, Session collections, Permanent Algorithm collections, and Temporary Algorithm collections.
+This guide will show how to create a collection and walk you through the different types of directory permissions available, the different types of collections and what they are generally used for.
 
-User collections can store data and allow you to set the read permission on that collection.
-
-Other collection types have system-defined permissions:
-
-- Session Collections only have read/write access from within the same session.
-- Temporary and Permanent Algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
 
 ## Create a Data Collection
-To create a new data collection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says 'Algorithmia Hosted Data' click the button that says **'Browse Files'** which takes you to <a href="https://algorithmia.com/data/hosted">Data Collections</a>.
+
+To create a new data collection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says "Algorithmia Hosted Data" click the button that says **"Browse Files"** which takes you to <a href="https://algorithmia.com/data/hosted">Data Collections</a>.
 
 <img src="/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" class="screenshot">
 
-Here you can create named collections of data that can be controlled by collection-based Access Control Lists (ACLs). This allows you to manage the permissions for each collection from the Data Portal.
-
-Each collection has its own ACLs, and there are three types of permissions for reading data from a collection. Only you can write to your own collections, so they are by default marked as private.
-
-Create a new data collection:
-
-- Click on **'Add Collection'** under the 'My Collections' section on your data collections page.
-
-- Set the read and write access on your collection. Below are the details regarding access permissions and what they mean.
-
+Then you will find yourself in the collections panel where you can click on **"Add Collection"** under the 'My Collections' section on your data collections page:
 
 <img src="/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot">
 
-## Details about Read and Write Permissions
+Notice that when you create a collection you can set the read and write access by using the drop downs shown in the above screenshot. Below are the details regarding access permissions for user collections and what they mean.
+
+## Read and Write Permissions
+
+The different types of collections have different permissions and are either set by the user or are system-defined permissions.
+
+User collections like we created above allow you to set the read and write permissions on a collection using ACL's which we'll cover in depth later.
+
+Session, Temporary, and Permanent Collections all have system-defined permissions:
+
+-	Session Collections have read/write access only from within the same session.
+
+-	Temporary and Permanent algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
+
+**Note:** Data in your temporary and user collections can be downloaded to be saved locally.
+
+### User Collection Permissions and ACL's
+
+Here you can create named collections of data that can be controlled by collection-based Access Control Lists (ACLs). This allows you to manage the permissions for each collection from My Collections drop down menu.
+
+Each collection has its own ACLs, and there are three types of permissions for reading data from a collection. Only you can write to your own collections, so they are by default marked as private.
+
 For each setting there are differences in permissions and access that you need to be aware of. Below are the details of the various settings that can be managed for each collection.
 
+#### Private (only me):
+When you set your collection read access to Private, only you will be able to read and write to the data collection. This includes any algorithm that you call, because when you call an algorithm it has permission to read and write to your collection on your behalf. This is the most restrictive option. This permission setting is the only option available for writing to collections to prevent involuntary data retention.
 
-### Private (only me):
-When you set your collection read access to Private, only you will be able to read and write to the data collection. This is the most restrictive option. This permission setting is the only option available for writing to collections to prevent involuntary data retention.
+#### My Algorithms (called by any user):
+This permission option is set as the default for your data collection and it will allow other users on the platform to interact with your data through your algorithms. This means they can call your algorithm to perform an operation on your data stored in this collection. This option is perfect for showcasing the algorithms and letting the users get an idea of what they can do on your sample data.
 
-### My Algorithms (called by any user):
-If you select this permission option for your data collection, it will allow other users on the platform to interact with your data through your algorithms. This means they can call your algorithm to perform an operation on your data stored in this collection. This option is perfect for showcasing the algorithms and letting the users get an idea of what they can do on your sample data.
-
-### Public (anybody):
+#### Public (anybody):
 Anyone can read the data in your collection, feed that data to their algorithms, or copy the data to their own collections.
 
+For more information on ACL's check out the [Algorithmia Data API](http://docs.algorithmia.com/#directories)
+
+## User Collections
+ 
+User collections are the most common collection type that you will use which we created at the start of this guide. 
+
 ### Accessing your data from collections:
+
+The format for user collections when using Data URI within Algorithmia:
 
 - 'data://:username/:collection'
 - 'data://:username/:collection/:filename'
@@ -123,5 +136,16 @@ Simplified URI format:
 - 'data://.algo/perm/:filename'
 
 If you are using the Data URI from inside Algorithmia, you can also use a simplified form of the URI. This simplified version will infer the algorithm when it is being called so that you don't have to specify the author and algorithm name.
+
+## Conclusion and Resources
+
+This guide showed how to create a data collection, discussed collection types and covered permissions of User Collections, Session Collections, Permanent Collections and Temorary Collections.
+
+For more information:
+
+- [Algorithmia Data API](http://docs.algorithmia.com/#data-api-specification)
+- [ACL's](https://en.wikipedia.org/wiki/Access_control_list)
+
+
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
