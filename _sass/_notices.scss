@@ -8,12 +8,12 @@
 
 @mixin notice($notice-color) {
 	position: relative;
-	padding: 1.5em;
+	padding: 1em;
 	font-family: $alt-font;
 	@include font-size(14,39);
-	color: $white;
+	color: $white!important;
 	background-color: $notice-color;
-	border-radius: $border-radius;
+	border-radius: 0;
 	a {
 		color: $white;
 		border-bottom: 1px dotted $white;
