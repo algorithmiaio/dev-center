@@ -44,7 +44,7 @@ Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a>.
 
-## <a id="create-algorithm">Managing Dependencies</a>
+## <a id="create-algorithm">Create an Algorithm</a>
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
