@@ -1,0 +1,20 @@
+<!-- for # of categories -->
+<div class="row">
+  <div class="col-md-12">
+    <h3>{{ category.title }}</h3>
+  </div>
+  <div class="col-md-3">
+    <img src="{{ site.url }}/images/{{ category.image }}" alt="" itemprop="image">
+  </div>
+  <div class="col-md-9">
+    <!--  for # of items in category  -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lg"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser"></a></p>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </div>
+    <!--  end for  -->
+  </div>
+</div>
+<!--  end for  -->
