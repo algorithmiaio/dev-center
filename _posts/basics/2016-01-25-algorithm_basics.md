@@ -1,10 +1,9 @@
 ---
 layout: article
-title:  "Algorithm Basics"
+title:  "Pricing, Permissions, & Versioning"
 excerpt: "All about pricing, permissions, and versioning on the platform."
 date:   2016-01-25 01:19:38
-categories: algorithm-development
-permalink: /algorithm-development/algorithm-basics/
+permalink: /basics/algorithm-basics/
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
@@ -13,7 +12,7 @@ image:
 ---
 
 
-## Pricing
+### Pricing
 For an overview of algorithm pricing, see the [pricing page](https://algorithmia.com/pricing).
 
 Algorithm usage is calculated in Algorithmia Credits. The current exchange rate for purchasing new credits is 10,000 credits to $1 USD.
@@ -36,7 +35,7 @@ When calling into an algorithm that uses another algorithm internally, you may e
 You can view your last 30-days of account usage on your account page.
 {: .notice-info}
 
-## Permissions
+### Permissions
 
 Permissions can be found on the algorithm description page. The algorithm's author can indicate if the algorithm will require Internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm's permissions section on the description page for more information.
 
@@ -56,7 +55,7 @@ Many algorithms can benefit from using a Graphics Processing Unit (GPU) to accel
 
 Algorithm authors have the option of choosing to open source their algorithm. Open source algorithms have a button on the description to "View Source" and anyone can see the internal code of the algorithm. If an algorithm is closed source, this means that only the author has the ability to view the code. Note that open source algorithms still accrue fees for usage and may have a royalty fee.
 
-## Versioning
+### Versioning
 
 Each algorithm follows the same versioning scheme composed of a revision number, minor version number, and major version number. This allows algorithm developers the ability to update and improve their algorithms while maintaining a dependable version for consumers to call.
 

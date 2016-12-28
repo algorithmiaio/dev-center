@@ -29,11 +29,11 @@
   url: /basics/organization_profiles/
 
 - title: Bounties
-  url: /bounties/all-about-bounties
+  url: /bounties/all-about-bounties/
   category: bounties
 
-- title: Pricing & Terms
-  url: /TODO
+- title: Pricing, Permissions, & Versioning
+  url: /basics/algorithm-basics/
 
 - title: FAQ
   url: /faqs/

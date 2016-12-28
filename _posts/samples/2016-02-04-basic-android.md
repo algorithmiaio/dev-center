@@ -2,6 +2,7 @@
 layout: article
 title:  "Basic Android Integration"
 date:   2016-01-28 01:30:38
+permalink: /tutorials/sample-apps/android
 categories: samples 
 tags: [sample-apps]
 show_related: false

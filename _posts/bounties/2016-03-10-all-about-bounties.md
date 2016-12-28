@@ -1,12 +1,11 @@
 ---
 layout: article
-title:  "All About Bounties"
+title:  "Bounties"
 excerpt: "An introduction to the bounty system."
 date:   2016-03-10 01:19:38
 permalink: /bounties/all-about-bounties/
 redirect_from:
   - /basics/an-intro-to-bounties/
-categories: bounties 
 tags: [bounties]
 show_related: true
 author: liz_rush
