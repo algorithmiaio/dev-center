@@ -2,8 +2,8 @@
 layout: article
 title:  "The Algorithmia Guide to Sentiment Analysis"
 date:   2016-01-28 01:30:38
-categories: guides 
-tags: [guides, sentiment-analysis]
+categories: recipes
+tags: [text-analysis, sentiment-analysis]
 show_related: false
 author: matt_kiser
 excerpt: "New to Sentiment Analysis? Start here to learn the basics and get started."
@@ -13,30 +13,30 @@ image:
 ---
 
 ## Sentiment Analysis Overview
-**Sentiment Analysis** is the use of natural language processing, statistics, and text analysis to extract, and identify the sentiment of text into positive, negative, or neutral categories. We often see sentiment analysis used to arrive at a binary decision: somebody is either **for** or **against** something, users **like** or **dislike** something, or the product is **good** or **bad**. 
+**Sentiment Analysis** is the use of natural language processing, statistics, and text analysis to extract, and identify the sentiment of text into positive, negative, or neutral categories. We often see sentiment analysis used to arrive at a binary decision: somebody is either **for** or **against** something, users **like** or **dislike** something, or the product is **good** or **bad**.
 
-Sentiment analysis is also called **opinion mining** since it includes identifying consumer attitudes, emotions, and opinions of a company’s product, brand, or service. 
+Sentiment analysis is also called **opinion mining** since it includes identifying consumer attitudes, emotions, and opinions of a company’s product, brand, or service.
 
 ---
 
 ## Sentiment Analysis Use Cases
-The use of sentiment analysis is frequently applied to reviews and social media to help marketing and customer service teams identify the feelings of consumers. In media, such as product reviews, sentiment analysis can be used to uncover whether consumers are satisfied or dissatisfied with a product. Likewise, a company could use sentiment analysis to measure the impact of a new product, ad campaign, or consumer’s response to recent company news on social media. 
+The use of sentiment analysis is frequently applied to reviews and social media to help marketing and customer service teams identify the feelings of consumers. In media, such as product reviews, sentiment analysis can be used to uncover whether consumers are satisfied or dissatisfied with a product. Likewise, a company could use sentiment analysis to measure the impact of a new product, ad campaign, or consumer’s response to recent company news on social media.
 
-A customer service agent at a company could use sentiment analysis to automatically sort incoming user email into “urgent” or “not urgent” buckets based on the sentiment of the email, proactively identifying frustrated users. The agent could then direct their time toward resolving the users with the most urgent needs first. 
+A customer service agent at a company could use sentiment analysis to automatically sort incoming user email into “urgent” or “not urgent” buckets based on the sentiment of the email, proactively identifying frustrated users. The agent could then direct their time toward resolving the users with the most urgent needs first.
 
 Sentiment analysis is often used in business intelligence to understand the subjective reasons why consumers are or are not responding to something (e.g. Why are consumers buying a product? What do they think of the user experience? Did customer service support meet their expectations?). Sentiment analysis can also be used in the areas of political science, sociology, and psychology to analyze trends, ideological bias, opinions, gauge reactions, etc.
 
 ---
 
 ## Challenges of Sentiment Analysis
-People express opinions in complex ways, which makes understanding the subject of human opinions a difficult problem to solve. Rhetorical devices like sarcasm, irony, and implied meaning can mislead sentiment analysis, which is why concise and focused opinions like product, book, movie, and music reviews are easier to analyze. 
+People express opinions in complex ways, which makes understanding the subject of human opinions a difficult problem to solve. Rhetorical devices like sarcasm, irony, and implied meaning can mislead sentiment analysis, which is why concise and focused opinions like product, book, movie, and music reviews are easier to analyze.
 
 ----
 
 ## Sentiment Analysis Algorithms
-Algorithmia provides several powerful sentiment analysis algorithms to developers. Implementing sentiment analysis in your apps is as simple as calling our [REST API](http://docs.algorithmia.com/#api-specification). There are no servers to setup, or settings to configure. Sentiment Analysis can be used to quickly analyze the text of research papers, news articles, social media posts like Tweets, and more. 
+Algorithmia provides several powerful sentiment analysis algorithms to developers. Implementing sentiment analysis in your apps is as simple as calling our [REST API](http://docs.algorithmia.com/#api-specification). There are no servers to setup, or settings to configure. Sentiment Analysis can be used to quickly analyze the text of research papers, news articles, social media posts like Tweets, and more.
 
-[Social Sentiment Analysis](https://algorithmia.com/algorithms/nlp/SocialSentimentAnalysis) is an algorithm that is tuned to analyze the sentiment of social media content, like tweets and status updates. The algorithm takes a string, and returns the sentiment rating for the “positive,” “negative,” and “neutral.” In addition, this algorithm provides a compound result, which is the general, overall sentiment of the string. 
+[Social Sentiment Analysis](https://algorithmia.com/algorithms/nlp/SocialSentimentAnalysis) is an algorithm that is tuned to analyze the sentiment of social media content, like tweets and status updates. The algorithm takes a string, and returns the sentiment rating for the “positive,” “negative,” and “neutral.” In addition, this algorithm provides a compound result, which is the general, overall sentiment of the string.
 
 Input Example:
 
@@ -114,16 +114,16 @@ Output Example:
 }
 {% endhighlight %}
 
---- 
+---
 
 ## Additional Sentiment Analysis Resources
 
 ### Articles About Sentiment Analysis
 
-**[Benchmarking Sentiment Analysis Algorithms](http://blog.algorithmia.com/2016/01/benchmarking-sentiment-analysis-algorithms/)** – 
+**[Benchmarking Sentiment Analysis Algorithms](http://blog.algorithmia.com/2016/01/benchmarking-sentiment-analysis-algorithms/)** –
 *"Sentiment Analysis, also known as opinion mining, is a powerful tool you can use to build smarter products. It’s a natural language processing algorithm that gives you a general idea about the positive, neutral, and negative sentiment of texts. Social media monitoring apps and companies all rely on sentiment analysis and machine learning to assist them in gaining insights about mentions, brands, and products."*
 
-**[Deep Learning for Sentiment Analysis](http://nlp.stanford.edu/sentiment/)** – 
+**[Deep Learning for Sentiment Analysis](http://nlp.stanford.edu/sentiment/)** –
 *"This website provides a live demo for predicting the sentiment of movie reviews. In contrast, our new deep learning model actually builds up a representation of whole sentences based on the sentence structure. You can also browse the Stanford Sentiment Treebank, the dataset on which this model was trained."*
 
 **[Creating a Sentiment Analysis Model](https://cloud.google.com/prediction/docs/sentiment_analysis)** – *"This document explains how to create a basic sentiment analysis model using the Google Prediction API. A sentiment analysis model is used to analyze a text string and classify it with one of the labels that you provide; for example, you could analyze a tweet to determine whether it is positive or negative, or analyze an email to determine whether it is happy, frustrated, or sad. You must train your sentiment model against examples of the type of data that you are going to see when you use your model."*
@@ -150,7 +150,7 @@ Output Example:
 **[Sentiment Analysis and Subjectivity](https://www.cs.uic.edu/~liub/FBS/NLP-handbook-sentiment-analysis.pdf)** – *"Textual information in the world can be broadly categorized into two main types: facts and opinions. Facts are objective expressions about entities, events and their properties. Much of the existing research on textual information processing has been focused on mining and retrieval of factual information, e.g., information retrieval, Web search, text classification, text clustering and many other text mining and natural language
 processing tasks."*
 
- 
+
 ### Top Online Sentiment Analysis Courses
 
 **[Columbia University](https://www.coursera.org/course/nlangp)** – *"Natural language processing (NLP) deals with the application of computational models to text or speech data. Application areas within NLP include automatic (machine) translation between languages; dialogue systems, which allow a human to interact with a machine using natural language; and information extraction, where the goal is to transform unstructured text into structured (database) representations that can be searched and browsed in flexible ways. In this course you will study mathematical and computational models of language, and the application of these models to key problems in natural language processing."*
@@ -169,7 +169,7 @@ processing tasks."*
 * [Introduction to Sentiment Analysis](http://lct-master.org/files/MullenSentimentCourseSlides.pdf)
 
 ### Books On Sentiment Analysis
-* [Sentiment Analysis: Mining Opinions, Sentiments, and Emotions](http://www.amazon.com/Sentiment-Analysis-Opinions-Sentiments-Emotions/dp/1107017890/ref=sr_1_1?s=books&ie=UTF8&qid=1453765815&sr=1-1&keywords=sentiment+analysis) 
+* [Sentiment Analysis: Mining Opinions, Sentiments, and Emotions](http://www.amazon.com/Sentiment-Analysis-Opinions-Sentiments-Emotions/dp/1107017890/ref=sr_1_1?s=books&ie=UTF8&qid=1453765815&sr=1-1&keywords=sentiment+analysis)
 * [Mining the Social Web: Data Mining Facebook, Twitter, LinkedIn, Google+, GitHub, and More](http://www.amazon.com/Mining-Social-Web-Facebook-LinkedIn/dp/1449367615/ref=sr_1_3?s=books&ie=UTF8&qid=1453765815&sr=1-3&keywords=sentiment+analysis)
 * [Practical Text Analytics: Interpreting Text and Unstructured Data for Business Intelligence](http://www.amazon.com/Practical-Text-Analytics-Interpreting-Unstructured/dp/0749474017/ref=sr_1_2?s=books&ie=UTF8&qid=1453765815&sr=1-2&keywords=sentiment+analysis)
 * [Foundations of Statistical Natural Language Processing](http://www.amazon.com/Foundations-Statistical-Natural-Language-Processing/dp/0262133601/ref=sr_1_8?s=books&ie=UTF8&qid=1453765815&sr=1-8&keywords=sentiment+analysis)
@@ -182,4 +182,4 @@ processing tasks."*
 * [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
 * [Information extraction](https://en.wikipedia.org/wiki/Information_extraction)
 * [Summarization](https://en.wikipedia.org/wiki/Automatic_summarization)
-* [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) 
+* [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition)

@@ -1,20 +1,15 @@
-<!-- for # of categories -->
 <div class="row">
   <div class="col-md-12">
-    <h3>{{ category.title }}</h3>
+    <h3>{{ tag | replace: '-', ' ' | capitalize }}</h3>
   </div>
   <div class="col-md-3">
-    <img src="{{ site.url }}/images/{{ category.image }}" alt="" itemprop="image">
+    <img src="{{ site.url }}/images//icons/{{ tag }}.png" alt="" itemprop="image">
   </div>
   <div class="col-md-9">
-    <!--  for # of items in category  -->
-      <div class="row">
-        <div class="col-md-12">
-          <p class="lg"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser"></a></p>
-          <p>{{ post.excerpt }}</p>
-        </div>
-      </div>
-    <!--  end for  -->
+    {% for post in recipes %}
+      {% if post.tags contains tag %}
+        {% include post-list-with-excerpt.html %}
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
-<!--  end for  -->

@@ -6,13 +6,13 @@ permalink: /tutorials/recipes/
 categories: tutorials
 show_related: false
 excerpt: "All the recipes"
+recipe_tags: ["text-analysis", "machine-learning", "computer-vision", "deep-learning"]
 ---
 
-{% assign model_tags = "recipe" | split:"|" %}
-<div>
-  {% for post in site.posts %}
-    {% if model_tags == post.tags %}
-    {% include recipe-grid.html %}
-  {% endif %}
-  {% endfor %}
-</div>
+{% assign recipes = site.categories["recipes"] | sort:"title" %}
+{% for tag in page.recipe_tags %}
+  {% include recipe-grid.html %}
+  {% unless forloop.last %}
+  <hr>
+  {% endunless %}
+{% endfor %}
