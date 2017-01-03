@@ -1,13 +1,11 @@
-<article itemscope itemtype="http://schema.org/Article">
-  <div class="col-xs-3 lang-tile">
-    <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser">
-      {% if post.image.teaser %}
-        <img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image" class="lang-icon">
-      {% else %}
-        <img class="larger_icon" src="{{ site.url }}/images/{{ post.image.teaser }}" alt="icon" itemprop="image">
-      {% endif %}
-    </a>
+<div class="col-xs-4 col-sm-3 lang-tile">
+  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser">
+    {% if post.image.teaser %}
+      <img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image" class="lang-icon">
+    {% else %}
+      <img class="larger_icon" src="{{ site.url }}/images/{{ post.image.teaser }}" alt="icon" itemprop="image">
+    {% endif %}
+  </a>
 
-    <p itemprop="name"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
-  </div>
-</article>
+  <p itemprop="name" class="lg"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+</div>
