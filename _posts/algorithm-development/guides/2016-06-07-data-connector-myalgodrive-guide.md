@@ -45,7 +45,8 @@ Session, Temporary, and Permanent Collections all have system-defined permission
 
 -	Temporary and Permanent algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
 
-**Note:** Data in your temporary and user collections can be downloaded to be saved locally.
+Data in your temporary and user collections can be downloaded to be saved locally.
+{: .notice-info}
 
 ### User Collection Permissions and ACL's
 
@@ -84,7 +85,8 @@ If you are operating on your own directories or files you can use the '.my' pseu
 - 'data://.my/:collection'
 - 'data://.my/:collection/:filename'
 
-**NOTE:** If you are authoring an algorithm, avoid using the '.my' pseudonym in the source code. When the algorithm is executed, '.my' will be interpreted as the user name of the user who called the algorithm, rather than the author's user name.
+If you are authoring an algorithm, avoid using the '.my' pseudonym in the source code. When the algorithm is executed, '.my' will be interpreted as the user name of the user who called the algorithm, rather than the author's user name.
+{: .notice-warning}
 
 ## Session Collections
 

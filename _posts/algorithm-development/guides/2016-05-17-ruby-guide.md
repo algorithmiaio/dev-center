@@ -31,7 +31,7 @@ Algorithmia supports adding 3rd party dependencies via <a href="https://rubygems
 
 Add dependencies by adding the package name to the `Gemfile`.
 
-Note that you will still need to include an import statement to your algorithm file. For example, to make use of nokogiri, you would include the line
+**Note:** that you will still need to include an import statement to your algorithm file. For example, to make use of nokogiri, you would include the line
 
 `gem "nokogiri"`
 

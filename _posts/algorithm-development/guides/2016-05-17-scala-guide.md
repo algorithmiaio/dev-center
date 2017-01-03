@@ -55,7 +55,8 @@ class Example {
 
 By default, Algorithmia uses Google's [GSON](https://code.google.com/p/google-gson/) library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
 
-Note: GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.
+GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.
+{: .notice-info}
 
 This example shows a function that takes two parameters, a Map from Strings to Strings (dict) and another String (key), and returns another String.
 
