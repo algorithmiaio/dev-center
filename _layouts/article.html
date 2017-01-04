@@ -26,10 +26,9 @@ layout: default
 
 		<div id="content" class="page-content" itemprop="articleBody">
 			{{ content }}
-			<hr />
-			{% if page.categories %}{% include page-author.html %}{% endif %}
+
 			<aside>
-				{% if page.comments == true %}{% include comments.html %}{% endif %}
+				{% if page.comments == true %}<hr />{% include comments.html %}{% endif %}
 			</aside>
 
 		</div><!-- /.content -->
