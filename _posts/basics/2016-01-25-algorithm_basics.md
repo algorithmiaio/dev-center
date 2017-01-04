@@ -8,7 +8,7 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
-    teaser: /icons/fa-bolt.png
+    teaser: /icons/algo.svg
 ---
 
 

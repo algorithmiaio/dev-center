@@ -8,7 +8,7 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
-  teaser: /icons/fa-bolt.png
+  teaser: /icons/algo.svg
 ---
 
 To call algorithms and interact with the Data API, you'll use an API key to authenticate. But did you know you can create additional API keys and customize their access permissions? This guide will show you how.

@@ -8,6 +8,8 @@ categories: bounties
 tags: [bounties]
 show_related: true
 author: diego_oppenheimer
+image:
+  teaser: /icons/bounty.svg
 ---
 The Algorithmia bounty system is a great way for algorithm developers to challenge themselves, demonstrate their expertise, and earn money. By solving bounties, algorithm developers contribute to the success of other developers and their projects. 
 

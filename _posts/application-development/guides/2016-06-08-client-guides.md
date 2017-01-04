@@ -9,8 +9,6 @@ redirect_from:
 tags: [app-guide-overview]
 show_related: false
 author: steph_kim
-image:
-    teaser: /icons/Algorithmia_Microservices.png
 ---
 
 Run through a tutorial in your preferred language. The tutorial will teach you how to setup the Algorithmia client and make an API call.

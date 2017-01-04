@@ -8,7 +8,7 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
-    teaser: /icons/fa-bolt.png
+    teaser: /icons/algo.svg
 ---
 
 Each algorithm is showcased on the marketplace through the profile page. Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of one of the most popular algorithms: [Nudity Detection](https://algorithmia.com/algorithms/sfw/NudityDetection)

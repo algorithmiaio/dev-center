@@ -8,6 +8,8 @@ categories: bounties
 tags: [bounties]
 show_related: true
 author: diego_oppenheimer
+image:
+  teaser: /icons/bounty.svg
 ---
 Algorithmia provides a bounty system for algorithm development, where application developers can connect with algorithm developers. This system helps application developers solve a problem by leveraging the collective knowledge of the thousands of algorithms developers that participate on Algorithmia.
 

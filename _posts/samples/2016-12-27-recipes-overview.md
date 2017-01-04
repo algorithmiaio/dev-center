@@ -7,6 +7,8 @@ categories: tutorials
 show_related: false
 excerpt: "All the recipes"
 recipe_tags: ["text-analysis", "machine-learning", "computer-vision", "deep-learning"]
+image:
+    teaser: /icons/recipes.svg
 ---
 
 {% assign recipes = site.categories["recipes"] | sort:"title" %}

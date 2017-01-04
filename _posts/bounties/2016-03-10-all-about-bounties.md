@@ -1,16 +1,17 @@
 ---
 layout: article
-title:  "Bounties"
+title:  "All about bounties"
 excerpt: "An introduction to the bounty system."
 date:   2016-03-10 01:19:38
 permalink: /bounties/all-about-bounties/
 redirect_from:
   - /basics/an-intro-to-bounties/
+categories: bounties 
 tags: [bounties]
 show_related: true
 author: liz_rush
 image:
-  teaser: /icons/fa-bolt.png
+  teaser: /icons/bounty.svg
 ---
 
 Bounties are part of the Algorithmia Marketplace and allow users to post their algorithmic needs for particular problems they may have. Bounties are a great way to get tailored solutions written by subject matter experts and algorithm developers. 

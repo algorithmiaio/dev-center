@@ -6,6 +6,8 @@ permalink: /tutorials/sample-apps/
 categories: tutorials
 show_related: false
 excerpt: "All the sample apps"
+image:
+    teaser: /icons/sample apps.svg
 ---
 
 {% assign model_tags = "sample-app" | split:"|" %}

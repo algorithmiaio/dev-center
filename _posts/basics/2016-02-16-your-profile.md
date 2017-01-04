@@ -8,7 +8,7 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
-  teaser: /icons/fa-bolt.png
+  teaser: /icons/algo.svg
 ---
 
 Understanding your profile on the Algorithmia platform will help you find all the information you need, such as your credentials and account credits to your recent API calls.

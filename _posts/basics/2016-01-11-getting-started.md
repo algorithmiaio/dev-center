@@ -8,7 +8,7 @@ tags: [app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
-  teaser: /icons/fa-bolt.png
+  teaser: /icons/hexicon_desktop_purple.svg
 ---
 
 This is a quick guide to get you started using the Algorithmia API. We'll walk through how to get started with an algorithm and make your first API call.

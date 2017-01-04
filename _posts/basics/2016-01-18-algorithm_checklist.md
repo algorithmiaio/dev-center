@@ -11,7 +11,7 @@ tags: [algo-dev]
 show_related: true
 author: liz_rush
 image:
-  teaser: /icons/fa-bolt.png
+  teaser: /icons/algo.svg
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.
