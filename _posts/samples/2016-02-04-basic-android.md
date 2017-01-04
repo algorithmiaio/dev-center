@@ -4,7 +4,7 @@ title:  "Basic Android Integration"
 date:   2016-01-28 01:30:38
 permalink: /tutorials/sample-apps/android
 categories: samples 
-tags: [sample-apps]
+tags: [sample-app]
 show_related: false
 author: liz_rush
 excerpt: "A code walk-through of a simple Android app using Algorithmia."

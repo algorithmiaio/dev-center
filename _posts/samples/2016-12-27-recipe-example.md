@@ -1,18 +1,18 @@
 ---
 layout: article
-title:  "Basic Android Integration"
+title:  "Recipe Exmaple (Android copy)"
 date:   2016-01-28 01:30:38
 permalink: /tutorials/recipes/example
 categories: tutorial recipes 
-tags: [recipe]
+tags: [machine-learning, computer-stuff]
 show_related: false
 author: liz_rush
-excerpt: "A code walk-through of a simple Android app using Algorithmia."
+excerpt: "(Hello) A recipe example"
 image:
     teaser: /language_logos/r.svg
 ---
 
-In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
+Recipe In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
 
 The full sample code can be found in the [Sample Apps repository on GitHub](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
 

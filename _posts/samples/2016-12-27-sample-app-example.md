@@ -1,18 +1,18 @@
 ---
 layout: article
-title:  "Basic Android Integration"
+title:  "Sample app example (android copy)"
 date:   2016-01-28 01:30:38
 permalink: /tutorials/sample-apps/example
-categories: tutorial sample-apps 
+categories: sample-apps 
 tags: [sample-app]
 show_related: false
 author: liz_rush
-excerpt: "A code walk-through of a simple Android app using Algorithmia."
+excerpt: "(Sample app example) A code walk-through of a simple Android app using Algorithmia."
 image:
     teaser: /language_logos/r.svg
 ---
 
-In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
+Sample App Example In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
 
 The full sample code can be found in the [Sample Apps repository on GitHub](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
 
