@@ -16,7 +16,7 @@
     {% else %}
       <li>
     {% endif %}
-      <a href="{{link.url}}">
+      <a href="{{ link.url }}">
         {{link.title}}
         {% if link.category and site.categories[link.category] %}
           <i class="fa fa-angle-down"></i>
@@ -28,7 +28,8 @@
         <ul class="nav">
           {% assign items = site.categories[link.category] | sort:"title" %}
           {% for item in items %}
-            {% if page.url contains item.url %}
+            {% assign prefix = item.url | append:'/' %}
+            {% if page.url == item.url or page.url contains prefix %}
               <li class="active">
             {% else %}
               <li>
@@ -43,7 +44,8 @@
                 <ul class="nav">
                   {% assign items = site.categories[item.nav_children] | sort:"title" %}
                   {% for item in items %}
-                    {% if page.url contains item.url %}
+                    {% assign prefix = item.url | append:'/' %}
+                    {% if page.url == item.url or page.url contains prefix %}
                       <li class="active">
                     {% else %}
                       <li>
