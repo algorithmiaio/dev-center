@@ -3,6 +3,7 @@ layout: article
 title:  "The Algorithmia Guide to Sentiment Analysis"
 date:   2016-01-28 01:30:38
 categories: recipes
+permalink: /tutorials/recipes/sentiment-analysis
 tags: [text-analysis, sentiment-analysis]
 show_related: false
 author: matt_kiser

@@ -2,12 +2,6 @@
 layout: faq
 title:  "How do I get my data into Algorithmia? Can I upload data for processing?"
 date:   2016-03-02 15:00:38
-permalink: /faqs/
-redirect_from:
-  - /basics/platform-faq/
-  - /basics/#platform-faq/
-  - /basics/algo-dev-faq/
-  - /basics/#algo-dev-faq/
 categories: faqs
 tags: [platform-faq]
 show_related: true
@@ -18,7 +12,7 @@ image:
 
 For simple cases, you can feed the data into an algorithm at request time. To upload data, you can use our Data API. The Data API is great for applications with larger data requirements or to batch process raw datasets.
 
-You can also upload data to your data collection by hand. Uploading through the web browser is a quick way to get a file uploaded and accessible. 
+You can also upload data to your data collection by hand. Uploading through the web browser is a quick way to get a file uploaded and accessible.
 
 ### Uploading a file through the web browser
 
@@ -39,7 +33,7 @@ Next, to start adding files to your new collection, you can either drag and drop
 
 ![add file](/images/post_images/faqs/uploading_data/add_file.png)
 
-Finally, be sure to check the permissions on your collection. You can select Private, My Algorithms, or Public. 
+Finally, be sure to check the permissions on your collection. You can select Private, My Algorithms, or Public.
 
 ![make public](/images/post_images/faqs/uploading_data/make_public.png)
 

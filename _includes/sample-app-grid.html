@@ -1,9 +1,9 @@
   <!-- for # of items -->
   <div class="col-md-4 sample-card">
-    <h4>{{ post.title }}</h4>
+    <h4><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h4>
     <div class="whitespace">
       <p>{{ post.excerpt }}</p>
     </div>
-    <a href="{ github }" class="btn-success"><i class="fa fa-github" aria-hidden="true"></i> FORK IT</a>
+    <a href="{{ github }}" class="btn-success"><i class="fa fa-github" aria-hidden="true"></i> FORK IT</a>
   </div>
   <!--  end for  -->

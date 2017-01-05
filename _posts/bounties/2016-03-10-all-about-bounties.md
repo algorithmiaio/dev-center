@@ -3,10 +3,7 @@ layout: article
 title:  "All about bounties"
 excerpt: "An introduction to the bounty system."
 date:   2016-03-10 01:19:38
-permalink: /bounties/all-about-bounties/
-redirect_from:
-  - /basics/an-intro-to-bounties/
-categories: bounties 
+permalink: /bounties/
 tags: [bounties]
 show_related: true
 author: liz_rush
@@ -14,11 +11,11 @@ image:
   teaser: /icons/bounty.svg
 ---
 
-Bounties are part of the Algorithmia Marketplace and allow users to post their algorithmic needs for particular problems they may have. Bounties are a great way to get tailored solutions written by subject matter experts and algorithm developers. 
+Bounties are part of the Algorithmia Marketplace and allow users to post their algorithmic needs for particular problems they may have. Bounties are a great way to get tailored solutions written by subject matter experts and algorithm developers.
 
 ## What is a Bounty?
 
-A bounty is a posting that advertises a problem that needs solving with an algorithm. Anyone can post a bounty or provide the solution! 
+A bounty is a posting that advertises a problem that needs solving with an algorithm. Anyone can post a bounty or provide the solution!
 
 ## What kind of problems are appropriate for bounties?
 
@@ -33,7 +30,7 @@ Examples of problems that are not a good fit for the Bounty system include:
 
 * Tasks that require substantial human intervention, such as 3D animation
 * Research level problems that even experts have yet to solve
-* Problems that would require infrastructure to complete, e.g., "a mobile app that does X". 
+* Problems that would require infrastructure to complete, e.g., "a mobile app that does X".
 
 The best bounties are things you don't quite know how to solve, but you are reasonably confident that a subject expert probably knows.
 
@@ -45,14 +42,14 @@ There are a few levels to consider when writing a bounty and depending on your p
 
 **1. Specify the problem**
 
-The problem can range from something as mundane as converting between file formats to something as abstract as a combinatorial optimization problem. Describe the problem briefly, include any relevant links to research, papers, similar examples or even Wikipedia if these resources can help clarify the problem. 
+The problem can range from something as mundane as converting between file formats to something as abstract as a combinatorial optimization problem. Describe the problem briefly, include any relevant links to research, papers, similar examples or even Wikipedia if these resources can help clarify the problem.
 
 Be sure to provide example data. To make this easier, you can put files in the Data API and make them publicly readable. For more information on how to upload your sample data through the web browser, follow [this step-by-step guide](/faqs/how-do-i-get-my-data-into-algorithmia/). If you don't have example data available, please provide a very clear examples of what you expect the data to be and how it will look as input.
 
 
 **2. Specify the interface**
 
-In order to make sure that the algorithm will fulfill your needs, be sure to specify what the input and output formats will be. Usually this will be something standard, like a list of strings, an array of integers, or an image file. 
+In order to make sure that the algorithm will fulfill your needs, be sure to specify what the input and output formats will be. Usually this will be something standard, like a list of strings, an array of integers, or an image file.
 
 In other cases, a custom class will be easier. If you suspect that you need a custom class, check out our [Java documentation](https://algorithmia.com/docs/algorithm/java/) and be sure to provide a definition of the class int he bounty.
 
@@ -64,23 +61,23 @@ If your bounty is a particularly difficult problem, your odds of getting a succe
 
 ## Pledging to a Bounty
 
-In order to incentivize algorithm developers to develop an algorithm that fulfills your bounty, you can pledge between $10 and $10,000 USD to the solution. Bounties offered with a monetary value are far more likely to interest algorithm developers. 
+In order to incentivize algorithm developers to develop an algorithm that fulfills your bounty, you can pledge between $10 and $10,000 USD to the solution. Bounties offered with a monetary value are far more likely to interest algorithm developers.
 
 Pledging a bounty will start a 60-day countdown on your bounties page, and if your bounty is not fulfilled within those 60 days you will have the choice of either receiving a refund or renewing your bounty pledge. Algorithmia collects a 20% fee when you pledge a bounty. Bounties may be pledged in USD, Algorithmia credits, or both.
 
 When you pledge a monetary bounty, you will we see a charge for the amount pledged. We hold the money in escrow while the bounty is live. If no solution is found, you have the option to receive a full refund after 60 days or extend the bounty for more time.
 {: .notice-info }
 
-Find more details in the [Bounty Terms and Conditions](https://algorithmia.com/bounty_terms). 
+Find more details in the [Bounty Terms and Conditions](https://algorithmia.com/bounty_terms).
 
 ## The Bounty Review Process
 
-As the bounty author, you will review submitted solutions and accept or reject the proposed solutions depending on whether or not they addressed the requirements described in the bounty posting. When an algorithm is submitted as a solution, you will have 30 days to review, give feedback, and accept or reject the algorithm. For rejected solutions, you will have to explain why the proposed solution doesn't meet the requirements. 
+As the bounty author, you will review submitted solutions and accept or reject the proposed solutions depending on whether or not they addressed the requirements described in the bounty posting. When an algorithm is submitted as a solution, you will have 30 days to review, give feedback, and accept or reject the algorithm. For rejected solutions, you will have to explain why the proposed solution doesn't meet the requirements.
 
-When you accept an algorithm as the solution to your bounty posting, the bounty page will change from "Active" to "Fulfilled" and the algorithm will be displayed at the bottom of your bounty page. 
+When you accept an algorithm as the solution to your bounty posting, the bounty page will change from "Active" to "Fulfilled" and the algorithm will be displayed at the bottom of your bounty page.
 
 ## Fulfilling a Bounty
 
-If you are an algorithm developer and see an interesting bounty that you want to solve, you can submit the solution to fulfill the bounty. 
+If you are an algorithm developer and see an interesting bounty that you want to solve, you can submit the solution to fulfill the bounty.
 
 To fulfill a bounty, make sure you have published the algorithm publicly. The algorithm can be either open or closed source. Next, navigate to the bounty page and click the “Fulfill Bounty" button. At this point, you will be shown a dialog box with the Algorithmia Bounty Terms & Agreement. After you read the agreement, select your algorithm from the drop-down menu at the bottom and click the “I agree to terms and submit algorithm for review” button. The bounty poster will have 30 days to review the algorithm, give you feedback, and ultimately pay the bounty out if the algorithm is accepted.

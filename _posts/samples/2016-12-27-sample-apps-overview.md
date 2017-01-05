@@ -10,11 +10,8 @@ image:
     teaser: /icons/sample apps.svg
 ---
 
-{% assign model_tags = "sample-app" | split:"|" %}
 <div>
-  {% for post in site.posts %}
-    {% if model_tags == post.tags %}
+  {% for post in site.categories["sample-apps"] %}
     {% include sample-app-grid.html %}
-  {% endif %}
   {% endfor %}
 </div>

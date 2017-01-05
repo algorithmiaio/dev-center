@@ -2,12 +2,6 @@
 layout: faq
 title:  "What is the apply() function?"
 date:   2016-03-02 15:00:38
-permalink: /faqs/
-redirect_from:
-  - /basics/platform-faq/
-  - /basics/#platform-faq/
-  - /basics/algo-dev-faq/
-  - /basics/#algo-dev-faq/
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
@@ -47,18 +41,18 @@ public class test {
 
 {% endhighlight %}
 
-Java supports multiple overloaded apply methods as well as supports multiple input arguments. In order to map the input into Java objects, we use GSON to try to parse the JSON into the expected input type. 
+Java supports multiple overloaded apply methods as well as supports multiple input arguments. In order to map the input into Java objects, we use GSON to try to parse the JSON into the expected input type.
 
-In the case of overloaded apply methods, we iterate over each apply method one by one to see if the JSON matches the expected input. If it can be de-serialized into the input for a given apply method, we then execute that apply method. 
+In the case of overloaded apply methods, we iterate over each apply method one by one to see if the JSON matches the expected input. If it can be de-serialized into the input for a given apply method, we then execute that apply method.
 
 Caution! This *can* lead to ambiguity when the JSON matches multiple apply methods, for example, a number which can be coerced to match an apply method that takes a string.
 {: .notice-danger }
 
-Java supports multiple input arguments, so that when running an algorithm with a JSON list input, the algorithm will then split the input into respective arguments. With the example JSON input of `["foo", "bar"]`, the input would be mapped into first and second arguments to an apply method with a signature of `apply(String a, String b)`, such that `a = "foo"` and `b = "bar"`. 
+Java supports multiple input arguments, so that when running an algorithm with a JSON list input, the algorithm will then split the input into respective arguments. With the example JSON input of `["foo", "bar"]`, the input would be mapped into first and second arguments to an apply method with a signature of `apply(String a, String b)`, such that `a = "foo"` and `b = "bar"`.
 
 ### Python
 
-When you start writing a new algorithm in Python, you'll find the following in your editor: 
+When you start writing a new algorithm in Python, you'll find the following in your editor:
 
 {% highlight python lineanchors %}
 # This module defines your algorithm, and its input/output.
@@ -71,7 +65,7 @@ When you start writing a new algorithm in Python, you'll find the following in y
 #   def apply(x):
 {% endhighlight %}
 
-Because Python is not a typed language, we are more limited in the parsing we can do. As a result, the input for a Python algorithm is *always* a single argument. This single input represents the JSON exactly as it comes out of the `json.loads()` method; as such JSON lists become Python lists, JSON objects become Python dictionaries, and so on. 
+Because Python is not a typed language, we are more limited in the parsing we can do. As a result, the input for a Python algorithm is *always* a single argument. This single input represents the JSON exactly as it comes out of the `json.loads()` method; as such JSON lists become Python lists, JSON objects become Python dictionaries, and so on.
 
 Overloaded apply functions are not allowed in Python.
 {: .notice-warning }

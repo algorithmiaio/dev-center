@@ -7,7 +7,7 @@
   url: /getting-started/
 
 - title: Client Guides
-  url: /client-guides/overview
+  url: /client-guides/
   category: client-guides
 
 - title: Tutorials
@@ -15,11 +15,11 @@
   category: tutorials
 
 - title: Working with Data
-  url: /working-with-data/overview
+  url: /working-with-data/
   category: working-with-data
 
 - title: Algorithm Development
-  url: /algorithm-development/basic-guides/
+  url: /algorithm-development/
   category: algorithm-development
 
 - title: API Documentation

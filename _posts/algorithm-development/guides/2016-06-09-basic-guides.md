@@ -3,7 +3,7 @@ layout: article_snippets
 title:  "Algorithm development"
 excerpt: "Basic Guides for Algorithm Developers"
 date:  2016-06-09 17:01:37
-permalink: /algorithm-development/basic-guides/
+permalink: /algorithm-development/
 tags: [app-guide-overview]
 show_related: false
 author: steph_kim

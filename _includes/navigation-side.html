@@ -1,9 +1,3 @@
-{% if page.categories %}
-  {% assign page_cat = page.categories %}
-{% else %}
-  {% assign page_cat = "none" %}
-{% endif %}
-
 <h3>Topics</h3>
 <div id="search">
   <form action="/search" method="get">
@@ -13,7 +7,11 @@
 </div>
 <ul id="sidebar" class="nav">
   {% for link in site.data.toc %}
-    {% if link.url == page.url or page_cat == link.category or page_cat contains link.category%}
+    {% if page.url == '/' and link.url == '/' %}
+      <li class="active">
+    {% elsif link.url == '/' %}
+      <li>
+    {% elsif page.url contains link.url %}
       <li class="active">
     {% else %}
       <li>
@@ -30,7 +28,7 @@
         <ul class="nav">
           {% assign sorted = site.categories[link.category] | sort:"title" %}
           {% for item in sorted %}
-            {% if item.url == page.url or page_cat == item.category or page_cat contains item.category %}
+            {% if page.url contains item.url %}
               <li class="active">
             {% else %}
               <li>

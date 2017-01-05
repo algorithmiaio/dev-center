@@ -2,12 +2,6 @@
 layout: faq
 title:  "How much does using Algorithmia cost?"
 date:   2016-03-02 15:00:38
-permalink: /faqs/
-redirect_from:
-  - /basics/platform-faq/
-  - /basics/#platform-faq/
-  - /basics/algo-dev-faq/
-  - /basics/#algo-dev-faq/
 categories: faqs
 tags: [platform-faq]
 show_related: true

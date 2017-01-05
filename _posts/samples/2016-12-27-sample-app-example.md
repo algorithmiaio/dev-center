@@ -3,7 +3,7 @@ layout: article
 title:  "Sample app example (android copy)"
 date:   2016-01-28 01:30:38
 permalink: /tutorials/sample-apps/example
-categories: sample-apps 
+categories: sample-apps
 tags: [sample-app]
 show_related: false
 author: liz_rush
@@ -32,9 +32,9 @@ Since our app is just a simple example app, we'll use put our code in `MainActiv
 
 Follow the following 3 steps below to make sure you have the dependencies, permissions, and API key set as needed.
 
-**Step One: Dependencies** 
+**Step One: Dependencies**
 
-Add the Algorithmia client to your app in the dependencies section of `app/build.gradle`, like so: 
+Add the Algorithmia client to your app in the dependencies section of `app/build.gradle`, like so:
 
 {% highlight xml %}
 dependencies {
@@ -44,7 +44,7 @@ dependencies {
 }
 {% endhighlight %}
 
-**Step Two: Internet Permissions** 
+**Step Two: Internet Permissions**
 
 To ensure that we can access the Internet from our app, we'll specify this permission in `AndroidManifest.xml`:
 
@@ -52,7 +52,7 @@ To ensure that we can access the Internet from our app, we'll specify this permi
 <uses-permission android:name="android.permission.INTERNET" />
 {% endhighlight %}
 
-**Step Three: API Key** 
+**Step Three: API Key**
 
 In `strings.xml`, replace the demo API key with your API key, which can be found under the credentials section of your profile on the Algorithmia website.
 
@@ -215,12 +215,12 @@ When you run the app in the emulator, you'll see this:
 
 ## Next Steps
 
-Now that you've got your first Algorithmia Android app running, try replacing the `demo/Hello` algorithm with another that you find on the marketplace. Try something like [anowell/pinky](https://algorithmia.com/algorithms/anowell/pinky) or [diego/RetrieveTweetsWithKeyword](https://algorithmia.com/algorithms/diego/RetrieveTweetsWithKeyword). Then make sure the input you provide to your new algorithm matches the expected input, and hit run! 
+Now that you've got your first Algorithmia Android app running, try replacing the `demo/Hello` algorithm with another that you find on the marketplace. Try something like [anowell/pinky](https://algorithmia.com/algorithms/anowell/pinky) or [diego/RetrieveTweetsWithKeyword](https://algorithmia.com/algorithms/diego/RetrieveTweetsWithKeyword). Then make sure the input you provide to your new algorithm matches the expected input, and hit run!
 
 Integrating Algorithmia into Android is an easy and convenient way to leverage algorithms, so now that you've got the basic API integration down, you can follow this pattern to start hacking away at your own apps!
 
-### Further Reading:  
+### Further Reading:
 
-* [The Algorithmia Client](http://developers.algorithmia.com/clients/java/)  
-* [Algorithmia Java Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.3) <i class="fa fa-external-link"></i>  
-* <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>  
+* [The Algorithmia Client](http://developers.algorithmia.com/clients/java/)
+* [Algorithmia Java Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.3) <i class="fa fa-external-link"></i>
+* <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>
