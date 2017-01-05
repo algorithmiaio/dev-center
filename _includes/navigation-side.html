@@ -28,7 +28,7 @@
         <ul class="nav">
           {% assign items = site.categories[link.category] | sort:"title" %}
           {% for item in items %}
-            {% assign prefix = item.url | append:'/' %}
+            {% assign prefix = item.url | trailing_slash %}
             {% if page.url == item.url or page.url contains prefix %}
               <li class="active">
             {% else %}
@@ -44,7 +44,7 @@
                 <ul class="nav">
                   {% assign items = site.categories[item.nav_children] | sort:"title" %}
                   {% for item in items %}
-                    {% assign prefix = item.url | append:'/' %}
+                    {% assign prefix = item.url | trailing_slash %}
                     {% if page.url == item.url or page.url contains prefix %}
                       <li class="active">
                     {% else %}
