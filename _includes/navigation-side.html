@@ -26,14 +26,33 @@
       </a>
       {% if link.category and site.categories[link.category] %}
         <ul class="nav">
-          {% assign sorted = site.categories[link.category] | sort:"title" %}
-          {% for item in sorted %}
+          {% assign items = site.categories[link.category] | sort:"title" %}
+          {% for item in items %}
             {% if page.url contains item.url %}
               <li class="active">
             {% else %}
               <li>
             {% endif %}
-              <a href="{{ item.url }}">{{ item.title }}</a>
+              <a href="{{ item.url }}">
+                {{ item.title }}
+                {% if item.nav_children and site.categories[item.nav_children] %}
+                  <i class="fa fa-angle-down"></i>
+                {% endif %}
+              </a>
+              {% if item.nav_children and site.categories[item.nav_children] %}
+                <ul class="nav">
+                  {% assign items = site.categories[item.nav_children] | sort:"title" %}
+                  {% for item in items %}
+                    {% if page.url contains item.url %}
+                      <li class="active">
+                    {% else %}
+                      <li>
+                    {% endif %}
+                      <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

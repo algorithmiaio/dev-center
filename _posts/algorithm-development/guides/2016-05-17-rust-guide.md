@@ -3,11 +3,8 @@ layout: article
 title:  "Rust"
 excerpt: "Build your algorithm in Rust"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/rust
-redirect_from:
-  - /algorithm-development/client-guides/rust
-  - /algorithm-development/guides/rust/
-  - /algorithm-development/guides/rust-guide/
+permalink: /algorithm-development/languages/rust
+categories: languages
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush

@@ -3,11 +3,8 @@ layout: article
 title:  "Python"
 excerpt: "Build your algorithm in Python"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/python
-redirect_from:
-  - /algorithm-development/client-guides/python
-  - /algorithm-development/guides/python/
-  - /algorithm-development/guides/python-guide/
+permalink: /algorithm-development/languages/python
+categories: languages
 tags: [algo-guide-lang]
 show_related: true
 author: steph_kim

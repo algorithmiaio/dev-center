@@ -3,11 +3,8 @@ layout: article
 title:  "Scala"
 excerpt: "Build your algorithm in Scala"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/scala
-redirect_from:
-  - /algorithm-development/client-guides/scala/
-  - /algorithm-development/guides/scala/
-  - /algorithm-development/guides/scala-guide/
+permalink: /algorithm-development/languages/scala
+categories: languages
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush

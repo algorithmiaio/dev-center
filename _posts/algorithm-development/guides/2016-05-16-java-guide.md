@@ -3,11 +3,8 @@ layout: article
 title:  "Java"
 excerpt: "Build your algorithm in Java"
 date:   2016-05-16 14:28:42
-permalink: /algorithm-development/java
-redirect_from:
-  - /algorithm-development/client-guides/java
-  - /algorithm-development/guides/java/
-  - /algorithm-development/guides/java-guide/
+permalink: /algorithm-development/languages/java
+categories: languages
 tags: [algo-guide-lang]
 show_related: true
 author: liz_rush

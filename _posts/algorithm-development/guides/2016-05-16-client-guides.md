@@ -4,10 +4,8 @@ title:  Supported languages
 excerpt: "Guides to building an algorithm in your favorite language including: Python, R, Scala, Rust, Java, Ruby and JavaScript."
 date:   2016-05-16 14:28:42
 permalink: /algorithm-development/languages/
-redirect_from:
-  - /algorithm-development/client-guides/
-  - /algorithm-development/guides/
 categories: algorithm-development
+nav_children: languages
 tags: [algo-guide-overview]
 show_related: false
 author: steph_kim
