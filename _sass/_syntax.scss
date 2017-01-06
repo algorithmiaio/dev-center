@@ -15,11 +15,10 @@
 
 pre {
   counter-reset: line-numbering;
-  border: solid 1px #d9d9d9;
   background: #fff;
   padding: 0;
   line-height: 23px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   white-space: pre;
   overflow-x: auto;
   word-break: inherit;
@@ -64,7 +63,7 @@ pre a:only-of-type::before {
  * Courtesy of GitHub.com
  */
 
-.highlight pre, pre, .highlight .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
+.highlight pre, pre, .highlight .hll { background-color: #eeeeee; border: none; padding: 6px 10px; border-radius: 0; }
 .highlight .c   { color: #999988; font-style: italic; }
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
 .highlight .k  { font-weight: bold; }

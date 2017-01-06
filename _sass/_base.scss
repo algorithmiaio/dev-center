@@ -104,14 +104,7 @@ pre {
 }
 p code,
 li code {
-	@include font-size(12,no);
-	color: $text-color;
-	white-space: nowrap;
-	margin: 0 2px;
-	padding: 0 5px;
-	border: 1px solid $border-color;
-	background-color: lighten($primary-color, 95);
-	border-radius: $border-radius;
+
 }
 
 .center-text {
