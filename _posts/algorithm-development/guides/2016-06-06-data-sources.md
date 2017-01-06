@@ -3,6 +3,7 @@ layout: article_page
 title:  "Data Portal Guide"
 excerpt: "Host your data files or trained models on the Algorithmia platform for free."
 date:   2016-06-06 11:46:03
+permalink: /algorithm-development/data-sources/
 categories: algorithm-development
 nav_children: algo-data-source
 tags: [data-connectors-overview]

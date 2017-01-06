@@ -7,8 +7,6 @@ permalink: /working-with-data/
 tags: [data-connectors-overview]
 show_related: false
 author: steph_kim
-image:
-    teaser: /post_images/data_connectors/connectors.png
 ---
 
 <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> makes it easy to connect your application to data sources with connections to <a href="https://aws.amazon.com/s3/">Amazon's S3 service</a>, <a href="https://www.dropbox.com/">Dropbox</a> or you can host your files for free on the <a href="https://algorithmia.com/data/hosted">Algorithmia platform</a>. With these options it's easy to integrate your data into the app you're building.

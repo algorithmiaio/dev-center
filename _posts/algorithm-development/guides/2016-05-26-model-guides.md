@@ -3,6 +3,7 @@ layout: article_page
 title:  Host your model
 excerpt: "Guides to hosting a model using your favorite library."
 date:   2016-05-26 11:46:03
+permalink: /algorithm-development/model-guides/
 categories: algorithm-development
 nav_children: host-your-model
 tags: [model-guide-overview]

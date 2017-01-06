@@ -6,7 +6,7 @@ date:   2016-05-16 14:28:42
 permalink: /algorithm-development/languages/
 categories: algorithm-development
 nav_children: languages
-tags: [algo-guide-overview]
+tags: [algo-dev]
 show_related: false
 author: steph_kim
 ---
