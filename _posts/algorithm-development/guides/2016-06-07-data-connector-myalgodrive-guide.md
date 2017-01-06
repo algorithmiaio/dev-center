@@ -4,6 +4,7 @@ title:  "Hosted Data"
 excerpt: "Store your data for free on the Algorithmia platform."
 date:   2016-06-07 11:46:03
 permalink: /algorithm-development/data-sources/hosted-data-guide
+categories: algo-data-source
 tags: [alg-data-connectors]
 show_related: false
 author: steph_kim

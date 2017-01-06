@@ -3,7 +3,8 @@ layout: article
 title:  "All about bounties"
 excerpt: "An introduction to the bounty system."
 date:   2016-03-10 01:19:38
-permalink: /bounties/
+permalink: /bounties/all-about-bounties/
+categories: bounties
 tags: [bounties]
 show_related: true
 author: liz_rush

@@ -4,11 +4,10 @@ title:  "Data Portal Guide"
 excerpt: "Host your data files or trained models on the Algorithmia platform for free."
 date:   2016-06-06 11:46:03
 categories: algorithm-development
+nav_children: algo-data-source
 tags: [data-connectors-overview]
 show_related: false
 author: steph_kim
-image:
-    teaser: /post_images/data_connectors/connectors.png
 ---
 
 As an algorithm developer you might require large data files such as trained models or other large files that your algorithm depends on. With <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data</a> option you can host these files on our platform for free. Plus, it's easy to integrate your data into the algorithm you're building using the Algorithmia Data API.

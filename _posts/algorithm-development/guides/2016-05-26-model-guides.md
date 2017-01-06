@@ -4,11 +4,10 @@ title:  Host your model
 excerpt: "Guides to hosting a model using your favorite library."
 date:   2016-05-26 11:46:03
 categories: algorithm-development
+nav_children: host-your-model
 tags: [model-guide-overview]
 show_related: false
 author: steph_kim
-image:
-    teaser: /icons/Algorithmia_Basics.png
 ---
 
 Here you will find guides to hosting your machine or deep learning model. These are featured frameworks that are commonly used in machine and deep learning, however if you want to write your own model in the language of your choice using a different library, that's an option too. We currently support Java, Python, Rust, Ruby, JavaScript and Scala.
