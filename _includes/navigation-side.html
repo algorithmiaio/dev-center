@@ -16,7 +16,7 @@
     {% else %}
       <li>
     {% endif %}
-      <a href="{{ link.url }}">
+      <a href="{{ link.url | relative_url }}">
         {{link.title}}
         {% if link.category and site.categories[link.category] %}
           <i class="fa fa-angle-down"></i>
@@ -34,7 +34,7 @@
             {% else %}
               <li>
             {% endif %}
-              <a href="{{ item.url }}">
+              <a href="{{ item.url | relative_url }}">
                 {{ item.title }}
                 {% if item.nav_children and site.categories[item.nav_children] %}
                   <i class="fa fa-angle-down"></i>
@@ -50,7 +50,7 @@
                     {% else %}
                       <li>
                     {% endif %}
-                      <a href="{{ item.url }}">{{ item.title }}</a>
+                      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
                     </li>
                   {% endfor %}
                 </ul>

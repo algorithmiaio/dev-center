@@ -2,12 +2,8 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
 {% endif %}
 
-<!-- <div class="author-image">
-	<img src="{{ site.url }}/images/{{ author.avatar }}" alt="{{ author.name }}">
-</div> -->
-
 <p class="author-name" >{{ site.data.messages.locales[site.locale].written_by }}
-	<a href="{{ site.url }}/{{ author.slug }}" itemprop="author">{{ author.name }}</a>
+	<a href="{{ author.slug | relative_url }}" itemprop="author">{{ author.name }}</a>
 </p>
 <p class="author-bio">{{ author.bio }}</p>
 

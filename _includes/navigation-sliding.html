@@ -3,13 +3,13 @@
   <ul class="menu-item">
     {% for link in site.data.navigation %}<li>
       {% if link.url contains 'http' %}
-        {% assign domain = '' %}
+        {% assign href = link.url %}
       {% else %}
-        {% assign domain = site.url %}
+        {% assign href = link.url | relative_url %}
       {% endif %}
 
-      <a href="{{ domain }}{{ link.url }}">
-        {% if link.image %}<img src="{{ site.url }}/images{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+      <a href="{{ href }}">
+        {% if link.image %}<img src="{{ link.image | prepend:'/images/' | relative_url }}" alt="teaser" class="teaser">{% endif %}
         <div class="title">{{ link.title }}</div>
         {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
       </a>

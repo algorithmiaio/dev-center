@@ -33,7 +33,7 @@ Here you'll want to create a data collection to host your Caffe model.
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
 
 
-<img src="/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot">
 
 ### Upload your Model into a Collection
 Next, upload your model files to your newly created data collection.
@@ -44,7 +44,7 @@ Next, upload your model files to your newly created data collection.
     - data://username/collections_name/file_name.prototxt.txt,
     - data://username/collections_name/file_name.caffemodel
 
-<img src="/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot">
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -54,7 +54,7 @@ Creating your algorithm is easy!
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
-<img src="/images/post_images/model_hosting/create_new_alg_dl_python2.png" alt="Create your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python2.png" alt="Create your algorithm" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -64,7 +64,7 @@ Now is the time to set your dependencies that your model relies on.
 Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
 {: .notice-warning}
 
-<img src="/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot">
 
 ## Load your Model
 Now you'll want to run your model which will be called by the apply() function.
@@ -140,6 +140,6 @@ If you want to have a better idea of how a finished caffe algorithm looks like, 
 
 For more information and detailed steps: <a href="http://developers.algorithmia.com/basics/your_first_algo/">creating and publishing your algorithm</a>
 
-<img src="/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
 
 That's it for hosting your <a href="http://caffe.berkeleyvision.org/">Caffe</a> model on Algorithmia!

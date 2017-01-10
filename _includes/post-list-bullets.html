@@ -2,10 +2,10 @@
 	{% for post in site.posts %}
 	<div class="bullet three-col-bullet">
 		<div class="bullet-icon">
-			<a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.image.teaser }}" alt=""></a>
+			<a href="{{ post.url | relative_url }}"><img src="{{ post.image.teaser | prepend:'/images/' | relative_url }}" alt=""></a>
 		</div><!-- /.bullet-icon -->
 		<div class="bullet-content">
-			<a href="{{ site.url }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+			<a href="{{ post.url | relative_url }}"><h2>{{ post.title }}</h2></a>
 			<p>{{ post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
 		</div><!-- /.bullet-content -->
 	</div><!-- /.bullet -->

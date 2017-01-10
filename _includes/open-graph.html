@@ -5,22 +5,22 @@
 {% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
 {% if page.image.feature %}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
+<meta name="twitter:image" content="{{ page.image.feature | prepend:'/images/' | absolute_url }}">
 {% else %}
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">
+<meta name="twitter:image" content="{% if page.image.thumb %}{{ page.image.thumb | prepend:'/images/' | absolute_url }}{% else %}{{ site.logo | prepend:'/images/' | absolute_url }}{% endif %}">
 {% endif %}
 
 <!-- Open Graph -->
 {% if page.image.feature %}
-<meta property="og:image" content="{{ site.url }}/images/{{ page.image.feature }}">
+<meta property="og:image" content="{{ page.image.feature | prepend:'/images/' | absolute_url }}">
 {% else %}
-<meta property="og:image" content="{{ site.url }}/images/{{ site.image }}">
+<meta property="og:image" content="{{ site.image | prepend:'/images/' | absolute_url }}">
 {% endif %}
 
 <meta property="og:locale" content="{{ site.locale }}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
-<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title }}">

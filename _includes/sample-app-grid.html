@@ -1,6 +1,6 @@
   <!-- for # of items -->
   <div class="col-md-4 sample-card">
-    <h4><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h4>
+    <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
     <div class="whitespace">
       <p>{{ post.excerpt }}</p>
     </div>

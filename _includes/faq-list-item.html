@@ -5,7 +5,7 @@
 
     {% assign full_content = post.content | size %}
     {% if full_content > 500 %}
-      <a href="{{ site.url }}{{ post.url }}">Read more</a>
+      <a href="{{ post.url | relative_url }}">Read more</a>
     {% endif %}
   </p>
 </li>

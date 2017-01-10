@@ -1,6 +1,6 @@
 <footer role="contentinfo" id="site-footer">
  <p class="copyright">
-    <img src="{{ site.url }}/images/favicon-white.png" alt="{{ site.title }}" itemprop="image" width="16" height="16">
+    <img src="{{ '/images/favicon-white.png' | relative_url }}" alt="{{ site.title }}" itemprop="image" width="16" height="16">
     &#169; {{ site.time | date: '%Y' }} {{ site.owner["name"] }}
   </p>
 
@@ -8,11 +8,11 @@
     <ul class="menu-item">
     {% for link in site.data.footer %}
       {% if link.url contains 'http' %}
-        {% assign domain = '' %}
+        {% assign href = site.url %}
         {% else %}
-        {% assign domain = site.url %}
+        {% assign href = site.url | relative_url %}
       {% endif %}
-      <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+      <li><a href="{{ href }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
     {% endfor %}
     </ul>
   </nav><!-- /.bottom-menu -->

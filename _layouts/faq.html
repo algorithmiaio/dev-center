@@ -28,7 +28,7 @@ redirect_from:
               {% for tag in page.tags %}
                 <!-- Pulls from data/tags.yml to allow for data defined name attr -->
               {% assign new_tag = site.data.tags[tag] %}
-              <h4>Return to the <a href="{{site.url}}/faqs">FAQ overview</a> or explore more {{ new_tag.name }}:</h4>
+              <h4>Return to the <a href="{{ '/faqs' | relative_url }}">FAQ overview</a> or explore more {{ new_tag.name }}:</h4>
               <ul>
               {% for post in site.posts %}
                 {% if post.tags contains tag and post.url != page.url %}

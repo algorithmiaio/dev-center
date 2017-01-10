@@ -8,13 +8,15 @@ teaser: logos/AlgorithmiaLogo120x120.png # 400x250 px max default teaser image u
 locale: en_US
 
 # URL used to generate absolute URLs in sitemap.xml, atom.xml, and for generating canonical URLs in <head>.
-# When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly.
-# Don’t include a trailing /.
-url: http://developers.algorithmia.com
+# `jekyll serve` will automatically override this with "http://localhost:4000"
+# Do not include a trailing /.
+url: https://algorithmia.com
 
-# For iterating on style shared with webserver,
-# set this to http://localhost:9000, and edit CSS in the local webserver
-webserver: http://localhost:9000
+# The entire site is nested under this baseurl
+baseurl: /devcenter
+
+# Set webserver where shared assets should be found (default = https://algorithmia.com)
+# webserver: http://localhost:9000
 
 # If you aren't editting the client guides on github,
 # setting this to true can speed up hot-reloads

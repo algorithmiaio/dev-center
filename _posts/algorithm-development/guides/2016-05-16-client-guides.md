@@ -24,7 +24,7 @@ If you have algorithm code you'd like to host on the Algorithmia platform in a d
 		<div class="col-xs-4 col-sm-3 lang-tile">
 	      	<a  href="{{ post.url }}">
 		      	{% if post.image.teaser %}
-		  			<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image" class="lang-icon">
+		  			<img  src="{{ site.url }}{{ site.baseurl }}/images/{{ post.image.teaser }}" alt="" itemprop="image" class="lang-icon">
 				{% endif %}
 			</a>
 			<p class="lg"><a  href="{{ post.url }}">{{ post.title }}</a></p>

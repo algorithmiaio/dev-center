@@ -3,7 +3,7 @@
     <h3>{{ tag | replace: '-', ' ' | capitalize }}</h3>
   </div>
   <div class="col-md-3">
-    <img src="{{ site.url }}/images//icons/{{ tag }}.png" alt="" itemprop="image">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/icons/{{ tag }}.png" alt="" itemprop="image">
   </div>
   <div class="col-md-9">
     {% for post in recipes %}

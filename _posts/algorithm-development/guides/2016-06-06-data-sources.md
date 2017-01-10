@@ -24,7 +24,7 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
   	{% if data_connector_tags == post.tags %}
   		<a  href="{{ post.url }}">
   		{% if post.image.teaser %}
-		<img  src="{{ site.url }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
+		<img  src="{{ site.url }}{{ site.baseurl }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
 		{% endif %}
 		</a>
 		<p class="lg"><a  href="{{ post.url }}">{{ post.title }}</a></p>

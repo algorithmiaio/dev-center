@@ -17,18 +17,18 @@ One of the great things about Algorithmia is that the platform allows you to put
 
 When you open the navigation dropdown at the top of the page, you'll find a purple button that says "Add Algorithm". Naturally, this is where we'll start! 
 
-![Add Algorithm button](/images/post_images/your_first_algo/add_algorithm.png)
+![Add Algorithm button]({{ site.baseurl }}/images/post_images/your_first_algo/add_algorithm.png)
 
 By clicking this button, you'll be prompted with a dialog that allows you to give your algorithm a name and set some initial properties, such as the name, language, license, and special permissions:
 
 <br>
-<img src="/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
 
 You can learn more about these properties in the [Algorithm Basics](http://developers.algorithmia.com/basics/algorithm_basics/) article.
 
 Algorithmia will now create the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 
-![New Algorithm editor](/images/post_images/your_first_algo/algo_editor.png)
+![New Algorithm editor]({{ site.baseurl }}/images/post_images/your_first_algo/algo_editor.png)
 
 As you can see, the algorithm takes in the input and returns the string `"Hello"` plus the input. Feel free to change this code however you like.
 
@@ -36,7 +36,7 @@ Once you have finished editing and want to run the Algorithm, go ahead and click
 
 After a successful compilation, click the purple "Publish" button. Select "Publish a new revision" for your algorithm. You'll then see the following dialog:
 
-![Publish Algorithm dialog](/images/post_images/your_first_algo/publish_dialog.png)
+![Publish Algorithm dialog]({{ site.baseurl }}/images/post_images/your_first_algo/publish_dialog.png)
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
