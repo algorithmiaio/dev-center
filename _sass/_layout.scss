@@ -18,7 +18,7 @@ html, body {
    ========================================================================== */
 
 #masthead {
-	margin-bottom: 0px;
+	margin-bottom: 40px;
 	padding: $gutter / 2.5;
 	background-color: $black-nav;
   border-bottom: 1px solid $black;
@@ -79,29 +79,6 @@ html, body {
 			padding: (.25 * $masthead-height) 0 (.25 * $masthead-height) ;
 			height: $masthead-height;
 			font-family: $font-family-sans-serif;
-
-			&:before,
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 2px;
-				@include transition(width 0.3s);
-			}
-			&:before {
-				width: 100%;
-				background: transparent;
-			}
-			&:after {
-				width: 0;
-				background: $brand-primary;
-			}
-			&:active:after,
-			&:hover:after {
-				width: 100%;
-			}
 		}
 	}
 }
