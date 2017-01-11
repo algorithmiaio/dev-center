@@ -1,18 +1,3 @@
-/* ==========================================================================
-   Page layout
-   ========================================================================== */
-
-* {
-  -webkit-font-smoothing: antialiased;
-}
-
-html, body {
-	display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0; padding: 0;
-}
-
 /*
    Masthead
    ========================================================================== */
@@ -32,9 +17,6 @@ html, body {
 	&.slide {
 		@include transform(translate(-1600px,0));
 	}
-	.inner-wrap {
-		@include outer-container;
-	}
   .nav-image {
     display: inline-block;
     height: 18px;
@@ -43,10 +25,6 @@ html, body {
 }
 
 .site-title {
-	@include row;
-	@include media($medium) {
-		@include span-columns(4);
-	}
 	padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
 	height: $masthead-height;
 	text-decoration: none;
@@ -65,6 +43,7 @@ html, body {
 
 .menu {
 	li {
+    list-style: none;
 		float: left;
 		&:last-child a {
 			@include media($medium) {
@@ -81,6 +60,10 @@ html, body {
 			font-family: $font-family-sans-serif;
 		}
 	}
+
+  a {
+    text-decoration: none;
+  }
 }
 
 /* Top menu navigation */
@@ -130,17 +113,7 @@ html, body {
   color: $white;
   margin-top: 4em;
   padding: 0 25px;
-
-  .copyright {
-		@include font-size(12);
-  	text-align: center;
-
-    @include media($medium) {
-    	display: inline-block;
-    }
-		margin: 0;
-		line-height: $footer-height;
-	}
+	line-height: $footer-height;
 }
 
 // wrapper  for sticky footer
@@ -155,11 +128,7 @@ html, body {
 	}
 
 	a {
-		@include font-size(12,no);
 		line-height: 36px;
-		@include media($medium) {
-			line-height: $footer-height;
-		}
 		font-family: $font-family-sans-serif;
 		color: $gray-medium;
 		display: inline-block;
@@ -180,13 +149,6 @@ html, body {
 	}
 
 	@include media($medium) {
-		@include span-columns(5);
-
-		ul {
-			position: absolute;
-			right: 25px;
-		}
-
 		li {
 			float: left;
 			display: block;
