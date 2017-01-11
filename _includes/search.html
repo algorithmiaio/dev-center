@@ -16,23 +16,3 @@
   {{/entries}}
 </script>
 {% endraw %}
-<script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
-
-<script type="text/javascript">
-$(function() {
-  $('#search-query').lunrSearch({
-    indexUrl: '{{ site.baseurl }}/js/index.json',
-    results:  '#search-results',
-    entries:  '.entries',
-    template: '#search-results-template'
-  });
-
-  $('#search-query').on('keyup', function(el) {
-    if(el.target.value.length < 3) {
-      $('#main-content').show();
-    } else {
-      $('#main-content').hide();
-    }
-  });
-});
-</script>
