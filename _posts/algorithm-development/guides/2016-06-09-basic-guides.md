@@ -7,9 +7,9 @@ permalink: /algorithm-development/
 show_related: false
 ---
 
-<div>
+<div class="overview-container">
 {% for post in site.categories["algorithm-development"] %}
-  <div class="col-md-6 tutorials-brief">
+  <div class="col-md-6 overview-brief">
     <h3><a href="{{ site.url }}{{ post.permalink }}">{{ post.title }}</a></h3>
     <p class="lg">{{ post.excerpt }}</p>
   </div>

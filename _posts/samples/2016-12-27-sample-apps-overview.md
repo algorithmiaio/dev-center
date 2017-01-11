@@ -10,7 +10,7 @@ image:
     teaser: /icons/sample apps.svg
 ---
 
-<div>
+<div class="sample-card-container">
   {% for post in site.categories["sample-apps"] %}
     {% include sample-app-grid.html %}
   {% endfor %}
