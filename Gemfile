@@ -11,3 +11,10 @@ gem 'gemoji'
 gem 'therubyracer'
 gem 'nokogiri'
 gem 'git'
+
+# Used for publishing
+group :deploy do
+  gem 's3'
+  gem 'mime-types'
+  gem 'parallel'
+end
