@@ -7,7 +7,7 @@ Welcome to the repository for Algorithmia's Developer Center. Here you will find
 
 These docs are built on Jekyll. Learn more over at [the official Jekyll page](http://jekyllrb.com/).
 
-Running locally 
+Running locally
 ------------------------------
 
 ### Prerequisites
@@ -15,7 +15,7 @@ Running locally
 You're going to need:
 
  - **Linux or OS X** — Windows may work, but is unsupported.
- - **Ruby, version 1.9.3 or newer**
+ - **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
 
 #### Ubuntu 16.10 Notes:
@@ -34,22 +34,21 @@ sudo apt install ruby ruby-dev zlib1g-dev
 
 You can now see the developer center at <http://localhost:4000>.
 
+Note: the header and footer may not look right. This is inconsequential as they are stripped from the page before embedding into the webserver.
 
 Making changes
 -------------
 
 ###Project Organization
 
-All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. 
+All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder.
 
-Find all posts under the `_posts` directory.
+Find all pages under the `_pages` directory, organized by URL route structure.
 
-If you are unfamiliar with Jekyll and the templating engine, please take a look at the `_drafts` folder for instructions on how to view drafts as well as many sample posts explaining how to do common tasks. 
-
-The compiled Jekyll site outputs to `_site/`.
+The compiled Jekyll site outputs to `_site/`. Do not edit anything in this directory (or your changes will be lost).
 
 
-### Writing Posts
+### Writing Pages
 
 The first thing that goes in each new post is the [YAML front-matter](http://jekyllrb.com/docs/frontmatter/). Below is an example of front-matter:
 
@@ -60,50 +59,30 @@ title:  "Example post!"
 excerpt: "This is an example post."
 date:   2016-01-05 11:39:38
 categories: guides example
-author: liz_rush
-
 tags: [stuff, things]
-show_related: true # show sidebar of posts with same tags
 
 # optional fields:
 exclude_from_search: true #false by default
-comments: false #true by default but currently disabled in config
 share: false #true by default
 sitemap: false #true by default
 ---
 ```
 
-For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default. 
+For our purposes, the minimum you will need is `layout`, `title`, `date`, & `categories`. The other fields only need to be present if you are overriding the default.
 
-Use `excerpt` to set the text that appears in under the article title in the collection view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. _Note:_ If the first line of your post is a templating tag, it will not automatically pick up an excerpt. 
+Use `excerpt` to set the text that appears in under the article title in the collection view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. _Note:_ If the first line of your post is a templating tag, it will not automatically pick up an excerpt.
 
-In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post. 
-
-Posts are organized according to category as a subdirectory of `_posts`. Each post follows the same naming convention: `YYYY-MM-DD-post-title.md`.
-
-Here is an example:
-```ruby
-_posts/guides/2016-01-05-example-post.md
+In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post.
 ```
-
-
-### Pulling content from GitHub
-
-Each client for the Algorithmia API is represented under the clients directory and has a special front-matter field of `repository`. When you compile your jekyll site, a plugin will download the git repository and create an index page from the README. The goal is to automate the construction of client documentation pages and keep them in sync with README documentation.
-
-Please see the draft post `pulling-readmes-from-github` for more information.
-
 
 ### Plugins
 
 This Jekyll site uses several plugins to help generate content and make the site extra-awesome. Included in the `_plugins` directory:
 
-- `Emoji.rb`: Emojify your posts. Simply use the text version (like you would on GitHub) and this plugin will replace it with the emoji image. See the [emoji cheat sheet](http://www.emoji-cheat-sheet.com) for a full listing of emoji codes. :nail_care: 
-- `author_page_generator.rb`: This plugin will generate a page that lists all posts by a given author. 
-- `generate_category_page.rb`: The category page generator creates the index page for all posts in a given category. This is the autogenerated page you see as the collection view of all posts in a category.
-- `generate-from-repo.rb`: Handles pulling content from a repository's README and generates a post. See the draft post `pulling-readmes-from-github` for more information.
+- `Emoji.rb`: Emojify your posts. Simply use the text version (like you would on GitHub) and this plugin will replace it with the emoji image. See the [emoji cheat sheet](http://www.emoji-cheat-sheet.com) for a full listing of emoji codes. :nail_care:
+- `author_page_generator.rb`: This plugin will generate a page that lists all posts by a given author.
 - `jekyll-lunr-search.rb`: Generates the index of all posts for the search function.
-- `reading-time.rb`: Simply creates an estimated reading time for the post based on word count.
+- `navmenu.rb`: A tag plugin to generate the side navigation menu.
 - `strip.rb`: Removes some excess whitespace and new lines generated by the Liquid templating process.
 
 
