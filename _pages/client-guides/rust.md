@@ -2,11 +2,6 @@
 layout: article
 title: "Rust"
 excerpt: "Rust fan? We've got you covered."
-permalink: /client-guides/rust
-redirect_from:
-  - /clients/rust/
-  - /application-development/guides/rust/
-  - /application-development/lang-guides/rust/examples
 date: 2016-07-12
 categories: client-guides
 tags: [clients]

@@ -3,10 +3,7 @@ layout: article
 title:  "Algorithm Profile Checklist"
 excerpt: "Follow these tips to create the best algorithm profile possible."
 date:   2016-01-18 01:19:38
-permalink: /basics/algorithm_checklist/
-redirect_from:
-  - /guides/algorithm_checklist/
-categories: basics 
+categories: basics
 tags: [algo-dev]
 show_related: true
 author: liz_rush
@@ -22,7 +19,7 @@ To get the most out of your algorithm profile and boost its visibility, follow t
   * What does the algorithm do?
   * Describe the inputs & expected outputs
   * Link to any papers or external documentation
-* Give It a Tagline 
+* Give It a Tagline
 * Add Tags
 * Include Sample Input
 * Update Pricing
@@ -37,7 +34,7 @@ You'll want to make sure that someone who doesn't have any previous knowledge of
 
 #### What does the algorithm do?
 
-Make sure to describe what the algorithm does. It is better to use clear and simple language in the description so that every user can understand it. 
+Make sure to describe what the algorithm does. It is better to use clear and simple language in the description so that every user can understand it.
 
 The algorithm description is front-and-center on the algorithm profile page. Use the description to write a clear explanation of what the algorithm does, what kind of input it takes, and what kind of output the user can expect. Be sure to highlight the various ways your algorithm can be used so that users get a thorough understanding of what types of problems the algorithm solves.
 
@@ -45,7 +42,7 @@ The algorithm description is front-and-center on the algorithm profile page. Use
 
 Be sure to quickly describe the input needed to call the algorithm and the types it accepts. For example, you can say that the algorithm takes a string of text or an integer. If an algorithm has optional input parameters, be sure to include those and descriptions of what each option does.
 
-It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for Sentiment Analysis, the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive. 
+It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for Sentiment Analysis, the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
 
 #### Link to any papers or external documentation
 
@@ -53,7 +50,7 @@ If your algorithm is based off an academic paper or external library, you should
 
 ### Give It a Tagline:
 
-The tagline is a succinct way to describe your algorithm. The tagline will appear under the title of the algorithm in marketplace search results, so it's important to add a tagline. 
+The tagline is a succinct way to describe your algorithm. The tagline will appear under the title of the algorithm in marketplace search results, so it's important to add a tagline.
 
 > Ex. Tagline for Sentiment Analysis:
 
@@ -61,7 +58,7 @@ Determine sentiment from text
 
 ### Add Tags:
 
-Tags are an important part of your algorithm profile page. These tags help make sure that your algorithm is discoverable when the user is searching through categories of algorithms. 
+Tags are an important part of your algorithm profile page. These tags help make sure that your algorithm is discoverable when the user is searching through categories of algorithms.
 
 > Ex. Tags for Sentiment Analysis:
 
@@ -91,5 +88,5 @@ If you are publishing a new version of your algorithm, you can update the pricin
 
 ### Check Permissions & Source Code Visibility:
 
-* Permissions: Any special permissions that this algorithm requires. 
-* Source Availability: The license and source visibility of an algorithm. 
+* Permissions: Any special permissions that this algorithm requires.
+* Source Availability: The license and source visibility of an algorithm.

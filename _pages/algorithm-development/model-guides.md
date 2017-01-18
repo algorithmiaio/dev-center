@@ -3,9 +3,8 @@ layout: article_page
 title:  Host your model
 excerpt: "Guides to hosting a model using your favorite library."
 date:   2016-05-26 11:46:03
-permalink: /algorithm-development/model-guides/
 categories: algorithm-development
-nav_children: host-your-model
+nav_children: model-guides
 tags: [model-guide-overview]
 show_related: false
 author: steph_kim
@@ -19,9 +18,8 @@ If you have any questions about Algorithmia or <a href="http://blog.algorithmia.
 ### Supported frameworks
 {% assign model_tags = "algo-model-guide" | split:"|" %}
 <div>
-  {% for post in site.posts %}
-  	{% if model_tags == post.tags %}
+  {% assign pages = site.pages | where: "categories", "model-guides" %}
+  {% for post in pages %}
 		{% include post-grid.html %}
-	{% endif %}
   {% endfor %}
 </div>

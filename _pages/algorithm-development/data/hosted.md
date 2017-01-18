@@ -3,8 +3,7 @@ layout: article_page
 title:  "Hosted Data"
 excerpt: "Store your data for free on the Algorithmia platform."
 date:   2016-06-07 11:46:03
-permalink: /algorithm-development/data-sources/hosted-data-guide
-categories: algo-data-source
+categories: algo-data
 tags: [alg-data-connectors]
 show_related: false
 author: steph_kim
@@ -17,7 +16,7 @@ image:
 ## Data Source Basics
 For simple cases, you can feed data to an algorithm at request time, but for algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data files hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.
 
-There are four collection types that have different features and security measures in place: User collections, Session Collections, Permanent Collections, and Temporary Algorithm Collections. 
+There are four collection types that have different features and security measures in place: User collections, Session Collections, Permanent Collections, and Temporary Algorithm Collections.
 
 This guide will show how to create a collection and walk you through the different types of directory permissions available, the different types of collections and what they are generally used for.
 
@@ -69,8 +68,8 @@ Anyone can read the data in your collection, feed that data to their algorithms,
 For more information on ACL's check out the [Algorithmia Data API](http://docs.algorithmia.com/#directories)
 
 ## User Collections
- 
-User collections are the most common collection type that you will use which we created at the start of this guide. 
+
+User collections are the most common collection type that you will use which we created at the start of this guide.
 
 ### Accessing your data from collections:
 

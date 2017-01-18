@@ -3,7 +3,6 @@ layout: article
 title:  "Python"
 excerpt: "Build your algorithm in Python"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/languages/python
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

@@ -2,10 +2,6 @@
 layout: article
 title:  "CLI"
 excerpt: "Get familiar with the CLI client."
-permalink: /client-guides/cli
-redirect_from:
-  - /clients/cli/
-  - /application-development/guides/cli/
 date: 2016-02-22
 categories: client-guides
 tags: [clients]

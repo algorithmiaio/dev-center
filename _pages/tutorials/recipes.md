@@ -2,7 +2,6 @@
 layout: article_page
 title:  "Recipes"
 date:   2016-12-27 15:38:38
-permalink: /tutorials/recipes/
 categories: tutorials
 show_related: false
 excerpt: "All the recipes"
@@ -11,7 +10,7 @@ image:
     teaser: /icons/recipes.svg
 ---
 
-{% assign recipes = site.categories["recipes"] | sort:"title" %}
+{% assign recipes = site.pages | where: "categories", "recipes" | sort:"title" %}
 {% for tag in page.recipe_tags %}
   {% include recipe-grid.html %}
   {% unless forloop.last %}

@@ -18,9 +18,10 @@ baseurl: /devcenter
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
 
-# If you aren't editting the client guides on github,
-# setting this to true can speed up hot-reloads
-skip_readme_updates: true
+collections:
+  pages:
+    output: true
+    permalink: /:path/
 
 # Jekyll configuration
 sass:

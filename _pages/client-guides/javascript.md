@@ -1,10 +1,6 @@
 ---
 layout: article
 title:  "Javascript"
-permalink: /client-guides/javascript
-redirect_from:
-  - /clients/javascript/
-  - /application-development/guides/javascript/
 date:   2016-01-11 15:00:38
 categories: client-guides
 tags: [clients]

@@ -3,10 +3,7 @@ layout: article
 title:  "Scikit-Learn"
 excerpt: "Guide to hosting your scikit-learn model on Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/model-guides/scikit
-redirect_from:
-  - /algorithm-development/guides/scikit/
-categories: host-your-model
+categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
@@ -105,7 +102,7 @@ def process_input(input):
 
 
 def apply(input):
-    # Input should be a csv file - model is trained on Sklearn 
+    # Input should be a csv file - model is trained on Sklearn
     # Boston housing dataset using RandomForestRegressor
     np_data = process_input(input)
     prediction = model.predict(np_data)

@@ -2,10 +2,6 @@
 layout: article
 title: "Node"
 excerpt: "Like building Node apps? Here's a Node Client that makes it easy."
-permalink: /client-guides/node
-redirect_from:
-  - /clients/node/
-  - /application-development/guides/node/
 date: 2016-07-19
 categories: client-guides
 tags: [clients]

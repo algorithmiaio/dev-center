@@ -2,10 +2,6 @@
 layout: article
 title: "Java"
 excerpt: "Working in Java? Check out this Algorithmia Java client."
-permalink: /client-guides/java
-redirect_from:
-  - /clients/java/
-  - /application-development/guides/java/
 date: 2016-07-08
 categories: client-guides
 tags: [clients]

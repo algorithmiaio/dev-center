@@ -2,7 +2,6 @@
 layout: article
 title: "Android"
 excerpt: "Get going with the Android client on Algorithmia."
-permalink: /client-guides/android
 date: 2016-11-07
 categories: client-guides
 tags: [clients]

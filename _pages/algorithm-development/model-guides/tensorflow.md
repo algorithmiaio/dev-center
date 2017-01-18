@@ -3,8 +3,7 @@ layout: article
 title:  "TensorFlow"
 excerpt: "Bring your Tensorflow graph model to Algorithmia."
 date:   2016-05-26 14:28:42
-permalink: /algorithm-development/model-guides/tensorflow
-categories: host-your-model
+categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
@@ -85,7 +84,7 @@ def load_data():
     return (checkpoint_file, graph_file)
 
 
-# Get called once   
+# Get called once
 saver = tf.train.Saver()
 checkpoints, graph = load_data()
 

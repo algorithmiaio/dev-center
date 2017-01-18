@@ -2,10 +2,6 @@
 layout: article
 title: "Scala"
 excerpt: "How to use the Java client for Scala projects."
-permalink: /client-guides/scala
-redirect_from:
-  - /clients/scala/
-  - /application-development/guides/scala/
 date: 2016-07-08
 categories: client-guides
 tags: [clients]

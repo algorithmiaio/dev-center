@@ -2,7 +2,6 @@
 layout: article
 title:  "Getting Started"
 excerpt: "Make your first API call with this quick start guide."
-permalink: /getting-started/
 date:   2016-01-11 01:19:38
 tags: [app-dev-getting-started]
 show_related: true
@@ -114,4 +113,4 @@ curl -X POST -d 'Liz' -H 'Content-Type: application/json' -H 'Authorization: Sim
 }
 {% endhighlight%}
 
-The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API. 
+The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.

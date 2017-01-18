@@ -15,7 +15,7 @@
   category: tutorials
 
 - title: Working with Data
-  url: /working-with-data/
+  url: /data/
   category: working-with-data
 
 - title: Algorithm Development
@@ -26,14 +26,14 @@
   url: http://docs.algorithmia.com
 
 - title: Teams & Organizations
-  url: /basics/organization_profiles/
+  url: /teams/
 
 - title: Bounties
   url: /bounties/
   category: bounties
 
 - title: Pricing, Permissions, & Versioning
-  url: /basics/algorithm-basics/
+  url: /basics/
 
 - title: FAQ
   url: /faqs/

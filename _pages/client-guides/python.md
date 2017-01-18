@@ -2,10 +2,6 @@
 layout: article
 title: "Python"
 excerpt: "Get going with the Python client on Algorithmia."
-permalink: /client-guides/python
-redirect_from:
-  - /clients/python/
-  - /application-development/guides/python/
 date: 2016-07-08
 categories: client-guides
 tags: [clients]

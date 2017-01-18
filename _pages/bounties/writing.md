@@ -2,9 +2,8 @@
 layout: article
 title:  "How to write a good bounty on Algorithmia"
 excerpt: "5 easy steps to creating a high quality bounty for Algorithmia"
-permalink: /bounties/writing-bounties/
 date:   2016-04-01 01:30:38
-categories: bounties 
+categories: bounties
 tags: [bounties]
 show_related: true
 author: diego_oppenheimer
@@ -13,7 +12,7 @@ image:
 ---
 Algorithmia provides a bounty system for algorithm development, where application developers can connect with algorithm developers. This system helps application developers solve a problem by leveraging the collective knowledge of the thousands of algorithms developers that participate on Algorithmia.
 
-If you can't the an algorithm, or combination of algorithms, on Algorithmia that solves your problem, the bounty system is a great place to start. The following guide will show you how to create a compelling bounty so you maximize chance of getting a good results quickly. 
+If you can't the an algorithm, or combination of algorithms, on Algorithmia that solves your problem, the bounty system is a great place to start. The following guide will show you how to create a compelling bounty so you maximize chance of getting a good results quickly.
 
 Your bounty is more likely to be fulfilled if algorithm developers can easily understand what you need, and why. So, think of your bounty description as a requirement doc for your solution. The more complete and thorough, the better. It's strongly recommended to provide test cases and/or sample data.
 
@@ -39,7 +38,7 @@ A good problem requirement doc will have the following:
 - How the algorithm will be used, and why it solves your problem.
 
     >One important area of application is market basket analysis, which has widespread use in planning promotions, designs and sales strategies. Market basket analysis is necessarily somewhat open-ended, but one of the more useful angles of attack is the extraction of association rules http://en.wikipedia.org/wiki/Association_rule_learning. Ultimately we wish to be able to use the set of items purchased (or otherwise accessed) by a user and recommend other items that they have an increased probability of being interested in, however, this should probably be a separate algorithm.
-    
+
 ### 2. Specify the Interface
 It's key to explain the type of interface you expect so that you can easily integrate this algorithm in your application quickly.
 
@@ -59,10 +58,10 @@ For example:
 
 - **Example Data:** If available, we recommend providing sample data so that the algorithm developer can see exactly what data they will be working with. Using the [Algorithmia Data API](http://docs.algorithmia.com/#the-data-api) to upload a sample data set is recommended.
 
-*Warning:* This data will be publicly accesible, we highly recommend providing data that is either fake or has no personally identifiable information. 
+*Warning:* This data will be publicly accesible, we highly recommend providing data that is either fake or has no personally identifiable information.
 
 ### 3. Specify the Algorithm
-This section is about articulating concrete algorithm needs. 
+This section is about articulating concrete algorithm needs.
 
 For instance, some application developers have a specific algorithm they want implemented. Often times, however, the application developer knows what the end result should be, but doesn't know how to get there. This is why it's so important to clearly define what the problem is in Section 1.
 
@@ -75,13 +74,13 @@ For example:
 >A decent example of this is https://chimpler.wordpress.com/2013/05/02/finding-association-rules-with-mahout-frequent-pattern-mining/
 
 ### 4. Pledging the Bounty
-Bounties that pledge a monetary value are far more likely to interest algorithm developers. You can pledge between $10 and $10,000 USD toward a bounty. 
+Bounties that pledge a monetary value are far more likely to interest algorithm developers. You can pledge between $10 and $10,000 USD toward a bounty.
 
-When you pledge a monetary bounty, we'll charge your credit card immediately and hold the money in escrow while the bounty is live. 
+When you pledge a monetary bounty, we'll charge your credit card immediately and hold the money in escrow while the bounty is live.
 
 Pledging a bounty starts a 60-day countdown on your bounty. If your bounty is not fulfilled within 60-days, you will have the choice to renew your bounty pledge, or be refunded. When pledging a bounty, Algorithmia collects an additional 20% fee. Bounties may be pledged in USD, Algorithmia credits, or both.
 
-Find more details in the [Bounty Terms and Conditions](https://algorithmia.com/bounty_terms). 
+Find more details in the [Bounty Terms and Conditions](https://algorithmia.com/bounty_terms).
 
 ### 5. Share!
 Now that you have created your bounty, it's time to let the world know. Your bounty will automatically get published to our bounties page. We highly recommend sharing your bounty to Twitter, Facebook, Reddit, HN, etc. to increase the reach of your newly created bounty, and help attract algorithm developers.

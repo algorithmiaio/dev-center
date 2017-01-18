@@ -1,11 +1,6 @@
 ---
 layout: article
 title: "CURL"
-permalink: /client-guides/curl
-redirect_from:
-  - /clients/curl/
-  - /application-development/client-guides/cURL/
-  - /application-development/guides/curl/
 date: 2016-07-12
 categories: client-guides
 tags: [clients]

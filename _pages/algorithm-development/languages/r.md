@@ -3,7 +3,6 @@ layout: article
 title:  "R"
 excerpt: "Build your algorithm in R"
 date: 2016-05-17  09:50:46
-permalink: /algorithm-development/languages/r
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

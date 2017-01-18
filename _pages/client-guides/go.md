@@ -2,9 +2,6 @@
 layout: article
 title: "Go"
 excerpt: "Integrate Algorithmia into your Go project."
-permalink: /client-guides/go
-redirect_from:
-  - /clients/go/
 date: 2016-07-12
 categories: client-guides
 tags: [clients]

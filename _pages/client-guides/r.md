@@ -2,7 +2,6 @@
 layout: article
 title: "R"
 excerpt: "Get going with the R client on Algorithmia."
-permalink: /client-guides/r
 date: 2016-09-12
 categories: client-guides
 tags: [clients]

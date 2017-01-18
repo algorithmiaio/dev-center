@@ -3,9 +3,8 @@ layout: article_page
 title:  "Data Portal Guide"
 excerpt: "Host your data files or trained models on the Algorithmia platform for free."
 date:   2016-06-06 11:46:03
-permalink: /algorithm-development/data-sources/
 categories: algorithm-development
-nav_children: algo-data-source
+nav_children: algo-data
 tags: [data-connectors-overview]
 show_related: false
 author: steph_kim
@@ -18,16 +17,14 @@ How easy is it? By creating an Algorithmia account you automatically have access
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 ### Algorithm data portal guides:
-{% assign data_connector_tags = "alg-data-connectors" | split:"|" %}
 <div class="col-xs-3 lang-tile">
-  {% for post in site.posts %}
-  	{% if data_connector_tags == post.tags %}
+  {% assign pages = site.pages | where: "categories", "algo-data" %}
+  {% for post in pages %}
   		<a  href="{{ post.url }}">
   		{% if post.image.teaser %}
 		<img  src="{{ site.url }}{{ site.baseurl }}/images/{{ post.image.teaser }}" alt="" itemprop="image">
 		{% endif %}
 		</a>
 		<p class="lg"><a  href="{{ post.url }}">{{ post.title }}</a></p>
-	{% endif %}
   {% endfor %}
 </div>

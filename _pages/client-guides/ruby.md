@@ -2,10 +2,6 @@
 layout: article
 title: "Ruby"
 excerpt: "Rubyist? We've got a client just for you."
-permalink: /client-guides/ruby
-redirect_from:
-  - /clients/ruby/
-  - /application-development/guides/ruby/
 date: 2016-07-08
 categories: client-guides
 tags: [clients]
