@@ -20,7 +20,7 @@ task :generate do
 end
 
 
-desc "Generate and publish blog to gh-pages"
+desc "Generate and publish blog to S3"
 task :publish => [:generate] do
   started = Time.now
   Dir.mktmpdir do |tmp|

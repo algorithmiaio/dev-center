@@ -18,15 +18,15 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
 {% assign data_connector_tags = "app-data-connectors" | split:"|" %}
 <div class="data-connectors">
   {% for post in site.pages %}
-  	{% if data_connector_tags == post.tags %}
-  		<div class="col-xs-3 lang-tile">
-	      	<a  href="{{ post.url }}">
-	      	{% if post.image.teaser %}
-	  			<img  src="{{ post.image.teaser | prepend:'/images/' | relative_url }}" alt="" itemprop="image">
-			{% endif %}
-			</a>
-			<p class="lg"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
-		</div>
-	{% endif %}
+    {% if data_connector_tags == post.tags %}
+      <div class="col-xs-3 lang-tile">
+        <a  href="{{ post.url }}">
+          {% if post.image.teaser %}
+            <img  src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image">
+          {% endif %}
+        </a>
+        <p class="lg"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
