@@ -11,6 +11,7 @@
     {% endif %}
     {% include open-graph.html %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/pygments-github.css">
     <!-- END_HEAD_EMBED -->
 
     <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
