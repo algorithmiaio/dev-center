@@ -1,7 +1,6 @@
 ---
 layout: article
 title:  "Recipe Example (Android copy)"
-date:   2016-01-28 01:30:38
 categories: recipes
 tags: [machine-learning, computer-stuff]
 show_related: false

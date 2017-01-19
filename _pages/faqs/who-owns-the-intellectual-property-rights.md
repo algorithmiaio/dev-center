@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "Who owns the intellectual property rights of uploaded source code?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true

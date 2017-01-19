@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "I am part of an educational institution or doing research. Is there a special program for me?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

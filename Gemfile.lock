@@ -19,6 +19,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-last-modified-at (0.3.4)
+      jekyll
     jekyll-redirect-from (0.11.0)
       jekyll (>= 2.0)
     jekyll-sass-converter (1.5.0)
@@ -57,12 +59,8 @@ GEM
     parallel (1.8.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
-    posix-spawn (0.3.11)
     proxies (0.2.1)
     public_suffix (2.0.4)
-    pygments.rb (0.6.3)
-      posix-spawn (~> 0.3.6)
-      yajl-ruby (~> 1.2.0)
     rake (12.0.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
@@ -78,7 +76,6 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     titlecase (0.1.1)
-    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -87,13 +84,13 @@ DEPENDENCIES
   gemoji
   git
   jekyll (= 3.3.1)
+  jekyll-last-modified-at
   jekyll-redirect-from
   jekyll-sitemap
   mime-types
   nokogiri
   octopress (~> 3.0)
   parallel
-  pygments.rb
   rake
   redcarpet
   s3

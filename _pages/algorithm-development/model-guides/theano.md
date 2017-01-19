@@ -2,7 +2,6 @@
 layout: article
 title:  "Theano"
 excerpt: "Host your Theano deep learning model on Algorithmia."
-date:   2016-05-26 14:28:42
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true

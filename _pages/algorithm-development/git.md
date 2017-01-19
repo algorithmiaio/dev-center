@@ -2,7 +2,6 @@
 layout: article
 title:  "Using Git with Algorithmia"
 excerpt: "Learn how to use Git with Algorithmia and integrate with your current workflow."
-date: 2016-10-13  09:50:46
 tags: [algo-dev]
 categories: [basics, algorithm-development]
 show_related: true

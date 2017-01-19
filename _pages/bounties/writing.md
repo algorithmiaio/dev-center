@@ -2,7 +2,6 @@
 layout: article
 title:  "How to write a good bounty on Algorithmia"
 excerpt: "5 easy steps to creating a high quality bounty for Algorithmia"
-date:   2016-04-01 01:30:38
 categories: bounties
 tags: [bounties]
 show_related: true

@@ -2,7 +2,6 @@
 layout: article
 title:  "Pricing, Permissions, & Versioning"
 excerpt: "All about pricing, permissions, and versioning on the platform."
-date:   2016-01-25 01:19:38
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush

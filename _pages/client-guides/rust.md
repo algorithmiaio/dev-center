@@ -2,7 +2,6 @@
 layout: article
 title: "Rust"
 excerpt: "Rust fan? We've got you covered."
-date: 2016-07-12
 categories: client-guides
 tags: [clients]
 ignore_sections: [build-test]

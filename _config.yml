@@ -30,10 +30,10 @@ sass:
 permalink: /:categories/:title/
 kramdown:
   toc_levels: 1..2
-highlighter: pygments
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 # Site owner
 owner:
@@ -57,5 +57,5 @@ project_output_dir: /clients
 lunr_search:
   excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml"]
 

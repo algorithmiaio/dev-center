@@ -2,7 +2,6 @@
 layout: article_page
 title:  "Hosted Data"
 excerpt: "Store your data for free on the Algorithmia platform."
-date:   2016-06-07 11:46:03
 categories: algo-data
 tags: [alg-data-connectors]
 show_related: false

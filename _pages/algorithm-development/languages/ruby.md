@@ -2,7 +2,6 @@
 layout: article
 title:  "Ruby"
 excerpt: "Build your algorithm in Ruby"
-date: 2016-05-17  09:50:46
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

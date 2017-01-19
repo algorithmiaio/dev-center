@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "How do I connect with Algorithmia?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

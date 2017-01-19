@@ -2,7 +2,6 @@
 layout: article
 title: "Python"
 excerpt: "Get going with the Python client on Algorithmia."
-date: 2016-07-08
 categories: client-guides
 tags: [clients]
 ignore_sections: [install-from-source, upgrading-from-0-9-x, running-tests]

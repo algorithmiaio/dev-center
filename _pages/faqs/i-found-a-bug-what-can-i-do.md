@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "I found a bug in an algorithm or it's not producing the expected results, what can I do?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

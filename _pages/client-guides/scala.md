@@ -2,7 +2,6 @@
 layout: article
 title: "Scala"
 excerpt: "How to use the Java client for Scala projects."
-date: 2016-07-08
 categories: client-guides
 tags: [clients]
 show_related: true

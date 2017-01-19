@@ -2,7 +2,6 @@
 layout: article
 title:  "Rust"
 excerpt: "Build your algorithm in Rust"
-date: 2016-05-17  09:50:46
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

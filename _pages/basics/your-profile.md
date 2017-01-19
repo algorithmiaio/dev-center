@@ -2,7 +2,6 @@
 layout: article
 title:  "Your Profile"
 excerpt: "What's going on in your profile? Click here to find out."
-date:   2016-02-16 15:00:38
 categories: basics
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true

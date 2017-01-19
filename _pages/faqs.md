@@ -3,7 +3,6 @@ layout: article
 title: "FAQs"
 exclude_from_search: true
 
-date:   2016-01-28 01:30:38
 show_related: false
 excerpt: "Frequently asked questions"
 image:

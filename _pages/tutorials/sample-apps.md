@@ -1,7 +1,6 @@
 ---
 layout: article_page
 title:  "Sample apps"
-date:   2016-12-27 15:38:38
 categories: tutorials
 show_related: false
 excerpt: "All the sample apps"

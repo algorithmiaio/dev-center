@@ -2,7 +2,6 @@
 layout: article
 title: "Java"
 excerpt: "Working in Java? Check out this Algorithmia Java client."
-date: 2016-07-08
 categories: client-guides
 tags: [clients]
 show_related: true

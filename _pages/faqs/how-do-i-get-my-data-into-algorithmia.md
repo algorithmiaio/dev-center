@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "How do I get my data into Algorithmia? Can I upload data for processing?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

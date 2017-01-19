@@ -1,7 +1,6 @@
 ---
 layout: article
 title:  "The Algorithmia Guide to Sentiment Analysis"
-date:   2016-01-28 01:30:38
 categories: recipes
 tags: [text-analysis, sentiment-analysis]
 show_related: false

@@ -2,7 +2,6 @@
 layout: article
 title: "Ruby"
 excerpt: "Rubyist? We've got a client just for you."
-date: 2016-07-08
 categories: client-guides
 tags: [clients]
 ignore_sections: [development, contributing]

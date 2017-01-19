@@ -1,7 +1,6 @@
 ---
 layout: article_page
 title:  "Bounties"
-date:   2017-01-04 14:34:38
 show_related: false
 excerpt: "Bounties"
 ---

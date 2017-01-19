@@ -1,7 +1,6 @@
 ---
 layout: article
 title: "CURL"
-date: 2016-07-12
 categories: client-guides
 tags: [clients]
 show_related: true

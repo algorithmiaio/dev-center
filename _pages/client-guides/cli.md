@@ -2,7 +2,6 @@
 layout: article
 title:  "CLI"
 excerpt: "Get familiar with the CLI client."
-date: 2016-02-22
 categories: client-guides
 tags: [clients]
 show_related: true

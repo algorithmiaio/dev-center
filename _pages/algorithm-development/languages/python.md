@@ -2,7 +2,6 @@
 layout: article
 title:  "Python"
 excerpt: "Build your algorithm in Python"
-date: 2016-05-17  09:50:46
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

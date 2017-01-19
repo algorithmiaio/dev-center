@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "I want to offer a reward for the bounty I posted, how do I pledge it?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

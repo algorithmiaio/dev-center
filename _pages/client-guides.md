@@ -2,7 +2,6 @@
 layout: article_page
 title:  "Client guides"
 excerpt: "Guides to building an app using an algorithm from Algorithmia in: Python, R, Scala, Rust, Java, Ruby, JavaScript, Go, Swift, and Android."
-date:  2016-06-08 17:01:37
 tags: [app-guide-overview]
 show_related: false
 author: steph_kim

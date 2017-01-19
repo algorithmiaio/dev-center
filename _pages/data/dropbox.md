@@ -2,7 +2,6 @@
 layout: article
 title:  "Dropbox"
 excerpt: "How to configure your Dropbox data source and access your data via the Algorithmia Data API."
-date:   2016-06-09 11:46:03
 categories: working-with-data
 tags: [app-data-connectors]
 show_related: true

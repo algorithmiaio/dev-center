@@ -23,12 +23,11 @@ layout: default
 	  </p>
 	{% endif %}
 
-		<div id="content" class="page-content" itemprop="articleBody">
-			{{ content }}
+	<div id="content" class="page-content" itemprop="articleBody">
+		{{ content }}
 
-			<aside>
-				{% if page.comments == true %}<hr />{% include comments.html %}{% endif %}
-			</aside>
-
-		</div><!-- /.content -->
-	</article>
+		<aside>
+			{% if page.comments == true %}<hr />{% include comments.html %}{% endif %}
+		</aside>
+	</div><!-- /.content -->
+</article>

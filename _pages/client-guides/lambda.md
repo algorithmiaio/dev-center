@@ -2,7 +2,6 @@
 layout: article
 title:  "AWS Lambda"
 excerpt: "Run Algorithmia code in response to events with AWS Lambda."
-date: 2016-07-12
 categories: client-guides
 tags: [clients]
 show_related: true

@@ -2,7 +2,6 @@
 layout: article
 title: "Swift"
 excerpt: "Get started building an iOS app."
-date: 2016-12-08
 categories: client-guides
 tags: [clients]
 show_related: true

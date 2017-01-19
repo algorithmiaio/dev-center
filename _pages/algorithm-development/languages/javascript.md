@@ -2,7 +2,6 @@
 layout: article
 title:  "JavaScript"
 excerpt: "Build your algorithm in JavaScript"
-date:   2016-05-16 14:28:42
 categories: languages
 tags: [algo-guide-lang]
 show_related: true

@@ -1,7 +1,6 @@
 ---
 layout: article
 title:  "Sample app example (android copy)"
-date:   2016-01-28 01:30:38
 categories: sample-apps
 tags: [sample-app]
 show_related: false

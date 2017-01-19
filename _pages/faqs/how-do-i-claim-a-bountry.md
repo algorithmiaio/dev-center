@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "How do I claim a bounty with my algorithm?"
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true

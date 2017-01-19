@@ -1,7 +1,6 @@
 ---
 layout: faq
 title:  "Algorithmia is misbehaving or I know a way it could be better."
-date:   2016-03-02 15:00:38
 categories: faqs
 tags: [platform-faq]
 show_related: true

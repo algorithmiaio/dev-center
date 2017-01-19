@@ -1,7 +1,6 @@
 ---
-layout: article
+layout: article_page
 title:  "Tutorials"
-date:   2016-12-27 15:38:38
 show_related: false
 author: liz_rush
 excerpt: "Tutorials. Sample apps and recipes to help you learn whats going on."
