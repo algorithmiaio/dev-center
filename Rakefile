@@ -9,7 +9,7 @@ require 'parallel'
 
 AWS_BUCKET = "algorithmia-devcenter"
 GITHUB_REPONAME = "algorithmiaio/dev-center"
-PREFIX = "devcenter/"
+PREFIX = "developers/"
 
 desc "Generate blog files"
 task :generate do
@@ -64,7 +64,7 @@ task :publish => [:generate] do
           ## mime-type. `obj.save` will upload and store the file to S3.
           obj = bucket.objects.build(remote_file)
           obj.content = open(file)
-          obj.content_type = MIME::Types.type_for(file).to_s
+          obj.content_type = MIME::Types.type_for(file).map(&:to_s).join(',')
           obj.save
         else
           print "."
