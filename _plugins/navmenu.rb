@@ -25,7 +25,7 @@ module Jekyll
 
     def render_list(page_url, items)
       html = []
-      html << '<ul id="sidebar" class="nav">'
+      html << '<ul class="nav sidebar">'
       items.each do |item|
         prefix = item['url'].chomp('/') + '/'
 
@@ -50,7 +50,7 @@ module Jekyll
 
         html << "<a href='#{href}'>#{item['title']}#{icon}</a>"
 
-        if is_active and item['children']
+        if is_active and item['children'] and item['children'].count > 0
           html << render_list(page_url, item['children'])
         end
 
