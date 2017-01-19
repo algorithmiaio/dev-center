@@ -9,7 +9,7 @@ show_related: false
 {% assign pages = site.pages | where: "categories", "algorithm-development" %}
 {% for post in pages %}
   <div class="col-md-6 overview-brief">
-    <h3><a href="{{ site.url }}{{ post.permalink }}">{{ post.title }}</a></h3>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     <p class="lg">{{ post.excerpt }}</p>
   </div>
 {% endfor %}

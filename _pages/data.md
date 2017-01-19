@@ -19,7 +19,7 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
   {% for post in site.pages %}
     {% if data_connector_tags == post.tags %}
       <div class="col-xs-3 lang-tile">
-        <a  href="{{ post.url }}">
+        <a  href="{{ post.url | relative_url }}">
           {% if post.image.teaser %}
             <img  src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image">
           {% endif %}
