@@ -13,7 +13,7 @@ locale: en_US
 url: https://algorithmia.com
 
 # The entire site is nested under this baseurl
-baseurl: /devcenter
+baseurl: /developers
 
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
