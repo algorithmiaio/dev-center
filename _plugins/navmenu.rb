@@ -42,7 +42,13 @@ module Jekyll
           icon = ' <i class="fa fa-external-link" aria-hidden="true"></i>'
         end
 
-        html << "<a href='#{@baseurl}#{item['url']}'>#{item['title']}#{icon}</a>"
+        href = if item['url'].start_with?('http://', 'https://')
+          item['url']
+        else
+          "#{@baseurl}#{item['url']}"
+        end
+
+        html << "<a href='#{href}'>#{item['title']}#{icon}</a>"
 
         if is_active and item['children']
           html << render_list(page_url, item['children'])
