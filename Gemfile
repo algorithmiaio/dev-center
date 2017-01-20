@@ -11,6 +11,7 @@ gem 'gemoji'
 gem 'therubyracer'
 gem 'nokogiri'
 gem 'git'
+gem 'metainspector'
 
 # Used for publishing
 group :deploy do
