@@ -75,8 +75,9 @@
       $('#search-query').lunrSearch({
         indexUrl: '{{ site.baseurl }}/js/index.json',
         results:  '#search-results',
-        entries:  '.entries',
-        template: '#search-results-template'
+        template: '#search-results-template',
+        titleMsg: '<p class="lg">Search results</p>',
+        emptyMsg: '<p>No results found...</p>'
       });
 
       $('#search-query').on('keyup', function(el) {
