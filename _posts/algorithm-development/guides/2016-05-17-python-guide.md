@@ -32,7 +32,7 @@ Table of Contents
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-resources)
 
-## [Available Libraries](#available-libraries)
+## Available Libraries<a id="available-libraries"></a>
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
@@ -44,7 +44,7 @@ Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm<a id="create-algorithm"></a>
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -75,7 +75,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies<a id="managing-dependencies"></a>
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -101,7 +101,7 @@ in the dependencies file and the line
 
 in the main file.
 
-## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+## Write your First Algorithm<a id="write-your-first-algorithm"></a>
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
@@ -114,7 +114,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="/images/post_images/algo_dev_lang/run_default_algo.png" alt="Run basic algorithm in console Python" class="screenshot">
 
-## <a id="io-algorithms">I/O for your Algorithms</a>
+## I/O for your Algorithms<a id="io-algorithms"></a>
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
@@ -299,7 +299,7 @@ As you can see from these guides fields that are passed into your algorithm by t
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
-## <a id="error-handling">Error Handling</a>
+## Error Handling<a id="error-handling"></a>
 
 In the above code examples we showed how to create an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:
 
@@ -338,13 +338,13 @@ except:
 
 For more information on error handling see the [Algorithmia API Docs](http://docs.algorithmia.com/?python#error-handling).
 
-## <a id="algorithm-checklist">Algorithm Checklist</a>
+## Algorithm Checklist<a id="algorithm-checklist"></a>
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist](/basics/algorithm_checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## <a id="publish-algorithm">Publish an Algorithm</a>
+## Publish an Algorithm<a id="publish-algorithm"></a>
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -362,7 +362,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](/algorithm-development/git-support/) from your current workflow. 
 
-## <a id="conclusion-resources">Conclusion and Resources</a>
+## Conclusion and Resources<a id="conclusion-resources"></a>
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
