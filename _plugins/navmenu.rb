@@ -36,9 +36,7 @@ module Jekyll
           html << '<li>'
         end
 
-        if item['children'] and item['children'].count > 0
-          icon = ' <i class="fa fa-angle-down"></i>'
-        elsif item['url'].start_with?('http://', 'https://')
+        if item['url'].start_with?('http://', 'https://')
           icon = ' <i class="fa fa-external-link" aria-hidden="true"></i>'
         end
 
