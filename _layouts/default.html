@@ -80,13 +80,24 @@
         emptyMsg: '<p>No results found...</p>'
       });
 
-      $('#search-query').on('keyup', function(el) {
+      $('#search-query').on('input', function(el) {
         if(el.target.value.length < 3) {
           $('#main-content').show();
         } else {
           $('#main-content').hide();
         }
       });
+
+      // If there is a query string that will get picked up by lunrSearch
+      //   then hide the page content by default
+      // Note: the search input field doesn't get set by lunrSearch until index.json loads
+      var uri = new URI(window.location.search.toString());
+      var queryString = uri.search(true);
+      if (queryString.hasOwnProperty('q')) {
+        if(queryString.q.length >= 3) {
+          $('#main-content').hide();
+        }
+      }
     });
     </script>
     <!-- END_SCRIPTS_EMBED -->
