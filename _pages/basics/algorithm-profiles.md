@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Understanding the Algorithm Profile"
+title:  "Algorithm Profiles"
 excerpt: "A walk through of the algorithm profile page."
 categories: basics
 tags: [basics]

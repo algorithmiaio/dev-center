@@ -8,7 +8,7 @@ image:
     teaser: /icons/sample apps.svg
 ---
 
-<div class="sample-card-container">
+<div class="row overview-container">
   {% assign samples = site.pages | where: "categories", "sample-apps" %}
   {% for post in samples %}
     {% include sample-app-grid.html %}
