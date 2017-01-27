@@ -2,7 +2,7 @@
 layout: article
 title:  "Publishing Your First Algorithm"
 excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
-categories: basics 
+categories: algorithm-development
 tags: [algo-dev]
 show_related: true
 author: liz_rush

@@ -2,8 +2,8 @@
 layout: article
 title:  "Understanding the Algorithm Profile"
 excerpt: "A walk through of the algorithm profile page."
-categories: basics 
-tags: [alg-dev-getting-started, app-dev-getting-started]
+categories: basics
+tags: [basics]
 show_related: true
 author: liz_rush
 image:
