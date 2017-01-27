@@ -9,7 +9,6 @@ image:
     teaser: /icons/Algorithmia_FAQs.png
 ---
 
-
 <div id="faqs-index">
   <section class="row">
 

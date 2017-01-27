@@ -12,7 +12,7 @@ module Jekyll
 
       @@items ||= context['site']['data']['toc'].map do |item|
         pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
-        item_cat = item['category']
+        item_cat = item['nav_category']
         unless item_cat.nil?
           item['children'] = pages[item_cat].map{|p| doc_to_item(pages, p) }
         end
@@ -61,9 +61,9 @@ module Jekyll
 
     def doc_to_item(pages, document)
       children = []
-      nav_children = document.data['nav_children']
-      if nav_children
-        children = pages[nav_children].map{|p| doc_to_item(pages, p) }
+      nav_category = document.data['nav_children']
+      if nav_category
+        children = pages[nav_category].map{|p| doc_to_item(pages, p) }
       end
 
       {
