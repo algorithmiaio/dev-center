@@ -1,0 +1,219 @@
+---
+layout: article
+title:  "R"
+excerpt: "Build your algorithm in R"
+categories: languages
+tags: [algo-guide-lang]
+show_related: true
+author: steph_kim
+image:
+    teaser: /language_logos/r.svg
+---
+
+Algorithmia supports algorithm development in the R language.
+
+
+## Available APIs
+
+Algorithmia makes a number of libraries available to make algorithm development easier.
+The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.1</a>
+is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
+via the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R language Client</a>.
+
+## Create your Algorithm
+
+- To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
+- Name your algorithm, select the language, choose permissions and make the code either open or closed source.
+
+**Note**: There is also a checkbox for "Standard Execution Environment" or "Advanced GPU". For machine learning models you will want to check "Standard Execution Environment".
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/r-create-new-algo.png" alt="Create your algorithm" class="screenshot">
+
+
+## Managing Dependencies
+
+Algorithmia supports adding 3rd party dependencies via the <a href="https://cran.r-project.org">CRAN (Comprehensive R Archive Network)</a> dependency file.
+
+Add dependencies by adding the library name to the file:
+
+- Click on the **"Dependencies"** button at the top right of the UI and list your packages under the comment section.
+
+- Click **"Save Dependencies"** on the bottom right corner.
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/r-dependencies.png" alt="Set your dependencies" class="screenshot">
+
+Please read the details regarding loading dependencies in the comments of the dependency file. There are three different ways to include your dependencies so read through each one to decide which one is right for your project.
+{: .notice-info}
+
+The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia's R package visit:
+<a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia's CRAN package</a> documentation.
+
+
+## Write your Algorithm
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_r.png" alt="Load your libraries" class="screenshot">
+
+**Note:** Remember to load your package to your algorithm file after adding it to the dependency file.
+
+For example, to make use of the package "lubridate", you would include: `library(lubridate)` in the algorithm file.
+
+
+## I/O for your Algorithms:
+
+Sometimes your algorithm will require something simple such as a string for input. Scalar values are handled easily, but be sure to include a check for the correct data type that your algorithm requires and return a helpful error message if it is incorrect.
+
+{% highlight r %}
+library(algorithmia)
+library(assert)
+
+algorithm <- function(input) {
+    # Assert if the input is a character
+    if (assert_that(is.character(input))) {
+      return input
+    }
+    return input
+{% endhighlight %}
+
+String input:
+
+{% highlight r %}
+# Example input for algorithm function
+input <- "3"
+# Call algorithm with input
+algorithm(input)
+{% endhighlight %}
+
+Which will return:
+
+{% highlight r %}
+# Assert statement result
+True
+# Algorithm returns input string
+"3"
+{% endhighlight %}
+
+Inputs that are sequences such as: matrices, arrays, data frames, lists and binary data files can be handled as you would any R language sequence. For example:
+
+{% highlight r %}
+library(algorithmia)
+
+algorithm <- function(input) {
+  assert_that(is.list(input))
+  print(input[[1]])
+}
+{% endhighlight %}
+
+Here is an example of a list input:
+
+{% highlight r %}
+# Example input for algorithm function
+input <- list("vector", "matrix", "array")
+# Call algorithm with input
+algorithm(input)
+{% endhighlight %}
+
+Which will return:
+
+{% highlight r %}
+# Assert statement result
+True
+# First item in list
+"vector"
+{% endhighlight %}
+
+When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow a few options for input such as a file or a sequence.
+
+
+## Compile and Test your Algorithm
+
+After creating your algorithm click **"Compile"** which is a blue button located at the top right of your algorithm source code. Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_r.png" alt="Set your dependencies" class="screenshot">
+
+After you compile your algorithm the bottom black console will show your algorithm version and will say it is now online.
+
+To test your algorithm you'll need to pass in an example input of the data you require and call your algorithm:
+
+{% highlight r %}
+algorithm("Hello World")
+{% endhighlight %}
+
+The algorithm will run and will show you either the result of what you are returning in your algorithm or it will provide an error message if the input is not what your algorithm expects.
+
+**Note:** For testing in the console, it is not required to call the algorithm, you may simply type in your input:
+
+`"Hello World"`
+
+## Calling Other Algorithms and Managing Data
+
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R Language Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. All the information you need about I/O will be there in the R client. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
+
+When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution. For more information about accessing files and directories visit the <a href="http://docs.algorithmia.com/#directories">Data API documentation</a>.
+
+### Creating an Algorithm that relies on input from another algorithm
+
+The following example algorithm below calls another algorithm on the Algorithmia platform and writes the data that is returned from it to a csv in Data Collections. <a href="https://algorithmia.com/data/hosted">Data Collections</a> is Algorithmia's hosted data source where you can securely read or write your data files to our platform using the <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a>.
+
+{% highlight r %}
+library(algorithmia)
+library(devtools)
+library(data.table)
+
+# Get JSON data from https://algorithmia.com/algorithms/tags/ScrapeHN
+client <- getAlgorithmiaClient()
+algo <- client$algo("tags/ScrapeHN/0.1.2")
+results <- algo$pipe(list())$result
+
+# Create dataframe to write to csv.
+df <- data.frame(rbindlist(results))
+# Write csv file to a temporary file
+tempLocation <- tempfile()
+write.csv(df, tempLocation, row.names=F)
+
+# Create algorithm that creates a csv from the JSON data above
+# writes to a csv file in data collections.
+algorithm <- function() {
+  # Write file to data collections on Algorithmia
+  client$file("data://your_username/foo/data.csv")$putFile(tempLocation)
+}
+{% endhighlight %}
+
+This example algorithm doesn't require any user input however the system requires input so the user can pass an empty string:
+{% highlight r %}
+# User input
+input <- ""
+# User calls algorithm
+algorithm(input)
+{% endhighlight %}
+
+Calling another algorithm from within your algorithm is considered the same session so you don't need to pass in your API key within your algorithm code. The user who calls your algorithm will be charged for both calls.
+{: .notice-info}
+
+For more information regarding hosted data solutions visit the Developer Center's <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/"> Hosted Data Guide</a>
+
+## Error Handling
+
+{% highlight r %}
+show_error <-function(input){
+  tryCatch({
+    (assert_that(is.character(input)))
+  },
+  error <- function(e) {
+    stop()
+  })
+}
+{% endhighlight %}
+
+When you try calling the algorithm without a valid input it throws an error:
+{% highlight r %}
+# Call algorithm
+show_error(1)
+# Error message
+Error in value[[3L]](cond) : Error
+{% endhighlight %}
+
+
+## Additional Resources
+
+* [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
+* [Algorithmia R client documentation](http://developers.algorithmia.com/application-development/client-guides/r/)

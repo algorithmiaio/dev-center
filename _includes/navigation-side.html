@@ -1,63 +1,8 @@
 <h3>Topics</h3>
 <div id="search">
-  <form action="{{ site.baseurl }}/search" method="get">
+  <form action="{{ site.baseurl }}/" method="get">
     <input type="text" id="search-query" name="q" placeholder="&#xf002;  Search" autocomplete="on" style="width: 100%;">
   </form>
 </div>
-<ul id="sidebar" class="nav">
-  {% for link in site.data.toc %}
-    {% if page.url == '/' and link.url == '/' %}
-      <li class="active">
-    {% elsif link.url == '/' %}
-      <li>
-    {% elsif page.url contains link.url %}
-      <li class="active">
-    {% else %}
-      <li>
-    {% endif %}
-      <a href="{{ link.url | relative_url }}">
-        {{link.title}}
-        {% if link.category and site.categories[link.category] %}
-          <i class="fa fa-angle-down"></i>
-        {% elsif link.url == 'http://docs.algorithmia.com' %}
-          <i class="fa fa-external-link" aria-hidden="true"></i>
-        {% endif %}
-      </a>
-      {% if link.category and site.categories[link.category] %}
-        <ul class="nav">
-          {% assign items = site.categories[link.category] | sort:"title" %}
-          {% for item in items %}
-            {% assign prefix = item.url | trailing_slash %}
-            {% if page.url == item.url or page.url contains prefix %}
-              <li class="active">
-            {% else %}
-              <li>
-            {% endif %}
-              <a href="{{ item.url | relative_url }}">
-                {{ item.title }}
-                {% if item.nav_children and site.categories[item.nav_children] %}
-                  <i class="fa fa-angle-down"></i>
-                {% endif %}
-              </a>
-              {% if item.nav_children and site.categories[item.nav_children] %}
-                <ul class="nav">
-                  {% assign items = site.categories[item.nav_children] | sort:"title" %}
-                  {% for item in items %}
-                    {% assign prefix = item.url | trailing_slash %}
-                    {% if page.url == item.url or page.url contains prefix %}
-                      <li class="active">
-                    {% else %}
-                      <li>
-                    {% endif %}
-                      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-  </li>
-{% endfor %}
-</ul>
+
+{% navmenu %}

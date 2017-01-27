@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <!-- BEGIN_HEAD_EMBED -->
-    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
     {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
     {% if page.author %}
       {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
     {% endif %}
     {% include open-graph.html %}
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url | replace:'index.html','' }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/pygments-github.css">
     <!-- END_HEAD_EMBED -->
 
     <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
@@ -29,7 +30,7 @@
     <link rel="stylesheet" media="screen" href="{{ webserver }}/versioned/stylesheets/bootstrap3.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ webserver }}/versioned/stylesheets/algo.min.css">
-    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,600,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,100" rel="stylesheet" type="text/css">
@@ -46,19 +47,14 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-sm-3 col-md-3">
-            <nav class="bs-docs-sidebar hidden-xs hidden-print">
-              {% include navigation-side.html %}
-            </nav>
-          </div> <!-- END NAV CONTAINER -->
-          <div class="col-sm-9 col-md-9">
+          <div class="col-sm-9 col-md-9 col-sm-push-3 col-md-push-3">
             {% include search.html %}
             <div id="main-content">
               {{ content | emojify }}
             </div>
           </div>
-          <div class="col-xs-12"> <!-- Moves nav to bottom on mobile -->
-            <nav class="bs-docs-sidebar hidden-sm hidden-md hidden-lg hidden-xl hidden-print">
+          <div class="col-sm-3 col-md-3 col-sm-pull-9 col-md-pull-9 col-xs-12">
+            <nav class="bs-docs-sidebar hidden-print">
               {% include navigation-side.html %}
             </nav>
           </div> <!-- END NAV CONTAINER -->
@@ -79,17 +75,29 @@
       $('#search-query').lunrSearch({
         indexUrl: '{{ site.baseurl }}/js/index.json',
         results:  '#search-results',
-        entries:  '.entries',
-        template: '#search-results-template'
+        template: '#search-results-template',
+        titleMsg: '<p class="lg">Search results</p>',
+        emptyMsg: '<p>No results found...</p>'
       });
 
-      $('#search-query').on('keyup', function(el) {
+      $('#search-query').on('input', function(el) {
         if(el.target.value.length < 3) {
           $('#main-content').show();
         } else {
           $('#main-content').hide();
         }
       });
+
+      // If there is a query string that will get picked up by lunrSearch
+      //   then hide the page content by default
+      // Note: the search input field doesn't get set by lunrSearch until index.json loads
+      var uri = new URI(window.location.search.toString());
+      var queryString = uri.search(true);
+      if (queryString.hasOwnProperty('q')) {
+        if(queryString.q.length >= 3) {
+          $('#main-content').hide();
+        }
+      }
     });
     </script>
     <!-- END_SCRIPTS_EMBED -->
