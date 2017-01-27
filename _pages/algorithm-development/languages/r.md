@@ -146,7 +146,7 @@ The algorithm will run and will show you either the result of what you are retur
 
 ## Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R Language Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. All the information you need about I/O will be there in the R client. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
+To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R Language Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. All the information you need about I/O will be there in the R client. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution. For more information about accessing files and directories visit the <a href="http://docs.algorithmia.com/#directories">Data API documentation</a>.
 
@@ -189,7 +189,7 @@ algorithm(input)
 Calling another algorithm from within your algorithm is considered the same session so you don't need to pass in your API key within your algorithm code. The user who calls your algorithm will be charged for both calls.
 {: .notice-info}
 
-For more information regarding hosted data solutions visit the Developer Center's <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/"> Hosted Data Guide</a>
+For more information regarding hosted data solutions visit the Developer Center's <a href="http://developers.algorithmia.com/developers/data/"> Hosted Data Guide</a>
 
 ## Error Handling
 
