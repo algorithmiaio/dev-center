@@ -46,7 +46,7 @@ A few things you'll want to have a good grasp on before proceeding:
 
 
 ### 3. Creating a New Algorithm
-We've created this guided to [walk you through making and publishing your first algorithm](http://developers.algorithmia.com/basics/your_first_algo/) on Algorithmia. This guide covers how to produce the classic “Hello World” algorithm in Python.
+We've created this guided to [walk you through making and publishing your first algorithm](/basics/your_first_algo/) on Algorithmia. This guide covers how to produce the classic “Hello World” algorithm in Python.
 
 ### 4. A Checklist for Success
 A quick checklist to make sure everything is in order before submitting your algorithm for review:
