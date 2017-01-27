@@ -64,7 +64,7 @@ For example this guide shows how to create an algorithm that splits text up into
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
 
-Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section](http://developers.algorithmia.com/basics/algorithm_basics/).
+Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section](/basics/algorithm_basics/).
 {: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
@@ -103,7 +103,7 @@ As you can see in your algorithm editor, there is a basic algorithm already writ
 
 To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
 
-If you are interested in learning more about versioning check out the [Algorithm Basics Section](http://developers.algorithmia.com/basics/algorithm_basics/).
+If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/algorithm_basics/).
 {: .notice-info}
 
 To test the algorithm type your name or another string in the console and hit enter on your keyboard:
@@ -174,9 +174,9 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 ### Working with Data Stored on Algorithmia
 
-This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/).
+This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](/developers/data/).
 
-While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/) to host data for algorithm development.
+While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](/developers/data/) to host data for algorithm development.
 {: .notice-warning}
 
 This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and tokenizes the text:
@@ -217,7 +217,7 @@ def apply(input):
 
 After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.
 
-If you haven't worked with data collections before you can find more information under the [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/) documentation.
+If you haven't worked with data collections before you can find more information under the [Hosted Data Source](/developers/data/) documentation.
 
 Following the example below replace the path to your data collection with your user name, data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
 
@@ -238,7 +238,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/).
+To call other algorithms or manage data from your algorithm, use the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -364,8 +364,8 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="http://developers.algorithmia.com/clients/python/">Algorithmia Client Python Docs</a>
-* [Hosted Data Source](/algorithm-development/data-sources/hosted-data-guide/)
+* <a href="/clients/python/">Algorithmia Client Python Docs</a>
+* [Hosted Data Source](/developers/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="fa fa-external-link"></i></a>

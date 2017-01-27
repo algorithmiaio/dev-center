@@ -2,7 +2,6 @@
 layout: article
 title:  "Teams and Organizations"
 excerpt: "Understanding Teams and Organizations on Algorithmia"
-categories: basics 
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush

@@ -33,7 +33,11 @@
   nav_category: bounties
 
 - title: Pricing, Permissions, & Versioning
-  url: /basics/
+  url: /pricing-permissions/
 
 - title: FAQ
   url: /faqs/
+
+- title: Basics
+  url: /basics/
+  nav_category: basics

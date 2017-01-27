@@ -2,8 +2,8 @@
 layout: article
 title:  "Algorithm Profiles"
 excerpt: "A walk through of the algorithm profile page."
-categories: basics 
-tags: [alg-dev-getting-started, app-dev-getting-started]
+categories: basics
+tags: [basics]
 show_related: true
 author: liz_rush
 image:
@@ -42,7 +42,7 @@ The estimate is based off the average duration of API calls. Your call duration 
 
 ![Algorithm Profile permissions]({{ site.baseurl }}/images/post_images/algorithm_profiles/permissions.png)
 
-The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here](http://developers.algorithmia.com/faqs/algorithm_basics/#permissions).
+The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here](/faqs/algorithm_basics/#permissions).
 
 
 #### Algorithm Console & Sample Input:
@@ -62,4 +62,4 @@ If the algorithm is open-source, you will see a tab in the purple overview secti
 
 #### Wrapping Up
 
-You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call](http://developers.algorithmia.com/guides/getting-started/) or learn more about [algorithm pricing, permissions, and versioning](http://developers.algorithmia.com/faqs/algorithm_basics/).
+You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call](/guides/getting-started/) or learn more about [algorithm pricing, permissions, and versioning](/faqs/algorithm_basics/).
