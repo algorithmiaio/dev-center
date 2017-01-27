@@ -46,7 +46,7 @@ Now you’re ready to start working with Algorithmia for Android development.
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](http://developers.algorithmia.com/application-development/data-sources/) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/).
+For application developers, [Algorithmia's Data Portal](/application-development/data-sources/) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/).
 
 This guide will show you how to work with the [Hosted Data](https://algorithmia.com/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
 

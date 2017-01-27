@@ -23,7 +23,7 @@ By clicking this button, you'll be prompted with a dialog that allows you to giv
 <br>
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
 
-You can learn more about these properties in the [Algorithm Basics](http://developers.algorithmia.com/basics/algorithm_basics/) article.
+You can learn more about these properties in the [Algorithm Basics](/basics/algorithm_basics/) article.
 
 Algorithmia will now create the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 

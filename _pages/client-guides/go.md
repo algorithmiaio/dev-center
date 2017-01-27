@@ -51,7 +51,7 @@ Now you’re ready to start working with Algorithmia in Go.
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](http://developers.algorithmia.com/application-development/data-sources/) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/).
+For application developers, [Algorithmia's Data Portal](/application-development/data-sources/) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/).
 
 This guide will show you how to work with the [Hosted Data](https://algorithmia.com/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
 
@@ -137,7 +137,7 @@ This endpoint will replace a file if it already exists. If you wish to avoid rep
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide](http://developers.algorithmia.com/application-development/data-sources/hosted-data-guide/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 
 ### Downloading Data from a Data Collection
 

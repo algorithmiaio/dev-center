@@ -64,7 +64,7 @@ For example this guide shows how to create an algorithm that splits text up into
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
 
-Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section](http://developers.algorithmia.com/basics/algorithm_basics/).
+Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section](/basics/algorithm_basics/).
 {: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
@@ -103,7 +103,7 @@ As you can see in your algorithm editor, there is a basic algorithm already writ
 
 To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
 
-If you are interested in learning more about versioning check out the [Algorithm Basics Section](http://developers.algorithmia.com/basics/algorithm_basics/).
+If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/algorithm_basics/).
 {: .notice-info}
 
 To test the algorithm type your name or another string in the console and hit enter on your keyboard:
@@ -364,7 +364,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="http://developers.algorithmia.com/clients/python/">Algorithmia Client Python Docs</a>
+* <a href="/clients/python/">Algorithmia Client Python Docs</a>
 * [Hosted Data Source](/developers/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>

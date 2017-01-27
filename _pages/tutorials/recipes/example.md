@@ -219,6 +219,6 @@ Integrating Algorithmia into Android is an easy and convenient way to leverage a
 
 ### Further Reading:
 
-* [The Algorithmia Client](http://developers.algorithmia.com/clients/java/)
+* [The Algorithmia Client](/clients/java/)
 * [Algorithmia Java Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.3) <i class="fa fa-external-link"></i>
 * <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>
