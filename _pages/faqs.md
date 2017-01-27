@@ -10,8 +10,7 @@ image:
 ---
 
 <div id="faqs-index">
-  <section class="row">
-
+  <section class="row row-sm">
     <div class="col-md-6">
        <!-- Pulls from data/tags.yml to allow for data defined name attr -->
       {% assign platform_tag = site.data.tags["platform-faq"] %}
@@ -30,25 +29,24 @@ image:
     </div>
   </section>
 
-<section class="row">
-  <div class="col-md-12">
+  <section class="row">
+    <div class="col-md-12">
+      {% assign faq_tags = "platform-faq|algo-dev-faq" | split:"|" %}
+      {% assign faq_pages = site.pages | where: "categories", "faqs" %}
+      {% for tag in faq_tags %}
+        {% assign tagged_pages = faq_pages | where: "tags", tag %}
+        {% assign tag_info = site.data.tags[tag] %}
 
-{% assign faq_tags = "platform-faq|algo-dev-faq" | split:"|" %}
-{% assign faq_pages = site.pages | where: "categories", "faqs" %}
-{% for tag in faq_tags %}
-  {% assign tagged_pages = faq_pages | where: "tags", tag %}
-  {% assign tag_info = site.data.tags[tag] %}
+      	 <h2 id="{{tag}}">{{ tag_info.name }}</h2>
 
-	<h2 id="{{tag}}">{{ tag_info.name }}</h2>
+        	<!-- list posts in tag -->
+        	<section class="faq-posts">
+        	{% for post in tagged_pages %}
+        		{% include faq-list-item.html %}
+        	{% endfor %}
+        	</section>
 
-	<!-- list posts in tag -->
-	<section class="faq-posts">
-	{% for post in tagged_pages %}
-		{% include faq-list-item.html %}
-	{% endfor %}
-	</section>
-
-{% endfor %}
-</div>
-</section>
+      {% endfor %}
+    </div>
+  </section>
 </div>
