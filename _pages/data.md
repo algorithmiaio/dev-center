@@ -11,6 +11,8 @@ author: steph_kim
 
 How easy is it? By creating an Algorithmia account you automatically have access to <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data Source</a> where you can store your data or algorithm output and if you have a <a href="https://www.dropbox.com/">Dropbox</a> or an <a href="https://aws.amazon.com/s3/">Amazon S3</a> account you can configure a new data source to permit Algorithmia to read and write files on your behalf. Once you've set up your data connections all three file hosting options are accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
 
+While all three data connections are available to application developers using our language clients, algorithm developers may only use <a href="https://algorithmia.com/data/hosted">Algorithmia's Hosted Data Source</a>.
+
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 ### Application data portal guides

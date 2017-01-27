@@ -3,7 +3,7 @@ layout: article_page
 title:  Host your model
 excerpt: "Guides to hosting a model using your favorite library."
 categories: algorithm-development
-nav_children: model-guides
+nav_category: model-guides
 tags: [model-guide-overview]
 show_related: false
 author: steph_kim

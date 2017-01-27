@@ -3,7 +3,7 @@ layout: article_page
 title:  Supported languages
 excerpt: "Guides to building an algorithm in your favorite language including: Python, R, Scala, Rust, Java, Ruby and JavaScript."
 categories: algorithm-development
-nav_children: languages
+nav_category: languages
 tags: [algo-dev]
 show_related: false
 author: steph_kim

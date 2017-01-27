@@ -8,19 +8,19 @@
 
 - title: Client Guides
   url: /client-guides/
-  category: client-guides
+  nav_category: client-guides
 
 - title: Tutorials
   url: /tutorials/
-  category: tutorials
+  nav_category: tutorials
 
 - title: Working with Data
   url: /data/
-  category: working-with-data
+  nav_category: working-with-data
 
 - title: Algorithm Development
   url: /algorithm-development/
-  category: algorithm-development
+  nav_category: algorithm-development
 
 - title: API Documentation
   url: http://docs.algorithmia.com
@@ -30,7 +30,7 @@
 
 - title: Bounties
   url: /bounties/
-  category: bounties
+  nav_category: bounties
 
 - title: Pricing, Permissions, & Versioning
   url: /basics/
