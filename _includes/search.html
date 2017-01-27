@@ -6,7 +6,7 @@
   {{#entries}}
   <hr>
   <article>
-    <h3><a href="/developers{{url}}">{{title}}</a></h3>
+    <h3><a href="{% endraw %}{{ site.baseurl }}{% raw %}/{{url}}">{{title}}</a></h3>
     <span class="breadcrumbs-title whitespace-sm">{{categories}}</span>
     <p>{{excerpt}}</p>
   </article>

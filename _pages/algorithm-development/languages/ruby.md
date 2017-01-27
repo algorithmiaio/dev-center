@@ -18,7 +18,7 @@ Algorithmia supports algorithm development in Ruby.
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="/application-development/client-guides/ruby/">Algorithmia Ruby Client</a>.
+via the <a href="{{ site.baseurl }}/application-development/client-guides/ruby/">Algorithmia Ruby Client</a>.
 
 #### Managing Dependencies
 
@@ -79,7 +79,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="/application-development/client-guides/ruby/">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/ruby/">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -96,5 +96,5 @@ while True
 
 #### Additional Resources
 
-* <a href="/clients/ruby/">Algorithmia Client Ruby Docs <i class="fa fa-external-link"></i></a>
+* <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Client Ruby Docs <i class="fa fa-external-link"></i></a>
 * <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 Docs</a>

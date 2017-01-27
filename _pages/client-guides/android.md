@@ -51,7 +51,7 @@ For application developers, [Algorithmia's Data Portal](/application-development
 This guide will show you how to work with the [Hosted Data](https://algorithmia.com/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
 
 If you want to check out how to build a simple Android app from start to finish using Algorithmia check out this [Android Sample App](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
 {: .notice-info}
@@ -175,7 +175,7 @@ For more information on collection-based Access Control Lists (ACLs) and other d
 
 So far you've created your data collection and checked and updated directory permissions. Now you're ready to upload the text file that you created at the beginning of the guide to your data collection using the Data API.
 
-**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](https://algorithmia.com/data/hosted) and dragging and dropping the file into `nlp_directory`.
+**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](https://algorithmia.com/data/hosted) and dragging and dropping the file into `nlp_directory`.
 
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
