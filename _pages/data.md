@@ -17,7 +17,7 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
 
 ### Application data portal guides
 {% assign data_connector_tags = "app-data-connectors" | split:"|" %}
-<div class="data-connectors">
+<div class="row data-connectors">
   {% for post in site.pages %}
     {% if data_connector_tags == post.tags %}
       <div class="col-xs-3 lang-tile">

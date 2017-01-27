@@ -16,14 +16,16 @@ How easy is it? By creating an Algorithmia account you automatically have access
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 ### Algorithm data portal guides:
-<div class="col-xs-3 lang-tile">
+<div class="row lang-tile">
   {% assign pages = site.pages | where: "categories", "algo-data" %}
   {% for post in pages %}
+  	<div class="col-xs-3">
   		<a  href="{{ post.url | relative_url }}">
   		{% if post.image.teaser %}
 		<img  src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
 		{% endif %}
 		</a>
 		<p class="lg"><a  href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+	</div>
   {% endfor %}
 </div>
