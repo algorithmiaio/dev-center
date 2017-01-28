@@ -32,9 +32,9 @@ cargo build
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
+Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
 
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import the Algorithmia library and create the Algorithmia client:
 
 {% highlight rust %}
 use algorithmia::*;
@@ -64,7 +64,7 @@ use algorithmia::data::*;
 use std::io::Read;
 {% endhighlight %}
 
-Now create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
+Now create a data collection called nlp_directory:
 
 {% highlight rust %}
 // Instantiate a DataDirectory object, set your data URI and call create
@@ -77,7 +77,7 @@ if nlp_directory.exists().unwrap() == false{
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions

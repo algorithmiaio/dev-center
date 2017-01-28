@@ -31,7 +31,9 @@ To install the Algorithmia Android Client, add the following line to your `app/b
 
 ## Authentication
 
-Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
+Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+
+Now import the Algorithmia library and create the Algorithmia client:
 
 {% highlight java %}
 import com.algorithmia
@@ -111,7 +113,7 @@ Import the DataDirectory object to work with data collections:
 import com.algorithmia.data.DataDirectory;
 {% endhighlight %}
 
-Now create a data collection called nlp_directory, note that `YOUR_USERNAME` in the data directory path will automatically fill in your Algorithmia username for you:
+Now create a data collection called nlp_directory:
 
 {% highlight java %}
 // Instantiate a DataDirectory object, set your data URI and call create
@@ -126,7 +128,7 @@ if (nlp_directory.exists() == false) {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions

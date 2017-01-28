@@ -30,7 +30,9 @@ install.packages("algorithmia")
 
 ## Authentication
 
-Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
+Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+
+Now import the Algorithmia library and create the Algorithmia client:
 
 {% highlight r %}
 library(algorithmia)
@@ -56,7 +58,7 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you::
+First create a data collection called nlp_directory:
 
 {% highlight r %}
 # Set your Data URI
@@ -67,7 +69,7 @@ nlp_directory$create()
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions

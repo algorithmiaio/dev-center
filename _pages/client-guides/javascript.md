@@ -24,7 +24,9 @@ You can include the JavaScript file as a script tag:
 
 #### Call an Algorithm
 
-To authenticate with the JavaScript client, simply set your API key with the following where `"YOUR_API_KEY"` will automatically set your Algorithmia API key:
+Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+
+Now import the Algorithmia library and create the Algorithmia client:
 
 {% highlight javascript %}
 var client = Algorithmia.client("YOUR_API_KEY");
