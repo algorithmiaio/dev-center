@@ -28,14 +28,12 @@ npm install --save algorithmia
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
-
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
 
 {% highlight js %}
 var algorithmia = require("algorithmia");
 
-var client = algorithmia(process.env.ALGORITHMIA_API_KEY);
+var client = algorithmia("YOUR_API_KEY");
 {% endhighlight %}
 
 Now you’re ready to start working with Algorithmia in Node.
@@ -53,11 +51,11 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory:
+First create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
 
 {% highlight js %}
 // Instantiate a DataDirectory object, set your data URI and call Create
-var nlp_directory = client.dir("data://your_username/nlp_directory")
+var nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
 // Create your data collection if it does not exist
 nlp_directory.exists(function(exists) {
     if (exists == false) {
@@ -73,9 +71,9 @@ nlp_directory.exists(function(exists) {
 });
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -103,7 +101,7 @@ var local_file = "local_path_to_your_file/jack_london.txt"
 Next upload your local file to the data collection using the `.putFile()` method:
 
 {% highlight js %}
-var text_file = "data://your_user_name/nlp_directory/jack_london.txt"
+var text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 client.file(text_file).exists(function(exists) {
     // Check if file exists, if it doesn't create it
@@ -210,7 +208,7 @@ var algorithmia = require("algorithmia");
 var client = algorithmia(process.env.ALGORITHMIA_API_KEY);
 
 // Set your Data URI
-var nlp_directory = client.dir("data://your_username/nlp_directory")
+var nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
 // Create your data collection if it does not exist
 nlp_directory.exists(function(exists) {
     if (exists == false) {
@@ -227,7 +225,7 @@ nlp_directory.exists(function(exists) {
 
 var local_file = "local_path_to_your_file/jack_london.txt"
 
-var text_file = "data://your_user_name/nlp_directory/jack_london.txt"
+var text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 client.file(text_file).exists(function(exists) {
     // Check if file exists, if it doesn't create it

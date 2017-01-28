@@ -31,9 +31,7 @@ go get github.com/algorithmiaio/algorithmia-go
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
-
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
 
 {% highlight go %}
 // Authenticate with your API key
@@ -41,7 +39,7 @@ import (
 	algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
-var apiKey = "{Your API key here}"
+var apiKey = "YOUR_API_KEY"
 
 // Create the Algorithmia client object
 var client = algorithmia.NewClient(apiKey, "")
@@ -62,11 +60,11 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory:
+Now create a data collection called nlp_directory, note that `YOUR_USERNAME` in the data directory path will automatically fill in your Algorithmia username for you:
 
 {% highlight go %}
 // Instantiate a DataDirectory object, set your data URI and call Create
-nlp_directory := client.Dir("data://.my/nlp_directory")
+nlp_directory := client.Dir("data://YOUR_USERNAME/nlp_directory")
 dir_exists, dir_err := nlp_directory.Exists()
 
 // Create your data collection if it does not exist
@@ -82,7 +80,7 @@ if dir_err != nil {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -209,14 +207,14 @@ import (
 	algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
-var apiKey = "{Your API key here}"
+var apiKey = "YOUR_API_KEY"
 
 // Create the Algorithmia client object
 var client = algorithmia.NewClient(apiKey, "")
 
 // Instantiate a DataDirectory object, set your data URI and call Create
 // Set your Data URI
-nlp_directory := client.Dir("data://.my/nlp_directory")
+nlp_directory := client.Dir("data://YOUR_USERNAME/nlp_directory")
 dir_exists, dir_err := nlp_directory.Exists()
 
 // Create your data collection if it does not exist
@@ -237,7 +235,7 @@ fmt.Println(acl.ReadAcl() == algorithmia.AclTypeMyAlgos) //true
 nlp_directory.UpdatePermissions(algorithmia.ReadAclPrivate)
 fmt.Println(acl.ReadAcl() == algorithmia.AclTypePrivate) // true
 
-var text_file = "data://your_username/nlp_directory/jack_london.txt"
+var text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 var local_file = "/your_local_path_to_file/jack_london.txt"
 file_exists, file_err := client.File(text_file).Exists()
 

@@ -29,15 +29,13 @@ pip install algorithmia
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
-
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
 
 {% highlight python %}
 import Algorithmia
 
 # Authenticate with your API key
-apiKey = '{Your API key here}'
+apiKey = "YOUR_API_KEY"
 # Create the Algorithmia client object
 client = Algorithmia.client(apiKey)
 {% endhighlight %}
@@ -57,19 +55,19 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory:
+First create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
 
 {% highlight python %}
 # Instantiate a DataDirectory object, set your data URI and call create
-nlp_directory = client.dir("data://your_username/nlp_directory")
+nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
 # Create your data collection if it does not exist
 if nlp_directory.exists() is False:
 	nlp_directory.create()
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -105,7 +103,7 @@ So far you've created your data collection and checked and updated directory per
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
 {% highlight python %}
-text_file = "data://your_username/nlp_directory/jack_london.txt"
+text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 {% endhighlight %}
 
 Next upload your local file to the data collection using the `.putFile()` method:
@@ -188,7 +186,7 @@ apiKey = '{Your API key here}'
 client = Algorithmia.client(apiKey)
 
 # Set your Data URI
-nlp_directory = client.dir("data://your_username/nlp_directory")
+nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
 # Create your data collection if it does not exist
 if nlp_directory.exists() is False:
 	nlp_directory.create()
@@ -201,7 +199,7 @@ acl.read_acl == AclType.my_algos  # True
 nlp_directory.update_permissions(ReadAcl.private)
 nlp_directory.get_permissions().read_acl == AclType.private # True
 
-text_file = "data://your_username/nlp_directory/jack_london.txt"
+text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 # Upload local file
 if client.file(text_file).exists() is False:

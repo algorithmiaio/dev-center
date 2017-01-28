@@ -30,15 +30,13 @@ install.packages("algorithmia")
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
-
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
 
 {% highlight r %}
 library(algorithmia)
 
 # Authenticate with your API key
-apiKey <- '{Your API key here}'
+apiKey <- "YOUR_API_KEY"
 # Create the Algorithmia Client object
 client <- getAlgorithmiaClient(apiKey)
 {% endhighlight %}
@@ -58,18 +56,18 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory:
+First create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you::
 
 {% highlight r %}
 # Set your Data URI
-nlp_directory <- client$dir("data://your_username/nlp_directory")
+nlp_directory <- client$dir("data://YOUR_USERNAME/nlp_directory")
 # Create your data collection
 nlp_directory$create()
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -99,7 +97,7 @@ So far you've created your data collection and checked and updated directory per
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
 {% highlight r %}
-text_file <- "data://your_username/nlp_directory/jack_london.txt"
+text_file <- "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 {% endhighlight %}
 
 Next upload your local file to the data collection using the `.putFile()` method:
@@ -167,10 +165,6 @@ If you are interested in learning more about working with unstructured text data
 
 ## Conclusion
 
-This guide covered installing Algorithmia via pip, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
-
-## Conclusion
-
 This guide covered installing Algorithmia via R, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
 For more information on the methods available using the Data API in R check out the [Data API](http://docs.algorithmia.com/?r#data-api-specification) documentation or the [R Client Docs](https://github.com/algorithmiaio/algorithmia-r.git).
@@ -181,12 +175,12 @@ For convenience, here is the whole script available to run:
 library(algorithmia)
 
 # Authenticate with your API key
-apiKey <- '{Your API key here}'
+apiKey <- "YOUR_API_KEY"
 # Create the Algorithmia Client object
 client <- getAlgorithmiaClient(apiKey)
 
 # Instantiate a DataDirectory object, set your data URI and call Create
-nlp_directory <- client$dir("data://your_username/nlp_directory")
+nlp_directory <- client$dir("data://YOUR_USERNAME/nlp_directory")
 # Create your data collection
 nlp_directory$create()
 
@@ -198,7 +192,7 @@ acl$read_acl # Returns "MY_ALGORITHMS" Acl Type
 nlp_directory$update_permissions(ReadAcl.private)
 nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 
-text_file <- "data://your_username/nlp_directory/jack_london.txt"
+text_file <- "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 # Upload local file
 client$file(text_file)$putFile("/your_local_path_to_file/jack_london.txt")

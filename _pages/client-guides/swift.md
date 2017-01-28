@@ -44,7 +44,7 @@ Now import the Algorithmia library and create the Algorithmia client, passing in
 import algorithmia
 
 # Create the Algorithmia client object
-let client = Algorithmia.client(simpleKey: "your_api_key")
+let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
 {% endhighlight %}
 
 Now you’re ready to start working with Algorithmia in Swift.
@@ -62,11 +62,11 @@ If you wish to follow along working through the example yourself, create a text 
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
 
-First create a data collection called nlp_directory:
+First create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
 
 {% highlight swift %}
 // Instantiate a DataDirectory object, set your data URI and call create
-let nlp_directory = client.dir("data://your_username/nlp_directory");
+let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 
 nlp_directory.exists() { exists, error in
     if (error == nil){
@@ -83,9 +83,9 @@ nlp_directory.exists() { exists, error in
 }
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -112,7 +112,7 @@ So far you've created your data collection and checked and updated directory per
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
 {% highlight swift %}
-let text_file = "data://your_username/nlp_directory/jack_london.txt"
+let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 {% endhighlight %}
 
 Next upload your local file to the data collection using the `.putFile()` method:
@@ -251,10 +251,10 @@ For convenience, here is the whole script available to run:
 import algorithmia
 
 # Create the Algorithmia client object
-let client = Algorithmia.client(simpleKey: "your_api_key")
+let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
 
 // Instantiate a DataDirectory object, set your data URI and call create
-let nlp_directory = client.dir("data://your_username/nlp_directory");
+let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 
 nlp_directory.exists() { exists, error in
     if (error == nil){
@@ -270,7 +270,7 @@ nlp_directory.exists() { exists, error in
     }
 }
 
-let text_file = "data://your_username/nlp_directory/jack_london.txt"
+let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 nlp_directory.file(name: text_file).exists() { exists, error in
     if (error == nil) {

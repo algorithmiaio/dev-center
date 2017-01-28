@@ -37,13 +37,11 @@ Using version range [,1.1.0) is recommended as it implies using the latest backw
 
 ## Authentication
 
-Next, retrieve your API key from the Credentials tab under "My Profile" after you've logged in to [Algorithmia](https://algorithmia.com/).
-
-Now import the Algorithmia library and create the Algorithmia client, passing in your API key that you got from the Credentials tab found in "My Profile":
+Now import Algorithmia and create the Algorithmia client, passing in `"YOUR_API_KEY"` which will automatically pull down your API key from Algorithmia:
 
 {% highlight java %}
 import com.algorithmia.*;
-AlgorithmiaClient client = Algorithmia.client(apiKey);
+AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 {% endhighlight %}
 
 Now you’re ready to start working with Algorithmia in Java.
@@ -67,11 +65,11 @@ Import the DataDirectory object to work with data collections:
 import com.algorithmia.data.DataDirectory;
 {% endhighlight %}
 
-Now create a data collection called nlp_directory:
+Now create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
 
 {% highlight java %}
 // Instantiate a DataDirectory object, set your data URI and call create
-DataDirectory nlp_directory = client.dir("data://your_username/nlp_directory");
+DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 // Create your data collection if it does not exist
 try {
     if (nlp_directory.exists() == false) {
@@ -82,9 +80,9 @@ try {
 }
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -167,7 +165,7 @@ Next check if the file that you just uploaded to data collections exists and the
 
 {% highlight java %}
 // Download contents of file as a string
-String text_file = "data://.my/nlp_directory/jack_london.txt";
+String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 try {
     if (client.file(text_file).exists() == true) {
         String input = client.file(text_file).getString();
@@ -255,9 +253,9 @@ public class Main {
 
     public static void main(String[] args) throws APIException {
 	// write your code here
-        AlgorithmiaClient client = Algorithmia.client("your_api_key");
+        AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
         // Set your Data URI
- 		DataDirectory nlp_directory = client.dir("data://your_username/nlp_directory");
+ 		DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
         // Create your data collection if it does not exist
         try {
             if (nlp_directory.exists() == false) {
@@ -289,7 +287,7 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        String text_file = "data://.my/nlp_directory/jack_london.txt";
+        String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
         try {
             if (client.file(text_file).exists() == true) {
                 String input = client.file(text_file).getString();

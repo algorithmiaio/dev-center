@@ -42,7 +42,7 @@ use algorithmia::*;
 let client = Algorithmia::client("YOUR_API_KEY");
 {% endhighlight %}
 
-Now you’re ready to start working with Algorithmia in Java.
+Now you’re ready to start working with Algorithmia in Rust.
 
 ## Working with Data Using the Data API
 
@@ -64,20 +64,20 @@ use algorithmia::data::*;
 use std::io::Read;
 {% endhighlight %}
 
-Now you can create a data collection called nlp_directory:
+Now create a data collection called nlp_directory, note that `YOUR_USERNAME` will automatically fill in your Algorithmia username for you:
 
 {% highlight rust %}
 // Instantiate a DataDirectory object, set your data URI and call create
-let nlp_directory = client.dir("data://your_username/nlp_directory");
+let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 
 if nlp_directory.exists().unwrap() == false{
     nlp_directory.create(DataAcl::default());
 }
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your YOUR_USERNAME you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -99,7 +99,7 @@ So far you've created your data collection and checked and updated directory per
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
 {% highlight rust %}
-let text_file = "data://your_username/nlp_directory/jack_london.txt";
+let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 {% endhighlight %}
 
 Next upload your local file to the data collection using the .put_file() method:
@@ -191,13 +191,13 @@ use std::io::Read;
 let client = Algorithmia::client("YOUR_API_KEY");
 
 // Instantiate a DataDirectory object, set your data URI and call create
-let nlp_directory = client.dir("data://your_username/nlp_directory");
+let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 
 if nlp_directory.exists().unwrap() == false{
     nlp_directory.create(DataAcl::default());
 }
 
-let text_file = "data://your_username/nlp_directory/jack_london.txt";
+let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 
 // Check if file exists
 if client.file(text_file).exists().unwrap() == false{
