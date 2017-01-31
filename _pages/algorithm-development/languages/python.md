@@ -85,7 +85,7 @@ If you have any dependencies you can add them by typing in the package name to t
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-**Note:** If you did add any dependencies, you would still need to include an import statement to your algorithm file as you would do for any Python script.
+**Note:** If you want to add any dependencies, you still need to include an import statement to your algorithm file as you would do for any Python script.
 
 For example, to make use of numpy, you would include the line:
 
@@ -103,7 +103,9 @@ As you can see in your algorithm editor, there is a basic algorithm already writ
 
 To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
 
-If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/algorithm_basics/).
+If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
+
+Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
 
 To test the algorithm type your name or another string in the console and hit enter on your keyboard:
