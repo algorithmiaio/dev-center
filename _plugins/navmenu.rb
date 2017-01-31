@@ -62,7 +62,7 @@ module Jekyll
 
     def doc_to_item(pages, document)
       children = []
-      nav_category = document.data['nav_children']
+      nav_category = document.data['nav_category']
       if nav_category
         children = pages[nav_category].map{|p| doc_to_item(pages, p) }
       end
