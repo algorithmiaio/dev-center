@@ -116,7 +116,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
-This algorithm takes a Python dictionary where the user will be expected to pass in a JSON formatted object which is deserialized into a Python dictionary before your algorithm is called.
+The first algorithm that we'll create will take a JSON formatted object passed as input by the user which is deserialized into a Python dictionary before the algorithm is called.
 
 It will output a JSON formatted object which the user will consume with an API call to the algorithm path which is found at the bottom of the algorithm description page and is based on your Algorithmia user name and the name of your algorithm.
 
@@ -176,10 +176,13 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 ### Working with Data Stored on Algorithmia
 
-This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source](/developers/data/).
+This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted).
 
-While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source](/developers/data/) to host data for algorithm development.
+While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{ site.baseurl }}/data/hosted) to host data for algorithm development.
 {: .notice-warning}
+
+#### Prerequisites
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted).
 
 This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and tokenizes the text:
 
@@ -219,12 +222,10 @@ def apply(input):
 
 After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.
 
-If you haven't worked with data collections before you can find more information under the [Hosted Data Source](/developers/data/) documentation.
-
-Following the example below replace the path to your data collection with your user name, data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
+Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
 
 {% highlight python %}
-{"user_file": "data://user_name/data_collection_dir/data_file.txt"}
+{"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
 {% endhighlight %}
 
 The code above with return both the original text and the tokenized list of each sentence.
@@ -240,7 +241,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -291,7 +292,7 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This should return a tokenized list of strings:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console Python" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these guides fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -338,7 +339,7 @@ For more information on error handling see the [Algorithmia API Docs](http://doc
 
 ## <a id="algorithm-checklist">Algorithm Checklist</a>
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist](/basics/algorithm_checklist/).
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -352,13 +353,13 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing](/basics/algorithm_basics/#pricing) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{ site.baseurl }}/pricing-permissions/) for more information on how much algorithms will cost to run.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ### Editing an Algorithm
 
-Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia](/algorithm-development/git-support/) from your current workflow.
+Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
 ## <a id="conclusion-resources">Conclusion and Resources</a>
 
