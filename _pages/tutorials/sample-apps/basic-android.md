@@ -9,7 +9,9 @@ excerpt: "A code walk-through of a simple Android app using Algorithmia."
 image:
   feature: /post_images/android/android_robot_skateboarding.png
   teaser: /post_images/android/android_robot.png
+github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
 ---
+
 {% include toc.html %}
 
 In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.

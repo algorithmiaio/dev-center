@@ -80,12 +80,17 @@
         emptyMsg: '<p>No results found...</p>'
       });
 
-      $('#search-query').on('input', function(el) {
-        if(el.target.value.length < 3) {
+      $('#search-query').on('input', function(evt) {
+        if(evt.target.value.length < 3) {
           $('#main-content').show();
         } else {
           $('#main-content').hide();
         }
+      });
+
+      $('.sidebar .category > a').on('click', function(evt) {
+        evt.preventDefault();
+        evt.currentTarget.parentNode.classList.toggle('active');
       });
 
       // If there is a query string that will get picked up by lunrSearch
