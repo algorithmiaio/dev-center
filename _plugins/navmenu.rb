@@ -37,6 +37,7 @@ module Jekyll
         end
 
         if item['url'].start_with?('http://', 'https://')
+          target = "target='_blank'"
           icon = ' <i class="fa fa-external-link" aria-hidden="true"></i>'
         end
 
@@ -46,7 +47,7 @@ module Jekyll
           "#{@baseurl}#{item['url']}"
         end
 
-        html << "<a href='#{href}'>#{item['title']}#{icon}</a>"
+        html << "<a href='#{href}' #{target}>#{item['title']}#{icon}</a>"
 
         if is_active and item['children'] and item['children'].count > 0
           html << render_list(page_url, item['children'])
