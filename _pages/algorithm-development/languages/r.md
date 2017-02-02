@@ -67,7 +67,7 @@ Find out more about licensing, algorithm permissions and GPU's in the [Algorithm
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_r.png" alt="Load your libraries" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_r.png" alt="Algorithm console R" class="screenshot">
 
 ## <a id="managing-dependencies">Managing Dependencies</a>
 
@@ -79,7 +79,7 @@ On the algorithm editor page there is a button on the top right that says "Depen
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/r-dependencies.png" alt="Set your dependencies" class="screenshot">
 
-Add dependencies by adding the library name to the file.
+You can add dependencies by adding the library name to the file.
 
 Please read the details regarding loading dependencies in the comments of the dependency file. There are three different ways to include your dependencies so read through each one to decide which one is right for your project.
 {: .notice-info}
@@ -89,7 +89,7 @@ The Algorithmia dependency is already installed for your convenience and relies 
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-**Note:** If you want to add any dependencies, you still need to load it via library() to your algorithm file as you would do for any R script.
+**Note:** If you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
 
 For example, to make use of lubridate, you would include the line:
 
@@ -233,6 +233,10 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
+
+#### Working with JSON Data
+
+Note that we use the rjson package to parse JSON within your algorithm.
 
 ### Calling Other Algorithms and Managing Data
 

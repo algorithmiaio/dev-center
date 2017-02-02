@@ -79,13 +79,13 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot">
 
 If you have any dependencies you can add them by typing in the package name to the `requirements.txt` file.
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-**Note:** If you want to add any dependencies, you still need to include an import statement to your algorithm file as you would do for any Python script.
+**Note:** If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
 
 For example, to make use of numpy, you would include the line:
 
