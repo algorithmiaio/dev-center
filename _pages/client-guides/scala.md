@@ -7,7 +7,7 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/scala.svg
-repository: https://github.com/algorithmiaio/algorithmia-java.git
+repository: https://github.com/algorithmiaio/algorithmia-java
 ---
 
 If you work in Scala, you can use the Algorithmia Java Client

@@ -134,7 +134,7 @@ Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies
 but it is also possible to specify dependendies from a git URL.
 
 To configure depdendencies, click the 'Dependencies' button on the algorithm editor page which provides a way to edit the `Cargo.toml` file.
-See the [Cargo Manifest](http://doc.crates.io/manifest.html#the-dependencies-section) for details on editting dependencies.
+See the [Cargo dependency docs](http://doc.crates.io/specifying-dependencies.html) for details on editting dependencies.
 
 <aside class="notice">
   Note: By default the <code>algorithmia</code> dependency will be updated on every build to pick up any backward-compatible fixes.
@@ -149,13 +149,13 @@ See the [Cargo Manifest](http://doc.crates.io/manifest.html#the-dependencies-sec
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
 
 #### Additional Resources
 
-* [Algorithmia Rust Client](/client-guides/rust/)
+* [Algorithmia Rust Client]({{ site.baseurl }}/client-guides/rust/)
 * [Rust standard library](https://doc.rust-lang.org/std/)
 * [Crates.io](https://crates.io/)

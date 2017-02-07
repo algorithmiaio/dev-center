@@ -16,11 +16,11 @@ To call algorithms and interact with the Data API, you'll use an API key to auth
 
 ## Your default API key
 
-To view your API keys, head on over to your profile on Algorithmia and click on the "Credentials" option in the horizontal menu. For more information about your profile, be sure to check out the [Your Profile guide](https://developers.algorithmia.com/basics/your-profile) for more information.
+To view your API keys, head on over to your profile on Algorithmia and click on the "Credentials" option in the horizontal menu. For more information about your profile, be sure to check out the [Your Profile guide]({{ site.baseurl }}/basics/your-profile/) for more information.
 
 ![API keys home]({{ site.baseurl }}/images/post_images/api_keys/api_keys_home.png)
 
-When you sign up for Algorithmia, your account is created with a default API key. Conveniently, it is named `default-key`! This key will show up in the code snippets on an algorithm profile page when you are signed in, allowing you to easily make calls to the algorithm either through the web console or by copying the code directly to include in your program. 
+When you sign up for Algorithmia, your account is created with a default API key. Conveniently, it is named `default-key`! This key will show up in the code snippets on an algorithm profile page when you are signed in, allowing you to easily make calls to the algorithm either through the web console or by copying the code directly to include in your program.
 
 If you delete your `default-key`, it will no longer show up in the code snippets on the algorithm profile pages. Simply create a new key and name it `default-key` to have it appear again!
 {: .notice-info }
@@ -33,19 +33,19 @@ Let's walk through the process of adding an additional API key to your account. 
 
 ## Access options
 
-Each API key can be customized to enable or restrict access depending on your needs. This is particularly helpful if you are running multiple applications or websites that use the Algorithmia API. Each app can use a different key so that if they are ever compromised (such as accidentally pushing a key to GitHub), you won't have to reset the API key for each project. 
+Each API key can be customized to enable or restrict access depending on your needs. This is particularly helpful if you are running multiple applications or websites that use the Algorithmia API. Each app can use a different key so that if they are ever compromised (such as accidentally pushing a key to GitHub), you won't have to reset the API key for each project.
 
 This allows you to put security first by only enabling the access you actually need. :closed_lock_with_key:
 
 ### Named algorithms only
 
-One way you can restrict access with an API key is to only white list the algorithms that you want that key to be able to call. 
+One way you can restrict access with an API key is to only white list the algorithms that you want that key to be able to call.
 
 You can do this by adding the shorthand name for the algorithms you want the API key to access like so:
 
 ![caller origin]({{ site.baseurl }}/images/post_images/api_keys/algo_restrictions.png)
 
-Note that we are using the alias version of the algorithm: `algo://` is the prefix you'll need to use before the owner name and algorithm name. Let's say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I'll name my key after the project, then add the algorithms it can call. If I want to use [Generate Paragraph From Trigram](https://algorithmia.com/algorithms/lizmrush/GenerateParagraphFromTrigram), I'll format the alias like this: `algo://` + the algorithm owner + the algorithm name. Thus Generate Paragraph from Trigram would end ups as `algo://lizmrush/GenerateParagraphFromTrigram`. 
+Note that we are using the alias version of the algorithm: `algo://` is the prefix you'll need to use before the owner name and algorithm name. Let's say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I'll name my key after the project, then add the algorithms it can call. If I want to use [Generate Paragraph From Trigram](https://algorithmia.com/algorithms/lizmrush/GenerateParagraphFromTrigram), I'll format the alias like this: `algo://` + the algorithm owner + the algorithm name. Thus Generate Paragraph from Trigram would end ups as `algo://lizmrush/GenerateParagraphFromTrigram`.
 
 ![caller origin]({{ site.baseurl }}/images/post_images/api_keys/algo_restrictions_no_star.png)
 

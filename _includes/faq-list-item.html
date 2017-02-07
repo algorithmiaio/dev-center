@@ -7,7 +7,8 @@
       {{ post.excerpt | truncate: 500 }}
       <a href="{{ post.url | relative_url }}">Read more</a>
     {% else %}
-      {{ post.content | markdownify }}
+      {% assign replacer = '{{ site.baseurl }}' %}
+      {{ post.content | replace: replacer, site.baseurl | markdownify }}
     {% endif %}
   </p>
 </li>

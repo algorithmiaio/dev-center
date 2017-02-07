@@ -19,14 +19,14 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-algorithm)
+* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
-* [I/O for your Algorithms](#io-algorithms)
+* [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-resources)
+* [Conclusion and Resources](#conclusion-and-resources)
 
 ## [Available Libraries](#available-libraries)
 
@@ -38,9 +38,9 @@ is available for you to use in your algorithms.
 Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, Numpy and many others by adding them as a dependency in your algorithm.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/application-development/client-guides/python/">Algorithmia Python Client</a>.
+via the <a href="{{ site.baseurl }}/client-guides/python/">Algorithmia Python Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -64,14 +64,14 @@ For example this guide shows how to create an algorithm that splits text up into
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
 
-Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section](/basics/algorithm_basics/).
+Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section]({{ site.baseurl }}/pricing-permissions/).
 {: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -97,13 +97,13 @@ in the dependencies file and the line
 
 in the main file.
 
-## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+## Write your First Algorithm<
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
 To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
 
-If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
+If you are interested in learning more about versioning check out the [Algorithm Permissions Section]({{ site.baseurl }}/pricing-permissions/).
 
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
@@ -112,7 +112,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/run_default_algo.png" alt="Run basic algorithm in console Python" class="screenshot">
 
-## <a id="io-algorithms">I/O for your Algorithms</a>
+## I/O for your Algorithms
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
@@ -241,7 +241,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -297,7 +297,7 @@ As you can see from these examples, fields that are passed into your algorithm b
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
-## <a id="error-handling">Error Handling</a>
+## Error Handling
 
 In the above code examples we showed how to create an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:
 
@@ -336,13 +336,13 @@ except:
 
 For more information on error handling see the [Algorithmia API Docs](http://docs.algorithmia.com/?python#error-handling).
 
-## <a id="algorithm-checklist">Algorithm Checklist</a>
+## Algorithm Checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## <a id="publish-algorithm">Publish an Algorithm</a>
+## Publish Algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -360,14 +360,14 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
-## <a id="conclusion-resources">Conclusion and Resources</a>
+## Conclusion and Resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
 For more resources:
 
-* <a href="{{ site.baseurl }}/clients/python/">Algorithmia Client Python Docs</a>
-* [Hosted Data Source](/developers/data/)
+* <a href="{{ site.baseurl }}/client-guides/python/">Algorithmia Client Python Docs</a>
+* [Hosted Data Source]({{ site.baseurl }}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="fa fa-external-link"></i></a>

@@ -55,7 +55,7 @@ For example:
 
     >The items are not ordered and there is no customer identification. For simplicity, you may ignore multiple item purchases - two or more loaves of bread just count as one bread purchase. The items are separated by whitespace, and the only constraint on the format is that items but be uniquely identifiable by the string and the string may contain no whitespaces or quotation marks.
 
-- **Example Data:** If available, we recommend providing sample data so that the algorithm developer can see exactly what data they will be working with. Using the [Algorithmia Data API](http://docs.algorithmia.com/#the-data-api) to upload a sample data set is recommended.
+- **Example Data:** If available, we recommend providing sample data so that the algorithm developer can see exactly what data they will be working with. Using [Algorithmia Hosted Data]({{ site.baseurl }}/data/hosted/) to upload a sample data set is recommended.
 
 *Warning:* This data will be publicly accesible, we highly recommend providing data that is either fake or has no personally identifiable information.
 

@@ -7,7 +7,7 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/swift.svg
-repository: https://github.com/algorithmiaio/algorithmia-swift.git
+repository: https://github.com/algorithmiaio/algorithmia-swift
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Swift Client to call algorithms and manage your data through the Algorithmia platform.
@@ -51,9 +51,9 @@ Now you’re ready to start working with Algorithmia in Swift.
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](/application-development/data-sources/) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/).
+For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
-This guide will show you how to work with the [Hosted Data](https://algorithmia.com/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
+This guide will show you how to work with the [Hosted Data]({{ site.baseurl }}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
@@ -85,7 +85,7 @@ nlp_directory.exists() { exists, error in
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -103,7 +103,7 @@ nlp_directory.update(readACL:.PRIVATE) { error in
 
 Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. Read access allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions such as `readACL:.PUBLIC` go to the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions such as `readACL:.PUBLIC` go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 
 ### Upload Data to your Data Collection
 
@@ -140,7 +140,7 @@ This endpoint will replace a file if it already exists. If you wish to avoid rep
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide](/application-development/data-sources/hosted-data-guide/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 
@@ -243,7 +243,7 @@ If you are interested in learning more about working with unstructured text data
 
 This guide covered installing the Algorithmia Swift Client, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
-For more information on the methods available using the Data API using Swift check out the [Swift Client Language CocoaDocs](http://cocoadocs.org/docsets/algorithmia) and for examples of executing common tasks with Algorithmia go to the [Swift Client Docs](https://github.com/algorithmiaio/algorithmia-swift.git).
+For more information on the methods available using the Data API using Swift check out the [Swift Client Language CocoaDocs](http://cocoadocs.org/docsets/algorithmia) and for examples of executing common tasks with Algorithmia go to the [Swift Client Docs](https://github.com/algorithmiaio/algorithmia-swift).
 
 For convenience, here is the whole script available to run:
 

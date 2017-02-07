@@ -14,7 +14,7 @@ Understanding your profile on the Algorithmia platform will help you find all th
 
 {% include toc.html %}
 
-## Your Profile 
+## Your Profile
 
 To access your profile, simple click on the user drop down next to the notifications icon in the top right of the navigation bar:
 
@@ -24,19 +24,19 @@ Once inside the profile section, you'll find a horizontal menu of profile sectio
 
 ![profile main]({{ site.baseurl }}/images/post_images/your_profile/profile.png)
 
-The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published and the [Bounties](/basics/an-intro-to-bounties/) you've posted.
+The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published and the [Bounties]({{ site.baseurl }}/bounties/about/) you've posted.
 
 ## Credentials
 
-The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, labeled "default-key", is the key that will show up in the algorithm console when trying out algorithms in the browser. 
+The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, labeled "default-key", is the key that will show up in the algorithm console when trying out algorithms in the browser.
 
 ![Credentials]({{ site.baseurl }}/images/post_images/your_profile/credentials.png)
 
-Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide](/basics/customizing-api-keys/) to learn more.
+Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide]({{ site.baseurl }}/basics/customizing-api-keys/) to learn more.
 
 ## Account
 
-The account section of your profile is where you'll find the information about your account usage and your credits. 
+The account section of your profile is where you'll find the information about your account usage and your credits.
 
 ![Credits main]({{ site.baseurl }}/images/post_images/your_profile/credits_main.png)
 
@@ -49,11 +49,11 @@ Below the account overview, you'll see menu options to view your Usage, Earnings
 #### Usage
 ![Usage]({{ site.baseurl }}/images/post_images/your_profile/usage.png)
 
-The usage section displays the date, the algorithms you've called, and the stats on your usage. 
+The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
 The number of calls is the full number of the times that you've called the algorithm, but you'll see that sometimes the Billed Calls column displays a lower value. This is because we don't bill API calls that result in an error!
 
-The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column. 
+The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column.
 
 #### Earnings
 
@@ -61,13 +61,13 @@ The next section, Earnings, is where you will find the records of the calls made
 
 ![earnings]({{ site.baseurl }}/images/post_images/your_profile/earning.png)
 
-In this section, you'll see the algorithm listed by date as well as the version number for the algorithm. This is important if you are updating your algorithms and notice that people are still calling old versions. Knowing which versions of your algorithms that people are using will help you understand what backwards-compatibility you need as well as which versions are improvements for the algorithm callers. 
+In this section, you'll see the algorithm listed by date as well as the version number for the algorithm. This is important if you are updating your algorithms and notice that people are still calling old versions. Knowing which versions of your algorithms that people are using will help you understand what backwards-compatibility you need as well as which versions are improvements for the algorithm callers.
 
-In the case of earnings, you will only see the number of billable calls and their duration. You won't see the number of calls that resulted in an error and were not billed to the user who called the algorithm. The final column on the right is the total credits earned for that entry. 
+In the case of earnings, you will only see the number of billable calls and their duration. You won't see the number of calls that resulted in an error and were not billed to the user who called the algorithm. The final column on the right is the total credits earned for that entry.
 
 #### Transactions
 
-Find the history of your credits in the transactions section. 
+Find the history of your credits in the transactions section.
 
 ![Transactions]({{ site.baseurl }}/images/post_images/your_profile/transactions.png)
 
@@ -77,7 +77,7 @@ Here you'll see any purchases you've made for more credits as well as any credit
 
 In the edit profile section, you can update your name, email address, password, and notification settings.
 
-You can save billing information in your account under "Payment Info". This is especially helpful if you've set up your account to auto-reload when you run low on credits. 
+You can save billing information in your account under "Payment Info". This is especially helpful if you've set up your account to auto-reload when you run low on credits.
 
 ## Avatar
 

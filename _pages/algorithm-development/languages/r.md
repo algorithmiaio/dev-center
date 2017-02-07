@@ -19,26 +19,26 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-algorithm)
+* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
-* [I/O for your Algorithms](#io-algorithms)
+* [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-resources)
+* [Conclusion and Resources](#conclusion-and-resources)
 
 ## [Available Libraries](#available-libraries)
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
 The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.1</a>
-is available for you to use in your algorithms. 
+is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="{{ site.baseurl }}/client-guides/r/">Algorithmia R language Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -69,7 +69,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_r.png" alt="Algorithm console R" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -102,7 +102,7 @@ in the dependencies file and the line
 in the main file.
 
 
-## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+## Write your First Algorithm
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
@@ -117,7 +117,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_r.png" alt="Compile algorithm" class="screenshot">
 
-## <a id="io-algorithms">I/O for your Algorithms</a>
+## I/O for your Algorithms
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
@@ -137,7 +137,7 @@ library(algorithmia)
 # Note that you don't pass in your API key when creating an algorithm
 client <- getAlgorithmiaClient()
 
-# Create a generic error function 
+# Create a generic error function
 AlgorithmError <- function(error){
   stop(error, call. = FALSE)
 }
@@ -153,7 +153,7 @@ algorithm <- function(input){
     } else {
       print("Please pass in a valid input")
     }
-    
+
   }, error = function(e) {
     AlgorithmError(paste("Please pass in a valid input", "\n", e))
   }
@@ -193,7 +193,7 @@ library(algorithmia)
 
 client <- getAlgorithmiaClient()
 
-# Create a generic error function 
+# Create a generic error function
 AlgorithmError <- function(error){
   stop(error, call. = FALSE)
 }
@@ -249,7 +249,7 @@ library(algorithmia)
 
 client <- getAlgorithmiaClient()
 
-# Create a generic error function 
+# Create a generic error function
 AlgorithmError <- function(error){
   stop(error, call. = FALSE)
 }
@@ -290,7 +290,7 @@ As you can see from these examples, fields that are passed into your algorithm b
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
-## <a id="error-handling">Error Handling</a>
+## Error Handling
 
 In the above code examples we showed how to create an AlgorithmError function which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard R library error and an error thrown by your algorithm:
 
@@ -320,13 +320,13 @@ algo$pipe(list())$error$message
 
 For more information on error handling see the [Algorithmia API Docs](http://docs.algorithmia.com/?r#error-handling).
 
-## <a id="algorithm-checklist">Algorithm Checklist</a>
+## Algorithm Checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## <a id="publish-algorithm">Publish an Algorithm</a>
+## Publish Algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -345,7 +345,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
-## <a id="conclusion-resources">Conclusion and Resources</a>
+## Conclusion and Resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
@@ -354,5 +354,5 @@ In this guide we covered how to create an algorithm, work with different types o
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
 * [Algorithmia R client documentation]({{ site.baseurl }}/client-guides/r/)
-* [Hosted Data Source](/developers/data/)
+* [Hosted Data Source]({{ site.baseurl }}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?r)

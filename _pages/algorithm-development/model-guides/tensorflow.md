@@ -28,7 +28,7 @@ Here you'll want to create a data collection to host your graph and variable che
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/application-development/data-sources/hosted-data-guide/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
 
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot">
@@ -138,7 +138,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a>
 
-For more information and detailed steps: <a href="{{ site.baseurl }}/basics/your_first_algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
 

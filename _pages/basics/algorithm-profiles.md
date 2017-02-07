@@ -25,13 +25,13 @@ You can also see that the number of stars, followers, and number of API calls th
 
 #### Description, Pricing, & Permissions:
 
-The algorithm description is front-and-center on the algorithm profile page. The description is where the algorithm developer writes an explanation of what the algorithm does, what kind of input you need to use, and what kind of output you can expect from the algorithm. Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.  
+The algorithm description is front-and-center on the algorithm profile page. The description is where the algorithm developer writes an explanation of what the algorithm does, what kind of input you need to use, and what kind of output you can expect from the algorithm. Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
 ![Algorithm Profile description]({{ site.baseurl }}/images/post_images/algorithm_profiles/description.png)
 
-Below the description, you can see the various tags that the author has included. These tags provide the primary means for categorizing algorithms and also allow you to navigate to similar algorithms by clicking on any tag. 
+Below the description, you can see the various tags that the author has included. These tags provide the primary means for categorizing algorithms and also allow you to navigate to similar algorithms by clicking on any tag.
 
-By using the left-hand navigation on the profile page, you can see see the pricing and permissions information for the algorithm.  
+By using the left-hand navigation on the profile page, you can see see the pricing and permissions information for the algorithm.
 
 ![Algorithm Profile pricing]({{ site.baseurl }}/images/post_images/algorithm_profiles/pricing.png)
 
@@ -42,7 +42,7 @@ The estimate is based off the average duration of API calls. Your call duration 
 
 ![Algorithm Profile permissions]({{ site.baseurl }}/images/post_images/algorithm_profiles/permissions.png)
 
-The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here](/faqs/algorithm_basics/#permissions).
+The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here]({{ site.baseurl}}/pricing-permissions/).
 
 
 #### Algorithm Console & Sample Input:
@@ -62,4 +62,4 @@ If the algorithm is open-source, you will see a tab in the purple overview secti
 
 #### Wrapping Up
 
-You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call](/guides/getting-started/) or learn more about [algorithm pricing, permissions, and versioning](/faqs/algorithm_basics/).
+You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{ site.baseurl }}/getting-started/) or learn more about [algorithm pricing, permissions, and versioning]({{ site.baseurl }}/pricing-permissions/).

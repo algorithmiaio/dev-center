@@ -13,7 +13,7 @@ Welcome to Getting Started with the Algorithmia API. This guide will show you ho
 
 We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running so you can quickly develop intelligent applications in the language of your choice.
 
-If you want more detailed tutorials on how to work with the language clients including Android, CLi and how to work with AWS Lambda, check out our [Client Guides](/developers/client-guides/).
+If you want more detailed tutorials on how to work with the language clients including Android, CLi and how to work with AWS Lambda, check out our [Client Guides]({{ site.baseurl }}/client-guides/).
 
 ## Finding an Algorithm
 
@@ -27,7 +27,7 @@ POST https://api.algorithmia.com/v1/algo/:owner/:algoname
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
-If you want a complete guide on how to navigate an algorithm's description page including how to determine how the price of calling an algorithm, check out our [Algorithm Profiles](/basics/algorithm-profiles/) guide.
+If you want a complete guide on how to navigate an algorithm's description page including how to determine how the price of calling an algorithm, check out our [Algorithm Profiles]({{ site.baseurl }}/basics/algorithm-profiles/) guide.
 {: .notice-info}
 
 ## Making your first API call
@@ -43,7 +43,7 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
 
-You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides](/developers/client-guides/) for details on how to call algorithms and work with data in your language of choice.
+You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/client-guides/) for details on how to call algorithms and work with data in your language of choice.
 
 > Python:
 
@@ -194,4 +194,4 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
-For more information about pricing, check out our [Pricing Guide](/developers/pricing-permissions/)
+For more information about pricing, check out our [Pricing Guide]({{ site.baseurl }}/pricing-permissions/)

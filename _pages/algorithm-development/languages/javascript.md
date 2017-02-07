@@ -19,14 +19,11 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-algorithm)
+* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
-* [I/O for your Algorithms](#io-algorithms)
+* [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
-* [Algorithm Checklist](#algorithm-checklist)
-* [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-resources)
 
 ## [Available Libraries](#available-libraries)
 
@@ -36,9 +33,9 @@ The full <a href="https://nodejs.org/api/">Javascript Node language and standard
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/application-development/client-guides/javascript/">Algorithmia Javascript Client</a>.
+via the <a href="{{ site.baseurl }}/client-guides/node/">Algorithmia NodeJS Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -69,7 +66,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_javascript.png" alt="Algorithm console JavaScript" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -79,7 +76,7 @@ You don't need to create the package.json file manually.  instead, on the algori
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaSCript Dependency File" class="screenshot">
 
-Add dependencies by including the package name and version inside the `dependencies` section.  For example, to add `lodash` version 4.17.4, edit that section as follows: 
+Add dependencies by including the package name and version inside the `dependencies` section.  For example, to add `lodash` version 4.17.4, edit that section as follows:
 
 
 ```
@@ -148,12 +145,12 @@ try {
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
 #### Additional Resources
 
-* <a href="{{ site.baseurl }}/clients/javascript/">Algorithmia Client Javascript Docs <i class="fa fa-external-link"></i></a>
+* <a href="{{ site.baseurl }}/client-guides/node/">Algorithmia NodeJS Client Docs <i class="fa fa-external-link"></i></a>
 * <a href="https://nodejs.org/api/">Node.js 6.0 Docs</a>
 

@@ -19,14 +19,14 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-algorithm)
+* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
-* [I/O for your Algorithms](#io-algorithms)
+* [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-resources)
+* [Conclusion and Resources](#conclusion-and-resources)
 
 ## [Available Libraries](#available-libraries)
 
@@ -38,7 +38,7 @@ is available for you to use in your algorithms.
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="{{ site.baseurl }}/client-guides/java/">Algorithmia Java Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -69,7 +69,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/java_new_algorithm_console.png" alt="Algorithm console Java" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -99,7 +99,7 @@ The Algorithmia dependency is already installed for your convenience. For more i
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+## Write your First Algorithm
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
@@ -114,7 +114,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_java.png" alt="Compile algorithm" class="screenshot">
 
-## <a id="io-algorithms">I/O for your Algorithms</a>
+## I/O for your Algorithms
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
@@ -246,7 +246,7 @@ public class Example {
 }
 {% endhighlight %}
 
-By default, Algorithmia uses Google's <a href="https://code.google.com/p/google-gson/">GSON</a> library for converting JSON to and from
+By default, Algorithmia uses Google's <a href="https://github.com/google/gson">GSON</a> library for converting JSON to and from
 native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of
 your `apply()` method.
 
@@ -297,7 +297,7 @@ If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your 
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/java">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](/developers/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/java/">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -365,7 +365,7 @@ For an example that takes and processes image data check out the [Places 365 Cla
 Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
 {: .notice-warning}
 
-## <a id="error-handling">Error Handling</a>
+## Error Handling
 
 {% highlight java %}
 throw new AlgorithmException("Invalid graph structure");
@@ -375,13 +375,13 @@ Algorithms can throw any exception, and they will be returned as an error via th
 
 For more details about handling errors in Java check out the full [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10) and the [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling).
 
-## <a id="algorithm-checklist">Algorithm Checklist</a>
+## Algorithm Checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## <a id="publish-algorithm">Publish an Algorithm</a>
+## Publish Algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -399,13 +399,13 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
-## <a id="conclusion-resources">Conclusion and Resources</a>
+## Conclusion and Resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
 For more resources:
 
-* [Algorithmia Java client documentation](/application-development/client-guides/java/)
+* [Algorithmia Java client documentation]({{ site.baseurl }}/client-guides/java/)
 * [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling)
 * [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)
