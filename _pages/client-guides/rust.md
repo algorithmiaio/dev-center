@@ -16,7 +16,7 @@ through the Algorithmia platform.
 
 Here you will learn how to install the Algorithmia Rust Client, work with the Data API by uploading and downloading files, create and update directories and permission types and last, you'll learn how to call an algorithm that summarizes text files.
 
-To follow along you can create a new Rust file or if you'd rather, you can follow the examples in the Rust interpreter.
+To follow along you can create a new project with `cargo new <PROJECT>`
 
 ## Getting Started with Algorithmia
 
@@ -179,7 +179,7 @@ This guide covered installing the Algorithmia Rust Client, uploading and downloa
 
 For more information on the methods available using the Data API in Rust check out the [Data API](http://docs.algorithmia.com/?rust#data-api-specification) documentation, the [Rust Client Docs](https://github.com/algorithmiaio/algorithmia-rust.git) and the [Rust Language Docs] (https://crates.io/crates/algorithmia)
 
-For convenience, here is the whole script available to run:
+For convenience, here is the whole code snippet available to run:
 
 {% highlight rust %}
 extern crate algorithmia;
@@ -187,37 +187,40 @@ use algorithmia::*;
 use algorithmia::data::*;
 
 use std::io::Read;
-// Instantiate an Algorithmia client using your API key
-let client = Algorithmia::client("YOUR_API_KEY");
 
-// Instantiate a DataDirectory object, set your data URI and call create
-let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
+fn main() {
+	// Instantiate an Algorithmia client using your API key
+	let client = Algorithmia::client("YOUR_API_KEY");
 
-if nlp_directory.exists().unwrap() == false{
-    nlp_directory.create(DataAcl::default());
-}
+	// Instantiate a DataDirectory object, set your data URI and call create
+	let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 
-let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+	if nlp_directory.exists().unwrap() == false{
+	    nlp_directory.create(DataAcl::default());
+	}
 
-// Check if file exists
-if client.file(text_file).exists().unwrap() == false{
-	// Upload local file
-	nlp_directory.put_file("/your_local_path_to_file/jack_london.txt");
-}
+	let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 
-// Download contents of file as a string
-if client.file(text_file).exists().unwrap() == true{
-	let mut text_reader = client.file(text_file).get().unwrap();
-	let mut jack_london_text = String::new();
-	let _ = text_reader.read_to_string(&mut jack_london_text);
+	// Check if file exists
+	if client.file(text_file).exists().unwrap() == false{
+		// Upload local file
+		nlp_directory.put_file("/your_local_path_to_file/jack_london.txt");
+	}
 
-	// Call Summarizer algorithm.
-	let algo = client.algo("nlp/Summarizer/0.1.3");
-	match algo.pipe(& jack_london_text) {
-	    Ok(response) => {
-	    	response.as_string().unwrap();
-	    },
-	    Err(err) => println!("error calling Summarizer algo: {}", err),
-	};
+	// Download contents of file as a string
+	if client.file(text_file).exists().unwrap() == true{
+		let mut text_reader = client.file(text_file).get().unwrap();
+		let mut jack_london_text = String::new();
+		let _ = text_reader.read_to_string(&mut jack_london_text);
+
+		// Call Summarizer algorithm.
+		let algo = client.algo("nlp/Summarizer/0.1.3");
+		match algo.pipe(& jack_london_text) {
+		    Ok(response) => {
+		    	response.as_string().unwrap();
+		    },
+		    Err(err) => println!("error calling Summarizer algo: {}", err),
+		};
+	}
 }
 {% endhighlight %}
