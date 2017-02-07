@@ -40,7 +40,7 @@ Calling the algorithm is as simple as making a curl request. For example, to cal
 curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
 {% endhighlight %}
 
-If you aren't logged in, make sure to replace `YOUR_USERNAME` with your name & `YOUR_API_KEY` with your API key.
+If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides](/developers/client-guides/) for details on how to call algorithms and work with data in your language of choice.
