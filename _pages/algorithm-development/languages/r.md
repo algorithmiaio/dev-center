@@ -46,11 +46,15 @@ Let's start by creating an algorithm. First navigate to [Algorithmia](https://al
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/r-create-new-algo.png" alt="Create your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_r.png" alt="Create your algorithm" class="screenshot">
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
+<<<<<<< HEAD
 For example this guide shows how to create an algorithm that splits text up into words which is called tokenizing in natural language processing. So, this example algorithm could be called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+=======
+For example this guide shows how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+>>>>>>> 13b364f8384a81dae6b0258ece9d3d57d4390312
 
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
