@@ -11,10 +11,6 @@ image:
 
 The Algorithmia CLI is a cross-platform tool for interfacing with algorithms and the Algorithmia Data API.
 
-[![Build Status](https://travis-ci.org/algorithmiaio/algorithmia-cli.svg)](https://travis-ci.org/algorithmiaio/algorithmia-cli)
-
-Algorithmia CLI is a cross-platform tool for interfacing with algorithms and the Algorithmia Data API.
-
 This guide will cover:
 
 * [Installation](#installing-the-algorithmia-cli)
