@@ -10,13 +10,13 @@
   url: /client-guides/
   nav_category: client-guides
 
-- title: Tutorials
-  url: /tutorials/
-  nav_category: tutorials
-
 - title: Working with Data
   url: /data/
   nav_category: working-with-data
+
+- title: Basics
+  url: /basics/
+  nav_category: basics
 
 - title: Algorithm Development
   url: /algorithm-development/
@@ -37,7 +37,3 @@
 
 - title: FAQ
   url: /faqs/
-
-- title: Basics
-  url: /basics/
-  nav_category: basics

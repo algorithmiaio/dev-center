@@ -1,4 +1,5 @@
 ---
+exclude_from_search: true
 layout: article
 title:  "Sample app example (android copy)"
 categories: sample-apps

@@ -1,4 +1,5 @@
 ---
+exclude_from_search: true
 layout: article
 title:  "Basic Android Integration"
 categories: sample-apps

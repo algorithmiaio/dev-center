@@ -1,4 +1,5 @@
 ---
+exclude_from_search: true
 layout: article_page
 title:  "Sample apps"
 categories: tutorials
