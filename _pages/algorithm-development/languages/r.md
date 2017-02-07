@@ -50,7 +50,7 @@ When you click the "Add Algorithm" button, you'll see a form for creating your a
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
-For example this guide shows how to create an algorithm that splits text up into words which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+For example this guide shows how to create an algorithm that splits text up into words which is called tokenizing in natural language processing. So, this example algorithm could be called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
 
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
@@ -185,7 +185,7 @@ While users who consume an algorithm have access to both Dropbox and Amazon S3 c
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted).
 
-This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and tokenizes the text:
+This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into sentences and then splits those sentences up into words:
 
 {% highlight r %}
 library(algorithmia)
@@ -203,11 +203,11 @@ algorithm <- function(input){
     # Download contents of file as a string
     if (client$file(input$user_file)$exists()) {
       # Get the contents of the file as a string.
-      corpus <- client$file(input$user_file)$getString()
-      sentences <- strsplit(corpus, "[.]")
-      # Tokenize each sentence
-      tokens <- strsplit(unlist(sentences), "[ ]")
-      print(tokens)
+      text <- client$file(input$user_file)$getString()
+      sentences <- strsplit(text, "[.]")
+      # Split up each sentence into words.
+      words <- strsplit(unlist(sentences), "[ ]")
+      print(words)
     }
     }, error = function(e) {
      AlgorithmError(paste("Please pass in a valid input", "\n", e))
@@ -215,20 +215,20 @@ algorithm <- function(input){
 }
 {% endhighlight %}
 
-After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.
+After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
 
-Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
+Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](https://algorithmia.com/data/hosted):
 
 {% highlight bash %}
 {"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
 {% endhighlight %}
 
-The code above with return both the original text and the tokenized list of each sentence.
+The code above with return both the original text and the sentence split up into words.
 
-This guide uses a chapter from the public domain book [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight), but for brevity we'll only show the first sentence in "corpus" and "tokens":
+This guide uses a chapter from the public domain book [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight), but for brevity we'll only show the first sentence in "text" and "words":
 
 {% highlight bash %}
-{"corpus": "It was a quiet night in the Shovel.", "tokens": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
+{"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
 {% endhighlight %}
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
@@ -269,24 +269,24 @@ scrape_web <- function(input){
 
 algorithm <- function(input){
   tryCatch({
-    # Take user input of URL and return text as tokens.
-    corpus = scrape_web(input)
+    # Take user input of URL and return text as words.
+    text = scrape_web(input)
     # Split text into lists of sentences
-    sentences = strsplit(corpus, "[.]")
-    # Tokenize each sentence
-    tokens <- strsplit(unlist(sentences), "[ ]")
-    print(tokens)
+    sentences = strsplit(text, "[.]")
+    # Split up each sentence into words
+    words <- strsplit(unlist(sentences), "[ ]")
+    print(words)
   }, error = function(e) {
     AlgorithmError(paste("Please pass in a valid input", "\n", e))
   })
 }
 {% endhighlight %}
 
-This should return a tokenized list of strings:
+This should return a split up list of strings:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
-As you can see from these guides fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
+As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 

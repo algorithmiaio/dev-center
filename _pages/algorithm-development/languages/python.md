@@ -184,7 +184,7 @@ While users who consume an algorithm have access to both Dropbox and Amazon S3 c
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted).
 
-This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and tokenizes the text:
+This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into sentences and then splits those sentences up into words:
 
 {% highlight python %}
 import Algorithmia
@@ -202,38 +202,38 @@ class AlgorithmError(Exception):
         return repr(self.value).replace("\\n", "\n")
 
 def apply(input):
-    """Take a user file holding text content and return tokenized text."""
+    """Take a user file holding text content and returns text split into words."""
 
     # Check if the file exists in the user specified data collection.
     if "user_file" in input and client.file(input["user_file"]).exists():
         user_file = input["user_file"]
         # Get the contents of the file as a string.
-        corpus = client.file(user_file).getString()
+        text = client.file(user_file).getString()
         # Split text into lists of sentences
-        sentences = corpus.split(".")
-        # Tokenize each sentence
-        tokens = [item.split(" ") for item in sentences if len(item) > 0]
-        # Return dictionary of original text and the tokenized text.
-        return {"corpus": corpus, "tokens": tokens}
+        sentences = text.split(".")
+        # Split up each sentence into words.
+        words = [item.split(" ") for item in sentences if len(item) > 0]
+        # Return dictionary of original text and the sentences broken up into their separate words.
+        return {"text": text, "words": words}
     else:
       # Raise helpful error message
       raise AlgorithmError("Please provide a valid input")
 {% endhighlight %}
 
-After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.
+After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
 
-Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find in [My Collections](https://algorithmia.com/data/hosted):
+Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](https://algorithmia.com/data/hosted):
 
 {% highlight python %}
 {"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
 {% endhighlight %}
 
-The code above with return both the original text and the tokenized list of each sentence.
+The code above with return both the original text and the list of each sentence split up into words.
 
-This guide uses a chapter from the public domain book [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight), but for brevity we'll only show the first sentence in "corpus" and "tokens":
+This guide uses a chapter from the public domain book [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight), but for brevity we'll only show the first sentence in "text" and "words":
 
 {% highlight python %}
-{"corpus": "It was a quiet night in the Shovel.", "tokens": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
+{"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
 {% endhighlight %}
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
@@ -273,16 +273,15 @@ def scrape_web(input):
         # Raise helpful error message
         raise AlgorithmError("Please provide a valid URL")
 
-
 def apply(input):
-    """Take user input of URL and return text as tokens."""
+    """Take user input of URL and return text split up as words."""
 
-    corpus = scrape_web(input)
+    text = scrape_web(input)
     # Split text into lists of sentences
-    sentences = corpus.split(".")
-    # Tokenize each sentence
-    tokens = [item.split(" ") for item in sentences if len(item) > 0]
-    return tokens
+    sentences = text.split(".")
+    # Split up each sentence into words.
+    words = [item.split(" ") for item in sentences if len(item) > 0]
+    return words
 {% endhighlight %}
 
 Go ahead and try the above code sample in the Algorithmia code editor and then type the input into the console:
@@ -290,11 +289,11 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 {"URL": "http://github.com"}
 {% endhighlight %}
 
-This should return a tokenized list of strings:
+This returns a list of words:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
-As you can see from these guides fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
+As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
