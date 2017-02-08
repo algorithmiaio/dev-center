@@ -152,7 +152,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/node/">Algorithmia NodeJS Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
