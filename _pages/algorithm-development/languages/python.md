@@ -28,7 +28,7 @@ Table of Contents
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
 
-## [Available Libraries](#available-libraries)
+## Available Libraries
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
