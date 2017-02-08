@@ -27,7 +27,7 @@ You can learn more about these properties in the [Algorithm Profile]({{ site.bas
 
 Algorithmia will now create the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 
-![New Algorithm editor]({{ site.baseurl }}/images/post_images/your_first_algo/algo_editor.png)
+<img src="{{ site.baseurl }}/images/post_images/your_first_algo/algo_editor.png" alt="Algorithm editor" class="screenshot img-md">
 
 As you can see, the algorithm takes in the input and returns the string `"Hello"` plus the input. Feel free to change this code however you like.
 
@@ -35,7 +35,9 @@ Once you have finished editing and want to run the Algorithm, go ahead and click
 
 After a successful compilation, click the purple "Publish" button. Select "Publish a new revision" for your algorithm. You'll then see the following dialog:
 
-![Publish Algorithm dialog]({{ site.baseurl }}/images/post_images/your_first_algo/publish_dialog.png)
+
+<img src="{{ site.baseurl }}/images/post_images/your_first_algo/publish_dialog.png" alt="Publish Algorithm dialog" class="screenshot img-sm">
+
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 

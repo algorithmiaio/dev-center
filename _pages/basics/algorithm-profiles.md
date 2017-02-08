@@ -56,7 +56,7 @@ The console appears below the description on the algorithm profile and allows yo
 
 If the algorithm is open-source, you will see a tab in the purple overview section that says "View Source" above the statistics bar:
 
-![Algorithm Profile view source tab]({{ site.baseurl }}/images/post_images/algorithm_profiles/viewsource.png)
+<img src="{{ site.baseurl }}/images/post_images/algorithm_profiles/viewsource.png" alt="Algorithm Profile view source tab" class="screenshot img-sm">
 
  Click this button to see the algorithm code!
 

@@ -16,7 +16,7 @@ If you are looking to share algorithms privately or publish algorithms under the
 
 The profile overview provides a rich source of information about the organization. In the overview, you can find the name of the organization, the number of members, the number of algorithms, and the aggregate amount of API requests received. If you are the owner of the organization you will also be able to Add/Delete members as well as Edit basic information regarding the organization. 
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_profile.png" alt="organizations profile" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_profile.png" alt="organizations profile" class="screenshot img-md">
 
 
 #### Things to know about Organizations:
@@ -44,11 +44,11 @@ This will be determine the URL where your organization will be showcased. It is 
 * *Url:* Your organizations website.
 
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_info.png" alt="Organization info" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_info.png" alt="Organization info" class="screenshot img-sm">
 
 Once your organization has been created you can edit all the provided information as well as add a logo and a Terms of Use document.
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_edit_info.png" alt="Organization info" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_edit_info.png" alt="Organization info" class="screenshot img-sm">
 
 **Note**: The Terms of Use are organization specific. When users accept an invite to your organization they will be accepting the Terms of Use uploaded. Algorithmia records the date when the terms where accepted. These terms are completely independent of the Algorthmia Terms of Use.
 
@@ -63,12 +63,12 @@ To invite a user simply click 'Invite User':
 
 After clicking 'Invite User' a form will appear and you can enter the users name or email address:
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_invite_form.png" alt="Inviting Users" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_invite_form.png" alt="Inviting Users" class="screenshot img-sm">
 
 #### Approving Algorithms:
 Once members of your organization have created an algorithm and submitted it for approval, a purple indicator with the version to be published will show on your organization profile under algorithms.
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_approve_algo.png" alt="Approving Algorithms" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
 
 **Note:** Every new version of the algorithm to be published will require independent approval. 
 
@@ -79,4 +79,4 @@ At this time you will be able to set the royalty (if any) for that algorithm and
 #### Check Earnings:
 To view your organizations earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organizations profile. 
 
-<img src="{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot img-md">
