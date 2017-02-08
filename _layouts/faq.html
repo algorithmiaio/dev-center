@@ -1,13 +1,10 @@
 ---
 layout: default
-permalink: /faq
-redirect_from:
-  - /basics/platform-faq/
 ---
 <div id="page-wrapper">
 
   <div id="main" role="main">
-    <article class="wrap" itemscope itemtype="http://schema.org/Article">
+    <article itemscope itemtype="http://schema.org/Article">
       {% include breadcrumbs.html %}
       {% assign tag = page.tags | first %}
       {% assign main_tag = site.data.tags[tag] %}
@@ -16,20 +13,19 @@ redirect_from:
       <h3><{{ main_tag.name }}</h3>
       </div>
 
-      <div class="page-title">
-        <h1>{{ page.title }}</h1>
+      <div>
+        <h2>{{ page.title }}</h2>
       </div>
 
-      <div class="inner-wrap">
         <div id="content" class="page-content" itemprop="articleBody">
           {{ content }}
-          
+
           <div class="related-faqs">
           {% if page.show_related == true %}
               {% for tag in page.tags %}
                 <!-- Pulls from data/tags.yml to allow for data defined name attr -->
               {% assign new_tag = site.data.tags[tag] %}
-              <h4>Return to the <a href="{{site.url}}/faqs">FAQ overview</a> or explore more {{ new_tag.name }}:</h4>
+              <h4>Return to the <a href="{{ '/faqs' | relative_url }}">FAQ overview</a> or explore more {{ new_tag.name }}:</h4>
               <ul>
               {% for post in site.posts %}
                 {% if post.tags contains tag and post.url != page.url %}
@@ -41,7 +37,6 @@ redirect_from:
           {% endif %}
           </div> <!-- .related-faqs -->
        </div><!-- /.content -->
-      </div><!-- /.inner-wrap -->
-    </article><!-- ./wrap -->
+    </article>
   </div><!-- /#main -->
 </div>

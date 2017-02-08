@@ -3,7 +3,7 @@
 {% for person in site.data.authors %}
 {%assign other_author = person[1] %}
   {% unless other_author == author %}
-    <h4><a href="{{ site.url }}/{{ other_author.slug }}" itemprop="author">{{ other_author.name }}</a></h4>
+    <h4><a href="{{ other_author.slug | relative_url }}" itemprop="author">{{ other_author.name }}</a></h4>
   {% endunless %}
 {% endfor %}
 

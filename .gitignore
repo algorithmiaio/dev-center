@@ -1,4 +1,5 @@
 _site
+_tmp
 .DS_Store
 *.sublime-project
 *.sublime-workspace
@@ -8,4 +9,5 @@ _asset_bundler_cache
 .sass-cache
 /vendor/path
 .bundle/
+.jekyll-metadata
 .idea/

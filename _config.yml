@@ -2,29 +2,37 @@
 
 title: Algorithmia Developer Center
 description: Resources tutorials and guides for Algorithmia.
-logo: logos/AlgorithmiaLogo120x120.png # 120x120 px default image used for Twitter summary card
-image: logos/AlgorithmiaLogo.png # default image used for FB summary card
+logo: logos/AlgorithmiaLogo_tw.png # 120x120 px default image used for Twitter summary card
+image: logos/AlgorithmiaLogo_fb.png # default image used for FB summary card
 teaser: logos/AlgorithmiaLogo120x120.png # 400x250 px max default teaser image used in image archive grid
 locale: en_US
 
 # URL used to generate absolute URLs in sitemap.xml, atom.xml, and for generating canonical URLs in <head>.
-# When developing locally either comment this out or use something like http://localhost:4000 so all assets load properly.
-# Don’t include a trailing /.
-url: http://developers.algorithmia.com
-generate_projects: true # Comment out to make development regeneration skip projects cloning.
+# `jekyll serve` will automatically override this with "http://localhost:4000"
+# Do not include a trailing /.
+url: https://algorithmia.com
 
+# The entire site is nested under this baseurl
+baseurl: /developers
+
+# Set webserver where shared assets should be found (default = https://algorithmia.com)
+# webserver: http://localhost:9000
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
 
 # Jekyll configuration
 sass:
     sass_dir: _sass
     style: compressed
-permalink: /:categories/:title/
 kramdown:
   toc_levels: 1..2
-highlighter: pygments
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 # Site owner
 owner:
@@ -48,4 +56,5 @@ project_output_dir: /clients
 lunr_search:
   excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml", "_tmp"]
+

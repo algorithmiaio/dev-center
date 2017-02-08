@@ -4,8 +4,8 @@
 # A jekyll plug-in that provides a Liquid filter for emojifying text with
 # https://github.com/github/gemoji. See http://www.emoji-cheat-sheet.com for
 # a full listing of emoji codes.
-# 
-# Usage: 
+#
+# Usage:
 #   - Apply the filter wherever needed e.g. {{ content | emojify }}
 #   - Add some emoji to your article! e.g. "Hello :wink:"
 
@@ -20,7 +20,7 @@ module Jekyll
 
       config = @context.registers[:site].config
       if config['emoji_dir']
-        emoji_dir = config['emoji_dir']
+        emoji_dir = File.join(config['baseurl'], config['emoji_dir'])
       end
 
       content.to_str.gsub(/:([a-z0-9\+\-_]+):/) do |match|

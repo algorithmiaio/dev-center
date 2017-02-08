@@ -1,0 +1,67 @@
+---
+layout: article
+title: "CURL"
+categories: clients
+tags: [clients]
+show_related: true
+image:
+    teaser: /language_logos/curl.svg
+---
+
+You can use cURL to call any algorithm on the marketplace and manage your data through Algorithmia.
+
+## Calling an Algorithm via cURL
+
+To call an algorithm, use cURL to POST to the API. Be sure to specify the content type and authorize by passing in your API key.
+
+{% highlight bash %}
+curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello
+
+-> {"result": "Hello YOUR_NAME","metadata":{"duration":0.0001}}
+{% endhighlight %}
+
+
+## Working with Data via cURL
+
+#### Create a directory
+
+You can use cURL to interact with the Data API from the command line.
+To create a directory, POST the new directory name to the Data API URI.
+You will get a result that returns the address of the new data collection.
+
+{% highlight bash %}
+curl -X POST -d 'newCollection' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my
+
+-> {"result": "data://.my/newCollection"}
+{% endhighlight %}
+
+#### Upload File
+
+To upload a file, use cURL to `PUT` the file to a directory.
+Be sure to pass in your API key and the data directory URI.
+The response will return a result with the location of the file.
+
+{% highlight bash %}
+curl -X PUT -F file=@@filename.csv -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my/newCollection
+
+-> {"result": "data://.my/newCollection/filename.csv"}
+{% endhighlight %}
+
+
+#### Upload data as a file
+
+You can also use cURL to upload data to the collection as a file.
+Be sure to pass in your API key and the data collection URI.
+The response will return a result with the location of the file.
+
+{% highlight bash %}
+curl -X PUT -H 'Content-Type:application/json' -d '{"key1": "value1"}' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/YOUR_USERNAME/newCollection/myFile.json
+
+-> {"result": "data://YOUR_USERNAME/newCollection/myFile.json"}
+{% endhighlight %}
+
+
+## Additional information
+
+See the full [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
+on calling algorithms and managing data with cURL.

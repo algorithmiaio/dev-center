@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="104px" height="119px" viewBox="0 0 104 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>dropbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="48 0 96 27.7128129 96 83.1384388 48 110.851252 -3.55271368e-14 83.1384388 -6.66133815e-14 27.7128129"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DesktopHD_Round7_data" transform="translate(-490.000000, -1373.000000)">
+            <g id="content" transform="translate(342.000000, 542.000000)">
+                <g id="data_guides" transform="translate(0.000000, 318.000000)">
+                    <g id="dropbox" transform="translate(152.000000, 515.000000)">
+                        <g id="Polygon-Copy">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <path d="M35.6886792,27 L18,38.3810127 L30.3113208,48.2164557 L48,37.256962 L35.6886792,27 Z M18,57.7708861 L35.6886792,69.2924051 L48,59.035443 L30.3113208,48.2164557 L18,57.7708861 Z M48,59.035443 L60.4528302,69.2924051 L78,57.9113924 L65.8301887,48.2164557 L48,59.035443 L48,59.035443 Z M78,38.3810127 L60.4528302,27 L48,37.256962 L65.8301887,48.2164557 L78,38.3810127 Z M48.1415094,61.2835443 L35.6886792,71.5405063 L30.4528302,68.0278481 L30.4528302,71.9620253 L48.1415094,82.5 L65.8301887,71.9620253 L65.8301887,68.0278481 L60.4528302,71.5405063 L48.1415094,61.2835443 Z" id="Shape" fill="#028BD3"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

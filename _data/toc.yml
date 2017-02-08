@@ -1,0 +1,39 @@
+# Site navigation links
+
+- title: Home
+  url: /
+
+- title: Getting Started
+  url: /getting-started/
+
+- title: Client Guides
+  url: /clients/
+  nav_category: clients
+
+- title: Working with Data
+  url: /data/
+  nav_category: working-with-data
+
+- title: Basics
+  url: /basics/
+  nav_category: basics
+
+- title: Algorithm Development
+  url: /algorithm-development/
+  nav_category: algorithm-development
+
+- title: API Documentation
+  url: http://docs.algorithmia.com
+
+- title: Teams & Organizations
+  url: /teams/
+
+- title: Bounties
+  url: /bounties/
+  nav_category: bounties
+
+- title: Pricing, Permissions, & Versioning
+  url: /pricing-permissions/
+
+- title: FAQ
+  url: /faqs/

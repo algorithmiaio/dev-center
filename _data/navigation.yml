@@ -1,52 +1,16 @@
 # Site navigation links
 
-# - title: Basics
-#   url: /basics/
-#   excerpt: "Get up and running with Algorithmia"
-#   image: /icons/Algorithmia_Basics.png
+- title: Algorithms
+  url: http://algorithmia.com/algorithms
 
-# - title: Guides
-#   url: /algorithm-development/guides/
-#   excerpt: "Overviews & topic guides"
-#   image: /icons/Algorithmia_Guides.png
+- title: Data
+  url: http://algorithmia.com/data
 
-# - title: Clients
-#   url: /clients/
-#   excerpt: "Use Algorithmia clients & libraries"
-#   image: /icons/Algorithmia_Clients.png
+- title: Docs
+  url: http://algorithmia.com/developers
 
-# - title: Sample Apps
-#   url: /samples/
-#   excerpt: "See fully developed example apps"
-#   image: /icons/Algorithmia_Sample Apps.png
+- title: Sign In
+  url: http://algorithmia.com/signin
 
-- title: API Docs
-  url: http://docs.algorithmia.com
-  excerpt: "Read up on the ins and outs of using the Algorithmia API."
-  image: /icons/Algorithmia_API Docs.png
-
-- title: Algorithm Development
-  url: /algorithm-development
-  excerpt: "Find out how to host your models and build an algorithm on Algorithmia."
-  image: /icons/Algorithmia_Sample_Apps.png
-
-- title: Application Development
-  url: /application-development
-  excerpt: "Discover how to use algorithms in your application."
-  image: /icons/Algorithmia_Clients.png
-
-- title: FAQs
-  url: /faqs/
-  excerpt: "Find quick answers to common questions."
-  image: /icons/Algorithmia_FAQs.png
-
-- title: Search
-  url: /search/
-  excerpt: "Search the Developer Center for the information you need to get started"
-  image: /icons/Algorithmia_Search.png
-
-# - title: Recipes
-#   url: /recipes/
-#   excerpt: "Learn how to solve problems with Algorithmia"
-#   image: /icons/fa-birthday-cake.png
-
+- title: Sign Up
+  url: http://algorithmia.com/signup
