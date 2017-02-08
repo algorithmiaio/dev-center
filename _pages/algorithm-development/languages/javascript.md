@@ -73,7 +73,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 Now that you have created your algorithm, you can add dependencies.
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/">NPM Javascript package manager</a>.
+Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.
 
 You don't need to create the package.json file manually.  instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
@@ -95,7 +95,22 @@ Now click "Save dependencies" to close the modal window.
 
 `lodash = require("lodash")();`
 
-#### I/O for Your Algorithms:
+## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+
+As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
+
+If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
+
+Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
+{: .notice-info}
+
+To test the algorithm type your name or another string in the console and hit enter on your keyboard:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_javascript.png" alt="Run basic algorithm in console JavaScript" class="screenshot">
+
+## <a id="io-algorithms">I/O for your Algorithms</a>
 
 Datatypes that are either sequences that you don't wish to iterate over such as strings, or inputs that are scalar in nature such as numeric data types can be accessed via input, however you will probably want to check for the data type you are expecting to receive.
 
@@ -135,7 +150,13 @@ Which will return:
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow a few options for input such as a file or a sequence.
 
-#### Error Handling
+### Calling Other Algorithms and Managing Data
+
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
+
+When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
+
+## <a id="error-handling">Error Handling</a>
 
 {% highlight javascript %}
 try {
@@ -146,14 +167,38 @@ try {
 }
 {% endhighlight %}
 
-#### Calling Other Algorithms and Managing Data
+## <a id="algorithm-checklist">Algorithm Checklist</a>
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/application-development/client-guides/javascript/">Algorithmia Javascript Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
-When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
+It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-#### Additional Resources
+## <a id="publish-algorithm">Publish an Algorithm</a>
 
-* <a href="{{ site.baseurl }}/clients/javascript/">Algorithmia Client Javascript Docs <i class="fa fa-external-link"></i></a>
-* <a href="https://nodejs.org/api/">Node.js 6.0 Docs</a>
+Once you've developed your algorithm, you can publish it and make it available for others to use.
+
+On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot">
+
+In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+
+Check out [Algorithm Pricing]({{ site.baseurl }}/pricing-permissions/) for more information on how much algorithms will cost to run.
+
+If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
+
+### Editing an Algorithm
+
+Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
+
+## <a id="conclusion-resources">Conclusion and Resources</a>
+
+In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
+
+For more resources:
+
+* <a href="{{ site.baseurl }}/clients/javascript/">Algorithmia Client Javascript Docs</a>
+* [Hosted Data Source](/developers/data/)
+* [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
+* <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="fa fa-external-link"></i></a>
 
