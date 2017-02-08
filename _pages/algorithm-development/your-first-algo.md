@@ -16,12 +16,12 @@ One of the great things about Algorithmia is that the platform allows you to put
 
 When you open the navigation dropdown at the top of the page, you'll find a purple button that says "Add Algorithm". Naturally, this is where we'll start!
 
-![Add Algorithm button]({{ site.baseurl }}/images/post_images/your_first_algo/add_algorithm.png)
+<img src="{{ site.baseurl }}/images/post_images/your_first_algo/add_algorithm.png" alt="Create your algorithm" class="screenshot img-md">
 
 By clicking this button, you'll be prompted with a dialog that allows you to give your algorithm a name and set some initial properties, such as the name, language, license, and special permissions:
 
 <br>
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot img-sm">
 
 You can learn more about these properties in the [Algorithm Profile]({{ site.baseurl }}/basics/algorithm-profiles/) article.
 

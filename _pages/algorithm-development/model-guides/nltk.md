@@ -34,7 +34,7 @@ Now you'll want to create a data collection to host your pickled model.
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
 
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -43,7 +43,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -53,14 +53,14 @@ Creating your algorithm is easy!
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For machine learning models you will want to check 'Standard Execution Environment'.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot img-sm">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" class="screenshot img-md">
 
 ## Load your Model
 Here is where you load your pickled model that is to be called by the apply() function.
@@ -126,7 +126,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot img-sm">
 
 ## Working Demo
 If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/test">NLTK-demo</a>
