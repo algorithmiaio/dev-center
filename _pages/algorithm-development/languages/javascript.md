@@ -32,11 +32,11 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://nodejs.org/api/">Javascript Node language and standard library</a>
+The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/">Javascript Node 6.9 language and standard library</a>
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/application-development/client-guides/javascript/">Algorithmia Javascript Client</a>.
+via the <a href="{{ site.baseurl }}/clients/node/">Algorithmia NodeJS Client</a>.
 
 ## <a id="create-algorithm">Create an Algorithm</a>
 
@@ -152,7 +152,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/node/">Algorithmia NodeJS Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/node/">Algorithmia NodeJS Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -197,7 +197,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{ site.baseurl }}/clients/javascript/">Algorithmia Client Javascript Docs</a>
+* <a href="{{ site.baseurl }}/clients/node/">Algorithmia Client NodeJS Docs</a>
 * [Hosted Data Source](/developers/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
 * <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="fa fa-external-link"></i></a>
