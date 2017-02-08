@@ -13,7 +13,7 @@ Welcome to Getting Started with the Algorithmia API. This guide will show you ho
 
 We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running so you can quickly develop intelligent applications in the language of your choice.
 
-If you want more detailed tutorials on how to work with the language clients including Android, CLi and how to work with AWS Lambda, check out our [Client Guides]({{ site.baseurl }}/client-guides/).
+If you want more detailed tutorials on how to work with the language clients including Android, CLi and how to work with AWS Lambda, check out our [Client Guides]({{ site.baseurl }}/clients/).
 
 ## Finding an Algorithm
 
@@ -43,7 +43,7 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
 
-You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/client-guides/) for details on how to call algorithms and work with data in your language of choice.
+You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/clients/) for details on how to call algorithms and work with data in your language of choice.
 
 > Python:
 

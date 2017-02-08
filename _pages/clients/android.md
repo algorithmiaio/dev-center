@@ -2,7 +2,7 @@
 layout: article
 title: "Android"
 excerpt: "Get going with the Android client on Algorithmia."
-categories: client-guides
+categories: clients
 tags: [clients]
 ignore_sections: [install-from-source, upgrading-from-0-9-x, running-tests]
 show_related: true

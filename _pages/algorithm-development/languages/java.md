@@ -36,7 +36,7 @@ The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/client-guides/java/">Algorithmia Java Client</a>.
+via the <a href="{{ site.baseurl }}/clients/java/">Algorithmia Java Client</a>.
 
 ## Create an Algorithm
 
@@ -297,7 +297,7 @@ If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your 
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/java/">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/java/">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -405,7 +405,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* [Algorithmia Java client documentation]({{ site.baseurl }}/client-guides/java/)
+* [Algorithmia Java client documentation]({{ site.baseurl }}/clients/java/)
 * [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling)
 * [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)

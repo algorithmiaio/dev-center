@@ -1,31 +1,31 @@
 ---
 layout: article
-title: "Python"
-excerpt: "Get going with the Python client on Algorithmia."
-categories: client-guides
+title: "R"
+excerpt: "Get going with the R client on Algorithmia."
+categories: clients
 tags: [clients]
-ignore_sections: [install-from-source, upgrading-from-0-9-x, running-tests]
 show_related: true
+author: steph_kim
 image:
-    teaser: /language_logos/python.svg
-repository: https://github.com/algorithmiaio/algorithmia-python
+    teaser: /language_logos/r.svg
+repository: https://github.com/algorithmiaio/algorithmia-r
 ---
 
-This guide provides a walk-through of how to use the official Algorithmia Python Client to call algorithms and manage data through the Algorithmia platform.
 
-Here you will learn how to install the Algorithmia Python Client, work with the Data API by uploading and downloading files, create and update directories and permission types and last, you'll learn how to call an algorithm that summarizes text files.
+This guide provides a walk-through of how to use the official Algorithmia R Client to call algorithms and manage data through the Algorithmia platform.
 
-To follow along you can create a new Python script or if you'd rather, you can follow the examples in the Python interpreter.
+Here you will learn how to install the Algorithmia R Client, work with the Data API by uploading and downloading files, create and update directories and permission types and last, you’ll learn how to call an algorithm that summarizes text files.
 
+To follow along you can create a new R script or if you’d rather, you can follow the examples in the R interpreter.
 
 ## Getting Started with Algorithmia
 
-The official Algorithmia Python Client is available on [PyPi](https://pypi.python.org/pypi/algorithmia/1.0.5) and for more information on using the Python Client you can go to the [Algorithmia API docs](http://docs.algorithmia.com/?python#).
+The official Algorithmia R client is available on CRAN and includes links to vignettes and the reference manual at: <a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia on CRAN</a>
 
-To get started, first install the Algorithmia Python Client with pip:
+Open up the R shell to install the Algorithmia R Client (or use RStudio to install):
 
-{% highlight python %}
-pip install algorithmia
+{% highlight r %}
+install.packages("algorithmia")
 {% endhighlight %}
 
 ## Authentication
@@ -34,16 +34,16 @@ Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](htt
 
 Now import the Algorithmia library and create the Algorithmia client:
 
-{% highlight python %}
-import Algorithmia
+{% highlight r %}
+library(algorithmia)
 
 # Authenticate with your API key
-apiKey = "YOUR_API_KEY"
-# Create the Algorithmia client object
-client = Algorithmia.client(apiKey)
+apiKey <- "YOUR_API_KEY"
+# Create the Algorithmia Client object
+client <- getAlgorithmiaClient(apiKey)
 {% endhighlight %}
 
-Now you’re ready to start working with Algorithmia in Python.
+Now you’re ready to start working with Algorithmia in R.
 
 ## Working with Data Using the Data API
 
@@ -60,12 +60,11 @@ This section will show how to create a data collection which is essentially a fo
 
 First create a data collection called nlp_directory:
 
-{% highlight python %}
-# Instantiate a DataDirectory object, set your data URI and call create
-nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
-# Create your data collection if it does not exist
-if nlp_directory.exists() is False:
-	nlp_directory.create()
+{% highlight r %}
+# Set your Data URI
+nlp_directory <- client$dir("data://YOUR_USERNAME/nlp_directory")
+# Create your data collection
+nlp_directory$create()
 {% endhighlight %}
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
@@ -75,24 +74,18 @@ Instead of your username you can also use '.my' when calling algorithms. For mor
 
 ### Work with Directory Permissions
 
-When we created the data collection in the previous code snippet, the default setting is `ReadAcl.my_algos` which is a permission type that allows other users on the platform to interact with your data through the algorithms you create if you decide to contribute to algorithm development. This means users can call your algorithm to perform an operation on your data stored in this collection, otherwise the algorithm you created would only work for you.
-
-To begin working with data directory permissions first add these imports:
-
-{% highlight python %}
-from Algorithmia.acl import ReadAcl, AclType
-{% endhighlight %}
+When we created the data collection in the previous code snippet, the default setting is "ReadAcl.MY_ALGORITHMS" which is a permission type that allows other users on the platform to interact with your data through the algorithms you create if you decide to contribute to algorithm development. This means users can call your algorithm to perform an operation on your data stored in this collection, otherwise the algorithm you created would only work for you.
 
 Next check for the data collection's permission type and update those permissions to private:
 
-{% highlight python %}
-# Create the acl object and check if it's the .my_algos default setting
-acl = nlp_directory.get_permissions()  # Acl object
-acl.read_acl == AclType.my_algos  # True
+{% highlight r %}
+# Create the acl object and check if it's the ReadAcl.MY_ALGORITHMS default setting
+acl = nlp_directory$getPermissions()  # Acl object
+acl$read_acl # Returns "MY_ALGORITHMS" Acl Type
 
 # Update permissions to private
-nlp_directory.update_permissions(ReadAcl.private)
-nlp_directory.get_permissions().read_acl == AclType.private # True
+nlp_directory$update_permissions(ReadAcl.private)
+nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 {% endhighlight %}
 
 Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. Read access allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
@@ -105,16 +98,15 @@ So far you've created your data collection and checked and updated directory per
 
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
-{% highlight python %}
-text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+{% highlight r %}
+text_file <- "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 {% endhighlight %}
 
 Next upload your local file to the data collection using the `.putFile()` method:
 
-{% highlight python %}
-if client.file(text_file).exists() is False:
-	# Upload local file
-	client.file(text_file).putFile("/your_local_path_to_file/jack_london.txt")
+{% highlight r %}
+# Upload local file
+client$file(text_file)$putFile("/your_local_path_to_file/jack_london.txt")
 {% endhighlight %}
 
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
@@ -128,10 +120,11 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 
 Next check if the file that you just uploaded to data collections exists and then download the contents of that file as a string:
 
-{% highlight python %}
+{% highlight r %}
 # Download contents of file as a string
-if client.file(text_file).exists() is True:
-	input = client.file(text_file).getString()
+if (client$file(text_file)$exists()) {
+  input <- client$file(text_file)$getString()
+}
 {% endhighlight %}
 
 This will get your file as a string, saving it to the variable `input`.
@@ -149,20 +142,21 @@ A single algorithm may have different input and output types, or accept multiple
 
 This example shows the summary of the text file which we downloaded from our data collection and set as the variable called `input` in the previous code sample.
 
-Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
+Create the algorithm object and pass in the variable `input` into `algo$pipe()`:
 
-{% highlight python %}
+{% highlight r %}
 # Create the algorithm object using the Summarizer algorithm
-algo = client.algo('nlp/Summarizer/0.1.3')
+algo <- client$algo('nlp/Summarizer/0.1.3')
 # Pass in input required by algorithm
-try:
-	# Get the summary result of your file's contents.
-	response = algo.pipe(input).result
-	print(response)
-except:
-	# Algorithm error if the input is not correctly formatted.
-	print(algo.pipe(input).error.message)
 
+tryCatch({
+    # Get the summary result of your file's contents.
+	response <- algo$pipe(input)$result
+	print(response)
+},
+error = function(e) {
+    stop(e)
+})
 {% endhighlight %}
 
 This guide used the the first chapter of [Jack London's Burning Daylight](https://en.wikisource.org/wiki/Burning_Daylight) and the Summarizer algorithm outputs:
@@ -171,55 +165,56 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
 
-
 ## Conclusion
 
-This guide covered installing Algorithmia via pip, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
+This guide covered installing Algorithmia via R, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
-For more information on the methods available using the Data API in Python check out the [Data API](http://docs.algorithmia.com/?python#data-api-specification) documentation or the [Python Client Docs](https://github.com/algorithmiaio/algorithmia-python).
+For more information on the methods available using the Data API in R check out the [Data API](http://docs.algorithmia.com/?r#data-api-specification) documentation or the [R Client Docs](https://github.com/algorithmiaio/algorithmia-r).
 
 For convenience, here is the whole script available to run:
 
-{% highlight python %}
-import Algorithmia
-from Algorithmia.acl import ReadAcl, AclType
+{% highlight r %}
+library(algorithmia)
 
-apiKey = '{Your API key here}'
-# Create the Algorithmia client
-client = Algorithmia.client(apiKey)
+# Authenticate with your API key
+apiKey <- "YOUR_API_KEY"
+# Create the Algorithmia Client object
+client <- getAlgorithmiaClient(apiKey)
 
-# Set your Data URI
-nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
-# Create your data collection if it does not exist
-if nlp_directory.exists() is False:
-	nlp_directory.create()
+# Instantiate a DataDirectory object, set your data URI and call Create
+nlp_directory <- client$dir("data://YOUR_USERNAME/nlp_directory")
+# Create your data collection
+nlp_directory$create()
 
-# Create the acl object and check if it's the .my_algos default setting
-acl = nlp_directory.get_permissions()  # Acl object
-acl.read_acl == AclType.my_algos  # True
+# Create the acl object and check if it's the ReadAcl.MY_ALGORITHMS default setting
+acl = nlp_directory$getPermissions()  # Acl object
+acl$read_acl # Returns "MY_ALGORITHMS" Acl Type
 
 # Update permissions to private
-nlp_directory.update_permissions(ReadAcl.private)
-nlp_directory.get_permissions().read_acl == AclType.private # True
+nlp_directory$update_permissions(ReadAcl.private)
+nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 
-text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+text_file <- "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 
 # Upload local file
-if client.file(text_file).exists() is False:
-	client.file(text_file).putFile("/your_local_path_to_file/jack_london.txt")
+client$file(text_file)$putFile("/your_local_path_to_file/jack_london.txt")
 
 # Download contents of file as a string
-if client.file(text_file).exists() is True:
-	input = client.file(text_file).getString()
+if (client$file(text_file)$exists()) {
+  input <- client$file(text_file)$getString()
+}
 
 # Create the algorithm object using the Summarizer algorithm
-algo = client.algo('nlp/Summarizer/0.1.3')
+algo <- client$algo('nlp/Summarizer/0.1.3')
 # Pass in input required by algorithm
-try:
-	# Get the summary result of your file's contents.
-	response = algo.pipe(input).result
-except:
-	# Algorithm error if the input is not correctly formatted.
-	print(algo.pipe(input).error.message)
-{% endhighlight %}
 
+tryCatch({
+    # Get the summary result of your file's contents.
+	response <- algo$pipe(input)$result
+	print(response)
+},
+error = function(e) {
+  	# Algorithm error if the input is not correctly formatted.
+    stop()
+})
+{% endhighlight %}

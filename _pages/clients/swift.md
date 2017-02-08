@@ -2,7 +2,7 @@
 layout: article
 title: "Swift"
 excerpt: "Get started building an iOS app."
-categories: client-guides
+categories: clients
 tags: [clients]
 show_related: true
 image:

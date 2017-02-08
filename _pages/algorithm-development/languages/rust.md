@@ -149,13 +149,13 @@ See the [Cargo dependency docs](http://doc.crates.io/specifying-dependencies.htm
 
 #### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
 
 #### Additional Resources
 
-* [Algorithmia Rust Client]({{ site.baseurl }}/client-guides/rust/)
+* [Algorithmia Rust Client]({{ site.baseurl }}/clients/rust/)
 * [Rust standard library](https://doc.rust-lang.org/std/)
 * [Crates.io](https://crates.io/)

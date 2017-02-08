@@ -7,8 +7,8 @@
   url: /getting-started/
 
 - title: Client Guides
-  url: /client-guides/
-  nav_category: client-guides
+  url: /clients/
+  nav_category: clients
 
 - title: Working with Data
   url: /data/

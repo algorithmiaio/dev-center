@@ -2,7 +2,7 @@
 layout: article
 title: "Node"
 excerpt: "Like building Node apps? Here's a Node Client that makes it easy."
-categories: client-guides
+categories: clients
 tags: [clients]
 ignore_sections: [building-the-client]
 show_related: true

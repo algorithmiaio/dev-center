@@ -36,7 +36,7 @@ The full <a href="https://www.r-project.org/about.html">R language and standard 
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/client-guides/r/">Algorithmia R language Client</a>.
+via the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a>.
 
 ## Create an Algorithm
 
@@ -240,7 +240,7 @@ Note that we use the rjson package to parse JSON within your algorithm.
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/client-guides/r/">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -353,6 +353,6 @@ In this guide we covered how to create an algorithm, work with different types o
 ## Additional Resources
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
-* [Algorithmia R client documentation]({{ site.baseurl }}/client-guides/r/)
+* [Algorithmia R client documentation]({{ site.baseurl }}/clients/r/)
 * [Hosted Data Source]({{ site.baseurl }}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?r)

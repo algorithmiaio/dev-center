@@ -2,7 +2,7 @@
 layout: article
 title: "Go"
 excerpt: "Integrate Algorithmia into your Go project."
-categories: client-guides
+categories: clients
 tags: [clients]
 ignore_sections: [table-of-contents, running-tests, credits]
 show_related: true

@@ -2,7 +2,7 @@
 layout: article
 title: "Java"
 excerpt: "Working in Java? Check out this Algorithmia Java client."
-categories: client-guides
+categories: clients
 tags: [clients]
 show_related: true
 image:

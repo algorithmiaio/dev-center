@@ -2,7 +2,7 @@
 layout: article
 title:  "CLI"
 excerpt: "Get familiar with the CLI client."
-categories: client-guides
+categories: clients
 tags: [clients]
 show_related: true
 image:

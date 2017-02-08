@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Javascript"
-categories: client-guides
+categories: clients
 tags: [clients]
 show_related: true
 image:

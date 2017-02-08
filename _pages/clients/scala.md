@@ -2,7 +2,7 @@
 layout: article
 title: "Scala"
 excerpt: "How to use the Java client for Scala projects."
-categories: client-guides
+categories: clients
 tags: [clients]
 show_related: true
 image:

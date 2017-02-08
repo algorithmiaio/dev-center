@@ -10,7 +10,7 @@ author: steph_kim
 Run through a tutorial in your preferred language. The tutorial will teach you how to setup the Algorithmia client and make an API call.
 
 <div class="row lang-tile-container">
-{% assign sorted_clients = site.pages | where: "categories", "client-guides" | sort:"title" %}
+{% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
 {% for post in sorted_clients %}
   {% include post-grid.html %}
 {% endfor %}

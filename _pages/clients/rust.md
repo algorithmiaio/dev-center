@@ -2,7 +2,7 @@
 layout: article
 title: "Rust"
 excerpt: "Rust fan? We've got you covered."
-categories: client-guides
+categories: clients
 tags: [clients]
 ignore_sections: [build-test]
 show_related: true
