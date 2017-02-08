@@ -25,11 +25,11 @@ This guide will show how to create a collection and walk you through the differe
 
 To create a new data collection first navigate to <a href="https://algorithmia.com/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says "Algorithmia Hosted Data" click the button that says **"Browse Files"** which takes you to <a href="https://algorithmia.com/data/hosted">Data Collections</a>.
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" class="screenshot img-md">
 
 Then you will find yourself in the collections panel where you can click on **"Add Collection"** under the 'My Collections' section on your data collections page:
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot img-md">
 
 Notice that when you create a collection you can set the read and write access by using the drop downs shown in the above screenshot. Below are the details regarding access permissions for user collections and what they mean.
 
