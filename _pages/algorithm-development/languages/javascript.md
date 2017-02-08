@@ -19,14 +19,14 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-algorithm)
+* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
-* [I/O for your Algorithms](#io-algorithms)
+* [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-resources)
+* [Conclusion and Resources](#conclusion-and-resources)
 
 ## [Available Libraries](#available-libraries)
 
@@ -38,7 +38,7 @@ is available for you to use in your algorithms.
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="{{ site.baseurl }}/clients/node/">Algorithmia NodeJS Client</a>.
 
-## <a id="create-algorithm">Create an Algorithm</a>
+## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
@@ -69,7 +69,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_javascript.png" alt="Algorithm console JavaScript" class="screenshot">
 
-## <a id="managing-dependencies">Managing Dependencies</a>
+## Managing Dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -95,7 +95,7 @@ Now click "Save dependencies" to close the modal window.
 
 `lodash = require("lodash")();`
 
-## <a id="write-your-first-algorithm">Write your First Algorithm</a>
+## Write your First Algorithm
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
@@ -110,7 +110,7 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_javascript.png" alt="Run basic algorithm in console JavaScript" class="screenshot">
 
-## <a id="io-algorithms">I/O for your Algorithms</a>
+## I/O for your Algorithms
 
 Datatypes that are either sequences that you don't wish to iterate over such as strings, or inputs that are scalar in nature such as numeric data types can be accessed via input, however you will probably want to check for the data type you are expecting to receive.
 
@@ -156,7 +156,7 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
-## <a id="error-handling">Error Handling</a>
+## Error Handling
 
 {% highlight javascript %}
 try {
@@ -167,13 +167,13 @@ try {
 }
 {% endhighlight %}
 
-## <a id="algorithm-checklist">Algorithm Checklist</a>
+## Algorithm Checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
 
 It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## <a id="publish-algorithm">Publish an Algorithm</a>
+## Publish Algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -191,7 +191,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
-## <a id="conclusion-resources">Conclusion and Resources</a>
+## Conclusion and Resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
