@@ -150,6 +150,9 @@ This should return:
 
 Try this again with the inputs `["foo","bar"]` and `{"foo":"bar"}`, to get back `It's an Array!` and `It's an Object` respectively.
 
+When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
+{: .notice-info}
+
 ### Working with Data Stored on Algorithmia
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted).
@@ -198,9 +201,6 @@ You should get back an structure like this, but longer:
 {% highlight python %}
 {"words": ['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']}
 {% endhighlight %}
-
-When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
 
 ### Calling Other Algorithms and Managing Data
 
