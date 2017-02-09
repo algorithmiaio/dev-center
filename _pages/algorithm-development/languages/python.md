@@ -97,7 +97,7 @@ in the dependencies file and the line
 
 in the main file.
 
-## Write your First Algorithm<
+## Write your First Algorithm
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
