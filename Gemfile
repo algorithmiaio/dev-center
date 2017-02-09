@@ -12,6 +12,7 @@ gem 'therubyracer'
 gem 'nokogiri'
 gem 'git'
 gem 'metainspector'
+gem 'mini_magick'
 
 # Used for publishing
 group :deploy do

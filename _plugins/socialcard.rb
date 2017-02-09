@@ -1,5 +1,6 @@
 require 'metainspector'
 require 'open-uri'
+require 'mini_magick'
 
 module Jekyll
   class SocialCardTag < Liquid::Tag
@@ -24,7 +25,7 @@ module Jekyll
 
       # We need to download the image, so we can serve it directly
       #   to avoid mixed-mode SSL warnings. Also, cache it for jekyll perf
-      filename = File.basename(image_url)
+      filename = "#{File.basename(image_url, File.extname(image_url))}.jpg"
       image_dir = "images/blog"
       image_path = "#{image_dir}/#{filename}"
       output_dir = "_tmp/#{image_dir}"
@@ -54,8 +55,11 @@ module Jekyll
     end
 
     def download_file(url, path)
-        download = open(url)
-        IO.copy_stream(download, path)
+        stream = open(url)
+        image = MiniMagick::Image.read(stream)
+        image.format "jpg"
+        image.resize "768x768>"
+        image.write path
     end
   end
 end
