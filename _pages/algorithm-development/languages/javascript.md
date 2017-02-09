@@ -172,7 +172,7 @@ exports.apply = function(input, cb) {
     if (typeof input != "string" && input["user_file"]) {
         client.file(input["user_file"]).get(function(err, data) {
             if(err) {
-                cb(null, err.message);
+                cb(err, err.message);
             } else {
                 var words = data.split(/[\.\s]/);
                 words = words.filter(function(word) {return word!="";});
@@ -210,7 +210,7 @@ When designing your algorithm, don't forget that there are special data director
 
 ## Error Handling
 
-In order to provide the user with useful feedback, wrap error-prone actions in a try-catch block, and pass the error back as the *first* parameter to the callback function:
+In order to provide the user with useful feedback, wrap error-prone actions in a try-catch block, and pass the error back as the *first* parameter to the callback function, so that users can receive this as an error object in the response:
 
 {% highlight javascript %}
 try {
