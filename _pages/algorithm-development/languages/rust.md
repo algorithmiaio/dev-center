@@ -14,9 +14,9 @@ Algorithmia supports development of algorithms in Rust.
 
 #### Handling Input and Output
 
-Rust algorithms are expected to have a public type named `Algo` that implements the [`algorithmia::algo::EntryPoint`](https://docs.rs/algorithmia/2/algorithmia/algo/trait.EntryPoint.html) trait or [`algorithmia::algo::DecodedEntryPoint`](https://docs.rs/algorithmia/2/algorithmia/algo/trait.DecodedEntryPoint.html) which provides an alternate implementation of `EntryPoint`.
+Rust algorithms are expected to have a public type named `Algo` that implements the [`EntryPoint`](https://docs.rs/algorithmia/2/algorithmia/algo/trait.EntryPoint.html) trait or the [`DecodedEntryPoint`](https://docs.rs/algorithmia/2/algorithmia/algo/trait.DecodedEntryPoint.html) trait.
 
-While you may implement this manually, the [`algo_entrypoint!`](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) macro removes much of the boilerplate. Basically, you call `algo_entrypoint!` with the input type your algorithm expects, and it generates the code that will call an `apply` function with the type you specified. Then your `apply` method needs to return a `Result<T, E>` for some type `T` that can be converted into `AlgoOutput` and some type `E` can be converted into a boxed `Error`.
+The [`algo_entrypoint!`](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) macro removes much of the boilerplate of implementing those traits. Basically, you call `algo_entrypoint!` with the input type your algorithm expects, and it generates code that will call an `apply` function with the type you specified. Then your `apply` function needs to return a `Result<T, E>` for some type `T` that can be converted into [`AlgoOutput`](https://docs.rs/algorithmia/2/algorithmia/algo/enum.AlgoOutput.html) and some type `E` can be converted into a boxed `Error`.
 
 The [`algo_entrypoint!`](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) reference documentation covers all the possibilities in detail, so this guide will demonstrate the most common usages:
 
@@ -25,7 +25,6 @@ The [`algo_entrypoint!`](https://docs.rs/algorithmia/2/algorithmia/macro.algo_en
 An API that handles text input can be specified with `algo_entrypoint!(&str)`.
 
 {% highlight rust %}
-#[derive(Default)]
 algo_entrypoint!(&str);
 fn apply(input: &str) -> Result<String, Box<std::error:;Error>> {
     let msg = format!("Hello {}", input);
@@ -38,6 +37,7 @@ fn apply(input: &str) -> Result<String, Box<std::error:;Error>> {
 An API that handles binary input can be specified with `algo_entrypoint!(&[u8])`.
 
 {% highlight rust %}
+algo_entrypoint!(&[u8]);
 fn apply(input: &[u8]) -> Result<Vec<u8>, Box<std::error::Error>> {
     Ok(input.to_owned())
 }
@@ -50,13 +50,11 @@ which provides the algorithm with the `serde_json`'s `Value` enum as input.
 (See also the alternative ways of handling auto-decoded JSON input.)
 
 {% highlight rust %}
-
-impl EntryPoint for Algo {
-    fn apply(&input: &JsonValue) -> Result<JsonValue, Box<std::error::Error>> {
-        let name = input.get("name")?.as_str()?;
-        let msg = format!("Hello {}", name);
-        Ok(json!{ "msg": msg })
-    }
+algo_entrypoint!(&JsonValue);
+fn apply(&input: &JsonValue) -> Result<JsonValue, Box<std::error::Error>> {
+    let name = input.get("name")?.as_str()?;
+    let msg = format!("Hello {}", name);
+    Ok(json!{ "msg": msg })
 }
 {% endhighlight %}
 
@@ -69,7 +67,7 @@ JSON input can be automatically decoded to a type of your choosing if that type 
 algo_entrypoint!((String, u32));
 fn apply(input: (String, u32)) -> Result<String, Box<std::error::Error>> {
     let msg = format("Received string '{}' and number '{}", input.0, input.1);
-    Ok(AlgoOutput::Text(msg))
+    Ok(msg)
 }
 {% endhighlight %}
 
@@ -89,6 +87,7 @@ pub struct TaskOutput {
     byte_count: u32,
 }
 
+algo_entrypoint!(TaskDefinition);
 fn apply(input: TaskDefinition) -> Result<Box<TaskOutput>, Box<std::error::Error>> {
     let output = TaskOutput { byte_count: input.msg.len() };
     Ok(Box::new(output))
@@ -101,10 +100,31 @@ Note: Serialized output types do need to be boxed (until specialization becomes 
 
 Using `Box<std::errror::Error>` is often convenient for getting started, as the `?` operator
 can convert error type into it without any problem. However, you may also choose to use your own
-`Error` type.
+`Error` type. The runner will walk the entire chain of error causes to generate an error message,
+so in particular, the [error-chain](https://crates.io/crates/error-chain) crate provides a great way
+to generate helpful errors with minimal boilerplate:
+
+{% highlight rust %}
+#[macro_use]
+extern crate error_chain;
+error_chain! { }
+
+algo_entrypoint!(&str);
+fn apply(input: &str) -> Result<String> {
+    let f = File::open(input).chain_err(|| "Failed to open input file")?;
+    /* ... */
+}
+{% endhighlight %}
+
+If the `File::open` fails, the API response's error message will look something like this:
+
+<pre>
+Failed to open input file
+caused by: No such file or directory (os error 2)
+</pre>
 
 As with most Rust code, you should avoid panicking in your algorithm. API callers will not have
-access the panic backtrace, and panicking will impact the latency of back-to-back requests
+access to the panic backtrace, and panicking will impact the latency of back-to-back requests
 from the same user.
 
 #### Managing Dependencies
