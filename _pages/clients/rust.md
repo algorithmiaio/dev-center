@@ -22,7 +22,7 @@ To follow along you can create a new project with `cargo new <PROJECT>`
 
 The official Algorithmia Rust Client is published to [crates.io](https://crates.io/crates/algorithmia) and additional reference documentation can be found in the cargo-generated [Algorithmia Client Documentation](http://algorithmiaio.github.io/algorithmia-rust/algorithmia/) and the [Algorithmia API docs](http://docs.algorithmia.com/?rust#).
 
-To get started, first install the Algorithmia Rust Client by adding `algorithmia = "1.3.0"` to the dependencies in your `Cargo.toml`.
+To get started, first install the Algorithmia Rust Client by adding `algorithmia = "2.0.0"` to the dependencies in your `Cargo.toml`.
 
 Then build the cargo file to download and install the client:
 
