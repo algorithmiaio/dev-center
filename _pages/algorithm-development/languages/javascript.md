@@ -71,15 +71,13 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 ## Managing Dependencies
 
-Now that you have created your algorithm, you can add dependencies.
+Now that you have created your algorithm, you can add dependencies.  The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `lodash` just as an example.  
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.
+Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.  You don't need to create the package.json file manually.  instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-You don't need to create the package.json file manually.  instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaScript Dependency File" class="screenshot">
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaSCript Dependency File" class="screenshot">
-
-Add dependencies by including the package name and version inside the `dependencies` section.  For example, to add `lodash` version 4.17.4, edit that section as follows:
+Add dependencies by including the package name and version inside the `dependencies` section.  To add `lodash` version 4.17.4, edit that section as follows:
 
 
 ```
@@ -114,41 +112,59 @@ To test the algorithm type your name or another string in the console and hit en
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
 
-The first algorithm that we'll create will take a JSON formatted object, which has been passed as input by the user.  However, you don't need to worry about deserializing the JSON; it done automatically before the call to `apply()`.
+The first algorithm that we'll create will take a JSON formatted object, which has been passed as input by the user.  However, you don't need to worry about deserializing the JSON; it is done automatically before the call to `apply()`.
 
 Your algorithm will output a JSON formatted object, returned via the callback function `cb`, which the user will consume via an API call to the algorithm path found at the bottom of the algorithm description page.  This path is based on your Algorithmia user name and the name of your algorithm, so if you are "demo" and your algorithm is "TokenizeText", then the path for version 0.1.1 of your algorithm will be `demo/TokenizeText/0.1.1`
 
 ### Working with Basic Data Structures
 
-If the input to your algorithm is a single string (e.g. `"world"`), then `typeof input` will be 'string'.  Otherwise, you are dealing with an Array or other Object: an easy way to differentiate is to use `Array.isArray`:
+If the input to your algorithm is a bare string (e.g. `"world"`), then `typeof input` will be 'string'.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
+
+Following this, you can distinguish between simple Arrays vs Objects by using `Array.isArray`.  Here's an example that will accept either an Array, or an Object with the property "values" (which is an Array):
 
 {% highlight javascript %}
 exports.apply = function(input, cb) {
   if (typeof input == 'string'){
-    	cb(null, "It's a String!");
+    	cb("Please provide a JSON-formatted Array or Object", null);
   } else if (Array.isArray(input)) {
-    	cb(null, "It's an Array!");
+        var result = {
+            "datatype":"object",
+            "sum": sum(input)
+        }
+    	cb(null, result);
+  } else if (input["values"] && Array.isArray(input["values"])) {
+        var result = {
+            "datatype":"object",
+            "sum": sum(input['values'])
+        }
+    	cb(null, result);
   } else {
-    	cb(null, "It's an Object!");
+      cb("Please provide an Array of \"values\"", null);
   }
 };
+
+var sum = function(arr) {
+    return arr.reduce( function(a,b) {return a+b;} );
+}
 {% endhighlight %}
 
 Go ahead and type or paste the code sample above in the Algorithmia code editor after removing the “Hello World” code.
 
 Now compile the new code sample and when that’s done test the code in the console by passing in the input and hitting enter on your keyboard:
 
-{% highlight javascript %}
-"foo"
+{% highlight python %}
+{"values":[8,6,7,5,3,0,9]}
 {% endhighlight %}
 
 This should return:
 
-{% highlight javascript %}
-"It's a String!"
+{% highlight python %}
+{"datatype":"object","sum":38}
 {% endhighlight %}
 
-Try this again with the inputs `["foo","bar"]` and `{"foo":"bar"}`, to get back `It's an Array!` and `It's an Object` respectively.
+Note that this returns well-formatted JSON which will be easy for the user to consume.
+
+You'll get a similar result by passing in just `[8,6,7,5,3,0,9]`, but giving it a bare string or an Object without a "value" property will return an error message.
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
@@ -163,7 +179,7 @@ While users who consume an algorithm have access to both Dropbox and Amazon S3 c
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).
 
-This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into words.  This is a relatively naive implementation, and simply uses a regular expression to split on any dot or whitespace `\s` character, then filters out any empty strings.  Once done, it passes back the struct `{"words":words}` into the callback function, which returns it to the user via JSON:
+This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into sentences and words.  This implementation simply splits the text on any dot, then on whitespace `\s` characters, and then filters out any empty strings.  Once done, it passes back an Object containing the properties "text" (the raw text extracted from the file), and "words" (an Array of Arrays representing sentences and words) into the callback function:
 
 {% highlight javascript %}
 Algorithmia = require("algorithmia");
@@ -177,9 +193,17 @@ exports.apply = function(input, cb) {
             if(err) {
                 cb(err, err.message);
             } else {
-                var words = data.split(/[\.\s]/);
-                words = words.filter(function(word) {return word!="";});
-                cb(null, {"words":words});
+                var results = [];
+                var sentences = data.split('.');
+                for (var i=0; i<sentences.length; i++) {
+                    var words = sentences[i].split(/\s/);
+                    words = words.filter(function(word) {return word!="";});
+                    results.push(words);
+                }
+                cb(null, {
+                    "text": data,
+                    "words": results
+                });
             }
         });
     } else {
@@ -188,18 +212,21 @@ exports.apply = function(input, cb) {
 };
 {% endhighlight %}
 
-Paste the above code into the Algorithmia code editor, and compile.  Then test the example by entering giving it input such as:
+After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
+
+Following the example below, replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](https://algorithmia.com/data/hosted):
 
 {% highlight python %}
 {"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
 {% endhighlight %}
 
-...where `data://YOUR_USERNAME/data_collection_dir/data_file.txt` is the Data URI of your file.  This can be found in [Data Collections](https://algorithmia.com/data/hosted) by clicking on your collection, directly below the name of the file you're interested in.  Note that it is composed of the "data://" prefix, followed by your user name, the name of the data collection, and the data file name.
-
 You should get back an structure like this, but longer:
 
 {% highlight python %}
-{"words": ['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']}
+{
+    "text":"It was a quiet night in the Shovel...",
+    "words":[["It","was","a","quiet","night","in","the","Shovel"],["At","the"...]]
+}
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
