@@ -9,4 +9,4 @@ image:
   teaser: /icons/fa-bolt.png
 ---
 
-We currently support algorithm development in Java, Scala, and Python. We are adding new languages constantly. To request a language send us email at <a href="mailto:support@algorithmia.com">support@algorithmia.com</a>.
+We currently support algorithm development in Java, Python, Rust, JavaScript, Ruby, R, and Scala. We are adding new languages constantly. To request a language send us email at <a href="mailto:support@algorithmia.com">support@algorithmia.com</a>.
