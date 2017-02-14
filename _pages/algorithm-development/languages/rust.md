@@ -45,7 +45,7 @@ Let's start by creating an algorithm. First navigate to [Algorithmia](https://al
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_ruby.png" alt="Create an algorithm in Ruby" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_rust.png" alt="Create an algorithm in Rust" class="screenshot">
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
@@ -53,7 +53,7 @@ For example this guide shows how to create an algorithm that splits text up into
 
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
-**Language:** Next you'll pick the language of your choice. This is the Ruby guide so choose Ruby as the language.
+**Language:** Next you'll pick the language of your choice. This is the Rust guide so choose Rust as the language.
 
 **Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
 
@@ -66,7 +66,7 @@ Find out more about licensing, algorithm permissions and GPU's in the [Algorithm
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_ruby.png" alt="Algorithm console Ruby" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_rust.png" alt="Algorithm console Rust" class="screenshot">
 
 ## Managing Dependencies
 
