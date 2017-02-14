@@ -74,7 +74,7 @@ The algorithm we are about to create does not have any dependencies other than `
 
 Algorithmia supports adding 3rd party dependencies via <a href="https://rubygems.org/" target="_blank">Ruby Gems</a> using a Gemfile, but you don't need to create the Gemfile file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="JavaScript Dependency File" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="Ruby Dependency File" class="screenshot">
 
 Add dependencies by adding the package name to the `Gemfile`.  For example, to make use of phony, you would include the line
 
