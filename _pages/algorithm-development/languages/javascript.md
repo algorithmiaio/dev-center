@@ -5,7 +5,7 @@ excerpt: "Build your algorithm in JavaScript"
 categories: languages
 tags: [algo-guide-lang]
 show_related: true
-author: steph_kim
+author: jon_peck
 image:
     teaser: /language_logos/js.svg
 ---
@@ -32,7 +32,7 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/">Javascript Node 6.9 language and standard library</a>
+The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Javascript Node 6.9 language and standard library</a>
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
@@ -73,12 +73,11 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 Now that you have created your algorithm, you can add dependencies.  The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `lodash` just as an example.  
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.  You don't need to create the package.json file manually.  instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.  You don't need to create the package.json file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaScript Dependency File" class="screenshot">
 
 Add dependencies by including the package name and version inside the `dependencies` section.  To add `lodash` version 4.17.4, edit that section as follows:
-
 
 ```
 "dependencies": {
@@ -128,7 +127,7 @@ exports.apply = function(input, cb) {
     	cb("Please provide a JSON-formatted Array or Object", null);
   } else if (Array.isArray(input)) {
         var result = {
-            "datatype":"object",
+            "datatype":"array",
             "sum": sum(input)
         }
     	cb(null, result);

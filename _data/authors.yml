@@ -27,3 +27,11 @@ steph_kim:
   bio: Developer Evangelist at Algorithmia, Data Enthusiast.
   email: developers@algorithmia.com
   twitter: algorithmia
+
+jon_peck:
+  slug: jon_peck
+  name: Jon Peck
+  bio: "Developer Evangelist for Algorithmia, helping programmers make the most efficient and productive use of their abilities."
+  avatar: /authors/jonpeck.jpeg
+  email: developers@algorithmia.com
+  twitter: algorithmia
