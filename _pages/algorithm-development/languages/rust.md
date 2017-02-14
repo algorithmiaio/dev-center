@@ -5,7 +5,7 @@ excerpt: "Build your algorithm in Rust"
 categories: languages
 tags: [algo-guide-lang]
 show_related: true
-author: liz_rush
+author: jon_peck
 image:
     teaser: /language_logos/rust.svg
 ---

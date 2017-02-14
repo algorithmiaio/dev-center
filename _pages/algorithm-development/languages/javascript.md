@@ -5,7 +5,7 @@ excerpt: "Build your algorithm in JavaScript"
 categories: languages
 tags: [algo-guide-lang]
 show_related: true
-author: steph_kim
+author: jon_peck
 image:
     teaser: /language_logos/js.svg
 ---
