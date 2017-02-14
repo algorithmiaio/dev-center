@@ -28,7 +28,7 @@ The main area of your profile also includes some basis stats like the number of 
 
 ## Credentials
 
-The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, labeled "default-key", is the key that will show up in the algorithm console when trying out algorithms in the browser.
+The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, will be labeled "default-key", and will show up in the algorithm console when trying out algorithms in the browser.
 
 ![Credentials]({{ site.baseurl }}/images/post_images/your_profile/credentials.png)
 
@@ -46,16 +46,19 @@ If you have earned credits by publishing your own algorithms, you'll see the amo
 
 Below the account overview, you'll see menu options to view your Usage, Earnings, and Transactions.
 
-#### Usage
+### Usage
 ![Usage]({{ site.baseurl }}/images/post_images/your_profile/usage.png)
 
 The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
-The number of calls is the full number of the times that you've called the algorithm, but you'll see that sometimes the Billed Calls column displays a lower value. This is because we don't bill API calls that result in an error!
+The number of calls is the full number of the times that you've called the algorithm, but you'll see that sometimes the Billed Calls column displays a lower value. This is because we don't bill API calls that result in an error.
+{: .notice-info}
 
 The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column.
 
-#### Earnings
+For more information about pricing check out [Pricing and Permissions]({{ site.baseurl }}/pricing-permissions/).
+
+### Earnings
 
 The next section, Earnings, is where you will find the records of the calls made to your algorithms:
 
@@ -65,7 +68,7 @@ In this section, you'll see the algorithm listed by date as well as the version 
 
 In the case of earnings, you will only see the number of billable calls and their duration. You won't see the number of calls that resulted in an error and were not billed to the user who called the algorithm. The final column on the right is the total credits earned for that entry.
 
-#### Transactions
+### Transactions
 
 Find the history of your credits in the transactions section.
 
