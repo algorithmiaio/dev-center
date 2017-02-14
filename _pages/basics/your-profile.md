@@ -1,16 +1,16 @@
 ---
 layout: article
-title:  "Your Profile"
-excerpt: "What's going on in your profile? Click here to find out."
+title:  "Your User Profile"
+excerpt: "Information about your user profile."
 categories: basics
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
-author: liz_rush
+author: steph_kim
 image:
   teaser: /icons/algo.svg
 ---
 
-Understanding your profile on the Algorithmia platform will help you find all the information you need, such as your credentials and account credits to your recent API calls.
+This guide will usher you through your user profile and cover how to find your API key, check your account credits and look at your recent API calls.
 
 {% include toc.html %}
 
