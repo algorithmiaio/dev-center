@@ -70,21 +70,13 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 ## Managing Dependencies
 
-The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `phony` just as an example.
+Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/">Crates.io</a> (though it is also possible to specify dependencies from a git URL).  Do not try to manually create the `Cargo.toml` file.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-Algorithmia supports adding 3rd party dependencies via <a href="https://rubygems.org/" target="_blank">Ruby Gems</a> using a Gemfile, but you don't need to create the Gemfile file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot">
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="JavaScript Dependency File" class="screenshot">
+Add dependencies at the end of he file, under the `[dependencies]` section.  Then click "Save dependencies" to close the modal window.
 
-Add dependencies by adding the package name to the `Gemfile`.  For example, to make use of phony, you would include the line
-
-`gem 'phony', '~>2.15.41'`
-
-Now click "Save dependencies" to close the modal window.
-
-**Note:** that you will still need to include an import statement to your algorithm file. For example, to include `phony`, add the following to your .rb file:
-
-`require 'phony'`
+**Note:** Editing the `[bin]` and `[lib]` sections may break compilation, either immediately or during future platform maintenance. If you believe your scenario requires such changes, contact us as we'd love to learn more about your usage scenario to better support it.
 
 ## Write your First Algorithm
 
