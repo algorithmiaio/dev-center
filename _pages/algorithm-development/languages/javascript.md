@@ -32,7 +32,7 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/">Javascript Node 6.9 language and standard library</a>
+The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Javascript Node 6.9 language and standard library</a>
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform

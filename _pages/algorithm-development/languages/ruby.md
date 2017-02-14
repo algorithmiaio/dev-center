@@ -11,7 +11,7 @@ image:
 ---
 
 
-Algorithmia supports algorithm development in Ruby.
+Welcome to algorithm development in Ruby.
 
 This guide will take you through the steps to getting started in algorithm development and cover the basics of managing dependencies, working with various types of inputs and outputs, calling other algorithms and managing data.
 
@@ -33,7 +33,7 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 language and standard library</a> is available for you to use in your algorithms.
+The full <a href="http://ruby-doc.org/core-2.2.0/" target="_blank">Ruby 2.2 language and standard library</a> is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Ruby Client</a>.
 
