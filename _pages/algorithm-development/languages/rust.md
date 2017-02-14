@@ -70,7 +70,7 @@ Now hit the "Create" button on the bottom lower right of the form and you should
 
 ## Managing Dependencies
 
-Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/">Crates.io</a> (though it is also possible to specify dependencies from a git URL).  Do not try to manually create the `Cargo.toml` file.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/" target="_blank">Crates.io</a> (though it is also possible to specify dependencies from a git URL).  Do not try to manually create the `Cargo.toml` file.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot">
 
@@ -246,7 +246,9 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Client Ruby Docs</a>
+* <a href="{{ site.baseurl }}/clients/rust/">Algorithmia Client Rust Docs</a>
 * [Hosted Data Source]({{ site.baseurl }}/data/)
-* [Algorithmia API Docs](http://docs.algorithmia.com/?ruby)
-* <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 Docs</a>
+* [Algorithmia API Docs](http://docs.algorithmia.com/?rust)
+* <a href="https://www.rust-lang.org/documentation.html" target="_blank">Rust 1.5 Docs</a>
+* <a href="https://doc.rust-lang.org/std/" target="_blank">Rust standard library</a>
+* <a href="https://crates.io/" target="_blank">Crates.io</a>
