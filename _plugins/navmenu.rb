@@ -42,8 +42,8 @@ module Jekyll
       items.each do |item|
         prefix = item['url'].chomp('/') + '/'
 
-        is_active = is_ancestor(page_url, prefix)
         is_category = item['children'] && item['children'].count > 0
+        is_active = is_ancestor(page_url, prefix, is_category)
 
         if is_active && is_category
           html << '<li class="active category">'
@@ -100,12 +100,14 @@ module Jekyll
       }
     end
 
-    def is_ancestor(page_url, prefix)
+    def is_ancestor(page_url, prefix, is_category)
       if prefix == '/' && page_url == '/'
         true
       elsif prefix == '/'
         false
-      elsif page_url.start_with? prefix
+      elsif page_url == prefix
+        true
+      elsif is_category && (page_url.start_with? prefix)
         true
       else
         false
