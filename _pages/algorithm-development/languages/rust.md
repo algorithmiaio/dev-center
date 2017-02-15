@@ -74,7 +74,7 @@ Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot">
 
-Add dependencies at the end of he file, under the `[dependencies]` section.  Then click "Save dependencies" to close the modal window.
+Add dependencies at the end of the file, under the `[dependencies]` section (for details on versioning and on git-based dependencies, see the <a href="http://doc.crates.io/specifying-dependencies.html" target="_blank">cargo documentation</a>).  Then click "Save dependencies" to close the modal window.
 
 **Note:** Editing the `[bin]` and `[lib]` sections may break compilation, either immediately or during future platform maintenance. If you believe your scenario requires such changes, contact us as we'd love to learn more about your usage scenario to better support it.
 
