@@ -103,14 +103,14 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 
 ### Working with Basic Data Structures
 
-Use the `algo_entrypoint!` macro to declare the data type you wish to handle in your entry point.  We recommend accepting JSON-encoded Objects, and the easiest way to work with them is to derive an automatic deserialization from a wrapper type.  So, if I was expecting to receive a JSON Object containing "name" (a string) and "values" (an array of numbers), I might write:
+Use the `algo_entrypoint!` macro to declare the data type you wish to handle in your entry point.  We recommend accepting JSON-encoded Objects, and the easiest way to work with them is to derive an automatic deserialization from a wrapper type.  So, if I was expecting to receive a JSON Object containing "name" (a string) and "values" (a list of numbers), I might write:
 
 {% highlight rust %}
+use algorithmia::prelude::*;
+
 #[macro_use] extern crate algorithmia;
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate serde_json;
-
-use algorithmia::prelude::*;
 
 #[derive(Deserialize)]
 pub struct Input {
@@ -129,19 +129,19 @@ Go ahead and type or paste the code sample above in the Algorithmia code editor 
 
 Now compile the new code sample and when that’s done test the code in the console by passing in the input and hitting enter on your keyboard:
 
-{% highlight python %}
-{"name":"ages",values":[8,6,7,5,3,0,9]}
+{% highlight json %}
+{"name": "ages", "values": [8,6,7,5,3,0,9]}
 {% endhighlight %}
 
 This should return:
 
-{% highlight python %}
-{"name":"ages","sum":38}
+{% highlight json %}
+{"name": "ages", "sum": 38}
 {% endhighlight %}
 
 Note that this returns well-formatted JSON which will be easy for the user to consume.
 
-Compiling Rust inside Algorithmia's developer console is quite slow (this will be fixed in a future version of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="https://algorithmia.com/developers/algorithm-development/git/" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
+Algorithmia's Rust compiler is highly optimized, so builds can take several minutes (this will get faster as caching improves in future versions of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="https://algorithmia.com/developers/algorithm-development/git/" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
 {: .notice-info}
 
 ## Working with Data Stored on Algorithmia
@@ -154,41 +154,48 @@ While users who consume an algorithm have access to both Dropbox and Amazon S3 c
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).
 
-This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into sentences and words.  This implementation simply splits the text on any dot, then on whitespace `\s` characters, and then filters out any empty strings.  Once done, it passes back an Object containing the properties "text" (the raw text extracted from the file), and "words" (an Array of Arrays representing sentences and words) into the callback function:
+This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and read it into a local String.  Next, it splits the text on any dot, then on whitespace characters.  Once done, it passes back an Object containing the properties "text" (the raw text extracted from the file), and "words" (a Vector of Vectors representing sentences and words):
 
-{% highlight ruby %}
-require 'algorithmia'
+{% highlight rust %}
+use algorithmia::prelude::*;
+use std::io::Read;
 
-def apply(input)
-    client = Algorithmia.client()
-    if !input.instance_of?(String) and !input.instance_of?(Array) and input["user_file"]
-        text = client.file(input["user_file"]).get
-        return {
-            "text": text,
-            "words": text.split(".").map {
-                |s| s.gsub(/\s+/m, ' ').strip.split(' ')
-            }
-        }
-    else
-        raise TypeError, 'Please provide a value for "user_file"'
-    end
-end
+#[macro_use] extern crate algorithmia;
+#[macro_use] extern crate serde_derive;
+#[macro_use] extern crate serde_json;
+
+#[derive(Deserialize)]
+pub struct Input {
+    user_file: String
+}
+
+algo_entrypoint!(Input);
+fn apply(input: Input) -> Result<JsonValue, Box<std::error::Error>> {
+    let client = Algorithmia::default();
+    let mut text_reader = client.file(&input.user_file).get()?;
+    let mut text = String::new();
+    text_reader.read_to_string(&mut text)?;
+    let words: Vec<Vec<_>> = text.split(".")
+        .map(|sentence| sentence.split_whitespace().collect())
+        .collect();
+    Ok(json!({ "text": text, "words": words }))
+}
 {% endhighlight %}
 
-After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
+After you paste the above code into the Algorithmia code editor, you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
 
 Following the example below, replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](https://algorithmia.com/data/hosted):
 
-{% highlight python %}
+{% highlight json %}
 {"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
 {% endhighlight %}
 
 You should get back an structure like this, but longer:
 
-{% highlight python %}
+{% highlight json %}
 {
-    "text":"It was a quiet night in the Shovel...",
-    "words":[["It","was","a","quiet","night","in","the","Shovel"],["At","the"...]]
+    "text": "It was a quiet night in the Shovel...",
+    "words": [["It","was","a","quiet","night","in","the","Shovel"],["At","the"...]]
 }
 {% endhighlight %}
 
