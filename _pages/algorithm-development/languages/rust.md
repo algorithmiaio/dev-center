@@ -201,21 +201,39 @@ You should get back an structure like this, but longer:
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/rust/">Algorithmia Rust Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/rust/">Algorithmia Rust Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/?rust) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
 ## Error Handling
 
-In order to provide the user with useful feedback, raise an Error with a meaningful message, so that users can receive this as an error object in the response:
+The example above uses `Box<std::errror::Error>`, which is quite convenient, as you can append the `?` operator to any potentialy problematic line and the Error will get returned to the caller as a JSON String.
 
-{% highlight ruby %}
-	begin
-		x = Integer(input)
-	rescue
-		raise TypeError, 'Please provide a JSON-formatted Array or Object'
-	end
+However, you may also choose to use your own `Error` type, which will allow you to return more useful, customized error messages to the caller. The [error-chain](https://crates.io/crates/error-chain) crate provides a great way to generate helpful errors with minimal boilerplate:
+
+{% highlight rust %}
+#[macro_use] extern crate error_chain;
+
+error_chain! { }
+
+algo_entrypoint!(&str);
+fn apply(input: &str) -> Result<String> {
+    let f = File::open(input).chain_err(|| "Failed to open input file")?;
+    /* ... */
+}
 {% endhighlight %}
+
+If the `File::open` fails, the API response's error message will look something like this:
+
+<pre>
+Failed to open input file
+caused by: No such file or directory (os error 2)
+</pre>
+
+In addition, `error-chain` provides a `bail!` macro which you can use to return a custom error message at any time.
+
+As with most Rust code, you should avoid panicking in your algorithm. API callers will not have access to the panic backtrace, and panicking will impact the latency of back-to-back requests from the same user.
+{: .notice-warning}
 
 ## Algorithm Checklist
 
