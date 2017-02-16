@@ -103,30 +103,26 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 
 ### Working with Basic Data Structures
 
-If the input to your algorithm is a bare string (e.g. `"world"`), then `input.instance_of? String` will be true.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
+Use the `algo_entrypoint!` macro to declare the data type you wish to handle in your entry point.  We recommend accepting JSON-encoded Objects, and the easiest way to work with them is to derive an automatic deserialization from a wrapper type.  So, if I was expecting to receive a JSON Object containing "name" (a string) and "values" (an array of numbers), I might write:
 
-Following this, you can distinguish between simple Arrays vs Objects by using `input.instance_of?(Array)`.  Here's an example that will accept either an Array, or an Object with the property "values" (which is an Array):
+{% highlight rust %}
+#[macro_use]
+extern crate algorithmia;
+extern crate serde_derive;
+extern crate serde_json;
 
-{% highlight ruby %}
-require 'algorithmia'
+use algorithmia::prelude::*;
 
-def apply(input)
-    if input.instance_of?(String)
-        raise TypeError, 'Please provide a JSON-formatted Array or Object'
-    elsif input.instance_of?(Array)
-        return {
-            "datatype": "Array",
-            "sum": input.reduce(:+)
-        }
-    elsif input["values"]
-        return {
-            "datatype": "Object",
-            "sum": input['values'].reduce(:+)
-        }
-    else
-        raise TypeError, 'Please provide an Array of "values"'
-    end
-end
+#[derive(Deserialize)]
+struct Input {
+    name: String,
+    values: Vec<u32>,
+}
+
+algo_entrypoint!(Input);
+fn apply(&input: Input) -> Result<JsonValue, Box<std::error::Error>> {
+    Ok(json!({ "name": input.name, "sum": input.values.iter().sum() }))
+}
 {% endhighlight %}
 
 Go ahead and type or paste the code sample above in the Algorithmia code editor after removing the “Hello World” code.
@@ -134,21 +130,16 @@ Go ahead and type or paste the code sample above in the Algorithmia code editor 
 Now compile the new code sample and when that’s done test the code in the console by passing in the input and hitting enter on your keyboard:
 
 {% highlight python %}
-{"values":[8,6,7,5,3,0,9]}
+{"name":"ages",values":[8,6,7,5,3,0,9]}
 {% endhighlight %}
 
 This should return:
 
 {% highlight python %}
-{"datatype":"object","sum":38}
+{"name":"ages","sum":38}
 {% endhighlight %}
 
 Note that this returns well-formatted JSON which will be easy for the user to consume.
-
-You'll get a similar result by passing in just `[8,6,7,5,3,0,9]`, but giving it a bare string or an Object without a "value" property will return an error message.
-
-When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
 
 ## Working with Data Stored on Algorithmia
 
