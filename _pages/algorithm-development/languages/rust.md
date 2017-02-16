@@ -106,22 +106,22 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 Use the `algo_entrypoint!` macro to declare the data type you wish to handle in your entry point.  We recommend accepting JSON-encoded Objects, and the easiest way to work with them is to derive an automatic deserialization from a wrapper type.  So, if I was expecting to receive a JSON Object containing "name" (a string) and "values" (an array of numbers), I might write:
 
 {% highlight rust %}
-#[macro_use]
-extern crate algorithmia;
-extern crate serde_derive;
-extern crate serde_json;
+#[macro_use] extern crate algorithmia;
+#[macro_use] extern crate serde_derive;
+#[macro_use] extern crate serde_json;
 
 use algorithmia::prelude::*;
 
 #[derive(Deserialize)]
-struct Input {
+pub struct Input {
     name: String,
     values: Vec<u32>,
 }
 
 algo_entrypoint!(Input);
-fn apply(&input: Input) -> Result<JsonValue, Box<std::error::Error>> {
-    Ok(json!({ "name": input.name, "sum": input.values.iter().sum() }))
+fn apply(input: Input) -> Result<JsonValue, Box<std::error::Error>> {
+	let sum: u32 = input.values.iter().sum();
+    Ok(json!({ "name": input.name, "sum": sum }))
 }
 {% endhighlight %}
 
@@ -140,6 +140,9 @@ This should return:
 {% endhighlight %}
 
 Note that this returns well-formatted JSON which will be easy for the user to consume.
+
+Compiling Rust inside Algorithmia's developer console is quite slow (this will be fixed in a future version of Rust).  For now, we highly recommend developing most of your code locally, then copying it into the console for the final compilation.  Fortunately, it only takes <a href="http://doc.crates.io/index.html" target="_blank">a few steps</a> to get rust running on your own computer.
+{: .notice-info}
 
 ## Working with Data Stored on Algorithmia
 
