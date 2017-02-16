@@ -141,7 +141,7 @@ This should return:
 
 Note that this returns well-formatted JSON which will be easy for the user to consume.
 
-Compiling Rust inside Algorithmia's developer console is quite slow (this will be fixed in a future version of Rust).  For now, we highly recommend developing most of your code locally, then copying it into the console for the final compilation.  Fortunately, it only takes <a href="http://doc.crates.io/index.html" target="_blank">a few steps</a> to get rust running on your own computer.
+Compiling Rust inside Algorithmia's developer console is quite slow (this will be fixed in a future version of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="https://algorithmia.com/developers/algorithm-development/git/" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
 {: .notice-info}
 
 ## Working with Data Stored on Algorithmia
