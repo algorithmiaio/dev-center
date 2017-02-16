@@ -91,7 +91,7 @@ Compiling your algorithm will also save your work, but note that the first time 
 
 To test the algorithm type your name or another string in the console and hit enter on your keyboard:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_ruby.png" alt="Run basic algorithm in console Ruby" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_rust.png" alt="Run basic algorithm in console Rust" class="screenshot">
 
 ## I/O for your Algorithms
 
