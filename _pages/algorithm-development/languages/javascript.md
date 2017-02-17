@@ -46,7 +46,7 @@ Let's start by creating an algorithm. First navigate to [Algorithmia](https://al
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_javascript.png" alt="Create an algorithm in JavaScript" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_javascript.png" alt="Create an algorithm in JavaScript" class="screenshot">
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
