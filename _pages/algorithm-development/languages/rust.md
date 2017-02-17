@@ -82,14 +82,11 @@ Add dependencies at the end of the file, under the `[dependencies]` section (for
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
 
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
+Take note of the `algo_entrypoint!` macro which precedes the `apply` function, which itself returns a `Result<T, E>` for some type `T` that can be converted into [AlgoOutput](https://docs.rs/algorithmia/2/algorithmia/algo/enum.AlgoOutput.html) and some type `E` can be converted into a boxed `Error`.  The [algo_entrypoint!](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) documentation covers this in more detail, but this guide will cover several common usages. 
 
-If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
 
-Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
-{: .notice-info}
-
-To test the algorithm type your name or another string in the console and hit enter on your keyboard:
+To test the algorithm, type your name or another string in the console and hit enter on your keyboard:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_rust.png" alt="Run basic algorithm in console Rust" class="screenshot">
 
@@ -140,6 +137,16 @@ This should return:
 {% endhighlight %}
 
 Note that this returns well-formatted JSON which will be easy for the user to consume.
+
+To change the exact structure of the JSON which you wish to *accept*, simply change the struct `Input`.  The derive macro will do its best to automatically convert incoming JSON into a compatible struct.
+  
+There is one exception: binary data.  To create an API which accepts a single binary object, such as an encoded file, use an `algo_entrypoint` which accepts `&[u8]`:
+{% highlight rust %}
+algo_entrypoint!(&[u8]);
+fn apply(input: &[u8]) -> Result<JsonValue, Box<std::error::Error>> {
+    ...
+}
+{% endhighlight %}
 
 Algorithmia's Rust compiler is highly optimized, so builds can take several minutes (this will get faster as caching improves in future versions of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="https://algorithmia.com/developers/algorithm-development/git/" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
 {: .notice-info}
