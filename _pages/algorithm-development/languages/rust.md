@@ -117,7 +117,7 @@ pub struct Input {
 
 algo_entrypoint!(Input);
 fn apply(input: Input) -> Result<JsonValue, Box<std::error::Error>> {
-	let sum: u32 = input.values.iter().sum();
+    let sum: u32 = input.values.iter().sum();
     Ok(json!({ "name": input.name, "sum": sum }))
 }
 {% endhighlight %}
