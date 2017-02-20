@@ -16,6 +16,7 @@
 # - project_output_dir: The subfolder to which project posts are compiled (default is 'projects').
 #
 # Available YAML settings :
+# - autogen: Indicates the page should be auto-generated with this plugin (required).
 # - repository: Git repository of your project (required).
 # - layout: Layout to use when creating the project page.
 # - title: Project title, which can be accessed in the layout.
@@ -28,13 +29,13 @@ require 'git'
 require 'pathname'
 require 'pp'
 
-Jekyll::Hooks.register :posts, :pre_render do |post, payload|
-  unless post.data['repository']
+Jekyll::Hooks.register :pages, :pre_render do |page, payload|
+  unless page.data['autogen'] && page.data['repository']
     next
   end
 
-  puts "Fetching data for #{post.data['title']} post"
-  repo_dir = sync_repo(post.data['repository'], payload.site['skip_readme_updates'])
+  puts "Fetching data for #{page.data['title']} page"
+  repo_dir = sync_repo(page.data['repository'], payload.site['skip_readme_updates'])
   readme = get_readme_path(repo_dir)
 
   # Decide the extension - if it's not textile, markdown or HTML treat it as textile.
@@ -47,7 +48,7 @@ Jekyll::Hooks.register :posts, :pre_render do |post, payload|
   readme_content = File.readlines(readme) unless readme.nil?
 
   # use the `ignore_section`
-  ignore_sections = post.data['ignore_sections'] || []
+  ignore_sections = page.data['ignore_sections'] || []
 
   # by setting this to false, the first section will get skipped by default
   # READMEs tend to favor build status, doc links, and such in the first section
@@ -62,16 +63,16 @@ Jekyll::Hooks.register :posts, :pre_render do |post, payload|
     select_state
   end
 
-  # Append any content from README to the end of any content in the post.
-  post.content += "\n\n" + filtered_content.join
+  # Append any content from README to the end of any content in the page.
+  page.content += "\n\n" + filtered_content.join
 
   # Replace github-style '``` lang' code markup to pygments-compatible.
-  post.content = post.content.gsub(/```([ ]?[a-zA-Z0-9]+)?(.*?)```/m,
+  page.content = page.content.gsub(/```([ ]?[a-zA-Z0-9]+)?(.*?)```/m,
     '{% highlight \1 %} \2 {% endhighlight %}')
 
   # For cases of {{ }} in README, remove one { to prevent liquid from doin' its thang.
-  post.content.gsub! '{{', '{'
-  post.content.gsub! '}}', '}'
+  page.content.gsub! '{{', '{'
+  page.content.gsub! '}}', '}'
 end
 
 
