@@ -32,8 +32,14 @@
   url: /bounties/
   nav_category: bounties
 
-- title: Pricing, Permissions, & Versioning
-  url: /pricing-permissions/
+- title: Pricing
+  url: /pricing/
+
+- title: Permissions
+  url: /permissions/
+
+- title: Versioning
+  url: /versioning/
 
 - title: FAQ
   url: /faqs/

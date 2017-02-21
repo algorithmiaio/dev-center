@@ -194,4 +194,4 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
-For more information about pricing, check out our [Pricing Guide]({{ site.baseurl }}/pricing-permissions/)
+For more information about pricing, check out our [Pricing Guide]({{ site.baseurl }}/pricing/)
