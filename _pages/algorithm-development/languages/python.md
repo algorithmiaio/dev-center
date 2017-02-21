@@ -66,7 +66,7 @@ As an incentive to promote community contributions, open source algorithms on th
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
 
-Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section]({{ site.baseurl }}/pricing-permissions/).
+Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Permissions Section]({{ site.baseurl }}/permissions/).
 {: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
@@ -109,7 +109,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.
 
-If you are interested in learning more about versioning check out the [Algorithm Permissions Section]({{ site.baseurl }}/pricing-permissions/).
+If you are interested in learning more about versioning check out the [Algorithm Permissions Section]({{ site.baseurl }}/permissions/).
 
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
@@ -360,7 +360,7 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing-permissions/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 

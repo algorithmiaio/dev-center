@@ -42,7 +42,7 @@ The estimate is based off the average duration of API calls. Your call duration 
 
 ![Algorithm Profile permissions]({{ site.baseurl }}/images/post_images/algorithm_profiles/permissions.png)
 
-The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here]({{ site.baseurl}}/pricing-permissions/).
+The third section of the main profile section is the permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here]({{ site.baseurl}}/permissions/).
 
 
 #### Algorithm Console & Sample Input:
@@ -62,4 +62,4 @@ If the algorithm is open-source, you will see a tab in the purple overview secti
 
 #### Wrapping Up
 
-You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{ site.baseurl }}/getting-started/) or learn more about [algorithm pricing, permissions, and versioning]({{ site.baseurl }}/pricing-permissions/).
+You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{ site.baseurl }}/getting-started/) or learn more about [algorithm pricing]({{ site.baseurl }}/pricing/), [permissions]({{ site.baseurl }}/permissions/), and [versioning]({{ site.baseurl }}/versioning/).
