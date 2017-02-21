@@ -57,6 +57,8 @@ For example this guide shows how to create an algorithm that splits text up into
 
 **Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
 
+As an incentive to promote community contributions, open source algorithms on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
+
 **Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
@@ -81,6 +83,10 @@ Add dependencies at the end of the file, under the `[dependencies]` section (for
 ## Write your First Algorithm
 
 As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+
+The main thing to note about the algorithm is that it's wrapped in the apply() function.
+
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 
 Take note of the `algo_entrypoint!` macro which precedes the `apply` function, which itself returns a `Result<T, E>` for some type `T` that can be converted into [AlgoOutput](https://docs.rs/algorithmia/2/algorithmia/algo/enum.AlgoOutput.html) and some type `E` can be converted into a boxed `Error`.  The [algo_entrypoint!](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) documentation covers this in more detail, but this guide will cover several common usages. 
 
