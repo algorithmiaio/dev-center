@@ -2,7 +2,8 @@
 layout: article
 title:  "Permissions"
 excerpt: "All about permissions on the platform."
-tags: [alg-dev-getting-started, app-dev-getting-started]
+categories: basics
+tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
