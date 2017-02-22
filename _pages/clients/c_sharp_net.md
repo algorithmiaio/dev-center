@@ -11,16 +11,16 @@ image:
 The C#/.Net client is still in development.  For now, you can use cURL inside your C#/.Net code to call any algorithm:
 
 #### Required imports
-```
+{% highlight csharp %}
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.IO;
-```
+{% endhighlight %}
 
 #### Calling an algorithm via cURL
 
-```
+{% highlight csharp %}
 // find your API key at http://algorithmia.com/user#credentials
 var apiKey = "_YOUR_API_KEY_"
 
@@ -48,7 +48,7 @@ using (StreamReader streamReader = new StreamReader(response.GetResponseStream()
     // many algorithms return serialized JSON; don't forget to parse the text
 }
 
-```
+{% endhighlight %}
 
 #### Additional information
 
