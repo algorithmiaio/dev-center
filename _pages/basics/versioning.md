@@ -2,7 +2,8 @@
 layout: article
 title:  "Versioning"
 excerpt: "All about versioning on the platform."
-tags: [alg-dev-getting-started, app-dev-getting-started]
+categories: basics
+tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: liz_rush
 image:
