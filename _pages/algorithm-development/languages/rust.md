@@ -90,7 +90,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Take note of the `algo_entrypoint!` macro which precedes the `apply` function, which itself returns a `Result<T, E>` for some type `T` that can be converted into [AlgoOutput](https://docs.rs/algorithmia/2/algorithmia/algo/enum.AlgoOutput.html) and some type `E` can be converted into a boxed `Error`.  The [algo_entrypoint!](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) documentation covers this in more detail, but this guide will cover several common usages. 
 
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  If you are interested in learning more about versioning check out the [Algorithm Basics Section](/basics/).
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/versioning/).
 
 To test the algorithm, type your name or another string in the console and hit enter on your keyboard:
 
