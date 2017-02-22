@@ -1,7 +1,7 @@
 ---
 autogen: true
 layout: article
-title:  "Named entities of Tweets"
+title:  "Named Entities of Tweets"
 categories: recipes
 recipe_tags: [text-analysis]
 tags: [text-analysis]

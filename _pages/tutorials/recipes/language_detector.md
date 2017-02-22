@@ -1,7 +1,7 @@
 ---
 autogen: true
 layout: article
-title:  "Categorize your Documents by Language"
+title:  "Categorize Documents by Language"
 categories: recipes
 recipe_tags: [text-analysis]
 tags: [text-analysis]

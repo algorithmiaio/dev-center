@@ -1,7 +1,7 @@
 ---
 autogen: true
 layout: article
-title:  "Build a Sentiment Timeseries Forecast Pipeline"
+title:  "Sentiment Timeseries Forecast Pipeline"
 categories: recipes
 recipe_tags: [machine-learning]
 tags: [machine-learning]
