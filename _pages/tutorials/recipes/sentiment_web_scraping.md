@@ -1,7 +1,7 @@
 ---
 autogen: true
 layout: article
-title:  "Build a Sentiment Analysis Pipeline for Web Scraping"
+title:  "Sentiment Analysis Pipeline"
 categories: recipes
 recipe_tags: [text-analysis]
 tags: [text-analysis]

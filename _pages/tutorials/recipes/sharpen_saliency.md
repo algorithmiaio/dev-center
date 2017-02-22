@@ -3,8 +3,8 @@ autogen: true
 layout: article
 title:  "Improve Saliency Detection"
 categories: recipes
-recipe_tags: [deep-learning]
-tags: [deep-learning]
+recipe_tags: [computer-vision]
+tags: [computer-vision]
 show_related: false
 author: steph_kim
 excerpt: "Sharpen images to help saliency detection perform even better."
