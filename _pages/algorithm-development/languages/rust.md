@@ -63,7 +63,7 @@ As an incentive to promote community contributions, open source algorithms on th
 
 Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
 
-Find out more about licensing, algorithm permissions and GPU's in the [Algorithm Basics Section]({{ site.baseurl }}/basics/).
+You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{ site.baseurl }}/permissions/).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
 {: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
