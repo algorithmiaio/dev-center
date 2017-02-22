@@ -18,6 +18,10 @@
   url: /basics/
   nav_category: basics
 
+- title: Tutorials
+  url: /tutorials/
+  nav_category: tutorials
+
 - title: Algorithm Development
   url: /algorithm-development/
   nav_category: algorithm-development
