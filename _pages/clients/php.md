@@ -10,13 +10,13 @@ image:
 
 The PHP client is still in development.  For now, you can use cURL inside your PHP code to call any algorithm:
 
-#### Calling an algorithm via cURL
+#### Calling an algorithm via cURL in PHP
 
 {% highlight php %}
 <?php
 
   // get your API Key at http://algorithmia.com/user#credentials
-  $api_key = 'sim5kgWhnhmxYNRFzUv4/JSdTQQ1';
+  $api_key = 'YOIR_API_KEY';
   
   // pick an algorithm at http://algorithmia.com/algorithms/ -- and append a version number
   $algorithm = 'util/Echo/0.2.1';

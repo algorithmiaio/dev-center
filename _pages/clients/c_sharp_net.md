@@ -18,7 +18,7 @@ using System.Net;
 using System.IO;
 {% endhighlight %}
 
-#### Calling an algorithm via cURL
+#### Calling an algorithm via cURL in C#/.Net
 
 {% highlight csharp %}
 // find your API key at http://algorithmia.com/user#credentials

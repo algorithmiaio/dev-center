@@ -47,7 +47,6 @@ curl -X PUT -F file=@@filename.csv -H 'Authorization: Simple YOUR_API_KEY' https
 -> {"result": "data://.my/newCollection/filename.csv"}
 {% endhighlight %}
 
-
 #### Upload data as a file
 
 You can also use cURL to upload data to the collection as a file.
@@ -60,6 +59,14 @@ curl -X PUT -H 'Content-Type:application/json' -d '{"key1": "value1"}' -H 'Autho
 -> {"result": "data://YOUR_USERNAME/newCollection/myFile.json"}
 {% endhighlight %}
 
+#### Retrieve a file
+
+Use cURL to `GET` any file that YOUR_API_KEY is allowed to access:
+
+{% highlight bash %}
+curl -X GET -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my/newCollection/filename.csv
+
+{% endhighlight %}
 
 ## Additional information
 
