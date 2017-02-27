@@ -5,7 +5,7 @@ categories: clients
 tags: [clients]
 show_related: true
 image:
-    teaser: /language_logos/curl.svg
+    teaser: /language_logos/php.svg
 ---
 
 The PHP client is still in development.  For now, you can use cURL inside your PHP code to call any algorithm:
@@ -28,9 +28,9 @@ The PHP client is still in development.  For now, you can use cURL inside your P
   // prepare cURL to algorithm endpoint
   $ch = curl_init();
   $headers = array(
-      'Content-Type: application/json',
-      'Authorization: Simple ' . $api_key,
-      'Content-Length: ' . strlen($data_json)
+    'Content-Type: application/json',
+    'Authorization: Simple ' . $api_key,
+    'Content-Length: ' . strlen($data_json)
   );
   curl_setopt_array($ch, array(
     CURLOPT_URL => 'https://api.algorithmia.com/v1/algo/' . $algorithm,
@@ -38,7 +38,7 @@ The PHP client is still in development.  For now, you can use cURL inside your P
     CURLOPT_POSTFIELDS => $data_json,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST => true
-    ));
+  ));
   
   // run the algorithm and get the results (usually a JSON-encoded string)
   $response_json = curl_exec($ch);
@@ -54,7 +54,7 @@ The PHP client is still in development.  For now, you can use cURL inside your P
   } else {
     print_r($response->result);
   }
-  
+
 ?>
 {% endhighlight %}
 
