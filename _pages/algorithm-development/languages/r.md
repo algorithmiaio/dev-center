@@ -244,6 +244,18 @@ When you are creating an algorithm be mindful of the data types you require from
 
 Note that we use the rjson package to parse JSON within your algorithm.
 
+### Writing files for the user to consume
+
+Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
+
+{% highlight r %}
+# {"target_file":"data://username/collection/filename.txt"}
+file_uri <- input$target_file
+tmpfile <- sprintf("/tmp/%s.tmp",UUIDgenerate())
+save_some_output_to(tempfile)
+client$file(file_uri)$putFile(tempfile)
+{% endhighlight %}
+
 ### Calling Other Algorithms and Managing Data
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
