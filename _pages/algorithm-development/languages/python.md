@@ -252,9 +252,9 @@ Sometimes it is more appropriate to write your output to a file than to return i
 {% highlight python %}
 # {"target_file":"data://username/collection/filename.txt"}
 file_uri = input["target_file"]
-tempfile = '/tmp/'+uuid.uuid4()+'.tmp';
-save_some_output_to(tempfile);
-client.file(file_uri).putFile(tempfile);
+tempfile = "/tmp/"+uuid.uuid4()+".tmp"
+save_some_output_to(tempfile)
+client.file(file_uri).putFile(tempfile)
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
