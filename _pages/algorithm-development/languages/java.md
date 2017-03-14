@@ -306,7 +306,7 @@ If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your 
 Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
 
 {% highlight java %}
-# {"target_file":"data://username/collection/filename.txt"}
+// {"target_file":"data://username/collection/filename.txt"}
 String file_uri = dict.get("target_file");
 File tempfile = new File("/tmp/"+UUID.randomUUID()+".tmp");
 save_some_output_to(tempfile);
