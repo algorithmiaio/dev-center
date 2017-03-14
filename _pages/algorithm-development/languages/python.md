@@ -247,7 +247,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Writing files for the user to consume
 
-Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](https://algorithmia.com/data/hosted) (usually one which the caller specified in their request):
+Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
 
 {% highlight python %}
 file_uri = input["target_uri"] # a data URI, e.g. 'data://username/collection/filename.txt'
