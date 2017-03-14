@@ -250,7 +250,8 @@ When you are creating an algorithm be mindful of the data types you require from
 Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
 
 {% highlight python %}
-file_uri = input["target_uri"] # a data URI, e.g. 'data://username/collection/filename.txt'
+# {"target_file":"data://username/collection/filename.txt"}
+file_uri = input["target_file"]
 tempfile = '/tmp/'+uuid.uuid4()+'.tmp';
 save_some_output_to(tempfile);
 client.file(file_uri).putFile(tempfile);
