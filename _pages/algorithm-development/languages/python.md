@@ -245,6 +245,16 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
 
+### Using temporary files
+
+Some functions can't send their output to a variable or other in-memory representation, and require a file handle for their output.  In these situations, you may need to create a temporary file for which to hold a function's output:
+
+{% highlight python %}
+tempfile = '/tmp/'+uuid.uuid4()+'.tmp';
+save_some_output_to(tempfile);
+client.file('data://username/filename').putFile(tempfile);
+{% endhighlight %}
+
 ### Calling Other Algorithms and Managing Data
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
