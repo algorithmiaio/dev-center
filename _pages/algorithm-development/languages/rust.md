@@ -204,6 +204,28 @@ You should get back an structure like this, but longer:
 }
 {% endhighlight %}
 
+### Writing files for the user to consume
+
+Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
+
+{% highlight rust %}
+let mut file_uri = "data://username/collection/filename.txt"
+let mut temp_file = tempfile().expect("failed to create temporary file");
+save_some_output(&mut temp_file);
+temp_file.seek(SeekFrom::Start(0))
+client.file(file_uri).putFile(temp_file)
+{% endhighlight %}
+
+However, actually using a temporary file is often unnecessary, and can be better accomplished with an in-memory buffer:
+
+{% highlight rust %}
+let mut file_uri = "data://username/collection/filename.txt"
+let mut data = Vec::new();
+save_some_output(&mut data);
+client.file(file_uri).putFile(data)
+{% endhighlight %}
+
+
 ### Calling Other Algorithms and Managing Data
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/rust/">Algorithmia Rust Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/?rust) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
