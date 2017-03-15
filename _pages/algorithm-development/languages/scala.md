@@ -118,10 +118,10 @@ Algorithms can throw any exception, and they will be returned as an error via th
 Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
  
 {% highlight scala %}
-String file_uri = "data://username/collection/filename.txt";
-File tempfile = new File("/tmp/"+uuid()+".tmp");
-save_some_output_to(tempfile);
-client.file(file_uri).putFile(tempfile);
+val file_uri = "data://username/collection/filename.txt"
+val tempfile = new File("/tmp/"+uuid()+".tmp")
+save_some_output_to(tempfile)
+client.file(file_uri).putFile(tempfile)
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
