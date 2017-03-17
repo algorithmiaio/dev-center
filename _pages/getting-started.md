@@ -46,15 +46,22 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/clients/) for details on how to call algorithms and work with data in your language of choice.
 
 {% raw %}
-<div class="demo-code-nav">
+<br/>
+<div class="demo-code-nav demo-code-nav-small" ng-init="lang='python'">
   <span class="code-lang active" ng-click="lang='python'" ng-class="{active: lang==='python'}">Python</span>
   <span class="code-lang" ng-click="lang='java'" ng-class="{active: lang==='java'}">Java</span>
   <span class="code-lang" ng-click="lang='rlang'" ng-class="{active: lang==='rlang'}">R</span>
   <span class="code-lang" ng-click="lang='javascript'" ng-class="{active: lang==='javascript'}">JavaScript</span>
+  <span class="code-lang" ng-click="lang='node'" ng-class="{active: lang==='node'}">Node</span>
+  <span class="code-lang" ng-click="lang='ruby'" ng-class="{active: lang==='ruby'}">Ruby</span>
+  <span class="code-lang" ng-click="lang='rust'" ng-class="{active: lang==='rust'}">Rust</span>
+  <span class="code-lang" ng-click="lang='scala'" ng-class="{active: lang==='scala'}">Scala</span>
+  <span class="code-lang" ng-click="lang='swift'" ng-class="{active: lang==='swift'}">Swift</span>
+  <span class="code-lang" ng-click="lang='go'" ng-class="{active: lang==='go'}">Go</span>
 </div>
 
 <!-- PYTHON -->
-<div class="tab-pane demo-pane" id="python" ng-show="!lang||lang==='python'" ng-cloak>
+<div class="tab-pane demo-pane" id="python" ng-show="lang==='python'" ng-cloak>
 <pre class="demo-pre"><code hlcode="python" class="demo-code-sample">import Algorithmia
 
 input = "YOUR_USERNAME"
@@ -62,7 +69,6 @@ client = Algorithmia.client('API_KEY')
 algo = client.algo('demo/Hello/0.1.1')
 print algo.pipe(input)
 </code></pre>
-  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
 </div>
 
 <!-- JAVA -->
@@ -76,7 +82,6 @@ Algorithm algo = client.algo("demo/Hello/0.1.1");
 AlgoResponse result = algo.pipeJson(input);
 System.out.println(result.asJsonString());
 </code></pre>
-  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
 </div>
 
 <!-- R LANG -->
@@ -89,7 +94,6 @@ algo <- client@Html("$")algo("demo/Hello/0.1.1")
 result <- algo@Html("$")pipe(input)@Html("$")result
 print(result)
 </code></pre>
-  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
 </div>
 
 <!-- JAVASCRIPT -->
@@ -102,54 +106,47 @@ Algorithmia.client("YOUR_API_KEY")
              console.log(output);
            });
 </code></pre>
-  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
 </div>
-{% endraw %}
 
-> Node:
-
-{% highlight javascript lineanchors %}
-var algorithmia = require("algorithmia");
-var client = algorithmia("YOUR_API_KEY");
-
-var input = "YOUR_USERNAME";
+<!-- NODE -->
+<div class="tab-pane demo-pane" id="node" ng-show="lang==='node'" ng-cloak>
+<pre class="demo-pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
            .algo("algo://demo/Hello/0.1.1")
            .pipe(input)
            .then(function(response) {
              console.log(response.get());
            });
+</code></pre>
+</div>
 
-{% endhighlight %}
-
-> Ruby:
-
-{% highlight ruby lineanchors %}
-require 'algorithmia'
+<!-- RUBY -->
+<div class="tab-pane demo-pane" id="ruby" ng-show="lang==='ruby'" ng-cloak>
+<pre class="demo-pre"><code hlcode="ruby" class="demo-code-sample">require 'algorithmia'
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
 algo = client.algo("demo/Hello/0.1.1")
 response = algo.pipe(input).result
 puts response
-{% endhighlight %}
+</code></pre>
+</div>
 
-> Rust:
-
-{% highlight rust lineanchors %}
-use algorithmia::*;
+<!-- RUST -->
+<div class="tab-pane demo-pane" id="rust" ng-show="lang==='rust'" ng-cloak>
+<pre class="demo-pre"><code hlcode="rust" class="demo-code-sample">use algorithmia::*;
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
 let algo = client.algo("demo/Hello/0.1.1");
 let response = algo.pipe(input);
 println!(response)
-{% endhighlight %}
+</code></pre>
+</div>
 
-> Scala:
-
-{% highlight scala lineanchors %}
-import com.algorithmia._
+<!-- SCALA -->
+<div class="tab-pane demo-pane" id="scala" ng-show="lang==='scala'" ng-cloak>
+<pre class="demo-pre"><code hlcode="scala" class="demo-code-sample">import com.algorithmia._
 import com.algorithmia.algo._
 
 val input = "YOUR_USERNAME"
@@ -157,24 +154,24 @@ val client = Algorithmia.client("YOUR_API_KEY")
 val algo = client.algo("algo://demo/Hello/0.1.1")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString)
-{% endhighlight %}
+</code></pre>
+</div>
 
-> Swift:
-
-{% highlight swift lineanchors %}
-import Algorithmia
+<!-- SWIFT -->
+<div class="tab-pane demo-pane" id="swift" ng-show="lang==='swift'" ng-cloak>
+<pre class="demo-pre"><code hlcode="swift" class="demo-code-sample">import Algorithmia
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
 let algo = client.algo(algoUri: "demo/Hello/0.1.1") { resp, error in
   print(resp)
 }
-{% endhighlight %}
+</code></pre>
+</div>
 
-> Go:
-
-{% highlight go lineanchors %}
-import (
+<!-- GO -->
+<div class="tab-pane demo-pane" id="go" ng-show="lang==='go'" ng-cloak>
+<pre class="demo-pre"><code hlcode="go" class="demo-code-sample">import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
@@ -185,7 +182,9 @@ algo, _ := client.Algo("algo://demo/Hello/0.1.1")
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
-{% endhighlight %}
+</code></pre>
+</div>
+{% endraw %}
 
 ## Understanding the response
 
