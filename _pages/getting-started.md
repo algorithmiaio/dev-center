@@ -45,30 +45,68 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/clients/) for details on how to call algorithms and work with data in your language of choice.
 
-> Python:
+<!-- LANGUAGE BAR -->
+<section id="language-bar" class="container sm-padding">
+  <div class="row whitespace vert-center">
+    <div class="col-xs-2 col-sm-1 language-bar-icon" ng-click="lang='python'">Python</div>
+    <div class="col-xs-2 col-sm-1 language-bar-icon" ng-click="lang='java'">Java</div>
+    <div class="col-xs-2 col-sm-1 language-bar-icon" ng-click="lang='r'">R</div>
+    <div class="col-xs-2 col-sm-1 language-bar-icon" ng-click="lang='javascript'">JavaScript</div>
+  </div>
+</section>
 
-{% highlight python lineanchors %}
-import Algorithmia
+<!-- PYTHON -->
+<div class="tab-pane demo-pane" id="python" ng-show="lang==='python'" ng-cloak>
+<pre class="demo-pre"><code hlcode="python" class="demo-code-sample">import Algorithmia
 
 input = "YOUR_USERNAME"
-client = Algorithmia.client("YOUR_API_KEY")
-algo = client.algo("demo/Hello/0.1.1")
-response = algo.pipe(input)
-print response
-{% endhighlight %}
+client = Algorithmia.client('API_KEY')
+algo = client.algo('demo/Hello/0.1.1')
+print algo.pipe(input)
+</code></pre>
+  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
+</div>
 
-> Java:
-
-{% highlight java lineanchors %}
-import com.algorithmia.*;
+<!-- JAVA -->
+<div class="tab-pane demo-pane" id="java" ng-show="lang==='java'" ng-cloak>
+<pre class="demo-pre"><code hlcode="java" class="demo-code-sample">import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
-String input = "YOUR_USERNAME";
+String input = "YOUR_USERNAME"
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
-Algorithm algo = client.algo("algo://demo/Hello/0.1.1");
-AlgoResponse response = algo.pipeJson(input);
-System.out.println(response.asJsonString());
-{% endhighlight %}
+Algorithm algo = client.algo("demo/Hello/0.1.1");
+AlgoResponse result = algo.pipeJson(input);
+System.out.println(result.asJsonString());
+</code></pre>
+  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
+</div>
+
+<!-- R LANG -->
+<div class="tab-pane demo-pane" id="rlang" ng-show="lang==='rlang'" ng-cloak>
+<pre class="demo-pre"><code hlcode="R" class="demo-code-sample">library(algorithmia)
+
+input <- "YOUR_USERNAME"
+client <- getAlgorithmiaClient("YOUR_API_KEY")
+algo <- client@Html("$")algo("demo/Hello/0.1.1")
+result <- algo@Html("$")pipe(input)@Html("$")result
+print(result)
+</code></pre>
+  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
+</div>
+
+<!-- JAVASCRIPT -->
+<div class="tab-pane demo-pane" id="javascript" ng-show="lang==='javascript'" ng-cloak>
+<pre class="demo-pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
+Algorithmia.client("YOUR_API_KEY")
+           .algo("demo/Hello/0.1.1")
+           .pipe(input)
+           .then(function(output) {
+             console.log(output);
+           });
+</code></pre>
+  <a href='/algorithms/demo/Hello' class="btn btn-flat-light btn-algo"><i class="fa fa-file-code-o"></i> View docs</a>
+</div>
+
 
 > Node:
 
@@ -135,18 +173,6 @@ let algo = client.algo(algoUri: "demo/Hello/0.1.1") { resp, error in
 }
 {% endhighlight %}
 
-> R:
-
-{% highlight r lineanchors %}
-library(algorithmia)
-
-input <- "YOUR_USERNAME"
-client <- getAlgorithmiaClient("YOUR_API_KEY")
-algo <- client$algo("demo/Hello/0.1.1")
-result <- algo$pipe(input)$result
-print(result)
-{% endhighlight %}
-
 > Go:
 
 {% highlight go lineanchors %}
@@ -161,19 +187,6 @@ algo, _ := client.Algo("algo://demo/Hello/0.1.1")
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
-{% endhighlight %}
-
-> JavaScript:
-
-{% highlight javascript lineanchors %}
-// include the algorithmia.js library
-var input = "YOUR_USERNAME";
-Algorithmia.client("YOUR_API_KEY")
-           .algo("algo://demo/Hello/0.1.1")
-           .pipe(input)
-           .then(function(output) {
-             console.log(output);
-           });
 {% endhighlight %}
 
 ## Understanding the response
