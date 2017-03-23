@@ -15,59 +15,33 @@ github: https://github.com/algorithmiaio/algorithmia-swift
 
 {% include toc.html %}
 
-In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
+In this post, we'll walk through how to build a very simple iOS app that uses the Algorithmia API in Swift.
 
-The full sample code can be found in the [Sample Apps repository on GitHub](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
+The full sample code can be found in the [GitHub repository](https://github.com/algorithmiaio/algorithmia-swift).
 
-You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first Android app with Algorithmia!
+You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first iOS app with Algorithmia!
 
 ## Getting Started
 
-First things first, let's create a new app in Android Studio.
+Open the [sample project](https://github.com/algorithmiaio/algorithmia-swift) with [Xcode](https://developer.apple.com/download/).
 
-Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
+> connect dev profile / iCloud Acct: http://stackoverflow.com/questions/39524148/ http://stackoverflow.com/questions/39524148/requires-a-development-team-select-a-development-team-in-the-project-editor-codrequires-a-development-team-select-a-development-team-in-the-project-editor-cod
 
-![Add Blank Activity in Android Studio]({{ site.baseurl }}/images/post_images/android/create_new_blank.png)
-
-Since our app is just a simple example app, we'll use put our code in `MainActivity.java`. But first, we need to do a little bit more set up.
+> switch to developer mode: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
 ## Settings, Permissions, & API Key
 
-Follow the following 3 steps below to make sure you have the dependencies, permissions, and API key set as needed.
+On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.
 
-**Step One: Dependencies**
+> create collection 'test' and ensure Key has r/w access
 
-Add the Algorithmia client to your app in the dependencies section of `app/build.gradle`, like so:
+> set API key: env["ALGORITHMIA_API_KEY"] or...
 
-{% highlight xml %}
-dependencies {
-    ...
-    compile "com.algorithmia:algorithmia-android:1.0.0"
-    ...
-}
+> In `AlgorithmiaSwiftDemo/ViewController.swift`, replace `%PLACE_YOUR_API_KEY%` key with the key you just created.
+
+> {% highlight swift %}
+let client = Algorithmia.client(simpleKey: ProcessInfo.processInfo.environment["ALGORITHMIA_API_KEY"] ?? "%PLACE_YOUR_API_KEY%")
 {% endhighlight %}
-
-**Step Two: Internet Permissions**
-
-To ensure that we can access the Internet from our app, we'll specify this permission in `AndroidManifest.xml`:
-
-{% highlight xml %}
-<uses-permission android:name="android.permission.INTERNET" />
-{% endhighlight %}
-
-**Step Three: API Key**
-
-In `strings.xml`, replace the demo API key with your API key, which can be found under the credentials section of your profile on the Algorithmia website.
-
-{% highlight java %}
-<resources>
-    <string name="app_name">Android Sample</string>
-    <string name="algorithmia_api_key">YOUR_API_KEY</string>
-</resources>
-{% endhighlight %}
-
-Make sure you've replaced `YOUR_API_KEY` with the API key under your account so that the Algorithmia client can authenticate!
-{: .notice-warning }
 
 ## Adding views to the app
 
