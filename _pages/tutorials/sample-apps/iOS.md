@@ -8,9 +8,9 @@ show_related: false
 author: jon_peck
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."
 image:
-  feature: /post_images/android/android_robot_skateboarding.png
-  teaser: /post_images/android/android_robot.png
-github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
+  feature: /post_images/ios/swift.png
+  teaser: /post_images/ios/swift.png
+github: https://github.com/algorithmiaio/algorithmia-swift
 ---
 
 {% include toc.html %}
