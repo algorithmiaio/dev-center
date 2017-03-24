@@ -33,27 +33,23 @@ Now you're almost ready to run the project... there are just a few options to co
 
 ## Settings, Permissions, & API Key
 
-** add your developer profile **
+**Add your developer profile**
 
 Make sure you have [added a developer profile](http://stackoverflow.com/a/41217410/4418411) under Xcode > Preferences > Accounts > Add Apple ID.
 
-Next, (1) click the drop-down "AlgorithmiaSwiftDemo" in the center pane, and (2) click the **Target** "AlgorithmiaSwiftDemo":
+**Set your API key**
 
-![Selecting a Target]({{ site.baseurl }}/images/post_images/ios/target.png)
+On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.  Save this API key.
 
-Under *Identity*, pick a new Bundle Identifier
+Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value. 
 
-On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.
+![Set environment variables]({{ site.baseurl }}/images/post_images/ios/envs.png)
 
-> create collection 'test' and ensure Key has r/w access
+**Create a Data Collection to store your images during processing**
 
-> set API key: env["ALGORITHMIA_API_KEY"] or...
+Since this demo app will be processing images, we'll need to create a temporary directory at Algorithmia to hold them.
 
-> In `AlgorithmiaSwiftDemo/ViewController.swift`, replace `%PLACE_YOUR_API_KEY%` key with the key you just created.
-
-> {% highlight swift %}
-let client = Algorithmia.client(simpleKey: ProcessInfo.processInfo.environment["ALGORITHMIA_API_KEY"] ?? "%PLACE_YOUR_API_KEY%")
-{% endhighlight %}
+Head to your [Data Portal](https://algorithmia.com/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
 
 ## Adding views to the app
 
