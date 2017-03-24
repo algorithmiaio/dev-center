@@ -17,19 +17,31 @@ github: https://github.com/algorithmiaio/algorithmia-swift
 
 In this post, we'll walk through how to build a very simple iOS app that uses the Algorithmia API in Swift.
 
-The full sample code can be found in the [GitHub repository](https://github.com/algorithmiaio/algorithmia-swift).
+The full sample code can be found in the [GitHub repository](https://github.com/algorithmiaio/algorithmia-swift/tree/master/AlgorithmiaSwiftDemo).
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first iOS app with Algorithmia!
 
 ## Getting Started
 
-Open the [sample project](https://github.com/algorithmiaio/algorithmia-swift) with [Xcode](https://developer.apple.com/download/).
+First, download and install [Xcode](https://developer.apple.com/download/).
 
-> connect dev profile / iCloud Acct: http://stackoverflow.com/questions/39524148/ http://stackoverflow.com/questions/39524148/requires-a-development-team-select-a-development-team-in-the-project-editor-codrequires-a-development-team-select-a-development-team-in-the-project-editor-cod
+If you didn't do so on first run, switch Xcode to developer mode: `sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer`
 
-> switch to developer mode: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+Download the [sample project](https://github.com/algorithmiaio/algorithmia-swift/) and use Xcode to open the *directory* "algorithmia-swift" (*not* the file "AlgorithmiaSwift.xcodeproj").
+
+Now you're almost ready to run the project... there are just a few options to configure first. 
 
 ## Settings, Permissions, & API Key
+
+** add your developer profile **
+
+Make sure you have [added a developer profile](http://stackoverflow.com/a/41217410/4418411) under Xcode > Preferences > Accounts > Add Apple ID.
+
+Next, (1) click the drop-down "AlgorithmiaSwiftDemo" in the center pane, and (2) click the **Target** "AlgorithmiaSwiftDemo":
+
+![Selecting a Target]({{ site.baseurl }}/images/post_images/ios/target.png)
+
+Under *Identity*, pick a new Bundle Identifier
 
 On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.
 
