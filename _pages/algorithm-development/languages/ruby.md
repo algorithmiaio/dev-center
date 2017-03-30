@@ -66,7 +66,14 @@ Also under Special Permissions, you can select "Standard execution environment" 
 You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{ site.baseurl }}/basics/permissions/).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
 {: .notice-info}
 
-Now hit the "Create" button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:
+
+Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot">
+
+The above screenshot shows directions and links to documentation for continuing to create your algorithm via the [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/). Or, you can close the modal and continue to create your algorithm in the UI.
+
+If you choose to continue creating your algorithm in the UI, close the modal and you should see the algorithm console for your newly created algorithm:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_ruby.png" alt="Algorithm console Ruby" class="screenshot">
 
