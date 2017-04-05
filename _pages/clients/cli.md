@@ -32,7 +32,7 @@ The latest releases & changelog can be found [here](https://github.com/algorithm
 Install is by running:
 
 {% highlight bash %}
-curl -sSf https://raw.githubusercontent.com/algorithmiaio/algorithmia-cli/master/install.sh | sh
+curl -sSLf https://algorithmia.com/install.sh | sh
 {% endhighlight %}
 
 **Windows**
