@@ -90,8 +90,8 @@ System.out.println(result.asJsonString());
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
-algo <- client@Html("$")algo("demo/Hello/0.1.1")
-result <- algo@Html("$")pipe(input)@Html("$")result
+algo <- client$algo("demo/Hello/0.1.1")
+result <- algo$pipe(input)$result
 print(result)
 </code></pre>
 </div>
