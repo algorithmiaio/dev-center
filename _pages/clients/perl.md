@@ -13,7 +13,7 @@ The Perl client is still in development.  For now, you can do a raw POST inside 
 #### Calling an algorithm in Perl
 
 {% highlight perl %}
-
+  
 use LWP::UserAgent;
 
 # get your API Key at http://algorithmia.com/user#credentials
@@ -43,7 +43,7 @@ if ($resp->is_success) {
     print "$message";
 }
 else {
-    print "POST error: ", $resp->code, ": ", $resp->message;
+    print 'POST error: ', $resp->code, ': ', $resp->message;
 }
 {% endhighlight %}
 
