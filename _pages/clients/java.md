@@ -22,7 +22,7 @@ To follow along you can create a new Java file in the IDE of your choice.
 
 The Algorithmia Java Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client JavaDocs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client) and the [Algorithmia API docs](http://docs.algorithmia.com/?java#).
 
-To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can download the JAR file and add it as a dependency in your POM file:
+To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
 
 {% highlight java %}
 <dependency>
