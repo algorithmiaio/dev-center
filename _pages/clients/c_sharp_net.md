@@ -22,7 +22,7 @@ using System.IO;
 
 {% highlight csharp %}
 // find your API key at http://algorithmia.com/user#credentials
-var apiKey = "_YOUR_API_KEY_"
+var apiKey = "_YOUR_API_KEY_";
 
 // pick an algorithm from https://algorithmia.com/algorithms
 var algo = "demo/Hello";
