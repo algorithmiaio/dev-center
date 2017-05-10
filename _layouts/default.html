@@ -42,11 +42,11 @@
     {% strip %}
 
     <!-- BEGIN_BODY_EMBED -->
-    <div id="wrapper" class="all">
+    <div id="wrapper">
       {% include hero.html %}
 
-      <div class="container">
-        <div class="row">
+      <div class="container m-T-xl">
+        <div class="row section">
           <div class="col-sm-8 col-md-8 col-sm-push-3 col-md-push-3">
             {% include search.html %}
             <div id="main-content">
@@ -77,7 +77,7 @@
         indexUrl: '{{ site.baseurl }}/js/index.json',
         results:  '#search-results',
         template: '#search-results-template',
-        titleMsg: '<p class="lg">SEARCH RESULTS</p>',
+        titleMsg: '<h3><small>SEARCH RESULTS</small></h3>',
         emptyMsg: '<p>No results found...</p>'
       });
 
