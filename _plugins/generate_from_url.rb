@@ -70,6 +70,11 @@ def download_file(url, path)
     FileUtils.mkdir_p p.dirname
   end
 
-  download = open(url)
-  IO.copy_stream(download, path)
+  begin
+    download = open(url)
+    IO.copy_stream(download, path)
+  rescue => e
+    puts "Failed to download #{url}"
+    raise e
+  end
 end
