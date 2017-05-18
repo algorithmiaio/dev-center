@@ -3,8 +3,8 @@ autogen: true
 layout: article
 title:  "Find the Make and Model of Cars in a Traffic Video"
 categories: recipes
-recipe_tags: [utilities]
-tags: [utilities]
+recipe_tags: [computer-vision]
+tags: [computer-vision]
 show_related: false
 author: steph_kim
 excerpt: "Get the make, model, body type and more metadata of cars from a traffic video in just a few lines of code."
