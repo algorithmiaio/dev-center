@@ -9,6 +9,6 @@ show_related: false
 author: jon_peck
 excerpt: "Locate and remove sections of a video which contain nudity"
 
-generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/video-nsfw/README.md
+generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/video-nsfw/readme.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/video-nsfw/video-nsfw.py
 ---
