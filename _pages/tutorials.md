@@ -17,7 +17,7 @@ Here you will find sample apps and recipes (which are a little bit different).
     	<a href="{{ post.url | relative_url}}"><img src="{{ site.baseurl }}/images/icons/{{ post.title }}.svg" alt="" itemprop="image"></a>
   	</div>
   	<div class="col-xs-10">
-   		<h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
+   		<h3><a href="{{ post.url | relative_url}}">{{ post.title | downcase }}</a></h3>
     	<p class="lg">{{ post.excerpt }}</p>
     </div>
   </div>
