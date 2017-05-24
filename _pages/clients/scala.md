@@ -13,3 +13,4 @@ ignore_sections: ["intro"]
 repository: https://github.com/algorithmiaio/algorithmiaio/algorithmia-scala
 ---
 
+Scala client for accessing Algorithmia's algorithm marketplace and data APIs
