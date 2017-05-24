@@ -9,6 +9,7 @@ show_related: true
 image:
     teaser: /language_logos/scala.svg
 generate_from: https://raw.githubusercontent.com/algorithmiaio/algorithmia-scala/master/README.md
+ignore_sections: ["intro"]
 repository: https://github.com/algorithmiaio/algorithmiaio/algorithmia-scala
 ---
 

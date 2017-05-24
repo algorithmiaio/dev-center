@@ -38,7 +38,7 @@ Jekyll::Hooks.register :pages, :pre_render do |page, payload|
   # by setting this to false, the first section will get skipped by default
   # READMEs tend to favor build status, doc links, and such in the first section
   # where the guides should provide an brief intro/overview of what the client is for
-  select_state = true
+  select_state = !ignore_sections.include?("intro")
   filtered_content = readme_content[2..-1].select do |line|
     # check h2 and lower headers... this also allows bash snippets to include comments
     if line.start_with?('##')
