@@ -8,49 +8,39 @@ image:
     teaser: /language_logos/c_sharp_net.svg
 ---
 
-The C#/.Net client is still in development.  For now, you can use cURL inside your C#/.Net code to call any algorithm:
+We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).
+
+#### Getting Started with Algorithmia in .NET
+The Algorithmia client is available on NuGet.org and is as easy as adding the package to your .NET project using Visual Studio or the NuGet Packet Manager.
+
+{% highlight csharp %}
+Install-Package Algorithmia.Client
+{% endhighlight %}
 
 #### Required imports
 {% highlight csharp %}
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.IO;
+using Algorithmia;
 {% endhighlight %}
 
-#### Calling an algorithm via cURL in C#/.Net
+#### Calling your first algorithm
+To call an algorithm is extremely simple with the .NET Client.  You first create a client using your API key.  You can find your API key at https://algorithmia.com/user#credentials.
 
 {% highlight csharp %}
-// find your API key at http://algorithmia.com/user#credentials
-var apiKey = "_YOUR_API_KEY_";
-
-// pick an algorithm from https://algorithmia.com/algorithms
-var algo = "demo/Hello";
-
-// prepare a POST with JSON content
-var request = WebRequest.Create("https://api.algorithmia.com/v1/algo/" + algo); 
-request.ContentType = "application/json";
-request.Method = "POST";
-request.Headers.Add("Authorization", apiKey);
-
-using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-{
-    // input should be a string (usually serialized JSON)
-    streamWriter.Write(input);
-}
-
-WebResponse response = request.GetResponse();
-
-String text = null;
-using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
-{
-    text = streamReader.ReadToEnd();
-    // many algorithms return serialized JSON; don't forget to parse the text
-}
-
+var client = new Algorithmia.Client("YOUR_API_KEY");
 {% endhighlight %}
 
-#### Additional information
+Now, you can find any algorithm in the directory at https://algorithmia.com/algorithms and call it.  In this case, we are going to call the [Hello demo algorithm](https://algorithmia.com/algorithms/demo/hello).
 
-See the full [cURL Client Guide]({{ site.baseurl }}/clients/curl) and [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
-on calling algorithms and managing data with cURL.
+{% highlight csharp %}
+ var algo = new Algorithmia.Algorithm(client, "algo://demo/hello");
+ var response = algo.pipe<string>("World");
+
+ // Many algorithms return serialized JSON so don't forget to parse the text response
+ var text = response.result.ToString();
+{% endhighlight %}
+
+A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
+{: .notice-info}
+
+#### Additional information
+You can find out more about the .NET Client from the [GitHub repo](https://github.com/algorithmiaio/algorithmia-c-sharp).  You can also find our [API Specification](http://docs.algorithmia.com/) available for all of the APIs that are available on the Algorithmia platform.
