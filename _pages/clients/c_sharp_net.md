@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "C#/.Net"
+title: ".NET / C#"
 categories: clients
 tags: [clients]
 show_related: true
@@ -23,7 +23,7 @@ using Algorithmia;
 {% endhighlight %}
 
 #### Calling your first algorithm
-To call an algorithm is extremely simple with the .NET Client.  You first create a client using your API key.  You can find your API key at https://algorithmia.com/user#credentials.
+Calling an algorithm is extremely simple with the .NET Client.  You first create a client using your API key.  You can find your API key at https://algorithmia.com/user#credentials.
 
 {% highlight csharp %}
 var client = new Algorithmia.Client("YOUR_API_KEY");
@@ -41,6 +41,16 @@ Now, you can find any algorithm in the directory at https://algorithmia.com/algo
 
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
 {: .notice-info}
+
+#### Specifying an On-Premises Endpoint
+This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.  
+
+{% highlight csharp %}
+var client = new Algorithmia.Client("YOUR_API_KEY", "https://mylocalendpoint);
+{% endhighlight %}
+
+Alternately, you can ensure that each of your servers interacting with CODEX have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at https://api.algorithmia.com/.
+
 
 #### Additional information
 You can find out more about the .NET Client from the [GitHub repo](https://github.com/algorithmiaio/algorithmia-c-sharp).  You can also find our [API Specification](http://docs.algorithmia.com/) available for all of the APIs that are available on the Algorithmia platform.
