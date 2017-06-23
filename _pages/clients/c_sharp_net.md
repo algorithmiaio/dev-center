@@ -46,7 +46,7 @@ A single algorithm may have different input and output types, or accept multiple
 This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.  
 
 {% highlight csharp %}
-var client = new Algorithmia.Client("YOUR_API_KEY", "https://mylocalendpoint);
+var client = new Algorithmia.Client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with CODEX have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at https://api.algorithmia.com/.
