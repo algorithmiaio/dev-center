@@ -42,6 +42,112 @@ Now, you can find any algorithm in the directory at https://algorithmia.com/algo
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
 {: .notice-info}
 
+### Create a Data Collection
+
+This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
+
+Start with adding the required import and creating the client as we did before.
+
+{% highlight csharp %}
+using Algorithmia;
+var client = new Algorithmia.Client("YOUR_API_KEY");
+{% endhighlight %}
+
+Now create a data collection called nlp_directory:
+
+{% highlight csharp %}
+// Instantiate a DataDirectory object, set your data URI and call create
+DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
+// Create your data collection if it does not exist
+if (!nlp_directory.exists()) {
+    nlp_directory.create();
+}
+{% endhighlight %}
+
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{ site.url }}/data/hosted/).
+{: .notice-info}
+
+### Work with Directory Permissions
+
+When we created the data collection in the previous code snippet, the default setting is `ReadDataAcl.MY_ALGOS` which is a permission type that allows other users on the platform to interact with your data through the algorithms you create if you decide to contribute to algorithm development. This means users can call your algorithm to perform an operation on your data stored in this collection, otherwise the algorithm you created would only work for you.
+
+In order to inspect the data collection's permission type and update those permissions to private:
+
+{% highlight csharp %}
+// Create the acl object and check if it's the .MY_ALGOS default setting
+ReadDataAcl acl = nlp_directory.getPermissions();
+
+if (acl == ReadDataAcl.MY_ALGOS) {
+    System.out.println("acl is the default permissions type MY_ALGOS");
+}
+
+// Update permissions to private
+nlp_directory.updatePermissions(ReadDataAcl.PRIVATE);
+if (nlp_directory.getPermissions() == ReadDataAcl.PRIVATE) {
+    System.out.println("Directory updated to PRIVATE");
+}
+
+{% endhighlight %}
+
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. Read access allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
+
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+
+### Upload Data to your Data Collection
+
+So far you've created your data collection and checked and updated directory permissions. Now you're ready to upload a local text file to your data collection using the Data API.
+
+First add the necessary dependencies:
+
+{% highlight csharp %}
+using System;
+using System.IO;
+{% endhighlight %}
+
+Then create a variable that holds the local path to the file you will be uploading and a DataFile object that represents the destination in the nlp_directory data collection we created earlier:
+
+{% highlight csharp %}
+String local_file_path = "local_path_to_your_file/jack_london.txt";
+DataFile destination = nlp_directory.file("jack_london.txt");
+{% endhighlight %}
+
+Next upload your local file using the `.put()` method:
+
+{% highlight csharp %}
+if (!destination.exists()) {
+    destination.put(File.OpenRead(local_file_path));
+}
+{% endhighlight %}
+
+This method will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this.
+{: .notice-warning}
+
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+
+### Downloading Data from a Data Collection
+
+Next check if the file that you just uploaded to data collection exists and then download the contents of that file as a string:
+
+{% highlight csharp %}
+// Download contents of file as a string
+String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+if (client.file(text_file).exists()) {
+    String input = client.file(text_file).getString();
+} else {
+    System.out.println("The file does not exist");
+}
+{% endhighlight %}
+
+This will get your file as a string, saving it to the variable `input`.
+
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+
+For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
+
 #### Specifying an On-Premises Endpoint
 This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
