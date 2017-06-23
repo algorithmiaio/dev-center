@@ -74,7 +74,7 @@ Now create a data collection called nlp_directory:
 DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 // Create your data collection if it does not exist
 try {
-    if (nlp_directory.exists() == false) {
+    if (!nlp_directory.exists()) {
         nlp_directory.create();
     }
 } catch (APIException e) {
@@ -169,7 +169,7 @@ Next check if the file that you just uploaded to data collections exists and the
 // Download contents of file as a string
 String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 try {
-    if (client.file(text_file).exists() == true) {
+    if (client.file(text_file).exists()) {
         String input = client.file(text_file).getString();
     } else {
         System.out.println("Please check that your file exists");
@@ -207,7 +207,7 @@ Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
 Algorithm algo = client.algo("nlp/Summarizer/0.1.3")
 // Pass in input required by algorithm adding to the code snippet in the last step
 try {
-    if (client.file(text_file).exists() == true) {
+    if (client.file(text_file).exists()) {
         String input = client.file(text_file).getString();
         Algorithm summarizer_algo = client.algo("nlp/Summarizer/0.1.3");
         String result = summarizer_algo.pipe(input).asString();
@@ -260,7 +260,7 @@ public class Main {
  		DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
         // Create your data collection if it does not exist
         try {
-            if (nlp_directory.exists() == false) {
+            if (!nlp_directory.exists()) {
                 nlp_directory.create();
             }
         } catch (APIException e) {
@@ -291,7 +291,7 @@ public class Main {
         }
         String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
         try {
-            if (client.file(text_file).exists() == true) {
+            if (client.file(text_file).exists()) {
                 String input = client.file(text_file).getString();
                 Algorithm summarizer_algo = client.algo("nlp/Summarizer/0.1.3");
                 String result = summarizer_algo.pipe(input).asString();

@@ -43,7 +43,7 @@ A single algorithm may have different input and output types, or accept multiple
 {: .notice-info}
 
 #### Specifying an On-Premises Endpoint
-This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.  
+This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
 {% highlight csharp %}
 var client = new Algorithmia.Client("YOUR_API_KEY", "https://mylocalendpoint");
