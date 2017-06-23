@@ -109,7 +109,7 @@ Next check for the data collection's permission type and update those permission
 DataAcl acl = nlp_directory.getPermissions();
 
 if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-    System.out.println("acl is the default permissions type My_ALGOS");
+    System.out.println("acl is the default permissions type MY_ALGOS");
 }
 
 // Update permissions to private
@@ -270,14 +270,14 @@ public class Main {
         DataAcl acl = nlp_directory.getPermissions();
 
         if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-            System.out.println("acl is the default permissions type My_ALGOS");
+            System.out.println("acl is the default permissions type MY_ALGOS");
         }
 
         // Update permissions to private
         try {
             nlp_directory.updatePermissions(DataAcl.PRIVATE);
             if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-                System.out.println("acl is the default permissions type My_ALGOS");
+                System.out.println("acl is the default permissions type MY_ALGOS");
             }
         } catch (APIException e) {
             e.printStackTrace();
