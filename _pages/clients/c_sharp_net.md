@@ -33,10 +33,10 @@ Now, you can find any algorithm in the directory at https://algorithmia.com/algo
 
 {% highlight csharp %}
  var algo = new Algorithmia.Algorithm(client, "algo://demo/hello");
+ // The type you pass into the generic method `pipe` is the type you want to be returned as the result.
  var response = algo.pipe<string>("World");
 
- // Many algorithms return serialized JSON so don't forget to parse the text response
- var text = response.result.ToString();
+ var textResult = response.result.ToString();
 {% endhighlight %}
 
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
