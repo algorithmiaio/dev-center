@@ -79,7 +79,7 @@ import com.algorithmia.algo.*;
 String input = "YOUR_USERNAME"
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 Algorithm algo = client.algo("demo/Hello/0.1.1");
-AlgoResponse result = algo.pipeJson(input);
+AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());
 </code></pre>
 </div>
