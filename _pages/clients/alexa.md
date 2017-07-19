@@ -134,12 +134,12 @@ exports.handler = function(event, context, callback) {
 6. Next to "Intents", click "ADD"
 7. In new Custom Intent, enter "CountIntent" and click "Create Intent"
 8. On the right, in "Create New Slot", type "website" and click "enter"
-9. Under "website", click "Choose a slot type" and pick "AMAZON.US_STATE"
+9. Under "website", click "Choose a slot type" and pick "AMAZON.US_STATE" (we won't actually be providing a state, but this is an easy way to get the skill to simply pass-through any input it gets)
 10. Under "Sample Utterances", enter "{website}" and press Enter
 11. Click "build model" at the top
-12. Once built, click "Configuration"
+12. Once it is done building, click "Configuration"
 13. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
-14. Save and Test
+14. Click Next, then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
 
 ## Additional information
 
