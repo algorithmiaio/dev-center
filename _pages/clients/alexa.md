@@ -131,7 +131,15 @@ exports.handler = function(event, context, callback) {
 2. Select "Alexa Skills Kit", then "Add new skill"
 3. Pick a Name and Invocation, click "Save", "Next"
 4. Click "Launch Skill Builder" at the top
-6. TBA...
+6. Next to "Intents", click "ADD"
+7. In new Custom Intent, enter "CountIntent" and click "Create Intent"
+8. On the right, in "Create New Slot", type "website" and click "enter"
+9. Under "website", click "Choose a slot type" and pick "AMAZON.US_STATE"
+10. Under "Sample Utterances", enter "{website}" and press Enter
+11. Click "build model" at the top
+12. Once built, click "Configuration"
+13. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
+14. Save and Test
 
 ## Additional information
 
