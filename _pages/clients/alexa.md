@@ -20,7 +20,7 @@ First, we need to create a Lambda Function which will handle the Alexa requests.
 4. Select the blueprint "alexa-skill-kit-sdk-factskill"
 5. click the empty square and pick "Alexa Skills Kit", then click "Next"
 6. Pick a name, and select "Node.js 6.10" as your runtime.
-7. Delete the default code, and replace it with the code below (note that you may need to set your API key or change Algo you'll be using).
+7. Delete the default code, and replace it with the code below (note that you may need to set your API key or change the ALGO you'll be using).
 8. Below the code block, pick "create a custom role" from the Role drop-down
 9. In the pop-up window, keep the default values ("lambda_basic_execution"); click "Allow"
 10. Back in the main window, click "Next", then "Create Function"
