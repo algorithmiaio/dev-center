@@ -69,7 +69,7 @@ Now create a data collection called nlp_directory:
 
 {% highlight Scala %}
 // Instantiate a DataDirectory object, set your data URI and call create
-val nlp_directory = client.dir("data://quality/nlp_directory")
+val nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
 try {
   if (nlp_directory.exists == false) {
     nlp_directory.create()
@@ -282,7 +282,7 @@ object ScalaGuide {
       case e: Exception => println("Error trying to upload file: " + e.getMessage)
     }
 
-    val text_file: String = "data://quality/YOUR_USERNAME/jack_london.txt"
+    val text_file: String = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
     // Download contents of file as a string
     try {
       if (client.file(text_file).exists) {
