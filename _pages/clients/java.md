@@ -123,7 +123,9 @@ try {
 }
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. Read access allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+
+Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
 For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 
@@ -138,16 +140,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 {% endhighlight %}
 
-Then create a variable that holds the path to your data collection and the text file you will be uploading:
-
-{% highlight java %}
-String local_file = "local_path_to_your_file/jack_london.txt";
-{% endhighlight %}
-
-Next upload your local file to the data collection using the `.putFile()` method:
+Then upload your local file to the data collection using the `.putFile()` method:
 
 {% highlight java %}
 try {
+    String local_file = "local_path_to_your_file/jack_london.txt";
     nlp_directory.putFile(new File(local_file));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
