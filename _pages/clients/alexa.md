@@ -12,7 +12,7 @@ It is possible to trigger Algorithmia from Alexa and Alexa-enabled devices by cr
 
 ## Creating the Lambda Function
 
-First, we need to create a Lambda Function which will handle the Alexa requests.  This sample asks the user to provide a website (URL), it to the [ShareCounts](algorithmia.com/algorithms/web/ShareCounts) algorithm, and speaks the number of Facebook and LinkedIn shares for that site.  But any other algorithm could be easily called with only small tweaks to the inputs and outputs.  
+First, we need to create a Lambda Function which will handle the Alexa requests.  This sample asks the user to provide a website (URL), sends it to the [ShareCounts](algorithmia.com/algorithms/web/ShareCounts) algorithm, and speaks the number of Facebook and LinkedIn shares for that site.  But any other algorithm could be easily called with only small tweaks to the inputs and outputs.  
 
 1. go to [The AWS Console](https://console.aws.amazon.com/console/) and ensure that you've selected the region "N Virginia" in the upper-right.
 2. Under "AWS services", search for (and click) "Lambda"
@@ -20,7 +20,7 @@ First, we need to create a Lambda Function which will handle the Alexa requests.
 4. Select the blueprint "alexa-skill-kit-sdk-factskill"
 5. click the empty square and pick "Alexa Skills Kit", then click "Next"
 6. Pick a name, and select "Node.js 6.10" as your runtime.
-7. Delete the default code, and replace it with the code below (note that you may need to set your API key or change the ALGO you'll be using).
+7. Delete the default code, and replace it with the code below (replacing your API_KEY and ALGO as needed).
 8. Below the code block, pick "create a custom role" from the Role drop-down
 9. In the pop-up window, keep the default values ("lambda_basic_execution"); click "Allow"
 10. Back in the main window, click "Next", then "Create Function"
