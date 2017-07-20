@@ -143,5 +143,7 @@ exports.handler = function(event, context, callback) {
 
 ## Additional information
 
-See the full [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
-on calling algorithms and managing data with cURL.
+See the full ALgorithmia [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
+on calling algorithms
+
+More more info on building Alexa skills, visit [alexa.amazon.com](http://alexa.amazon.com) and [developer.amazon.com](http://developer.amazon.com)
