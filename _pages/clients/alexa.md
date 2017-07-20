@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Alexa"
+title: "Amazon Alexa (Echo)"
 categories: clients
 tags: [clients]
 show_related: true
@@ -29,7 +29,7 @@ First, we need to create a Lambda Function which will handle the Alexa requests.
 
 ### Lambda Function Code:
 
-{% highlight node %}
+{% highlight javascript %}
 var API_KEY = 'YOUR_API_KEY';
 var ALGO = 'web/ShareCounts/0.2.8';
 
