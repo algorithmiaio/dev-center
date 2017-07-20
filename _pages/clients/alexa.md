@@ -65,6 +65,7 @@ var handlers = {
     'CountIntent': function (event, context, callback) {
         if("website" in this.event.request.intent.slots) {
             website = this.event.request.intent.slots.website.value;
+            website = website.replace(/ dot /gi,'.').replace(/ slash /gi,'/').replace(/ colon /gi,':');
             website = website.replace(/https*[:\/]+/,'');
             getCounts( 'http://'+website, (results) => {
                 results = JSON.parse(results).result;
