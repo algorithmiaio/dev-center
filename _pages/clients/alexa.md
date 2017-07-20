@@ -12,7 +12,7 @@ It is possible to trigger Algorithmia from Alexa and Alexa-enabled devices by cr
 
 ## Creating the Lambda Function
 
-First, we need to create a Lambda Function which will handle the Alexa requests.
+First, we need to create a Lambda Function which will handle the Alexa requests.  This sample asks the user to provide a website (URL), it to the [ShareCounts](algorithmia.com/algorithms/web/ShareCounts) algorithm, and speaks the number of Facebook and LinkedIn shares for that site.  But any other algorithm could be easily called with only small tweaks to the inputs and outputs.  
 
 1. go to [The AWS Console](https://console.aws.amazon.com/console/) and ensure that you've selected the region "N Virginia" in the upper-right.
 2. Under "AWS services", search for (and click) "Lambda"
