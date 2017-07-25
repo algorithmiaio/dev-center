@@ -32,7 +32,7 @@ var client = new Algorithmia.Client("YOUR_API_KEY");
 Now, you can find any algorithm in the directory at https://algorithmia.com/algorithms and call it.  In this case, we are going to call the [Hello demo algorithm](https://algorithmia.com/algorithms/demo/hello).
 
 {% highlight csharp %}
- var algo = new Algorithmia.Algorithm(client, "algo://demo/hello");
+ var algo = client.algo(client, "algo://demo/hello");
  // The type you pass into the generic method `pipe` is the type you want to be returned as the result.
  var response = algo.pipe<string>("World");
 
@@ -50,14 +50,14 @@ Start with adding the required import and creating the client as we did before.
 
 {% highlight csharp %}
 using Algorithmia;
-var client = new Algorithmia.Client("YOUR_API_KEY");
+var client = new Client("YOUR_API_KEY");
 {% endhighlight %}
 
 Now create a data collection called nlp_directory:
 
 {% highlight csharp %}
 // Instantiate a DataDirectory object, set your data URI and call create
-DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
+var nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 // Create your data collection if it does not exist
 if (!nlp_directory.exists()) {
     nlp_directory.create();
@@ -77,7 +77,7 @@ In order to inspect the data collection's permission type and update those permi
 
 {% highlight csharp %}
 // Create the acl object and check if it's the .MY_ALGOS default setting
-ReadDataAcl acl = nlp_directory.getPermissions();
+var acl = nlp_directory.getPermissions();
 
 if (acl == ReadDataAcl.MY_ALGOS) {
     Console.WriteLine("acl is the default permissions type MY_ALGOS");
@@ -111,8 +111,8 @@ using System.IO;
 Then create a variable that holds the local path to the file you will be uploading and a DataFile object that represents the destination in the nlp_directory data collection we created earlier:
 
 {% highlight csharp %}
-String local_file_path = "local_path_to_your_file/jack_london.txt";
-DataFile destination = nlp_directory.file("jack_london.txt");
+var local_file_path = "local_path_to_your_file/jack_london.txt";
+var destination = nlp_directory.file("jack_london.txt");
 {% endhighlight %}
 
 Next upload your local file using the `.put()` method:
@@ -136,9 +136,9 @@ Next check if the file that you just uploaded to data collection exists and then
 
 {% highlight csharp %}
 // Download contents of file as a string
-String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+var text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 if (client.file(text_file).exists()) {
-    String input = client.file(text_file).getString();
+    var input = client.file(text_file).getString();
 } else {
     Console.WriteLine("The file does not exist");
 }
@@ -154,7 +154,7 @@ For more methods on how to get a file using the Data API from a data collection 
 This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
 {% highlight csharp %}
-var client = new Algorithmia.Client("YOUR_API_KEY", "https://mylocalendpoint");
+var client = new Client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with CODEX have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at https://api.algorithmia.com/.
