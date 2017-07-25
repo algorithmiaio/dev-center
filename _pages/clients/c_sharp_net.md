@@ -80,18 +80,18 @@ In order to inspect the data collection's permission type and update those permi
 ReadDataAcl acl = nlp_directory.getPermissions();
 
 if (acl == ReadDataAcl.MY_ALGOS) {
-    System.out.println("acl is the default permissions type MY_ALGOS");
+    Console.WriteLine("acl is the default permissions type MY_ALGOS");
 }
 
 // Update permissions to private
 nlp_directory.updatePermissions(ReadDataAcl.PRIVATE);
 if (nlp_directory.getPermissions() == ReadDataAcl.PRIVATE) {
-    System.out.println("Directory updated to PRIVATE");
+    Console.WriteLine("Directory updated to PRIVATE");
 }
 
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
@@ -140,7 +140,7 @@ String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
 if (client.file(text_file).exists()) {
     String input = client.file(text_file).getString();
 } else {
-    System.out.println("The file does not exist");
+    Console.WriteLine("The file does not exist");
 }
 {% endhighlight %}
 
