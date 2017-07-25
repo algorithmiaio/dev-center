@@ -26,7 +26,7 @@ using Algorithmia;
 Calling an algorithm is extremely simple with the .NET Client.  You first create a client using your API key.  You can find your API key at https://algorithmia.com/user#credentials.
 
 {% highlight csharp %}
-var client = new Algorithmia.Client("YOUR_API_KEY");
+var client = new Client("YOUR_API_KEY");
 {% endhighlight %}
 
 Now, you can find any algorithm in the directory at https://algorithmia.com/algorithms and call it.  In this case, we are going to call the [Hello demo algorithm](https://algorithmia.com/algorithms/demo/hello).
