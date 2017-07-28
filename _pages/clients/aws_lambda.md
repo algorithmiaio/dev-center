@@ -1,6 +1,7 @@
 ---
 layout: article
 title:  "AWS Lambda"
+permalink: clients/lambda/
 excerpt: "Run Algorithmia code in response to events with AWS Lambda."
 categories: clients
 tags: [clients]

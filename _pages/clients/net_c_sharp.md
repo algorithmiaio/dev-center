@@ -1,6 +1,7 @@
 ---
 layout: article
 title: ".NET / C#"
+permalink: clients/c_sharp_net/
 categories: clients
 tags: [clients]
 show_related: true
