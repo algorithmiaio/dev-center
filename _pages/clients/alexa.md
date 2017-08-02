@@ -140,9 +140,9 @@ exports.handler = function(event, context, callback) {
 10. On the left, under "Slot Types", click "Website"
 11. Under "Slot Values", enter a new value "Amazon.com" and click "+"; repeat for a few more websites (just enough to make the builder happy)
 12. Click "build model" at the top
-13. Once it is done building, click "Configuration"
+13. Once it is done building (this can take several minutes... watch for the spinner to stop), click "Configuration"
 14. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
-15. Click Next, then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
+15. Click Next (no other permissions are required), then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
 16. If your tests pass, you can now proceed to Publish
 
 ## Additional information
