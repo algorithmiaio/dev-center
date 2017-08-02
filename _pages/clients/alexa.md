@@ -65,7 +65,7 @@ var handlers = {
     'CountIntent': function (event, context, callback) {
         if("website" in this.event.request.intent.slots) {
             website = this.event.request.intent.slots.website.value;
-            website = website.replace(/ dot /gi,'.').replace(/ slash /gi,'/').replace(/ colon /gi,':');
+            website = website.replace(/ dot /gi,'.').replace(/ slash /gi,'/').replace(/ colon /gi,':').replace(/[^a-zA-Z0-9-_\.\:\/]/g, '');
             website = website.replace(/https*[:\/]+/,'');
             getCounts( 'http://'+website, (results) => {
                 results = JSON.parse(results).result;
@@ -132,10 +132,10 @@ exports.handler = function(event, context, callback) {
 2. Select "Alexa Skills Kit", then "Add new skill"
 3. Pick a Name and Invocation, click "Save", "Next"
 4. Click "Launch Skill Builder" at the top
-6. Next to "Intents", click "ADD"
-7. In new Custom Intent, enter "CountIntent" and click "Create Intent"
-8. On the right, in "Create New Slot", type "website" and click "enter"
-9. Under "website", click "Choose a slot type" and pick "AMAZON.US_STATE" (we won't actually be providing a state, but this is an easy way to get the skill to simply pass-through any input it gets)
+5. Next to "Intents", click "ADD"
+6. In new Custom Intent, enter "CountIntent" and click "Create Intent"
+7. On the right, in "Create New Slot", type "website" and click "Add"
+8. Under "website", click "Choose a slot type"; at the bottom, type "website" into "Create a New Slot Type" and click "+"
 10. Under "Sample Utterances", enter "{website}" and press Enter
 11. Click "build model" at the top
 12. Once it is done building, click "Configuration"
