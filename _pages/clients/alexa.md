@@ -135,12 +135,15 @@ exports.handler = function(event, context, callback) {
 5. Next to "Intents", click "ADD"
 6. In new Custom Intent, enter "CountIntent" and click "Create Intent"
 7. On the right, in "Create New Slot", type "website" and click "Add"
-8. Under "website", click "Choose a slot type"; at the bottom, type "website" into "Create a New Slot Type" and click "+"
-10. Under "Sample Utterances", enter "{website}" and press Enter
-11. Click "build model" at the top
-12. Once it is done building, click "Configuration"
-13. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
-14. Click Next, then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
+8. Under "website", click "Choose a slot type"; at the bottom, type "Website" into "Create a New Slot Type" and click "+"
+9. Under "Sample Utterances", enter "{website}" and press Enter
+10. On the left, under "Slot Types", click "Website"
+11. Under "Slot Values", enter a new value "Amazon.com" and click "+"; repeat for a few more websites (just enough to make the builder happy)
+12. Click "build model" at the top
+13. Once it is done building, click "Configuration"
+14. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
+15. Click Next, then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
+16. If your tests pass, you can now proceed to Publish
 
 ## Additional information
 
