@@ -67,6 +67,9 @@ var handlers = {
             website = this.event.request.intent.slots.website.value;
             website = website.replace(/ dot /gi,'.').replace(/ slash /gi,'/').replace(/ colon /gi,':').replace(/[^a-zA-Z0-9-_\.\:\/]/g, '');
             website = website.replace(/https*[:\/]+/,'');
+            if(website.indexOf('\.')<0) {
+                website = website+'.com';
+            }
             getCounts( 'http://'+website, (results) => {
                 results = JSON.parse(results).result;
                 if('facebook_shares' in results || 'linkedIn' in results) {
