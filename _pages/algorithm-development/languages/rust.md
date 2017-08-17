@@ -239,6 +239,8 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
+You may call up to 24 other algorithms, either in parallel or recursively.
+
 ## Error Handling
 
 The example above uses `Box<std::errror::Error>`, which is quite convenient, as you can append the `?` operator to any potentialy problematic line and the Error will get returned to the caller as a JSON String.

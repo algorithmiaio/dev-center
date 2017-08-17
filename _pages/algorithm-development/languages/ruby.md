@@ -235,6 +235,8 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
+You may call up to 24 other algorithms, either in parallel or recursively.
+
 ## Error Handling
 
 In order to provide the user with useful feedback, raise an Error with a meaningful message, so that users can receive this as an error object in the response:

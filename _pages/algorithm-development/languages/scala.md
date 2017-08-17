@@ -130,6 +130,8 @@ To call other algorithms or manage data from your algorithm, use the <a href="ht
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
+You may call up to 24 other algorithms, either in parallel or recursively.
+
 <aside class="warning">
 Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
 </aside>
