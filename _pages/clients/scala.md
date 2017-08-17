@@ -218,6 +218,10 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
 
+### Limits
+
+Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+
 ## Conclusion
 
 This guide covered installing Algorithmia via a POM file, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.

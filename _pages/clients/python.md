@@ -173,6 +173,9 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
 
+### Limits
+
+Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
