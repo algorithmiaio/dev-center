@@ -37,7 +37,7 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
 Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
 
 {% highlight bash lineanchors %}
-curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
+curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 {% endhighlight %}
 
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
@@ -66,7 +66,7 @@ You can also use one of the clients to make your call. See below for examples or
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client('API_KEY')
-algo = client.algo('demo/Hello/0.1.1')
+algo = client.algo('demo/Hello/')
 print algo.pipe(input)
 </code></pre>
 </div>
@@ -78,7 +78,7 @@ import com.algorithmia.algo.*;
 
 String input = "YOUR_USERNAME"
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
-Algorithm algo = client.algo("demo/Hello/0.1.1");
+Algorithm algo = client.algo("demo/Hello/");
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());
 </code></pre>
@@ -90,7 +90,7 @@ System.out.println(result.asJsonString());
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
-algo <- client$algo("demo/Hello/0.1.1")
+algo <- client$algo("demo/Hello/")
 result <- algo$pipe(input)$result
 print(result)
 </code></pre>
@@ -100,7 +100,7 @@ print(result)
 <div class="tab-pane code__pane" id="javascript" ng-show="lang==='javascript'" ng-cloak>
 <pre class="code__pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
-           .algo("demo/Hello/0.1.1")
+           .algo("demo/Hello/")
            .pipe(input)
            .then(function(output) {
              console.log(output);
@@ -112,7 +112,7 @@ Algorithmia.client("YOUR_API_KEY")
 <div class="tab-pane code__pane" id="node" ng-show="lang==='node'" ng-cloak>
 <pre class="code__pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
-           .algo("algo://demo/Hello/0.1.1")
+           .algo("algo://demo/Hello/")
            .pipe(input)
            .then(function(response) {
              console.log(response.get());
@@ -126,7 +126,7 @@ Algorithmia.client("YOUR_API_KEY")
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
-algo = client.algo("demo/Hello/0.1.1")
+algo = client.algo("demo/Hello/")
 response = algo.pipe(input).result
 puts response
 </code></pre>
@@ -138,7 +138,7 @@ puts response
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
-let algo = client.algo("demo/Hello/0.1.1");
+let algo = client.algo("demo/Hello/");
 let response = algo.pipe(input);
 println!(response)
 </code></pre>
@@ -151,7 +151,7 @@ import com.algorithmia.algo._
 
 val input = "YOUR_USERNAME"
 val client = Algorithmia.client("YOUR_API_KEY")
-val algo = client.algo("algo://demo/Hello/0.1.1")
+val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString)
 </code></pre>
@@ -163,7 +163,7 @@ System.out.println(result.asJsonString)
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
-let algo = client.algo(algoUri: "demo/Hello/0.1.1") { resp, error in
+let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   print(resp)
 }
 </code></pre>
@@ -178,7 +178,7 @@ let algo = client.algo(algoUri: "demo/Hello/0.1.1") { resp, error in
 input := "YOUR_USERNAME"
 
 var client = algorithmia.NewClient("YOUR_API_KEY", "")
-algo, _ := client.Algo("algo://demo/Hello/0.1.1")
+algo, _ := client.Algo("algo://demo/Hello/")
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
@@ -191,7 +191,7 @@ fmt.Println(response.Result)
 Each algorithm returns a response in JSON. It will include the `"result"` as well as metadata about the API call you made. The metadata will include the `content_type` as well as a duration.
 
 {% highlight bash lineanchors %}
-curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/0.1.1
+curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 
 
 { "result": "Hello YOUR_USERNAME",
