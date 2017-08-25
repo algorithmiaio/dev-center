@@ -154,12 +154,11 @@ Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
 algo = client.algo('nlp/Summarizer/0.1.3')
 # Pass in input required by algorithm
 begin
-    # Get the summary result of your file's contents.
-    response = algo.pipe(input).result
-    puts response
-rescue
-    # Algorithm error if the input is not correctly formatted.
-    puts algo.pipe(input).error.message
+    # Get the summary result of your file's contents
+    puts algo.pipe(input).result
+rescue Exception => e
+    # Algorithm error if, for example, the input is not correctly formatted
+    puts e
 end
 {% endhighlight %}
 

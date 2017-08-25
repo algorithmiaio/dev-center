@@ -158,13 +158,11 @@ Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
 algo = client.algo('nlp/Summarizer/0.1.3')
 # Pass in input required by algorithm
 try:
-	# Get the summary result of your file's contents.
-	response = algo.pipe(input).result
-	print(response)
-except:
-	# Algorithm error if the input is not correctly formatted.
-	print(algo.pipe(input).error.message)
-
+	# Get the summary result of your file's contents
+	print(algo.pipe(input).result)
+except Exception as error:
+  # Algorithm error if, for example, the input is not correctly formatted
+  print(error)
 {% endhighlight %}
 
 This guide used the the first chapter of [Jack London's Burning Daylight](https://en.wikisource.org/wiki/Burning_Daylight) and the Summarizer algorithm outputs:
@@ -221,10 +219,10 @@ if client.file(text_file).exists() is True:
 algo = client.algo('nlp/Summarizer/0.1.3')
 # Pass in input required by algorithm
 try:
-	# Get the summary result of your file's contents.
-	response = algo.pipe(input).result
-except:
-	# Algorithm error if the input is not correctly formatted.
-	print(algo.pipe(input).error.message)
+	# Get the summary result of your file's contents
+	print(algo.pipe(input).result)
+except Exception as error:
+  # Algorithm error if, for example, the input is not correctly formatted
+  print(error)
 {% endhighlight %}
 

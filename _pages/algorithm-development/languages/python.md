@@ -354,10 +354,9 @@ client = Algorithmia.client()
 algo = client.algo("util/Url2Text/0.1.4")
 
 try:
-    response = algo.pipe(input).result
-    print(response)
-except:
-    print(algo.pipe(input).error.message)
+  	print(algo.pipe(input).result)
+except Exception as error:
+    print(error)
 {% endhighlight %}
 
 For more information on error handling see the [Algorithmia API Docs](http://docs.algorithmia.com/?python#error-handling).
