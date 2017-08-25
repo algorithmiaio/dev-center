@@ -58,6 +58,9 @@ You can also use one of the clients to make your call. See below for examples or
   <span class="code__lang" ng-click="lang='scala'" ng-class="{active: lang==='scala'}">Scala</span>
   <span class="code__lang" ng-click="lang='swift'" ng-class="{active: lang==='swift'}">Swift</span>
   <span class="code__lang" ng-click="lang='go'" ng-class="{active: lang==='go'}">Go</span>
+  <span class="code__lang" ng-click="lang='csharp'" ng-class="{active: lang==='csharp'}">.Net/C#</span>
+  <span class="code__lang" ng-click="lang='perl'" ng-class="{active: lang==='perl'}">Perl</span>
+  <span class="code__lang" ng-click="lang='php'" ng-class="{active: lang==='php'}">PHP</span>
 </div>
 
 <!-- PYTHON -->
@@ -169,6 +172,18 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
 </code></pre>
 </div>
 
+<!-- CSHARP -->
+<div class="tab-pane code__pane" id="csharp" ng-show="lang==='csharp'" ng-cloak>
+<pre class="code__pre"><code hlcode="csharp" class="demo-code-sample">using Algorithmia;
+
+var input = "YOUR_USERNAME";
+var client = new Client("YOUR_API_KEY");
+var algo = client.algo(client, "algo://demo/hello");
+var response = algo.pipe&lt;string&gt;(input);
+System.Console.WriteLine(response.result.ToString());
+</code></pre>
+</div>
+
 <!-- GO -->
 <div class="tab-pane code__pane" id="go" ng-show="lang==='go'" ng-cloak>
 <pre class="code__pre"><code hlcode="go" class="demo-code-sample">import (
@@ -184,6 +199,57 @@ response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
 </code></pre>
 </div>
+
+<!-- PERL -->
+<div class="tab-pane code__pane" id="perl" ng-show="lang==='perl'" ng-cloak>
+<pre class="code__pre"><code hlcode="perl" class="demo-code-sample">use LWP::UserAgent;
+
+my $input = 'YOUR_USERNAME';
+my $api_key = 'YOUR_API_KEY';
+my $req = HTTP::Request->new(POST => 'http://api.algorithmia.com/v1/algo/demo/hello');
+$req->header('content-type' => 'application/json');
+$req->header('Authorization' => 'Simple '.$api_key);
+$req->content($post_data);
+my $ua = LWP::UserAgent->new;
+my $resp = $ua->request($req);
+if ($resp->is_success) {
+    print $resp->decoded_content;
+} else {
+    print 'POST error: ', $resp->code, ': ', $resp->message;
+}
+</code></pre>
+</div>
+
+<!-- PHP -->
+<div class="tab-pane code__pane" id="php" ng-show="lang==='php'" ng-cloak>
+<pre class="code__pre"><code hlcode="php" class="demo-code-sample">
+$input = 'YOUR_USERNAME';
+$api_key = 'YOUR_API_KEY';
+$data_json = json_encode($input);
+$ch = curl_init();
+  curl_setopt_array($ch, array(
+    CURLOPT_URL => 'https://api.algorithmia.com/v1/algo/demo/hello',
+    CURLOPT_HTTPHEADER => array(
+      'Content-Type: application/json',
+      'Authorization: Simple ' . $api_key,
+      'Content-Length: ' . strlen($data_json)
+    ),
+    CURLOPT_POSTFIELDS => $data_json,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true
+  ));
+  $response_json = curl_exec($ch);
+  curl_close($ch);
+  $response = json_decode($response_json);
+  if($response->error) {
+    print('ERROR: ');
+    print_r($response->error);
+  } else {
+    print_r($response->result);
+  }
+</code></pre>
+</div>
+
 {% endraw %}
 
 ## Understanding the response
