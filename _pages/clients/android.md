@@ -267,7 +267,7 @@ Your account can make up to 80 Algorithmia requests at the same time (this limit
 
 This guide covered installing Algorithmia via a Gradle dependencies file, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
-For more information on the methods available using the Data API in Java check out the [Data API](http://docs.algorithmia.com/?java#data-api-specification) documentation or go to the [Android Client Docs](https://github.com/algorithmiaio/algorithmia-android) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Java Language Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client).
+For more information on the methods available using the Data API in Java check out the [Data API](http://docs.algorithmia.com/?java#data-api-specification) documentation. For all available methods and versions go to the [Algorithmia Android Client API Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-android) or view the [Android Client Source Code](https://github.com/algorithmiaio/algorithmia-android).
 
 {% highlight java %}
 import java.io.IOException;

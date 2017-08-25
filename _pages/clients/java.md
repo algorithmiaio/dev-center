@@ -20,7 +20,7 @@ To follow along you can create a new Java file in the IDE of your choice.
 
 ## Getting Started with Algorithmia
 
-The Algorithmia Java Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client JavaDocs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client) and the [Algorithmia API docs](http://docs.algorithmia.com/?java#).
+The Algorithmia Java Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client JavaDocs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) and the [Algorithmia API docs](http://docs.algorithmia.com/?java#).
 
 To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
 
@@ -229,7 +229,7 @@ If you are interested in learning more about working with unstructured text data
 
 This guide covered installing Algorithmia via a POM file, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
-For more information on the methods available using the Data API in Java check out the [Data API](http://docs.algorithmia.com/?java#data-api-specification) documentation or go to the [Java Client Docs](https://github.com/algorithmiaio/algorithmia-java) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Java Language Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client).
+For more information on the methods available using the Data API in Java check out the [Data API](http://docs.algorithmia.com/?java#data-api-specification) documentation or go to the [Java Client Docs](https://github.com/algorithmiaio/algorithmia-java) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Java Language Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client).
 
 For convenience, here is the whole script available to run:
 
