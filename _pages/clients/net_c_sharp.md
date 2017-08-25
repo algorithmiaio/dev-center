@@ -43,6 +43,10 @@ Now, you can find any algorithm in the directory at https://algorithmia.com/algo
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
 {: .notice-info}
 
+### Limits
+
+Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+
 ### Create a Data Collection
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.

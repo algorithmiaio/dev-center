@@ -50,3 +50,7 @@ client.algo("docs/JavaAddOne").pipe(input).then(function(output) {
   console.log(output.result);
 });
 {% endhighlight %}
+
+### Limits
+
+Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).

@@ -97,4 +97,6 @@ kmsEncryptedApiKey = "<kmsEncryptedApiKey>";
 
 See the [NodeJS guide](../node) for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.
 
+Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+
 See also the [AWS Lambda walk through on our blog](http://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).
