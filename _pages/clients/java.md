@@ -123,7 +123,7 @@ try {
 }
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
@@ -246,9 +246,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
-
-    public Main() {
-    }
 
     public static void main(String[] args) throws APIException {
 	// write your code here
