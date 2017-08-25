@@ -222,8 +222,7 @@ if ($resp->is_success) {
 
 <!-- PHP -->
 <div class="tab-pane code__pane" id="php" ng-show="lang==='php'" ng-cloak>
-<pre class="code__pre"><code hlcode="php" class="demo-code-sample">
-$input = 'YOUR_USERNAME';
+<pre class="code__pre"><code hlcode="php" class="demo-code-sample">$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
 $ch = curl_init();
