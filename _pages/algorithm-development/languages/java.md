@@ -102,7 +102,7 @@ in the dependencies file and add the line
 
 in the main file.
 
-The Algorithmia dependency is already installed for your convenience. For more information about Algorithmia's Maven package visit [Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10)
+The Algorithmia dependency is already installed for your convenience. For more information about Algorithmia's Maven package visit [Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.12)
 {: .notice-info}
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
@@ -399,7 +399,7 @@ throw new AlgorithmException("Invalid graph structure");
 
 Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
-For more details about handling errors in Java check out the full [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10) and the [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling).
+For more details about handling errors in Java check out the full [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.12) and the [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling).
 
 ## Algorithm Checklist
 
@@ -434,6 +434,6 @@ In this guide we covered how to create an algorithm, work with different types o
 For more resources:
 
 * [Algorithmia Java client documentation]({{ site.baseurl }}/clients/java/)
-* [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.10)
+* [Algorithmia Java Client Docs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.12)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling)
 * [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)

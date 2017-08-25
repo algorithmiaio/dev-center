@@ -21,7 +21,7 @@ To follow along you can create a new project in Android Studio or your IDE of ch
 
 The Algorithmia Android Client is published to Maven Central and can be added as a dependency in Android Studio in your Gradle file. Additional reference documentation can be found at [Android Client Docs](https://github.com/algorithmiaio/algorithmia-android) and for API documentation see the [Algorithmia API docs](http://docs.algorithmia.com/?java#).
 
-**Note:** Because our Java Client depends on Apache HTTP Client, it is not compatible with the Android Runtime. In early versions of Android, a legacy version of apache http client came pre-bundled, but was not updated over time. In recent Android versions (6.0+) it was removed entirely. The algorithmia-android client uses native HttpURLConnection as its underlying client, as recommended by the Android documentation.
+**Note:** Because our Java Client depends on Apache HTTP Client, it is not compatible with the Android Runtime. In early versions of Android, a legacy version of apache http client came pre-bundled, but was not updated over time. In recent Android versions (6.0+) it was removed entirely. See Android docs [here](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-apache-http-client). The algorithmia-android client uses native HttpURLConnection as its underlying client, as recommended by the Android documentation.
 
 To install the Algorithmia Android Client, add the following line to your `app/build.gradle` file:
 

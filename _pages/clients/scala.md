@@ -20,7 +20,7 @@ To follow along you can create a new Scala project in the IDE of your choice.
 
 ## Getting Started with Algorithmia
 
-The Algorithmia Scala Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client ScalaDocs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-scala_2.11/0.9.2) and the [Algorithmia API docs](http://docs.algorithmia.com/?scala).
+The Algorithmia Scala Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client ScalaDocs](http://www.javadoc.io/doc/com.algorithmia/algorithmia-scala_2.11/0.9.4) and the [Algorithmia API docs](http://docs.algorithmia.com/?scala).
 
 To get started, the Algorithmia Scala Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
 
@@ -226,7 +226,7 @@ Your account can make up to 80 Algorithmia requests at the same time (this limit
 
 This guide covered installing Algorithmia via a POM file, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
-For more information on the methods available using the Data API in Scala check out the [Data API](http://docs.algorithmia.com/?Scala#data-api-specification) documentation or go to the [Scala Client Docs](https://github.com/algorithmiaio/algorithmia-Scala) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Scala Language Docs](http://www.Scaladoc.io/doc/com.algorithmia/algorithmia-client).
+For more information on the methods available using the Data API in Scala check out the [Data API](http://docs.algorithmia.com/?scala#data-api-specification) documentation or go to the [Scala Client Docs](https://github.com/algorithmiaio/algorithmia-scala) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Scala Language Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-scala_2.11/0.9.4).
 
 For convenience, here is the whole script available to run:
 
