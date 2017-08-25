@@ -4,7 +4,7 @@
   "private": true,
   "description": "The Algorithmia Developer Resource Center",
   "author": "Algorithmia <mia@algorithmia.com>",
-  "homepage": "http://algorithmia.com/",
+  "homepage": "https://algorithmia.com/",
   "license": "The MIT License (MIT)",
   "devDependencies": {
     "grunt": "~0.4.2",

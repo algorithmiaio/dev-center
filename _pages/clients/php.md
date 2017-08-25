@@ -15,10 +15,10 @@ The PHP client is still in development.  For now, you can use cURL inside your P
 {% highlight php %}
 <?php
 
-  // get your API Key at http://algorithmia.com/user#credentials
+  // get your API Key at https://algorithmia.com/user#credentials
   $api_key = 'YOUR_API_KEY';
   
-  // pick an algorithm at http://algorithmia.com/algorithms/ -- and append a version number
+  // pick an algorithm at https://algorithmia.com/algorithms -- and append a version number
   $algorithm = 'util/Echo/0.2.1';
   
   // most algorithms accept JSON Objects
