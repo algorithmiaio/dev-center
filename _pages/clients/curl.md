@@ -15,9 +15,9 @@ You can use cURL to call any algorithm on the marketplace and manage your data t
 To call an algorithm, use cURL to POST to the API. Be sure to specify the content type and authorize by passing in your API key.
 
 {% highlight bash %}
-curl -X POST -d 'YOUR_NAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello
+curl -X POST -d 'YOUR_USERNAME' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello
 
--> {"result": "Hello YOUR_NAME","metadata":{"duration":0.0001}}
+-> {"result": "Hello YOUR_USERNAME","metadata":{"duration":0.0001}}
 {% endhighlight %}
 
 
