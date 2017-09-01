@@ -16,12 +16,12 @@ This guide is designed as an introduction to hosting a Tensorflow model and publ
 
 
 ## Prerequisites
-Maybe you've got a great idea or have tirelessly worked on a project in your spare time and you want it to be useful to others. Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
+Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
-#### Train your model.
-You have a model that labels images. You've discovered the features you want to include, you've trained your model and validated it with your validation data set. You're happy with your results and now need to save your variable checkpoints and the graph from your trained model so you can upload it to Algorithmia.
+### Train and save your model.
+After training your Tensorflow model, you'll want to [save your variable checkpoints](https://www.tensorflow.org/programmers_guide/variables) and the graph from your trained model so you can upload it to Algorithmia.
 
-## Create a Data Collection
+### Create a Data Collection
 Here you'll want to create a data collection to host your graph and variable checkpoint data.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
