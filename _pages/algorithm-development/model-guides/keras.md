@@ -80,6 +80,7 @@ Note that you always want to create valid JSON input and output in your algorith
 [2, 0, 9, 0, 3, 7, 0, 3, 0, 3]
 {% endhighlight %}
 
+### Example Hosted Model:
 {% highlight python %}
 """
     An example of how to load a trained model and use it
