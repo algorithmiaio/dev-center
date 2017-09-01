@@ -69,6 +69,12 @@ Note that you always want to create valid JSON output in your algorithm.
 {: .notice-info}
 
 {% highlight python %}
+"""
+    An example of how to load a trained model and use it
+    to predict labels for first ten images in MNIST test set.
+
+"""
+
 import numpy as np
 from keras.models import load_model
 
@@ -83,7 +89,7 @@ np.random.seed(seed)
 
 def load_keras_model():
     """Load model from data collection."""
-    file_uri = "data://YOUR_USERNAME/keras_model/mnist_model.h5"
+    file_uri = "data://stephanie/keras_model/mnist_model.h5"
     # Retrieve file name from data collections.
     saved_model = client.file(file_uri).getFile().name
     model = load_model(saved_model)
@@ -95,9 +101,11 @@ classifier = load_keras_model()
 
 
 def process_input(input):
+    """Get saved data model and turn into numpy array."""
     # Possible input used: https://www.kaggle.com/c/digit-recognizer/data
     # Create numpy array from csv file passed as input in apply()
-    if input.startswith('data:'):
+    if "test_data" in input and input["test_data"].startswith('data:'):
+        input = input["test_data"]
         file_url = client.file(input).getFile().name
         try:
             np_array = np.genfromtxt(file_url, delimiter=',', skip_header=1)
@@ -105,27 +113,29 @@ def process_input(input):
             return np_array[:10]
         except Exception as e:
             print("Could not create numpy array from data", e)
+    else:
+        url = "https://algorithmia.com/developers/data/"
+        print("Incorrect url: Check how to host your data: {0}".format(url))
 
 
 def predict(input):
-    """
-    An example of how to load a trained model and use it
-    to predict labels for first ten images in MNIST test set.
-
-    """
+    """Reshape numpy array and predict new data."""
     pf = process_input(input)
+    # Reshape data to be [samples][pixels][width][height]
     pf = pf.reshape(pf.shape[0], 1, 28, 28).astype('float32')
+    # Normalize inputs from 0-255 to 0-1
     pf = pf / 255
     pr = classifier.predict_classes(pf)
-    print(pr)
+    # Cast the numpy array predicted values as a list.
     return list(map(lambda x: int(x), pr))
 
 
 def apply(input):
-    """Pass in a csv image file."""
+    """Pass in a csv image file and output prediction."""
     output = predict(input)
     print(output)
     return output
+
 
 {% endhighlight %}
 
