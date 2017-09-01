@@ -16,15 +16,12 @@ This guide is designed as an introduction to hosting a nltk model and publishing
 
 
 ## Prerequisites
-Maybe you've got a great idea or have tirelessly worked on a project in your spare time and you want it to be useful to others. Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
+Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
-#### Train your model.
-Say you have a model that predicts the gender of a name. You've discovered the features you want to include, you've done some data processing and have trained your model and validated it. You're happy with your results and now need to pickle the trained model so you can upload it to Algorithmia.
+### Train your model.
+After training your NLTK model, you'll want to save the pickled model so you can upload it to Algorithmia.
 
-#### Pickle your trained model.
-Various programming languages have different picklers to choose from. To prepare your model for uploading via our Data API, pick a pickler and save the pickled model locally.
-
-## Create a Data Collection
+### Create a Data Collection
 Now you'll want to create a data collection to host your pickled model.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
