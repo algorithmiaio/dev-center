@@ -65,7 +65,7 @@ Now is the time to set your dependencies that your model relies on.
 Here is where you load and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Note that you always want to create valid JSON output in your algorithm.
+Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a csv file hosted on [Algorithmia, Amazon S3, or Dropbox](https://algorithmia.com/developers/data/). 
 {: .notice-info}
 
 {% highlight python %}
@@ -102,7 +102,6 @@ classifier = load_keras_model()
 
 def process_input(input):
     """Get saved data model and turn into numpy array."""
-    # Possible input used: https://www.kaggle.com/c/digit-recognizer/data
     # Create numpy array from csv file passed as input in apply()
     if "test_data" in input and input["test_data"].startswith('data:'):
         input = input["test_data"]
