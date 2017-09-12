@@ -75,7 +75,7 @@ Now hit the "Create" button on the bottom lower right of the form and you'll see
 
 You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
-### Editing your algorithm locally via GIT & CLI
+#### Editing your algorithm locally via GIT & CLI
 
 The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
 
@@ -92,7 +92,7 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"
 
-### Editing your algorithm via the web IDE
+#### Editing your algorithm via the web IDE
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm console for your newly created algorithm:
 
