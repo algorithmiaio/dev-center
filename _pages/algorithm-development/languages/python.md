@@ -84,7 +84,7 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
-4. Test your algorithm: `algo runlocal -D [JSON FILE]`
+4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
 5. Commit your changes: `git commit -m [commit message]; git push origin master`
 6. Publish your changes: for now, you must do this via the web IDE:
     1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
