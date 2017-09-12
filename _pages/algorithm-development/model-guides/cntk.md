@@ -116,7 +116,7 @@ def get_cntk_model():
     to predict labels from the imagenet 1k dataset.
 
 """
-
+{% endhighlight %}
 
 
 
