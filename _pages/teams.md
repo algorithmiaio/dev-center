@@ -14,7 +14,7 @@ If you are looking to share algorithms privately or publish algorithms under the
 
 #### The Profile Overview:
 
-The profile overview provides a rich source of information about the organization. In the overview, you can find the name of the organization, the number of members, the number of algorithms, and the aggregate amount of API requests received. If you are the owner of the organization you will also be able to Add/Delete members as well as Edit basic information regarding the organization. 
+The profile overview provides a rich source of information about the organization. In the overview, you can find the name of the organization, the number of members, the number of algorithms, and the aggregate amount of API requests received. If you are the owner of the organization you will also be able to Add/Delete members as well as Edit basic information regarding the organization.
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_profile.png" alt="organizations profile" class="screenshot img-md">
 
@@ -37,7 +37,7 @@ To create your new organization simply go to your profile page and click "+Creat
 At this time you will be asked to fill out some information regarding your organization:
 
 * *Organization Account Name:*
-This will be determine the URL where your organization will be showcased. It is required that this be all small caps , no spaces and no special characters.
+This will determine the URL where your organization will be showcased. It is required that this be all lowercase letters, no spaces and no special characters.
 * *Organization Full Name:* This is the organizations full name.
 * *Contact Name:* The primary contact for your organization.
 * *Organization Email:* The organizations primary email.
@@ -55,7 +55,7 @@ Once your organization has been created you can edit all the provided informatio
 
 
 #### Inviting Users to your Organization:
-You can invite users to your organization either by using their Algorithmia username or by providing an email address. If you invite a user through email that is not part of the Algorithmia platform, they will receive an email invite to signup and join your organization. 
+You can invite users to your organization either by using their Algorithmia username or by providing an email address. If you invite a user through email that is not part of the Algorithmia platform, they will receive an email invite to signup and join your organization.
 
 To invite a user simply click 'Invite User':
 
@@ -70,13 +70,13 @@ Once members of your organization have created an algorithm and submitted it for
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
 
-**Note:** Every new version of the algorithm to be published will require independent approval. 
+**Note:** Every new version of the algorithm to be published will require independent approval.
 
-At this time you will be able to set the royalty (if any) for that algorithm and finalize publishing to Algorithmia's marketplace. 
+At this time you will be able to set the royalty (if any) for that algorithm and finalize publishing to Algorithmia's marketplace.
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_approve_set_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
 
 #### Check Earnings:
-To view your organizations earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organizations profile. 
+To view your organizations earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organizations profile.
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot img-md">
