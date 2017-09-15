@@ -21,7 +21,7 @@ The profile overview provides a rich source of information about the organizatio
 
 #### Things to know about Organizations:
 * Publishing algorithms under an organization requires approval from the organization owner before they are made available to other users in the marketplace.
-* All earnings from algorithms under an organization are rolled up into the organizations account.
+* All earnings from algorithms under an organization are rolled up into the organization's account.
 * You must be invited into an organization by the organization owner or administrator.
 
 
@@ -38,10 +38,10 @@ At this time you will be asked to fill out some information regarding your organ
 
 * *Organization Account Name:*
 This will determine the URL where your organization will be showcased. It is required that this be all lowercase letters, no spaces and no special characters.
-* *Organization Full Name:* This is the organizations full name.
+* *Organization Full Name:* This is the organization's full name.
 * *Contact Name:* The primary contact for your organization.
-* *Organization Email:* The organizations primary email.
-* *Url:* Your organizations website.
+* *Organization Email:* The organization's primary email.
+* *Url:* Your organization's website.
 
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_info.png" alt="Organization info" class="screenshot img-sm">
@@ -77,6 +77,6 @@ At this time you will be able to set the royalty (if any) for that algorithm and
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_approve_set_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
 
 #### Check Earnings:
-To view your organizations earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organizations profile.
+To view your organization's earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organization's profile.
 
 <img src="{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot img-md">
