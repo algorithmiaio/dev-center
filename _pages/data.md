@@ -2,6 +2,7 @@
 layout: article_page
 title:  "Working with data"
 nav_overview: "Overview"
+nav_index: 0
 excerpt: "Here you'll find guides to hosting your data on Algorithmia or you can create a connection to your hosted files on Dropbox or S3."
 tags: [data-connectors-overview]
 show_related: false
@@ -19,7 +20,8 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
 ### Data Portal Guides
 {% assign data_connector_tags = "app-data-connectors" | split:"|" %}
 <div class="row data-connectors">
-  {% for post in site.pages %}
+  {% assign sorted_pages = site.pages | sort:"nav_index" %}
+  {% for post in sorted_pages %}
     {% if data_connector_tags == post.tags %}
       <div class="col-xs-3 lang-tile">
         <a  href="{{ post.url | relative_url }}">
