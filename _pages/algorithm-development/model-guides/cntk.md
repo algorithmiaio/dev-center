@@ -116,6 +116,52 @@ def get_cntk_model():
     to predict labels from the imagenet 1k dataset.
 
 """
+
+import Algorithmia
+from cntk import load_model
+import cntk as C
+import numpy as np
+import json
+from scipy.misc import imread, imresize, imshow
+
+C.cntk_py.set_fixed_random_seed(1)
+SIMD_ALGO = "util/SmartImageDownloader/0.2.14"
+
+def get_cntk_model():
+    model_uri = "data://zeryx/cntk_guide/ResNet101_ImageNet_Caffe.model"
+    labels_uri = "data://zeryx/cntk_guide/imagenet_labels.json"
+    model_file_path = client.file(model_uri).getFile().name
+    labels_file_path = client.file(labels_uri).getFile().name
+return model_file_path, labels_file_path
+
+
+def get_image(url):
+    output_url = client.algo(SIMD_ALGO).pipe({'image': str(url)}).result['savePath'][0]
+    temp_file = client.file(output_url).getFile().name
+    os.rename(temp_file, temp_file + '.' + output_url.split('.')[-1])
+    return temp_file + '.' + output_url.split('.')[-1]
+
+def apply(url):
+    image = get_image(url)
+    my_classifier = load_model(MODEL_PATH)
+    with open(LABELS_PATH) as f:
+        labels = json.load(f)
+    im = imread(image, mode='RGB')
+    im = imresize(im, (224, 224))
+    im = np.reshape(im, (1, 3, 224, 224))
+    probs = my_classifier.eval(im.astype(float))[0]
+    
+    result = []
+    for i in range(len(probs)):
+        label = labels[i]
+        probability = probs[i]
+        result.append({'label': label, 'probability': probability})
+    result = sorted(result, key=lambda k: k['probability'])
+    return result
+
+
+MODEL_PATH, LABELS_PATH = get_cntk_model()
+
 {% endhighlight %}
 
 
@@ -135,9 +181,6 @@ For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-d
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot img-sm">
 
-# Working Demo
-
-You can see the full working example as an algorithm [here][demo].
  
 [whl]: https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python
 [wh_35]: https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-linux_x86_64.whl
