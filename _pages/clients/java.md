@@ -140,12 +140,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 {% endhighlight %}
 
-Then upload your local file to the data collection using the `.putFile()` method:
+Then upload your local file to the data collection using the `.put()` method:
 
 {% highlight java %}
 try {
     String local_file = "local_path_to_your_file/jack_london.txt";
-    nlp_directory.putFile(new File(local_file));
+    nlp_directory.put(new File(local_file));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
 }
@@ -283,7 +283,7 @@ public class Main {
 
         String local_file = "local_path_to_your_file/jack_london.txt"
         try {
-            nlp_directory.putFile(new File(local_file));
+            nlp_directory.put(new File(local_file));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

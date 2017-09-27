@@ -337,7 +337,7 @@ Sometimes it is more appropriate to write your output to a file than to return i
 String file_uri = dict.get("target_file");
 File tempfile = new File("/tmp/"+UUID.randomUUID()+".tmp");
 save_some_output_to(tempfile);
-client.file(file_uri).putFile(tempfile);
+client.file(file_uri).put(tempfile);
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
