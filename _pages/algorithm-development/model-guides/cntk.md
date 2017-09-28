@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: james_sutton
 image:
-    teaser: 
+    teaser: /language_logos/python.svg
 ---
 
 
