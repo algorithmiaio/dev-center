@@ -17,7 +17,7 @@ If you have any questions about Algorithmia or <a href="http://blog.algorithmia.
 
 ### Supported frameworks
 {% assign model_tags = "algo-model-guide" | split:"|" %}
-<div class="row">
+<div class="row lang-tile-container">
   {% assign pages = site.pages | where: "categories", "model-guides" %}
   {% for post in pages %}
 		{% include post-grid.html %}
