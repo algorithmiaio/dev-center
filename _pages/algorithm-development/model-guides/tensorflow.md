@@ -59,6 +59,9 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
+If you plan on using tensorflow with GPU support, make sure to use the `tensorflow-gpu` python package instead of the `tensorflow` one, with the version number `1.2.0`. It can be written in the dependency file like this: `tensorflow-gpu==1.2.0`.
+{: .notice-warning}
+
 ## Load your Model
 Here is where you load your graph and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
