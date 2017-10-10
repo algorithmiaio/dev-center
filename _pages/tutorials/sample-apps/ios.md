@@ -133,11 +133,33 @@ Once this API call returns, it calls `downloadOutput()` to retrieve the resultan
 
 Let's make a few changes, to get a feel for how we can use different APIs inside our app.  The simplest change we can make is to alter which filter we'll be using: inside `processImage()`, change `"filterName": "space_pizza"` to `"filterName": "colorful_blocks"`.  Now re-run the app and filter another photo... you should get a very different-looking result.
 
-Next, peek at Algorithmia's [ColorfulImageColorization](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization) and [Saliency Detection (SalNet)](https://algorithmia.com/algorithms/deeplearning/SalNet) algorithms.  Note that both of these algorithms take an image URI and return and image URI, just like DeepFilter.  However, they do different things: ColorfulImageColorization can be used to auto-colorize greyscale images, while SalNet generates a heatmap of the most important parts of your image.
+Next, peek at Algorithmia's [Saliency Detection (SalNet)](https://algorithmia.com/algorithms/deeplearning/SalNet) algorithm.  Just like DeepFilter, it takes in an image URI, and returns an image URI.  However, it performs a different function: instead of applying an artistic filter, SalNet generates a heatmap of the most important (salient) parts of your image.
 
-Inside `processImage`, remove the line `"filterName": "colorful_blocks"`, and the preceding comma.  Then, change `"images": [file.toDataURI()]` to `"image": file.toDataURI()`, and `"savePaths": [resultPath]` to `"location": resultPath` (since these new algorithms take only a single input, not an array, and have slightly different parameter names).
+SalNet doesn't require a filter to be specified, takes only a single input (not an array), and has slightly different parameter names -- so we need to adjust `param` to match its expectations.  Inside `processImage`, remove the line `"filterName": "colorful_blocks"` and the preceding comma.  Then, change `"images": [file.toDataURI()]` to `"image": file.toDataURI()`, and `"savePaths": [resultPath]` to `"location": resultPath`.
 
-Lastly, replace `"algo://deeplearning/DeepFilter"` with either `"algo://deeplearning/ColorfulImageColorization?timeout=3000"` or `"algo://deeplearning/SalNet"`, and try re-running the app.  Depending on which you selected, you should either get an image with false color added, or one which highlights the most salient features of the original.  Note the addition of `?timeout=3000` to the colorization call: since this algorithm can take a long time to run on large images, we've specified that it should be [allowed to run](http://docs.algorithmia.com/?swift#query-parameters) for up to 3000 seconds (50 minutes).
+Lastly, replace `"algo://deeplearning/DeepFilter"` with `"algo://deeplearning/SalNet"`:
+
+
+{% highlight swift lineanchors %}
+    func processImage(file:AlgoDataFile) {
+        let param:[String:Any] = [
+            "image": file.toDataURI(),
+            "location": resultPath
+        ]
+        
+        // Process with DeepFilter algorithm
+        self.client.algo(algoUri: "algo://deeplearning/SalNet").pipe(json: param, completion: { (response, error) in
+            if let error = error {
+                print(error)
+                self.display(error: error)
+                return
+            }
+            self.downloadOutput(file: self.client.file(self.resultPath))
+        })
+    }
+{% endhighlight %}
+
+Try re-running the app.  You should get back an image which highlights the most salient features of the original.
 
 ## Next Steps
 
