@@ -67,7 +67,7 @@ Now that we know our base app works, let's peek into the code to find out what's
 Open up "AlgorithmiaSwiftDemo/ViewController.swift" and take note of the line which creates the Algorithmia client instance, using the environment key `ALGORITHMIA_API_KEY` which we specified earlier:
 
 {% highlight swift %}
-let client = Algorithmia.client(simpleKey: ProcessInfo.processInfo.environment["ALGORITHMIA_API_KEY"] ?? "%PLACE_YOUR_API_KEY%")
+let client = Algorithmia.client(simpleKey: ProcessInfo.processInfo.environment["ALGORITHMIA_API_KEY"] ?? "%DEFAULT_API_KEY%")
 {% endhighlight %}
 
 Now scroll down a bit and take a look at the three functions we use to createupload, process, and download the image:
