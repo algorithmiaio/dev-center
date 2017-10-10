@@ -147,7 +147,7 @@ Lastly, replace `"algo://deeplearning/DeepFilter"` with `"algo://deeplearning/Sa
             "location": resultPath
         ]
         
-        // Process with DeepFilter algorithm
+        // Process with SalNet algorithm
         self.client.algo(algoUri: "algo://deeplearning/SalNet").pipe(json: param, completion: { (response, error) in
             if let error = error {
                 print(error)
