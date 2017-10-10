@@ -137,7 +137,7 @@ Next, peek at Algorithmia's [ColorfulImageColorization](https://algorithmia.com/
 
 Inside `processImage`, remove the line `"filterName": "colorful_blocks"`, and the preceding comma.  Then, change `"images": [file.toDataURI()]` to `"image": file.toDataURI()`, and `"savePaths": [resultPath]` to `"location": resultPath` (since these new algorithms take only a single input, not an array, and have slightly different parameter names).
 
-Lastly, replace `"algo://deeplearning/DeepFilter"` with either `"algo://deeplearning/ColorfulImageColorization?timeout=600"` or `"algo://deeplearning/SalNet"`, and try re-running the app.  Depending on which you selected, you should either get an image with false color added, or one which highlights the most salient features of the original.  Note the addition of `?timeout=600` to the colorization call: since this algorithm can take a long time to run on large images, we've specified that it should be [allowed to run](http://docs.algorithmia.com/?swift#query-parameters) for up to 600 seconds (max: 3000).
+Lastly, replace `"algo://deeplearning/DeepFilter"` with either `"algo://deeplearning/ColorfulImageColorization?timeout=3000"` or `"algo://deeplearning/SalNet"`, and try re-running the app.  Depending on which you selected, you should either get an image with false color added, or one which highlights the most salient features of the original.  Note the addition of `?timeout=3000` to the colorization call: since this algorithm can take a long time to run on large images, we've specified that it should be [allowed to run](http://docs.algorithmia.com/?swift#query-parameters) for up to 3000 seconds (50 minutes).
 
 ## Next Steps
 
