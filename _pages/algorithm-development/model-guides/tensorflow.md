@@ -84,7 +84,13 @@ def load_data():
     graph_file = client.file(graph_uri).getFile().name
 
     return (checkpoint_file, graph_file)
-
+    
+# Enable allow_growth if you still run into memory issues.
+def generate_gpu_config(memory_fraction):
+    config = tf.ConfigProto()
+    # config.gpu_options.allow_growth = True
+    config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
+    return config
 
 # Get called once
 saver = tf.train.Saver()
@@ -96,8 +102,12 @@ def inject_data(input):
 
     Prints accuracy and predictions on user input
     """
+    # Set your memory fraction equal to a value less than 1, 0.6 is a good starting point.
+    # If no fraction is defined, the tensorflow algorithm may run into gpu out of memory problems.
+    fraction = 0.6
+    
     # Inject data into Tensor graph
-    with tf.Session() as sess:
+    with tf.Session(graph=graph, config=generate_gpu_config(fraction)) as sess:
         # Load previously saved graph
         with tf.gfile.FastGFile(graph, 'rb') as f:
             graph_def = tf.GraphDef()
