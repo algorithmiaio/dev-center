@@ -11,5 +11,5 @@ excerpt: "Generate random color palettes from multiple images found on your favo
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/color-extraction/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/color-extraction/
-blog: http://blog.algorithmia.com/create-a-custom-color-scheme-from-your-favorite-website
+blog: https://blog.algorithmia.com/create-a-custom-color-scheme-from-your-favorite-website
 ---

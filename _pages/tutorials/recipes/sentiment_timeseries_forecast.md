@@ -11,5 +11,5 @@ excerpt: "Build a pipeline that takes structured text data and show the text's s
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/sentiment_timeseries_forecast/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/sentiment_timeseries_forecast/
-blog: http://blog.algorithmia.com/forecast-sentiment-analysis-with-r/
+blog: https://blog.algorithmia.com/forecast-sentiment-analysis-with-r/
 ---
