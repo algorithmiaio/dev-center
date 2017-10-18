@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "Amazon Alexa (Echo)"
-categories: clients
-tags: [clients]
+categories: [clients, partners]
+tags: [clients, partners]
 show_related: true
 image:
     teaser: /language_logos/alexa.svg

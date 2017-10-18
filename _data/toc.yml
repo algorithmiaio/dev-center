@@ -6,6 +6,10 @@
 - title: Getting Started
   url: /getting-started/
 
+- title: Basics
+  url: /basics/
+  nav_category: basics
+
 - title: Client Guides
   url: /clients/
   nav_category: clients
@@ -14,9 +18,9 @@
   url: /data/
   nav_category: working-with-data
 
-- title: Basics
-  url: /basics/
-  nav_category: basics
+#- title: Partner Integrations
+#  url: /partners/
+#  nav_category: partners
 
 - title: Tutorials
   url: /tutorials/
