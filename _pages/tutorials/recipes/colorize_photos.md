@@ -10,5 +10,6 @@ author: matt_kiser
 excerpt: "Colorize your black and white pictures in your S3 bucket or Dropbox directory"
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/Colorize-Photos/README.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Colorize-Photos/colorize.py
+repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Colorize-Photos/
+blog: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Colorize-Photos/README.md
 ---

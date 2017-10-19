@@ -166,7 +166,7 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 "It was a quiet night in the Shovel. The miners were in from Moseyed Creek and the other diggings to the west, the summer washing had been good, and the men's pouches were heavy with dust and nuggets. MacDonald grinned and nodded, and opened his mouth to speak, when the front door swung wide and a man appeared in the light."
 
-If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
+If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](https://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
 
 ### Limits
 

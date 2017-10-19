@@ -8,7 +8,12 @@
   <div class="col-md-9">
     {% for post in recipes %}
       {% if post.tags contains tag %}
-        {% include post-list-with-excerpt.html %}
+        <li class="no-style">
+          <h4 class="m-B-n"><a href="{{ post.repository }}">{{ post.title }}</a></h4>
+          <p>{{ post.excerpt }}</p>
+        </li>
+        <a href="{{ post.blog }}" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ</a>
+        <a href="{{ post.repository }}" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
       {% endif %}
     {% endfor %}
   </div>

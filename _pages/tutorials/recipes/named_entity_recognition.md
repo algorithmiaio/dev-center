@@ -10,5 +10,6 @@ author: steph_kim
 excerpt: "Find out who is talking about what on Twitter by getting the named entities of tweets by keyword."
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/named_entity_recognition/README.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/named_entity_recognition/twitter_named_entity_recognition.py
+repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/named_entity_recognition/
+blog: https://blog.algorithmia.com/text-mining-tweets-named-entity-recognition/
 ---

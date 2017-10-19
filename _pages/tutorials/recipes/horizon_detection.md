@@ -10,5 +10,6 @@ author: jon_peck
 excerpt: "Take images that are a little sideways and fix them by using the image's horizon to rotate them properly."
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/horizon-detector/readme.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/horizon-detector/horizon-detector.py
+repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/horizon-detector/
+blog: https://blog.algorithmia.com/how-to-rotate-images-in-python-using-a-horizon-detection-algorithm/
 ---
