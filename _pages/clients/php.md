@@ -76,9 +76,9 @@ $algorithm = 'util/Echo/0.2.1';
 $data = array('hello' => 'world');
 
 // run the algorithm and get the results
+$url = 'https://api.algorithmia.com/v1/algo/' . $algorithm;
 $headers = array('Accept' => 'application/json', 'Authorization' => 'Simple ' . $api_key);
 $body = Unirest\Request\Body::json($data);
-$url = 'https://api.algorithmia.com/v1/algo/' . $algorithm;
 $response = Unirest\Request::post($url, $headers, $body) -> body;
 
 // $response->result contains algorithm results (if any)
