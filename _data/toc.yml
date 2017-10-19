@@ -19,8 +19,8 @@
   nav_category: working-with-data
 
 #- title: Partner Integrations
-#  url: /partners/
-#  nav_category: partners
+#  url: /integrations/
+#  nav_category: integrations
 
 - title: Tutorials
   url: /tutorials/
