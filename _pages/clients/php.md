@@ -58,6 +58,42 @@ The PHP client is still in development.  For now, you can use cURL inside your P
 ?>
 {% endhighlight %}
 
+
+#### Alternative: Unirest
+
+If you're using [Unirest](http://unirest.io/php.html), a lightweight library for HTTP requests, the code becomes a bit simpler:
+
+{% highlight php %}
+<?php
+
+  // get your API Key at https://algorithmia.com/user#credentials
+  $api_key = 'YOUR_API_KEY';
+  
+  // pick an algorithm at https://algorithmia.com/algorithms -- and append a version number
+  $algorithm = 'util/Echo/0.2.1';
+  
+  // most algorithms accept JSON Objects
+  $data = array('hello' => 'world');
+  
+  // run the algorithm and get the results
+  $headers = array('Accept' => 'application/json', 'Authorization' => 'Simple ' . $api_key);
+  $body = Unirest\Request\Body::json($data);
+  $response = Unirest\Request::post('https://api.algorithmia.com/v1/algo/' . $algorithm, $headers, $body);
+  $response = $response -> body
+  
+  // $response->result contains algorithm results (if any)
+  // $response->error contains errors (if any)
+  // $response->metadata has meta-information
+  if($response->error) {
+    print('ERROR: ');
+    print_r($response->error);
+  } else {
+    print_r($response->result);
+  }
+
+?>
+{% endhighlight %}
+
 #### Additional information
 
 While most algorithms accept JSON Objects, you can also use `Content-Type: text/plain` for ones which require bare string input, or `Content-Type: application/octet-stream` for those that require a binary (such as an image file). Adjust the lines containing `$data_json` as needed.
