@@ -84,7 +84,7 @@ acl = nlp_directory$getPermissions()  # Acl object
 acl$read_acl # Returns "MY_ALGORITHMS" Acl Type
 
 # Update permissions to private
-nlp_directory$update_permissions(ReadAcl.private)
+nlp_directory$update_permissions(ReadAcl.PRIVATE)
 nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 {% endhighlight %}
 
@@ -197,7 +197,7 @@ acl = nlp_directory$getPermissions()  # Acl object
 acl$read_acl # Returns "MY_ALGORITHMS" Acl Type
 
 # Update permissions to private
-nlp_directory$update_permissions(ReadAcl.private)
+nlp_directory$update_permissions(ReadAcl.PRIVATE)
 nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 
 text_file <- "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
