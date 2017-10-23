@@ -1,7 +1,6 @@
 ---
 layout: article
 title: "Dexter"
-excerpt: "foo"
 categories: [integrations]
 tags: [integrations]
 show_related: true
