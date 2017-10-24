@@ -42,6 +42,10 @@ Download and extract the [latest Windows x86_64 zip file](https://github.com/alg
 If needed, you can also find both MSVC and GNU builds for x86 and x86_64 on the [release page](https://github.com/algorithmiaio/algorithmia-cli/releases/latest).
 
 
+**Installation note: Python environment variable**
+
+If you'll be running Python algos, also set the version via `export LANGUAGE_VERSION=python2` or `export LANGUAGE_VERSION=python3`
+
 ## Configure Authentication
 
 In order to make calls with the CLI, you'll need to configure the authentication with an API key. If you don't already have an API key, get started by signing up for an account at [Algorithmia.com](https://algorithmia.com). Once you've completed the sign up process, copy the API key from your account dashboard.
