@@ -96,11 +96,11 @@ If you prefer to continue creating your algorithm in the Web IDE, simply close t
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_rust.png" alt="Algorithm console Rust" class="screenshot">
 
-Edit the source code right in the Web IDE, clicking "Compile" when youruby.md#publish-algorithm-algorithmo test. In the area below the code editor, you can enter JSON you witsh to test with. When you are ready to publish a version of your code for general use, click "[Publish](#publish-algorithm)".
+Edit the source code right in the Web IDE, clicking "Compile" when you're ready to test. In the area below the code editor, you can enter JSON you witsh to test with. When you are ready to publish a version of your code for general use, click "[Publish](#publish-algorithm)".
 
 ## Managing Dependencies
 
-Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/" target="_blank">Crates.io</a> (though it is also possible to specify dependencies from a git URL).  Do not try to manually ruby.md#publish-algorithmtoml` file.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/" target="_blank">Crates.io</a> (though it is also possible to specify dependencies from a git URL). If working locally, you can edit `Cargo.toml` and run `cargo install` to update your lockfile. Alternatively, from the web IDE, there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot img-md">
 
