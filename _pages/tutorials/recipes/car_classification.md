@@ -10,5 +10,6 @@ author: steph_kim
 excerpt: "Get the make, model, body type and more metadata of cars from a traffic video in just a few lines of code."
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/car-classification/README.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/car-classification/car_classifier.py
+repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/car-classification/
+blog: https://blog.algorithmia.com/video-processing-car-classification
 ---

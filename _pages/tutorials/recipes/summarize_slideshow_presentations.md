@@ -10,6 +10,7 @@ author: steph_kim
 excerpt: "Extract the text from slideshow presentations and summarize the content."
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/Summarize-SlideShare-Presentations/README.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Summarize-SlideShare-Presentations/summarizer.py
+repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Summarize-SlideShare-Presentations/
+blog: https://blog.algorithmia.com/automatic-slideshare-text-summarization/
 ---
 

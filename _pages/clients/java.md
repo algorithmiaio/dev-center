@@ -140,12 +140,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 {% endhighlight %}
 
-Then upload your local file to the data collection using the `.putFile()` method:
+Then upload your local file to the data collection using the `.put()` method:
 
 {% highlight java %}
 try {
     String local_file = "local_path_to_your_file/jack_london.txt";
-    nlp_directory.putFile(new File(local_file));
+    nlp_directory.put(new File(local_file));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
 }
@@ -223,7 +223,7 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 "It was a quiet night in the Shovel. The miners were in from Moseyed Creek and the other diggings to the west, the summer washing had been good, and the men's pouches were heavy with dust and nuggets. MacDonald grinned and nodded, and opened his mouth to speak, when the front door swung wide and a man appeared in the light."
 
-If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](http://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
+If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](https://blog.algorithmia.com/introduction-natural-language-processing-nlp/).
 
 ## Limits
 
@@ -283,7 +283,7 @@ public class Main {
 
         String local_file = "local_path_to_your_file/jack_london.txt"
         try {
-            nlp_directory.putFile(new File(local_file));
+            nlp_directory.put(new File(local_file));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

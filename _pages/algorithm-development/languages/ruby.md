@@ -71,17 +71,38 @@ Now hit the "Create" button on the bottom lower right of the form and you'll see
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot">
 
-The above screenshot shows directions and links to documentation for continuing to create your algorithm via the [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/). Or, you can close the modal and continue to create your algorithm in the UI.
+You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
-If you choose to continue creating your algorithm in the UI, close the modal and you should see the algorithm console for your newly created algorithm:
+#### Editing your algorithm locally via GIT & CLI
+
+The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
+
+To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
+2. Clone your algorithm: `algo clone username/algoname`
+3. Use your preferred editor to modify the code
+4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
+5. Commit your changes: `git commit -m [commit message]; git push origin master`
+6. Publish your changes: for now, you must do this via the web IDE:
+    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
+    2. click on your algorithm
+    3. click "Edit Source"
+    4. click "Compile", then "[Publish](#publish-algorithm)"
+
+#### Editing your algorithm via the web IDE
+
+If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm console for your newly created algorithm:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_ruby.png" alt="Algorithm console Ruby" class="screenshot">
+
+Edit the source code right in the Web IDE, clicking "Compile" when you have r.md#publish-algorithmo test. In the area below the code editor, you can enter JSON you witsh to test with. When you are ready to publish a version of your code for general use, click "[Publish](#publish-algorithm)".
 
 ## Managing Dependencies
 
 The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `phony` just as an example.
 
-Algorithmia supports adding 3rd party dependencies via <a href="https://rubygems.org/" target="_blank">Ruby Gems</a> using a Gemfile, but you don't need to create the Gemfile file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+Algorithmia supports adding 3rd partr.md#publish-algorithm <a href="https://rubygems.org/" target="_blank">Ruby Gems</a> using a Gemfile, but you don't need to create the Gemfile file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="Ruby Dependency File" class="screenshot img-md">
 
@@ -268,10 +289,6 @@ In this dialog, you can select whether your algorithm will be for public use or 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
-
-### Editing an Algorithm
-
-Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use [Git to push directly to Algorithmia]({{ site.baseurl }}/algorithm-development/git/) from your current workflow.
 
 ## Conclusion and Resources
 

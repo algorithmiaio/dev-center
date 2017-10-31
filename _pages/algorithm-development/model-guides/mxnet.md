@@ -6,8 +6,8 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: besir_kurtulmus
-<!-- image:
-    teaser: /language_logos/mxnet.svg -->
+image:
+    teaser: /language_logos/algo_icon.svg
 ---
 
 Welcome to hosting your <a href="https://mxnet.incubator.apache.org/">MXNet</a> model on Algorithmia!

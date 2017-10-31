@@ -40,9 +40,9 @@ It's very imporant to understand the problem before attempting to fulfill a boun
 
 A few things you'll want to have a good grasp on before proceeding:
 
-* What problem does is this bounty trying to solve?
+* What problem is this bounty trying to solve?
 * Do you need sample data to solve this bounty?
-* Did the bounty creator clearly specific the input and output they want?
+* Did the bounty creator clearly specify the input and output they want?
 
 
 ### 3. Creating a New Algorithm

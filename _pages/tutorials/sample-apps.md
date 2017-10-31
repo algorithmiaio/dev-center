@@ -2,7 +2,7 @@
 exclude_from_search: true
 layout: article_page
 title:  "Sample apps"
-<!-- categories: tutorials -->
+categories: tutorials
 show_related: false
 excerpt: "All the sample apps"
 image:

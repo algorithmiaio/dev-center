@@ -2,8 +2,8 @@
 exclude_from_search: true
 layout: article
 title:  "Sample app example (android copy)"
-categories: sample-apps
-tags: [sample-app]
+# categories: sample-apps
+$ tags: [sample-app]
 show_related: false
 author: liz_rush
 excerpt: "(Sample app example) A code walk-through of a simple Android app using Algorithmia."

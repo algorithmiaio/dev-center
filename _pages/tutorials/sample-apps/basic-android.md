@@ -1,7 +1,7 @@
 ---
-exclude_from_search: true
+exclude_from_search: false
 layout: article
-title:  "Basic Android Integration"
+title: "Basic Android Integration"
 categories: sample-apps
 tags: [sample-apps]
 show_related: false
@@ -42,7 +42,7 @@ Add the Algorithmia client to your app in the dependencies section of `app/build
 {% highlight xml %}
 dependencies {
     ...
-    compile "com.algorithmia:algorithmia-android:1.0.0"
+    compile "com.algorithmia:algorithmia-android:1.0.1"
     ...
 }
 {% endhighlight %}

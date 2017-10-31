@@ -68,7 +68,7 @@ You can also use one of the clients to make your call. See below for examples or
 <pre class="code__pre"><code hlcode="python" class="demo-code-sample">import Algorithmia
 
 input = "YOUR_USERNAME"
-client = Algorithmia.client('API_KEY')
+client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
 print algo.pipe(input)
 </code></pre>
