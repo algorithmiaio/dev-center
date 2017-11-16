@@ -16,11 +16,13 @@ To call algorithms and interact with the Data API, you'll use an API key to auth
 
 ## Your default API key
 
-To view your API keys, head on over to your profile on Algorithmia and click on the "Credentials" option in the horizontal menu. For more information about your profile, be sure to check out the [Your Profile guide]({{ site.baseurl }}/basics/your-profile/) for more information.
+To view your API keys, head on over to your profile on Algorithmia and click on the "My API Keys" option in the menu. For more information about your profile, be sure to check out the [Your Profile guide]({{ site.baseurl }}/basics/your-profile/) for more information.
 
-<img src="{{ site.baseurl }}/images/post_images/api_keys/default-key.png" alt="API keys home" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/api_keys/my_api_keys_from_profile.png" alt="My API Keys from Profile Menu" class="screenshot img-sm">
 
 When you sign up for Algorithmia, your account is created with a default API key. Conveniently, it is named `default-key`! This key will show up in the code snippets on an algorithm profile page when you are signed in, allowing you to easily make calls to the algorithm either through the web console or by copying the code directly to include in your program.
+
+<img src="{{ site.baseurl }}/images/post_images/api_keys/default-key.png" alt="API keys home" class="screenshot img-sm">
 
 If you delete your `default-key`, it will no longer show up in the code snippets on the algorithm profile pages. Simply create a new key and name it `default-key` to have it appear again!
 {: .notice-info }

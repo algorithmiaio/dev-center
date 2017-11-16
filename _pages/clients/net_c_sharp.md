@@ -155,14 +155,14 @@ Now you've seen how to upload a local data file, check if a file exists in a dat
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
-#### Specifying an On-Premises Endpoint
-This .NET Client also works for customers running the [Algorithmia platform on-premises with CODEX](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
+#### Specifying an On-Premises Algorithmia Enterprise Endpoint
+This .NET Client also works for customers running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
 {% highlight csharp %}
 var client = new Client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
-Alternately, you can ensure that each of your servers interacting with CODEX have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at https://api.algorithmia.com/.
+Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at https://api.algorithmia.com/.
 
 
 #### Additional information
