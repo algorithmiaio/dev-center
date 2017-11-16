@@ -44,7 +44,7 @@ via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a button that says "Add Algorithm". Go ahead and click that button.
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm_nav.png" alt="Add algorithm navigation">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
@@ -94,9 +94,9 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
 
 #### Editing your algorithm via the web IDE
 
-If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm descrption page for your newly created algorithm:
+If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
 
 Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
 
@@ -129,7 +129,7 @@ Compiling your algorithm will also save your work, but note that the first time 
 
 To test the algorithm type your name or another string in the console and hit enter on your keyboard:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/run_default_algo.png" alt="Run basic algorithm in console Python" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
 ## Managing Dependencies
 

@@ -42,11 +42,11 @@ via the <a href="{{ site.baseurl }}/clients/java/">Algorithmia Java Client</a>.
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm_nav.png" alt="Add algorithm navigation" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_java_algo.png" alt="Create an algorithm in Java" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_java.png" alt="Create an algorithm in Java" class="screenshot img-sm">
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
@@ -92,15 +92,44 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
 
 #### Editing your algorithm via the web IDE
 
-If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm console for your newly created algorithm:
+If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/java_new_algorithm_console.png" alt="Algorithm console Java" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
 
-Edit the source code right in the Web IDE, clicking "Compile" when you have changes you want to test. In the area below the code editor, you can enter JSON you witsh to test with. When you are ready to publish a version of your code for general use, click "[Publish](#publish-algorithm)".
+Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
+
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+
+"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
+
+"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
+
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+
+Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
+
+## Write your First Algorithm
+
+As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+
+The main thing to note about the algorithm is that it's wrapped in the apply() function.
+
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
+
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
+
+Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
+{: .notice-info}
+
+To test the algorithm type your name or another string in the console and hit enter on your keyboard:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_java.png" alt="Compile algorithm" class="screenshot">
 
 ## Managing Dependencies
-
-Now that you have created your algorithm, you can add dependencies.
 
 Algorithmia supports adding 3rd party dependencies via Maven packages. Specifically, any packages from
 <a href="http://search.maven.org/">Maven Central</a> can be added to algorithms.
@@ -128,23 +157,6 @@ The Algorithmia dependency is already installed for your convenience. For more i
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-## Write your First Algorithm
-
-As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
-
-The main thing to note about the algorithm is that it's wrapped in the apply() function.
-
-The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
-
-Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
-{: .notice-info}
-
-To test the algorithm type your name or another string in the console and hit enter on your keyboard:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_java.png" alt="Compile algorithm" class="screenshot">
-
 ## I/O for your Algorithms
 
 Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
@@ -155,7 +167,7 @@ The first algorithm that we'll create will take a JSON formatted object passed a
 
 It will output a JSON formatted object which the user will consume with an API call to the algorithm path which is found at the bottom of the algorithm description page.
 
-This path is based on your Algorithmia user name and the name of your algorithm, so if you are “demo” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be demo/TokenizeText/0.1.1
+This path is based on your Algorithmia user name and the name of your algorithm, so if you are “AdaDeveloper” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be AdaDeveloper/TokenizeText/0.1.1
 
 ### Working with Basic Data Structures
 
@@ -401,7 +413,7 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This returns a Map of an ArrayList of words:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/java_output_tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, maps, arrays and bytearray (binary byte sequence such as an image file) can be handled as you would any Java data structure within your algorithm.
 
@@ -424,9 +436,9 @@ For more details about handling errors in Java check out the full [Algorithmia J
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/).
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
-It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
+Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
 ## Publish Algorithm
 
@@ -436,11 +448,17 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. 
+In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+Changes shows you your commit history and release notes.
+
+Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
+
+Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
