@@ -40,7 +40,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Load model by clicking box **“Drop files here to upload”**
 
-- Note the path to your files: data://username/collections_name/pickled_model.pkl
+- Note the path to your files: data://username/collections_name/mnist_model.h5
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/keras_data_collection.png" alt="Create a data collection" class="screenshot img-md">
 
@@ -53,6 +53,51 @@ Creating your algorithm is easy!
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
+
+Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_cli.png" alt="cli info modal" class="screenshot">
+
+You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
+
+#### Editing your algorithm locally via GIT & CLI
+
+The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
+
+To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
+2. Clone your algorithm: `algo clone username/algoname`
+3. Use your preferred editor to modify the code
+4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
+5. Commit your changes: `git commit -m [commit message]; git push origin master`
+6. Publish your changes: for now, you must do this via the web IDE:
+    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
+    2. click on your algorithm
+    3. click "Edit Source"
+    4. click "Compile", then "[Publish](#publish-algorithm)"
+
+#### Editing your algorithm via the web IDE
+
+If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_page.png" alt="Algorithm descrption page" class="screenshot">
+
+Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
+
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+
+"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
+
+"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
+
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+
+Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -71,7 +116,7 @@ Note that you always want to create valid JSON input and output in your algorith
 ### Example Input:
 {% highlight python %}
 {
-   "test_data": "data://stephanie/keras_data/test.csv"
+   "test_data": "data://user_name/keras_data/test.csv"
 }
 {% endhighlight %}
 
@@ -102,7 +147,7 @@ np.random.seed(seed)
 
 def load_keras_model():
     """Load model from data collection."""
-    file_uri = "data://stephanie/keras_model/mnist_model.h5"
+    file_uri = "data://user_name/keras_model/mnist_model.h5"
     # Retrieve file name from data collections.
     saved_model = client.file(file_uri).getFile().name
     model = load_model(saved_model)
