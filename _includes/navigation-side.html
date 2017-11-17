@@ -1,8 +1,10 @@
-<h3>Topics</h3>
-<div id="search">
-  <form action="{{ site.baseurl }}/" method="get">
-    <input type="text" id="search-query" name="q" placeholder="&#xf002;  Search Docs" autocomplete="on" style="width: 100%;">
-  </form>
-</div>
+<ul class="devcenter-nav sidebar-nav nav">
+	<li class="sidebar-nav__label"><label>Topics</label></li>
+	<div id="search">
+	  <form action="{{ site.baseurl }}/" method="get">
+	    <input type="text" id="search-query" class="form-control input-sm" name="q" placeholder="&#xf002;  Search Docs" autocomplete="on">
+	  </form>
+	</div>
 
-{% navmenu %}
+	{% navmenu %}
+</ul>
