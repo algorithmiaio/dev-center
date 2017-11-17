@@ -41,7 +41,7 @@ Furthermore, algorithms can call other algorithms and manage data on the Algorit
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm_nav.png" alt="Add algorithm navigation" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
 When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
@@ -94,9 +94,40 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm console for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/write_algorithm_ruby.png" alt="Algorithm console Ruby" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
 
-Edit the source code right in the Web IDE, clicking "Compile" when you have r.md#publish-algorithmo test. In the area below the code editor, you can enter JSON you witsh to test with. When you are ready to publish a version of your code for general use, click "[Publish](#publish-algorithm)".
+Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
+
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+
+"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
+
+"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
+
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+
+Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Python" class="screenshot">
+
+## Write your First Algorithm
+
+As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+
+The main thing to note about the algorithm is that it's wrapped in the apply() function.
+
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
+
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
+
+Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
+{: .notice-info}
+
+To test the algorithm type your name or another string in the console and hit enter on your keyboard:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_ruby.png" alt="Run basic algorithm in console Ruby" class="screenshot">
 
 ## Managing Dependencies
 
@@ -115,23 +146,6 @@ Now click "Save dependencies" to close the modal window.
 **Note:** that you will still need to include an import statement to your algorithm file. For example, to include `phony`, add the following to your .rb file:
 
 `require 'phony'`
-
-## Write your First Algorithm
-
-As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
-
-The main thing to note about the algorithm is that it's wrapped in the apply() function.
-
-The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
-
-Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
-{: .notice-info}
-
-To test the algorithm type your name or another string in the console and hit enter on your keyboard:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_ruby.png" alt="Run basic algorithm in console Ruby" class="screenshot">
 
 ## I/O for your Algorithms
 
@@ -284,9 +298,17 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
+
+Changes shows you your commit history and release notes.
+
+Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
+
+Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
