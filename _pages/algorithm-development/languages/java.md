@@ -108,7 +108,9 @@ The "Discussion" tab shows the comments and questions from users so you can keep
 
 Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
+
+Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
 

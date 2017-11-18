@@ -95,7 +95,9 @@ The "Discussion" tab shows the comments and questions from users so you can keep
 
 Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
+
+Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
 
@@ -202,16 +204,23 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
-- Set version permissions to public or private use
+On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-- Set it to royalty free or set to per-call royalty
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-- Set access permissions to have full access to the internet and ability to call other algorithms
+In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
+Changes shows you your commit history and release notes.
 
-For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/publish_alg.png" alt="Publish your algorithm" class="screenshot img-sm">
+Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+
+Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+
+If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ## Working Demo
 If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/keras_guide">Keras Demo</a>

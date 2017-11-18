@@ -39,7 +39,7 @@ Furthermore, algorithms can call other algorithms and manage data on the Algorit
 
 ## Create an Algorithm
 
-Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
+Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a button that says "Add Algorithm". Go ahead and click that button.
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
@@ -108,7 +108,9 @@ The "Discussion" tab shows the comments and questions from users so you can keep
 
 Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI:
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
+
+Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Python" class="screenshot">
 
