@@ -180,7 +180,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 - Set access permissions to have full access to the internet and ability to call other algorithms
 
-If you want to have a better idea of how a finished caffe algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
+If you want to have a better idea of how a finished MXNet algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
