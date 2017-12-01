@@ -54,6 +54,54 @@ Creating your algorithm is easy!
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python2.png" alt="Create your algorithm" class="screenshot img-sm">
 
+Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_cli.png" alt="cli info modal" class="screenshot">
+
+You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
+
+#### Editing your algorithm locally via GIT & CLI
+
+The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
+
+To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
+2. Clone your algorithm: `algo clone username/algoname`
+3. Use your preferred editor to modify the code
+4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
+5. Commit your changes: `git commit -m [commit message]; git push origin master`
+6. Publish your changes: for now, you must do this via the web IDE:
+    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
+    2. click on your algorithm
+    3. click "Edit Source"
+    4. click "Compile", then "[Publish](#publish-algorithm)"
+
+
+#### Editing your algorithm via the web IDE
+
+If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_page.png" alt="Algorithm descrption page" class="screenshot">
+
+Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
+
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+
+"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
+
+"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
+
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+
+Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+
+Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
+
+Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
+
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
+
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
@@ -128,11 +176,23 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
-- Set version permissions to public or private use
+On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-- Set it to royalty free or set to per-call royalty
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-- Set access permissions to have full access to the internet and ability to call other algorithms
+In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
+
+Changes shows you your commit history and release notes.
+
+Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
+
+Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+
+Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+
+If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 If you want to have a better idea of how a finished caffe algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/CaffeNet/edit">CaffeNet</a>
 
