@@ -55,7 +55,7 @@ module Jekyll
     end
 
     def download_file(url, path)
-        stream = open(url)
+        stream = open(url.sub(/^\/\//, 'https://'))
         image = MiniMagick::Image.read(stream)
         image.format "jpg"
         image.resize "768x768>"
