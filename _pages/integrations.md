@@ -1,7 +1,7 @@
 ---
 layout: article_page
-title:  "Partner integrations"
-excerpt: "Guides and Plugins to integrate Algorithmia into partner applications"
+title:  "integrations"
+excerpt: "Guides and Plugins to integrate Algorithmia into other services/apps"
 tags: [app-guide-overview]
 show_related: false
 author: jon_peck
