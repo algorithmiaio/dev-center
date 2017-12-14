@@ -36,7 +36,7 @@ Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](htt
 Now import the Algorithmia library and create the Algorithmia client:
 
 {% highlight java %}
-import com.algorithmia
+import com.algorithmia.Algorithmia;
 import com.algorithmia.AlgorithmiaClient;
 
 AlgorithmiaClient Client = Algorithmia.client("YOUR_API_KEY");
