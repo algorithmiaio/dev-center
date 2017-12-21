@@ -3,8 +3,8 @@ layout: article
 title:  "AWS Lambda"
 permalink: clients/lambda/
 excerpt: "Run Algorithmia code in response to events with AWS Lambda."
-categories: clients
-tags: [clients]
+categories: [clients, integrations]
+tags: [clients, integrations]
 show_related: true
 image:
     teaser: /language_logos/aws_lambda.svg
