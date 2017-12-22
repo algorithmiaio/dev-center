@@ -1,6 +1,6 @@
 ---
 layout: article_page
-title:  "integrations"
+title:  "Integrations"
 excerpt: "Guides and Plugins to integrate Algorithmia into other services/apps"
 tags: [app-guide-overview]
 show_related: false
