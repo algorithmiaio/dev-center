@@ -107,7 +107,16 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
-If you plan on using tensorflow with GPU support, make sure to use the `tensorflow-gpu` python package instead of the `tensorflow` one, with the version number `1.2.0`. It can be written in the dependency file like this: `tensorflow-gpu==1.2.0`.
+If you plan on using tensorflow with GPU support, make sure to use the
+ `tensorflow-gpu` python package instead of the `tensorflow` one, with the version number
+  `1.2.0`. It can be written in the dependency file like this: `tensorflow-gpu==1.2.0`.
+{: .notice-warning}
+
+We've recently added tensorflow 1.3.0 support, however it uses custom wheels which we've built. Please replace your `tensorflow-gpu==1.2.0` line with:
+* python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl
+* python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl
+
+If you run into any issues with these wheels, please get in touch with us using intercom.
 {: .notice-warning}
 
 ## Load your Model
