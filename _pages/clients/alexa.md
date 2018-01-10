@@ -150,7 +150,7 @@ exports.handler = function(event, context, callback) {
 
 ## Additional information
 
-See the full ALgorithmia [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
+See the full Algorithmia [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
 on calling algorithms
 
 More more info on building Alexa skills, visit [developer.amazon.com](http://developer.amazon.com/alexa)
