@@ -40,6 +40,13 @@ var client = algorithmia("YOUR_API_KEY");
 
 Now you’re ready to start working with Algorithmia in Node.
 
+#### Enterprise Users Only: Specifying an On-Premises Endpoint
+If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+
+{% highlight js %}
+var client = algorithmia("YOUR_API_KEY", "https://mylocalendpoint");
+{% endhighlight %}
+
 ## Working with Data Using the Data API
 
 For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).

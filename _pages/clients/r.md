@@ -45,6 +45,15 @@ client <- getAlgorithmiaClient(apiKey)
 
 Now you’re ready to start working with Algorithmia in R.
 
+#### Enterprise Users Only: Specifying an On-Premises Endpoint
+If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+
+{% highlight r %}
+client <-> getAlgorithmiaClient("YOUR_API_KEY", "https://mylocalendpoint");
+{% endhighlight %}
+
+Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+
 ## Working with Data Using the Data API
 
 For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
