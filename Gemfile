@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '3.3.1'
+gem 'jekyll', '3.4.3'
 gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
 gem 'jekyll-last-modified-at'
