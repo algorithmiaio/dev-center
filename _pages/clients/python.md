@@ -52,7 +52,7 @@ If you are running the [Algorithmia platform on-premises with Algorithmia Enterp
 client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
-Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API_KEY` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
 
 ## Working with Data Using the Data API
 
