@@ -49,7 +49,7 @@ Now you’re ready to start working with Algorithmia in R.
 If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight r %}
-client <-> getAlgorithmiaClient("YOUR_API_KEY", "https://mylocalendpoint");
+client <- getAlgorithmiaClient("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
@@ -97,7 +97,7 @@ nlp_directory$update_permissions(ReadAcl.PRIVATE)
 nlp_directory$get_permissions()$read_acl # Returns "PRIVATE" Acl Type
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
