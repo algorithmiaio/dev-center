@@ -51,6 +51,13 @@ client.algo("docs/JavaAddOne").pipe(input).then(function(output) {
 });
 {% endhighlight %}
 
+#### Enterprise Users Only: Specifying an On-Premises Endpoint
+If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+
+{% highlight javascript %}
+var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
+{% endhighlight %}
+
 ### Limits
 
 Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).

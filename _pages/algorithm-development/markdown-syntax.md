@@ -66,6 +66,15 @@ Bare URLs will also be automatically converted to links.
 ![](http://www.example.com/image.jpg)
 </pre>
 
+
+#### Videos
+
+You can add mp4 videos using the HTML `<video>` tag.
+
+<pre>
+&lt;video src="https://example.com/demo.mp4"&gt;&lt;/video&gt;
+</pre>
+
 #### Tables
 
 <pre>
