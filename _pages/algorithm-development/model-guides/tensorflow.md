@@ -126,6 +126,10 @@ Our recommendation is to preload your model in a separate function before apply(
 
 Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
 
+If you're tensorflow model is saved in the `SavedModel` format, please use this example algorithm as a guide: https://algorithmia.com/algorithms/zeryx/TensorflowSavedModelExample/edit
+{: .notice-warning}
+
+
 {% highlight python %}
 import Algorithmia
 from tensorflow.examples.tutorials.mnist import input_data
