@@ -14,6 +14,20 @@ image:
 Welcome to hosting your <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
 This guide is designed as an introduction to hosting a Tensorflow model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+# Table of Contents
+* [Prerequsites](#prerequisites)
+  * [Train and save your model](#train-and-save-your-model)
+  * [Create a Data Collection](#create-a-data-collection)
+* [Create your Algorithm](#create-your-algorithm)
+* [Editing your Algorithm locally](#editing-your-algorithm-locally-via-git-&-cli)
+* [Editing your Algorithm remotely](#editing-your-algorithm-via-the-web-ide)
+* [Set your Dependencies](#set-your-dependencies)
+* [Load your Model](#load-your-model)
+  * [Frozen inference graph method](#frozen-inference-graph-method)
+  * [SavedModel method](#savedmodel-method)
+  * [GPU memory tricks](#gpu-memory-tricks)
+* [Publish your Algorithm](#publish-your-algorithm)
+
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
@@ -124,39 +138,49 @@ If you run into any issues with these wheels, please get in touch with us using 
 Here is where you load your graph and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
-
-If you're tensorflow model is saved in the `SavedModel` format, please use this example algorithm as a guide: https://algorithmia.com/algorithms/zeryx/TensorflowSavedModelExample/edit
+If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
 
+## Frozen inference graph method
+This was historically the preferred method of saving and loading a graph,
+ however since version 1.3.0 - the SavedModel method has become the standard.
+This example is taken directly from the <a href="https://algorithmia.com/algorithms/deeplearning/ObjectDetectionCOCO">ObjectDetectionCOCO</a> algorithm.
+Please bare in mind that not every tensorflow project contains loading mechanisms like this, but most using protocolbuffers do.
 
-{% highlight python %}
-import Algorithmia
-from tensorflow.examples.tutorials.mnist import input_data
+Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
+
+
+```python
+import os
+import tarfile
 import tensorflow as tf
 
-client = Algorithmia.client()
+def download_model(model_name):
 
-def load_data():
-    """Retrieve variable checkpoints and graph from user collection"""
-    vc_uri = 'data://user_name/data_collection/variable_checkpoint_tensorflow.ckpt'
-    checkpoint_file = client.file(vc_uri).getFile().name
-
-    graph_uri = 'data://user_name/data_collection/graph_model_tensorflow.pb'
-    graph_file = client.file(graph_uri).getFile().name
-
-    return (checkpoint_file, graph_file)
+    model_file = model_name + '.tar.gz'
+    download_base = 'data://deeplearning/objectDetectionCOCO/'
+    # Path to frozen detection graph. This is the actual model that is used for the object detection.
+    path_to_graph = model_name + '_coco_11_06_2017' + '/frozen_inference_graph.pb'
+    if model_name != MODEL_NAME:
+        print('model name not the same, reloading...')
+        if not os.path.isfile(path_to_graph):
+            try:
+                local_file = client.file(download_base+model_file).getFile().name
+            except Exception:
+                raise AlgorithmError("AlgoError3000: invalid model name.")
+                
+            tar_file = tarfile.open(local_file)
+            for file in tar_file.getmembers():
+                file_name = os.path.basename(file.name)
+                if 'frozen_inference_graph.pb' in file_name:
+                    tar_file.extract(file, os.getcwd())
     
-# Enable allow_growth if you still run into memory issues.
-def generate_gpu_config(memory_fraction):
-    config = tf.ConfigProto()
-    # config.gpu_options.allow_growth = True
-    config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
-    return config
+        return path_to_graph
 
-# Get called once
+""" And now we execute the function in global state, so it's run when the algorithm is loaded"""
+download_model("ssd_mobilenet_v1")
 saver = tf.train.Saver()
-checkpoints, graph = load_data()
+graph = load_data()
 
 def inject_data(input):
     """
@@ -197,12 +221,104 @@ def apply(input):
     """
     output = inject_data(input)
     return output
-{% endhighlight %}
+```
 
-If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+## SavedModel Method
+SavedModel is the standard way of loading and saving models in recent versions of Tensorflow, for more info check out 
+<a href="https://www.tensorflow.org/programmers_guide/saved_model#apis_to_build_and_load_a_savedmodel"> Load a SavedModel </a>
 
-## Publish your Algorithm
+Lets take a look at an example that we've implemented ourselves, the tensor names entirely depend on your graph,
+replace our variables and types with yours as necessary.
+
+```python
+import Algorithmia
+import tensorflow as tf
+from tensorflow.contrib import predictor
+import zipfile
+import json
+import os
+from numpy import array, float32, object
+client = Algorithmia.client()
+
+    
+def _create_float(v):
+    return tf.train.Feature(float_list=tf.train.FloatList(value=[v]))
+
+def _create_str(v):
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=[bytes(v, 'utf-8')]))
+
+
+def load_data():
+    graph_uri = 'data://zeryx/SavedModelExample/savedmodel.zip'
+    graph_file = client.file(graph_uri).getFile().name
+    output_dir = '/tmp/model_dir'
+    try:
+        os.mkdir(output_dir)
+        z = zipfile.ZipFile(graph_file, 'r')
+        z.extractall(output_dir)
+        z.close()
+    except:
+        pass
+    return "{}/{}".format(output_dir, "1515693886")
+
+graph_dir = load_data()
+
+def apply(input):
+    age = _create_float(input['age'])
+    capital_gain = _create_float(input['capital_gain'])
+    capital_loss = _create_float(input['capital_loss'])
+    education = _create_str(input['education'])
+    education_num = _create_float(input['education_num'])
+    gender = _create_str(input['gender'])
+    hours_per_week = _create_float(input['hours_per_week'])
+    native_country = _create_str(input['native_country'])
+    occupation = _create_str(input['occupation'])
+    relationship = _create_str(input['relationship'])
+    workclass = _create_str(input['workclass'])
+    
+    features = {
+        'age': age,
+        'capital_gain': capital_gain,
+        'capital_loss': capital_loss,
+        'education': education,
+        'education_num': education_num,
+        'gender': gender,
+        'hours_per_week': hours_per_week,
+        'native_country': native_country,
+        'occupation': occupation,
+        'relationship': relationship,
+        'workclass': workclass
+    }
+    example = tf.train.Example(features=tf.train.Features(feature=features))
+    inputs = example.SerializeToString()
+    predict_fn = predictor.from_saved_model(graph_dir)
+    predictions = predict_fn({"inputs":[inputs]})
+    predictions['scores'] = predictions['scores'].tolist()
+    predictions['classes'] = predictions['classes'].tolist()
+    return predictions
+```
+
+As you can see, most of the processing is similar, but we use a different endpoint to actually create the graph.
+We also have significantly more IO processing, the `feed_dict` in the frozen graph example only takes 1 input, whereas here we take a number of inputs.
+Again that can be changed as necessary to suit your model architecture.
+If you want to create a custom graph session (aka with gpu memory optimizations like those defined below), pass a
+graph variable to `predictor.from_saved_model` like this: `predict_fn = predictor.from_saved_model(graph_dir, graph=graph)`
+
+## GPU memory tricks
+Are you running into out of memory exceptions? Tensorflow attempts to allocate all available
+gpu memory. 
+By defining a configuration with a max memory fraction you can ensure algorithm stability.
+Also, uncomment `allow_growth` if you aren't sure how much memory your algorithm needs, tensorflow will grow it's gpu memory allocation as necessary.
+
+```python
+def generate_gpu_config(memory_fraction):
+    config = tf.ConfigProto()
+    # config.gpu_options.allow_growth = True
+    config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
+    return config
+```
+
+# Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
