@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Stamplay"
+excerpt-short: "Connect external microservices together, now with Algorithmia."
 categories: [integrations]
 tags: [integrations]
 show_related: true

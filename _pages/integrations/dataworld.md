@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Data.World"
+excerpt-short: "Use and create Data.World datasets from within algorithms."
 categories: [integrations]
 tags: [integrations]
 show_related: true

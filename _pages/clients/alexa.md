@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Amazon Alexa (Echo)"
+excerpt-short: "Trigger Algorithmia microservices from your Alexa-enabled device."
 categories: [clients, integrations]
 tags: [clients, integrations]
 show_related: true
