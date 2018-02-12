@@ -9,7 +9,7 @@ image:
     teaser: /language_logos/googlesheets.png
 ---
 
-[Google Sheets](sheets.google.com) is a collaborative, extensible online spreadsheet tool (similar to MS Excel).
+[Google Sheets](http://sheets.google.com) is a collaborative, extensible online spreadsheet tool (similar to MS Excel).
 
 Thanks to a new integration by [Ken Burcham](https://www.linkedin.com/in/kenburcham/), non-developers can now run Algorithmia's many machine learning and utility algorithms directly from within their Google Sheets, by simply clicking a drop-down and selecting the function they need.
 
