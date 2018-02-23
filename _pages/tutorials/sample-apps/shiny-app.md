@@ -12,7 +12,9 @@ image:
 github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
 ---
 
-Here's a basic example of how to call an algorithm via our REST API inside a Shiny app, and update the UI based on the API call:
+Before you get started with this Shiny sample app, check out our <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a> and when you want to work with your own data, read up on [Algorithmia's Data Portal](https://algorithmia.com/data), which offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+
+Here's a basic example of how to call an algorithm via our REST API inside a Shiny app, which updates the UI based on the API call:
 
 
 {% include toc.html %}
