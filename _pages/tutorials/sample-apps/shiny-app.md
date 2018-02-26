@@ -1,12 +1,14 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Using Algorithmia In Your Shiny App"
-categories: sample-apps
-tags: [sample-apps]
+title: "Using Algorithmia in your Shiny App"
+categories: [sample-apps, integrations]
+tags: [sample-apps, integrations]
 show_related: false
 author: steph_kim
 excerpt: "Call Fourier Detrend algorithm in your Shiny app!"
+excerpt-short: "Call machine learning algorithms directly from R Shiny."
+
 image:
     teaser: /language_logos/r.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example

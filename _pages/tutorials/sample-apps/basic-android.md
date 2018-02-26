@@ -2,14 +2,15 @@
 exclude_from_search: false
 layout: article
 title: "Basic Android Integration"
-categories: sample-apps
-tags: [sample-apps]
+categories: [sample-apps, integrations]
+tags: [sample-apps, integrations]
 show_related: false
 author: liz_rush
 excerpt: "A code walk-through of a simple Android app using Algorithmia."
+excerpt-short: "Build Android apps using Algorithmia."
 image:
   feature: /post_images/android/android_robot_skateboarding.png
-  teaser: /post_images/android/android_robot.png
+  teaser: /language_logos/android.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
 ---
 
