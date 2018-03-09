@@ -10,7 +10,7 @@ excerpt: "Call Fourier Detrend algorithm in your Shiny app!"
 excerpt-short: "Call machine learning algorithms directly from R Shiny."
 
 image:
-    teaser: /language_logos/r.svg
+    teaser: /language_logos/rstudio.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
 ---
 
