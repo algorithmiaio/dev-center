@@ -59,7 +59,7 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-Please note that you will need to use the **mxnet-cu80==0.11.0** package to be able to run a caffe algorithm.
+Please note that you will need to use the **mxnet-cu80==0.11.0** package to be able to run an MXNet algorithm.
 {: .notice-warning}
 
 Also please add the following code snippet to the top of your python script to use the latest MXNet library:

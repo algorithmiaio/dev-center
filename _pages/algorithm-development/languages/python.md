@@ -133,6 +133,11 @@ To test the algorithm type your name or another string in the console and hit en
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
+
+If you're using Python 3, the syntax has changed for imports. You'll need to use:
+`from .somefile import *` instead of in Python 2 where it's `from file import *`.
+{: .notice-warning}
+
 ## Managing Dependencies
 
 Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file.
