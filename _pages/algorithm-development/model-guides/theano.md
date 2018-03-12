@@ -23,7 +23,7 @@ After training your Theano model, you'll want to save the pickled model using ei
 ### Create a Data Collection
 Here you'll want to create a data collection to host your pickled model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -138,7 +138,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-If you want to have a better idea of how a finished theano algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/ArtsyNetworks">ArtsyNetworks</a>
+If you want to have a better idea of how a finished theano algorithm looks like, check out: <a href="{{ site.baseurl }}/algorithms/deeplearning/ArtsyNetworks">ArtsyNetworks</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 

@@ -17,7 +17,7 @@ As an application developer you can access the data you need from your Dropbox a
 All data sources have a protocol and a label that you will use to reference your data. For instance Dropbox is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Create a New Data Connection to Dropbox
-To create a new data connection first navigate to <a href="https://algorithmia.com/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source':
+To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source':
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/data_portal.png" alt="Data Portal" class="screenshot img-md">
 

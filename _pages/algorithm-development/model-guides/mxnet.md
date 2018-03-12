@@ -23,7 +23,7 @@ After training your MXNet model, you'll want to save the model and weights so yo
 ### Create a Data Collection
 Here you'll want to create a data collection to host your MXNet model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -192,7 +192,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-If you want to have a better idea of how a finished MXNet algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
+If you want to have a better idea of how a finished MXNet algorithm looks like, check out: <a href="{{ site.baseurl }}/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 

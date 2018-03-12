@@ -27,7 +27,7 @@ Note that when developing a model with Keras, they recommend you to [save the mo
 ### Create a Data Collection
 Here you'll want to create a data collection to host your model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -223,6 +223,6 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/keras_guide">Keras Demo</a>
+If you would like to check this demo out on the platform you can find it here: <a href="{{ site.baseurl }}/algorithms/stephanie/keras_guide">Keras Demo</a>
 
 That's it for hosting your <a href="https://keras.io/">Keras</a> model on Algorithmia!

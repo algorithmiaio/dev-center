@@ -24,7 +24,7 @@ After training your Scikit-learn model, you'll want to save the pickled model so
 ### Create a Data Collection
 Now you'll want to create a data collection to host your pickled model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -140,7 +140,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/scikitlearnmodel">Scikit-Learn-demo</a>
+If you would like to check this demo out on the platform you can find it here: <a href="{{ site.baseurl }}/algorithms/stephanie/scikitlearnmodel">Scikit-Learn-demo</a>
 
 That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
 

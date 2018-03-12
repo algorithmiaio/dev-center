@@ -38,7 +38,7 @@ After training your Tensorflow model, you'll want to [save your variable checkpo
 ### Create a Data Collection
 Here you'll want to create a data collection to host your graph and variable checkpoint data.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -144,7 +144,7 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 ## Frozen inference graph method
 This was historically the preferred method of saving and loading a graph,
  however since version 1.3.0 - the SavedModel method has become the standard.
-This example is taken directly from the <a href="https://algorithmia.com/algorithms/deeplearning/ObjectDetectionCOCO">ObjectDetectionCOCO</a> algorithm.
+This example is taken directly from the <a href="{{ site.baseurl }}/algorithms/deeplearning/ObjectDetectionCOCO">ObjectDetectionCOCO</a> algorithm.
 Please bare in mind that not every tensorflow project contains loading mechanisms like this, but most using protocolbuffers do.
 
 Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
@@ -339,7 +339,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a>
+If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href="{{ site.baseurl }}/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
