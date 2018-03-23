@@ -459,14 +459,13 @@ import os
 from secondary_file import auxillary_func, some_other_func
 from sub_module.special_stuff import special_stuff
 ```
-This might work fine when you experiment locally, but when you try and execute your code on the algo platform you'll get a nasty import error, yuck!
+This will work fine for Python 2.  However, for Python 3, you need to use the [dot-prefix notation](https://docs.python.org/3/reference/import.html#submodules) for local files:
 
-To correct this, make sure to include the `src` directory in your import path to other files and modules in your project, like this:
 ```python
 import Algorithmia
 import os
-from src.secondary_file import auxillary_func, some_other_func
-from src.sub_module.special_stuff import special_stuff
+from .secondary_file import auxillary_func, some_other_func
+from .sub_module.special_stuff import special_stuff
 ```
 
 
