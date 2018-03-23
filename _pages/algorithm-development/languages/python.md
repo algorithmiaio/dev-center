@@ -431,6 +431,45 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 
 For more information about publishing your algorithm: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
+## Caveats
+#### Algorithms with multiple files
+Putting everything in one source file sometimes doesn't make sense and makes stuff hard to maintain, many times you'll want to break your code into multiple source files.
+
+Importing your secondary files contains some ceavats when 
+executing your algorithm on Algorithmia, in particular the import paths you use locally may vary from ours.
+
+This means that if your project looks like this:
+```
+/
+ requirements.txt
+ algorithmia.conf
+ src /
+      __init__.py
+      main_file.py
+      secondary_file.py
+      sub_module /
+                  __init__.py
+                  special_stuff.py
+      
+```
+with main_file being your main python module, your import code might look something like this:
+```python
+import Algorithmia
+import os
+from secondary_file import auxillary_func, some_other_func
+from sub_module.special_stuff import special_stuff
+```
+This might work fine when you experiment locally, but when you try and execute your code on the algo platform you'll get a nasty import error, yuck!
+
+To correct this, make sure to include the `src` directory in your import path to other files and modules in your project, like this:
+```python
+import Algorithmia
+import os
+from src.secondary_file import auxillary_func, some_other_func
+from src.sub_module.special_stuff import special_stuff
+```
+
+
 ## Conclusion and Resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
