@@ -7,9 +7,10 @@ rvm: 2.3.0
 env:
   - secure: VPmnrx3bhO/SFklozqi72azdJ4Myc5bWnq3Zk40fNNS2dEjd9mVIfcYt0I16Y/uBKcsfWKBa9X9paXBGa/ritfIALdt4e8C/ZFv0bxb3zfi0dlxQ7DRNBcFwwCvuIE6kWOL1rz8tSMw/TsNB88esqI2uEFswMy96W6YjR/NmxT7s3T/mA2n/8uDYl2FWy7qk1FxxB65+vTc0D9KpNHFvFoPfVMT8YXAtiNuW9TEPxskqPhDKlSoxoMThW7rOeKYDaIk+0D+GkN4cKj7XPCVwMAYItDj49skQA2wb+V7yBaSViLAvFra0Zc0xPUytTfuHRIPjjTw/ZtorJGmPtSbyzg==
 
-script: bundle exec rake publish
+build:
+  ci:
+    - bundle install
+    - bundle exec rake generate
+  on_success:
+    - if [ "$BRANCH" == "master" ]; then bundle exec rake publish; fi
 
-# exclude
-branches:
-  only:
-    - master
