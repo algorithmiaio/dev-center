@@ -157,9 +157,9 @@ Next check if the file that you just uploaded to data collections exists, and tr
 if file_err != nil {
 	fmt.Println(file_err)
 } else if file_exists == true {
-	// Download contents of file as a string
-	tempFile, _ := foo.File("binary_file").File()
-	defer tempFile.Close()
+	// Download the file
+	localfile, _ := foo.File("binary_file").File()
+	defer localfile.Close()
 	fmt.Println("File has been downloaded.")
 } else {
 	fmt.Println("File doesn't exist in your data collection.")

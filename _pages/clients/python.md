@@ -140,7 +140,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 Next check if the file that you just uploaded to data collections exists, and try downloading it to a (new) local file:
  
 {% highlight python %}
-# Download contents of file as a string
+# Download the file
 if client.file(text_file).exists() is True:
 	localfile = client.file(text_file).getFile()
 {% endhighlight %}
