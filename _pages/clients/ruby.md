@@ -134,7 +134,7 @@ Next check if the file that you just uploaded to data collections exists, and tr
 
 {% highlight ruby %}
 # Download the file
-if (client.file(localfile).exists? == TRUE)
+if (client.file(text_file).exists? == TRUE)
     localfile = client.file(text_file).get_file
 end
 {% endhighlight %}
