@@ -155,7 +155,7 @@ client.file(text_file).exists(function(exists) {
 });
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `input`.
+This will get your file as a string, saving it to the variable `input`. If you wanted to sve it to a local file instead, you'd simply `fs.writeFileSync("/path/to/save/localfile.ext", data);` in the callback.
 
 Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
 
