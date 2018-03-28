@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/algo_icon.svg
+    teaser: /language_logos/opencv.png
 ---
 
 Welcome to hosting your <a href="http://opencv.org/">OpenCV</a> model on Algorithmia!
