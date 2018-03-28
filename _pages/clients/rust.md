@@ -132,7 +132,7 @@ Next check if the file that you just uploaded to data collections exists, and tr
 
 {% highlight rust %}
 // Download the file
-if client.file(text_file).exists().unwrap() == true{
+if client.file(text_file).exists().unwrap() {
 	let mut file_reader = client.file(text_file).get().unwrap();
 	let mut localfile = File::create("/path/to/save/localfile.png").unwrap();
 	std::io::copy(&mut file_reader, &mut localfile);
@@ -145,7 +145,7 @@ Alternately, if you just need the text content of the file to be stored in a var
 
 {% highlight rust %}
 // Download contents of file as a string
-if client.file(text_file).exists().unwrap() == true{
+if client.file(text_file).exists().unwrap() {
 	let mut text_reader = client.file(text_file).get().unwrap();
 	let mut jack_london_text = String::new();
 	let _ = text_reader.read_to_string(&mut jack_london_text);
@@ -171,7 +171,7 @@ Create the algorithm object and pass in the variable "input" into algo.pipe:
 
 {% highlight rust %}
 // Download contents of file as a string
-if client.file(text_file).exists().unwrap() == true{
+if client.file(text_file).exists().unwrap() {
 	let mut text_reader = client.file(text_file).get().unwrap();
 	let mut jack_london_text = String::new();
 	let _ = text_reader.read_to_string(&mut jack_london_text);
@@ -232,7 +232,7 @@ fn main() {
 	}
 
 	// Download contents of file as a string
-	if client.file(text_file).exists().unwrap() == true{
+	if client.file(text_file).exists().unwrap() {
 		let mut text_reader = client.file(text_file).get().unwrap();
 		let mut jack_london_text = String::new();
 		let _ = text_reader.read_to_string(&mut jack_london_text);
