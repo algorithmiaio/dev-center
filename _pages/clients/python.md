@@ -157,7 +157,7 @@ if client.file(text_file).exists() is True:
 
 This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
 
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 

@@ -150,7 +150,25 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 
 ### Downloading Data from a Data Collection
 
-Next check if the file that you just uploaded to data collections exists and then download the contents of that file as a string:
+
+Next check if the file that you just uploaded to data collections exists, and try downloading it to a (new) local file:
+ 
+{% highlight go %}
+if file_err != nil {
+	fmt.Println(file_err)
+} else if file_exists == true {
+	// Download contents of file as a string
+	tempFile, _ := foo.File("binary_file").File()
+	defer tempFile.Close()
+	fmt.Println("File has been downloaded.")
+} else {
+	fmt.Println("File doesn't exist in your data collection.")
+}
+{% endhighlight %}
+
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+
+Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight go %}
 if file_err != nil {
@@ -164,9 +182,9 @@ if file_err != nil {
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable "input".
+This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.Bytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
 
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
