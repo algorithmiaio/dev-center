@@ -23,7 +23,7 @@ After training your MXNet model, you'll want to save the model and weights so yo
 ### Create a Data Collection
 Here you'll want to create a data collection to host your MXNet model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="https://algorithmia.com/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
@@ -59,7 +59,7 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-Please note that you will need to use the **mxnet-cu80==0.11.0** package to be able to run a caffe algorithm.
+Please note that you will need to use the **mxnet-cu80==0.11.0** package to be able to run an MXNet algorithm.
 {: .notice-warning}
 
 Also please add the following code snippet to the top of your python script to use the latest MXNet library:
@@ -192,7 +192,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-If you want to have a better idea of how a finished MXNet algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
+If you want to have a better idea of how a finished MXNet algorithm looks like, check out: <a href="{{ site.baseurl }}/algorithms/deeplearning/MXNetResnet152/edit">MXNet Resnet 152</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 

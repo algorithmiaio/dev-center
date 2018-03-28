@@ -36,7 +36,7 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
@@ -55,13 +55,13 @@ If you prefer to continue creating your algorithm in the Web IDE, simply close t
 
 Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
 
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case).
 
 "Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
 
 "Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
 
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback.
 
 Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
@@ -92,7 +92,7 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
@@ -107,7 +107,7 @@ Because any call made from your algorithm is considered the same session as when
 
 {% highlight python %}
 if 'url' in input:
-  text = Algorithmia.algo(util/Html2Text/0.1.3').pipe(input['url']).result
+  text = Algorithmia.algo('util/Html2Text/0.1.3').pipe(input['url']).result
 {% endhighlight %}
 
 This example shows an algorithm that checks the type of input passed in, and if it is a URL, will call into the Html2Text algorithm. The original caller of your algorithm will be charged for both the first algorithm call as well as the internal algorithm call. The algorithm will automatically use the credentials of the person calling your algorithm.
@@ -115,4 +115,3 @@ This example shows an algorithm that checks the type of input passed in, and if 
 #### Wrapping Up
 
 Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API!
-

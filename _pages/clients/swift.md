@@ -177,7 +177,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `input`.
+This will get your file as a string, saving it to the variable `input`.  If we were dealing with binary data and wanted the raw bytes, we'd use `getBytes`; to get the actual file, `getFile`.  
 
 Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
 

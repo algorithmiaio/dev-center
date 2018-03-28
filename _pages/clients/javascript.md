@@ -14,7 +14,7 @@ We offer a vanilla JavaScript client for calling algorithms in the marketplace.
 
 You can download our JavaScript client from:
 
-<a href="https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js" download="algorithmia-0.2.0.js">https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js</a>
+<a href="{{ site.baseurl }}/v1/clients/js/algorithmia-0.2.0.js" download="algorithmia-0.2.0.js">https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js</a>
 
 You can include the JavaScript file as a script tag:
 

@@ -22,14 +22,10 @@ To follow along you can create a new Scala project in the IDE of your choice.
 
 The Algorithmia Scala Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Scala Client API Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-scala_2.11) and the [Algorithmia API docs](http://docs.algorithmia.com/?scala).
 
-To get started, the Algorithmia Scala Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
+To get started, the Algorithmia Scala Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-scala) and add it as a dependency in your SBT file:
 
-{% highlight Scala %}
-<dependency>
-    <groupId>com.algorithmia</groupId>
-    <artifactId>algorithmia-scala_2.11</artifactId>
-    <version>0.9.4</version>
-</dependency>
+{% highlight scala %}
+libraryDependencies += "com.algorithmia" %% "algorithmia-scala" % "0.9.5"
 {% endhighlight %}
 
 ## Authentication

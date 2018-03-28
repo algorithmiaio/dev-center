@@ -5,7 +5,7 @@
   <div class="col-md-3">
     <img src="{{ site.url }}{{ site.baseurl }}/images/icons/{{ tag }}.png" alt="" itemprop="image">
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9" id="{{tag}}">
     {% for post in recipes %}
       {% if post.tags contains tag %}
         <li class="no-style">

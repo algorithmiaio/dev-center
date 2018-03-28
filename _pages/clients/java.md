@@ -169,7 +169,25 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 
 ### Downloading Data from a Data Collection
 
-Next check if the file that you just uploaded to data collections exists and then download the contents of that file as a string:
+Next check if the file that you just uploaded to data collections exists, and try downloading it to a (new) local file:
+
+{% highlight java %}
+// Download the file
+String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+try {
+    if (client.file(text_file).exists()) {
+        File localfile = client.file(text_file).getFile();
+    } else {
+        System.out.println("Please check that your file exists");
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+{% endhighlight %}
+
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+
+Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight java %}
 // Download contents of file as a string
@@ -185,9 +203,9 @@ try {
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `input`.
+This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
 
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 

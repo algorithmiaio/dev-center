@@ -2,14 +2,15 @@
 exclude_from_search: true
 layout: article
 title:  "iOS Integration"
-categories: sample-apps
-tags: [sample-apps]
+categories: [sample-apps, integrations]
+tags: [sample-apps, integrations]
 show_related: false
 author: jon_peck
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."
+excerpt-short: "Build iOS/Swift apps using Algorithmia."
 image:
   feature: /post_images/ios/swift.png
-  teaser: /post_images/ios/swift.png
+  teaser: /language_logos/swift.svg
 github: https://github.com/algorithmiaio/algorithmia-swift
 ---
 
