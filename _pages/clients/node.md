@@ -157,7 +157,7 @@ client.file(text_file).exists(function(exists) {
 
 This will get your file as a string, saving it to the variable `input`. If you wanted to sve it to a local file instead, you'd simply `fs.writeFileSync("/path/to/save/localfile.ext", data);` in the callback.
 
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
