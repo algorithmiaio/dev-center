@@ -179,7 +179,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
 
 This will get your file as a string, saving it to the variable `input`.  If we were dealing with binary data and wanted the raw bytes, we'd use `getData`; to get the actual file, `getFile`.  
 
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
+Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
