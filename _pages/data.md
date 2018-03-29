@@ -23,13 +23,13 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
   {% assign sorted_pages = site.pages | sort:"nav_index" %}
   {% for post in sorted_pages %}
     {% if data_connector_tags == post.tags %}
-      <div class="col-xs-3 lang-tile">
-        <a  href="{{ post.url | relative_url }}">
+      <div class="col-xs-4 col-sm-4 col-md-3">
+        <a  href="{{ post.url | relative_url }}" class="lang-tile">
           {% if post.image.teaser %}
             <img  src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
           {% endif %}
+          {{ post.title }}
         </a>
-        <p class="lg"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
       </div>
     {% endif %}
   {% endfor %}
