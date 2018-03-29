@@ -9,6 +9,7 @@ env:
 
 build:
   ci:
+    - rvm use $SHIPPABLE_RUBY
     - bundle install
     - bundle exec rake generate
   on_success:
