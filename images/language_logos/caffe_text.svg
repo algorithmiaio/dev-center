@@ -1,13 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="37px" viewBox="0 0 32 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
-    <title>caffe_text</title>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="104px" height="115px" viewBox="0 0 104 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>caffe</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <polygon id="path-1" points="48 0 96 27.7128129 96 83.1384388 48 110.851252 -3.55271368e-14 83.1384388 -6.66133815e-14 27.7128129"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="caffe_text" transform="translate(-2.000000, -11.000000)" fill="#000000">
-            <g id="C">
-                <path d="M18.953125,11.6328125 C23.3125218,11.6328125 26.6953005,12.7812385 29.1015625,15.078125 C31.5078245,17.3750115 32.8437487,19.9843604 33.109375,22.90625 L28.5625,22.90625 C28.0468724,20.6874889 27.0195389,18.929694 25.4804688,17.6328125 C23.9413986,16.335931 21.7812639,15.6875 19,15.6875 C15.609358,15.6875 12.8711042,16.8788943 10.7851562,19.2617188 C8.69920832,21.6445432 7.65625,25.2968504 7.65625,30.21875 C7.65625,34.2500202 8.59764684,37.5195187 10.4804688,40.0273438 C12.3632907,42.5351688 15.1718563,43.7890625 18.90625,43.7890625 C22.3437672,43.7890625 24.9609285,42.4687632 26.7578125,39.828125 C27.7109423,38.437493 28.4218727,36.6093863 28.890625,34.34375 L33.4375,34.34375 C33.031248,37.9687681 31.6875114,41.0078002 29.40625,43.4609375 C26.6718613,46.4140773 22.9843982,47.890625 18.34375,47.890625 C14.34373,47.890625 10.9843886,46.6796996 8.265625,44.2578125 C4.68748211,41.0546715 2.8984375,36.1094084 2.8984375,29.421875 C2.8984375,24.3437246 4.24217406,20.1797038 6.9296875,16.9296875 C9.83595203,13.3984198 13.8437245,11.6328125 18.953125,11.6328125 Z"></path>
+        <g id="DesktopHD_Round7_ClientGuides-Copy" transform="translate(-956.000000, -1543.000000)">
+            <g id="clients-copy" transform="translate(389.000000, 1067.000000)">
+                <g id="caffe" transform="translate(571.000000, 478.000000)">
+                    <g id="Polygon-Copy">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="C" font-family="OpenSans-Semibold, Open Sans" font-size="48" font-weight="500" fill="#5000BE">
+                        <tspan x="32.7890625" y="74">C</tspan>
+                    </text>
+                </g>
             </g>
         </g>
     </g>

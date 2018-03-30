@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/spacy.png
+    teaser: /language_logos/algo_icon.svg
 ---
 
 Welcome to hosting your <a href="https://spacy.io/">spaCy</a> model on Algorithmia!

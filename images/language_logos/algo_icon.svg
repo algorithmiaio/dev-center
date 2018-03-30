@@ -1,12 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="48px" height="47px" viewBox="0 0 48 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="113px" height="126px" viewBox="0 0 113 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
     <title>algo_icon</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <polygon id="path-1" points="47.4464529 0 94.8929057 27.5 94.8929057 82.5 47.4464529 110 -2.0001778e-12 82.5 -2.03037587e-12 27.5"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="algo_icon" transform="translate(0.000000, -1.000000)" fill="#5000BE" fill-rule="nonzero">
-            <path d="M0.900597,47.6655305 L8.450319,47.6655305 C9.7761224,45.0242758 11.1014212,42.3827747 12.4274048,39.7416108 L16.4074213,47.6655305 L23.3299537,47.6655305 L15.888671,32.8479467 C18.7082004,27.2326697 21.5275162,21.6172863 24.3469388,16.0019561 C27.1650475,21.6171938 29.9855252,27.2305731 32.8052066,32.8450281 L25.3639239,47.6655305 L32.2864563,47.6655305 L36.2664728,39.7386923 C37.592973,42.3804649 38.9177335,45.023277 40.2435585,47.6655305 L47.7932806,47.6655305 C39.6687133,31.4923263 31.3117224,14.8461489 24.3469388,0.9683981 C15.9478691,17.6845247 8.3312589,32.8904852 0.900597,47.6655305 Z" id="path3004"></path>
+        <g id="DesktopHD_Round7_data" transform="translate(-1025.000000, -1321.000000)">
+            <g id="algo_icon" transform="translate(1034.000000, 1324.000000)">
+                <g id="Polygon">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M23.900597,74.6655305 L31.450319,74.6655305 C32.7761224,72.0242758 34.1014212,69.3827747 35.4274048,66.7416108 L39.4074213,74.6655305 L46.3299537,74.6655305 L38.888671,59.8479467 C41.7082004,54.2326697 44.5275162,48.6172863 47.3469388,43.0019561 C50.1650475,48.6171938 52.9855252,54.2305731 55.8052066,59.8450281 L48.3639239,74.6655305 L55.2864563,74.6655305 L59.2664728,66.7386923 C60.592973,69.3804649 61.9177335,72.023277 63.2435585,74.6655305 L70.7932806,74.6655305 C62.6687133,58.4923263 54.3117224,41.8461489 47.3469388,27.9683981 C38.9478691,44.6845247 31.3312589,59.8904852 23.900597,74.6655305 Z" id="path3004" fill="#5000BE"></path>
+            </g>
         </g>
     </g>
 </svg>
