@@ -6,7 +6,7 @@ categories: [integrations]
 tags: [integrations]
 show_related: true
 image:
-    teaser: /language_logos/stamplay.png
+    teaser: /language_logos/stamplay.svg
 ---
 
 *Stamplay* lets you connect and automate a wide variety of services: when a customer enters their phone number, call them back with Twilio; Sync data between Salesforce and Zendesk; copy Intercom file uploads into Box. With dozens of connectors, plus advanced options like loops and filters, the possibilities are endless.

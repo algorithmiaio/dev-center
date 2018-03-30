@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/weka.png
+    teaser: /language_logos/algo_icon.svg
 ---
 
 Welcome to hosting your <a href="http://www.cs.waikato.ac.nz/ml/weka/index.html">Weka</a> model on Algorithmia!

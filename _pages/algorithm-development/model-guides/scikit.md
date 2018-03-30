@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/scikit.png
+    teaser: /language_logos/scikit.svg
 ---
 
 

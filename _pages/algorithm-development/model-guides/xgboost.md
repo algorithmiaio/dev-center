@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/xgboost.png
+    teaser: /language_logos/algo_icon.svg
 ---
 
 Welcome to hosting your <a href="http://xgboost.readthedocs.io/en/latest/">XGBoost</a> model on Algorithmia!
