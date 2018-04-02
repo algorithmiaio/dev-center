@@ -138,7 +138,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-If you want to have a better idea of how a finished theano algorithm looks like, check out: <a href="{{ site.baseurl }}/algorithms/deeplearning/ArtsyNetworks">ArtsyNetworks</a>
+If you want to have a better idea of how a finished theano algorithm looks like, check out: <a href=" https://algorithmia.com/algorithms/deeplearning/ArtsyNetworks">ArtsyNetworks</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 

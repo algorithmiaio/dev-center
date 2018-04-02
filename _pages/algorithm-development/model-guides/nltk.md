@@ -136,6 +136,6 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="{{ site.baseurl }}/algorithms/stephanie/test">NLTK-demo</a>
+If you would like to check this demo out on the platform you can find it here: <a href=" https://algorithmia.com/algorithms/stephanie/test">NLTK-demo</a>
 
 That's it for hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!

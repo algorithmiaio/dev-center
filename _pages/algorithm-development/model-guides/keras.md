@@ -223,6 +223,6 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="{{ site.baseurl }}/algorithms/stephanie/keras_guide">Keras Demo</a>
+If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/keras_guide">Keras Demo</a>
 
 That's it for hosting your <a href="https://keras.io/">Keras</a> model on Algorithmia!
