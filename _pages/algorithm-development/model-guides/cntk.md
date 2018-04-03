@@ -43,7 +43,7 @@ After your collection is created, you're going to want to upload your saved grap
 
 - Note the path to your files: `data://username/collections_name/cntk.model`
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/cntk_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 ## Create your Algorithm
 
