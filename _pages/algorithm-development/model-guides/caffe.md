@@ -7,7 +7,7 @@ tags: [algo-model-guide]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/caffe.svg
+    teaser: /language_logos/caffe.png
 ---
 
 
