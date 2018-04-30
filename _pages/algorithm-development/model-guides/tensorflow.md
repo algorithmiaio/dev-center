@@ -14,6 +14,10 @@ image:
 Welcome to hosting your <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
 This guide is designed as an introduction to hosting a Tensorflow model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+**Currently we support tensorflow-gpu up to version 1.3.0, future versions such as the latest 1.7.0 will not function properly due to gpu limitations.**
+
+For tensorflow-gpu==1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
+
 # Table of Contents
 * [Prerequsites](#prerequisites)
   * [Train and save your model](#train-and-save-your-model)
