@@ -6,7 +6,7 @@ categories: [integrations]
 tags: [integrations]
 show_related: true
 image:
-    teaser: /language_logos/cloudflare.png
+    teaser: /language_logos/cloudflare.svg
 ---
 
 *Cloudflare* speeds up your website by distributing and caching content across its CDN -- but they also provide a way to modify the content on-the-fly, using JavaScript workers which run on the edge, close to where your content is actually delivered.
