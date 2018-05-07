@@ -79,6 +79,11 @@ class Example {
 }
 {% endhighlight %}
 
+#### Advanced Serialization Techniques
+For more advanced machine learning work, serialization of state is very important. Ensuring that your model can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes efficiently.
+
+For model serialization in scala, we recommend [boopickle](https://github.com/suzaku-io/boopickle/) as it allows you to serialize and deserialize with binary faster than any equivalent json parser, and cuts down on filesize considerably over JSON.
+
 <aside class="class">
 If you have more than 1 apply method, or your apply method does not take a <code>String</code> as an argument then you will receive an error message at runtime.  Also note that passing in a String <code>"foo"</code> becomes serialized to JSON like <code>"\"foo\""</code>.
 </aside>
