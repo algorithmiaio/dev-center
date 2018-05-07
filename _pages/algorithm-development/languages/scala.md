@@ -80,7 +80,7 @@ class Example {
 {% endhighlight %}
 
 #### Advanced Serialization Techniques
-For more advanced machine learning work, serialization of state is very important. Ensuring that your model can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes efficiently.
+Not every algorithm is stateless, and sometimes you need to preserve state in the data API. Ensuring that your algorithm state can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes in a reasonable time frame.
 
 For model serialization in scala, we recommend [boopickle](https://github.com/suzaku-io/boopickle/) as it allows you to serialize and deserialize with binary faster than any equivalent json parser, and cuts down on filesize considerably over JSON.
 
