@@ -79,11 +79,6 @@ class Example {
 }
 {% endhighlight %}
 
-#### Advanced Serialization Techniques
-Not every algorithm is stateless, and sometimes you need to preserve state in the data API. Ensuring that your algorithm state can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes in a reasonable time frame.
-
-For model serialization in scala, we recommend [boopickle](https://github.com/suzaku-io/boopickle/) as it allows you to serialize and deserialize with binary faster than any equivalent json parser, and cuts down on filesize considerably over JSON.
-
 <aside class="class">
 If you have more than 1 apply method, or your apply method does not take a <code>String</code> as an argument then you will receive an error message at runtime.  Also note that passing in a String <code>"foo"</code> becomes serialized to JSON like <code>"\"foo\""</code>.
 </aside>
@@ -109,6 +104,11 @@ class Example {
 <aside class="notice">
 If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
 </aside>
+
+#### Advanced Serialization Techniques
+Not every algorithm is stateless, and sometimes you need to preserve state in the data API. Ensuring that your algorithm state can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes in a reasonable time frame.
+
+For model serialization in scala, we recommend [boopickle](https://github.com/suzaku-io/boopickle/) as it allows you to serialize and deserialize with binary faster than any equivalent json parser, and cuts down on filesize considerably over JSON.
 
 #### Error Handling
 
