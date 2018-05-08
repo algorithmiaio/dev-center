@@ -105,6 +105,11 @@ class Example {
 If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
 </aside>
 
+#### Advanced Serialization Techniques
+Not every algorithm is stateless, and sometimes you need to preserve state in the data API. Ensuring that your algorithm state can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes in a reasonable time frame.
+
+For state serialization in scala, we recommend [boopickle](https://github.com/suzaku-io/boopickle/) as it allows you to serialize and deserialize into binary faster than any equivalent json parser, and serializes to a much smaller footprint than the equivalent JSON.
+
 #### Error Handling
 
 {% highlight scala %}
