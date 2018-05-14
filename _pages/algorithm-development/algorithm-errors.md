@@ -146,7 +146,7 @@ def apply(input):
 "Looks like our call is unsupported"
 ```
 
-#### Example 2: Propagating an invalid error from algorithm to algorithm
+#### Example 3: Propagating an invalid error from algorithm to algorithm
 
 When we pass an invalid error code from one algorithm to the other, it automatically get's converted into a simple `AlgorithmError` error code.
 
