@@ -49,7 +49,7 @@ Currently only the Python Algorithmia client natively supports these error codes
 
 ### Python
 
-Make sure that your algorithmia client version is: `>1.1.0`
+Make sure that your algorithmia client version is: `>1.1.2`
 
 The Python client returns a new AlgorithmException object that has the following attributes:
 
