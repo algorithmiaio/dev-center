@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Better error handling"
-excerpt: "How to handle error between algorithms."
+excerpt: "How to handle errors between algorithms."
 categories: algorithm-development
 tags: [algo-dev]
 show_related: true
