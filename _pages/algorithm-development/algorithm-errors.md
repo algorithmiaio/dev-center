@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Better error handling"
+title:  "Better Error Handling"
 excerpt: "How to handle errors between algorithms."
 categories: algorithm-development
 tags: [algo-dev]
@@ -20,27 +20,98 @@ Let's give an example. Let's say you're calling a computer vision algorithm and 
 
 To be able to better develop algorithms across languages, we decided to create a pre-defined list of errors. These error codes were created to reflect the types of algorithms that are most commonly published in the marketplace.
 
-| Error Code                | Error Use Cases                                                          | When To Raise                                                         |
-| ------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| InputError                | Invalid Input/Image/URL/Settings/JSON                                    | Invalid/incomplete input, image, URL, settings, etc. is provided.                                                     |
-| UnsupportedError          | Unsupported file/image, URL/Website, etc.                                | Image, or any file format is not supported, or scraper/parser algorithm does not explicitly support website. |
-| InitializationError       | (Model) Initialization Failed                                            | Algorithm fails to load/initialize (ML/DL model).                                                       |
-| OutOfMemoryError          | Out of Memory                                                            | Algorithm can't access any/additional RAM memory.                                                       |
-| OutOfGpuMemoryError       | Out of GPU Memory                                                        | Algorithm can't access any/additional GPU memory.                                                       |
-| LanguageError             | Human Language Not Supported                                             | Language is not supported in NLP model.                                                        |
-| TooLargeError             | File/Image Size Is Too Large                                             | File or image size is too large or small.                                                        |
-| ParsingError              | Scraping/Parsing Failed, and json (de)serialization failed               | Scraping/parsing fails due to changing website layout, or getting blacklisted etc. or JSON (de)serialization failed     |
-| EntityNotFoundError       | Word/entry not found in dictionary/DB                                    | Entry not found in DB, memory, list, file, or any other data source.                                                  |
-| ThirdPartyCredentialError | When credentials for a 3rd party service doesn't authenticate anymore    | 3rd party API key fails to authenticate, or hit usage limit.                                                        |
-| AlgorithmError            | When no error code has been specified, and general algorithm error class | Is a general error class, and returns for all other exception cases.                                              |
+
+ <style>
+   th,td{
+     padding: 5px;
+     border-bottom: 1px solid #ddd;
+   }
+ </style>
+<table>
+  <tr>
+    <th>Error Code</th>
+    <th>Error Use Cases</th> 
+    <th>When To Raise</th>
+  </tr>
+  <tr>
+    <td>InputError</td>
+    <td>Invalid Input/Image/URL/Settings/JSON </td> 
+    <td>Invalid/incomplete input, image, URL, settings, etc. is provided.</td>
+  </tr>
+  <tr>
+    <td>UnsupportedError </td>
+    <td>Unsupported file/image, URL/Website, etc.</td> 
+    <td>Image, or any file format is not supported, or scraper/parser algorithm does not explicitly support website.</td>
+  </tr>
+  <tr>
+    <td>InitializationError</td>
+    <td>(Model) Initialization Failed</td> 
+    <td>Algorithm fails to load/initialize (ML/DL model).</td>
+  </tr>
+  <tr>
+    <td>OutOfMemoryError</td>
+    <td>Out of Memory</td> 
+    <td>Algorithm can't access any/additional RAM memory.</td>
+  </tr>
+  <tr>
+    <td>OutOfGpuMemoryError</td>
+    <td>Out of GPU Memory</td> 
+    <td>Algorithm can't access any/additional GPU memory.</td>
+  </tr>
+  <tr>
+    <td>LanguageError</td>
+    <td>Human Language Not Supported</td> 
+    <td>Language is not supported in NLP model.</td>
+  </tr>
+  <tr>
+    <td>TooLargeError</td>
+    <td>File/Image Size Is Too Large</td> 
+    <td>File or image size is too large or small.</td>
+  </tr>
+  <tr>
+    <td>ParsingError</td>
+    <td>Scraping/Parsing Failed, and json (de)serialization failed</td> 
+    <td>Scraping/parsing fails due to changing website layout, or getting blacklisted etc. or JSON (de)serialization failed</td>
+  </tr>
+  <tr>
+    <td>EntityNotFoundError</td>
+    <td>Word/entry not found in dictionary/DB</td> 
+    <td>Entry not found in DB, memory, list, file, or any other data source.</td>
+  </tr>
+  <tr>
+    <td>ThirdPartyCredentialError</td>
+    <td>When credentials for a 3rd party service doesn't authenticate anymore</td> 
+    <td>3rd party API key fails to authenticate, or hit usage limit.</td>
+  </tr>
+  <tr>
+    <td>AlgorithmError</td>
+    <td>When no error code has been specified, and general algorithm error class</td> 
+    <td>Is a general error class, and returns for all other exception cases.</td>
+  </tr>
+</table>
 
 Here is also a table of error codes that can only be generated by the backend. You'll receive these error codes if the corresponding error case ever happens:
 
-| Error Code           | Error Use Cases                                                                      | When To Raise                                     |
-| -------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| TimeoutError         | When a child algorithm timeout in a parent algorithm                                 | Child algorithm run fails due to timeout.         |
-| TooManyRequestsError | When a user makes too many requests (HTTP 429), or Algorithmia requests              | API key owner hits their concurrent call limit.   |
-| PaymentRequiredError | When a user runs out of credits for a child algorithm call mid-parent algorithm run. | Child algorithm run fails due to lack of credits. |
+<table>
+  <tr>
+    <th>Error Code</th>
+    <th>Error Use Cases</th> 
+    <th>When To Raise</th>
+  </tr>
+  <tr>
+    <td>TimeoutError</td>
+    <td>When a child algorithm timeout in a parent algorithm</td> 
+    <td>Child algorithm run fails due to timeout.</td>
+  </tr>
+  <tr>
+    <td>PaymentRequiredError</td>
+    <td>When a user runs out of credits for a child algorithm call mid-parent algorithm run.</td> 
+    <td>Child algorithm run fails due to lack of credits.</td>
+  </tr>
+</table>
+
+
+
 
 ### Programming Language Support
 
