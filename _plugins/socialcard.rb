@@ -19,6 +19,15 @@ module Jekyll
       properties = @@properties[@card_url]
 
       title = properties['og:title'].first
+      if title.split.last == 'Blog'
+        long_title_length = title.split.length-4
+        title = title.split[0..long_title_length].join(" ")
+        if title.length > 48
+          title = title[0..48] + "..."
+        end
+        
+      end
+
       image_url = properties['og:image'].first
       published_at = properties['article:published_time'].first
       published_at = Date.parse(published_at).strftime('%B %d, %Y')
