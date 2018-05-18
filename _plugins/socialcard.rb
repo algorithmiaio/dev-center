@@ -22,8 +22,8 @@ module Jekyll
       if title.split.last == 'Blog'
         long_title_length = title.split.length-4
         title = title.split[0..long_title_length].join(" ")
-        if title.length > 48
-          title = title[0..48] + "..."
+        if title.length > 42
+          title = title[0..42] + "..."
         end
         
       end
@@ -47,7 +47,9 @@ module Jekyll
 
       <<-HEREDOC
         <div class="blog-card">
+        <div class="crop flex flex--center">
           <img src="#{baseurl}/#{image_path}" class="img-fill">
+        </div>
           <div class="dev-card-text">
             <p class="secondary">#{published_at}</p>
             <p class="lg">
