@@ -2,8 +2,8 @@
 exclude_from_search: false
 layout: article
 title: "Basic Android Integration"
-categories: [sample-apps, integrations]
-tags: [sample-apps, integrations]
+categories: [sample-apps]
+tags: [sample-apps]
 show_related: false
 author: liz_rush
 excerpt: "A code walk-through of a simple Android app using Algorithmia."
@@ -18,9 +18,10 @@ github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_i
 
 In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
 
-The full sample code can be found in the [Sample Apps repository on GitHub](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first Android app with Algorithmia!
+
 
 ## Getting Started
 

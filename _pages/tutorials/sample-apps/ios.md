@@ -2,8 +2,8 @@
 exclude_from_search: true
 layout: article
 title:  "iOS Integration"
-categories: [sample-apps, integrations]
-tags: [sample-apps, integrations]
+categories: [sample-apps]
+tags: [sample-apps]
 show_related: false
 author: jon_peck
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."
@@ -18,7 +18,7 @@ github: https://github.com/algorithmiaio/algorithmia-swift
 
 In this post, we'll walk through a very simple iOS app that uses the Algorithmia API in Swift.
 
-The full sample code can be found in the [GitHub repository](https://github.com/algorithmiaio/algorithmia-swift/).
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/algorithmia-swift/" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first iOS app with Algorithmia!
 

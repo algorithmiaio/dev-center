@@ -17,11 +17,13 @@ github: https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMake
 
 In this tutorial, we'll go through how to use a deep learning algorithm that predicts the make and model of a car from a picture we take on Android.
 
-We'll use the native <a href="https://developer.android.com/reference/android/hardware/camera2/package-summary.html">Camera2 API</a> to take a picture of a car, then we'll use the [Car Make and Model](https://algorithmia.com/algorithms/LgoBE/CarMakeandModelRecognition) algorithm on Algorithmia to process the image in order to display the car's make and model along with other metadata.
 
-The full sample code can be found in the [Sample Apps repository on GitHub](https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp).
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
+
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build an Android app that utilizes deep learning. 
+
+We'll use the native <a href="https://developer.android.com/reference/android/hardware/camera2/package-summary.html">Camera2 API</a> to take a picture of a car, then we'll use the [Car Make and Model](https://algorithmia.com/algorithms/LgoBE/CarMakeandModelRecognition) algorithm on Algorithmia to process the image in order to display the car's make and model along with other metadata.
 
 ## Getting Started
 
