@@ -15,7 +15,7 @@ Welcome to Algorithmia!
 This guide is designed as an introduction to hosting your <a href="https://https://www.microsoft.com/en-us/cognitive-toolkit">CNTK</a> model and publishing it as an algorithm, even if you've never used Algorithmia before!
 
 
-# #Prerequisites
+## Prerequisites
 
 Before you get started, you'll need to pick a [python wheel][whl] first! We support two wheel versions, [2.7][wh_27] and [3.5][wh_35]. Make sure you select the wheel that matches your algorithm version.
 
@@ -72,9 +72,9 @@ Now is the time to set the depenencies your model relies on.
 
 Here is where you load your model, which will be called by the `apply()` function when you pass input to the algorithm using our API.
 
-Our recommendation is to preload your model in a separate function before the apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded! 
+Our recommendation is to preload your model in a separate function before the apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a JSON blob passing in a csv file hosted on [Algorithmia, Amazon S3, or Dropbox](https://algorithmia.com/developers/data/). 
+Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a JSON blob passing in a csv file hosted on [Algorithmia, Amazon S3, or Dropbox](https://algorithmia.com/developers/data/).
 {: .notice-info}
 
 ### Example Input:
@@ -150,7 +150,7 @@ def apply(url):
     im = imresize(im, (224, 224))
     im = np.reshape(im, (1, 3, 224, 224))
     probs = my_classifier.eval(im.astype(float))[0]
-    
+
     result = []
     for i in range(len(probs)):
         label = labels[i]
@@ -183,14 +183,14 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
- 
+
 [whl]: https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python
 [wh_35]: https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-linux_x86_64.whl
 [wh_27]: https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp27-cp27mu-linux_x86_64.whl
