@@ -2,12 +2,14 @@
 layout: article
 title:  "Markdown Syntax"
 excerpt: "Markdown syntax for Algorithm descriptions."
-categories: algorithm-development
-tags: [algo-dev]
+categories: algorithm-basics
+tags: [algo-dev-basics]
 show_related: true
 image:
   teaser: /icons/algo.svg
 ---
+
+When you are ready to write the documentation for your algorithm under the "Docs" tab on your algorithm's page, you can use markdown to make your documentation clear.
 
 Algorithmia's description editor is a CommonMark markdown editor with auto-link and GFM table support.
 

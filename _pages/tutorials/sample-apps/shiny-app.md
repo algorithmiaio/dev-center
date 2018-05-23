@@ -2,8 +2,8 @@
 exclude_from_search: false
 layout: article
 title: "Using Algorithmia in your Shiny App"
-categories: [sample-apps, integrations]
-tags: [sample-apps, integrations]
+categories: [sample-apps]
+tags: [sample-apps]
 show_related: false
 author: steph_kim
 excerpt: "Call Fourier Detrend algorithm in your Shiny app!"
@@ -13,6 +13,8 @@ image:
     teaser: /language_logos/rstudio.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
 ---
+
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
 
 Before you get started with this Shiny sample app, check out our <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a> and when you want to work with your own data, read up on [Algorithmia's Data Portal](https://algorithmia.com/data), which offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 

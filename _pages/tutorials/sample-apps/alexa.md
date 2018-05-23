@@ -2,12 +2,13 @@
 layout: article
 title: "Amazon Alexa (Echo)"
 excerpt-short: "Trigger Algorithmia microservices from your Alexa-enabled device."
-categories: [clients, integrations]
-tags: [clients, integrations]
+categories: [sample-apps]
+tags: [sample-apps]
 show_related: true
 image:
     teaser: /language_logos/alexa.svg
 ---
+
 
 It is possible to trigger Algorithmia from Alexa and Alexa-enabled devices by creating an Alexa Skill.
 
