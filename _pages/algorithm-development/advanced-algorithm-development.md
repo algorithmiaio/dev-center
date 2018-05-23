@@ -1,10 +1,9 @@
 ---
 layout: article
 title:  "Advanced Algorithm Development"
-excerpt: "Learn Advanced Tips for Developing Algorithms and Deploying Models"
+excerpt: "Best Practices and Deep Dives for Algorithm Development and Model Deployment"
 categories: algorithm-development
 tags: [algo-dev]
-nav_category: advanced-algorithm-development
 show_related: false
 author: steph_kim
 image:
@@ -21,8 +20,8 @@ image:
     width: auto;
 }
 .blog-card {
-	min-height: 296px;
-	margin-bottom: 20px;
+    min-height: 296px;
+    margin-bottom: 20px;
 }
 </style>
 
@@ -48,4 +47,3 @@ Here you'll find blog posts that highlight advanced algorithm development includ
     <a href="https://blog.algorithmia.com/" class="btn btn-primary btn-flat mt-16" target="_blank">Visit the blog <i class="fa fa-external-link" aria-hidden="true"></i></a>
   </div>
 </div>
-
