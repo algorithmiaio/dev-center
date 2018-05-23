@@ -43,6 +43,10 @@ Be sure to quickly describe the input needed to call the algorithm and the types
 
 It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for Sentiment Analysis, the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
 
+#### Configure error handling
+
+To make your algorithm easy to use, it's key to implement informative error handling. Check out the [Algorithmia Guide to Better Error Handling]({{ site.baseurl }}/algorithm-development/algorithm-errors/) for some guidance. Extensive functionality is only available in Python for now, but we're working on adding support for the other languages that our product allows.
+
 #### Link to any papers or external documentation
 
 If your algorithm is based off an academic paper or external library, you should also include a link to this documentation to give the users a chance to read more. Giving credit to the original source that your algorithm is based on is a best practice and allows curious users to take a deeper dive into the internal workings of the algorithm. Plus it's good karma!
