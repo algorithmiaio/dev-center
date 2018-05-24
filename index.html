@@ -21,9 +21,8 @@ exclude_from_search: true
   <div class="col-md-12">
     {% include breadcrumbs.html %}
     <h1 id="page-title">{{ page.title }}</h1>
-    <p class="lead">Welcome to the Algorithmia Developer Center. Here you can find guides showing how to use the <a href="{{ site.baseurl }}/clients/">Algorithmia Clients</a> to call any of the pre-trained models or algorithms that are available on our marketplace in the language of your choice.</p>
-    <p class="lead">You can also find tutorials for <a href="{{ site.baseurl }}/data/">Working with Data</a> on Algorithmia and learn how to <a href ="{{ site.baseurl }}/algorithm-development/">Write your own Algorithm</a> and deploy it on our platform.</p>
-    <p class="lead">Also, check out our guides to <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Deploy your Models</a> using machine and deep learning frameworks such as <a href ="{{ site.baseurl }}/algorithm-development//model-guides/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development//model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/algorithm-development//model-guides/tensorflow/">Tensorflow</a> with our AI Layer.</p>
+    <p class="lead">Welcome to the Algorithmia Developer Center.</p>
+    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale and provides a centralized repository for you and your team's models. Also check out <a href="https://algorithmia.com/">Algorithmia's open marketplace</a> where you can call over 5,000 algorithms and microservices with our REST API. Below you'll find everything you need to get started.</p>
   </div>
 </div>
 
@@ -43,7 +42,7 @@ exclude_from_search: true
 
 <div class="row mb-64">
   <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-      <h4>Recipes</h4>
+      <h4>Language Clients</h4>
   </div>
   <div class="clearfix visible-sm-block"></div>
   <div class="col-md-5">
@@ -51,17 +50,17 @@ exclude_from_search: true
     <img src="{{ site.baseurl }}/images/icons/hexicon_recipe.svg" alt="icon" class="hexicon">
   </div>
   <div class="col-md-7">
-    <header class="hidden-xs hidden-sm">Recipes</header>
-    <p class="lead">Checkout some common and useful combinations of services</p>
-    <a href="{{ site.baseurl }}/tutorials/recipes" class="btn btn-primary btn-flat">View Recipes</a>
+    <header class="hidden-xs hidden-sm">Client Guides</header>
+    <p class="lead">Learn how to call algorithms in the language of your choice via our API's</p>
+    <a href="{{ site.baseurl }}/clients/" class="btn btn-primary btn-flat">Language Clients</a>
   </div>
 </div>
 
 <div class="row mb-64">
   <div class="col-md-7">
-    <header>Sample Apps</header>
-    <p class="lead hidden-xs hidden-sm">Play with some sample apps to see the power of deep learning</p>
-    <a href="{{ site.baseurl }}/tutorials/sample-apps" class="btn btn-primary btn-flat hidden-xs hidden-sm">View Sample apps</a>
+    <header>Deploy your Models</header>
+    <p class="lead hidden-xs hidden-sm">Deploy your machine and deep learning models and leave the devops to us</p>
+    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-flat hidden-xs hidden-sm">Deploy Models</a>
   </div>
   <div class="col-md-5">
     <img src="{{ site.baseurl }}/images/sample_apps.jpg" alt="Sample Apps" class="img-fill">
@@ -69,13 +68,13 @@ exclude_from_search: true
   </div>
   <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
     <p class="lead">Play with some sample apps to see the power of deep learning</p>
-    <a href="{{ site.baseurl }}/tutorials/sample-apps" class="btn btn-primary btn-flat">VIEW SAMPLE APPS</a>
+    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-flat">Deploy Models</a>
   </div>
 </div>
 
 <div class="row mb-64">
   <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-      <header>Contribute</header>
+      <header>Create your own Algorithms</header>
   </div>
   <div class="clearfix visible-sm-block"></div>
   <div class="col-md-5">
@@ -84,8 +83,24 @@ exclude_from_search: true
   </div>
   <div class="col-md-7">
     <header class="hidden-xs hidden-sm">Contribute</header>
-    <p class="lead">Add your own work or microservice to the marketplace and earn credits</p>
+    <p class="lead">Contribute to the marketplace by adding your own algorithms</p>
     <a href="{{ site.baseurl }}/algorithm-development/" class="btn btn-primary btn-flat">ADD YOUR WORK</a>
+  </div>
+</div>
+
+<div class="row mb-64">
+  <div class="col-md-7">
+    <header>Working with Data</header>
+    <p class="lead hidden-xs hidden-sm">Connect to your Dropbox, Amazon S3, or Algorithmia's Hosted Data</p>
+    <a href="{{ site.baseurl }}/data/" class="btn btn-primary btn-flat hidden-xs hidden-sm">Data Connector Guides</a>
+  </div>
+  <div class="col-md-5">
+    <img src="{{ site.baseurl }}/images/dataconnectors.jpg" alt="Sample Apps" class="img-fill">
+    <img src="{{ site.baseurl }}/images/icons/hexicon_laptop.svg" alt="icon" class="hexicon">
+  </div>
+  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
+    <p class="lead">Connect to your Data</p>
+    <a href="{{ site.baseurl }}/data/" class="btn btn-primary btn-flat">Data Connector Guides</a>
   </div>
 </div>
 
