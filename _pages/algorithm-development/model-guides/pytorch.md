@@ -271,6 +271,6 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="{{ site.baseurl }}/algorithms/algorithmiahq/pytorchDemo">Pytorch CNN Demo.</a>
+If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/algorithmiahq/pytorchDemo">Pytorch CNN Demo.</a>
 
 That's it for hosting your <a href="http://pytorch.org/">Pytorch</a> model on Algorithmia!
