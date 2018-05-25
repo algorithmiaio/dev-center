@@ -13,11 +13,15 @@ Welcome to Getting Started with the Algorithmia API. This guide will show you ho
 
 We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running so you can quickly develop intelligent applications in the language of your choice.
 
-If you want more detailed tutorials on how to work with the language clients including Android, CLi and how to work with AWS Lambda, check out our [Client Guides]({{ site.baseurl }}/clients/).
+After you learn how to call algorithms, check out our <a href="http://docs.algorithmia.com/">Data API</a> and the <a href="{{ site.baseurl }}/data/">Data Connectors</a> we support to understand how to pass in data files to algorithms.
 
 ## Finding an Algorithm
 
-To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories. Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
+To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
+
+<img src="{{ site.baseurl }}/images/face_detection.jpg" class="screenshot img-sm">
+
+Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 
 For a given user and algorithm name, API calls are made to the following URL:
 
@@ -27,7 +31,7 @@ POST https://api.algorithmia.com/v1/algo/:owner/:algoname
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
-If you want a complete guide on how to navigate an algorithm's description page including how to determine how the price of calling an algorithm, check out our [Algorithm Profiles]({{ site.baseurl }}/basics/algorithm-profiles/) guide.
+If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{ site.baseurl }}/basics/algorithm-profiles/) guide.
 {: .notice-info}
 
 ## Making your first API call
