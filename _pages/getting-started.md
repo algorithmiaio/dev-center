@@ -11,9 +11,14 @@ image:
 
 Welcome to Getting Started with the Algorithmia API. This guide will show you how to call an algorithm via our API in a few lines of code using our supported language clients.
 
-We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running so you can quickly develop intelligent applications in the language of your choice.
+We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running quickly.
 
-After you learn how to call algorithms, check out our <a href="http://docs.algorithmia.com/">Data API</a> and the <a href="{{ site.baseurl }}/data/">Data Connectors</a> we support to understand how to pass in data files to algorithms.
+After you learn how to call algorithms, check out our <a href="{{ site.baseurl }}/data/">Data Connectors</a> that we support and learn how to work with data using our <a href="http://docs.algorithmia.com/">Data API</a>.
+
+For how to chain algorithms together to build useful pipelines or call our API from Android, iOS, or R Shiny check out our <a href="{{ site.baseurl }}/tutorials/">Tutorials</a>.
+
+If you're looking to call the API in Spark Streaming, H2O, and more check out: 
+<a href="{{ site.baseurl }}/integrations">Integrations</a>.
 
 ## Finding an Algorithm
 
