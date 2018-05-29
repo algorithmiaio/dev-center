@@ -13,13 +13,6 @@ Welcome to Getting Started with the Algorithmia API. This guide will show you ho
 
 We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Scala, Go, and Swift in order to get you up and running quickly.
 
-After you learn how to call algorithms, check out our <a href="{{ site.baseurl }}/data/">Data Connectors</a> that we support and learn how to work with data using our <a href="http://docs.algorithmia.com/">Data API</a>.
-
-For how to chain algorithms together to build useful pipelines or call our API from Android, iOS, or R Shiny check out our <a href="{{ site.baseurl }}/tutorials/">Tutorials</a>.
-
-If you're looking to call the API in Spark Streaming, H2O, and more check out: 
-<a href="{{ site.baseurl }}/integrations">Integrations</a>.
-
 ## Finding an Algorithm
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
@@ -278,4 +271,4 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
-For more information about pricing, check out our [Pricing Guide]({{ site.baseurl }}/pricing/)
+For more thorough tutorials in the language of your choice go back to <a href="{{ site.baseurl }}/clients">Client Guides</a> or if you want more information about pricing, check out our [Pricing Guide]({{ site.baseurl }}/pricing/).

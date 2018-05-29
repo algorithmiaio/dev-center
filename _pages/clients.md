@@ -22,7 +22,14 @@ author: steph_kim
   </div>
 </div>
 
-Run through a tutorial in your preferred language. The tutorial will teach you how to setup the Algorithmia client and make an API call.
+After you learn how to call algorithms, check out our <a href="{{ site.baseurl }}/data/">Data Connectors</a> that we support and learn how to work with data using our <a href="http://docs.algorithmia.com/">Data API</a>.
+
+For how to chain algorithms together to build useful pipelines or call our API from Android, iOS, or R Shiny check out our <a href="{{ site.baseurl }}/tutorials/">Tutorials</a>.
+
+And if you're looking to call the API in Spark Streaming, H2O, and more check out 
+<a href="{{ site.baseurl }}/integrations">Integrations</a>.
+
+Also, after checking out the Getting Started Guide above, go through a more thorough tutorial in your preferred language. The guides below will take you step-by-step showing you how to work with data, call algorithms and get the response:
 
 <div class="row lang-tile-container">
 {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
