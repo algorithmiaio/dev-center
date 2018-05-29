@@ -13,19 +13,36 @@ redirect_from:
   - /algorithm-development/your-first-algo
 ---
 
-One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm in Python.
+One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. This example shows creating an algorithm in Python, however you can choose a different language that we support.
 
-### Using the Algorithmia Editor
+## Create an Algorithm
 
-When you open the navigation dropdown at the top of the page, you'll find a purple button that says "Add Algorithm". Naturally, this is where we'll start!
+Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
-By clicking this button, you'll be prompted with a dialog that allows you to give your algorithm a name and set some initial properties, such as the name, language, license, and special permissions:
+When you click the "Add Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
 
-You can learn more about these properties in the [Algorithm Profile]({{ site.baseurl }}/basics/algorithm-profiles/) article.
+**Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
+
+For example this is the beginning portion of the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+
+**Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
+
+**Language:** Next you'll pick the language of your choice. 
+
+**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
+
+As an incentive to promote community contributions, open source algorithms on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
+
+**Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
+
+Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
+
+You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{ site.baseurl }}/basics/permissions/).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
+{: .notice-info}
 
 Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
 
@@ -39,7 +56,7 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) )
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
@@ -58,13 +75,13 @@ If you prefer to continue creating your algorithm in the Web IDE, simply close t
 
 Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
 
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case).
+The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
 
 "Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
 
 "Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
 
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback.
+The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
 
 Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
@@ -117,4 +134,8 @@ This example shows an algorithm that checks the type of input passed in, and if 
 
 #### Wrapping Up
 
-Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API!
+Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API! Get inspired by checking out our <a href="{{ site.baseurl }}/tutorials/recipes/">Recipes</a>.
+
+#### Next Steps
+
+After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.
