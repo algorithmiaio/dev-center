@@ -5,7 +5,6 @@ excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this 
 categories: algorithm-basics
 tags: [algo-dev-basics]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/algo.svg
 permalink: /algorithm-development/algorithm-basics/your-first-algo
@@ -13,13 +12,13 @@ redirect_from:
   - /algorithm-development/your-first-algo
 ---
 
-One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. This example shows creating an algorithm in Python, however you can choose a different language that we support.
+One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. This example shows creating an algorithm in Python, however you can choose a different <a href="{{ site.baseurl }}/algorithm-development/languages/">language</a> that we support.
 
 ## Create an Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-smallest">
 
 When you click the "Add Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
@@ -46,7 +45,7 @@ You can find out more about algorithm permissions in the [Algorithm Permissions 
 
 Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot img-md">
 
 You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
@@ -71,44 +70,44 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot img-md">
 
-Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
+Notice the tabs: **Run**, **Docs**, **Cost**, **Discussion**, **Manage**, and **Source**.
 
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+The tab currently showing **Run** is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
 
-"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
+**Docs** consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
 
-"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
+**Cost** will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
 
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+The **Discussion** tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
 
-Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+Under the **Manage** tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
+Finally click on the **Source** tab which will display the UI for creating your algorithm if you prefer it over the CLI.
 
-Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
+Notice that Algorithmia creates a code stub for your algorithm with the "Hello World" code already filled out for you, as shown below.
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 As you can see, the algorithm takes in the input and returns the string `"Hello"` plus the input. Feel free to change this code however you like.
 
-Once you have finished editing and want to run the Algorithm, go ahead and click the blue Compile button at the top right of the editor. This will save your algorithm by committing your code to your personal git and try to compile the code. You can even test out your complied algorithm by passing input though the console at the bottom of the screen.
+Once you have finished editing and want to run the Algorithm, go ahead and click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git and try to compile the code. You can even test out your complied algorithm by passing input though the console at the bottom of the screen.
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
-On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
+On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will bring up a modal:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
+In this modal, you'll see a **Changes** tab, a **Sample I/O** tab, and one called **Versioning**.
 
 Changes shows you your commit history and release notes.
 
-Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
+**Sample I/O** is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
 
-Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+Under the **Versioning** tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 

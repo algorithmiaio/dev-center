@@ -1,0 +1,18 @@
+/* For screenshots that need to be smaller than .img-sm */
+#content .img-smallest {
+    width: 25.4375rem;
+}
+
+/* For tile card images that overflow */
+.crop {
+    height: 160px;
+    overflow: hidden;
+}
+.crop img {
+    height: 100%;
+    width: auto;
+}
+.blog-card {
+    min-height: 296px;
+    margin-bottom: 20px;
+}

@@ -19,7 +19,6 @@ By the end of the guide you will see how to develop a couple of simple algorithm
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-an-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [I/O for your Algorithms](#io-for-your-algorithms)
@@ -39,82 +38,6 @@ Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, 
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a>.
-
-## Create an Algorithm
-
-Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a button that says "Add Algorithm". Go ahead and click that button.
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
-
-When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
-
-**Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
-
-For example this guide shows how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
-
-**Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
-
-**Language:** Next you'll pick the language of your choice. This is the Python guide and this algorithm uses Python 3.
-
-**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
-
-As an incentive to promote community contributions, open source algorithms on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
-
-**Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
-
-Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
-
-You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{ site.baseurl }}/basics/permissions/).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
-{: .notice-info}
-
-Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot">
-
-You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
-
-#### Editing your algorithm locally via GIT & CLI
-
-The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
-
-To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
-
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
-2. Clone your algorithm: `algo clone username/algoname`
-3. Use your preferred editor to modify the code
-4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
-5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: for now, you must do this via the web IDE:
-    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
-    2. click on your algorithm
-    3. click "Edit Source"
-    4. click "Compile", then "[Publish](#publish-algorithm)"
-
-#### Editing your algorithm via the web IDE
-
-If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
-
-Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
-
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
-
-"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
-
-"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
-
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
-
-Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
-
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
-
-Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ## Write your First Algorithm
 
