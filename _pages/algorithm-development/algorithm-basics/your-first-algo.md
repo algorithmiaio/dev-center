@@ -5,7 +5,6 @@ excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this 
 categories: algorithm-basics
 tags: [algo-dev-basics]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/algo.svg
 permalink: /algorithm-development/algorithm-basics/your-first-algo/
