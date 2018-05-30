@@ -16,3 +16,12 @@
     min-height: 296px;
     margin-bottom: 20px;
 }
+pre {
+	background-color: #423e67;
+	padding: 1rem .1rem 1rem 0rem;
+}
+code {
+	background-color: inherit;
+	color: #FFFFFF;
+}
+

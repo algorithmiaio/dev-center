@@ -44,11 +44,20 @@ exclude_from_search: true
       <h4>Language Clients</h4>
   </div>
   <div class="clearfix visible-sm-block"></div>
-  <div class="col-md-5">
-    <img src="{{ site.baseurl }}/images/client-guides-homepage.png" alt="Recipes" class="img-fill">
+  <div class="col-md-7">
+    <!-- <img src="{{ site.baseurl }}/images/client-guides-homepage.png" alt="Recipes" class="img-fill"> -->
+    <!-- <div class="code_snippet"> -->
+  <pre class="code_snippet">
+  import Algorithmia
+  input = "YOUR_USERNAME"
+  client = Algorithmia.client("YOUR_API_KEY")
+  algo = client.algo("demo/Hello/")
+  print(algo.pipe(input))
+  </pre>
+    <!-- </div> -->
     <!-- <img src="{{ site.baseurl }}/images/icons/hexicon_recipe.svg" alt="icon" class="hexicon"> -->
   </div>
-  <div class="col-md-7">
+  <div class="col-md-5">
     <header class="hidden-xs hidden-sm">Client Guides</header>
     <p class="lead">Learn how to call algorithms in the language of your choice via our API's</p>
     <a href="{{ site.baseurl }}/clients/" class="btn btn-primary btn-flat">Language Clients</a>
