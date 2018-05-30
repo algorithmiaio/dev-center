@@ -151,7 +151,7 @@ Here’s an example of what that looks like:
 import cv2 as cv
 
 def init_model():
-    model_abs_path = client.file("data://b/OpenCVTest/svm_data.dat").getFile().name
+    model_abs_path = client.file("data://<username>/<collection>/svm_data.dat").getFile().name
     model = cv.ml.SVM_load(model_abs_path)
     return model
 
@@ -228,7 +228,7 @@ def hog(img):
 client = Algorithmia.client()
 
 def init_model():
-    model_abs_path = client.file("data://b/OpenCVTest/svm_data.dat").getFile().name
+    model_abs_path = client.file(model_file_path).getFile().name
     model = cv.ml.SVM_load(model_abs_path)
     return model
 
