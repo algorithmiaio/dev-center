@@ -8,9 +8,9 @@ show_related: true
 author: liz_rush
 image:
     teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/git
+permalink: /algorithm-development/algorithm-basics/git/
 redirect_from:
-  - /algorithm-development/git
+  - /algorithm-development/git/
 ---
 
 Every algorithm on Algorithmia has a dedicated git repository. Using this repository allows you to seamlessly integrate Algorithmia with your current workflows,
