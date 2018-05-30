@@ -8,6 +8,9 @@ show_related: true
 author: liz_rush
 image:
   teaser: /icons/algo.svg
+permalink: /algorithm-development/algorithm-basics/algorithm-checklist/
+redirect_from:
+  - /algorithm-development/algorithm-checklist/
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.

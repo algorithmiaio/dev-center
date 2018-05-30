@@ -7,6 +7,9 @@ tags: [algo-dev-basics]
 show_related: true
 image:
   teaser: /icons/algo.svg
+permalink: /algorithm-development/algorithm-basics/markdown-syntax/
+redirect_from:
+  - /algorithm-development/markdown-syntax/
 ---
 
 When you are ready to write the documentation for your algorithm under the "Docs" tab on your algorithm's page, you can use markdown to make your documentation clear.
