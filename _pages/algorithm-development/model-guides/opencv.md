@@ -34,7 +34,7 @@ Before we create our algorithm, let's first train our model on the handwriting d
 
 This requires version `3.4.1.15` of `opencv-python`.
 
-```
+{% highlight python %}
 import Algorithmia
 import cv2 as cv
 import numpy as np
@@ -91,7 +91,7 @@ svm.train(trainData, cv.ml.ROW_SAMPLE, responses)
 svm.save("svm_data.dat")
 
 client.file(model_file_save_data_path).putFile("svm_data.dat")
-```
+{% endhighlight %}
 
 The last line will save your model to the data collection you've created.
 
@@ -127,19 +127,19 @@ We'll deploy our newly trained model. For testing the model we have, we'll crop 
 
 ### Example Input:
 
-```
+{% highlight python %}
 {
   "image": "data://opencv/dataset/zero_sample.png"
 }
-```
+{% endhighlight %}
 
 ### Example Output:
 
-```
+{% highlight python %}
 {
   "prediction": 0
 }
-```
+{% endhighlight %}
 
 ### Preloading function
 
@@ -147,7 +147,7 @@ Preloading your OpenCV model is a great step for improving your overall performa
 
 Here’s an example of what that looks like:
 
-```
+{% highlight python %}
 import cv2 as cv
 
 def init_model():
@@ -156,7 +156,7 @@ def init_model():
     return model
 
 model = init_model()
-```
+{% endhighlight %}
 
 ### Image pre-processing functions
 
@@ -164,7 +164,7 @@ Before we can pass the image to the model, we need to pre-process the user provi
 
 The first function deskews the image, and the second function finds the [HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients) descriptor of the image.
 
-```
+{% highlight python %}
 import cv2 as cv
 import numpy as np
 
@@ -190,11 +190,11 @@ def hog(img):
     hists = [np.bincount(b.ravel(), m.ravel(), bin_n) for b, m in zip(bin_cells, mag_cells)]
     hist = np.hstack(hists)     # hist is a 64 bit vector
     return hist
-```
+{% endhighlight %}
 
 ### Full Example
 
-```
+{% highlight python %}
 import Algorithmia
 import cv2 as cv
 import numpy as np
@@ -244,7 +244,7 @@ def apply(input):
     testData = np.float32([hogged]).reshape(-1,bin_n*4)
     pred = float(model.predict(np.float32([hogged]).reshape(-1,bin_n*4))[1])
     return {"prediction": pred}
-```
+{% endhighlight %}
 
 ## Publish your Algorithm
 
