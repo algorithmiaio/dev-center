@@ -10,6 +10,7 @@ env:
 
 build:
   ci:
+    - apt-get update
     - apt-get install imagemagick
     - rvm use $SHIPPABLE_RUBY
     - bundle install
