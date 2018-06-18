@@ -24,7 +24,6 @@ const request = require('request');
  * @param {!Object} res Cloud Function response context.
  */
 exports.handleSlashCommand = function handleSlashCommand(req, res) {
-  //console.log('body: '+JSON.stringify(req.body));
   console.log('response_url: '+req.body.response_url);
   if(req.body.token != 'SLACK_API_TOKEN') {
     return res.status(200).send('Invalid Auth Token: please contact your administrator');
@@ -57,9 +56,9 @@ exports.handleSlashCommand = function handleSlashCommand(req, res) {
   console.log(options);
   res.status(200).send("Processing...");
   request(options, function (error, response, body) {
-    console.log('alg error:', error); // Print the error if one occurred 
-    console.log('alg statusCode:', response&&response.statusCode); // Print the response status code if a response was received 
-    console.log('alg body:', body); //Prints the response of the request.
+    console.log('alg error:', error); 
+    console.log('alg statusCode:', response&&response.statusCode); 
+    console.log('alg body:', body);
   	var responsetext = response&&response.statusCode==200&&JSON.parse(body).result?JSON.parse(body).result:JSON.parse(body);
     var options = {
       uri: req.body.response_url,
