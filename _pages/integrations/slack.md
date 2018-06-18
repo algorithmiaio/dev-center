@@ -2,7 +2,7 @@
 layout: article
 title:  "Slack"
 permalink: clients/lambda/
-excerpt: "Use Machine Learning directly from Slack."
+excerpt-short: "Use Machine Learning directly from Slack."
 categories: [clients, integrations]
 tags: [clients, integrations]
 show_related: true
