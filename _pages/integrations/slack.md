@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Slack"
-permalink: clients/lambda/
+permalink: clients/slack/
 excerpt-short: "Use Machine Learning directly from Slack."
 categories: [clients, integrations]
 tags: [clients, integrations]
