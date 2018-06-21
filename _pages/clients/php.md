@@ -36,7 +36,7 @@ Now you’re ready to start working with Algorithmia in PHP. As a simple test, c
 
 {% highlight php %}
 $algo = $client->algo("demo/Hello/0.1.0");
-print_r($algo->pipe("World")->result);
+echo $algo->pipe("World")->result;
 {% endhighlight %}
 
 #### Note
@@ -88,7 +88,7 @@ If we instead wanted the folder to be completely private (only you can access it
 //Create a directory which only you can read:
 $newdir = $client->dir("data://.my/mynewfolder")->create(ACL::FULLY_PRIVATE); 
 //check the permission on a folder like so:
-print_r($newdir->getReadAcl())
+echo $newdir->getReadAcl();
 {% endhighlight %}
 
 For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
@@ -118,7 +118,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 Next check if the file that you just uploaded to data collections exists, and try downloading it to a local temp file:
  
 {% highlight php %}
-// Download the file
+//download the file
 if(!$remote_file->exists()) {
   $temp_file = $remote_file->getFile();
 }
@@ -129,7 +129,7 @@ This copies the file from your data collection and saves it as a file on your lo
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight php %}
-// Download contents of file as a string
+//download contents of file as a string
 if(!$remote_file->exists()) {
   $file_contents = $remote_file->getString();
 }
