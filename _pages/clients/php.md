@@ -156,7 +156,7 @@ Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
 //create the algorithm object using the Summarizer algorithm
 $algo = $client->algo('nlp/Summarizer/0.1.3');
 //pass in input required by algorithm
-echo $algo->pipe(input)->result;
+echo $algo->pipe($input)->result;
 {% endhighlight %}
 
 This guide used the the first chapter of [Jack London's Burning Daylight](https://en.wikisource.org/wiki/Burning_Daylight) and the Summarizer algorithm outputs:
