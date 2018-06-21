@@ -203,6 +203,6 @@ if(!$remote_file->exists()) {
 //create the algorithm object using the Summarizer algorithm
 $algo = $client->algo('nlp/Summarizer/0.1.3');
 //pass in input required by algorithm
-echo $algo->pipe(input)->result;
+echo $algo->pipe($input)->result;
 {% endhighlight %}
 
