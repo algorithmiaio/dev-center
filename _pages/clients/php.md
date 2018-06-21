@@ -18,13 +18,13 @@ Here you will learn how to install the Algorithmia PHP Client, run machine learn
 
 The official Algorithmia PHP Client is available on [GitHub](https://github.com/algorithmiaio/algorithmia-php), and for more information and examples using the PHP Client you can check out the [PHP Client README](https://github.com/algorithmiaio/algorithmia-php/blob/master/README.md).
 
-To get started, first [download the Algorithmia PHP Client](https://github.com/algorithmiaio/algorithmia-php) and copy the Algorithmia folder into your project. Then, run `composer update` to get the packages the client needs (if you don't have Composer already, get it [here](https://getcomposer.org/).
+To get started, first [download the Algorithmia PHP Client](https://github.com/algorithmiaio/algorithmia-php) and copy the Algorithmia folder into your project. Then, run `composer update` to get the packages the client needs (if you don't have Composer already, get it [here](https://getcomposer.org/)).
 
 ## Authentication
 
 Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
 
-Now, inside ny PHP script, import the Algorithmia library via Composer's `autoload`, and create the Algorithmia client:
+Now, inside yourPHP script, import the Algorithmia library via Composer's `autoload`, and create the Algorithmia client:
 
 {% highlight php %}
 require_once "vendor/autoload.php";
