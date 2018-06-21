@@ -1,11 +1,13 @@
 ---
 layout: article
 title: "PHP"
+excerpt: "Get going with the PHP client on Algorithmia."
 categories: clients
 tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/php.svg
+repository: https://github.com/algorithmiaio/algorithmia-php
 ---
 
 The PHP client is now available, including full File API support and all other other standard features.

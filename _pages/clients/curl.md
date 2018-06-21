@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "CURL"
+excerpt: "Get going with the cURL client on Algorithmia."
 categories: clients
 tags: [clients]
 show_related: true

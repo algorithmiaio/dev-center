@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "R"
-excerpt: "Get going with the R client on Algorithmia."
+excerpt: "Add machine learning to your R scripts with Algorithmia"
 categories: clients
 tags: [clients]
 show_related: true

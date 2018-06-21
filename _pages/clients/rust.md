@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Rust"
-excerpt: "Rust fan? We've got you covered."
+excerpt: "Add machine learning to your Rust app with Algorithmia"
 categories: clients
 tags: [clients]
 ignore_sections: [build-test]

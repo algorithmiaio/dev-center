@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Ruby"
-excerpt: "Rubyist? We've got a client just for you."
+excerpt: "Add machine learning to your Ruby app with Algorithmia"
 categories: clients
 tags: [clients]
 ignore_sections: [development, contributing]
