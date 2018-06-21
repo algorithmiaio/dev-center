@@ -29,7 +29,7 @@ Now, inside yourPHP script, import the Algorithmia library via Composer's `autol
 {% highlight php %}
 require_once "vendor/autoload.php";
 
-$client = Algorithmia::client('YOUR_API_KEY');
+$client = Algorithmia::client("YOUR_API_KEY");
 {% endhighlight %}
 
 Now you’re ready to start working with Algorithmia in PHP. As a simple test, call the Hello World API:
@@ -43,7 +43,7 @@ print_r($algo->pipe("World")->result);
 If you prefer not to have your API Key in the actual PHP files, you can set a system variable instead:
 
 {% highlight bash %}
-php -dALGORITHMIA_API_KEY=YOUR_API_KEY myAI.php
+php -dALGORITHMIA_API_KEY="YOUR_API_KEY" myAI.php
 {% endhighlight %}
 
 ...then omit the Key in your PHP files:
@@ -67,7 +67,7 @@ This section will show how to create a data collection which is essentially a fo
 First create a data collection called nlp_directory:
 
 {% highlight php %}
-$nlp_directory->dir("data://YOUR_USERNAME/nlp_directory")
+$nlp_directory->dir("data://YOUR_USERNAME/nlp_directory");
 if(!$nlp_directory->exists()) {
     $nlp_directory->create();
 }
@@ -100,7 +100,7 @@ So far you've created your data collection and checked and updated directory per
 First, we'll check to see if the file already exists in the data collection.  If not, we'll upload your local file:
 
 {% highlight php %}
-$remote_file = $nlp_directory->file("jack_london.txt")
+$remote_file = $nlp_directory->file("jack_london.txt");
 if(!$remote_file->exists()) {
   $remote_file->putFile("/your_local_path_to_file/jack_london.txt");
 }
@@ -184,7 +184,7 @@ require_once "vendor/autoload.php";
 $client = Algorithmia::client('YOUR_API_KEY');
 
 //create your data collection if it does not exist
-$nlp_directory->dir("data://YOUR_USERNAME/nlp_directory")
+$nlp_directory->dir("data://YOUR_USERNAME/nlp_directory");
 if(!$nlp_directory->exists()) {
     $nlp_directory->create();
 }
