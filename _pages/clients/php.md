@@ -118,7 +118,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 Next check if the file that you just uploaded to data collections exists, and try downloading it to a local temp file:
  
 {% highlight php %}
-# Download the file
+// Download the file
 if(!$remote_file->exists()) {
   $temp_file = $remote_file->getFile();
 }
@@ -129,7 +129,7 @@ This copies the file from your data collection and saves it as a file on your lo
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight php %}
-# Download contents of file as a string
+// Download contents of file as a string
 if(!$remote_file->exists()) {
   $file_contents = $remote_file->getString();
 }
