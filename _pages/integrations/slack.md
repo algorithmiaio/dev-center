@@ -1,10 +1,9 @@
 ---
 layout: article
 title:  "Slack"
-permalink: clients/slack/
 excerpt-short: "Use Machine Learning directly from Slack."
-categories: [clients, integrations]
-tags: [clients, integrations]
+categories: [integrations]
+tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/slack.svg
