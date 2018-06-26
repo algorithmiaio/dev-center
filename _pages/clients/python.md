@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Python"
-excerpt: "Get going with the Python client on Algorithmia."
+excerpt: "Add machine learning to your Python app with Algorithmia"
 categories: clients
 tags: [clients]
 ignore_sections: [install-from-source, upgrading-from-0-9-x, running-tests]

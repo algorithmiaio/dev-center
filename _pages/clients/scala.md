@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Scala"
-excerpt: "Working in Scala? Check out this Algorithmia Scala client."
+excerpt: "Add machine learning to your Scala app with Algorithmia"
 categories: clients
 tags: [clients]
 show_related: true

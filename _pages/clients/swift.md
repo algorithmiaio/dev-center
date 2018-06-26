@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Swift"
-excerpt: "Get started building an iOS app."
+excerpt: "Add machine learning to your iOS / Swift app with Algorithmia"
 categories: clients
 tags: [clients]
 show_related: true

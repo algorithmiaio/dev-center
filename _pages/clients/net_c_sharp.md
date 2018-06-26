@@ -1,6 +1,7 @@
 ---
 layout: article
 title: ".NET / C#"
+excerpt: "Add machine learning to your .NET / C# app with Algorithmia"
 permalink: clients/c_sharp_net/
 categories: clients
 tags: [clients]
@@ -35,7 +36,7 @@ var client = new Client("YOUR_API_KEY");
 Now, you can find any algorithm in the directory at https://algorithmia.com/algorithms and call it.  In this case, we are going to call the [Hello demo algorithm](https://algorithmia.com/algorithms/demo/hello).
 
 {% highlight csharp %}
- var algo = client.algo(client, "algo://demo/hello");
+ var algo = client.algo("algo://demo/hello");
  // The type you pass into the generic method `pipe` is the type you want to be returned as the result.
  var response = algo.pipe<string>("World");
 

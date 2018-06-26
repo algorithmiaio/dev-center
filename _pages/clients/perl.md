@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Perl"
+excerpt: "Add machine learning to your Perl scripts with Algorithmia"
 categories: clients
 tags: [clients]
 show_related: true

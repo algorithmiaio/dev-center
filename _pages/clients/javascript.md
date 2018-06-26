@@ -1,6 +1,7 @@
 ---
 layout: article
 title:  "Javascript"
+excerpt: "Add machine learning to your Javascript app with Algorithmia"
 categories: clients
 tags: [clients]
 show_related: true

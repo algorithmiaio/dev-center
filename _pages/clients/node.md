@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Node"
-excerpt: "Like building Node apps? Here's a Node Client that makes it easy."
+excerpt: "Add machine learning to your NodeJS app with Algorithmia"
 categories: clients
 tags: [clients]
 ignore_sections: [building-the-client]
