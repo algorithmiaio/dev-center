@@ -17,25 +17,26 @@ exclude_from_search: true
   </div>
 </div>
 
-<!-- <div class="row mb-64">
-  <div class="col-md-12">
-    <h3>Get Started</h3>
-    <div class="dev-card">
-      <img src="{{ site.baseurl }}/images/get_started.png" alt="Get Started" class="img-fill get-started-img">
-      <img src="{{ site.baseurl }}/images/icons/hexicon_desktop.svg" alt="icon" class="hexicon">
-      <div class="dev-card-text">
-        <p class="lead">Get up to speed with the Algorithmia marketplace</p>
-        <a href="{{ site.baseurl }}/getting-started" class="btn btn-default btn-accent">Get Started Now</a>
-      </div>
-    </div>
-  </div>
-</div> -->
 <div class="row mb-64">
-  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">Language Clients</div>
+  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">Deploy Models</div>
   <div class="clearfix visible-sm-block"></div>
+  <div class="col-md-6">
+    <img src="{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="img-fill">
+  </div>
+  <div class="col-md-5">
+    <p class="lead">Deploy your machine and deep learning models and leave the devops to us:</p>
+    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a>
+  </div>
+</div>
+
+
+<div class="row mb-64">
+  <div class="col-md-5">
+    <!-- <header>Deploy your ML Models</header> -->
+    <p class="lead hidden-xs hidden-sm">Learn how to call algorithms in the language of your choice via our API's</p>
+    <a href="{{ site.baseurl }}/clients/" class="btn btn-primary btn-raised">Client Guides</a>
+  </div>
   <div class="col-md-7">
-    <!-- <img src="{{ site.baseurl }}/images/client-guides-homepage.png" alt="Recipes" class="img-fill"> -->
-    <!-- <div class="code_snippet"> -->
   <pre class="code_snippet">
   import Algorithmia
   input = "YOUR_USERNAME"
@@ -43,29 +44,9 @@ exclude_from_search: true
   algo = client.algo("demo/Hello/")
   print(algo.pipe(input))
   </pre>
-    <!-- </div> -->
-    <!-- <img src="{{ site.baseurl }}/images/icons/hexicon_recipe.svg" alt="icon" class="hexicon"> -->
-  </div>
-  <div class="col-md-5">
-    <!-- <header class="hidden-xs hidden-sm">Client Guides</header> -->
-    <p class="lead">Learn how to call algorithms in the language of your choice via our API's</p>
-    <a href="{{ site.baseurl }}/clients/" class="btn btn-primary btn-raised">Client Guides</a>
-  </div>
-</div>
-
-<div class="row mb-64">
-  <div class="col-md-6">
-    <!-- <header>Deploy your ML Models</header> -->
-    <p class="lead hidden-xs hidden-sm">Deploy your machine and deep learning models and leave the devops to us</p>
-    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a>
-  </div>
-  <div class="col-md-6">
-    <img src="{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="img-fill">
-    <!-- <img src="{{ site.baseurl }}/images/icons/hexicon_laptop.svg" alt="icon" class="hexicon"> -->
   </div>
   <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-    <p class="lead">Play with some sample apps to see the power of deep learning</p>
-    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-raised">Deploy Models</a>
+    <a href="{{ site.baseurl }}/clients/" class="btn btn-primary btn-raised">Client Guides</a>
   </div>
 </div>
 
