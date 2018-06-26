@@ -31,7 +31,7 @@ Now you'll want to create a data collection to host your pickled model.
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
 
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Set your dependencies" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Add data collection" class="screenshot img-sm">
 
 ### Upload your Model into a Collection
 Next, upload your pickled model to your newly created data collection.
@@ -115,6 +115,16 @@ Now is the time to set your dependencies that your model relies on.
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/dependencies_scikit.png" alt="Set your dependencies" class="screenshot img-md">
+
+If you're following along with this tutorial, go ahead and copy and paste the libraries listed into the dependency file, adding to the ones already there:
+
+{% highlight python %}
+numpy
+scikit-learn>=0.14,<0.18
+{% endhighlight %}
+
+The dependency file is the equivalent to a requirements.txt file which pulls the dependencies listed from PyPi. 
+{: .notice-info}
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
