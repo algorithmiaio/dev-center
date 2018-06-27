@@ -12,9 +12,18 @@ redirect_from:
   - /algorithm-development/your-first-algo/
 ---
 
-One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. This example shows creating an algorithm in Python, however you can choose a different <a href="{{ site.baseurl }}/algorithm-development/languages/">language</a> that we support.
+One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. 
 
-## Create an Algorithm
+Note that this example shows how to create a Python algorithm, however all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{ site.baseurl }}/algorithm-development/languages/">Algorithm Development Languages</a>.
+
+Table of Contents
+
+* [Create your First Algorithm](#create-your-first-algorithm)
+* [Editing Your Algorithm Locally via GIT and CLI](#editing-your-algorithm-locally-via-git-and-cli)
+* [Editing Your Algorithm via the Web IDE](#editing-your-algorithm-via-the-web-ide)
+* [Publish Your Algorithm](#publish-your-algorithm)
+
+## Create your First Algorithm
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
 
@@ -49,7 +58,7 @@ Now hit the "Create" button on the bottom lower right of the form and you'll see
 
 You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
-#### Editing your algorithm locally via GIT & CLI
+## Editing your algorithm locally via GIT and CLI
 
 The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
 
@@ -66,7 +75,7 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"
 
-#### Editing your algorithm via the web IDE
+## Editing your algorithm via the web IDE
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
@@ -86,13 +95,24 @@ Under the **Manage** tab you can see how to clone your algorithm, see what items
 
 Finally click on the **Source** tab which will display the UI for creating your algorithm if you prefer it over the CLI.
 
-Notice that Algorithmia creates a code stub for your algorithm with the "Hello World" code already filled out for you, as shown below.
+As you can see in your algorithm editor, there is a basic algorithm stub already written that takes a string as input and returns the string "Hello" followed by the user input.
+
+The main thing to note about the algorithm is that it's wrapped in the apply() function.
+
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
+
+To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
+
+Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
+{: .notice-info}
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-As you can see, the algorithm takes in the input and returns the string `"Hello"` plus the input. Feel free to change this code however you like.
+Once you have finished editing and want to run the algorithm, click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code. 
 
-Once you have finished editing and want to run the Algorithm, go ahead and click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git and try to compile the code. You can even test out your complied algorithm by passing input though the console at the bottom of the screen.
+Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console: 
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
@@ -115,12 +135,12 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-#### Editing Your Algorithm
+### Editing Your Algorithm
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API.
 You can also <a href="{{ site.baseurl }}/algorithm-development/git/">use Git to push directly to Algorithmia</a> from your current workflow.
 
-#### Calling other algorithms
+### Calling Other Algorithms
 
 Because any call made from your algorithm is considered the same session as when the user calls your algorithm, you won't need to set an API key within your algorithm code. Instead of setting the API key on the client like you would when consuming an algorithm, you can call another from inside your algorithm and pass the input like so:
 
@@ -137,4 +157,4 @@ Now that you've published your first simple algorithm on the platform, you can f
 
 #### Next Steps
 
-After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.
+After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript. 

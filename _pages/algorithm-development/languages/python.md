@@ -14,7 +14,7 @@ Welcome to algorithm development in Python.
 
 This guide will take you through the steps to getting started in algorithm development and cover the basics of managing dependencies, working with various types of inputs and outputs, calling other algorithms and managing data.
 
-By the end of the guide you will see how to develop a couple of simple algorithms and you'll be ready to start contributing to the algorithm marketplace.
+Before you get started with learning how to create your algorithm in Python, make sure you go through <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Publishing your First Algorithm</a> to learn about the various permissions available when creating your algorithms, using the CLI, and the Web IDE including Costs, Docs, and best practices when creating algorithms.
 
 Table of Contents
 
@@ -334,25 +334,7 @@ Both links will go over important best practices such as how to create a good al
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
-On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
-
-In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
-
-Changes shows you your commit history and release notes.
-
-Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
-
-Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
-
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
-
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
-
-If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
-
-For more information about publishing your algorithm: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+To learn how to publish your algorithm: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 ## Caveats
 #### Algorithms with multiple files
