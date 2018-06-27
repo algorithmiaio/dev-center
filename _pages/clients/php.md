@@ -7,7 +7,6 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/php.svg
-repository: https://github.com/algorithmiaio/algorithmia-php
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia PHP Client to call algorithms and manage data through the Algorithmia platform.
@@ -16,9 +15,16 @@ Here you will learn how to install the Algorithmia PHP Client, run machine learn
 
 ## Getting Started with Algorithmia
 
-The official Algorithmia PHP Client is available on [GitHub](https://github.com/algorithmiaio/algorithmia-php), and for more information and examples using the PHP Client you can check out the [PHP Client README](https://github.com/algorithmiaio/algorithmia-php/blob/master/README.md).
 
-To get started, first [download the Algorithmia PHP Client](https://github.com/algorithmiaio/algorithmia-php) and copy the Algorithmia folder into your project. Then, run `composer update` to get the packages the client needs (if you don't have Composer already, get it [here](https://getcomposer.org/)).
+
+The official Algorithmia PHP Client is [available](https://packagist.org/packages/algorithmia/algorithmia) via [Composer](https://packagist.org/):
+{% highlight bash %}
+composer require algorithmia/algorithmia 
+{% endhighlight %}
+
+For non-Composer installs, use the [source](https://github.com/algorithmiaio/algorithmia-php).
+
+For more information and examples using the PHP Client you can check out the [PHP Client README](https://github.com/algorithmiaio/algorithmia-php/blob/master/README.md).
 
 ## Authentication
 
