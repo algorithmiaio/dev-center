@@ -19,8 +19,8 @@ Before you get started with learning how to create your algorithm in Python, mak
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
+* [Managing Dependencies](#managing-dependencies)
 * [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
