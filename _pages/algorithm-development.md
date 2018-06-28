@@ -1,6 +1,8 @@
 ---
 layout: article_page
-title:  "Algorithm Development"
+title:  "Algorithm Development Overview"
+nav_overview: "Overview"
+nav_index: 0
 excerpt: "Basic Guides for Algorithm Developers"
 show_related: false
 ---
