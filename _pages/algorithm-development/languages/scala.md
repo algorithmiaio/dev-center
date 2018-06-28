@@ -17,7 +17,7 @@ Algorithmia supports algorithm development in Scala.
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html">Java 8 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/developers/clients/scala">Algorithmia & Scala</a>.
+via the <a href="{{ site.baseurl }}/clients/scala">Algorithmia Scala Client</a>.
 
 #### Managing Dependencies
 
@@ -131,7 +131,7 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/developers/clients/scala">Algorithmia & Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/scala">Algorithmia & Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -144,5 +144,5 @@ Some older algorithms use our deprecated Java client. If it has an import from t
 
 #### Additional Resources
 
-* <a href="{{ site.baseurl }}/developers/clients/java">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
+* <a href="{{ site.baseurl }}/clients/java">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
 * <a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a>
