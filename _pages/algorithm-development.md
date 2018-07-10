@@ -9,7 +9,6 @@ show_related: false
 
 <p>Welcome to deploying your algorithms and models using Algorithmia's AI Layer. You can create algorithms using Java, Python, R, Rust, Scala, Ruby, and JavaScript by following along with one of our <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a>.</p> 
 
-<<<<<<< HEAD
 
 <p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Model Deployment Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/algorithm-development/model-guides/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/algorithm-development/model-guides/tensorflow/">Tensorflow</a>.</p>
 
@@ -29,9 +28,7 @@ show_related: false
 
 <p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Deploy Model Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/algorithm-development/model-guides/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/algorithm-development/model-guides/tensorflow/">Tensorflow</a>.</p>
 
-=======
 <p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Deploy Model Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/algorithm-development/model-guides/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/algorithm-development/model-guides/tensorflow/">Tensorflow</a>.</p>
->>>>>>> 07181426d9b7a96545e2cf4986b194980b6c5474
 
 <div class="row overview-container">
 {% assign pages = site.pages | where: "categories", "algorithm-development" %}
