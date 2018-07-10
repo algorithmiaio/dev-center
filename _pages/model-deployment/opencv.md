@@ -6,6 +6,9 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: besir
+permalink: /model-deployment/opencv/
+redirect_from:
+  - /algorithm-development/model-guides/opencv/
 image:
     teaser: /language_logos/opencv.png
 ---
@@ -275,6 +278,6 @@ For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-d
 
 This guide is based on the OpenCV tutorial [here](https://docs.opencv.org/3.4.1/dd/d3b/tutorial_py_svm_opencv.html).
 
-In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/algorithm-development/model-guides/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/algorithm-development/model-guides/keras/">Keras</a>, <a href="{{ site.baseurl }}/algorithm-development/model-guides/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/algorithm-development/model-guides/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/algorithm-development/model-guides/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/algorithm-development/model-guides/theano/">Theano</a>, or <a href="{{ site.baseurl }}/algorithm-development/model-guides/nltk/">NLTK</a>, and <a href="{{ site.baseurl }}/algorithm-development/model-guides/cntk/">CNTK</a>.
+In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/model-deployment/keras/">Keras</a>, <a href="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/model-deployment/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/model-deployment/theano/">Theano</a>, or <a href="{{ site.baseurl }}/model-deployment/nltk/">NLTK</a>, and <a href="{{ site.baseurl }}/model-deployment/cntk/">CNTK</a>.
 
 If you run into any trouble, please contact us at <a href="mailto:support@algorithmia.com">support@algorithmia.com</a>.

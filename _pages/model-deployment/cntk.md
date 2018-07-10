@@ -6,6 +6,9 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: james_sutton
+permalink: /model-deployment/cntk/
+redirect_from:
+  - /model-deployment/cntk/
 image:
     teaser: /language_logos/python.svg
 ---

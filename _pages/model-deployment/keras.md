@@ -6,6 +6,9 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
+permalink: /model-deployment/keras/
+redirect_from:
+  - /algorithm-development/model-guides/keras/
 image:
     teaser: /language_logos/keras.svg
 ---

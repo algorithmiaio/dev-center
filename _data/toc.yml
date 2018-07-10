@@ -30,6 +30,10 @@
   url: /algorithm-development/
   nav_category: algorithm-development
 
+- title: Model Deployment
+  url: /model-deployment/
+  # nav_category: model-deployment
+
 - title: API Documentation
   url: http://docs.algorithmia.com
 

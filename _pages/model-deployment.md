@@ -2,12 +2,13 @@
 layout: article_page
 title:  Deploy Your Model
 excerpt: "Guides to hosting a model using your favorite library."
-categories: algorithm-development
-nav_overview: "Overview"
-nav_category: model-guides
-tags: [model-guide-overview]
+nav_overview: "Supported Frameworks"
+nav_index: 0
 show_related: false
 author: steph_kim
+permalink: /model-deployment/
+redirect_from:
+  - /algorithm-development/model-guides/
 ---
 
 Here you'll find guides for hosting your machine or deep learning model. Below you'll find featured frameworks that are commonly used in machine and deep learning, however if you want to write your own model in the language of your choice using a different library, that's an option too. We currently support Java, Python, Rust, Ruby, R, JavaScript and Scala so checkout the <a href="{{ site.baseurl }}/algorithm-development/">Algorithm Development Guides</a>.
