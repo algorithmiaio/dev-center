@@ -3,7 +3,6 @@ layout: article
 title: "Style Guide"
 categories: example
 modified: 2016-01-05 16:36
-author: liz_rush
 ---
 
 Below is just about everything you'll need to style your posts. Check the source code to see the many embedded elements within paragraphs.

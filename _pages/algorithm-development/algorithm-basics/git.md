@@ -5,7 +5,6 @@ excerpt: "Learn how to use Git with Algorithmia and integrate with your current 
 categories: algorithm-basics
 tags: [algo-dev-basics]
 show_related: true
-author: liz_rush
 image:
     teaser: /icons/algo.svg
 permalink: /algorithm-development/algorithm-basics/git/

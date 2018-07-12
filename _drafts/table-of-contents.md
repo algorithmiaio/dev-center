@@ -3,7 +3,6 @@ layout: article
 title:  "Make a Table of Contents"
 date:   2016-01-05 11:39:38
 categories: example
-author: liz_rush
 ---
 
 {% include toc.html %}

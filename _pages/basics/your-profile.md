@@ -24,7 +24,7 @@ Once inside the profile section, you'll find a horizontal menu of profile sectio
 
 ![profile main]({{ site.baseurl }}/images/post_images/your_profile/profile.png)
 
-The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published and the [Bounties]({{ site.baseurl }}/bounties/about/) you've posted.
+The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
 ## Credentials
 

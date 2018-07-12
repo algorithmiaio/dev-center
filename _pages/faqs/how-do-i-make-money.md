@@ -4,7 +4,6 @@ title:  "I am an algorithm developer, how do I make money?"
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/fa-bolt.png
 ---

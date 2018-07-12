@@ -5,7 +5,6 @@ title:  "Sample app example (android copy)"
 # categories: sample-apps
 $ tags: [sample-app]
 show_related: false
-author: liz_rush
 excerpt: "(Sample app example) A code walk-through of a simple Android app using Algorithmia."
 image:
     teaser: /language_logos/r.svg
