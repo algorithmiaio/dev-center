@@ -4,7 +4,6 @@ title:  "I found a bug in an algorithm or it's not producing the expected result
 categories: faqs
 tags: [platform-faq]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/fa-bolt.png
 ---

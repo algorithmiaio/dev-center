@@ -5,7 +5,6 @@ excerpt: "Follow these tips to create the best algorithm profile possible."
 categories: algorithm-basics
 tags: [algo-dev-basics]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/algo.svg
 permalink: /algorithm-development/algorithm-basics/algorithm-checklist/

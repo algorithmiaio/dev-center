@@ -5,7 +5,6 @@ excerpt: "A walk through of the algorithm profile page."
 categories: basics
 tags: [basics]
 show_related: true
-author: liz_rush
 image:
     teaser: /icons/algo.svg
 ---

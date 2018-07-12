@@ -5,7 +5,6 @@ title: "Basic Android Integration"
 categories: [sample-apps]
 tags: [sample-apps]
 show_related: false
-author: liz_rush
 excerpt: "A code walk-through of a simple Android app using Algorithmia."
 excerpt-short: "Build Android apps using Algorithmia."
 image:

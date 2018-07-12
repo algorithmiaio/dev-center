@@ -5,7 +5,6 @@ excerpt: "All about permissions on the platform."
 categories: basics
 tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 show_related: true
-author: liz_rush
 image:
     teaser: /icons/algo.svg
 ---

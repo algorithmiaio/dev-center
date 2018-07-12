@@ -3,7 +3,6 @@ exclude_from_search: true
 layout: article_page
 title:  "Tutorials"
 show_related: false
-author: liz_rush
 excerpt: "Tutorials. Sample apps and recipes to help you learn whats going on."
 ---
 
