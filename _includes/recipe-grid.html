@@ -1,7 +1,7 @@
 <div class="row" id="recipes">
   <div class="col-md-12">
     {% for post in recipes %}
-      <div class="recipe-card pa-16 mb-32">
+      <div class="recipe-card pv-16 ph-32 mb-16">
         <div class="recipe-card-body mb-16">
           {% if post.thumbnail %}
             <div class="recipe-card-image pr-16">
@@ -14,12 +14,12 @@
             <h4 class="m-B-n">{{ post.title }}</h4>
             <p>{{ post.excerpt }}</p>
             {% for tag in post.tags %}
-              <span class="tag text-secondary">{{ tag | replace: '-', ' ' | capitalize }}</span>
+              <span class="tag text-secondary"><i class="{{tag}} fa fa-circle mr-4"></i>{{ tag | replace: '-', ' ' | capitalize }}</span>
             {% endfor %}
           </div>
         </div>
-        <a href="{{ post.blog }}" class="btn btn-flat pv-0 btn-primary">GUIDE</a>
-        <a href="{{ post.repository }}" class="btn btn-flat pv-0 btn-primary">GITHUB</a>
+        <a href="{{ post.blog }}" class="recipe-link pr-16">GUIDE</a>
+        <a href="{{ post.repository }}" class="recipe-link">GITHUB</a>
       </div>
     {% endfor %}
   </div>
