@@ -6,8 +6,6 @@ categories: tutorials
 show_related: false
 excerpt: "All the recipes"
 recipe_tags: ["text-analysis", "machine-learning", "computer-vision", "utilities"]
-image:
-    teaser: /icons/recipes.svg
 ---
 
 {% assign recipes = site.pages | where: "categories", "recipes" | sort:"title" %}

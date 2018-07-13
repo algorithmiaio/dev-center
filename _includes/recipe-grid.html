@@ -3,14 +3,18 @@
     {% for post in recipes %}
       <div class="recipe-card pa-16 mb-32">
         <div class="recipe-card-body mb-16">
-          <div class="recipe-card-image">
-            <div class="bg-gray"></div>
-          </div>
-          <div class="recipe-card-info pl-16">
+          {% if post.thumbnail %}
+            <div class="recipe-card-image pr-16">
+              <div>
+                <img src="{{post.thumbnail}}">
+              </div>
+            </div>
+          {% endif %}
+          <div class="recipe-card-info">
             <h4 class="m-B-n">{{ post.title }}</h4>
             <p>{{ post.excerpt }}</p>
             {% for tag in post.tags %}
-              <span style="text-transform: capitalize;">{{ tag | replace: '-', ' ' | capitalize }}</span>
+              <span class="tag text-secondary">{{ tag | replace: '-', ' ' | capitalize }}</span>
             {% endfor %}
           </div>
         </div>
