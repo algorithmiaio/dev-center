@@ -1,13 +1,11 @@
 <div class="row" id="recipes">
-  <div class="col-md-12">
+  <div class="col-md-12 mt-16">
     {% for post in recipes %}
       <div class="recipe-card pv-16 mb-16">
         <div class="recipe-card-body mb-16">
           {% if post.thumbnail %}
             <div class="recipe-card-image">
-              <div>
-                <img src="{{post.thumbnail}}">
-              </div>
+              <div style="background-image: url({{post.thumbnail}});"></div>
             </div>
           {% endif %}
           <div class="recipe-card-info">
