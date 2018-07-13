@@ -9,10 +9,5 @@ recipe_tags: ["text-analysis", "machine-learning", "computer-vision", "utilities
 ---
 
 {% assign recipes = site.pages | where: "categories", "recipes" | sort:"title" %}
-{% for tag in page.recipe_tags %}
-  {% include recipe-grid.html %}
-  {% unless forloop.last %}
-  <hr>
-  {% endunless %}
-{% endfor %}
+{% include recipe-grid.html %}
 
