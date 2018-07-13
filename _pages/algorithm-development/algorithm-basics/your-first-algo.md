@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Algorithm Creation 101"
+title:  "Getting Started"
 excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
 categories: algorithm-basics
 tags: [algo-dev-basics]

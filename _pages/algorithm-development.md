@@ -28,8 +28,6 @@ show_related: false
 
 <p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Deploy Model Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>.</p>
 
-<p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Deploy Model Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>.</p>
-
 <div class="row overview-container">
 {% assign pages = site.pages | where: "categories", "algorithm-development" %}
 {% for post in pages %}

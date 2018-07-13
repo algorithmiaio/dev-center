@@ -10,11 +10,7 @@ image:
     teaser: /language_logos/python.svg
 ---
 
-Welcome to algorithm development in Python.
-
-This guide will take you through the steps to getting started in algorithm development and cover the basics of managing dependencies, working with various types of inputs and outputs, calling other algorithms and managing data.
-
-Before you get started with learning how to create your algorithm in Python, make sure you go through <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Publishing your First Algorithm</a> to learn about the various permissions available when creating your algorithms, using the CLI, and the Web IDE including Costs, Docs, and best practices when creating algorithms.
+Before you get started learning about Python algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -34,32 +30,21 @@ Algorithmia makes a number of libraries available to make algorithm development 
 The full <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
 is available for you to use in your algorithms.
 
-Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, Numpy and many others by adding them as a dependency in your algorithm.
+Also, you can utilize common Python libraries such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
-Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
+Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
 via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a>.
 
 ## Write your First Algorithm
 
-As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. Go ahead and remove that code because we'll be writing a different algorithm in this tutorial:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
-
-Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
-
-To test the algorithm type your name or another string in the console and hit enter on your keyboard:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
-
-
-If you're using Python 3, the syntax has changed for imports. You'll need to use:
-`from .somefile import *` instead of in Python 2 where it's `from file import *`.
-{: .notice-warning}
 
 ## Managing Dependencies
 
@@ -73,7 +58,8 @@ If you have any dependencies you can add them by typing in the package name to t
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-**Note:** If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
+If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
+{: .notice-info}
 
 For example, to make use of numpy, you would include the line:
 
@@ -85,9 +71,13 @@ in the dependencies file and the line
 
 in the main file.
 
+If you're using Python 3, the syntax has changed for imports. You'll need to use:
+`from .somefile import *` instead of in Python 2 where it's `from file import *`.
+{: .notice-warning}
+
 ## I/O for your Algorithms
 
-Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
+Now let's get started on the hands-on portion of the guide:
 
 The first algorithm that we'll create will take a JSON formatted object passed as input by the user which is deserialized into a Python dictionary before the algorithm is called.
 

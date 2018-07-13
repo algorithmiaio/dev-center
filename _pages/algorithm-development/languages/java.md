@@ -10,25 +10,20 @@ image:
     teaser: /language_logos/java.svg
 ---
 
-Algorithmia supports algorithm development in Java.
-
-This guide will take you through the steps to getting started in algorithm development and cover the basics of managing dependencies, working with various types of inputs and outputs, calling other algorithms and managing data.
-
-By the end of the guide you will see how to develop a couple of simple algorithms and you'll be ready to start contributing to the algorithm marketplace.
+Before you get started learning about Java algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
 * [Available Libraries](#available-libraries)
-* [Create an Algorithm](#create-an-algorithm)
-* [Managing Dependencies](#managing-dependencies)
 * [Write your First Algorithm](#write-your-first-algorithm)
+* [Managing Dependencies](#managing-dependencies)
 * [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
 
-## [Available Libraries](#available-libraries)
+## Available Libraries
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
@@ -38,98 +33,16 @@ is available for you to use in your algorithms.
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
 via the <a href="{{ site.baseurl }}/clients/java/">Algorithmia Java Client</a>.
 
-## Create an Algorithm
-
-Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over "More" you'll see a dropdown with a purple button that says "Add Algorithm". Go ahead and click that button.
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
-
-When you click the "Add Algorithm" button, you'll see a form for creating your algorithm that we'll fill out step by step below:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_java.png" alt="Create an algorithm in Java" class="screenshot img-sm">
-
-**Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
-
-For example this guide shows how to create an algorithm that splits text up into words which is called tokenizing in natural language processing. So, this example algorithm could be called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
-
-**Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
-
-**Language:** Next you'll pick the language of your choice. This is the R guide so choose R as the language.
-
-**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
-
-As an incentive to promote community contributions, open source algorithms on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
-
-**Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
-
-Also under Special Permissions, you can select "Standard execution environment" or "Advanced GPU". Since our algorithm isn't processing large amounts of data needed to run on a GPU environment, we'll select "Standard execution environment".
-
-You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{ site.baseurl }}/basics/permissions/).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
-{: .notice-info}
-
-Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot">
-
-You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
-
-#### Editing your algorithm locally via GIT & CLI
-
-The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
-
-To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
-
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
-2. Clone your algorithm: `algo clone username/algoname`
-3. Use your preferred editor to modify the code
-4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
-5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: for now, you must do this via the web IDE:
-    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
-    2. click on your algorithm
-    3. click "Edit Source"
-    4. click "Compile", then "[Publish](#publish-algorithm)"
-
-#### Editing your algorithm via the web IDE
-
-If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot">
-
-Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
-
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
-
-"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
-
-"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
-
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
-
-Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
-
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
-
-Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
-
 ## Write your First Algorithm
 
-As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string "Hello" followed by the user input.
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. Go ahead and remove that code because we'll be writing a different algorithm in this tutorial:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{ site.baseurl }}/basics/versioning/).
-
-Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
-
-To test the algorithm type your name or another string in the console and hit enter on your keyboard:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algo_java.png" alt="Compile algorithm" class="screenshot">
 
 ## Managing Dependencies
 
@@ -161,11 +74,9 @@ This guide won't depend on any external dependencies so you can close the depend
 
 ## I/O for your Algorithms
 
-Now that you've compiled and ran a basic algorithm in the console, we'll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.
-
+Now let's get started on the hands-on portion of the guide:
 
 The first algorithm that we'll create will take a JSON formatted object passed as input by the user which is deserialized into a Java object before the algorithm is called.
-
 
 It will output a JSON formatted object which the user will consume with an API call to the algorithm path which is found at the bottom of the algorithm description page.
 
