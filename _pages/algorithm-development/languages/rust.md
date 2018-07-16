@@ -34,14 +34,16 @@ Furthermore, algorithms can call other algorithms and manage data on the Algorit
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. Go ahead and remove that code because we'll be writing a different algorithm in this tutorial:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_rust.png" alt="Algorithm console Rust" class="screenshot">
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 {: .notice-info}
+
+Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_rust.png" alt="Algorithm console Rust" class="screenshot">
 
 ## Managing Dependencies
 
@@ -62,6 +64,10 @@ The first algorithm that we'll create will take a JSON formatted object, which h
 Your algorithm will output a JSON formatted object, which the user will consume via an API call to the algorithm path found at the bottom of the algorithm description page.  This path is based on your Algorithmia user name and the name of your algorithm, so if you are "demo" and your algorithm is "TokenizeText", then the path for version 0.1.1 of your algorithm will be `demo/TokenizeText/0.1.1`
 
 ### Working with Basic Data Structures
+
+Below is a code sample showing how to create an algorithm working with basic user input.
+
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
 
 Use the `algo_entrypoint!` macro to declare the data type you wish to handle in your entry point.  We recommend accepting JSON-encoded Objects, and the easiest way to work with them is to derive an automatic deserialization from a wrapper type.  So, if I was expecting to receive a JSON Object containing "name" (a string) and "values" (a list of numbers), I might write:
 
@@ -220,6 +226,8 @@ In addition, `error-chain` provides a `bail!` macro which you can use to return 
 
 As with most Rust code, you should avoid panicking in your algorithm. API callers will not have access to the panic backtrace, and panicking will impact the latency of back-to-back requests from the same user.
 {: .notice-warning}
+
+For more information on error handling see the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 

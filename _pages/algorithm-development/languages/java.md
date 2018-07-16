@@ -35,14 +35,16 @@ via the <a href="{{ site.baseurl }}/clients/java/">Algorithmia Java Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. Go ahead and remove that code because we'll be writing a different algorithm in this tutorial:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 {: .notice-info}
+
+Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
 
 ## Managing Dependencies
 
@@ -83,6 +85,10 @@ It will output a JSON formatted object which the user will consume with an API c
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “AdaDeveloper” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be AdaDeveloper/TokenizeText/0.1.1
 
 ### Working with Basic Data Structures
+
+Below is a code sample showing how to create an algorithm working with basic user input.
+
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
 
 This example shows how to get the value of the key "URL" from a Map object that the user passes in when calling the algorithm:
 
@@ -345,7 +351,7 @@ throw new AlgorithmException("Invalid graph structure");
 
 Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
-For more details about handling errors in Java check out the full [Algorithmia Java Client API Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) and the [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling).
+For more information on error handling see the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 

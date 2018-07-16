@@ -35,14 +35,16 @@ Furthermore, algorithms can call other algorithms and manage data on the Algorit
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. Go ahead and remove that code because we'll be writing a different algorithm in this tutorial:
-
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Ruby" class="screenshot">
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 {: .notice-info}
+
+Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
+
+<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Ruby" class="screenshot">
 
 ## Managing Dependencies
 
@@ -76,7 +78,11 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 
 ### Working with Basic Data Structures
 
-If the input to your algorithm is a bare string (e.g. `"world"`), then `input.instance_of? String` will be true.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
+Below is a code sample showing how to create an algorithm working with basic user input.
+
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+
+Note, if the input to your algorithm is a bare string (e.g. `"world"`), then `input.instance_of? String` will be true.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
 
 Following this, you can distinguish between simple Arrays vs Objects by using `input.instance_of?(Array)`.  Here's an example that will accept either an Array, or an Object with the property "values" (which is an Array):
 
@@ -106,13 +112,13 @@ Go ahead and type or paste the code sample above in the Algorithmia code editor 
 
 Now compile the new code sample and when that’s done test the code in the console by passing in the input and hitting enter on your keyboard:
 
-{% highlight python %}
+{% highlight ruby %}
 {"values":[8,6,7,5,3,0,9]}
 {% endhighlight %}
 
 This should return:
 
-{% highlight python %}
+{% highlight ruby %}
 {"datatype":"object","sum":38}
 {% endhighlight %}
 
@@ -202,6 +208,8 @@ In order to provide the user with useful feedback, raise an Error with a meaning
 		raise TypeError, 'Please provide a JSON-formatted Array or Object'
 	end
 {% endhighlight %}
+
+For more information on error handling see the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
