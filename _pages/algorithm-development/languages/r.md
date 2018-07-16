@@ -54,9 +54,15 @@ On the algorithm editor page there is a button on the top right that says "Depen
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
 
-You can add dependencies by adding the library name to the file.
+You can add dependencies by simply adding the library name to the file.
 
-Please read the details regarding loading dependencies in the comments of the dependency file. There are three different ways to include your dependencies so read through each one to decide which one is right for your project.
+For older dependency versions, use the syntax: `-t <CRAN archive url>`
+<br/>Example: `-t https://cran.r-project.org/src/contrib/algorithmia_0.0.2.tar.gz`
+
+To add a GitHub repo as a dependency: `-g username/repo[/subdir][@ref|#pull]`
+<br/>Example: `-g algorithmiaio/algorithmia-r` 
+
+For more detailed instructions, please read the comments at the top of the default dependency file which is generated when you create your algorithm.
 {: .notice-info}
 
 The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia's R package visit:
