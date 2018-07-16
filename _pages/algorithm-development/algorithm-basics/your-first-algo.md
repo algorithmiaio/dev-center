@@ -43,7 +43,7 @@ For example this is the beginning portion of the <a href="{{ site.baseurl }}/alg
 
 **Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
 
-As an incentive to promote community contributions, open source algorithms on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
+As an incentive to promote community contributions, open source algorithms that are not charging a royalty on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
 
 **Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
 

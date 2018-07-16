@@ -16,7 +16,7 @@ Welcome to algorithm development basics, where you'll find information on how to
 
 {% assign basics_tags = "algo-dev-basics" | split:"|" %}
 <div class="row lang-tile-container">
-  {% assign pages = site.pages | where: "categories", algorithm-bassics" %}
+  {% assign pages = site.pages | where: "categories", algorithm-basics" %}
   {% for post in pages %}
 		{% include post-grid.html %}
   {% endfor %}
