@@ -3,8 +3,7 @@ layout: faq
 title:  "Can I use external libraries with my algorithms?"
 categories: faqs
 tags: [algo-dev-faq]
-show_related: true
-author: liz_rush
+show_related: true 
 image:
   teaser: /icons/fa-bolt.png
 ---

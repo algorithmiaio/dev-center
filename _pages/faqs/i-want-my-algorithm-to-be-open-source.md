@@ -4,7 +4,6 @@ title:  "I want my algorithm to be open source, can my algorithm be free of roya
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/fa-bolt.png
 ---

@@ -6,7 +6,6 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 redirect_from:
  - /pricing-permissions/
 show_related: true
-author: liz_rush
 image:
     teaser: /icons/algo.svg
 ---

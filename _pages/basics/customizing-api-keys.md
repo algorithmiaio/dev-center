@@ -5,7 +5,6 @@ excerpt: "Did you know you can have multiple API keys with different access perm
 categories: basics
 tags: [basics]
 show_related: true
-author: liz_rush
 image:
   teaser: /icons/algo.svg
 ---
