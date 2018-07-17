@@ -12,4 +12,5 @@ excerpt: "Colorize your black and white pictures in your S3 bucket or Dropbox di
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/Colorize-Photos/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Colorize-Photos/
 blog: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/Colorize-Photos/README.md
+thumbnail: https://s3.amazonaws.com/algorithmia-assets/algo_desc_images/deeplearning_ColorfulImageColorization/colorful_image_colorization_description_image.png
 ---

@@ -12,4 +12,5 @@ excerpt: "Get the make, model, body type and more metadata of cars from a traffi
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/car-classification/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/car-classification/
 blog: https://blog.algorithmia.com/video-processing-car-classification
+thumbnail: https://blog.algorithmia.com/wp-content/uploads/2017/05/bus-stop-207302_1920.jpg
 ---
