@@ -73,7 +73,7 @@ This section will show how to create a data collection which is essentially a fo
 First create a data collection called nlp_directory:
 
 {% highlight php %}
-$nlp_directory->dir("data://YOUR_USERNAME/nlp_directory");
+$nlp_directory = $client->dir("data://YOUR_USERNAME/nlp_directory");
 if(!$nlp_directory->exists()) {
     $nlp_directory->create();
 }
