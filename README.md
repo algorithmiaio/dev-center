@@ -24,6 +24,12 @@ You're going to need:
 sudo apt install ruby ruby-dev zlib1g-dev
 ```
 
+### Ubuntu (Xenial) on Chromebook Notes:
+
+```sudo apt-get install g++
+sudo apt-get install imagemagick
+```
+
 ### Getting Set Up
 
  1. Fork this repository on Github.
