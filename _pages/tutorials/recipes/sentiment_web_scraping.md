@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Sentiment Analysis Pipeline"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 author: steph_kim

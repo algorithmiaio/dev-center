@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Classify Documents To Topics"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 author: steph_kim

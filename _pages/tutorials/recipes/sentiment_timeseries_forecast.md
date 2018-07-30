@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Sentiment Timeseries Forecast Pipeline"
 categories: recipes
-recipe_tags: [machine-learning]
 tags: [machine-learning]
 show_related: false
 author: steph_kim
