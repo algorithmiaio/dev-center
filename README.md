@@ -101,6 +101,6 @@ First, fork the repository and follow the instructions above to get set up. Make
 Need Help? Found a bug?
 ----------------
 
-If you find a bug, can't follow the documentation or have a question – [submit an issue!](https://github.com/algorithmiaio/dev-center/issues)
+If you find a bug, can't follow the documentation, or have a question -- please [submit an issue!](https://github.com/algorithmiaio/dev-center/issues)
 
 We will respond to you or reach out for more information as soon as possible. And, of course, feel free to submit pull requests with bug fixes or changes.
