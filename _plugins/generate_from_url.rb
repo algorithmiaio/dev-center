@@ -30,7 +30,7 @@ Jekyll::Hooks.register :pages, :pre_render do |page, payload|
   end
 
   # Try to get the readme data for this path and strip first two lines (redundant title)
-  readme_content = File.readlines(cache_path)
+  readme_content = File.readlines(cache_path, :encoding => 'UTF-8')
 
   # use the `ignore_section`
   ignore_sections = page.data['ignore_sections'] || []

@@ -1,20 +1,26 @@
-<div class="row">
-  <div class="col-md-12">
-    <h3>{{ tag | replace: '-', ' ' | capitalize }}</h3>
-  </div>
-  <div class="col-md-3">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/icons/{{ tag }}.png" alt="" itemprop="image">
-  </div>
-  <div class="col-md-9" id="{{tag}}">
+<div class="row" id="recipes">
+  <div class="col-md-12 mt-16">
     {% for post in recipes %}
-      {% if post.tags contains tag %}
-        <li class="no-style">
-          <h4 class="m-B-n"><a href="{{ post.repository }}">{{ post.title }}</a></h4>
-          <p>{{ post.excerpt }}</p>
-        </li>
-        <a href="{{ post.blog }}" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ</a>
-        <a href="{{ post.repository }}" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
-      {% endif %}
+      <div class="recipe-card pv-16 mb-16">
+        <div class="recipe-card-body mb-16">
+          {% if post.thumbnail %}
+            <div class="recipe-card-image">
+              <div style="background-image: url({{post.thumbnail}});"></div>
+            </div>
+          {% endif %}
+          <div class="recipe-card-info">
+            <h4 class="m-B-n mb-4">{{ post.title }}</h4>
+            <p class="mb-8">{{ post.excerpt }}</p>
+            {% for tag in post.tags %}
+              <span class="tag text-secondary pr-8"><i class="{{tag}} fa fa-circle pr-4"></i>{{ tag | replace: '-', ' ' | capitalize }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div>
+          <a href="{{ post.blog }}" class="recipe-link">GUIDE</a>
+          <a href="{{ post.repository }}" class="recipe-link">GITHUB</a>
+        </div>
+      </div>
     {% endfor %}
   </div>
 </div>
