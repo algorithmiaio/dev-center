@@ -1,9 +1,9 @@
 ---
 layout: article_page
-title:  "Working with data"
+title:  "Connecting Your Data"
 nav_overview: "Overview"
 nav_index: 0
-excerpt: "Here you'll find guides to hosting your data on Algorithmia or you can create a connection to your hosted files on Dropbox or S3."
+excerpt: "Guides for connecting to your data sources through Dropbox, S3, or Algorithmia Hosted Data"
 tags: [data-connectors-overview]
 show_related: false
 author: steph_kim

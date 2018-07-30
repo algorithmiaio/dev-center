@@ -1,7 +1,7 @@
 # Specify tags here to customize text from slug
 
-getting-started:
-  name: Getting Started
+# getting-started:
+#   name: Getting Started
 
 algo-dev:
   name: Algorithm Development

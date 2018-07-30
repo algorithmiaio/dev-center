@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/scala.svg
 ---
 
-Algorithmia supports algorithm development in Scala.
+Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 #### Available APIs
 

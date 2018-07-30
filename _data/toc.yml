@@ -3,8 +3,8 @@
 - title: Home
   url: /
 
-- title: Getting Started
-  url: /getting-started/
+# - title: Getting Started
+#   url: /getting-started/
 
 - title: Basics
   url: /basics/
@@ -14,7 +14,7 @@
   url: /clients/
   nav_category: clients
 
-- title: Working with Data
+- title: Connecting Your Data
   url: /data/
   nav_category: working-with-data
 
@@ -29,6 +29,10 @@
 - title: Algorithm Development
   url: /algorithm-development/
   nav_category: algorithm-development
+
+- title: Model Deployment
+  url: /model-deployment/
+  # nav_category: model-deployment
 
 - title: API Documentation
   url: http://docs.algorithmia.com

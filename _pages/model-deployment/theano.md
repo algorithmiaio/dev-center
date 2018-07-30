@@ -1,28 +1,30 @@
 ---
 layout: article
-title:  "NLTK"
-excerpt: "Hosting your nltk powered model on Algorithmia."
+title:  "Theano"
+excerpt: "Host your Theano deep learning model on Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
+permalink: /model-deployment/theano/
+redirect_from:
+  - /algorithm-development/model-guides/theano/
 image:
-    teaser: /language_logos/python.svg
+    teaser: /language_logos/theano.svg
 ---
 
 
-Welcome to hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!
-This guide is designed as an introduction to hosting a nltk model and publishing an algorithm even if you’ve never used Algorithmia before.
+Welcome to hosting your <a href="http://deeplearning.net/software/theano/">Theano</a> model on Algorithmia! This guide is designed as an introduction to hosting a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
-### Train your model.
-After training your NLTK model, you'll want to save the pickled model so you can upload it to Algorithmia.
+### Train and pickle your model.
+After training your Theano model, you'll want to save the pickled model using either [pickle or cPickle](http://deeplearning.net/software/theano/tutorial/loading_and_saving.html) so you can upload it to Algorithmia.
 
 ### Create a Data Collection
-Now you'll want to create a data collection to host your pickled model.
+Here you'll want to create a data collection to host your pickled model.
 
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
@@ -40,7 +42,7 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/pickled_model.pkl
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/theano_update_collections.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 Creating your algorithm is easy!
@@ -48,64 +50,71 @@ Creating your algorithm is easy!
 - To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
 
-**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For machine learning models you will want to check 'Standard Execution Environment'.
+**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_python3.png" alt="Create your algorithm" class="screenshot img-sm">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/model_hosting/theano_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 ## Load your Model
-Here is where you load your pickled model that is to be called by the apply() function.
+Now you'll want to load and run your model which will be called by the apply() function.
 Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Here is some code that has been adapted from the NLTK online books tutorial <a href="http://www.nltk.org/book/ch06.html">Learning to Classify Text</a>
+Here is an example for loading your model based on the <a href="http://deeplearning.net/tutorial/logreg.html">Classifying MNIST digits</a> using a <a href="http://deeplearning.net/tutorial/code/logistic_sgd.py">Logistic Regression model</a>.
 
 {% highlight python %}
-"""
-NLTK algorithm to label names female or male based on last letter of names
-
-Input: String
-Note when testing in console do not add quotations to input since
-it counts the quotations as part of the input.
-"""
-
 import Algorithmia
-import csv
 import pickle
+import theano
+import theano.tensor as T
 
 client = Algorithmia.client()
 
 def load_model():
-    # Get file by name
+    """Load model from user collections"""
+    file_uri = 'data://user_name/theano_demo/theano_model.pkl'
+    pickled_model = client.file(file_uri).getFile().name
     # Open file and load model
-    file_path = 'data://stephanie/demos/gender_model.pkl'
-    model_path = client.file(file_path).getFile().name
-    # Open file and load model
-    with open(model_path, 'rb') as f:
+    with open(pickled_model, 'rb') as f:
         model = pickle.load(f)
         return model
 
-# Load model outside of apply function
-# This gets loaded once when called outside the apply function
+# Function to load model gets called one time
 classifier = load_model()
 
-def gender_features(word):
-    # Last letter as feature
-    print("word", word[-1])
-    return {'last_letter': word[-1]}
+def predict(input):
+    """
+    An example of how to load a trained model and use it
+    to predict labels.
+
+    Adopted from http://deeplearning.net/tutorial/logreg.html
+    """
+    # compile a predictor function
+    predict_model = theano.function(
+        inputs=[classifier.input],
+        outputs=classifier.y_pred)
+
+    predicted_values = predict_model(input[:10])
+    print("Predicted values for the first 10 examples in test set:")
+    print(predicted_values)
+    return predicted_values
+
 
 def apply(input):
-    name = input
-    model = classifier.classify(gender_features(name))
-    output = {'gender': model}
-    print(output)
-    return output
+    """
+    Input is an image file
 
+    Input examples:
+    Data Sources via https://algorithmia.com/data using the Data API
+    or as an http request using urllib
+    """
+    output = predict(input)
+    return output
 {% endhighlight %}
 
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
@@ -132,10 +141,8 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
+If you want to have a better idea of how a finished theano algorithm looks like, check out: <a href=" https://algorithmia.com/algorithms/deeplearning/ArtsyNetworks">ArtsyNetworks</a>
 
 For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
-## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href=" https://algorithmia.com/algorithms/stephanie/test">NLTK-demo</a>
-
-That's it for hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!
+That's it for hosting your <a href="http://deeplearning.net/software/theano/">theano</a> model on Algorithmia!

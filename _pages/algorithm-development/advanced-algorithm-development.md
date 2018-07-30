@@ -10,20 +10,6 @@ image:
   teaser: /icons/algo.svg
 ---
 
-<style>
-.crop {
-    height: 160px;
-    overflow: hidden;
-}
-.crop img {
-    height: 100%;
-    width: auto;
-}
-.blog-card {
-    min-height: 296px;
-    margin-bottom: 20px;
-}
-</style>
 
 Here you'll find blog posts that highlight advanced algorithm development including best practices for algorithm design, a deep dive into parallelized video processing, and object detection in Tensorflow with Open Images.
 <div class="row">
