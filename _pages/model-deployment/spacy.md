@@ -21,7 +21,7 @@ Here is a working example, pay special attention to the dependencies file to dow
 
 <a href="https://algorithmia.com/algorithms/demo/spacydemo">Spacy Demo</a>
 
-In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/model-deployment/keras/">Keras</a>, <a href="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/model-deployment/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/model-deployment/theano/">Theano</a>, or <a href="{{ site.baseurl }}/model-deployment/nltk/">NLTK</a>, and <a href="{{ site.baseurl }}/model-deployment/cntk/">CNTK</a>.
+In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/model-deployment/keras/">Keras</a>, <a href="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/model-deployment/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/model-deployment/theano/">Theano</a>, and <a href="{{ site.baseurl }}/model-deployment/nltk/">NLTK</a>.
 
 If you run into any trouble, please contact us at <a href="mailto:support@algorithmia.com">support@algorithmia.com</a>.
 
