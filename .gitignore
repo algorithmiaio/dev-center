@@ -11,3 +11,4 @@ _asset_bundler_cache
 .bundle/
 .jekyll-metadata
 .idea/
+CLIPBOARD.txt
