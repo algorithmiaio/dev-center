@@ -9,6 +9,7 @@ recipe_tags: [integrations, utilities, text-analysis]
 show_related: true
 image:
     teaser: /language_logos/slack.svg
+author: jon_peck
 repository: https://gist.github.com/gagejustins/ecfb471f297c1a01341139dca50d89f3
 blog: https://blog.algorithmia.com/how-to-integrate-machine-learning-into-your-slack-channels/
 thumbnail: /developers/images/language_logos/slack.svg
