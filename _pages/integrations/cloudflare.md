@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Cloudflare Workers"
-excerpt-short: "Call algorithms from the edge with Cloudflare Workers."
+excerpt-short: "Call algorithms from the edge with Cloudflare Workers"
 categories: [integrations]
 tags: [integrations]
 show_related: true

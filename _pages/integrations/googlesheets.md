@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Google Sheets"
-excerpt-short: "Machine learning right from your spreadsheets, without code."
+excerpt-short: "Machine learning right from your spreadsheets, without code"
 categories: [integrations]
 tags: [integrations]
 show_related: true

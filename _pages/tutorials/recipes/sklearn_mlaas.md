@@ -6,7 +6,7 @@ recipe_tags: [machine-learning, timeseries]
 tags: [machine-learning, timeseries]
 show_related: false
 author: nick_rose
-excerpt: "Machine Learning as a Service (MLaaS) with Sklearn and Algorithmia."
+excerpt: "Machine Learning as a Service (MLaaS) with Sklearn and Algorithmia"
 
 repository: https://www.kaggle.com/nsrose7224/random-forest-regressor-accuracy-0-91
 blog: https://blog.algorithmia.com/machine-learning-as-a-service-mlaas-with-sklearn-and-algorithmia/

@@ -7,7 +7,7 @@ recipe_tags: [machine-learning, timeseries]
 tags: [machine-learning, timeseries]
 show_related: false
 author: steph_kim
-excerpt: "Build a pipeline that takes structured text data and show the text's sentiment and sentiment forecast in a time series graph."
+excerpt: "Build a pipeline that takes structured text data and show the text's sentiment and sentiment forecast in a time series graph"
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/sentiment_timeseries_forecast/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/sentiment_timeseries_forecast/

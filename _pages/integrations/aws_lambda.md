@@ -2,8 +2,8 @@
 layout: article
 title:  "AWS Lambda"
 permalink: clients/lambda/
-excerpt: "Run Algorithmia code in response to events with AWS Lambda."
-excerpt-short: "Run Algorithmia code in response to events with AWS Lambda."
+excerpt: "Run Algorithmia code in response to events with AWS Lambda"
+excerpt-short: "Run Algorithmia code in response to events with AWS Lambda"
 categories: [clients, integrations]
 tags: [clients, integrations]
 show_related: true

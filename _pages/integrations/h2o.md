@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "H2O.ai"
-excerpt-short: "Run H2O models in production with Algorithmia."
+excerpt-short: "Run H2O models in production with Algorithmia"
 categories: [integrations]
 tags: [integrations]
 show_related: true
