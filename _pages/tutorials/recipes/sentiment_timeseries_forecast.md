@@ -3,8 +3,8 @@ autogen: true
 layout: article
 title:  "Sentiment Timeseries Forecast Pipeline"
 categories: recipes
-recipe_tags: [machine-learning]
-tags: [machine-learning]
+recipe_tags: [machine-learning, timeseries]
+tags: [machine-learning, timeseries]
 show_related: false
 author: steph_kim
 excerpt: "Build a pipeline that takes structured text data and show the text's sentiment and sentiment forecast in a time series graph."
