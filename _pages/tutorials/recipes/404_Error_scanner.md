@@ -3,8 +3,8 @@ autogen: true
 layout: article
 title:  "How to Find Broken Links and Email Yourself a 404 Not Found Report"
 categories: recipes
-recipe_tags: [utilities]
-tags: [utilities]
+recipe_tags: [utilities, text-analysis]
+tags: [utilities, text-analysis]
 show_related: false
 excerpt: "Use the 404 Scanner Microservice to Generate a Report of Broken Links"
 
