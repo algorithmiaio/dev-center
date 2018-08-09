@@ -17,11 +17,11 @@ Whether you're looking to supercharge your application with readily-usable Machi
  
 Algorithmia's AI Layer and Marketplace make it easy to get Machine Learning up and running in your app. Our Webinar will show you how.
 
-<a href="https://info.algorithmia.com/enterprise-webinar-using-algorithmia-to-power-ml-in-your-applications" class="btn btn-default btn-primary"><i class="fa fa-video-camera" aria-hidden="true"></i> Register Now</a>
+<a href="https://info.algorithmia.com/enterprise-webinar-using-algorithmia-to-power-ml-in-your-applications" class="btn btn-default btn-primary">Register Now</a>
 
 
 ### Deploying Machine Learning The Right Way With The AI Layer
  
 Most Machine Learning doesn't make it past Powerpoint. We'll show you how our AI Layer can push your models into production and free up your team to focus on what matters.
 
-<a href="https://info.algorithmia.com/enterprise-webinar-deploying-machine-learning-the-right-way" class="btn btn-default btn-primary"><i class="fa fa-video-camera" aria-hidden="true"></i> Register Now</a>
+<a href="https://info.algorithmia.com/enterprise-webinar-deploying-machine-learning-the-right-way" class="btn btn-default btn-primary">Register Now</a>
