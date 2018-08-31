@@ -52,6 +52,21 @@ You can also use one of the clients to make your call. See below for examples or
 <div ng-init="lang='Python'" class="code-toolbar ph-16 pv-8">
   <div class="btn-group dropdown">
     <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
+      <div class="lang-logo white-logo mr-4" ng-class="{
+        'python': lang === 'Python',
+        'java': lang === 'Java',
+        'rlang': lang === 'R',
+        'javascript': lang === 'JavaScript',
+        'node': lang === 'Node',
+        'ruby': lang === 'Ruby',
+        'rust': lang === 'Rust',
+        'scala': lang === 'Scala',
+        'swift': lang === 'Swift',
+        'go': lang === 'Go',
+        'c-sharp': lang === '.Net/C#',
+        'perl': lang === 'Perl',
+        'php': lang === 'PHP',
+      }"></div>
       <span ng-bind="lang"></span><span class="caret"></span>
     </button>
     <ul class="dropdown-menu gs-languages pt-0" role="menu">
