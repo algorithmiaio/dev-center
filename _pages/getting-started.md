@@ -49,32 +49,32 @@ You can also use one of the clients to make your call. See below for examples or
 
 {% raw %}
 <br/>
-<div ng-init="lang='python'">
+<div ng-init="lang='Python'" class="code-toolbar">
   <div class="btn-group dropdown">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle gs-dropdown" data-toggle="dropdown">
       <span ng-bind="lang"></span><span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-      <li><a ng-click="lang='python'" ng-class="{active: lang==='python'}">Python</a></li>
-      <li><a ng-click="lang='java'" ng-class="{active: lang==='java'}">Java</a></li>
-      <li><a ng-click="lang='rlang'" ng-class="{active: lang==='rlang'}">R</a></li>
-      <li><a ng-click="lang='javascript'" ng-class="{active: lang==='javascript'}">JavaScript</a></li>
-      <li><a ng-click="lang='node'" ng-class="{active: lang==='node'}">Node</a></li>
-      <li><a ng-click="lang='ruby'" ng-class="{active: lang==='ruby'}">Ruby</a></li>
-      <li><a ng-click="lang='rust'" ng-class="{active: lang==='rust'}">Rust</a></li>
-      <li><a ng-click="lang='scala'" ng-class="{active: lang==='scala'}">Scala</a></li>
-      <li><a ng-click="lang='swift'" ng-class="{active: lang==='swift'}">Swift</a></li>
-      <li><a ng-click="lang='go'" ng-class="{active: lang==='go'}">Go</a></li>
-      <li><a ng-click="lang='csharp'" ng-class="{active: lang==='csharp'}">.Net/C#</a></li>
-      <li><a ng-click="lang='perl'" ng-class="{active: lang==='perl'}">Perl</a></li>
-      <li><a ng-click="lang='php'" ng-class="{active: lang==='php'}">PHP</a></li>
+      <li><a ng-click="lang='Python'">Python</a></li>
+      <li><a ng-click="lang='Java'">Java</a></li>
+      <li><a ng-click="lang='R'">R</a></li>
+      <li><a ng-click="lang='JavaScript'">JavaScript</a></li>
+      <li><a ng-click="lang='Node'">Node</a></li>
+      <li><a ng-click="lang='Ruby'">Ruby</a></li>
+      <li><a ng-click="lang='Rust'">Rust</a></li>
+      <li><a ng-click="lang='Scala'">Scala</a></li>
+      <li><a ng-click="lang='Swift'">Swift</a></li>
+      <li><a ng-click="lang='Go'">Go</a></li>
+      <li><a ng-click="lang='.Net/C#'">.Net/C#</a></li>
+      <li><a ng-click="lang='Perl'">Perl</a></li>
+      <li><a ng-click="lang='PHP'">PHP</a></li>
     </ul>
   </div>
 </div>
 
 <!-- PYTHON -->
-<div class="tab-pane code__pane" id="python" ng-show="lang==='python'" ng-cloak>
-<pre class="code__pre"><code hlcode="python" class="demo-code-sample">import Algorithmia
+<div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='Python'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="python" class="demo-code-sample">import Algorithmia
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client('YOUR_API_KEY')
@@ -84,8 +84,8 @@ print algo.pipe(input)
 </div>
 
 <!-- JAVA -->
-<div class="tab-pane code__pane" id="java" ng-show="lang==='java'" ng-cloak>
-<pre class="code__pre"><code hlcode="java" class="demo-code-sample">import com.algorithmia.*;
+<div class="tab-pane code__pane gs-pane" id="java" ng-show="lang==='Java'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="java" class="demo-code-sample">import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
 String input = "YOUR_USERNAME"
@@ -97,8 +97,8 @@ System.out.println(result.asJsonString());
 </div>
 
 <!-- R LANG -->
-<div class="tab-pane code__pane" id="rlang" ng-show="lang==='rlang'" ng-cloak>
-<pre class="code__pre"><code hlcode="R" class="demo-code-sample">library(algorithmia)
+<div class="tab-pane code__pane gs-pane" id="rlang" ng-show="lang==='R'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="R" class="demo-code-sample">library(algorithmia)
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
@@ -109,8 +109,8 @@ print(result)
 </div>
 
 <!-- JAVASCRIPT -->
-<div class="tab-pane code__pane" id="javascript" ng-show="lang==='javascript'" ng-cloak>
-<pre class="code__pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
+<div class="tab-pane code__pane gs-pane" id="javascript" ng-show="lang==='JavaScript'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
            .algo("demo/Hello/")
            .pipe(input)
@@ -121,8 +121,8 @@ Algorithmia.client("YOUR_API_KEY")
 </div>
 
 <!-- NODE -->
-<div class="tab-pane code__pane" id="node" ng-show="lang==='node'" ng-cloak>
-<pre class="code__pre"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
+<div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='Node'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
            .algo("algo://demo/Hello/")
            .pipe(input)
@@ -133,8 +133,8 @@ Algorithmia.client("YOUR_API_KEY")
 </div>
 
 <!-- RUBY -->
-<div class="tab-pane code__pane" id="ruby" ng-show="lang==='ruby'" ng-cloak>
-<pre class="code__pre"><code hlcode="ruby" class="demo-code-sample">require 'algorithmia'
+<div class="tab-pane code__pane gs-pane" id="ruby" ng-show="lang==='Ruby'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="ruby" class="demo-code-sample">require 'algorithmia'
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
@@ -145,8 +145,8 @@ puts response
 </div>
 
 <!-- RUST -->
-<div class="tab-pane code__pane" id="rust" ng-show="lang==='rust'" ng-cloak>
-<pre class="code__pre"><code hlcode="rust" class="demo-code-sample">use algorithmia::*;
+<div class="tab-pane code__pane gs-pane" id="rust" ng-show="lang==='Rust'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="rust" class="demo-code-sample">use algorithmia::*;
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
@@ -157,8 +157,8 @@ println!(response)
 </div>
 
 <!-- SCALA -->
-<div class="tab-pane code__pane" id="scala" ng-show="lang==='scala'" ng-cloak>
-<pre class="code__pre"><code hlcode="scala" class="demo-code-sample">import com.algorithmia._
+<div class="tab-pane code__pane gs-pane" id="scala" ng-show="lang==='Scala'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="scala" class="demo-code-sample">import com.algorithmia._
 import com.algorithmia.algo._
 
 val input = "YOUR_USERNAME"
@@ -170,8 +170,8 @@ System.out.println(result.asJsonString)
 </div>
 
 <!-- SWIFT -->
-<div class="tab-pane code__pane" id="swift" ng-show="lang==='swift'" ng-cloak>
-<pre class="code__pre"><code hlcode="swift" class="demo-code-sample">import Algorithmia
+<div class="tab-pane code__pane gs-pane" id="swift" ng-show="lang==='Swift'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="swift" class="demo-code-sample">import Algorithmia
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
@@ -182,8 +182,8 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
 </div>
 
 <!-- CSHARP -->
-<div class="tab-pane code__pane" id="csharp" ng-show="lang==='csharp'" ng-cloak>
-<pre class="code__pre"><code hlcode="csharp" class="demo-code-sample">using Algorithmia;
+<div class="tab-pane code__pane gs-pane" id="csharp" ng-show="lang==='.Net/C#'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="csharp" class="demo-code-sample">using Algorithmia;
 
 var input = "YOUR_USERNAME";
 var client = new Client("YOUR_API_KEY");
@@ -194,8 +194,8 @@ System.Console.WriteLine(response.result.ToString());
 </div>
 
 <!-- GO -->
-<div class="tab-pane code__pane" id="go" ng-show="lang==='go'" ng-cloak>
-<pre class="code__pre"><code hlcode="go" class="demo-code-sample">import (
+<div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='Go'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="go" class="demo-code-sample">import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
@@ -210,8 +210,8 @@ fmt.Println(response.Result)
 </div>
 
 <!-- PERL -->
-<div class="tab-pane code__pane" id="perl" ng-show="lang==='perl'" ng-cloak>
-<pre class="code__pre"><code hlcode="perl" class="demo-code-sample">use LWP::UserAgent;
+<div class="tab-pane code__pane gs-pane" id="perl" ng-show="lang==='Perl'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="perl" class="demo-code-sample">use LWP::UserAgent;
 
 my $input = 'YOUR_USERNAME';
 my $api_key = 'YOUR_API_KEY';
@@ -230,8 +230,8 @@ if ($resp->is_success) {
 </div>
 
 <!-- PHP -->
-<div class="tab-pane code__pane" id="php" ng-show="lang==='php'" ng-cloak>
-<pre class="code__pre"><code hlcode="php" class="demo-code-sample">$input = 'YOUR_USERNAME';
+<div class="tab-pane code__pane gs-pane" id="php" ng-show="lang==='PHP'" ng-cloak>
+<pre class="getting-started-code"><code hlcode="php" class="demo-code-sample">$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
 $ch = curl_init();
