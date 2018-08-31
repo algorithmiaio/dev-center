@@ -49,7 +49,19 @@ You can also use one of the clients to make your call. See below for examples or
 
 {% raw %}
 <br/>
-<div class="code__nav demo-code-nav-small" ng-init="lang='python'">
+<div class="btn-group dropdown">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="">Action</a></li>
+    <li><a href="">Another action</a></li>
+    <li><a href="">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="">Separated link</a></li>
+  </ul>
+</div>
+<!-- <div class="code__nav demo-code-nav-small" ng-init="lang='python'">
   <span class="code__lang active" ng-click="lang='python'" ng-class="{active: lang==='python'}">Python</span>
   <span class="code__lang" ng-click="lang='java'" ng-class="{active: lang==='java'}">Java</span>
   <span class="code__lang" ng-click="lang='rlang'" ng-class="{active: lang==='rlang'}">R</span>
@@ -63,7 +75,7 @@ You can also use one of the clients to make your call. See below for examples or
   <span class="code__lang" ng-click="lang='csharp'" ng-class="{active: lang==='csharp'}">.Net/C#</span>
   <span class="code__lang" ng-click="lang='perl'" ng-class="{active: lang==='perl'}">Perl</span>
   <span class="code__lang" ng-click="lang='php'" ng-class="{active: lang==='php'}">PHP</span>
-</div>
+</div> -->
 
 <!-- PYTHON -->
 <div class="tab-pane code__pane" id="python" ng-show="lang==='python'" ng-cloak>
