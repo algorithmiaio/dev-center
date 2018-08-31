@@ -49,33 +49,28 @@ You can also use one of the clients to make your call. See below for examples or
 
 {% raw %}
 <br/>
-<div class="btn-group dropdown">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="">Action</a></li>
-    <li><a href="">Another action</a></li>
-    <li><a href="">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a href="">Separated link</a></li>
-  </ul>
+<div ng-init="lang='python'">
+  <div class="btn-group dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span ng-bind="lang"></span><span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a ng-click="lang='python'" ng-class="{active: lang==='python'}">Python</a></li>
+      <li><a ng-click="lang='java'" ng-class="{active: lang==='java'}">Java</a></li>
+      <li><a ng-click="lang='rlang'" ng-class="{active: lang==='rlang'}">R</a></li>
+      <li><a ng-click="lang='javascript'" ng-class="{active: lang==='javascript'}">JavaScript</a></li>
+      <li><a ng-click="lang='node'" ng-class="{active: lang==='node'}">Node</a></li>
+      <li><a ng-click="lang='ruby'" ng-class="{active: lang==='ruby'}">Ruby</a></li>
+      <li><a ng-click="lang='rust'" ng-class="{active: lang==='rust'}">Rust</a></li>
+      <li><a ng-click="lang='scala'" ng-class="{active: lang==='scala'}">Scala</a></li>
+      <li><a ng-click="lang='swift'" ng-class="{active: lang==='swift'}">Swift</a></li>
+      <li><a ng-click="lang='go'" ng-class="{active: lang==='go'}">Go</a></li>
+      <li><a ng-click="lang='csharp'" ng-class="{active: lang==='csharp'}">.Net/C#</a></li>
+      <li><a ng-click="lang='perl'" ng-class="{active: lang==='perl'}">Perl</a></li>
+      <li><a ng-click="lang='php'" ng-class="{active: lang==='php'}">PHP</a></li>
+    </ul>
+  </div>
 </div>
-<!-- <div class="code__nav demo-code-nav-small" ng-init="lang='python'">
-  <span class="code__lang active" ng-click="lang='python'" ng-class="{active: lang==='python'}">Python</span>
-  <span class="code__lang" ng-click="lang='java'" ng-class="{active: lang==='java'}">Java</span>
-  <span class="code__lang" ng-click="lang='rlang'" ng-class="{active: lang==='rlang'}">R</span>
-  <span class="code__lang" ng-click="lang='javascript'" ng-class="{active: lang==='javascript'}">JavaScript</span>
-  <span class="code__lang" ng-click="lang='node'" ng-class="{active: lang==='node'}">Node</span>
-  <span class="code__lang" ng-click="lang='ruby'" ng-class="{active: lang==='ruby'}">Ruby</span>
-  <span class="code__lang" ng-click="lang='rust'" ng-class="{active: lang==='rust'}">Rust</span>
-  <span class="code__lang" ng-click="lang='scala'" ng-class="{active: lang==='scala'}">Scala</span>
-  <span class="code__lang" ng-click="lang='swift'" ng-class="{active: lang==='swift'}">Swift</span>
-  <span class="code__lang" ng-click="lang='go'" ng-class="{active: lang==='go'}">Go</span>
-  <span class="code__lang" ng-click="lang='csharp'" ng-class="{active: lang==='csharp'}">.Net/C#</span>
-  <span class="code__lang" ng-click="lang='perl'" ng-class="{active: lang==='perl'}">Perl</span>
-  <span class="code__lang" ng-click="lang='php'" ng-class="{active: lang==='php'}">PHP</span>
-</div> -->
 
 <!-- PYTHON -->
 <div class="tab-pane code__pane" id="python" ng-show="lang==='python'" ng-cloak>
