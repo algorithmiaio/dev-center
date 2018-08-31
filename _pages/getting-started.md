@@ -49,123 +49,126 @@ You can also use one of the clients to make your call. See below for examples or
 
 {% raw %}
 <br/>
-<div ng-init="lang='Python'" class="code-toolbar ph-16 pv-8">
-  <div class="btn-group dropdown">
-    <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
-      <div class="lang-logo white-logo mr-4" ng-class="{
-        'python': lang === 'Python',
-        'java': lang === 'Java',
-        'rlang': lang === 'R',
-        'javascript': lang === 'JavaScript',
-        'node': lang === 'Node',
-        'ruby': lang === 'Ruby',
-        'rust': lang === 'Rust',
-        'scala': lang === 'Scala',
-        'swift': lang === 'Swift',
-        'go': lang === 'Go',
-        'c-sharp': lang === '.Net/C#',
-        'perl': lang === 'Perl',
-        'php': lang === 'PHP',
-      }"></div>
-      <span ng-bind="lang"></span><span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu gs-languages pt-0" role="menu">
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Python'">
-          <div class="lang-logo color-logo mr-4 python"></div>
-          <span>Python</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Java'">
-          <div class="lang-logo color-logo mr-4 java"></div>
-          <span>Java</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='R'">
-          <div class="lang-logo color-logo mr-4 rlang"></div>
-          <span>R</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='JavaScript'">
-          <div class="lang-logo color-logo mr-4 javascript"></div>
-          <span>JavaScript</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Node'">
-          <div class="lang-logo color-logo mr-4 node"></div>
-          <span>Node</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Ruby'">
-          <div class="lang-logo color-logo mr-4 ruby"></div>
-          <span>Ruby</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Rust'">
-          <div class="lang-logo color-logo mr-4 rust"></div>
-          <span>Rust</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Scala'">
-          <div class="lang-logo color-logo mr-4 scala"></div>
-          <span>Scala</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Swift'">
-          <div class="lang-logo color-logo mr-4 swift"></div>
-          <span>Swift</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Go'">
-          <div class="lang-logo color-logo mr-4 go"></div>
-          <span>Go</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='.Net/C#'">
-          <div class="lang-logo color-logo mr-4 c-sharp"></div>
-          <span>.Net/C#</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='Perl'">
-          <div class="lang-logo color-logo mr-4 perl"></div>
-          <span>Perl</span>
-        </a>
-      </li>
-      <li class="mb-0">
-        <a class="caption" ng-click="lang='PHP'">
-          <div class="lang-logo color-logo mr-4 php"></div>
-          <span>PHP</span>
-        </a>
-      </li>
-    </ul>
+<div class="gs-code-container">
+  <div ng-init="lang='Python'" class="code-toolbar ph-16 pv-8">
+    <div class="btn-group dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
+        <div class="lang-logo white-logo mr-4" ng-class="{
+          'python': lang === 'Python',
+          'java': lang === 'Java',
+          'rlang': lang === 'R',
+          'javascript': lang === 'JavaScript',
+          'node': lang === 'Node',
+          'ruby': lang === 'Ruby',
+          'rust': lang === 'Rust',
+          'scala': lang === 'Scala',
+          'swift': lang === 'Swift',
+          'go': lang === 'Go',
+          'c-sharp': lang === '.Net/C#',
+          'perl': lang === 'Perl',
+          'php': lang === 'PHP',
+        }"></div>
+        <span ng-bind="lang" class="mr-4"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu gs-languages pt-0" role="menu">
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Python'">
+            <div class="lang-logo color-logo mr-4 python"></div>
+            <span>Python</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Java'">
+            <div class="lang-logo color-logo mr-4 java"></div>
+            <span>Java</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='R'">
+            <div class="lang-logo color-logo mr-4 rlang"></div>
+            <span>R</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='JavaScript'">
+            <div class="lang-logo color-logo mr-4 javascript"></div>
+            <span>JavaScript</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Node'">
+            <div class="lang-logo color-logo mr-4 node"></div>
+            <span>Node</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Ruby'">
+            <div class="lang-logo color-logo mr-4 ruby"></div>
+            <span>Ruby</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Rust'">
+            <div class="lang-logo color-logo mr-4 rust"></div>
+            <span>Rust</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Scala'">
+            <div class="lang-logo color-logo mr-4 scala"></div>
+            <span>Scala</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Swift'">
+            <div class="lang-logo color-logo mr-4 swift"></div>
+            <span>Swift</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Go'">
+            <div class="lang-logo color-logo mr-4 go"></div>
+            <span>Go</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='.Net/C#'">
+            <div class="lang-logo color-logo mr-4 c-sharp"></div>
+            <span>.Net/C#</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='Perl'">
+            <div class="lang-logo color-logo mr-4 perl"></div>
+            <span>Perl</span>
+          </a>
+        </li>
+        <li class="mb-0">
+          <a class="caption" ng-click="lang='PHP'">
+            <div class="lang-logo color-logo mr-4 php"></div>
+            <span>PHP</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-flat text-light-primary copy-btn"><i class="fa fa-copy"></i></button>
   </div>
-</div>
 
-<!-- PYTHON -->
-<div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='Python'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="python" class="demo-code-sample">import Algorithmia
+  <!-- PYTHON -->
+  <div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='Python'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="python" class="demo-code-sample">import Algorithmia
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
 print algo.pipe(input)
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- JAVA -->
-<div class="tab-pane code__pane gs-pane" id="java" ng-show="lang==='Java'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="java" class="demo-code-sample">import com.algorithmia.*;
+  <!-- JAVA -->
+  <div class="tab-pane code__pane gs-pane" id="java" ng-show="lang==='Java'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="java" class="demo-code-sample">import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
 String input = "YOUR_USERNAME"
@@ -173,72 +176,72 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 Algorithm algo = client.algo("demo/Hello/");
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- R LANG -->
-<div class="tab-pane code__pane gs-pane" id="rlang" ng-show="lang==='R'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="R" class="demo-code-sample">library(algorithmia)
+  <!-- R LANG -->
+  <div class="tab-pane code__pane gs-pane" id="rlang" ng-show="lang==='R'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="R" class="demo-code-sample">library(algorithmia)
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
 algo <- client$algo("demo/Hello/")
 result <- algo$pipe(input)$result
 print(result)
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- JAVASCRIPT -->
-<div class="tab-pane code__pane gs-pane" id="javascript" ng-show="lang==='JavaScript'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
+  <!-- JAVASCRIPT -->
+  <div class="tab-pane code__pane gs-pane" id="javascript" ng-show="lang==='JavaScript'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
-           .algo("demo/Hello/")
-           .pipe(input)
-           .then(function(output) {
-             console.log(output);
-           });
-</code></pre>
-</div>
+          .algo("demo/Hello/")
+          .pipe(input)
+          .then(function(output) {
+            console.log(output);
+          });
+  </code></pre>
+  </div>
 
-<!-- NODE -->
-<div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='Node'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
+  <!-- NODE -->
+  <div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='Node'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="js" class="demo-code-sample">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
-           .algo("algo://demo/Hello/")
-           .pipe(input)
-           .then(function(response) {
-             console.log(response.get());
-           });
-</code></pre>
-</div>
+          .algo("algo://demo/Hello/")
+          .pipe(input)
+          .then(function(response) {
+            console.log(response.get());
+          });
+  </code></pre>
+  </div>
 
-<!-- RUBY -->
-<div class="tab-pane code__pane gs-pane" id="ruby" ng-show="lang==='Ruby'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="ruby" class="demo-code-sample">require 'algorithmia'
+  <!-- RUBY -->
+  <div class="tab-pane code__pane gs-pane" id="ruby" ng-show="lang==='Ruby'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="ruby" class="demo-code-sample">require 'algorithmia'
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
 algo = client.algo("demo/Hello/")
 response = algo.pipe(input).result
 puts response
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- RUST -->
-<div class="tab-pane code__pane gs-pane" id="rust" ng-show="lang==='Rust'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="rust" class="demo-code-sample">use algorithmia::*;
+  <!-- RUST -->
+  <div class="tab-pane code__pane gs-pane" id="rust" ng-show="lang==='Rust'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="rust" class="demo-code-sample">use algorithmia::*;
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
 let algo = client.algo("demo/Hello/");
 let response = algo.pipe(input);
 println!(response)
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- SCALA -->
-<div class="tab-pane code__pane gs-pane" id="scala" ng-show="lang==='Scala'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="scala" class="demo-code-sample">import com.algorithmia._
+  <!-- SCALA -->
+  <div class="tab-pane code__pane gs-pane" id="scala" ng-show="lang==='Scala'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="scala" class="demo-code-sample">import com.algorithmia._
 import com.algorithmia.algo._
 
 val input = "YOUR_USERNAME"
@@ -246,36 +249,36 @@ val client = Algorithmia.client("YOUR_API_KEY")
 val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString)
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- SWIFT -->
-<div class="tab-pane code__pane gs-pane" id="swift" ng-show="lang==='Swift'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="swift" class="demo-code-sample">import Algorithmia
+  <!-- SWIFT -->
+  <div class="tab-pane code__pane gs-pane" id="swift" ng-show="lang==='Swift'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="swift" class="demo-code-sample">import Algorithmia
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
 let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   print(resp)
 }
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- CSHARP -->
-<div class="tab-pane code__pane gs-pane" id="csharp" ng-show="lang==='.Net/C#'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="csharp" class="demo-code-sample">using Algorithmia;
+  <!-- CSHARP -->
+  <div class="tab-pane code__pane gs-pane" id="csharp" ng-show="lang==='.Net/C#'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="csharp" class="demo-code-sample">using Algorithmia;
 
 var input = "YOUR_USERNAME";
 var client = new Client("YOUR_API_KEY");
 var algo = client.algo(client, "algo://demo/hello");
 var response = algo.pipe&lt;string&gt;(input);
 System.Console.WriteLine(response.result.ToString());
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- GO -->
-<div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='Go'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="go" class="demo-code-sample">import (
+  <!-- GO -->
+  <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='Go'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="go" class="demo-code-sample">import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
@@ -286,12 +289,12 @@ algo, _ := client.Algo("algo://demo/Hello/")
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- PERL -->
-<div class="tab-pane code__pane gs-pane" id="perl" ng-show="lang==='Perl'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="perl" class="demo-code-sample">use LWP::UserAgent;
+  <!-- PERL -->
+  <div class="tab-pane code__pane gs-pane" id="perl" ng-show="lang==='Perl'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="perl" class="demo-code-sample">use LWP::UserAgent;
 
 my $input = 'YOUR_USERNAME';
 my $api_key = 'YOUR_API_KEY';
@@ -306,12 +309,12 @@ if ($resp->is_success) {
 } else {
     print 'POST error: ', $resp->code, ': ', $resp->message;
 }
-</code></pre>
-</div>
+  </code></pre>
+  </div>
 
-<!-- PHP -->
-<div class="tab-pane code__pane gs-pane" id="php" ng-show="lang==='PHP'" ng-cloak>
-<pre class="getting-started-code"><code hlcode="php" class="demo-code-sample">$input = 'YOUR_USERNAME';
+  <!-- PHP -->
+  <div class="tab-pane code__pane gs-pane" id="php" ng-show="lang==='PHP'" ng-cloak>
+  <pre class="getting-started-code"><code hlcode="php" class="demo-code-sample">$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
 $ch = curl_init();
@@ -335,9 +338,9 @@ $ch = curl_init();
   } else {
     print_r($response->result);
   }
-</code></pre>
+  </code></pre>
+  </div>
 </div>
-
 {% endraw %}
 
 ## Understanding the response
