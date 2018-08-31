@@ -54,80 +54,80 @@ You can also use one of the clients to make your call. See below for examples or
     <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
       <span ng-bind="lang"></span><span class="caret"></span>
     </button>
-    <ul class="dropdown-menu gs-languages" role="menu">
-      <li>
+    <ul class="dropdown-menu gs-languages pt-0" role="menu">
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Python'">
           <div class="lang-logo color-logo mr-4 python"></div>
           <span>Python</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Java'">
           <div class="lang-logo color-logo mr-4 java"></div>
           <span>Java</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='R'">
           <div class="lang-logo color-logo mr-4 rlang"></div>
           <span>R</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='JavaScript'">
           <div class="lang-logo color-logo mr-4 javascript"></div>
           <span>JavaScript</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Node'">
           <div class="lang-logo color-logo mr-4 node"></div>
           <span>Node</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Ruby'">
           <div class="lang-logo color-logo mr-4 ruby"></div>
           <span>Ruby</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Rust'">
           <div class="lang-logo color-logo mr-4 rust"></div>
           <span>Rust</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Scala'">
           <div class="lang-logo color-logo mr-4 scala"></div>
           <span>Scala</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Swift'">
           <div class="lang-logo color-logo mr-4 swift"></div>
           <span>Swift</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Go'">
           <div class="lang-logo color-logo mr-4 go"></div>
           <span>Go</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='.Net/C#'">
           <div class="lang-logo color-logo mr-4 c-sharp"></div>
           <span>.Net/C#</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='Perl'">
           <div class="lang-logo color-logo mr-4 perl"></div>
           <span>Perl</span>
         </a>
       </li>
-      <li>
+      <li class="mb-0">
         <a class="caption" ng-click="lang='PHP'">
           <div class="lang-logo color-logo mr-4 php"></div>
           <span>PHP</span>
