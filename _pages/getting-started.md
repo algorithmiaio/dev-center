@@ -227,6 +227,14 @@ Algorithmia.client("YOUR_API_KEY")
             console.log(output);
           });
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'JavaScript'}">var input = "YOUR_USERNAME";
+Algorithmia.client("YOUR_API_KEY")
+          .algo("demo/Hello/")
+          .pipe(input)
+          .then(function(output) {
+            console.log(output);
+          });
+  </textarea>
   </div>
 
   <!-- NODE -->
@@ -239,6 +247,14 @@ Algorithmia.client("YOUR_API_KEY")
             console.log(response.get());
           });
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Node'}">var input = "YOUR_USERNAME";
+Algorithmia.client("YOUR_API_KEY")
+          .algo("algo://demo/Hello/")
+          .pipe(input)
+          .then(function(response) {
+            console.log(response.get());
+          });
+  </textarea>
   </div>
 
   <!-- RUBY -->
@@ -251,6 +267,14 @@ algo = client.algo("demo/Hello/")
 response = algo.pipe(input).result
 puts response
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Ruby'}">require 'algorithmia'
+
+input = "YOUR_USERNAME"
+client = Algorithmia.client("YOUR_API_KEY")
+algo = client.algo("demo/Hello/")
+response = algo.pipe(input).result
+puts response
+  </textarea>
   </div>
 
   <!-- RUST -->
@@ -263,6 +287,14 @@ let algo = client.algo("demo/Hello/");
 let response = algo.pipe(input);
 println!(response)
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Rust'}">use algorithmia::*;
+
+let input = "YOUR_USERNAME";
+let client = Algorithmia::client("YOUR_API_KEY");
+let algo = client.algo("demo/Hello/");
+let response = algo.pipe(input);
+println!(response)
+  </textarea>
   </div>
 
   <!-- SCALA -->
@@ -276,6 +308,15 @@ val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString)
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Scala'}">import com.algorithmia._
+import com.algorithmia.algo._
+
+val input = "YOUR_USERNAME"
+val client = Algorithmia.client("YOUR_API_KEY")
+val algo = client.algo("algo://demo/Hello/")
+val result = algo.pipeJson(input)
+System.out.println(result.asJsonString)
+  </textarea>
   </div>
 
   <!-- SWIFT -->
@@ -288,6 +329,14 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   print(resp)
 }
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Swift'}">import Algorithmia
+
+let input = "YOUR_USERNAME";
+let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
+let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
+  print(resp)
+}
+  </textarea>
   </div>
 
   <!-- CSHARP -->
@@ -300,6 +349,14 @@ var algo = client.algo(client, "algo://demo/hello");
 var response = algo.pipe&lt;string&gt;(input);
 System.Console.WriteLine(response.result.ToString());
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === '.Net/C#'}">using Algorithmia;
+
+var input = "YOUR_USERNAME";
+var client = new Client("YOUR_API_KEY");
+var algo = client.algo(client, "algo://demo/hello");
+var response = algo.pipe&lt;string&gt;(input);
+System.Console.WriteLine(response.result.ToString());
+  </textarea>
   </div>
 
   <!-- GO -->
@@ -316,6 +373,18 @@ resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Go'}">import (
+  algorithmia "github.com/algorithmiaio/algorithmia-go"
+)
+
+input := "YOUR_USERNAME"
+
+var client = algorithmia.NewClient("YOUR_API_KEY", "")
+algo, _ := client.Algo("algo://demo/Hello/")
+resp, _ := algo.Pipe(input)
+response := resp.(*algorithmia.AlgoResponse)
+fmt.Println(response.Result)
+  </textarea>
   </div>
 
   <!-- PERL -->
@@ -336,6 +405,22 @@ if ($resp->is_success) {
     print 'POST error: ', $resp->code, ': ', $resp->message;
 }
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Perl'}">use LWP::UserAgent;
+
+my $input = 'YOUR_USERNAME';
+my $api_key = 'YOUR_API_KEY';
+my $req = HTTP::Request->new(POST => 'http://api.algorithmia.com/v1/algo/demo/hello');
+$req->header('content-type' => 'application/json');
+$req->header('Authorization' => 'Simple '.$api_key);
+$req->content($post_data);
+my $ua = LWP::UserAgent->new;
+my $resp = $ua->request($req);
+if ($resp->is_success) {
+    print $resp->decoded_content;
+} else {
+    print 'POST error: ', $resp->code, ': ', $resp->message;
+}
+  </textarea>
   </div>
 
   <!-- PHP -->
@@ -365,6 +450,31 @@ $ch = curl_init();
     print_r($response->result);
   }
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'PHP'}">$input = 'YOUR_USERNAME';
+$api_key = 'YOUR_API_KEY';
+$data_json = json_encode($input);
+$ch = curl_init();
+  curl_setopt_array($ch, array(
+    CURLOPT_URL => 'https://api.algorithmia.com/v1/algo/demo/hello',
+    CURLOPT_HTTPHEADER => array(
+      'Content-Type: application/json',
+      'Authorization: Simple ' . $api_key,
+      'Content-Length: ' . strlen($data_json)
+    ),
+    CURLOPT_POSTFIELDS => $data_json,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true
+  ));
+  $response_json = curl_exec($ch);
+  curl_close($ch);
+  $response = json_decode($response_json);
+  if($response->error) {
+    print('ERROR: ');
+    print_r($response->error);
+  } else {
+    print_r($response->result);
+  }
+  </textarea>
   </div>
 </div>
 {% endraw %}
