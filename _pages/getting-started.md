@@ -49,8 +49,8 @@ You can also use one of the clients to make your call. See below for examples or
 
 {% raw %}
 <br/>
-<div class="gs-code-container">
-  <div ng-init="lang='Python'" class="code-toolbar ph-16 pv-8">
+<div ng-controller="GettingStartedControl" class="gs-code-container">
+  <div class="code-toolbar ph-16 pv-8">
     <div class="btn-group dropdown">
       <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
         <div class="lang-logo white-logo mr-4" ng-class="{
@@ -152,7 +152,9 @@ You can also use one of the clients to make your call. See below for examples or
         </li>
       </ul>
     </div>
-    <button type="button" class="btn btn-flat text-light-primary copy-btn"><i class="fa fa-copy"></i></button>
+    <button id="copy-btn" type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode()">
+      <i class="fa fa-copy"></i>
+    </button>
   </div>
 
   <!-- PYTHON -->
@@ -164,6 +166,13 @@ client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
 print algo.pipe(input)
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Python'}">import Algorithmia
+
+input = "YOUR_USERNAME"
+client = Algorithmia.client('YOUR_API_KEY')
+algo = client.algo('demo/Hello/')
+print algo.pipe(input)
+  </textarea>
   </div>
 
   <!-- JAVA -->
@@ -177,6 +186,15 @@ Algorithm algo = client.algo("demo/Hello/");
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Java'}">import com.algorithmia.*;
+import com.algorithmia.algo.*;
+
+String input = "YOUR_USERNAME"
+AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
+Algorithm algo = client.algo("demo/Hello/");
+AlgoResponse result = algo.pipe(input);
+System.out.println(result.asJsonString());
+  </textarea>
   </div>
 
   <!-- R LANG -->
@@ -189,6 +207,14 @@ algo <- client$algo("demo/Hello/")
 result <- algo$pipe(input)$result
 print(result)
   </code></pre>
+  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'R'}">library(algorithmia)
+
+input <- "YOUR_USERNAME"
+client <- getAlgorithmiaClient("YOUR_API_KEY")
+algo <- client$algo("demo/Hello/")
+result <- algo$pipe(input)$result
+print(result)
+  </textarea>
   </div>
 
   <!-- JAVASCRIPT -->
