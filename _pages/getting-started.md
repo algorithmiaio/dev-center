@@ -160,9 +160,8 @@ You can also use one of the clients to make your call. See below for examples or
   <!-- PYTHON -->
   <div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='Python'" ng-cloak>
   <pre class="getting-started-code"><code hlcode="python" class="demo-code-sample">import Algorithmia
-
-input = "YOUR_USERNAME"
-client = Algorithmia.client('YOUR_API_KEY')
+input = "<a href="#" class="hover-info">YOUR_USERNAME<div class="hover-content card">CARD CONTENT HERE</div></a>"
+client = Algorithmia.client('<a href="#" class="hover-info">YOUR_API_KEY<div class="hover-content card">CARD CONTENT HERE</div></a>')
 algo = client.algo('demo/Hello/')
 print algo.pipe(input)
   </code></pre>
