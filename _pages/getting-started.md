@@ -38,9 +38,21 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
 
 Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
 
-{% highlight bash lineanchors %}
-curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
-{% endhighlight %}
+<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
+  <div class="code-toolbar ph-16 pv-8 text-right">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCurl()">
+      <i class="fa fa-copy"></i>
+    </button>
+  </div>
+
+  <!-- CURL -->
+  <div class="tab-pane code__pane gs-pane" ng-cloak>
+  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a href="#" class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a href="#" class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
+  </code></pre>
+  <textarea id="curl-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
+  </textarea>
+  </div>
+</div>
 
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
@@ -152,7 +164,7 @@ You can also use one of the clients to make your call. See below for examples or
         </li>
       </ul>
     </div>
-    <button id="copy-btn" type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode()">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode()">
       <i class="fa fa-copy"></i>
     </button>
   </div>
