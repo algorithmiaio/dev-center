@@ -45,8 +45,6 @@ If you want a complete guide on how to navigate an algorithm's description page 
 
 We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.com/algorithms/demo/Hello). This algorithm takes an input of a string (preferably your name!) and returns a greeting addressed to the input.
 
-Calling the algorithm is as simple as making a curl request. For example, to call the demo/Hello algorithm, simply run a cURL request in your terminal:
-
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8 text-right">
     <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('curl')">
