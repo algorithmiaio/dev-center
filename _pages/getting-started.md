@@ -22,10 +22,19 @@ To get started, find an algorithm you'd like to call. You can do this by using t
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 
 For a given user and algorithm name, API calls are made to the following URL:
+<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
+  <div class="code-toolbar ph-16 pv-8 text-right">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('api')">
+      <i class="fa fa-copy"></i>
+    </button>
+  </div>
 
-{% highlight bash %}
-POST https://api.algorithmia.com/v1/algo/:owner/:algoname
-{% endhighlight %}
+  <div class="tab-pane code__pane gs-pane" ng-cloak>
+  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">POST https://api.algorithmia.com/v1/algo/:owner/:algoname</code></pre>
+
+  <textarea id="api-copy-text" class="copy-text curl">POST https://api.algorithmia.com/v1/algo/:owner/:algoname</textarea>
+  </div>
+</div>
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
@@ -47,11 +56,9 @@ Calling the algorithm is as simple as making a curl request. For example, to cal
 
   <!-- CURL -->
   <div class="tab-pane code__pane gs-pane" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
-  </code></pre>
+  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/</code></pre>
 
-  <textarea id="curl-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
-  </textarea>
+  <textarea id="curl-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/</textarea>
   </div>
 </div>
 
@@ -90,15 +97,13 @@ You can also use one of the clients to make your call. See below for examples or
 input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>
 client = Algorithmia.client(<span class="hljs-string">'<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span>)
 algo = client.algo(<span class="hljs-string">'demo/Hello/'</span>)
-<span class="hljs-keyword">print</span> algo.pipe(input)
-  </code></pre>
+<span class="hljs-keyword">print</span> algo.pipe(input)</code></pre>
   <textarea id="python-copy-text" class="copy-text">import Algorithmia
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
-print algo.pipe(input)
-  </textarea>
+print algo.pipe(input)</textarea>
   </div>
 
   <!-- JAVA -->
@@ -110,8 +115,7 @@ String input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<di
 AlgorithmiaClient client = Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>);
 Algorithm algo = client.algo(<span class="hljs-string">"demo/Hello/"</span>);
 AlgoResponse result = algo.pipe(input);
-System.out.println(result.asJsonString());
-  </code></pre>
+System.out.println(result.asJsonString());</code></pre>
   <textarea class="copy-text" id="java-copy-text">import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
@@ -119,8 +123,7 @@ String input = "YOUR_USERNAME"
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 Algorithm algo = client.algo("demo/Hello/");
 AlgoResponse result = algo.pipe(input);
-System.out.println(result.asJsonString());
-  </textarea>
+System.out.println(result.asJsonString());</textarea>
   </div>
 
   <!-- R LANG -->
@@ -131,16 +134,14 @@ input &lt;- <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div c
 client &lt;- getAlgorithmiaClient(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
 algo &lt;- client$algo(<span class="hljs-string">"demo/Hello/"</span>)
 result &lt;- algo$pipe(input)$result
-print(result)
-  </code></pre>
+print(result)</code></pre>
   <textarea class="copy-text" id="rlang-copy-text">library(algorithmia)
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
 algo <- client$algo("demo/Hello/")
 result <- algo$pipe(input)$result
-print(result)
-  </textarea>
+print(result)</textarea>
   </div>
 
   <!-- JAVASCRIPT -->
@@ -151,16 +152,14 @@ Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY
           .pipe(input)
           .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">output</span>) </span>{
             <span class="hljs-built_in">console</span>.log(output);
-          });
-  </code></pre>
+          });</code></pre>
   <textarea class="copy-text" id="javascript-copy-text">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
           .algo("demo/Hello/")
           .pipe(input)
           .then(function(output) {
             console.log(output);
-          });
-  </textarea>
+          });</textarea>
   </div>
 
   <!-- NODE -->
@@ -171,16 +170,14 @@ Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY
           .pipe(input)
           .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) </span>{
             <span class="hljs-built_in">console</span>.log(response.get());
-          });
-  </code></pre>
+          });</code></pre>
   <textarea class="copy-text" id="node-copy-text">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
           .algo("algo://demo/Hello/")
           .pipe(input)
           .then(function(response) {
             console.log(response.get());
-          });
-  </textarea>
+          });</textarea>
   </div>
 
   <!-- RUBY -->
@@ -191,16 +188,14 @@ input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class
 client = Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
 algo = client.algo(<span class="hljs-string">"demo/Hello/"</span>)
 response = algo.pipe(input).result
-puts response
-  </code></pre>
+puts response</code></pre>
   <textarea class="copy-text" id="ruby-copy-text">require 'algorithmia'
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
 algo = client.algo("demo/Hello/")
 response = algo.pipe(input).result
-puts response
-  </textarea>
+puts response</textarea>
   </div>
 
   <!-- RUST -->
@@ -211,16 +206,14 @@ puts response
 <span class="hljs-keyword">let</span> client = Algorithmia::client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>);
 <span class="hljs-keyword">let</span> algo = client.algo(<span class="hljs-string">"demo/Hello/"</span>);
 <span class="hljs-keyword">let</span> response = algo.pipe(input);
-<span class="hljs-built_in">println!</span>(response)
-  </code></pre>
+<span class="hljs-built_in">println!</span>(response)</code></pre>
   <textarea class="copy-text" id="rust-copy-text">use algorithmia::*;
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
 let algo = client.algo("demo/Hello/");
 let response = algo.pipe(input);
-println!(response)
-  </textarea>
+println!(response)</textarea>
   </div>
 
   <!-- SCALA -->
@@ -232,8 +225,7 @@ println!(response)
 <span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
 <span class="hljs-keyword">val</span> algo = client.algo(<span class="hljs-string">"algo://demo/Hello/"</span>)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
-<span class="hljs-type">System</span>.out.println(result.asJsonString)
-  </code></pre>
+<span class="hljs-type">System</span>.out.println(result.asJsonString)</code></pre>
   <textarea class="copy-text" id="scala-copy-text">import com.algorithmia._
 import com.algorithmia.algo._
 
@@ -241,8 +233,7 @@ val input = "YOUR_USERNAME"
 val client = Algorithmia.client("YOUR_API_KEY")
 val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
-System.out.println(result.asJsonString)
-  </textarea>
+System.out.println(result.asJsonString)</textarea>
   </div>
 
   <!-- SWIFT -->
@@ -253,16 +244,14 @@ System.out.println(result.asJsonString)
 <span class="hljs-keyword">let</span> client = <span class="hljs-type">Algorithmia</span>.client(simpleKey: <span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
 <span class="hljs-keyword">let</span> algo = client.algo(algoUri: <span class="hljs-string">"demo/Hello/"</span>) { resp, error <span class="hljs-keyword">in</span>
   <span class="hljs-built_in">print</span>(resp)
-}
-  </code></pre>
+}</code></pre>
   <textarea class="copy-text" id="swift-copy-text">import Algorithmia
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
 let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   print(resp)
-}
-  </textarea>
+}</textarea>
   </div>
 
   <!-- CSHARP -->
@@ -273,16 +262,14 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
 <span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> Client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>);
 <span class="hljs-keyword">var</span> algo = client.algo(client, <span class="hljs-string">"algo://demo/hello"</span>);
 <span class="hljs-keyword">var</span> response = algo.pipe&lt;<span class="hljs-keyword">string</span>&gt;(input);
-System.Console.WriteLine(response.result.ToString());
-  </code></pre>
+System.Console.WriteLine(response.result.ToString());</code></pre>
   <textarea class="copy-text" id="c-sharp-copy-text">using Algorithmia;
 
 var input = "YOUR_USERNAME";
 var client = new Client("YOUR_API_KEY");
 var algo = client.algo(client, "algo://demo/hello");
 var response = algo.pipe&lt;string&gt;(input);
-System.Console.WriteLine(response.result.ToString());
-  </textarea>
+System.Console.WriteLine(response.result.ToString());</textarea>
   </div>
 
   <!-- GO -->
@@ -297,8 +284,7 @@ input := <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div clas
 algo, _ := client.Algo(<span class="hljs-string">"algo://demo/Hello/"</span>)
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
-fmt.Println(response.Result)
-  </code></pre>
+fmt.Println(response.Result)</code></pre>
   <textarea class="copy-text" id="go-copy-text">import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
@@ -309,8 +295,7 @@ var client = algorithmia.NewClient("YOUR_API_KEY", "")
 algo, _ := client.Algo("algo://demo/Hello/")
 resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
-fmt.Println(response.Result)
-  </textarea>
+fmt.Println(response.Result)</textarea>
   </div>
 
   <!-- PERL -->
@@ -329,8 +314,7 @@ $req-&gt;content($post_data);
     <span class="hljs-keyword">print</span> $resp-&gt;decoded_content;
 } <span class="hljs-keyword">else</span> {
     <span class="hljs-keyword">print</span> <span class="hljs-string">'POST error: '</span>, $resp-&gt;code, <span class="hljs-string">': '</span>, $resp-&gt;message;
-}
-  </code></pre>
+}</code></pre>
   <textarea class="copy-text" id="perl-copy-text">use LWP::UserAgent;
 
 my $input = 'YOUR_USERNAME';
@@ -345,8 +329,7 @@ if ($resp->is_success) {
     print $resp->decoded_content;
 } else {
     print 'POST error: ', $resp->code, ': ', $resp->message;
-}
-  </textarea>
+}</textarea>
   </div>
 
   <!-- PHP -->
@@ -374,8 +357,7 @@ $ch = curl_init();
     print_r($response-&gt;error);
   } <span class="hljs-keyword">else</span> {
     print_r($response-&gt;result);
-  }
-  </code></pre>
+  }</code></pre>
   <textarea class="copy-text" id="php-copy-text">$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
@@ -399,8 +381,7 @@ $ch = curl_init();
     print_r($response->error);
   } else {
     print_r($response->result);
-  }
-  </textarea>
+  }</textarea>
   </div>
 </div>
 {% endraw %}
@@ -420,7 +401,8 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
   <div class="tab-pane code__pane gs-pane" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
 
-{ <span class="hljs-string">"result"</span>: <span class="hljs-string">"Hello <a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>,
+{ 
+  <span class="hljs-string">"result"</span>: <span class="hljs-string">"Hello <a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>,
   <span class="hljs-string">"metadata"</span>: {
      <span class="hljs-string">"content_type"</span>: <span class="hljs-string">"text"</span>,
      <span class="hljs-string">"duration"</span>: 0.000187722
@@ -429,14 +411,13 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
 
   <textarea id="result-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 
-
-{ "result": "Hello YOUR_USERNAME",
+{ 
+  "result": "Hello YOUR_USERNAME",
   "metadata": {
      "content_type": "text",
      "duration": 0.000187722
   }
-}
-  </textarea>
+}</textarea>
   </div>
 </div>
 
