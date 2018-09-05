@@ -40,7 +40,7 @@ Calling the algorithm is as simple as making a curl request. For example, to cal
 
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8 text-right">
-    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCurl()">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('curl')">
       <i class="fa fa-copy"></i>
     </button>
   </div>
@@ -49,6 +49,7 @@ Calling the algorithm is as simple as making a curl request. For example, to cal
   <div class="tab-pane code__pane gs-pane" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
   </code></pre>
+
   <textarea id="curl-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
   </textarea>
   </div>
@@ -65,119 +66,33 @@ You can also use one of the clients to make your call. See below for examples or
   <div class="code-toolbar ph-16 pv-8">
     <div class="btn-group dropdown">
       <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
-        <div class="lang-logo white-logo mr-4" ng-class="{
-          'python': lang === 'Python',
-          'java': lang === 'Java',
-          'rlang': lang === 'R',
-          'javascript': lang === 'JavaScript',
-          'node': lang === 'Node',
-          'ruby': lang === 'Ruby',
-          'rust': lang === 'Rust',
-          'scala': lang === 'Scala',
-          'swift': lang === 'Swift',
-          'go': lang === 'Go',
-          'c-sharp': lang === '.Net/C#',
-          'perl': lang === 'Perl',
-          'php': lang === 'PHP',
-        }"></div>
-        <span ng-bind="lang" class="mr-4"></span>
+        <div class="lang-logo white-logo mr-4" ng-class="lang"></div>
+        <span ng-bind="languages[lang]" class="mr-4"></span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu gs-languages pv-4" role="menu">
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Python'">
-            <div class="lang-logo color-logo mr-4 python"></div>
-            <span>Python</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Java'">
-            <div class="lang-logo color-logo mr-4 java"></div>
-            <span>Java</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='R'">
-            <div class="lang-logo color-logo mr-4 rlang"></div>
-            <span>R</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='JavaScript'">
-            <div class="lang-logo color-logo mr-4 javascript"></div>
-            <span>JavaScript</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Node'">
-            <div class="lang-logo color-logo mr-4 node"></div>
-            <span>Node</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Ruby'">
-            <div class="lang-logo color-logo mr-4 ruby"></div>
-            <span>Ruby</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Rust'">
-            <div class="lang-logo color-logo mr-4 rust"></div>
-            <span>Rust</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Scala'">
-            <div class="lang-logo color-logo mr-4 scala"></div>
-            <span>Scala</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Swift'">
-            <div class="lang-logo color-logo mr-4 swift"></div>
-            <span>Swift</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Go'">
-            <div class="lang-logo color-logo mr-4 go"></div>
-            <span>Go</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='.Net/C#'">
-            <div class="lang-logo color-logo mr-4 c-sharp"></div>
-            <span>.Net/C#</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='Perl'">
-            <div class="lang-logo color-logo mr-4 perl"></div>
-            <span>Perl</span>
-          </a>
-        </li>
-        <li class="mb-0">
-          <a class="caption" ng-click="lang='PHP'">
-            <div class="lang-logo color-logo mr-4 php"></div>
-            <span>PHP</span>
+        <li ng-repeat="(language, displayName) in languages" class="mb-0">
+          <a class="caption" ng-click="setLang(language)">
+            <div class="lang-logo color-logo mr-4" ng-class="language"></div>
+            <span ng-bind="displayName"></span>
           </a>
         </li>
       </ul>
     </div>
-    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode()">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode(lang)">
       <i class="fa fa-copy"></i>
     </button>
   </div>
 
   <!-- PYTHON -->
-  <div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='Python'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='python'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs python"><span class="hljs-keyword">import</span> Algorithmia
 input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>
 client = Algorithmia.client(<span class="hljs-string">'<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span>)
 algo = client.algo(<span class="hljs-string">'demo/Hello/'</span>)
 <span class="hljs-keyword">print</span> algo.pipe(input)
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Python'}">import Algorithmia
+  <textarea id="python-copy-text" class="copy-text">import Algorithmia
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client('YOUR_API_KEY')
@@ -187,7 +102,7 @@ print algo.pipe(input)
   </div>
 
   <!-- JAVA -->
-  <div class="tab-pane code__pane gs-pane" id="java" ng-show="lang==='Java'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="java" ng-show="lang==='java'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs java"><span class="hljs-keyword">import</span> com.algorithmia.*;
 <span class="hljs-keyword">import</span> com.algorithmia.algo.*;
 
@@ -197,7 +112,7 @@ Algorithm algo = client.algo(<span class="hljs-string">"demo/Hello/"</span>);
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Java'}">import com.algorithmia.*;
+  <textarea class="copy-text" id="java-copy-text">import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
 String input = "YOUR_USERNAME"
@@ -209,7 +124,7 @@ System.out.println(result.asJsonString());
   </div>
 
   <!-- R LANG -->
-  <div class="tab-pane code__pane gs-pane" id="rlang" ng-show="lang==='R'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="rlang" ng-show="lang==='rlang'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs R"><span class="hljs-keyword">library</span>(algorithmia)
 
 input &lt;- <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>
@@ -218,7 +133,7 @@ algo &lt;- client$algo(<span class="hljs-string">"demo/Hello/"</span>)
 result &lt;- algo$pipe(input)$result
 print(result)
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'R'}">library(algorithmia)
+  <textarea class="copy-text" id="rlang-copy-text">library(algorithmia)
 
 input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient("YOUR_API_KEY")
@@ -229,7 +144,7 @@ print(result)
   </div>
 
   <!-- JAVASCRIPT -->
-  <div class="tab-pane code__pane gs-pane" id="javascript" ng-show="lang==='JavaScript'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="javascript" ng-show="lang==='javascript'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs js"><span class="hljs-keyword">var</span> input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>;
 Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
           .algo(<span class="hljs-string">"demo/Hello/"</span>)
@@ -238,7 +153,7 @@ Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY
             <span class="hljs-built_in">console</span>.log(output);
           });
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'JavaScript'}">var input = "YOUR_USERNAME";
+  <textarea class="copy-text" id="javascript-copy-text">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
           .algo("demo/Hello/")
           .pipe(input)
@@ -249,7 +164,7 @@ Algorithmia.client("YOUR_API_KEY")
   </div>
 
   <!-- NODE -->
-  <div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='Node'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='node'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs js"><span class="hljs-keyword">var</span> input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>;
 Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>)
           .algo(<span class="hljs-string">"algo://demo/Hello/"</span>)
@@ -258,7 +173,7 @@ Algorithmia.client(<span class="hljs-string">"<a class="hover-info">YOUR_API_KEY
             <span class="hljs-built_in">console</span>.log(response.get());
           });
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Node'}">var input = "YOUR_USERNAME";
+  <textarea class="copy-text" id="node-copy-text">var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
           .algo("algo://demo/Hello/")
           .pipe(input)
@@ -269,7 +184,7 @@ Algorithmia.client("YOUR_API_KEY")
   </div>
 
   <!-- RUBY -->
-  <div class="tab-pane code__pane gs-pane" id="ruby" ng-show="lang==='Ruby'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="ruby" ng-show="lang==='ruby'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">'algorithmia'</span>
 
 input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>
@@ -278,7 +193,7 @@ algo = client.algo(<span class="hljs-string">"demo/Hello/"</span>)
 response = algo.pipe(input).result
 puts response
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Ruby'}">require 'algorithmia'
+  <textarea class="copy-text" id="ruby-copy-text">require 'algorithmia'
 
 input = "YOUR_USERNAME"
 client = Algorithmia.client("YOUR_API_KEY")
@@ -289,7 +204,7 @@ puts response
   </div>
 
   <!-- RUST -->
-  <div class="tab-pane code__pane gs-pane" id="rust" ng-show="lang==='Rust'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="rust" ng-show="lang==='rust'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs rust"><span class="hljs-keyword">use</span> algorithmia::*;
 
 <span class="hljs-keyword">let</span> input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>;
@@ -298,7 +213,7 @@ puts response
 <span class="hljs-keyword">let</span> response = algo.pipe(input);
 <span class="hljs-built_in">println!</span>(response)
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Rust'}">use algorithmia::*;
+  <textarea class="copy-text" id="rust-copy-text">use algorithmia::*;
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
@@ -309,7 +224,7 @@ println!(response)
   </div>
 
   <!-- SCALA -->
-  <div class="tab-pane code__pane gs-pane" id="scala" ng-show="lang==='Scala'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="scala" ng-show="lang==='scala'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs scala"><span class="hljs-keyword">import</span> com.algorithmia._
 <span class="hljs-keyword">import</span> com.algorithmia.algo._
 
@@ -319,7 +234,7 @@ println!(response)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
 <span class="hljs-type">System</span>.out.println(result.asJsonString)
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Scala'}">import com.algorithmia._
+  <textarea class="copy-text" id="scala-copy-text">import com.algorithmia._
 import com.algorithmia.algo._
 
 val input = "YOUR_USERNAME"
@@ -331,7 +246,7 @@ System.out.println(result.asJsonString)
   </div>
 
   <!-- SWIFT -->
-  <div class="tab-pane code__pane gs-pane" id="swift" ng-show="lang==='Swift'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="swift" ng-show="lang==='swift'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs swift"><span class="hljs-keyword">import</span> Algorithmia
 
 <span class="hljs-keyword">let</span> input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>;
@@ -340,7 +255,7 @@ System.out.println(result.asJsonString)
   <span class="hljs-built_in">print</span>(resp)
 }
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Swift'}">import Algorithmia
+  <textarea class="copy-text" id="swift-copy-text">import Algorithmia
 
 let input = "YOUR_USERNAME";
 let client = Algorithmia.client(simpleKey: "YOUR_API_KEY")
@@ -351,7 +266,7 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   </div>
 
   <!-- CSHARP -->
-  <div class="tab-pane code__pane gs-pane" id="csharp" ng-show="lang==='.Net/C#'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="c-sharp" ng-show="lang==='c-sharp'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs csharp"><span class="hljs-keyword">using</span> Algorithmia;
 
 <span class="hljs-keyword">var</span> input = <span class="hljs-string">"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>;
@@ -360,7 +275,7 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
 <span class="hljs-keyword">var</span> response = algo.pipe&lt;<span class="hljs-keyword">string</span>&gt;(input);
 System.Console.WriteLine(response.result.ToString());
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === '.Net/C#'}">using Algorithmia;
+  <textarea class="copy-text" id="c-sharp-copy-text">using Algorithmia;
 
 var input = "YOUR_USERNAME";
 var client = new Client("YOUR_API_KEY");
@@ -371,7 +286,7 @@ System.Console.WriteLine(response.result.ToString());
   </div>
 
   <!-- GO -->
-  <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='Go'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='go'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs go"><span class="hljs-keyword">import</span> (
   algorithmia <span class="hljs-string">"github.com/algorithmiaio/algorithmia-go"</span>
 )
@@ -384,7 +299,7 @@ resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result)
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Go'}">import (
+  <textarea class="copy-text" id="go-copy-text">import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
@@ -399,7 +314,7 @@ fmt.Println(response.Result)
   </div>
 
   <!-- PERL -->
-  <div class="tab-pane code__pane gs-pane" id="perl" ng-show="lang==='Perl'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="perl" ng-show="lang==='perl'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs perl"><span class="hljs-keyword">use</span> LWP::UserAgent;
 
 <span class="hljs-keyword">my</span> $input = <span class="hljs-string">'<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span>;
@@ -416,7 +331,7 @@ $req-&gt;content($post_data);
     <span class="hljs-keyword">print</span> <span class="hljs-string">'POST error: '</span>, $resp-&gt;code, <span class="hljs-string">': '</span>, $resp-&gt;message;
 }
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'Perl'}">use LWP::UserAgent;
+  <textarea class="copy-text" id="perl-copy-text">use LWP::UserAgent;
 
 my $input = 'YOUR_USERNAME';
 my $api_key = 'YOUR_API_KEY';
@@ -435,7 +350,7 @@ if ($resp->is_success) {
   </div>
 
   <!-- PHP -->
-  <div class="tab-pane code__pane gs-pane" id="php" ng-show="lang==='PHP'" ng-cloak>
+  <div class="tab-pane code__pane gs-pane" id="php" ng-show="lang==='php'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs php">$input = <span class="hljs-string">'<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span>;
 $api_key = <span class="hljs-string">'<a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span>;
 $data_json = json_encode($input);
@@ -461,7 +376,7 @@ $ch = curl_init();
     print_r($response-&gt;result);
   }
   </code></pre>
-  <textarea class="copy-text" ng-class="{'code-to-copy': lang === 'PHP'}">$input = 'YOUR_USERNAME';
+  <textarea class="copy-text" id="php-copy-text">$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
 $ch = curl_init();
