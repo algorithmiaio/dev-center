@@ -68,7 +68,6 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{ site.baseurl }}/clients/) for details on how to call algorithms and work with data in your language of choice.
 
 {% raw %}
-<br/>
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8">
     <div class="btn-group dropdown">
