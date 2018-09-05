@@ -53,6 +53,7 @@ We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.
   </div>
 
   <!-- CURL -->
+  <!-- Here and below we use the markdown produced by hljs so that we can add the js/css needed for the cards that appear when hovering over username/api key -->
   <div class="tab-pane code__pane gs-pane" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/</code></pre>
 
