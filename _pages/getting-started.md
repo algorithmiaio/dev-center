@@ -409,8 +409,25 @@ $ch = curl_init();
 
 Each algorithm returns a response in JSON. It will include the `"result"` as well as metadata about the API call you made. The metadata will include the `content_type` as well as a duration.
 
-{% highlight bash lineanchors %}
-curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
+<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
+  <div class="code-toolbar ph-16 pv-8 text-right">
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('result')">
+      <i class="fa fa-copy"></i>
+    </button>
+  </div>
+
+  <!-- CURL RESULT -->
+  <div class="tab-pane code__pane gs-pane" ng-cloak>
+  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <a class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
+
+{ <span class="hljs-string">"result"</span>: <span class="hljs-string">"Hello <a class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></a>"</span>,
+  <span class="hljs-string">"metadata"</span>: {
+     <span class="hljs-string">"content_type"</span>: <span class="hljs-string">"text"</span>,
+     <span class="hljs-string">"duration"</span>: 0.000187722
+  }
+}</code></pre>
+
+  <textarea id="result-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 
 
 { "result": "Hello YOUR_USERNAME",
@@ -419,7 +436,9 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
      "duration": 0.000187722
   }
 }
-{% endhighlight%}
+  </textarea>
+  </div>
+</div>
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
