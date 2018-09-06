@@ -11,4 +11,4 @@ image:
 
 Coming soon!
 
-<a href="{{ site.baseurl }}/organizations/cloudinary" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> USE</a>
+<a href="/organizations/cloudinary" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> USE</a>
