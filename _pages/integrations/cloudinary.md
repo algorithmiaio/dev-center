@@ -6,7 +6,7 @@ categories: [integrations]
 tags: [integrations]
 show_related: true
 image:
-    teaser: /language_logos/cloudinary.pmg
+    teaser: /language_logos/cloudinary.png
 ---
 
 Coming soon!
