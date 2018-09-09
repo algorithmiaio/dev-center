@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Cloudinary"
-excerpt-short: "Automate the process of manipulating and delivering images and videos, optimized for every viewing context."
+excerpt-short: "Automate the process of manipulating and delivering images and videos, optimized for every viewing context"
 categories: [integrations]
 tags: [integrations]
 show_related: true
