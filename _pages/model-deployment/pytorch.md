@@ -82,7 +82,7 @@ To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"
 
-If you're using Python, you must [set the environment variable](https://www.schrodinger.com/kb/1842) `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
+If you're using Python, you must [set an environment variable](https://www.schrodinger.com/kb/1842): `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
 {: .notice-info}
 
 #### Editing your algorithm via the web IDE
