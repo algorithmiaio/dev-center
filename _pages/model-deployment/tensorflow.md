@@ -37,9 +37,9 @@ For tensorflow-gpu==1.3.0 support please add one of the following wheels to your
 Before you get started deploying your pre-trained model on Algorithmia, there are a few things you'll want to do first:
 
 ### Save your Pre-Trained Model
-After training your Tensorflow model, you'll need to save it, along with its assets and variables.
+You'll want to do the training and saving of your model on your local machine, or the platform you're using for training, before you deploy it to production on the Algorithmia platform.
 
-You'll want to do the training and saving of your model on your local machine, or whatever platform you're using for training, before you deploy it for production on the Algorithmia platform.
+After training your Tensorflow model, you'll need to save it, along with its assets and variables.
 
 There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
 
@@ -135,7 +135,9 @@ In the above code, the Manual Builder API is used to save your graph using a Met
 Now that you've trained and saved your Tensorflow model elsewhere, we'll deploy it on Algorithmia.
 
 ### Create a Data Collection
-There are various places you can host your model file and load it using our <a href="http://docs.algorithmia.com/">Data API</a>. In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collections</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>. 
+
+In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
 First, you'll want to create a data collection to host your graph and variables. 
 
@@ -145,8 +147,11 @@ First, you'll want to create a data collection to host your graph and variables.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+
+For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
+
+Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
 
 ### Host Your Model File
 Next, upload your Tensorflow variables and graph to your newly created data collection. They should be in a .zip file or .gzip, although note our examples show using zip format so you'll need to change the code in your main model file in the function `extract_model()` to extract your gzip accordingly or simply save your model as a .zip file.
@@ -211,6 +216,8 @@ Then, with all subsequent calls only the apply() function gets called which will
 
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
+
+Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
 ### Using the SavedModel Method
 
@@ -400,6 +407,17 @@ def apply(input):
     tf_version = tf.__version__
     return "MNIST Predictions: {0}, TF version: {1}".format(inference, tf_version) 
 ```
+
+Now when you run this code, the expected input is:
+
+{% highlight python %}
+{"mnist_images": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-images-idx3-ubyte.gz", "mnist_labels": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-labels-idx1-ubyte.gz"} 
+{% endhighlight %}
+
+With the expected output:
+{% highlight python %}
+MNIST Predictions: {'accuracy': 0.88910013, 'prediction': array([7, 2, 1, ..., 4, 8, 6])}, TF version: 1.2.0
+{% endhighlight %}
 
 Let's take a look at another example that we've implemented ourselves, the tensor names entirely depend on your graph, so replace our variables and types with yours as necessary.
 
