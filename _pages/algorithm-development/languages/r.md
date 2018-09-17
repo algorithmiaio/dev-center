@@ -16,6 +16,7 @@ Table of Contents
 
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
+* [Saving and Loading R Models](#saving-and-loading-r-models)
 * [Managing Dependencies](#managing-dependencies)
 * [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
@@ -45,6 +46,20 @@ The algorithm() function defines the input point of the algorithm. We use the al
 Go ahead and remove the boilerplate code below that's inside the algorithm() function because we'll be writing a different algorithm in this tutorial:
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
+
+## Saving and Loading R Models
+When you have an R model that has been serialized as an .rds file, you can deploy it easily on Algorithmia. All you need to do is save your model:
+
+{% highlight r %}
+saveRDS(iris_fit_naive, "./naive_bayes_iris.rds")
+{% endhighlight %}
+
+Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{ site.baseurl }}/clients/r/).
+
+Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
+
+* [Arima Time Series Forecasting Model](https://algorithmia.com/algorithms/demo/rdemo)
+* [Naive Bayes Iris Classication Model](https://algorithmia.com/algorithms/demo/irisrdemo)
 
 ## Managing Dependencies
 
