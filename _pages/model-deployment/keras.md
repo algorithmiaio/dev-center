@@ -28,8 +28,6 @@ If you're using Tensorflow as the backend, check out the <a href="{{ site.baseur
 * [Create your Algorithm](#create-your-algorithm)
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
-  * [Using the SavedModel Method](#using-the-savedmodel-method)
-  * [GPU memory tricks](#gpu-memory-tricks)
 * [Publish your Algorithm](#publish-your-algorithm)
 
 ## Prerequisites
