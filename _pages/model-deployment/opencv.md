@@ -17,9 +17,8 @@ Welcome to Algorithmia! This guide is designed as an introduction to hosting you
 
 ## Table of Contents
 * [Prerequisites](#prerequisites)
-  * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
-  * [Host Your Model File](#host-your-model-file)
+  * [Save your Pre-Trained Model](#save-your-pre-trained-model)
 * [Create your Algorithm](#create-your-algorithm)
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
@@ -27,13 +26,6 @@ Welcome to Algorithmia! This guide is designed as an introduction to hosting you
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
-
-### Save your Pre-Trained Model
-You'll want to do the training and saving of your model on your local machine, or the platform you're using for training, before you deploy it to production on the Algorithmia platform.
-
-After training your OpenCV model, can save it as a `.dat` binary file. In this example we use the `SVM.save()` method.
-
-Because we'll be saving the model to a data collection, let's create that directory right now.
 
 ### Create a Data Collection
 
@@ -55,7 +47,12 @@ For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data C
 
 Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
 
-### Training a model
+### Save your Pre-Trained Model
+You'll want to do the training and saving of your model on your local machine, or the platform you're using for training, before you deploy it to production on the Algorithmia platform.
+
+After training your OpenCV model, can save it as a `.dat` binary file. In this example we use the `SVM.save()` method.
+
+Because we'll be saving the model to a data collection, let's create that directory right now.
 
 Before we create our algorithm, let's first train our model on our local machine on the handwriting digits dataset and save it to the DataAPI.
 
