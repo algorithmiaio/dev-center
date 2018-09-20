@@ -71,16 +71,34 @@ On the algorithm editor page there is a button on the top right that says "Depen
 
 <img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
 
-You can add dependencies by simply adding the library name to the file.
+As you can see in the dependency file above, there are four different ways you can load packages in R. 
+If you want the latest version from CRAN, than you simply type in the dependency name (this example uses the package e1071):
 
-For older dependency versions, use the syntax: `-t <CRAN archive url>`
-<br/>Example: `-t https://cran.r-project.org/src/contrib/algorithmia_0.0.2.tar.gz`
+{% highlight r %}
+e1071
+{% endhighlight %}
 
-To add a GitHub repo as a dependency: `-g username/repo[/subdir][@ref|#pull]`
-<br/>Example: `-g algorithmiaio/algorithmia-r` 
+If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive which should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency: 
 
-For more detailed instructions, please read the comments at the top of the default dependency file which is generated when you create your algorithm.
-{: .notice-info}
+{% highlight r %}
+https://cran.r-project.org/src/contrib/Archive/e1071/e1071_1.6-6.tar.gz
+{% endhighlight %}
+
+Or, if you need to pull a dependency off of GitHub instead, all you need to do is install the package with:
+
+{% highlight r %}
+-g /cran/e1071
+{% endhighlight %}
+
+Similar to how you would install through dev.tools() in R.
+
+And finally, if you’re having issues with version conflicts, for instance package A requires version of package B while package C requires a different version of package B, then you can install with in your dependency file using install.packages():
+
+{% highlight r %}
+-e install.packages(“e1071”)
+{% endhighlight %}
+
+Note the last format will take longer to load the dependencies than the other formats.
 
 The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia's R package visit:
 <a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia's CRAN package</a> documentation.
