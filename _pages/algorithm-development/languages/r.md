@@ -74,19 +74,19 @@ On the algorithm editor page there is a button on the top right that says "Depen
 As you can see in the dependency file above, there are four different ways you can load packages in R. 
 If you want the latest version from CRAN, than you simply type in the dependency name (this example uses the package e1071):
 
-{% highlight r %}
+{% highlight bash %}
 e1071
 {% endhighlight %}
 
-If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive which should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency: 
+If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive, which in this instance, should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency: 
 
-{% highlight r %}
+{% highlight bash %}
 https://cran.r-project.org/src/contrib/Archive/e1071/e1071_1.6-6.tar.gz
 {% endhighlight %}
 
 Or, if you need to pull a dependency off of GitHub instead, all you need to do is install the package with:
 
-{% highlight r %}
+{% highlight bash %}
 -g /cran/e1071
 {% endhighlight %}
 
@@ -94,29 +94,33 @@ Similar to how you would install through dev.tools() in R.
 
 And finally, if you’re having issues with version conflicts, for instance package A requires version of package B while package C requires a different version of package B, then you can install with in your dependency file using install.packages():
 
-{% highlight r %}
+{% highlight bash %}
 -e install.packages(“e1071”)
 {% endhighlight %}
 
-Note the last format will take longer to load the dependencies than the other formats.
+The last format will take longer to load the dependencies than the other formats, so it's best to use it as a last resort.
+
+Note, that if you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
+{: .notice-info}
+
+For example, to make use of e1071, you would include the line:
+
+{% highlight bash %}
+e1071
+{% endhighlight %}
+
+in the dependencies file and the line
+
+{% highlight bash %}
+library(e1071)
+{% endhighlight %}
+
+in the main file.
 
 The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia's R package visit:
 <a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia's CRAN package</a> documentation.
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
-
-If you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
-{: .notice-info}
-
-For example, to make use of lubridate, you would include the line:
-
-`lubridate`
-
-in the dependencies file and the line
-
-`library(lubridate)`
-
-in the main file.
 
 ## I/O for your Algorithms
 
