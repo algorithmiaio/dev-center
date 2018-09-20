@@ -90,6 +90,13 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/keras_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
+For easy copy and paste:
+{% highlight python %}
+tensorflow
+keras
+h5py
+{% endhighlight %}
+
 Remember, if you created a GPU enabled algorithm, check out the <a href="{{ site.baseurl }}/model-deployment/tensorflow">Tensorflow docs</a> to learn which dependencies to add for GPU's in Tensorflow.
 
 ## Load your Model

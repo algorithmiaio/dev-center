@@ -91,6 +91,13 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/pytorch_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
+For easy copy and paste:
+{% highlight python %}
+https://s3.amazonaws.com/algorithmia-wheels/torch_cpu-0.4.0a0+a3d08de-cp35-cp35m-linux_x86_64.whl
+https://s3.amazonaws.com/algorithmia-wheels/torchvision-0.2.0-py2.py3-none-any.whl
+ergo-pytorch==1.0.4
+{% endhighlight %}
+
 If you're using the CPU implementation of Pytorch, you can add `torch` directly to the dependencies. If you're using a GPU version, you'll need to use our customized `.whl` file. You can find it <a href="https://s3.amazonaws.com/algorithmia-wheels/torch_gpu-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl">here</a>, and read about it in more detail on the ergo-pytorch <a href="https://github.com/algorithmiaio/pytorch-ergonomics">repo</a>.
 
 ## Load your Model

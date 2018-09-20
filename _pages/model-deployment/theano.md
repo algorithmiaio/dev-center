@@ -83,6 +83,11 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}/images/post_images/model_hosting/theano_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
+For easy copy and paste:
+{% highlight python %}
+Theano
+{% endhighlight %}
+
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
 

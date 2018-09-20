@@ -84,6 +84,11 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{ site.baseurl }}//images/post_images/model_hosting/dependencies_nltk.png" alt="Set your dependencies" class="screenshot img-md">
 
+For easy copy and paste:
+{% highlight python %}
+nltk
+{% endhighlight %}
+
 If you need to load a trained model from NLTK, check out this <a href="https://algorithmia.com/algorithms/demo/spacydemo">example in Spacy</a>, which shows loading a trained model. Particulary check out the dependency file and the top few lines of code to see how to load it. You'll load a trained NLTK model the same way.
 
 ## Load your Model
