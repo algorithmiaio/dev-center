@@ -2,7 +2,7 @@
 layout: article
 title:  "CNTK"
 excerpt: "Bring your CNTK model to Algorithmia."
-categories: model-guides
+categories: deprecated
 tags: [algo-model-guide]
 show_related: true
 author: james_sutton
