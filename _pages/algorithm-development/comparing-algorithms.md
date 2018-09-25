@@ -28,6 +28,7 @@ We then measure the runtime and loading performance for each, by passing the sam
 Got all that? Great! Lets dive in.
 
 ## Step 1: Create an Evaluator algorithm.
+
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
         - Comparing label accuracy of different image classifiers, on an image dataset.
@@ -61,7 +62,8 @@ Got all that? Great! Lets dive in.
 
 -  If you can't find your Evaluatable Algorithm, make sure its:
     - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
-    - Visible to your user account 
+    - Visible to your user account
+ 
 ### Step 3.3: Provide an input to your evaluator algorithm
 
 ![](https://i.imgur.com/90L7OH5.png)
@@ -69,6 +71,7 @@ Got all that? Great! Lets dive in.
     - it must be a json object
     - Remember that the `evaluated_algorithm` input variable defined in the Evaluator Algorithm is passed automatically.
     - Any additional parameters you wish to provide to your evaluatable algorithms should be passed here, in the evaluation input.
+
 ## Step 4: Run your Evaluation
 
 ![](https://i.imgur.com/xoq8mKe.png)
