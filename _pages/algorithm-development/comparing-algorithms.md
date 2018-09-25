@@ -27,7 +27,7 @@ We then measure the runtime and loading performance for each, by passing the sam
 
 Got all that? Great! Lets dive in.
 
-## Step 1: Create an Evaluation (evaluator) algorithm.
+## Step 1: Create an Evaluator algorithm.
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
         - Comparing label accuracy of different image classifiers, on an image dataset.
