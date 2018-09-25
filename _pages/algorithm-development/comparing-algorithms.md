@@ -12,9 +12,13 @@ redirect_from:
   - /algorithm-development/evaluations/
 ---
 
-So you've been playing around with Algorithmia for a while, and you may have noticed a variety of algorithms that tackle the same problem, in different ways. The [Algorithmia Evaluations](https://algorithmia.com/evaluations) tool lets you compare algorithms in a bunch of different ways. 
-This guide will walk you through the steps to implement your own evaluation.
+If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways. 
+The [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) is a new tool that makes comparing algorithms dead simple.
 
+Not entirely sure what we're talking about? That's ok! Take a look at our [Multi-Lang String Reversal Evaluation demo.](https://algorithmia.com/evaluations/algoevaldemo/string-reversal)
+In the example above, we're comparing the performance of different programming languages by using each languages idiomatic string reversal technique.
+We then measure the runtime and loading performance for each, by passing the same input to all of them; as you can see, rust wins!
+ 
 **Note:** Things you should have before we begin:
 - A working knowledge of [algorithm development on Algorithmia](https://algorithmia.com/developers/algorithm-development/).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
@@ -24,15 +28,17 @@ Got all that? Great! Lets dive in.
 
 ## Step 1: Find your evaluation data
  ![](https://i.imgur.com/i8Mxzd9.png)
-- If your evaluation requires labelled data comparison, make sure you have the data available and formatted for use in the [data API](https://algorithmia.com/data).
+- If your evaluation requires labelled data to compare results, make sure you have the data available and formatted for use in the [data API](https://algorithmia.com/data).
 
 ## Step 2: Create an Evaluation (evaluator) algorithm.
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
         - Comparing label accuracy of different image classifiers, on an image dataset.
         - Comparing performance of different string reversal techniques.
-- For guidance on how to create your own evaluator algorithm, check out [String Reversal Evaluator Algorithm](https://algorithmia.com/algorithms/zeryx/evaluator/edit), the algorithm is public and is a great starting point!
+- For guidance on how to create your own evaluator algorithm, check out [String Reversal Evaluator Algorithm](https://algorithmia.com/algorithms/zeryx/evaluator), the algorithm is public and is a great starting point!
 - Other things to keep in mind:
+    - Ensure that your evaluation algorithm is passing data to your evaluatable algorithms correctly! If they expect json, make sure you're passing something that can be serialized into json.
+    - If some of your evaluatable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure that your evaluation algorithm is owned by a user, not an org.
     - Make sure to publish your algorithm before using it.
 
@@ -68,6 +74,6 @@ Got all that? Great! Lets dive in.
 - Once your evaluation is executing, you can click the "results" tab and check the results.
 - If any errors or exceptions are detected during algorithm execution, they'll be declared in the `Error` column on the far right.
 
-And by following this guide, you should be able to create virtually any kind of evaluation!
+And by following this guide, you should be able to create your very own evaluation!
 
 Have any questions or comments? Feel free to get in touch by contacting us in that chat box on the bottom right of your screen!
