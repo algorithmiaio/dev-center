@@ -22,15 +22,12 @@ We then measure the runtime and loading performance for each, by passing the sam
 **Note:** Things you should have before we begin:
 - A working knowledge of [algorithm development on Algorithmia](https://algorithmia.com/developers/algorithm-development/).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
+- A testing dataset (or data point) you plan to use to compare algorithms, ideally already in the [data api](https://algorithmia.com/developers/data/hosted).
 - Some criteria you want to compare your algorithms with.
 
 Got all that? Great! Lets dive in.
 
-## Step 1: Find your evaluation data
- ![](https://i.imgur.com/i8Mxzd9.png)
-- If your evaluation requires labelled data to compare results, make sure you have the data available and formatted for use in the [data API](https://algorithmia.com/data).
-
-## Step 2: Create an Evaluation (evaluator) algorithm.
+## Step 1: Create an Evaluation (evaluator) algorithm.
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
         - Comparing label accuracy of different image classifiers, on an image dataset.
@@ -42,11 +39,11 @@ Got all that? Great! Lets dive in.
     - Make sure that your evaluation algorithm is owned by a user, not an org.
     - Make sure to publish your algorithm before using it.
 
-## Step 3: Go to www.algorithmia.com/evaluations and create a new evaluation
+## Step 2: Go to www.algorithmia.com/evaluations and create a new evaluation
 ![](https://i.imgur.com/be7W8BR.png)
 - Make sure that you don't create under an organization, there is an open issue with org owned evaluations.
-## Step 4: Setup your Evaluation
-### Step 4.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
+## Step 3: Setup your Evaluation
+### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
 ![](https://i.imgur.com/gsG4XCz.png)
 
 - If you can't find your evaluator, make sure its:
@@ -54,20 +51,20 @@ Got all that? Great! Lets dive in.
     - Visible to your user account
     - Not created by an Organization (for now)
 
-### Step 4.2: Add your Evaluatable Algorithms
+### Step 3.2: Add your Evaluatable Algorithms
 ![](https://i.imgur.com/DaKpEVX.png)
 
 -  If you can't find your Evaluatable Algorithm, make sure its:
     - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account 
-### Step 4.3: Provide an input to your evaluator algorithm
+### Step 3.3: Provide an input to your evaluator algorithm
 
 ![](https://i.imgur.com/90L7OH5.png)
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
     - Remember that the `evaluated_algorithm` input variable defined in the Evaluator Algorithm is passed automatically.
     - Any additional parameters you wish to provide to your evaluatable algorithms should be passed here, in the evaluation input.
-## Step 5: Run your Evaluation
+## Step 4: Run your Evaluation
 
 ![](https://i.imgur.com/xoq8mKe.png)
 - Once your input is ready, you can click the big "run evaluation" button at the top
