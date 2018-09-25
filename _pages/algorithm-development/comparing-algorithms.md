@@ -27,7 +27,7 @@ Got all that? Great! Lets dive in.
 - If your evaluation requires labelled data comparison, make sure you have the data available and formatted for use in the [data API](https://algorithmia.com/data).
 
 ## Step 2: Create an Evaluation (evaluator) algorithm.
-- An evaluator algorithm is special type of algorithm that compares similar algorithms based on some kind of criteria.
+- An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
         - Comparing label accuracy of different image classifiers, on an image dataset.
         - Comparing performance of different string reversal techniques.
@@ -51,7 +51,7 @@ Got all that? Great! Lets dive in.
 ### Step 4.2: Add your Evaluatable Algorithms
 ![](https://i.imgur.com/DaKpEVX.png)
 
--  If you can't find Evaluatable Algorithm, make sure its:
+-  If you can't find your Evaluatable Algorithm, make sure its:
     - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account 
 ### Step 4.3: Provide an input to your evaluator algorithm
