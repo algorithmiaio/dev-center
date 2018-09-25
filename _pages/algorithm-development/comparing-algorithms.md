@@ -39,10 +39,15 @@ Got all that? Great! Lets dive in.
     - Make sure that your evaluation algorithm is owned by a user, not an org.
     - Make sure to publish your algorithm before using it.
 
-## Step 2: Go to www.algorithmia.com/evaluations and create a new evaluation
+## Step 2: Create a new evaluation
+
+##### Go to www.algorithmia.com/evaluations and click "Create Evaluation"
+
 ![](https://i.imgur.com/be7W8BR.png)
 - Make sure that you don't create under an organization, there is an open issue with org owned evaluations.
+
 ## Step 3: Setup your Evaluation
+
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
 ![](https://i.imgur.com/gsG4XCz.png)
 
