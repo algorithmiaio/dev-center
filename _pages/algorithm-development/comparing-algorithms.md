@@ -2,12 +2,12 @@
 layout: article
 title:  "Evaluations"
 excerpt: "This guide will walk you through the steps to implement your own evaluation."
-categories: beta
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/evaluations/
+permalink: /algorithm-development/evaluations/
 redirect_from:
   - /algorithm-development/evaluations/
 ---
