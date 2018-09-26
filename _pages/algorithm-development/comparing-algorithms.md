@@ -7,9 +7,6 @@ tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /algorithm-development/evaluations/
-redirect_from:
-  - /algorithm-development/evaluations/
 ---
 
 If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways. 
