@@ -15,7 +15,15 @@ The [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) is a n
 Not entirely sure what we're talking about? That's ok! Take a look at our [Multi-Lang String Reversal Evaluation demo.](https://algorithmia.com/evaluations/algoevaldemo/string-reversal)
 In the example above, we're comparing the performance of different programming languages by using each languages idiomatic string reversal technique.
 We then measure the runtime and loading performance for each, by passing the same input to all of them; as you can see, rust wins!
- 
+
+In another example we look at [The Accuracy Level of Face Detection Algorithms.](https://algorithmia.com/evaluations/algoevaldemo/face-detection)
+We know how hard it can be to pick a Face Detection algorithm over the other. For this evaluation, we look at how much the predicted bounding-box overlaps with the ground truth.
+This helps us make an educated decision for picking an algorithm to use!
+
+Lastly, in our [Animal Classification Evaluation demo](https://algorithmia.com/evaluations/algoevaldemo/animal-classification/) we look at how well image classifiers perform in picking out animals in images.
+Here we look at the top-1, top-3, and top-5 prediction accuracy rates for image classifiers.
+Want to use a general purpose image classifier for a narrow task? Evaluations like these will definitely help!
+
 **Note:** Things you should have before we begin:
 - A working knowledge of [algorithm development on Algorithmia](https://algorithmia.com/developers/algorithm-development/).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
