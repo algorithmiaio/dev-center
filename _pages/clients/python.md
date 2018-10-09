@@ -235,7 +235,7 @@ if client.file(text_file).exists() is True:
 	input = client.file(text_file).getString()
 
 # Create the algorithm object using the Summarizer algorithm
-algo = client.algo('nlp/Summarizer/0.1.3')
+algo = client.algo("nlp/Summarizer/0.1.3")
 # Pass in input required by algorithm
 try:
 	# Get the summary result of your file's contents
