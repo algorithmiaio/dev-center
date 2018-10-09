@@ -17,7 +17,7 @@ You're going to need:
  - **Linux or OS X** — Windows may work, but is unsupported.
  - **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
-
+ - **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
 #### Ubuntu 16.10 Notes:
 
 ```bash
@@ -28,6 +28,23 @@ sudo apt install ruby ruby-dev zlib1g-dev
 
 ```sudo apt-get install g++
 sudo apt-get install imagemagick
+```
+
+### Mac OSX (High Sierra) Notes:
+
+Install imagemagick:
+```
+brew install imagemagick
+```
+
+Install via:
+```
+bundle install --path vendor/bundle
+```
+
+If installation for nokogiri fails due to libxml2 support, install it via:
+```
+gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
 ```
 
 ### Getting Set Up
