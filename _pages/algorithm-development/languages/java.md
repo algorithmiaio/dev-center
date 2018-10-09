@@ -277,7 +277,7 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
-You may call up to 24 other algorithms, either in parallel or recursively.
+You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
 
 {% highlight java %}
 package algorithmia.test_java;

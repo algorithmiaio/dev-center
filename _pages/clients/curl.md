@@ -74,5 +74,5 @@ curl -X GET -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/
 See the full [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
 on calling algorithms and managing data with cURL.
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 

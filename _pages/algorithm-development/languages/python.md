@@ -225,7 +225,7 @@ client.file(file_uri).putFile(tempfile)
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
-You may call up to 24 other algorithms, either in parallel or recursively.
+You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
