@@ -109,8 +109,6 @@ And if you need a pre-trained model or utility function for your project, check 
 
 You can find more variables in the `_data/stats.yml` file.
 
-```
-
 ### Plugins
 
 This Jekyll site uses several plugins to help generate content and make the site extra-awesome. Included in the `_plugins` directory:
