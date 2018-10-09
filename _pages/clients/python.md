@@ -206,7 +206,7 @@ For convenience, here is the whole script available to run:
 import Algorithmia
 from Algorithmia.acl import ReadAcl, AclType
 
-apiKey = '{Your API key here}'
+apiKey = "YOUR_API_KEY"
 # Create the Algorithmia client
 client = Algorithmia.client(apiKey)
 

@@ -84,7 +84,7 @@ Follow [this AWS guide](http://docs.aws.amazon.com/kms/latest/developerguide/cre
 ###### 3. Encrypt the event collector token using the AWS CLI
 
 {% highlight bash %}
-aws kms encrypt --key-id alias/<KMS key name> --plaintext "<ALGORITHMIA_API_KEY>"
+aws kms encrypt --key-id alias/<KMS key name> --plaintext "YOUR_API_KEY"
 {% endhighlight %}
 
 ###### 4. Copy the base-64 encoded, encrypted key (CiphertextBlob) to the `kmsEncryptedApiKey` variable

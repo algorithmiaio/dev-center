@@ -218,7 +218,7 @@ For convenience, here is the whole script available to run:
 {% highlight js %}
 var algorithmia = require("algorithmia");
 
-var client = algorithmia(process.env.ALGORITHMIA_API_KEY);
+var client = algorithmia("YOUR_API_KEY");
 
 // Set your Data URI
 var nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
