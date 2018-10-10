@@ -16,7 +16,7 @@ This guide will usher you through your user profile and cover how to find your A
 
 ## Your Profile
 
-To access your profile, simple click on the user drop down next to the notifications icon in the top right of the navigation bar:
+To access your profile, click on the user drop down next to the notifications icon in the top right of the navigation bar and click on "My Profile":
 
 ![Accessing the user drop down]({{ site.baseurl }}/images/post_images/your_profile/user_drop_down.png)
 
@@ -24,7 +24,7 @@ Once inside the profile section, you'll find a horizontal menu of profile sectio
 
 ![profile main]({{ site.baseurl }}/images/post_images/your_profile/profile.png)
 
-The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
+The main area of your profile also includes some basic statistics like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
 ## Credentials
 
@@ -40,7 +40,7 @@ The account section of your profile is where you'll find the information about y
 
 ![Credits main]({{ site.baseurl }}/images/post_images/your_profile/credits_main.png)
 
-The graph on the left shows your account balance history over the last 30 day period. On the right, you'll more details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking on the purple button.
+The graph on the left shows your account balance history over the last 30 day period. On the right, you'll find more details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking on the purple button.
 
 If you have earned credits by publishing your own algorithms, you'll see the amount you've earned in USD as well.
 
@@ -51,10 +51,10 @@ Below the account overview, you'll see menu options to view your Usage, Earnings
 
 The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
-The number of calls is the full number of the times that you've called the algorithm, but you'll see that sometimes the Billed Calls column displays a lower value. This is because we don't bill API calls that result in an error.
+You may notice that the Number of Calls column can vary from the Billed Calls column. This is because we do not bill API calls that result in an error.
 {: .notice-info}
 
-The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column.
+The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. The compute time and royalty together add up to determine the Cost in Credits, which you'll find in the right-most column.
 
 For more information about pricing check out [Pricing]({{ site.baseurl }}/pricing/).
 

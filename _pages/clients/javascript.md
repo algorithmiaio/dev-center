@@ -25,7 +25,7 @@ You can include the JavaScript file as a script tag:
 
 #### Call an Algorithm
 
-Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+Next, login at [Algorithmia]({{ site.baseurl }}/) to get your [API key]({{ site.baseurl }}/user#credentials):
 
 Now import the Algorithmia library and create the Algorithmia client:
 
@@ -69,6 +69,6 @@ Because of security concerns, the JavaScript client does not implement the [Data
 
 For smaller files, the [util/Cat](https://algorithmia.com/algorithms/util/Cat) and [ANaimi/Base64DataConverter](https://algorithmia.com/algorithms/ANaimi/Base64DataConverter) algorithms can be used for retrieving file contents.
 
-For larger files, you can set up an [Amazon S3 Connector](https://algorithmia.com/developers/data/s3/) to an S3 bucket with public read access. Then, direct the algorithms you call to write their output into that S3 connector (or use [s3utilities/UploadFiletoS3/](https://algorithmia.com/algorithms/s3utilities/UploadFiletoS3/) to move it there). Once it is in the S3 bucket, you can access the file via its publicly-readable URL.
+For larger files, you can set up an [Amazon S3 Connector]({{ site.baseurl }}/developers/data/s3/) to an S3 bucket with public read access. Then, direct the algorithms you call to write their output into that S3 connector (or use [s3utilities/UploadFiletoS3/](https://algorithmia.com/algorithms/s3utilities/UploadFiletoS3/) to move it there). Once it is in the S3 bucket, you can access the file via its publicly-readable URL.
 
-Alternately, you could implement a small piece of backend code in [another language](https://algorithmia.com/developers/clients/) and use it to retrieve the file for you.
+Alternately, you could implement a small piece of backend code in [another language]({{ site.baseurl }}/developers/clients/) and use it to retrieve the file for you.

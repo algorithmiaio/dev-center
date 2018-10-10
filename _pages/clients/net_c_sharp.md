@@ -27,13 +27,13 @@ using Algorithmia;
 {% endhighlight %}
 
 #### Calling your first algorithm
-Calling an algorithm is extremely simple with the .NET Client.  You first create a client using your API key.  You can find your API key at https://algorithmia.com/user#credentials.
+Calling an algorithm is extremely simple with the .NET Client.  You first create a client using your [API key]({{ site.baseurl }}/user#credentials).
 
 {% highlight csharp %}
 var client = new Client("YOUR_API_KEY");
 {% endhighlight %}
 
-Now, you can find any algorithm in the directory at https://algorithmia.com/algorithms and call it.  In this case, we are going to call the [Hello demo algorithm](https://algorithmia.com/algorithms/demo/hello).
+Now, you can find any algorithm in the [directory]({{ site.baseurl }}/algorithms) and call it.  In this case, we are going to call the [Hello demo algorithm]({{ site.baseurl }}/algorithms/demo/hello).
 
 {% highlight csharp %}
  var algo = client.algo("algo://demo/hello");
@@ -134,9 +134,9 @@ if (!destination.exists()) {
 This method will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this.
 {: .notice-warning}
 
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 

@@ -70,10 +70,12 @@ In the example below, 'archimedes' is the default Dropbox data source's unique l
 ## Accessing your Data
 Accessing your Dropbox data via the <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia Data API</a> is easy. Whether you're writing your application in Rust, Ruby, Python, Scala, Java or JavaScript simply import your data with a couple lines of code. With your Dropbox data connection now configured you can read and write data to and from it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data:
 
-- client = Algorithmia.client('YOUR_API_KEY')
-- client.file('dropbox://my_restricted_path/my_file.csv').getFile().name
+{% highlight python %}
+  client = Algorithmia.client('YOUR_API_KEY')
+  client.file('dropbox://my_restricted_path/my_file.csv').getFile().name
+{% endhighlight %}
 
-For example, to retrieve and print a file's contents in Python:
+For example, to retrieve the contents of a file and pass it to another algorithm in Python:
 
 {% highlight python %}
 import Algorithmia

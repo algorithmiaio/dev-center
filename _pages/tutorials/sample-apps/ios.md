@@ -50,13 +50,13 @@ Now we need to add this API key to your Environment.  From the menu, pick Produc
 
 Since this demo app will be processing images, we'll need to create a temporary directory at Algorithmia to hold them.
 
-Head to your [Data Portal](https://algorithmia.com/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
+Head to your [Data Portal]({{ site.baseurl }}/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
 
 ## Run the app
 
 Before changing any code, build and run the app to test out the default functionality.  In XCode, make sure "Algorithmia project" is selected.  Then, pick a destination to test on under the Product > Destination menu: this can be either a real attached iPhone, or the built-in iPhone simulator.  Now click Product > Run to start the project on your selected device.
 
-If all is working properly, you'll see a mostly-blank screen with options to take a photo or pick one from your phone's library. Once you've selected a photo, it will upload it to the `sourcePath` specified earlier, run Algorithmia's [DeepFilter algorithm](https://algorithmia.com/algorithms/deeplearning/DeepFilter) on the image, and render the result on the screen (as well as storing it your [Hosted Data](https://algorithmia.com/data/hosted) under `resultPath`):
+If all is working properly, you'll see a mostly-blank screen with options to take a photo or pick one from your phone's library. Once you've selected a photo, it will upload it to the `sourcePath` specified earlier, run Algorithmia's [DeepFilter algorithm](https://algorithmia.com/algorithms/deeplearning/DeepFilter) on the image, and render the result on the screen (as well as storing it your [Hosted Data]({{ site.baseurl }}/data/hosted) under `resultPath`):
 
 ![Running the app in the iPhone Simulator]({{ site.baseurl }}/images/post_images/ios/demo.png) 
 

@@ -14,7 +14,7 @@ Each algorithm is showcased on the marketplace through the profile page. Below, 
 
 #### The Profile Overview:
 
-The profile overview provides a rich source of information about the algorithm. In the overview, you can find the name of the algorithm, the tagline, and quickly see the version, royalty and permissions. Additionally, you'll also see the number of stars and followers an algorithm as, as well as the number of times the algorithm has been called.
+The profile overview provides a rich source of information about the algorithm. In the overview, you can find the name of the algorithm, the tagline, and quickly see the version, royalty and permissions. Additionally, you'll also see the number of stars and followers an algorithm has, as well as the number of times the algorithm has been called.
 
 ![Algorithm Profile header]({{ site.baseurl }}/images/post_images/algorithm_profiles/header.png)
 
@@ -43,7 +43,7 @@ The estimate is based off the average duration of API calls. Your call duration 
 
 #### Algorithm Console & Sample Input:
 
-Trying out each algorithm is incredibly easy and can be done using the console included on every algorithm profile.  The console appears below the header and allows you to quickly experiment with the algorithm. You will see two large black boxes side-by-side labeled "Type you input" and "See the result". If the algorithm developer has provided sample input, you will see it in left-hand box. Simply click the purple "Run" button to have the algorithm run on the sample input and you will see results in the output box on the right!
+Trying out each algorithm is incredibly easy and can be done using the console included on every algorithm profile.  The console appears below the header and allows you to quickly experiment with the algorithm. You will see two large black boxes side-by-side labeled "Input" and "Output". If the algorithm developer has provided sample input, you will see it in left-hand box. Simply click the purple "Run" button to have the algorithm run on the sample input and you will see results in the output box on the right!
 
 ![Algorithm Profile console]({{ site.baseurl }}/images/post_images/algorithm_profiles/console.png)
 

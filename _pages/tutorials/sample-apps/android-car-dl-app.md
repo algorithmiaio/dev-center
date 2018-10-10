@@ -417,7 +417,7 @@ Finally, our last method is "onClickRun" where we set our TextView and use an [A
 
 In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client](https://algorithmia.com/developers/clients/android/) and pass in our API string from our "res/values/strings.xml". 
 
-We then create a DataDirectory object that references a directory in your [data collection](https://algorithmia.com/data/hosted). If you haven't used Data sources check out our [Android Client Guide](https://algorithmia.com/developers/clients/android/). 
+We then create a DataDirectory object that references a directory in your [data collection]({{ site.baseurl }}/data/hosted). If you haven't used Data sources check out our [Android Client Guide](https://algorithmia.com/developers/clients/android/). 
 
 Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [data sources](https://algorithmia.com/developers/data/).
 {: .notice-warning}

@@ -17,10 +17,10 @@ The Perl client is still in development.  For now, you can do a raw POST inside 
   
 use LWP::UserAgent;
 
-# get your API Key at https://algorithmia.com/user#credentials
+# get your API Key at {{ site.baseurl }}/user#credentials
 my $api_key = 'YOUR_API_KEY';
 
-# pick an algorithm at https://algorithmia.com/algorithms (and append a version number)
+# pick an algorithm at {{ site.baseurl }}/algorithms (and append a version number)
 my $algo = 'util/Echo/0.2.1';
 
 # most algorithms accept JSON Objects

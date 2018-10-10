@@ -34,7 +34,7 @@ Algorithm developers may change the cost and permissions of an algorithm for new
 
 ### Versioned API Calls
 
-All algorithms are versioned the Algorithmia clients support specifying a version by specifying the algorithm URI with the format `<username>/<algoname>/<version>`, e.g., `util/echo/0.2.1`. There are several ways that the version can be expressed:
+All algorithms are versioned. The Algorithmia clients support specifying a version by specifying the algorithm URI with the format `<username>/<algoname>/<version>`, e.g., `util/echo/0.2.1`. There are several ways that the version can be expressed:
 
 #### Fully-specified version
 
@@ -49,7 +49,7 @@ By specifying the version as `<major>.<minor>` without a revision number (e.g. `
 
 #### Latest public version
 
-By specifying the version as `latest` (e.g. `util/echo/latest`) or by not specifying a version at all (e.g. `util/echo`), the latest public version of the algorithm will be called. This is useful when testing or experimenting with an algorith, and may be valuable in scenarios where you maintain both the algorithm and the application that uses it.
+By not specifying a version at all (e.g. `util/echo`), the latest public version of the algorithm will be called. This is useful when testing or experimenting with an algorithm, and may be valuable in scenarios where you maintain both the algorithm and the application that uses it.
 
 #### Latest private version
 

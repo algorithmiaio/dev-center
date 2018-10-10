@@ -46,12 +46,12 @@ You can do this by adding the shorthand name for the algorithms you want the API
 
 <img src="{{ site.baseurl }}/images/post_images/api_keys/algo_restrictions.png" alt="caller origin" class="screenshot img-sm">
 
-Note that `algo://` is the prefix you'll need to use before the owner name and algorithm name. Let's say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I'll name my key after the project, then add the algorithms it can call. If I want to use [SiteMap](https://algorithmia.com/algorithms/web/SiteMap), I'll format the alias like this: `algo://` + the algorithm owner + the algorithm name. Thus Generate Paragraph from Trigram would end ups as `algo://web/SiteMap` (where in this case the username is web).
+Note that `algo://` is the prefix you'll need to use before the owner name and algorithm name. Let's say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I'll name my key after the project, then add the algorithms it can call. If I want to use [SiteMap](https://algorithmia.com/algorithms/web/SiteMap), I'll format the alias like this: `algo://` + the algorithm owner + the algorithm name. This would end up as `algo://web/SiteMap` (in this case the username is web).
 
 
 <img src="{{ site.baseurl }}/images/post_images/api_keys/algo_restrictions_no_star.png" alt="caller origin" class="screenshot img-sm">
 
-By default, any key can call any algorithm on the platform. You can see in the above screenshot that under the Algorithm Access section, there is an entry `algo://*`, which is highlighted. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you've specified above, be sure to remove this wildcard entry by clicking on the trashcan icon.
+By default, any key can call any algorithm on the platform. You can see in the above screenshot that under the Algorithm Access section, there is an entry `algo://*`, which is highlighted. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you've specified above, be sure to remove this wildcard entry by clicking on the trash can icon.
 
 ### Caller origin & hostname
 

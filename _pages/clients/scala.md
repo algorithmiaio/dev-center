@@ -30,7 +30,7 @@ libraryDependencies += "com.algorithmia" %% "algorithmia-scala" % "0.9.5"
 
 ## Authentication
 
-Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+Next, login at [Algorithmia]({{ site.baseurl }}/) to get your [API key]({{ site.baseurl }}/user#credentials):
 
 Now import Algorithmia and create the client object by passing in your API key:
 
@@ -53,7 +53,7 @@ Alternately, you can ensure that each of your servers interacting with your Algo
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+For application developers, [Algorithmia's Data Portal]({{ site.baseurl }}/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
 This guide will show you how to work with the [Hosted Data]({{ site.baseurl }}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
@@ -153,9 +153,9 @@ try {
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
 {: .notice-warning}
 
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 
