@@ -21,6 +21,10 @@ The official Algorithmia PHP Client is [available](https://packagist.org/package
 {% highlight bash %}
 composer require algorithmia/algorithmia 
 {% endhighlight %}
+or
+{% highlight bash %}
+php composer.phar require algorithmia/algorithmia
+{% endhighlight %}
 
 For non-Composer installs, use the [source](https://github.com/algorithmiaio/algorithmia-php).
 
