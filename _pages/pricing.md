@@ -11,6 +11,9 @@ image:
 ---
 
 
+**Enterprise Users:** the information on this page is intended for _public marketplace users only._
+{: .notice-info}
+
 ### Pricing
 For an overview of algorithm pricing, see the [pricing page](https://algorithmia.com/pricing).
 
