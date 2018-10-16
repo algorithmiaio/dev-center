@@ -11,7 +11,7 @@ image:
 ---
 
 
-**Enterprise Users:** the information on this page is intended for _public marketplace users only._
+**Enterprise Users:** The information on this page only applies to users of our public service, available at [algorithmia.com](https://algorithmia.com).
 {: .notice-info}
 
 ### Pricing
