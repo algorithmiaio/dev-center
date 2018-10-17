@@ -205,7 +205,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion:
 
@@ -218,7 +218,7 @@ For convenience, here is the whole script available to run:
 {% highlight js %}
 var algorithmia = require("algorithmia");
 
-var client = algorithmia(process.env.ALGORITHMIA_API_KEY);
+var client = algorithmia("YOUR_API_KEY");
 
 // Set your Data URI
 var nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")

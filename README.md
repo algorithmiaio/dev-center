@@ -17,7 +17,7 @@ You're going to need:
  - **Linux or OS X** — Windows may work, but is unsupported.
  - **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
-
+ - **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
 #### Ubuntu 16.10 Notes:
 
 ```bash
@@ -28,6 +28,23 @@ sudo apt install ruby ruby-dev zlib1g-dev
 
 ```sudo apt-get install g++
 sudo apt-get install imagemagick
+```
+
+### Mac OSX (High Sierra) Notes:
+
+Install imagemagick:
+```
+brew install imagemagick
+```
+
+Install via:
+```
+bundle install --path vendor/bundle
+```
+
+If installation for nokogiri fails due to libxml2 support, install it via:
+```
+gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
 ```
 
 ### Getting Set Up
@@ -79,7 +96,18 @@ For our purposes, the minimum you will need is `layout`, `title`, `date`, & `cat
 Use `excerpt` to set the text that appears in under the article title in the collection view of all articles. The template will automatically grab the first sentence if you do not set an excerpt, so you'll want to make sure that is appropriate or set one by hand. _Note:_ If the first line of your post is a templating tag, it will not automatically pick up an excerpt.
 
 In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post.
+
+### When mentioning statistics and numbers
+
+When you're mentioning the number of algorithms in the marketplace, or the maximum number of algorithms you can call, to be consistent across the whole developer center, please use variables instead.
+
+For example, if you want to mention the number of algorithms we have in an article, use the following:
+
 ```
+And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
+```
+
+You can find more variables in the `_data/stats.yml` file.
 
 ### Plugins
 

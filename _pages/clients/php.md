@@ -21,6 +21,10 @@ The official Algorithmia PHP Client is [available](https://packagist.org/package
 {% highlight bash %}
 composer require algorithmia/algorithmia 
 {% endhighlight %}
+or
+{% highlight bash %}
+php composer.phar require algorithmia/algorithmia
+{% endhighlight %}
 
 For non-Composer installs, use the [source](https://github.com/algorithmiaio/algorithmia-php).
 
@@ -173,7 +177,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 

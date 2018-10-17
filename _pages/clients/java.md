@@ -149,12 +149,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 {% endhighlight %}
 
-Then upload your local file to the data collection using the `.put()` method:
+Then upload your local file to the data collection using the `.putFile()` method:
 
 {% highlight java %}
 try {
     String local_file = "local_path_to_your_file/jack_london.txt";
-    nlp_directory.put(new File(local_file));
+    nlp_directory.putFile(new File(local_file));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
 }
@@ -185,7 +185,7 @@ try {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
@@ -254,7 +254,7 @@ If you are interested in learning more about working with unstructured text data
 
 ## Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
@@ -310,7 +310,7 @@ public class Main {
 
         String local_file = "local_path_to_your_file/jack_london.txt"
         try {
-            nlp_directory.put(new File(local_file));
+            nlp_directory.putFile(new File(local_file));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

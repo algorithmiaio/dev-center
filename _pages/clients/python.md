@@ -192,7 +192,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
@@ -206,7 +206,7 @@ For convenience, here is the whole script available to run:
 import Algorithmia
 from Algorithmia.acl import ReadAcl, AclType
 
-apiKey = '{Your API key here}'
+apiKey = "YOUR_API_KEY"
 # Create the Algorithmia client
 client = Algorithmia.client(apiKey)
 
@@ -235,7 +235,7 @@ if client.file(text_file).exists() is True:
 	input = client.file(text_file).getString()
 
 # Create the algorithm object using the Summarizer algorithm
-algo = client.algo('nlp/Summarizer/0.1.3')
+algo = client.algo("nlp/Summarizer/0.1.3")
 # Pass in input required by algorithm
 try:
 	# Get the summary result of your file's contents
