@@ -11,6 +11,9 @@ image:
 ---
 
 
+**Enterprise Users:** The information on this page only applies to users of our public service, available at [algorithmia.com](https://algorithmia.com).
+{: .notice-info}
+
 ### Pricing
 For an overview of algorithm pricing, see the [pricing page](https://algorithmia.com/pricing).
 
