@@ -18,6 +18,8 @@ Welcome to hosting your <a href="http://caffe.berkeleyvision.org/">Caffe</a> mod
 
 This guide is designed as an introduction to hosting a Caffe model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+**Currently we support Caffe, with Caffe2 support coming soon. When you create an algorithm be sure to create it as a Python2 GPU-enabled algorithm, but if you don't need GPU's simply add `caffe.set_mode_cpu()` to your algorithm as shown below in the code example.**
+
 ## Table of Contents
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
