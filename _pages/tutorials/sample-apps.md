@@ -2,7 +2,6 @@
 exclude_from_search: true
 layout: article_page
 title:  "Sample apps"
-icon: "sample apps.svg"
 categories: tutorials
 show_related: false
 excerpt: "All the sample apps"
