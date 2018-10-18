@@ -2,7 +2,6 @@
 exclude_from_search: false
 layout: article_page
 title:  "Recipes"
-icon: "recipes.svg"
 categories: tutorials
 show_related: false
 excerpt: "All the recipes"
