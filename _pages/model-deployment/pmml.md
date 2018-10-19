@@ -1,11 +1,13 @@
 ---
 layout: article
-title:  "PMML Model Deployment"
+title:  "PMML"
 excerpt: "Deploy your PMML model to Algorithmia."
 categories: model-guides
-tags: [algo-model-guide]
+tags: [algo-model-guide, pmml-model]
 show_related: true
 author: steph_kim
+image:
+    teaser: /language_logos/algo_icon.svg
 ---
 
 
