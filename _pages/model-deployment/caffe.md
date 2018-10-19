@@ -18,8 +18,6 @@ Welcome to hosting your <a href="http://caffe.berkeleyvision.org/">Caffe</a> mod
 
 This guide is designed as an introduction to hosting a Caffe model and publishing an algorithm even if you’ve never used Algorithmia before.
 
-**Currently we support Caffe, with Caffe2 support coming soon. When you create an algorithm be sure to create it as a Python2 GPU-enabled algorithm, but if you don't need GPU's simply add `caffe.set_mode_cpu()` to your algorithm as shown below in the code example.**
-
 ## Table of Contents
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
@@ -84,7 +82,16 @@ Go ahead and remove the boilerplate code below that's inside the `apply()` funct
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
-- Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
+Here are some Caffe wheels for different versions as well as CPU and GPU wheels:
+
+-   **Caffe 0.1 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_cpu-py2-none-any.whl
+-   **Caffe 0.1 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_gpu-py2-none-any.whl
+-   **Caffe 1.05 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_cpu-py2-none-any.whl
+-   **Caffe 1.05 (CGU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_gpu-py2-none-any.whl
+-   **Caffe build tag 99466 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-27.11.17_99466_gpu-py2-none-any.whl 
+
+
+Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
 Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
 {: .notice-warning}
