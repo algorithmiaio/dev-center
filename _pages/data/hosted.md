@@ -105,7 +105,7 @@ Access temporary collections with this URI format from inside of Algorithmia or 
 
 - 'data://.algo/:author/:algoname/temp/:filename'
 
-Temporary algorithm collections give you a space to store data on a temporary basis. You will find the temporary collections under a `temp` directory inside of an algorithm collection. For example, a user can have an algorithm that produces a file inside of a temporary collection.
+Temporary algorithm collections give you a space to store data on a temporary basis. You will find the temporary collections under a `temp` directory inside of an algorithm collection, and files placed there are accessible only to the user who ran the algorithm. For example, a user can have an algorithm that produces a file inside of a temporary collection.
 
 The temporary algorithm collections are particularly useful for algorithms that produce files as a result of the sample input. For example, if your sample input generates a file, using a temporary algorithm collection allows the algorithm to store its output but will be cleaned up after a day.
 
@@ -125,7 +125,7 @@ Access permanent collections with this URI format from inside of Algorithmia or 
 
 - 'data://.algo/:author/:algoname/perm/:filename'
 
-If you need to access a collection from a specific algorithm, you can use the permanent collection. This allows users to generate output that is saved permanently as a result of running the algorithm. Unlike the Temporary Algorithm Collections, the data stored in the permanent is not cleared after one day.
+If you need to access a collection from a specific algorithm, you can use the permanent collection. This allows users to generate output that is saved permanently as a result of running the algorithm, and is only accessible by that user. Unlike the Temporary Algorithm Collections, the data stored in the permanent collection is not cleared after one day.
 
 ### The Simplified Format
 
