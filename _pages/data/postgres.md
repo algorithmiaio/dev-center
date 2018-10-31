@@ -2,9 +2,9 @@
 layout: article
 title:  "PostgreSQL"
 excerpt: "Run queries against PostgreSQL databases"
-categories: working-with-data
+#categories: working-with-data
 nav_index: 4
-tags: [app-data-connectors]
+#tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:

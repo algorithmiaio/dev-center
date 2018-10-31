@@ -11,4 +11,6 @@ image:
     teaser: /language_logos/mysql.png 
 ---
 
-Call the <a href="https://algorithmia.com/algorithms/util/MySql/">MySql</a> algorithm to access data in your MySql database.
+First, configure your MySql Database connection via <a href="https://algorithmia.com/algorithms/util/MySqlConfig/">MySqlConfig</a>.
+
+Then, call the <a href="https://algorithmia.com/algorithms/util/MySql/">MySql</a> algorithm to access data in your MySql database.
