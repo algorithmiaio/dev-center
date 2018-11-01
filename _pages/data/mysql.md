@@ -61,7 +61,7 @@ def apply(input):
 
 ```
 
-### Option 2: Use helper algorithms to store per-user credentials automatically, and to run queries
+### Option 2: Use our helper algorithms to store per-user credentials automatically, and to run queries
 
 If you don't want to add database connection code directly into your algorithm, you can use our helper algorithms instead. Keep in mind that these incur the usual 1 credit per compute-second cost to run.
 
