@@ -15,7 +15,7 @@ If your algorithm needs to read or write data from a MySql database, you can do 
 
 ### Option 1: Connect directly from within your own algorithm code
 
-There are a variety of MySql packages publicly available. For Python, we recommend PyMySql. For other languages, see [w3resource](http://w3resource.com/mysql/mysql-connectors-and-apis.php).
+There are a variety of MySql packages publicly available. For Python, we recommend [PyMySql](https://pymysql.readthedocs.io/en/latest/). For other languages, see [w3resource](http://w3resource.com/mysql/mysql-connectors-and-apis.php).
 
 We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
 
@@ -78,6 +78,6 @@ client = Algorithmia.client()
 
 def apply(input):
     query = "SELECT name, address FROM employees"
-    results = client.algo('util/MySql/0.1.1').pipe(query).result
+    results = client.algo('util/MySql').pipe(query).result
     # now use results (a list of lists) in any way you like
 ```
