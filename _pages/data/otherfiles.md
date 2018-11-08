@@ -80,7 +80,7 @@ def apply(input):
     return new_file.url
 ```
 
-This example grabs a the file "somecollection/somefile.png" from our [Hosted Data]({{ site.baseurl }}/data/hosted/), and uploads it to the bucket "some_bucket_name" as "remotefolder/remotefile.png".  I could use other functions of the b2blaze library to perform other operations instead, such as downloading a file from Backblaze and examining its contents, or creating and deleting folders or even entire buckets.
+This example grabs the file "somecollection/somefile.png" from our [Hosted Data]({{ site.baseurl }}/data/hosted/), and uploads it to the bucket "some_bucket_name" as "remotefolder/remotefile.png".  We could use other functions of the b2blaze library to perform other operations instead, such as downloading a file from Backblaze and examining its contents, or creating and deleting folders or even entire buckets.
 
 Your algorithm can contain abstract code, so feel free to experiment and use whichever public libraries fit your needs for connecting to the storage provider of your choice -- but do check our list of [Data Connectors](../) first to see if we already have a built-in connector ready for you to use.
 
