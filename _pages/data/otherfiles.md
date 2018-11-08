@@ -47,7 +47,7 @@ def apply(input):
         raise AlgorithmException('Please configure your credentials')
 ```
 
-### Step 3: import dependencies and write code to manupulate your files
+### Step 3: import dependencies and write code to manipulate your files
 
 [b2blaze](https://pypi.org/project/b2blaze/) is a module which allows for the uploading and downloading of files to/from a Backblaze bucket, so we'll add `b2blaze` to our Dependencies within our algorithm, then add a bit of code to upload a file:
 
