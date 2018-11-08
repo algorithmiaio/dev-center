@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Other File Stores"
+title:  "Other File Storage"
 excerpt: "Put and get files from other file storage systems"
 categories: working-with-data
 nav_index: 4
