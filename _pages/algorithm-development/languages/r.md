@@ -54,7 +54,7 @@ When you have an R model that has been serialized as an .rds file, you can deplo
 saveRDS(iris_fit_naive, "./naive_bayes_iris.rds")
 {% endhighlight %}
 
-Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{ site.baseurl }}/clients/r/) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{ site.baseurl }}/developers/data/).
+Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{ site.baseurl }}/clients/r/) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{ site.baseurl }}/data/).
 
 Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
 

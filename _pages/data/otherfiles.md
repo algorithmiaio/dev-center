@@ -17,7 +17,7 @@ Begin by finding an API or client library for that data source.  In this example
 
 ### Step 1: store your credentials in a secure location
 
-Create a folder within your [Data Portal]({{ site.baseurl }}/developers/data/) and set its read access to "Private".
+Create a folder within your [Data Portal]({{ site.baseurl }}/data/) and set its read access to "Private".
 
 Inside this folder, create a `.json` file containing your connection credentials. Backblaze uses ["key_id" and "application_key"](https://www.backblaze.com/blog/b2-application-keys), so the contents of the file will look like:
 
@@ -80,8 +80,8 @@ def apply(input):
     return new_file.url
 ```
 
-This example grabs a the file "somecollection/somefile.png" from our [Hosted Data]({{ site.baseurl }}/developers/data/hosted/), and uploads it to the bucket "some_bucket_name" as "remotefolder/remotefile.png".  I could use other functions of the b2blaze library to perform other operations instead, such as downloading a file from Backblaze and examining its contents, or creating and deleting folders or even entire buckets.
+This example grabs a the file "somecollection/somefile.png" from our [Hosted Data]({{ site.baseurl }}/data/hosted/), and uploads it to the bucket "some_bucket_name" as "remotefolder/remotefile.png".  I could use other functions of the b2blaze library to perform other operations instead, such as downloading a file from Backblaze and examining its contents, or creating and deleting folders or even entire buckets.
 
 Your algorithm can contain abstract code, so feel free to experiment and use whichever public libraries fit your needs for connecting to the storage provider of your choice -- but do check our list of [Data Connectors](../) first to see if we already have a built-in connector ready for you to use.
 
-For a complete implementation example using Backblaze, check the "docs" and "source" tabs of the [BackblazeConfig]({{ site.baseurl }}/algorithms/util/BackblazeConfig), [BackblazeUpload]({{ site.baseurl }}/algorithms/util/BackblazeUpload), and [BackblazeDownload]({{ site.baseurl }}/algorithms/util/BackblazeDownload) algorithms.   
+For a complete implementation example using Backblaze, check the "docs" and "source" tabs of the [BackblazeConfig]({{ site.baseurl }}/../algorithms/util/BackblazeConfig), [BackblazeUpload]({{ site.baseurl }}/../algorithms/util/BackblazeUpload), and [BackblazeDownload]({{ site.baseurl }}/../algorithms/util/BackblazeDownload) algorithms.   
