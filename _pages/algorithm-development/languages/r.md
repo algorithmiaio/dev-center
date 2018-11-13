@@ -36,7 +36,7 @@ via the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the algorithm() function.
 
@@ -45,7 +45,7 @@ The algorithm() function defines the input point of the algorithm. We use the al
 
 Go ahead and remove the boilerplate code below that's inside the algorithm() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
 
 ## Saving and Loading R Models
 When you have an R model that has been serialized as an .rds file, you can deploy it easily on Algorithmia. All you need to do is save your model:
@@ -69,16 +69,16 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://cran
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
 
-As you can see in the dependency file above, there are four different ways you can load packages in R. 
+As you can see in the dependency file above, there are four different ways you can load packages in R.
 If you want the latest version from CRAN, than you simply type in the dependency name (this example uses the package e1071):
 
 {% highlight bash %}
 e1071
 {% endhighlight %}
 
-If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive, which in this instance, should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency: 
+If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive, which in this instance, should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency:
 
 {% highlight bash %}
 https://cran.r-project.org/src/contrib/Archive/e1071/e1071_1.6-6.tar.gz
@@ -305,7 +305,7 @@ algorithm <- function(input){
 
 This should return a split up list of strings:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -353,7 +353,7 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -365,7 +365,7 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
