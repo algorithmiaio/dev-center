@@ -37,7 +37,7 @@ You'll want to do the training and saving of your model on your local machine, o
 After training your Caffe model, you'll want to save the model and weights so you can upload it to Algorithmia.
 
 ### Create a Data Collection
-Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>. 
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
 In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
@@ -49,7 +49,7 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
 
@@ -64,12 +64,12 @@ Next, upload your model files to your newly created data collection.
     - data://username/collections_name/file_name.prototxt.txt,
     - data://username/collections_name/file_name.caffemodel
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 Hopefully you've already followed along with the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console. 
+Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -77,7 +77,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -88,7 +88,7 @@ Here are some Caffe wheels for different versions as well as CPU and GPU wheels:
 -   **Caffe 0.1 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_gpu-py2-none-any.whl
 -   **Caffe 1.05 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_cpu-py2-none-any.whl
 -   **Caffe 1.05 (CGU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_gpu-py2-none-any.whl
--   **Caffe build tag 99466 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-27.11.17_99466_gpu-py2-none-any.whl 
+-   **Caffe build tag 99466 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-27.11.17_99466_gpu-py2-none-any.whl
 
 
 Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
@@ -96,14 +96,14 @@ Click on the **"Dependencies"** button at the top right of the UI and list your 
 Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
 {: .notice-warning}
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
 
 When you load your model, our recommendation is to preload your model in a separate function external to the apply() function.
 
-This is because when a model is first loaded it can take time to load depending on the file size. 
+This is because when a model is first loaded it can take time to load depending on the file size.
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
@@ -171,7 +171,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
