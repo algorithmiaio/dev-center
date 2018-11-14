@@ -53,7 +53,7 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
  2. Clone *your forked repository* with `git clone https://github.com/YOURUSERNAME/dev-center.git`
  3. `cd dev-center`
  4. Install all dependencies: `bundle install`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
- 5. Start the test server: `bundle exec jekyll serve`
+ 5. Start the test server: `bundle exec jekyll serve` (append `--config _config.yml,_config-dev.yml` to use dev cdn config)
 
 You can now see the developer center at <http://localhost:4000>.
 

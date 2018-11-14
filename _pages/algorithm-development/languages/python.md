@@ -37,7 +37,7 @@ via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -46,7 +46,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 
 ## Managing Dependencies
@@ -55,7 +55,7 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot img-md">
 
 If you have any dependencies you can add them by typing in the package name to the `requirements.txt` file.
 
@@ -84,7 +84,7 @@ Now let's get started on the hands-on portion of the guide:
 
 The first algorithm that we'll create will take a JSON formatted object passed as input by the user which is deserialized into a Python dictionary before the algorithm is called.
 
-It will output a JSON formatted object which the user will consume with an API call to the algorithm path. 
+It will output a JSON formatted object which the user will consume with an API call to the algorithm path.
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “AdaDeveloper” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be AdaDeveloper/TokenizeText/0.1.1
 
@@ -275,7 +275,7 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This returns a list of words:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -335,7 +335,7 @@ To learn how to publish your algorithm: <a href="{{ site.baseurl }}/algorithm-de
 #### Algorithms with multiple files
 Putting everything in one source file sometimes doesn't make sense and makes stuff hard to maintain, many times you'll want to break your code into multiple source files.
 
-Importing your secondary files contains some ceavats when 
+Importing your secondary files contains some ceavats when
 executing your algorithm on Algorithmia, in particular the import paths you use locally may vary from ours.
 
 This means that if your project looks like this:
@@ -350,7 +350,7 @@ This means that if your project looks like this:
       sub_module /
                   __init__.py
                   special_stuff.py
-      
+
 ```
 with main_file being your main python module, your import code might look something like this:
 ```python

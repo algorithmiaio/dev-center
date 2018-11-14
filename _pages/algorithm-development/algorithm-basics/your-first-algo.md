@@ -12,7 +12,7 @@ redirect_from:
   - /algorithm-development/your-first-algo/
 ---
 
-One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm. 
+One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.
 
 Note that this example shows how to create a Python algorithm, however all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{ site.baseurl }}/algorithm-development/languages/">Algorithm Development Languages</a>.
 
@@ -27,11 +27,11 @@ Table of Contents
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-smallest">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-smallest">
 
 When you click the "Add Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
@@ -39,7 +39,7 @@ For example this is the beginning portion of the <a href="{{ site.baseurl }}/alg
 
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
-**Language:** Next you'll pick the language of your choice. 
+**Language:** Next you'll pick the language of your choice.
 
 **Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
 
@@ -54,7 +54,7 @@ You can find out more about algorithm permissions in the [Algorithm Permissions 
 
 Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot img-md">
 
 You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
@@ -64,7 +64,7 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
@@ -82,17 +82,17 @@ If you're using Python, you must [set an environment variable](https://www.schro
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot img-md">
 
 Notice the tabs: **Run**, **Docs**, **Cost**, **Discussion**, **Manage**, and **Source**.
 
-The tab currently showing **Run** is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
+The tab currently showing **Run** is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case).
 
 **Docs** consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
 
 **Cost** will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
 
-The **Discussion** tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
+The **Discussion** tab shows the comments and questions from users so you can keep up to date regarding user feedback.
 
 Under the **Manage** tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
 
@@ -109,20 +109,20 @@ To run this algorithm first hit the "Compile" button on the top right hand corne
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-Once you have finished editing and want to run the algorithm, click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code. 
+Once you have finished editing and want to run the algorithm, click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code.
 
-Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console: 
+Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a **Changes** tab, a **Sample I/O** tab, and one called **Versioning**.
 
@@ -160,4 +160,4 @@ Now that you've published your first simple algorithm on the platform, you can f
 
 #### Next Steps
 
-After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript. 
+After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.

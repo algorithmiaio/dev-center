@@ -30,7 +30,7 @@ If you didn't do so on first run, switch Xcode to developer mode: `sudo xcode-se
 
 Download the [sample project](https://github.com/algorithmiaio/algorithmia-swift/) and use Xcode to open the *directory* "algorithmia-swift" (*not* the file "AlgorithmiaSwift.xcodeproj").
 
-Now you're almost ready to run the project... there are just a few options to configure first. 
+Now you're almost ready to run the project... there are just a few options to configure first.
 
 ## Settings, Permissions, & API Key
 
@@ -42,9 +42,9 @@ Make sure you have [added a developer profile](http://stackoverflow.com/a/412174
 
 On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.  Save this API key.
 
-Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value. 
+Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value.
 
-![Set environment variables]({{ site.baseurl }}/images/post_images/ios/envs.png)
+![Set environment variables]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/ios/envs.png)
 
 **Create a Data Collection to store your images during processing**
 
@@ -58,7 +58,7 @@ Before changing any code, build and run the app to test out the default function
 
 If all is working properly, you'll see a mostly-blank screen with options to take a photo or pick one from your phone's library. Once you've selected a photo, it will upload it to the `sourcePath` specified earlier, run Algorithmia's [DeepFilter algorithm](https://algorithmia.com/algorithms/deeplearning/DeepFilter) on the image, and render the result on the screen (as well as storing it your [Hosted Data](https://algorithmia.com/data/hosted) under `resultPath`):
 
-![Running the app in the iPhone Simulator]({{ site.baseurl }}/images/post_images/ios/demo.png) 
+![Running the app in the iPhone Simulator]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/ios/demo.png)
 
 
 ## Revising the Code
@@ -86,7 +86,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
             self.processImage(file: file)
         }
     }
-    
+
     func processImage(file:AlgoDataFile) {
         let param:[String:Any] = [
             "images": [
@@ -97,7 +97,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
             ],
             "filterName": "space_pizza"
         ]
-        
+
         // Process with DeepFilter algorithm
         self.client.algo(algoUri: "algo://deeplearning/DeepFilter").pipe(json: param, completion: { (response, error) in
             if let error = error {
@@ -108,7 +108,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
             self.downloadOutput(file: self.client.file(self.resultPath))
         })
     }
-    
+
     func downloadOutput(file:AlgoDataFile) {
         // Download output file
         file.getData { (data, error) in
@@ -122,7 +122,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
                 self.statusLabel.text = " "
             }
         }
-        
+
     }
 {% endhighlight %}
 
@@ -147,7 +147,7 @@ Lastly, replace `"algo://deeplearning/DeepFilter"` with `"algo://deeplearning/Sa
             "image": file.toDataURI(),
             "location": resultPath
         ]
-        
+
         // Process with SalNet algorithm
         self.client.algo(algoUri: "algo://deeplearning/SalNet").pipe(json: param, completion: { (response, error) in
             if let error = error {
