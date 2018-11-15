@@ -43,6 +43,8 @@ Got all that? Great! Lets dive in.
     - Ensure that your evaluation algorithm is passing data to your evaluatable algorithms correctly! If they expect json, make sure you're passing something that can be serialized into json.
     - If some of your evaluatable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
+    
+ **note:** Not sure what the IO should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
 
 ## Step 2: Create a new evaluation
 
