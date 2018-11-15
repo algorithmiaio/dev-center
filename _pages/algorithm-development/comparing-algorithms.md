@@ -44,7 +44,7 @@ Got all that? Great! Lets dive in.
     - If some of your evaluatable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
     
- **note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
+ **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
 
 ## Step 2: Create a new evaluation
 
@@ -83,6 +83,8 @@ Got all that? Great! Lets dive in.
 - Once your input is ready, you can click the big "run evaluation" button at the top
 - Once your evaluation is executing, you can click the "results" tab and check the results.
 - If any errors or exceptions are detected during algorithm execution, they'll be declared in the `Error` column on the far right.
+
+**Note:** Each time you run an Evaluation, it causes the Algorithms you've selected to be run (possibly many times, depending on how your Evaluator is written). Each of these runs will use credits, so take a look at the "cost" tab of any algorithms you are evaluating to estimate your total costs.   
 
 And by following this guide, you should be able to create your very own evaluation!
 
