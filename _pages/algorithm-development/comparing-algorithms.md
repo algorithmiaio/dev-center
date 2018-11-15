@@ -10,7 +10,7 @@ image:
 ---
 
 If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways.
-The [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) is a new tool that makes comparing algorithms dead simple.
+The [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) is a new tool that makes comparing algorithms dead simple.
 
 Not entirely sure what we're talking about? That's ok! Take a look at our [Multi-Lang String Reversal Evaluation demo.](https://algorithmia.com/evaluations/algoevaldemo/string-reversal)
 In the example above, we're comparing the performance of different programming languages by using each languages idiomatic string reversal technique.
@@ -25,9 +25,9 @@ Here we look at the top-1, top-3, and top-5 prediction accuracy rates for image 
 Want to use a general purpose image classifier for a narrow task? Evaluations like these will definitely help!
 
 **Note:** Things you should have before we begin:
-- A working knowledge of [algorithm development on Algorithmia](https://algorithmia.com/developers/algorithm-development/).
+- A working knowledge of [algorithm development on Algorithmia]({{site.url}}{{site.baseurl}}/algorithm-development/).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
-- A testing dataset (or data point) you plan to use to compare algorithms, ideally already in the [data api](https://algorithmia.com/developers/data/hosted).
+- A testing dataset (or data point) you plan to use to compare algorithms, ideally already in the [data api]({{site.url}}{{site.baseurl}}/data/hosted).
 - Some criteria you want to compare your algorithms with.
 
 Got all that? Great! Lets dive in.
@@ -48,7 +48,7 @@ Got all that? Great! Lets dive in.
 
 ## Step 2: Create a new evaluation
 
-##### Go to the [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) and click "Create Evaluation"
+##### Go to the [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) and click "Create Evaluation"
 
 ![](https://i.imgur.com/be7W8BR.png)
 
@@ -58,7 +58,7 @@ Got all that? Great! Lets dive in.
 ![](https://i.imgur.com/gsG4XCz.png)
 
 - If you can't find your evaluator, make sure its:
-    - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
+    - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account
     - Not created by an Organization (for now)
 
@@ -66,7 +66,7 @@ Got all that? Great! Lets dive in.
 ![](https://i.imgur.com/DaKpEVX.png)
 
 -  If you can't find your Evaluatable Algorithm, make sure its:
-    - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
+    - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account
 
 ### Step 3.3: Provide an input to your evaluator algorithm
