@@ -44,7 +44,7 @@ Got all that? Great! Lets dive in.
     - If some of your evaluatable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
     
- **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
+ **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evaluator, it should get you on the right track.
 
 ## Step 2: Create a new evaluation
 
