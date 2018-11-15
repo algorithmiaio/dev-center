@@ -40,8 +40,8 @@ Got all that? Great! Lets dive in.
         - Comparing performance of different string reversal techniques.
 - For guidance on how to create your own evaluator algorithm, check out [String Reversal Evaluator Algorithm](https://algorithmia.com/algorithms/zeryx/evaluator), the algorithm is public and is a great starting point!
 - Other things to keep in mind:
-    - Ensure that your evaluation algorithm is passing data to your evaluatable algorithms correctly! If they expect json, make sure you're passing something that can be serialized into json.
-    - If some of your evaluatable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
+    - Ensure that your evaluation algorithm is passing data to your evaluable algorithms correctly! If they expect json, make sure you're passing something that can be serialized into json.
+    - If some of your evaluable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
     
  **note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
@@ -62,10 +62,10 @@ Got all that? Great! Lets dive in.
     - Visible to your user account
     - Not created by an Organization (for now)
 
-### Step 3.2: Add your Evaluatable Algorithms
+### Step 3.2: Add your Evaluable Algorithms
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="screenshot">
 
--  If you can't find your Evaluatable Algorithm, make sure its:
+-  If you can't find your Evaluable Algorithm, make sure its:
     - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account
 
@@ -75,7 +75,7 @@ Got all that? Great! Lets dive in.
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
     - Remember that the `evaluated_algorithm` input variable defined in the Evaluator Algorithm is passed automatically.
-    - Any additional parameters you wish to provide to your evaluatable algorithms should be passed here, in the evaluation input.
+    - Any additional parameters you wish to provide to your evaluable algorithms should be passed here, in the evaluation input.
 
 ## Step 4: Run your Evaluation
 
