@@ -9,7 +9,7 @@ image:
     teaser: /icons/algo.svg
 ---
 
-If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways. 
+If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways.
 The [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) is a new tool that makes comparing algorithms dead simple.
 
 Not entirely sure what we're talking about? That's ok! Take a look at our [Multi-Lang String Reversal Evaluation demo.](https://algorithmia.com/evaluations/algoevaldemo/string-reversal)
@@ -48,7 +48,7 @@ Got all that? Great! Lets dive in.
 
 ## Step 2: Create a new evaluation
 
-##### Go to www.algorithmia.com/evaluations and click "Create Evaluation"
+##### Go to the [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) and click "Create Evaluation"
 
 ![](https://i.imgur.com/be7W8BR.png)
 
@@ -68,7 +68,7 @@ Got all that? Great! Lets dive in.
 -  If you can't find your Evaluatable Algorithm, make sure its:
     - A [published algorithm](https://algorithmia.com/developers/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
     - Visible to your user account
- 
+
 ### Step 3.3: Provide an input to your evaluator algorithm
 
 ![](https://i.imgur.com/90L7OH5.png)
