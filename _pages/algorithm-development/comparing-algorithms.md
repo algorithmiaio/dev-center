@@ -74,7 +74,7 @@ Got all that? Great! Lets dive in.
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="screenshot">
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
-    - Remember that the `evaluated_algorithm` input variable defined in the Evaluator Algorithm is passed automatically.
+    - Remember that the `evaluated_algorithm` input variable defined in the evaluator algorithm is passed automatically.
     - Any additional parameters you wish to provide to your evaluable algorithms should be passed here, in the evaluation input.
 
 ## Step 4: Run your Evaluation
