@@ -32,7 +32,7 @@ Want to use a general purpose image classifier for a narrow task? Evaluations li
 
 Got all that? Great! Lets dive in.
 
-## Step 1: Create an Evaluator algorithm.
+## Step 1: Create an Evaluator Algorithm.
 
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
@@ -44,15 +44,15 @@ Got all that? Great! Lets dive in.
     - If some of your evaluable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
     
- **note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evalutor, it should get you on the right track.
+ **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evaluator, it should get you on the right track.
 
-## Step 2: Create a new evaluation
+## Step 2: Create a New Evaluation
 
 ##### Go to the [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) and click "Create Evaluation"
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/comparing_algorithms/create_evaluation.png" alt="Create Evaluation" class="screenshot">
 
-## Step 3: Setup your Evaluation
+## Step 3: Set up your Evaluation
 
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="screenshot">
@@ -84,6 +84,8 @@ Got all that? Great! Lets dive in.
 - Once your input is ready, you can click the big "run evaluation" button at the top
 - Once your evaluation is executing, you can click the "results" tab and check the results.
 - If any errors or exceptions are detected during algorithm execution, they'll be declared in the `Error` column on the far right.
+
+**Note:** Running an evaluation costs credits, since both the evaluator algorithm and the evaluated algorithms will be executed.  
 
 And by following this guide, you should be able to create your very own evaluation!
 
