@@ -32,7 +32,7 @@ Want to use a general purpose image classifier for a narrow task? Evaluations li
 
 Got all that? Great! Lets dive in.
 
-## Step 1: Create an Evaluator algorithm.
+## Step 1: Create an Evaluator Algorithm.
 
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
@@ -46,13 +46,13 @@ Got all that? Great! Lets dive in.
     
  **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evaluator, it should get you on the right track.
 
-## Step 2: Create a new evaluation
+## Step 2: Create a New Evaluation
 
 ##### Go to the [Algorithmia Evaluations Wizard](https://algorithmia.com/evaluations) and click "Create Evaluation"
 
 ![](https://i.imgur.com/be7W8BR.png)
 
-## Step 3: Setup your Evaluation
+## Step 3: Set up your Evaluation
 
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
 ![](https://i.imgur.com/gsG4XCz.png)
@@ -74,7 +74,7 @@ Got all that? Great! Lets dive in.
 ![](https://i.imgur.com/90L7OH5.png)
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
-    - Remember that the `evaluated_algorithm` input variable defined in the Evaluator Algorithm is passed automatically.
+    - Remember that the `evaluated_algorithm` input variable defined in the evaluator algorithm is passed automatically.
     - Any additional parameters you wish to provide to your evaluatable algorithms should be passed here, in the evaluation input.
 
 ## Step 4: Run your Evaluation
@@ -84,7 +84,7 @@ Got all that? Great! Lets dive in.
 - Once your evaluation is executing, you can click the "results" tab and check the results.
 - If any errors or exceptions are detected during algorithm execution, they'll be declared in the `Error` column on the far right.
 
-**Note:** Each time you run an Evaluation, it causes the Algorithms you've selected to be run (possibly many times, depending on how your Evaluator is written). Each of these runs will use credits, so take a look at the "cost" tab of any algorithms you are evaluating to estimate your total costs.   
+**Note:** Running an evaluation costs credits, since both the evaluator algorithm and the evaluated algorithms will be executed.  
 
 And by following this guide, you should be able to create your very own evaluation!
 
