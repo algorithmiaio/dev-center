@@ -75,7 +75,7 @@ Got all that? Great! Lets dive in.
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
     - Remember that the `evaluated_algorithm` input variable defined in the evaluator algorithm is passed automatically.
-    - Any additional parameters you wish to provide to your evaluatable algorithms should be passed here, in the evaluation input.
+    - Any additional parameters you wish to provide to your evaluable algorithms should be passed here, in the evaluation input.
 
 ## Step 4: Run your Evaluation
 
