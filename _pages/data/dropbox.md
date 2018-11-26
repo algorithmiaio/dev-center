@@ -11,7 +11,7 @@ image:
     teaser: /language_logos/dropbox.svg
 ---
 
-As an application developer you can access the data you need from your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.
+Here you'll learn how to connect and access your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.
 
 ## Data Source Basics
 All data sources have a protocol and a label that you will use to reference your data. For instance Dropbox is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
