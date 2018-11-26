@@ -17,15 +17,11 @@ Here you'll learn how to connect and access your Dropbox account in a few easy s
 All data sources have a protocol and a label that you will use to reference your data. For instance Dropbox is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Create a New Data Connection to Dropbox
-To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a panel that says 'Add New Data Source':
+To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'Connect New Data Source' where you'll see the options:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/data_connectors/data_portal.png" alt="Data Portal" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-On that panel click the button that says **"Add Data Source"** which will bring up a panel that lets you chose between configuring a new data source for AWS S3 or Dropbox:
-
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
-
-Select **'Connect to Dropbox'** and you will be prompted to login to your Dropbox account. You'll be asked if you want to grant Algorithmia access to your account via OAuth authentication. Once that's done a new panel will be created which will have the Dropbox icon on it and a unique label for that Dropbox connection.
+Select **'Dropbox'** and you will be prompted to login to your Dropbox account. You'll be asked if you want to grant Algorithmia access to your account via OAuth authentication. Once that's done a new panel will be created which will have the Dropbox icon on it and a unique label for that Dropbox connection.
 
 ## Configure a Data Source
 Set path restrictions and manage the read and write permissions by clicking the button **"Manage Dropbox"** on the middle panel holding the unique data connector that was just created.

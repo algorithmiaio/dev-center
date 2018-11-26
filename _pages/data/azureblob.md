@@ -21,7 +21,7 @@ To create a new data connection first navigate to <a href="{{ site.baseurl }}/da
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Connect to Azure Blob'** and a modal window will open to configure a connection. Here you will need to enter your Azure credentials. Authorization is done by adding your Storage URI, SAS Token and Container Name and you can find guides for more information in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>.
+Select **'Azure Blob'** and a modal window will open to configure a connection. Here you will need to enter your Azure credentials. Authorization is done by adding your Storage URI, SAS Token and Container Name and you can find guides for more information in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>.
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
