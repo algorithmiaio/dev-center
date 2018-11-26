@@ -135,11 +135,11 @@ In the above code, the Manual Builder API is used to save your graph using a Met
 Now that you've trained and saved your Tensorflow model elsewhere, we'll deploy it on Algorithmia.
 
 ### Create a Data Collection
-Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>. 
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
 In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
-First, you'll want to create a data collection to host your graph and variables. 
+First, you'll want to create a data collection to host your graph and variables.
 
 - Log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
@@ -147,7 +147,7 @@ First, you'll want to create a data collection to host your graph and variables.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
 
@@ -160,7 +160,7 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 - Note the path to your data collection and the zip folder: data://user_name/collections_name/model.zip
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 
@@ -169,7 +169,7 @@ Hopefully you've already followed along with the <a href="{{ site.baseurl }}/alg
 Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
 {: .notice-info}
 
-Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console. 
+Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -177,14 +177,14 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="screenshot img-md">
 
 If you plan on using tensorflow with GPU support, make sure to use the
 <code>tensorflow-gpu</code> python package instead of the <code>tensorflow</code> one, with the version number
@@ -196,7 +196,7 @@ We've recently added tensorflow 1.3.0 support, however it uses custom wheels whi
 <li> python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl </li>
 <li> python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl </li>
 </ul>
-If you run into any issues with these wheels, please get in touch with us using intercom. 
+If you run into any issues with these wheels, please get in touch with us using intercom.
 
 Note that with the Python 2 wheel you also must add your protobuf version to the dependency. For example:
 <code>protobuf==3.0.0b2.post1</code>
@@ -210,7 +210,7 @@ Now that you've seen how to save your model using SavedModelBuilder, you can loa
 
 When you load your model, our recommendation is to preload your model in a separate function external to the apply() function.
 
-This is because when a model is first loaded it can take time to load depending on the file size. 
+This is because when a model is first loaded it can take time to load depending on the file size.
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
@@ -226,13 +226,13 @@ This is where we'll show how to deploy your saved model to make predictions on t
 
 The following code sample is adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow.
 
-If you want to follow along, you can add the <a href="http://yann.lecun.com/exdb/mnist/">MNIST data files</a> to your data collection, but make sure you update the username and path to match your own. 
+If you want to follow along, you can add the <a href="http://yann.lecun.com/exdb/mnist/">MNIST data files</a> to your data collection, but make sure you update the username and path to match your own.
 
 You will also need the file in the <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow Demo GPU</a> called loadmnistdata.py shown here to deal with unpacking the mnist files:
 
 ```python
 """
-Functions to handle MNIST data extraction and loading 
+Functions to handle MNIST data extraction and loading
 
 Adopted from https://github.com/tensorflow/tensorflow/blob/v0.6.0/tensorflow/examples/tutorials/mnist/input_data.py
 """
@@ -310,10 +310,10 @@ import shutil
 from .loadmnistdata import load_mnist
 
 client = Algorithmia.client()
-    
+
 def load_data(input):
     """
-    Pass in {"mnist_images": "data://demo/tensorflow_mnist_data/t10k-images-idx3-ubyte.gz", 
+    Pass in {"mnist_images": "data://demo/tensorflow_mnist_data/t10k-images-idx3-ubyte.gz",
         "mnist_labels": "data://demo/tensorflow_mnist_data/t10k-labels-idx1-ubyte.gz"
     }
     """
@@ -335,11 +335,11 @@ def extract_zip():
     """
     Get zipped model file from data collections
     """
-    # Saved model protocol buffer and variables 
+    # Saved model protocol buffer and variables
     filename = "data://demo/tensorflow_mnist_model/model.zip"
     model_file = client.file(filename).getFile().name
     return model_file
-    
+
 def extract_model():
     """
     Unzip model files from data collections
@@ -355,14 +355,14 @@ def extract_model():
     zipped_file = zipfile.ZipFile(input_zip)
     # Extract unzipped files into directory created earlier returns none
     return zipped_file.extractall("unzipped_files")
-    
+
 def generate_gpu_config(memory_fraction):
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
     return config
-    
-# Unzip model files to directory 
+
+# Unzip model files to directory
 extract_model()
 
 # Load model outside of apply() in global state so it only gets loaded one time
@@ -372,7 +372,7 @@ def create_session():
     fraction = 0.6
     session = tf.Session(config=generate_gpu_config(fraction))
     path_to_graph = "./unzipped_files/model"
-    
+
     tf.saved_model.loader.load(
         session,
         [tf.saved_model.tag_constants.SERVING],
@@ -405,13 +405,13 @@ def apply(input):
     data = load_data(input)
     inference = predict(data)
     tf_version = tf.__version__
-    return "MNIST Predictions: {0}, TF version: {1}".format(inference, tf_version) 
+    return "MNIST Predictions: {0}, TF version: {1}".format(inference, tf_version)
 ```
 
 Now when you run this code, the expected input is:
 
 {% highlight python %}
-{"mnist_images": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-images-idx3-ubyte.gz", "mnist_labels": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-labels-idx1-ubyte.gz"} 
+{"mnist_images": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-images-idx3-ubyte.gz", "mnist_labels": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-labels-idx1-ubyte.gz"}
 {% endhighlight %}
 
 With the expected output:
@@ -431,7 +431,7 @@ import os
 from numpy import array, float32, object
 client = Algorithmia.client()
 
-    
+
 def _create_float(v):
     return tf.train.Feature(float_list=tf.train.FloatList(value=[v]))
 
@@ -466,7 +466,7 @@ def apply(input):
     occupation = _create_str(input['occupation'])
     relationship = _create_str(input['relationship'])
     workclass = _create_str(input['workclass'])
-    
+
     features = {
         'age': age,
         'capital_gain': capital_gain,
@@ -495,7 +495,7 @@ If you want to create a custom graph session (aka with gpu memory optimizations 
 
 ### GPU memory tricks
 Are you running into out of memory exceptions? Tensorflow attempts to allocate all available
-gpu memory. 
+gpu memory.
 By defining a configuration with a max memory fraction you can ensure algorithm stability.
 Also, uncomment `allow_growth` if you aren't sure how much memory your algorithm needs, tensorflow will grow it's gpu memory allocation as necessary.
 
@@ -512,7 +512,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

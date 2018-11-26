@@ -17,7 +17,7 @@ We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Sc
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
 
-<img src="{{ site.baseurl }}/images/face_detection.jpg" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/face_detection.jpg" class="screenshot img-sm">
 
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 
@@ -399,7 +399,7 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
   <div class="tab-pane code__pane gs-pane" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
 
-{ 
+{
   <span class="hljs-string">"result"</span>: <span class="hljs-string">"Hello <span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>,
   <span class="hljs-string">"metadata"</span>: {
      <span class="hljs-string">"content_type"</span>: <span class="hljs-string">"text"</span>,
@@ -409,7 +409,7 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
 
   <textarea id="result-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 
-{ 
+{
   "result": "Hello YOUR_USERNAME",
   "metadata": {
      "content_type": "text",

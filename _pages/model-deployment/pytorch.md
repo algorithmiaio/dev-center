@@ -41,10 +41,10 @@ Install the `ergo-pytorch` package using <a href="https://pypi.org/">Pypi</a> wi
 
 ##### 2. Save Your Model Using Our Ergonomics Package
 
-Instead of using Pytorch’s built in `model.save()` functionality, use `ergonomics.model_ergonomics.save_portable(source_path)`. This will save your model along with the class code, so you don’t need to copy and paste that later on. 
+Instead of using Pytorch’s built in `model.save()` functionality, use `ergonomics.model_ergonomics.save_portable(source_path)`. This will save your model along with the class code, so you don’t need to copy and paste that later on.
 
 ### Create a Data Collection
-Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>. 
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
 In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
@@ -56,7 +56,7 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
 
@@ -69,12 +69,12 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/file_name.zip
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/pytorch_add_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/pytorch_add_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 Hopefully you've already followed along with the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console. 
+Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -82,14 +82,14 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/pytorch_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/pytorch_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 For easy copy and paste:
 {% highlight python %}
@@ -105,7 +105,7 @@ Here is where you load and run your model which will be called by the apply() fu
 
 When you load your model, our recommendation is to preload your model in a separate function external to the apply() function.
 
-This is because when a model is first loaded it can take time to load depending on the file size. 
+This is because when a model is first loaded it can take time to load depending on the file size.
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
@@ -114,11 +114,11 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
-### CPUs vs. GPUs on Pytorch 
+### CPUs vs. GPUs on Pytorch
 
-Pytorch offers a few different distributions for download that are split by CPU and GPU. The Pytorch files for CPU usage are normal sized, but when using the GPU packages the files can get very large. 
+Pytorch offers a few different distributions for download that are split by CPU and GPU. The Pytorch files for CPU usage are normal sized, but when using the GPU packages the files can get very large.
 
-For GPU based implementations we've created a workaround that loads the files much faster than the default. When using the workaround, the main file stays the same (see example hosted model below) but you'll need to create an extra file that executes the workaround. See the second example `implement.py` for how to do this. 
+For GPU based implementations we've created a workaround that loads the files much faster than the default. When using the workaround, the main file stays the same (see example hosted model below) but you'll need to create an extra file that executes the workaround. See the second example `implement.py` for how to do this.
 
 ### Example Hosted Model (Main):
 
@@ -143,7 +143,7 @@ client = Algorithmia.client()
 def load_model(path):
     newCNN = ergonomics.serialization.load_portable('MODEL_PATH')
     return newCNN
-    
+
 def preprocess(input_image):
     file_url = client.file(input_image).getFile().name
     #Normalize and resize image
@@ -153,7 +153,7 @@ def preprocess(input_image):
     img.load()
     output = composed(img)
     return output
-    
+
 def predict(input, newCNN):
     outputs = newCNN(Variable(torch.stack([input])))
     _, predicted = torch.max(outputs.data, 1)
@@ -167,7 +167,7 @@ def apply(input):
         processed = preprocess(input_url)
         output = predict(processed, newCNN)
         outputs.append(classes[output])
-        
+
     return {"output" : outputs}
 
 
@@ -191,9 +191,9 @@ def load_pytorch_model():
     filename = 'data://gagejustins/Pytorch/simpleCNN.zip'
     model_loc = client.file(filename).getFile().name
     return model_loc
-    
+
 model_loc = load_pytorch_model()
-    
+
 def parseInputs(input):
     #Iterate through input and append urls to input_urls list
     output = {'urls': []}
@@ -204,9 +204,9 @@ def parseInputs(input):
             output['urls'] = input['test_data']
         else:
             raise AlgorithmError("AlgoError3000: Invalid input")
-    
+
     return output
-    
+
 
 def apply(input):
     #Define classes
@@ -215,7 +215,7 @@ def apply(input):
     formatted['local_model_path'] = model_loc
     #Apply algorithm to inputs and append output to outputs list
     output = execute_workaround(formatted, "src/main.py", "execute")
-        
+
     return output
 
 {% endhighlight %}
@@ -245,7 +245,7 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

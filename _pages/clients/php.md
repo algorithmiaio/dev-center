@@ -129,7 +129,7 @@ Next check if the file that you just uploaded to data collections exists, and tr
  
 {% highlight php %}
 //download the file
-if(!$remote_file->exists()) {
+if($remote_file->exists()) {
   $temp_file = $remote_file->getFile();
 }
 {% endhighlight %}
@@ -140,7 +140,7 @@ Alternately, if you just need the text content of the file to be stored in a var
 
 {% highlight php %}
 //download contents of file as a string
-if(!$remote_file->exists()) {
+if($remote_file->exists()) {
   $file_contents = $remote_file->getString();
 }
 {% endhighlight %}
