@@ -37,7 +37,7 @@ Now import Algorithmia and create the client object by passing in your API key:
 {% highlight scala %}
 import com.algorithmia.{Algorithmia, AlgorithmiaClient}
 
-val client = Algorithmia.client("YOUR_API_KEY");
+val client = Algorithmia.client("YOUR_API_KEY")
 {% endhighlight %}
 
 Now you’re ready to start working with Algorithmia in Scala.
@@ -46,7 +46,7 @@ Now you’re ready to start working with Algorithmia in Scala.
 If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight scala %}
-val client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
+val client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint")
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
@@ -80,7 +80,7 @@ try {
     nlp_directory.create()
   }
 } catch {
-  case e: Exception => println("Data Directory Error: ", e.getMessage)
+  case e: Exception => println("Data Directory Error: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -102,7 +102,7 @@ try {
     System.out.println("acl is the default permissions type DataMyAlgorithms")
   }
 } catch {
-  case e: Exception => System.out.println("acl read problem: ", e.getMessage)
+  case e: Exception => System.out.println("acl read problem: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -117,7 +117,7 @@ try {
     System.out.println("acl is the default permissions type DataPrivate")
   }
 } catch {
-  case e: Exception => println("API Exception trying to update permissions: ", e.getMessage)
+  case e: Exception => println("API Exception trying to update permissions: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -142,7 +142,7 @@ Then upload your local file to the data collection using the `.putFile()` method
 {% highlight Scala %}
 try {
   // Upload contents of file as a string.
-  val local_file: String = "/your_local_file_path/jack_london.txt"
+  val local_file = "/your_local_file_path/jack_london.txt"
   nlp_directory.putFile(new File(local_file))
   System.out.println("Successfully wrote file to data collection.")
 } catch {
@@ -163,15 +163,15 @@ Next check if the file that you just uploaded to data collections exists, and tr
 
 {% highlight Scala %}
 // Download the file
-String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+val text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 try {
     if (client.file(text_file).exists()) {
-        File input = client.file(text_file).getFile();
+        client.file(text_file).getFile()
     } else {
-        System.out.println("Please check that your file exists");
+        System.out.println("Please check that your file exists")
     }
-} catch (IOException e) {
-    e.printStackTrace();
+} catch {
+  case e: Exception => println("Could not download file locally: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -181,15 +181,15 @@ Alternately, if you just need the text content of the file to be stored in a var
 
 {% highlight Scala %}
 // Download contents of file as a string
-String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
+val text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 try {
     if (client.file(text_file).exists()) {
-        String input = client.file(text_file).getString();
+        client.file(text_file).getString()
     } else {
-        System.out.println("Please check that your file exists");
+        System.out.println("Please check that your file exists")
     }
-} catch (IOException e) {
-    e.printStackTrace();
+} catch {
+  case e: Exception => println("Could not get file contents: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -217,21 +217,21 @@ import com.algorithmia.algo.Algorithm
 Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
 
 {% highlight Scala %}
-val text_file: String = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+val text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 // Download contents of file as a string
 try {
   if (client.file(text_file).exists) {
-    val input: String = client.file(text_file).getString
+    val input = client.file(text_file).getString
     try {
-      val algo: Algorithm = client.algo("nlp/Summarizer/0.1.3")
-      val result: String = algo.pipe(input).asString
+      val algo = client.algo("nlp/Summarizer/0.1.3")
+      val result = algo.pipe(input).asString
       System.out.println(result)
     } catch {
-      case e: Exception => println("Algorithm error")
+      case e: Exception => println("Algorithm error: " + e.getMessage)
     }
   }
 } catch {
-  case e: Exception => println("Error trying to download file: ", e.getMessage)
+  case e: Exception => println("Error trying to download file: " + e.getMessage)
 }
 {% endhighlight %}
 
@@ -262,12 +262,12 @@ import com.algorithmia.data._
 
 
 object ScalaGuide {
-  val client: AlgorithmiaClient = Algorithmia.client("YOUR_API_KEY")
+  val client = Algorithmia.client("YOUR_API_KEY")
 
   def main(args: Array[String]): Unit = {
 
     // Instantiate a DataDirectory object, set your data URI and create directory.
-    val nlp_directory: DataDirectory = client.dir("data://YOUR_USERNAME/nlp_directory")
+    val nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory")
     // This code snippet works
     try {
       if (nlp_directory.exists == false) {
@@ -276,7 +276,7 @@ object ScalaGuide {
         System.out.println("Directory already created")
       }
     } catch {
-      case e: Exception => println("Data Directory Error trying to create a new directory: ", e.getMessage)
+      case e: Exception => println("Data Directory Error trying to create a new directory: " + e.getMessage)
     }
 
 
@@ -286,7 +286,7 @@ object ScalaGuide {
         System.out.println("acl is the default permissions type DataMyAlgorithms")
       }
     } catch {
-      case e: Exception => System.out.println("acl read problem: ", e.getMessage)
+      case e: Exception => System.out.println("acl read problem: " + e.getMessage)
     }
     try {
       // Update a directory to be public.
@@ -296,34 +296,34 @@ object ScalaGuide {
         System.out.println("acl is the default permissions type DataPrivate")
       }
     } catch {
-      case e: Exception => println("API Exception trying to update permissions: ", e.getMessage)
+      case e: Exception => println("API Exception trying to update permissions: " + e.getMessage)
     }
 
 
     try {
       // Upload contents of file as a string.
-      val local_file: String = "/your_local_path/jack_london.txt"
+      val local_file = "/your_local_path/jack_london.txt"
       nlp_directory.putFile(new File(local_file))
       System.out.println("Successfully wrote file to data collection.")
     } catch {
       case e: Exception => println("Error trying to upload file: " + e.getMessage)
     }
 
-    val text_file: String = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+    val text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
     // Download contents of file as a string
     try {
       if (client.file(text_file).exists) {
-        val input: String = client.file(text_file).getString
+        val input = client.file(text_file).getString
         try {
-          val algo: Algorithm = client.algo("nlp/Summarizer/0.1.3")
-          val result: String = algo.pipe(input).asString
+          val algo = client.algo("nlp/Summarizer/0.1.3")
+          val result = algo.pipe(input).asString
           System.out.println(result)
         } catch {
           case e: Exception => println("Algorithm error")
         }
       }
     } catch {
-      case e: Exception => println("Error trying to download file: ", e.getMessage)
+      case e: Exception => println("Error trying to download file: " + e.getMessage)
     }
   }
 }
