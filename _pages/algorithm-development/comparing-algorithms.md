@@ -7,28 +7,13 @@ tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
+video:
+    height: 560
+    width: 315
+    url: https://www.youtube.com/embed/QEddoz6xFao
 ---
 
-<style>
-/* for video embeds */
-.video-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-  margin-bottom: 1rem;
-}
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-</style>
-<div class="video-responsive">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/QEddoz6xFao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-</div>
+{% include video-responsive.html %}
 
 If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways.
 The [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) is a new tool that makes comparing algorithms dead simple.
