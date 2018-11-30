@@ -1,4 +1,3 @@
-{% if page.video %}
 <style>
   /* for video embeds */
   .video-responsive {
@@ -17,6 +16,5 @@
   }
 </style>
 <div class="video-responsive">
-  <iframe width="{{ page.video.width }}" height="{{ page.video.height }}" src="{{ page.video.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="{{ include.width }}" height="{{ include.height }}" src="{{ include.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-{% endif %}
