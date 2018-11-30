@@ -9,6 +9,23 @@ image:
     teaser: /icons/algo.svg
 ---
 
+<style>
+/* for video embeds */
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  margin-bottom: 1rem;
+}
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+</style>
 <div class="video-responsive">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/QEddoz6xFao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 </div>
