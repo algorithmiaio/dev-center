@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Weka"
-excerpt: "Bring your Weka model to Algorithmia."
+excerpt: "Deploying your Weka model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
@@ -13,9 +13,9 @@ image:
     teaser: /language_logos/weka.png
 ---
 
-Welcome to hosting your <a href="http://www.cs.waikato.ac.nz/ml/weka/index.html">Weka</a> model on Algorithmia!
+Welcome to deploying your <a href="http://www.cs.waikato.ac.nz/ml/weka/index.html">Weka</a> model on Algorithmia!
 
-While we fully support Weka models on our platform, we are in the process of writing the docs for hosting your Weka model.
+While we fully support Weka models on our platform, we are in the process of writing the docs for deploying your Weka model.
 
 In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/model-deployment/keras/">Keras</a>, <a href="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/model-deployment/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/model-deployment/theano/">Theano</a>, or <a href="{{ site.baseurl }}/model-deployment/nltk/">NLTK</a>, and <a href="{{ site.baseurl }}/model-deployment/pytorch/">PyTorch</a>.
 

@@ -102,7 +102,7 @@ Note that you always want to create valid JSON input and output in your algorith
 
 This is where we'll show how to deploy your saved model to make predictions on the sample data.
 
-```scala
+{% highlight scala %}
 package algorithmia.LoadPmmlKmeans
 
 import com.algorithmia._
@@ -174,7 +174,7 @@ class LoadPmmlKmeans {
   }
 }
 
-```
+{% endhighlight %}
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:

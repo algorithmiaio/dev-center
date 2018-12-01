@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "NLTK"
-excerpt: "Hosting your nltk powered model on Algorithmia."
+excerpt: "Deploying your nltk powered model on Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
@@ -14,9 +14,9 @@ image:
 ---
 
 
-Welcome to hosting your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!
+Welcome to deploying your <a href="http://www.nltk.org/">nltk</a> model on Algorithmia!
 
-This guide is designed as an introduction to hosting a nltk model and publishing an algorithm even if you’ve never used Algorithmia before.
+This guide is designed as an introduction to deploying a nltk model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 ## Table of Contents
 * [Prerequisites](#prerequisites)
@@ -163,7 +163,7 @@ With the expected output:
 {% endhighlight %}
 
 ## Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 

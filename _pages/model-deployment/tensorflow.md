@@ -508,7 +508,7 @@ def generate_gpu_config(memory_fraction):
 ```
 
 ## Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 

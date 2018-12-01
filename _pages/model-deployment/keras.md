@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Keras"
-excerpt: "Bring your Keras model to Algorithmia."
+excerpt: "Deploying your Keras model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
@@ -16,7 +16,7 @@ image:
 
 Welcome to deploying your <a href="https://keras.io/">Keras</a> model on Algorithmia!
 
-This guide is designed as an introduction to hosting a Keras model and publishing an algorithm even if you’ve never used Algorithmia before.
+This guide is designed as an introduction to deploying a Keras model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 If you're using Tensorflow as the backend, check out the <a href="{{ site.baseurl }}/model-deployment/tensorflow">Tensorflow docs</a> as well since those have specific information about deploying your model on GPU's.
 
@@ -113,7 +113,7 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
-### Example Hosted Model:
+### Example Model:
 {% highlight python %}
 """
     An example of how to load a trained model and use it
@@ -197,7 +197,7 @@ With the expected output:
 {% endhighlight %}
 
 ## Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 

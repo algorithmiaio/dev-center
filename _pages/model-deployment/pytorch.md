@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "PyTorch"
-excerpt: "Bring your PyTorch model to Algorithmia."
+excerpt: "Deploying your PyTorch model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
@@ -12,9 +12,9 @@ image:
     teaser: /language_logos/pytorch.png
 ---
 
-Welcome to hosting your <a href="http://pytorch.org/">PyTorch</a> model on Algorithmia!
+Welcome to deploying your <a href="http://pytorch.org/">PyTorch</a> model on Algorithmia!
 
-This guide is designed as an introduction to hosting a PyTorch model and publishing an algorithm even if you’ve never used Algorithmia before.
+This guide is designed as an introduction to deploying a PyTorch model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 ## Table of Contents
 * [Prerequisites](#prerequisites)
@@ -27,7 +27,7 @@ This guide is designed as an introduction to hosting a PyTorch model and publish
 * [Publish your Algorithm](#publish-your-algorithm)
 
 ## Prerequisites
-Before you get started hosting your Pytorch model on Algorithmia there are a few things you'll want to do first:
+Before you get started deploying your Pytorch model on Algorithmia there are a few things you'll want to do first:
 
 ### Save your Pre-Trained Model
 
@@ -241,7 +241,7 @@ With the expected output:
 If you run into any problems or need help, don't hesitate to reach out to our team!
 
 ## Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
