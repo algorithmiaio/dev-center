@@ -223,7 +223,7 @@ println!(response)</textarea>
 <span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"<span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>)
 <span class="hljs-keyword">val</span> algo = client.algo(<span class="hljs-string">"algo://demo/Hello/"</span>)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
-<span class="hljs-type">System</span>.out.println(result.asJsonString)</code></pre>
+<span class="hljs-type">System</span>.out.println(result.asString)</code></pre>
   <textarea class="copy-text" id="scala-copy-text">import com.algorithmia._
 import com.algorithmia.algo._
 

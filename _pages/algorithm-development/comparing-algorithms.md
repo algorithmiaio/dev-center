@@ -9,6 +9,8 @@ image:
     teaser: /icons/algo.svg
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/QEddoz6xFao" %}
+
 If you have been playing around with Algorithmia for a while, you might have noticed a variety of algorithms that tackle the same problem, but in different ways.
 The [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) is a new tool that makes comparing algorithms dead simple.
 

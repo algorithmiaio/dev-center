@@ -8,7 +8,7 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/google_icon.svg
+    teaser: /language_logos/googlecloud_icon.svg
 ---
 
 Learn how to access the data you need from your Google Cloud Storage in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.
