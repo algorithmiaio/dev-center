@@ -75,7 +75,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/python_console.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
