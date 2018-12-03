@@ -46,7 +46,8 @@ Now is the time to set your dependencies that your model relies on.
 
 For easy copy and paste:
 {% highlight python %}
-spaCy
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
 {% endhighlight %}
 
 If you need to load a trained model from spaCy, check out this <a href="https://algorithmia.com/algorithms/demo/spacydemo">example in Spacy</a>, which shows loading a trained model. Particulary check out the dependency file and the top few lines of code to see how to load it. You'll load a trained spaCy model the same way.
