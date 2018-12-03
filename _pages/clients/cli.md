@@ -37,7 +37,7 @@ curl -sSLf https://algorithmia.com/install.sh | sh
 
 **Windows**
 
-Download and extract the [latest Windows x86_64 zip file](https://github.com/algorithmiaio/algorithmia-cli/releases/download/v1.0.0-beta.3/algorithmia-v1.0.0-beta.3-x86_64-pc-windows-msvc.zip). We recommend putting it within your `PATH`.
+Download and extract the [latest Windows x86_64 zip file](https://github.com/algorithmiaio/algorithmia-cli/releases/download/v1.0.1/algorithmia-v1.0.1-x86_64-pc-windows-msvc.zip). We recommend putting it within your `PATH`.
 
 If needed, you can also find both MSVC and GNU builds for x86 and x86_64 on the [release page](https://github.com/algorithmiaio/algorithmia-cli/releases/latest).
 
