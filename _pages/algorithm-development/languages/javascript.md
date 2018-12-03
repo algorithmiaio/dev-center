@@ -205,10 +205,10 @@ Sometimes it is more appropriate to write your output to a file than to return i
 {% highlight javascript %}
 var uuid = require('uuidv4')
 // {"target_file":"data://username/collection/filename.txt"}
-var file_uri = input["target_file"];
+var dir_uri = input["target_file"];
 var tempfile = "/tmp/"+uuid()+".tmp";
 save_some_output_to(tempfile);
-client.file(file_uri).putFile(tempfile);
+client.dir(dir_uri).putFile(tempfile);
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
