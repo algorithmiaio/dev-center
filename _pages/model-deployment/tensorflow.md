@@ -43,6 +43,9 @@ After training your Tensorflow model, you'll need to save it, along with its ass
 
 There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
 
+Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
+{: .notice-warning}
+
 ```python
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
