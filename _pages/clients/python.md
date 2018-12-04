@@ -18,6 +18,9 @@ Here you will learn how to install the Algorithmia Python Client, work with the 
 To follow along you can create a new Python script or if you'd rather, you can follow the examples in the Python interpreter.
 
 
+Note that currently we support Python versions `2.7.4` and `3.5.4`.
+{: .notice-info}
+
 ## Getting Started with Algorithmia
 
 The official Algorithmia Python Client is available on [PyPi](https://pypi.python.org/pypi/algorithmia/1.0.5) and for more information on using the Python Client you can go to the [Algorithmia API docs](http://docs.algorithmia.com/?python#).

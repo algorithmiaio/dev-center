@@ -52,6 +52,9 @@ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0
 
 If you need to load a trained model from spaCy, check out this <a href="https://algorithmia.com/algorithms/demo/spacydemo">example in Spacy</a>, which shows loading a trained model. Particulary check out the dependency file and the top few lines of code to see how to load it. You'll load a trained spaCy model the same way.
 
+If you are using a library that depends on SpaCy creating symlink between `en_core_web_md` and `en`, please find an alternative as we don't support creating that symlink manually.
+{: .notice-warning}
+
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
 
