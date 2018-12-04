@@ -11,6 +11,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-python
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/l1BCGylnfC8" %}
+
 This guide provides a walk-through of how to use the official Algorithmia Python Client to call algorithms and manage data through the Algorithmia platform.
 
 Here you will learn how to install the Algorithmia Python Client, work with the Data API by uploading and downloading files, create and update directories and permission types and last, you'll learn how to call an algorithm that summarizes text files.
