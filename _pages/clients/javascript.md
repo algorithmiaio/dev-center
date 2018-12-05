@@ -9,6 +9,8 @@ image:
     teaser: /language_logos/js.svg
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/HF04Ge-3XdE" %}
+
 We offer a vanilla JavaScript client for calling algorithms in the marketplace.
 
 ### Download

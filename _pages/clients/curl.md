@@ -9,6 +9,8 @@ image:
     teaser: /language_logos/curl.svg
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/VIxCEFFmpWQ" %}
+
 You can use cURL to call any algorithm on the marketplace and manage your data through Algorithmia.
 
 ## Calling an Algorithm via cURL

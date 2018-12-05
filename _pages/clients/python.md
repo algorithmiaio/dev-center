@@ -11,7 +11,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-python
 ---
 
-{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/l1BCGylnfC8" %}
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/bZB2vu0v6A0" %}
 
 This guide provides a walk-through of how to use the official Algorithmia Python Client to call algorithms and manage data through the Algorithmia platform.
 
