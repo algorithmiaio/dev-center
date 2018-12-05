@@ -27,8 +27,11 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
+The <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
 is available for you to use in your algorithms.
+
+Note that currently we support Python versions `2.7.4` and `3.5.4`.
+{: .notice-info}
 
 Also, you can utilize common Python libraries such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
