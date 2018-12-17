@@ -2,7 +2,6 @@
 layout: article
 title: "Train a Document Classifier"
 categories: recipes
-recipe_tags: [machine-learning, text-analysis]
 tags: [machine-learning, text-analysis]
 show_related: false
 author: james_sutton

@@ -2,7 +2,6 @@
 layout: article
 title: "Introduction to Twitter Topic and Sentiment Analysis"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 author: Diego_oppenheimer

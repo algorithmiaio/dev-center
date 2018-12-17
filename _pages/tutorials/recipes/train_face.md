@@ -2,7 +2,6 @@
 layout: article
 title: "Quickly Building a Face Recognizer"
 categories: recipes
-recipe_tags: [machine-learning, computer-vision]
 tags: [machine-learning, computer-vision]
 show_related: false
 author: besir_kurtulmus

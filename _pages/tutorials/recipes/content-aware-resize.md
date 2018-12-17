@@ -2,7 +2,6 @@
 layout: article
 title: "Smart Autogeneration of Thumbnails Banners, and Socials with Content Aware Resize"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: jon_peck

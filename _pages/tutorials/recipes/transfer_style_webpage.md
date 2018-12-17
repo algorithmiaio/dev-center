@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title: "Transfer Style from One Image to Another in JavaScript"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: jon_peck

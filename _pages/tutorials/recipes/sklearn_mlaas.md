@@ -2,7 +2,6 @@
 layout: article
 title: "Train Scikit-Learn Locally, Deploy as a Service"
 categories: recipes
-recipe_tags: [machine-learning, timeseries]
 tags: [machine-learning, timeseries]
 show_related: false
 author: nick_rose

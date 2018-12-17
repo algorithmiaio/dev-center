@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title: "Acquiring Data for Document Classification"
 categories: recipes
-recipe_tags: [machine-learning, text-analysis]
 tags: [machine-learning, text-analysis]
 show_related: false
 author: jon_peck

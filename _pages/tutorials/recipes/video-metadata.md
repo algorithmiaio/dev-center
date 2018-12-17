@@ -2,7 +2,6 @@
 layout: article
 title: "Introduction to Video Metadata Extraction"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: james_sutton

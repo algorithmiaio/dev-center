@@ -2,7 +2,6 @@
 layout: article
 title: "Extract Structured Data From Web Sites Using Analyze URL"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 excerpt: "Scrape and Extract Info from the Web, via a simple API that handles AJAX, Pagination, and More"

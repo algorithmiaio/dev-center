@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Sentiment Analysis with Twitter"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 author: justin_gage

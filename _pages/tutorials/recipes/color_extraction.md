@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Create a Custom Color Scheme From Your Favorite Website"
 categories: recipes
-recipe_tags: [utilities]
 tags: [utilities]
 show_related: false
 author: steph_kim

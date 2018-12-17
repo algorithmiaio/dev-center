@@ -2,7 +2,6 @@
 layout: article
 title: "Training with Weights: Machine Learning at the Gym"
 categories: recipes
-recipe_tags: [machine-learning, timeseries]
 tags: [machine-learning, timeseries]
 show_related: false
 author: nick_rose

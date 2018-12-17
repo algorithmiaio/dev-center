@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Fix Crooked Photos with Horizon Detection"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: jon_peck

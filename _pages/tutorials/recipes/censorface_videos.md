@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Create and Censor Non-Nude Subclips from Video"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: besir_kurtulmus

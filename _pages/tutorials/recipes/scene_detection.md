@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Video Editing: extracting metadata from movie scenes"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: steph_kim

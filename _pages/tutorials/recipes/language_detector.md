@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Categorize Documents by Language"
 categories: recipes
-recipe_tags: [text-analysis]
 tags: [text-analysis]
 show_related: false
 author: jon_peck

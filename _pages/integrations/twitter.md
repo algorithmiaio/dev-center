@@ -4,7 +4,6 @@ title: "Twitter"
 excerpt: "Use Algorithmia APIs to get Tweets by keyword or username, list friends & followers"
 excerpt-short: "Get many different types of Twitter Data with the Algorithmia API"
 categories: [integrations, recipes]
-recipe_tags: [integrations, utilities, text-analysis]
 tags: [integrations, utilities, text-analysis]
 show_related: false
 image:

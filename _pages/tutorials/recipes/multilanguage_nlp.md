@@ -2,7 +2,6 @@
 layout: article
 title: "Multi-language support for Machine Learning"
 categories: recipes
-recipe_tags: [machine-learning, text-analysis]
 tags: [machine-learning, text-analysis]
 show_related: false
 author: besir_kurtulmus
