@@ -125,7 +125,7 @@ This guide won't depend on any external dependencies so you can close the depend
 There are a few packages that require a little something extra in the dependencies file to work on Algorithmia.
 {: .notice-info}
 
-If you're using tidyverse, add the following lines to your dependencies:
+If you're using *tidyverse*, add the following lines to your dependencies:
 {% highlight bash %}
 tidyverse
 -t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
@@ -134,13 +134,13 @@ tidyverse
 withr
 {% endhighlight %}
 
-For dplyr, use:
+For *dplyr*, use:
 {% highlight bash %}
 dplyr
 -t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
 {% endhighlight %}
 
-If you're using both caret and nnet in the same Algorithm add:
+If you're using both *caret* and *nnet* in the same Algorithm add:
 {% highlight bash %}
 caret
 -t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
