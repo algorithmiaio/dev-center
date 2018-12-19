@@ -18,37 +18,46 @@ task :generate do
     "source"      => ".",
     "destination" => "_site"
   })).process
+  Jekyll::Site.new(Jekyll.configuration({
+    "source"      => ".",
+    "destination" => "_site_enterprise",
+    "enterprise"  => TRUE
+  })).process
 end
 
 
 desc "Generate and publish blog to S3"
 task :publish => [:generate] do
   started = Time.now
-  Dir.mktmpdir do |tmp|
-    cp_r "_site", tmp
 
-    pwd = Dir.pwd
-    Dir.chdir tmp
+  puts "== Publishing to S3 bucket: #{AWS_BUCKET}"
+  service = S3::Service.new(
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'])
+  bucket = service.buckets.find(AWS_BUCKET)
 
-    puts "== Publishing to S3 bucket: #{AWS_BUCKET}"
-    service = S3::Service.new(
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'])
-    bucket = service.buckets.find(AWS_BUCKET)
+  ## Needed to show progress
+  STDOUT.sync = true
 
-    ## Needed to show progress
-    STDOUT.sync = true
 
-    for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
+  for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
+
+    site = prefix == PREFIX_PUBLIC ? "_site" : "_site_enterprise"
+
+    Dir.mktmpdir do |tmp|
+      cp_r site, tmp
+
+      pwd = Dir.pwd
+      Dir.chdir tmp
 
       ## Find all files (recursively) in ./public and process them.
-      Parallel.map(Dir.glob("_site/**/*"), in_threads: 10) do |file|
+      Parallel.map(Dir.glob(site+".**/*"), in_threads: 10) do |file|
 
         ## Only upload files, we're not interested in directories
         if File.file?(file)
 
           ## Slash 'public/' from the filename for use on S3
-          remote_file = file.gsub("_site/", prefix)
+          remote_file = file.gsub(site+"/", prefix)
 
           ## Try to find the remote_file, an error is thrown when no
           ## such file can be found, that's okay.
@@ -85,7 +94,7 @@ task :publish => [:generate] do
         Parallel.map(objects, in_threads: 10) do |object|
           key = object.key
 
-          local_file = key.gsub(prefix, "_site/")
+          local_file = key.gsub(prefix, site+"/")
           unless File.exist?(local_file)
             object.destroy
             print "D"
