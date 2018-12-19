@@ -48,6 +48,7 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 
 Now you’re ready to start working with Algorithmia in Java.
 
+{% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises Endpoint
 If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
@@ -56,6 +57,7 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY", "https://mylocalen
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+{% endif %}
 
 ## Working with Data Using the Data API
 
