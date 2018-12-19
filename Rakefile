@@ -20,8 +20,8 @@ task :generate do
   })).process
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
-    "destination" => "_site_enterprise",
-    "enterprise"  => TRUE
+    "destination" => "_siteent",
+    "enterprise"  => true
   })).process
 end
 
@@ -43,7 +43,7 @@ task :publish => [:generate] do
 
   for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
 
-    site = prefix == PREFIX_PUBLIC ? "_site" : "_site_enterprise"
+    site = prefix == PREFIX_PUBLIC ? "_site" : "_siteent"
 
     Dir.mktmpdir do |tmp|
 
