@@ -46,6 +46,11 @@ task :publish => [:generate] do
     site = prefix == PREFIX_PUBLIC ? "_site" : "_site_enterprise"
 
     Dir.mktmpdir do |tmp|
+
+      puts "== site: #{site}"
+
+      puts "== tmp: #{tmp}"
+
       cp_r site, tmp
 
       Dir.chdir tmp
