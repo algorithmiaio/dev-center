@@ -18,6 +18,9 @@ cdnurl: https://cdn.algorithmia.com
 # The entire site is nested under this baseurl
 baseurl: /developers
 
+# Is this an enterprise (non http://algorithmia.com) site?
+enterprise: false
+
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
 
