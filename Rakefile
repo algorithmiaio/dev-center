@@ -100,6 +100,7 @@ task :publish => [:generate] do
           key = object.key
 
           local_file = key.gsub(prefix, site+"/")
+          puts "== local_file: #{local_file}"
           unless File.exist?(local_file)
             object.destroy
             print "D"
