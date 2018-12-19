@@ -9,8 +9,8 @@ require 'parallel'
 
 AWS_BUCKET = "algorithmia-devcenter"
 GITHUB_REPONAME = "algorithmiaio/dev-center"
-PREFIX_PUBLIC = "developers/"
-PREFIX_ENTERPRISE = "developers-enterprise/"
+PREFIX_PUBLIC = "developers-public/"
+PREFIX_ENTERPRISE = "developers/"
 
 desc "Generate blog files"
 task :generate do
