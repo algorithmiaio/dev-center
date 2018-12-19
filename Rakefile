@@ -72,6 +72,8 @@ task :publish => [:generate] do
             obj = nil
           end
 
+          puts "== examining: #{remote_file}"
+
           ## If the object does not exist, or if the MD5 Hash / etag of the
           ## file has changed, upload it.
           if !obj || (obj.etag != Digest::MD5.hexdigest(File.read(file)))
