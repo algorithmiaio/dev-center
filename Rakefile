@@ -39,7 +39,7 @@ task :publish => [:generate] do
     ## Needed to show progress
     STDOUT.sync = true
 
-    for PREFIX in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
+    for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
 
       ## Find all files (recursively) in ./public and process them.
       Parallel.map(Dir.glob("_site/**/*"), in_threads: 10) do |file|
@@ -48,7 +48,7 @@ task :publish => [:generate] do
         if File.file?(file)
 
           ## Slash 'public/' from the filename for use on S3
-          remote_file = file.gsub("_site/", PREFIX)
+          remote_file = file.gsub("_site/", prefix)
 
           ## Try to find the remote_file, an error is thrown when no
           ## such file can be found, that's okay.
@@ -79,13 +79,13 @@ task :publish => [:generate] do
       marker = nil
       while true do
         # get the next group of objects in the source bucket
-        objects = bucket.objects(:prefix => PREFIX, :marker => marker)
+        objects = bucket.objects(:prefix => prefix, :marker => marker)
         break if objects.empty?
 
         Parallel.map(objects, in_threads: 10) do |object|
           key = object.key
 
-          local_file = key.gsub(PREFIX, "_site/")
+          local_file = key.gsub(prefix, "_site/")
           unless File.exist?(local_file)
             object.destroy
             print "D"
