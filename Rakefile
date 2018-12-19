@@ -112,13 +112,13 @@ task :publish => [:generate] do
 
     end
 
+  Dir.chdir pwd
+
   end
 
   elapsed = ((Time.now - started) / 60 * 100).to_i.to_f / 100
   STDOUT.sync = false # Done with progress output.
   puts
   puts "== Done publishing (#{elapsed} minutes)"
-
-  Dir.chdir pwd
 
 end
