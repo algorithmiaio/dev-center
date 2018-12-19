@@ -9,7 +9,8 @@ require 'parallel'
 
 AWS_BUCKET = "algorithmia-devcenter"
 GITHUB_REPONAME = "algorithmiaio/dev-center"
-PREFIX = "developers/"
+PREFIX_PUBLIC = "developers-public/"
+PREFIX_ENTERPRISE = "developers/"
 
 desc "Generate blog files"
 task :generate do
@@ -38,59 +39,63 @@ task :publish => [:generate] do
     ## Needed to show progress
     STDOUT.sync = true
 
-    ## Find all files (recursively) in ./public and process them.
-    Parallel.map(Dir.glob("_site/**/*"), in_threads: 10) do |file|
+    for PREFIX in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
 
-      ## Only upload files, we're not interested in directories
-      if File.file?(file)
+      ## Find all files (recursively) in ./public and process them.
+      Parallel.map(Dir.glob("_site/**/*"), in_threads: 10) do |file|
 
-        ## Slash 'public/' from the filename for use on S3
-        remote_file = file.gsub("_site/", PREFIX)
+        ## Only upload files, we're not interested in directories
+        if File.file?(file)
 
-        ## Try to find the remote_file, an error is thrown when no
-        ## such file can be found, that's okay.
-        begin
-          obj = bucket.objects.find_first(remote_file)
-        rescue
-          obj = nil
-        end
+          ## Slash 'public/' from the filename for use on S3
+          remote_file = file.gsub("_site/", PREFIX)
 
-        ## If the object does not exist, or if the MD5 Hash / etag of the
-        ## file has changed, upload it.
-        if !obj || (obj.etag != Digest::MD5.hexdigest(File.read(file)))
-          print "U"
+          ## Try to find the remote_file, an error is thrown when no
+          ## such file can be found, that's okay.
+          begin
+            obj = bucket.objects.find_first(remote_file)
+          rescue
+            obj = nil
+          end
 
-          ## Simply create a new object, write the content and set the proper
-          ## mime-type. `obj.save` will upload and store the file to S3.
-          obj = bucket.objects.build(remote_file)
-          obj.content = open(file)
-          obj.content_type = MIME::Types.type_for(file).map(&:to_s).join(',')
-          obj.save
-        else
-          print "."
+          ## If the object does not exist, or if the MD5 Hash / etag of the
+          ## file has changed, upload it.
+          if !obj || (obj.etag != Digest::MD5.hexdigest(File.read(file)))
+            print "U"
+
+            ## Simply create a new object, write the content and set the proper
+            ## mime-type. `obj.save` will upload and store the file to S3.
+            obj = bucket.objects.build(remote_file)
+            obj.content = open(file)
+            obj.content_type = MIME::Types.type_for(file).map(&:to_s).join(',')
+            obj.save
+          else
+            print "."
+          end
         end
       end
-    end
 
-    # Now iterate through and delete files that exist in the bucket but not locally
-    marker = nil
-    while true do
-      # get the next group of objects in the source bucket
-      objects = bucket.objects(:prefix => PREFIX, :marker => marker)
-      break if objects.empty?
+      # Now iterate through and delete files that exist in the bucket but not locally
+      marker = nil
+      while true do
+        # get the next group of objects in the source bucket
+        objects = bucket.objects(:prefix => PREFIX, :marker => marker)
+        break if objects.empty?
 
-      Parallel.map(objects, in_threads: 10) do |object|
-        key = object.key
+        Parallel.map(objects, in_threads: 10) do |object|
+          key = object.key
 
-        local_file = key.gsub(PREFIX, "_site/")
-        unless File.exist?(local_file)
-          object.destroy
-          print "D"
+          local_file = key.gsub(PREFIX, "_site/")
+          unless File.exist?(local_file)
+            object.destroy
+            print "D"
+          end
+
         end
-
+        # set marker so next iteration knows where to start
+        marker = objects.last.key
       end
-      # set marker so next iteration knows where to start
-      marker = objects.last.key
+
     end
 
     elapsed = ((Time.now - started) / 60 * 100).to_i.to_f / 100
