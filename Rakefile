@@ -76,6 +76,7 @@ task :publish => [:generate] do
           ## file has changed, upload it.
           if !obj || (obj.etag != Digest::MD5.hexdigest(File.read(file)))
             print "U"
+            puts "== writing: #{remote_file}"
 
             ## Simply create a new object, write the content and set the proper
             ## mime-type. `obj.save` will upload and store the file to S3.
@@ -100,7 +101,6 @@ task :publish => [:generate] do
           key = object.key
 
           local_file = key.gsub(prefix, site+"/")
-          puts "== local_file: #{local_file}"
           unless File.exist?(local_file)
             object.destroy
             print "D"
