@@ -39,6 +39,7 @@ task :publish => [:generate] do
   ## Needed to show progress
   STDOUT.sync = true
 
+  pwd = Dir.pwd
 
   for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
 
@@ -47,7 +48,6 @@ task :publish => [:generate] do
     Dir.mktmpdir do |tmp|
       cp_r site, tmp
 
-      pwd = Dir.pwd
       Dir.chdir tmp
 
       ## Find all files (recursively) in ./public and process them.
@@ -107,11 +107,13 @@ task :publish => [:generate] do
 
     end
 
-    elapsed = ((Time.now - started) / 60 * 100).to_i.to_f / 100
-    STDOUT.sync = false # Done with progress output.
-    puts
-    puts "== Done publishing (#{elapsed} minutes)"
-
-    Dir.chdir pwd
   end
+
+  elapsed = ((Time.now - started) / 60 * 100).to_i.to_f / 100
+  STDOUT.sync = false # Done with progress output.
+  puts
+  puts "== Done publishing (#{elapsed} minutes)"
+
+  Dir.chdir pwd
+
 end
