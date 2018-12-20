@@ -56,7 +56,7 @@ task :publish => [:generate] do
       Dir.chdir tmp
 
       ## Find all files (recursively) in ./public and process them.
-      Parallel.map(Dir.glob(site+".**/*"), in_threads: 10) do |file|
+      Parallel.map(Dir.glob(site+"/**/*"), in_threads: 10) do |file|
 
         ## Only upload files, we're not interested in directories
         if File.file?(file)
