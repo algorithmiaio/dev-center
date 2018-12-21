@@ -42,7 +42,7 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}//images/post_images/model_hosting/spacy_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/spacy_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 For easy copy and paste:
 {% highlight python %}
