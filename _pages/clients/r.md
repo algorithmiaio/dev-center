@@ -140,7 +140,7 @@ if (client$file(text_file)$exists()) {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
@@ -175,8 +175,8 @@ algo <- client$algo('nlp/Summarizer/0.1.3')
 
 tryCatch({
     # Get the summary result of your file's contents.
-	response <- algo$pipe(input)$result
-	print(response)
+    response <- algo$pipe(input)$result
+    print(response)
 },
 error = function(e) {
     stop(e)
@@ -238,11 +238,11 @@ algo <- client$algo('nlp/Summarizer/0.1.3')
 
 tryCatch({
     # Get the summary result of your file's contents.
-	response <- algo$pipe(input)$result
-	print(response)
+    response <- algo$pipe(input)$result
+    print(response)
 },
 error = function(e) {
-  	# Algorithm error if the input is not correctly formatted.
+    # Algorithm error if the input is not correctly formatted.
     stop()
 })
 {% endhighlight %}
