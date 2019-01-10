@@ -21,7 +21,7 @@ To create a new data connection first navigate to <a href="{{ site.baseurl }}/da
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Azure Blob'** and a modal window will open to configure a connection. Here you will need to enter your Azure credentials. Authorization is done by adding your Storage URI, SAS Token and Container Name and you can find guides for more information in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>.
+Select **'Azure Blob'** and a modal window will open to configure a connection. Here you will need to enter your Azure credentials. To obtain them, go to https://portal.azure.com and navigate to Storage Accounts.  Click on "Shared access signature", then "Generate SAS and connection string".  Copy the entire "SAS token" field ("?sv=..."), and paste it into the "SAS Token field in Algorithmia's configuration dialog; then, copy __only the beginning__ of the service URL (e.g., "https://yourservicestore.blob.core.windows.net" into the "Storage URL" field. Lastly, click on "Blobs" in the Azure Portal left nav; copy the name of the container you want to access into the "Container Name" field.  For more information, see <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>.
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
 

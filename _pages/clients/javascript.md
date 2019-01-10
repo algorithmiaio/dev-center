@@ -59,7 +59,7 @@ client.algo("docs/JavaAddOne").pipe(input).then(function(output) {
 If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight javascript %}
-var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
+var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint/v1/web/algo");
 {% endhighlight %}
 {% endif %}
 

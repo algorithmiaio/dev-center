@@ -21,7 +21,7 @@ To create a new data connection first navigate to <a href="{{ site.baseurl }}/da
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Google Cloud Storage'** and a modal window will open to configure a connection. Here you will need to enter your Google Cloud Storage credentials. Authorization is done by adding your private_key_id, private_key, and client_email and you can find guides for more information in the <a href="https://cloud.google.com/iam/docs/understanding-service-accounts#managing_service_account_keys ">Google Cloud Storage Docs</a>.
+Select **'Google Cloud Storage'** and a modal window will open to configure a connection. Here you will need to enter your Google Cloud Storage credentials, obtained from the [Service Accounts panel](https://console.cloud.google.com/iam-admin/serviceaccounts) of the Google Cloud Console. Copy your private_key_id, private_key, and client_email from the JSON credentials file generated when you select "create key" in your service account.  For more information, see the <a href="https://cloud.google.com/iam/docs/understanding-service-accounts#managing_service_account_keys ">Google Cloud Storage Docs</a>.
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/google_cloud_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
