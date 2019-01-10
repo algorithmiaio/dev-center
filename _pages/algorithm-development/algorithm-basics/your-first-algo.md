@@ -27,11 +27,16 @@ Table of Contents
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-smallest">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
 When you click the "Add Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
+
+**Algorithmia Account or Organization**
+Note: If you don't belong to an organization, skip this step and go to the next.
+
+If you belong to an organization then you'll see this option before Algorithmia Name. Go ahead and select which account or organization you want to create your algorithm under. 
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
@@ -94,7 +99,18 @@ The tab currently showing **Run** is where users can run the algorithm with the 
 
 The **Discussion** tab shows the comments and questions from users so you can keep up to date regarding user feedback.
 
-Under the **Manage** tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
+Under the **Manage** tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist, delete your algorithm and edit various settings of your algorithm even after you've created it.
+
+Features you can edit are:
+* Visibility (Open or closed source)
+* Environment (CPU or GPU)
+* Properties (Licensing - note that if you choose any license other than the Algorithmia Platform License, you'll need to have the visibility set to “Open Source”).
+* Permissions:
+	* Managing internet accesibility from your algorithm
+	* Calling other algorithms from your algorithm
+
+If you have published your algorithm and want to only make changes to the settings on the "Manage" tab, then you will still need to hit "Build" before republishing to see your new changes. Then you can hit "Publish" after your algorithm builds and go through the normal publishing workflow.
+{: .notice-info}
 
 Finally click on the **Source** tab which will display the UI for creating your algorithm if you prefer it over the CLI.
 
@@ -135,6 +151,8 @@ Under the **Versioning** tab, you can select whether your algorithm will be for 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
+
+Under "Pending Changes" you'll see any revisions you've made under the "Manage" tab.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
