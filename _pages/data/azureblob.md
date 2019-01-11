@@ -25,7 +25,7 @@ Select **'Azure Blob'** and a modal window will open to configure a connection. 
 
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
-3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", "URL" -> "Storage URL"
+3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", and __just the protocol and domain__ (e.g. `https://mystore.blob.core.windows.net`) from "URL" -> "Storage URL"
 
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
