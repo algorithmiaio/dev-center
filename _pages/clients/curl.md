@@ -33,7 +33,7 @@ To create a directory, POST the new directory name to the Data API URI.
 You will get a result that returns the address of the new data collection.
 
 {% highlight bash %}
-curl -X POST -d 'newCollection' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my
+curl -X POST -d '{"name": "newCollection"}' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my
 
 -> {"result": "data://.my/newCollection"}
 {% endhighlight %}
