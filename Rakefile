@@ -15,10 +15,12 @@ PREFIX = "developers/"
 
 desc "Generate blog files"
 task :generate do
+  puts "== Generating \"_site\""
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
     "destination" => "_site"
   })).process
+  puts "== Generating \"_siteent\""
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
     "destination" => "_siteent",
@@ -40,7 +42,7 @@ task :publish => [:generate] do
 
   pwd = Dir.pwd
 
-  for bucket_name in [AWS_BUCKET_PUBLIC, AWS_BUCKET_ENTERPRISE, AWS_BUCKET_PUBLIC_LEGACY]
+  for bucket_name in [AWS_BUCKET_PUBLIC, AWS_BUCKET_ENTERPRISE, AWS_BUCKET_LEGACY]
 
     site = bucket_name == AWS_BUCKET_PUBLIC ? "_site" : "_siteent"
     bucket = s3_service.buckets.find(bucket_name)
