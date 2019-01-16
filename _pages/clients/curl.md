@@ -45,7 +45,7 @@ Be sure to pass in your API key and the data directory URI.
 The response will return a result with the location of the file.
 
 {% highlight bash %}
-curl -X PUT -F file=@@filename.csv -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my/newCollection
+curl -X PUT -F 'file=@filename.csv' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/data/.my/newCollection
 
 -> {"result": "data://.my/newCollection/filename.csv"}
 {% endhighlight %}
