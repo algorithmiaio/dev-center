@@ -7,10 +7,11 @@ require 'digest/md5'
 require 'mime/types'
 require 'parallel'
 
-AWS_BUCKET = "algorithmia-devcenter"
 GITHUB_REPONAME = "algorithmiaio/dev-center"
-PREFIX_PUBLIC = "developers-public/"
-PREFIX_ENTERPRISE = "developers/"
+AWS_BUCKET_PUBLIC = "algorithmia-devcenter-public"
+AWS_BUCKET_PUBLIC_ENTERPRISE = "algorithmia-devcenter-enterprise"
+AWS_BUCKET_PUBLIC_LEGACY = "algorithmia-devcenter"
+PREFIX = "developers/"
 
 desc "Generate blog files"
 task :generate do
@@ -30,20 +31,21 @@ desc "Generate and publish blog to S3"
 task :publish => [:generate] do
   started = Time.now
 
-  puts "== Publishing to S3 bucket: #{AWS_BUCKET}"
-  service = S3::Service.new(
+  s3_service = S3::Service.new(
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'])
-  bucket = service.buckets.find(AWS_BUCKET)
 
   ## Needed to show progress
   STDOUT.sync = true
 
   pwd = Dir.pwd
 
-  for prefix in [PREFIX_PUBLIC, PREFIX_ENTERPRISE]
+  for bucket_name in [AWS_BUCKET_PUBLIC, AWS_BUCKET_ENTERPRISE, AWS_BUCKET_PUBLIC_LEGACY]
 
-    site = prefix == PREFIX_PUBLIC ? "_site" : "_siteent"
+    site = bucket_name == AWS_BUCKET_PUBLIC ? "_site" : "_siteent"
+    bucket = s3_service.buckets.find(bucket_name)
+
+    puts "== Publishing #{site} to S3 buckets: #{bucket_name}"
 
     Dir.mktmpdir do |tmp|
 
@@ -62,7 +64,7 @@ task :publish => [:generate] do
         if File.file?(file)
 
           ## Slash 'public/' from the filename for use on S3
-          remote_file = file.gsub(site+"/", prefix)
+          remote_file = file.gsub(site+"/", PREFIX)
 
           ## Try to find the remote_file, an error is thrown when no
           ## such file can be found, that's okay.
@@ -96,13 +98,13 @@ task :publish => [:generate] do
       marker = nil
       while true do
         # get the next group of objects in the source bucket
-        objects = bucket.objects(:prefix => prefix, :marker => marker)
+        objects = bucket.objects(:prefix => PREFIX, :marker => marker)
         break if objects.empty?
 
         Parallel.map(objects, in_threads: 10) do |object|
           key = object.key
 
-          local_file = key.gsub(prefix, site+"/")
+          local_file = key.gsub(PREFIX, site+"/")
           unless File.exist?(local_file)
             object.destroy
             print "D"
