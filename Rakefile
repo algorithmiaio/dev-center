@@ -9,8 +9,8 @@ require 'parallel'
 
 GITHUB_REPONAME = "algorithmiaio/dev-center"
 AWS_BUCKET_PUBLIC = "algorithmia-devcenter-public"
-AWS_BUCKET_PUBLIC_ENTERPRISE = "algorithmia-devcenter-enterprise"
-AWS_BUCKET_PUBLIC_LEGACY = "algorithmia-devcenter"
+AWS_BUCKET_ENTERPRISE = "algorithmia-devcenter-enterprise"
+AWS_BUCKET_LEGACY = "algorithmia-devcenter"
 PREFIX = "developers/"
 
 desc "Generate blog files"
