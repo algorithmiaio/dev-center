@@ -13,6 +13,7 @@ image:
     teaser: /language_logos/scikit.png
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/NLq2gFhoMvI" %}
 
 Welcome to deploying your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
 

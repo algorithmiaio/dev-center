@@ -10,7 +10,7 @@ show_related: false
 <p>Welcome to deploying your algorithms and models using Algorithmia's AI Layer. You can create algorithms using Java, Python, R, Rust, Scala, Ruby, and JavaScript by following along with one of our <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a>.</p>
 
 
-<p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Model Deployment Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>.</p>
+<p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{ site.baseurl }}/algorithm-development/model-guides/">Model Deployment Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a> (including a hands-on video), <a href ="{{ site.baseurl }}/algorithm-development/model-guides/pytorch/">PyTorch</a>, and <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>.</p>
 
 <div class="row mb-64">
   <div class="col-md-12">
