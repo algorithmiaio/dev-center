@@ -25,7 +25,7 @@ Table of Contents
 
 ## Available Libraries
 
-Algorithmia makes a number of libraries available to make algorithm development easier.  We support three language versions, with more to come:
+Algorithmia makes a number of libraries available to make algorithm development easier.  We support three Python versions, with more to come:
 
 1. <a href="https://docs.python.org/2/">Python 2.7.13 language and standard library</a>, for both CPU and GPU algorithms
 2. <a href="https://docs.python.org/3/">Python 3.5.3 language and standard library</a>, CPU and GPU
@@ -33,7 +33,7 @@ Algorithmia makes a number of libraries available to make algorithm development 
 
 We'll continue to add variants as needed, and broaden GPU support.
 
-Also, you can utilize common Python libraries such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
+You can utilize common Python libraries such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
 via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a>.
