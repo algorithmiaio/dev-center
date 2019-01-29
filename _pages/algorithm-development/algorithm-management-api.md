@@ -24,7 +24,9 @@ If you are running the [Algorithmia platform on-premises with Algorithmia Enterp
 {% endif %}
 
 
-#### Step-by-step: Creating and Publishing an Algorithm
+### Step-by-step: Creating and Publishing an Algorithm via the API
+
+#### 1. Create your Algorithm
 
 First, create your algorithm by POSTing to https://api.algorithmia.com/v1/algorithms/USERNAME, where `USERNAME` is your user account, and `sim******` is an API Key from that account with "Allow this key to manage my algorithm" enabled.
 
@@ -60,3 +62,41 @@ payload = {
 response = requests.request('POST', url, headers = headers, json = payload)
 print(response.text)
 ```
+
+#### 2. Edit and Build your Algorithm
+
+Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via Git `git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git` or via the CLI `algo clone USERNAME/ALGORITHMNAME`.
+
+Before attempting to publish, you must either click "Build" in the Web IDE, or `git push` your code (which implicitly triggers a build).
+
+#### 3. Publish your Algorithm
+
+Now you can publish your algorithm via a POST to https://api.algorithmia.com/v1/algorithms/USERNAME/ALGORITHMNAME/versions
+
+While an empty payload dict `{}` will work, you may consider including the payload fields shown below:
+
+```python
+import requests
+url = 'https://api.algorithmia.com/v1/algorithms/USERNAME/ALGORITHMNAME/version'
+headers = {
+  'Authorization': 'sim********',
+  'Content-Type': 'application/json'
+}
+payload = {
+    "settings": {
+        "algorithm_callability": "<string>" #public, private
+    }
+    "version_info": {
+        "type": "<string>", #default, major, minor, revision
+        "semantic_version": "<string>", #if blank, a minor version increment will be used
+        "git_hash": "<string>", #if blank, the latest git hash will be used
+        "release_notes": "<string>",
+        "sample_input": "<string>",
+        "sample_output": "<string>"
+    }
+}
+response = requests.request('POST', url, headers = headers, json = payload)
+print(response.text)
+```
+
+You can also include any "details" or "settings" fields as shown in the "Create your Algorithm" step.
