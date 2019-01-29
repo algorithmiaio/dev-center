@@ -24,11 +24,11 @@ If you are running the [Algorithmia platform on-premises with Algorithmia Enterp
 {% endif %}
 
 
-#### Step-by-step: Creating and Publishing Algorithm
+#### Step-by-step: Creating and Publishing an Algorithm
 
 First, create your algorithm by POSTing to https://api.algorithmia.com/v1/algorithms/USERNAME, where `USERNAME` is your user account, and `sim******` is an API Key from that account with "Allow this key to manage my algorithm" enabled.
 
-Note that the definition of the new Algorithm is in the payload of the POST, and the fields roughly correspond to those you'd see in the [Add Algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#create-your-first-algorithm) user interface.
+Note that the definition of the new Algorithm is in the payload of the request, and the fields roughly correspond to those you'd see in the [Add Algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#create-your-first-algorithm) user interface:
 
 ```python
 import requests
@@ -37,27 +37,26 @@ headers = {
   'Authorization': 'sim********',
   'Content-Type': 'application/json'
 }
-payload = '{
+payload = {
     "details": {
-        "summary": "<string>",
-        "label": "<string>",
-        "tagline": "<string>"
+        "label": "<string>", #user-readable name of the algorithm
+        "summary": "<string>", #markdown describing the Algorithm, for the "docs" tab
+        "tagline": "<string>" #one-liner summarizing the Algorithm's purpose
     },
-    "name": "<string>",
+    "name": "<string>", #the short algorithm name (no spaces or special characters)
     "settings": {
-        "license": "<string>",
-        "network_access": "<string>",
-        "pipeline_enabled": "<boolean>",
-        "source_visibility": "<string>",
-        "language": "<string>",
-        "environment": "<string>",
-        "package_set": "<string>",
-        "royalty_microcredits": "<integer>"
+        "license": "<string>", #apl, apache2, gpl3, mit
+        "network_access": "<string>", #isolated, full
+        "pipeline_enabled": <boolean>, #can this algo call other algos?
+        "source_visibility": "<string>", #open, closed
+        "language": "<string>", #java, javascript, python2-langpack, python3-1, r, ruby, rust, scala
+        "environment": "<string>", #cpu, gpu
+        "royalty_microcredits": <integer> #0 for none
     },
     "version_info": {
-        "sample_input": "<string>"
+        "sample_input": "<string>" #example input visible to end-user
     }
-}'
-response = requests.request('POST', url, headers = headers, data = payload)
+}
+response = requests.request('POST', url, headers = headers, json = payload)
 print(response.text)
 ```
