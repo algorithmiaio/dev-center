@@ -79,3 +79,17 @@ At this time you will be able to set the royalty (if any) for that algorithm and
 To view your organization's earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organization's profile.
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot img-md">
+
+
+
+{% if site.enterprise %}
+#### Enterprise Users Only: the User and Org Management APIs
+
+Algorithmia also provides APIs for listing, creating, and managing users and organizations.
+
+For the full specification, see the [User and Org Management APIs](https://documenter.getpostman.com/view/6515899/Rztiuqf9) or the "users" and "organizations" sections of the official [OpenAPI Spec](https://algorithmia.com/v1/openapispec)
+
+Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use Management Keys, which can be created at the bottom of {{site.url}}/user#credentials.  Ensure that the Key you are using has the checkbox "Allow this key to manage my algorithms" checked:
+
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/organizations/management-keys.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
+{% endif %}
