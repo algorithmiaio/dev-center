@@ -18,7 +18,6 @@ Note that there are two different types of API Keys, used with different endpoin
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
 
-
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises Endpoint
 If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
