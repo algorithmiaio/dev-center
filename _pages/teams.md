@@ -81,7 +81,6 @@ To view your organization's earnings and a break down of all algorithms that are
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/organizations/org_earnings.png" alt="Check earnings" class="screenshot img-md">
 
 
-
 {% if site.enterprise %}
 #### Enterprise Users Only: the User and Org Management APIs
 
