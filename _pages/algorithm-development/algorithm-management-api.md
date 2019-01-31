@@ -77,7 +77,7 @@ While an empty payload dict `{}` will work, you may consider including the paylo
 
 ```python
 import requests
-url = 'https://api.algorithmia.com/v1/algorithms/USERNAME/ALGORITHMNAME/version'
+url = 'https://api.algorithmia.com/v1/algorithms/USERNAME/ALGORITHMNAME/versions'
 headers = {
   'Authorization': 'sim********',
   'Content-Type': 'application/json'
