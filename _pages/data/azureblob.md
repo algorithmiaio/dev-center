@@ -21,7 +21,7 @@ To create a new data connection first navigate to <a href="{{ site.baseurl }}/da
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Azure Blob'** and a modal window will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
+Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
 
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
@@ -37,10 +37,10 @@ Select **'Azure Blob'** and a modal window will open to configure a connection. 
 - Can only list, get, and put objects to Azure (i.e. cannot perform other operations on your account)
 - Can only access the paths in Azure that you want Algorithmia to access
 
-### Update Labels For Data Connections
-If you would like to change the unique label that was automatically provided when you created the data connection, simply update it under **"Label"** and give it a unique name.
+### Setting Labels For Data Connections
+You will need to provide a unique label for your data connector, editable in the **"Label"** field.
 
-We create these unique labels because you may want to add multiple connections to the same Azure account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
+We require these unique labels because you may want to add multiple connections to the same Azure account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
 
 **NOTE:** The unique label follows the protocol: 'azureblob+unique_label://restricted_path'
 
