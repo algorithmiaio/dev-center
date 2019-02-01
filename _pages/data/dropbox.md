@@ -24,7 +24,7 @@ To create a new data connection first navigate to <a href="{{ site.baseurl }}/da
 Select **'Dropbox'** and you will be prompted to login to your Dropbox account. You'll be asked if you want to grant Algorithmia access to your account via OAuth authentication. Once that's done a new panel will be created which will have the Dropbox icon on it and a unique label for that Dropbox connection.
 
 ## Configure a Data Source
-Set path restrictions and manage the read and write permissions by clicking the button **"Manage Dropbox"** on the middle panel holding the unique data connector that was just created.
+Set path restrictions and manage the read and write permissions by clicking the label of the data connector that was just created.
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/data_connectors/manage_connector_all.png" alt="Manage a data connector" class="screenshot img-md">
 
