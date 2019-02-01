@@ -17,7 +17,7 @@ Learn how to access the data you need from your Google Cloud Storage in a few ea
 All data sources have a protocol and a label that you will use to reference your data. For instance `Google Cloud Storage` is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Configure a New Data Connection to your Google Cloud Storage
-To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'Connect New Data Source' where you'll see the options:
+To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
 <img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
