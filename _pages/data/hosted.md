@@ -24,15 +24,18 @@ This guide will show how to create a collection and walk you through the differe
 
 ## Create a Data Collection
 
-To create a new data collection first navigate to <a href="{{ site.baseurl }}/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says "Algorithmia Hosted Data" click the button that says **"Browse Files"** which takes you to <a href="{{ site.baseurl }}/data/hosted">Data Collections</a>.
+To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Connect a data source" class="screenshot img-md">
 
-Then you will find yourself in the collections panel where you can click on **"Add Collection"** under the 'My Collections' section on your data collections page:
+Select **'Hosted Data Collection'** and a modal window will open to create a new collection.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/new_hosted_data_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-Notice that when you create a collection you can set the read and write access by using the drop downs shown in the above screenshot. Below are the details regarding access permissions for user collections and what they mean.
+Notice that once you create a collection you can set the read access by using the drop down shown in the below screenshot. Below are the details regarding access permissions for user collections and what they mean.
+
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/hosted_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+
 
 ## Read and Write Permissions
 
