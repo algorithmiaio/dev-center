@@ -35,6 +35,12 @@ Install is by running:
 curl -sSLf https://algorithmia.com/install.sh | sh
 {% endhighlight %}
 
+On some linux variants, you may need to preinstall curl, file, and git via a command such as:
+
+{% highlight bash %}
+apt install curl file git
+{% endhighlight %}
+
 **Windows**
 
 Download and extract the [latest Windows x86_64 zip file](https://github.com/algorithmiaio/algorithmia-cli/releases/download/v1.0.1/algorithmia-v1.0.1-x86_64-pc-windows-msvc.zip). We recommend putting it within your `PATH`.
