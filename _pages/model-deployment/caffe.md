@@ -87,7 +87,7 @@ Here are some Caffe wheels for different versions as well as CPU and GPU wheels:
 -   **Caffe 0.1 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_cpu-py2-none-any.whl
 -   **Caffe 0.1 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_gpu-py2-none-any.whl
 -   **Caffe 1.05 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_cpu-py2-none-any.whl
--   **Caffe 1.05 (CGU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_gpu-py2-none-any.whl
+-   **Caffe 1.05 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_gpu-py2-none-any.whl
 -   **Caffe build tag 99466 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-27.11.17_99466_gpu-py2-none-any.whl
 
 
