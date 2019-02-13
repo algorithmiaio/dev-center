@@ -11,7 +11,7 @@ image:
 If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. The following sections cover the basics of using teams and organizations on the Algorithmia platform, including how to create and invite users to an organization, how to approve published algorithms, and how to check your organization's earnings.
 
 
-#### The Profile Overview
+#### The Profile Overview:
 
 The profile overview provides a rich source of information about an organization. In the overview, you can find the name of an organization, its members, and a listing of its algorithms. If you are the owner of the organization you will also be able to add and delete members as well as edit basic information regarding the organization.
 
