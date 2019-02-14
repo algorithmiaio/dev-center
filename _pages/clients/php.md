@@ -181,7 +181,7 @@ Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }}
 
 ## Conclusion
 
-This guide covered installing Algorithmia via pip, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
+This guide covered installing the Algorithmia client, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
 For more information on the methods available using the Data API in PHP check out the [Data API](http://docs.algorithmia.com/?php#data-api-specification) documentation or the [PHP Client Docs](https://github.com/algorithmiaio/algorithmia-php).
 
