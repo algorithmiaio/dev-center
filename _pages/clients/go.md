@@ -50,8 +50,8 @@ var client = algorithmia.NewClient(apiKey, "")
 Now you're ready to start working with Algorithmia in Go.
 
 {% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight go %}
 var client = algorithmia.NewClient(apiKey, "https://mylocalendpoint");

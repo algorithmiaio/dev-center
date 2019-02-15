@@ -185,7 +185,7 @@ For more methods on how to get a file using the Data API from a data collection 
 
 {% if site.enterprise %}
 #### Specifying an On-Premises Algorithmia Enterprise Endpoint
-This .NET Client also works for customers running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
+This .NET Client also works for customers running [Algorithmia Enterprise](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
 {% highlight csharp %}
 var client = new Client("YOUR_API_KEY", "https://mylocalendpoint");
