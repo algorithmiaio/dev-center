@@ -5,27 +5,26 @@ excerpt: "Resources to get started with Algorithmia"
 exclude_from_search: true
 ---
 
-
 <div class="section">
   <div class="col-md-12">
     {% include breadcrumbs.html %}
     <h1 id="page-title">{{ page.title }}</h1>
     <p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
-    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over 5,000 algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
+    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
     </p>
     <p class="lead">Below you'll find everything you need to get started:</p>
   </div>
 </div>
 
 <div class="row mb-64">
-<!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
+<!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/model-deployment/" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
   <div class="col-md-5">
-    <img src="{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="img-fill">
+    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="img-fill">
   </div>
   <div class="clearfix visible-sm-block"></div>
   <div class="col-md-7">
     <p class="lead">Deploy your machine and deep learning models and leave the devops to us:</p>
-    <a href="{{ site.baseurl }}/algorithm-development/model-guides/" class="btn btn-primary btn-raised">Deploy Models</a>
+    <a href="{{ site.baseurl }}/model-deployment/" class="btn btn-primary btn-raised">Deploy Models</a>
   </div>
 </div>
 
@@ -54,8 +53,8 @@ exclude_from_search: true
 
 <div class="row mb-64">
   <div class="col-md-5">
-    <img src="{{ site.baseurl }}/images/sample_apps.jpg" alt="Contribute" class="img-fill">
-    <img src="{{ site.baseurl }}/images/icons/hexicon_box.svg" alt="icon" class="hexicon">
+    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/sample_apps.jpg" alt="Contribute" class="img-fill">
+    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/icons/hexicon_box.svg" alt="icon" class="hexicon">
   </div>
   <div class="col-md-7">
     <p class="lead">Contribute to the marketplace by adding your own algorithms:</p>
@@ -69,7 +68,7 @@ exclude_from_search: true
     <a href="{{ site.baseurl }}/data/" class="btn btn-primary btn-raised hidden-xs hidden-sm">Data Source Guides</a>
   </div>
   <div class="col-md-7">
-    <img src="{{ site.baseurl }}/images/test_smallest_data_icons.jpg" alt="Sample Apps" class="img-fill">
+    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/test_smallest_data_icons.jpg" alt="Sample Apps" class="img-fill">
   </div>
   <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
     <p class="lead">Connect to your Data</p>

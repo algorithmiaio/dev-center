@@ -46,12 +46,14 @@ client = Algorithmia.client(apiKey)
 
 Now you’re ready to start working with Algorithmia in Ruby.
 
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight ruby %}
 client = Algorithmia.client(apiKey, "https://mylocalendpoint");
 {% endhighlight %}
+{% endif %}
 
 ## Working with Data Using the Data API
 
@@ -188,7 +190,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 

@@ -48,14 +48,16 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 
 Now you’re ready to start working with Algorithmia in Java.
 
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight java %}
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+{% endif %}
 
 ## Working with Data Using the Data API
 
@@ -149,12 +151,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 {% endhighlight %}
 
-Then upload your local file to the data collection using the `.put()` method:
+Then upload your local file to the data collection using the `.putFile()` method:
 
 {% highlight java %}
 try {
     String local_file = "local_path_to_your_file/jack_london.txt";
-    nlp_directory.put(new File(local_file));
+    nlp_directory.putFile(new File(local_file));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
 }
@@ -185,7 +187,7 @@ try {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
@@ -254,7 +256,7 @@ If you are interested in learning more about working with unstructured text data
 
 ## Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
@@ -310,7 +312,7 @@ public class Main {
 
         String local_file = "local_path_to_your_file/jack_london.txt"
         try {
-            nlp_directory.put(new File(local_file));
+            nlp_directory.putFile(new File(local_file));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

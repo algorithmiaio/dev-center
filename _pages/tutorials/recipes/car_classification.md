@@ -3,7 +3,6 @@ autogen: true
 layout: article
 title:  "Find the Make and Model of Cars in a Traffic Video"
 categories: recipes
-recipe_tags: [computer-vision]
 tags: [computer-vision]
 show_related: false
 author: steph_kim

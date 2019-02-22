@@ -35,7 +35,7 @@ via the <a href="{{ site.baseurl }}/clients/node/">Algorithmia NodeJS Client</a>
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -44,15 +44,15 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_Javascript.png" alt="Algorithm console JavaScript" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_Javascript.png" alt="Algorithm console JavaScript" class="screenshot">
 
 ## Managing Dependencies
 
-Now that you have created your algorithm, you can add dependencies.  The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `lodash` just as an example.  
+Now that you have created your algorithm, you can add dependencies.  The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `lodash` just as an example.
 
 Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.  You don't need to create the package.json file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaScript Dependency File" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaScript Dependency File" class="screenshot img-md">
 
 Add dependencies by including the package name and version inside the `dependencies` section.  To add `lodash` version 4.17.4, edit that section as follows:
 
@@ -203,11 +203,12 @@ You should get back an structure like this, but longer:
 Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
 
 {% highlight javascript %}
+var uuid = require('uuidv4')
 // {"target_file":"data://username/collection/filename.txt"}
-var file_uri = input["target_file"];
-var tempfile = "/tmp/"+uuidV4()+".tmp";
+var dir_uri = input["target_file"];
+var tempfile = "/tmp/"+uuid()+".tmp";
 save_some_output_to(tempfile);
-client.file(file_uri).putFile(tempfile);
+client.dir(dir_uri).putFile(tempfile);
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
@@ -216,7 +217,7 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
-You may call up to 24 other algorithms, either in parallel or recursively.
+You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
 
 ## Error Handling
 
@@ -244,7 +245,7 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -256,7 +257,7 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 

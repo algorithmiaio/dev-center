@@ -5,9 +5,10 @@ excerpt-short: "Trigger Algorithmia microservices from your Alexa-enabled device
 categories: [sample-apps]
 tags: [sample-apps]
 show_related: true
-permalink: /algorithm-development/tutorials/sample-apps/alexa/
+permalink: /tutorials/sample-apps/alexa/
 redirect_from:
   - /algorithm-development/clients/alexa/
+  - /algorithm-development/tutorials/sample-apps/alexa/
 image:
     teaser: /language_logos/alexa.svg
 ---

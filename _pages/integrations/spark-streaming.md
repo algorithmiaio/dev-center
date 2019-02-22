@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Spark Streaming"
-excerpt-short: "Integrate Deep Learning Models Within Spark Streaming with Algorithmia."
+excerpt-short: "Integrate Deep Learning Models within Spark Streaming with Algorithmia"
 categories: [integrations]
 tags: [integrations]
 show_related: true

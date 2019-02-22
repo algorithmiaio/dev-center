@@ -12,8 +12,14 @@ locale: en_US
 # Do not include a trailing /.
 url: https://algorithmia.com
 
+# URL for assets we serve via CDN
+cdnurl: https://cdn.algorithmia.com
+
 # The entire site is nested under this baseurl
 baseurl: /developers
+
+# Is this an enterprise (non http://algorithmia.com) site?
+enterprise: false
 
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
@@ -56,5 +62,5 @@ project_output_dir: /clients
 lunr_search:
   excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml", "_tmp"]
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml", "_tmp", "vendor"]
 

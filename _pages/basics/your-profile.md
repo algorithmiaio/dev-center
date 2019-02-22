@@ -18,11 +18,11 @@ This guide will usher you through your user profile and cover how to find your A
 
 To access your profile, simple click on the user drop down next to the notifications icon in the top right of the navigation bar:
 
-![Accessing the user drop down]({{ site.baseurl }}/images/post_images/your_profile/user_drop_down.png)
+![Accessing the user drop down]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/user_drop_down.png)
 
 Once inside the profile section, you'll find a horizontal menu of profile sections such as Credentials, Earnings, Account, and Payment Info. We'll go over each section to understand your profile below, but first let's start with the main profile page:
 
-![profile main]({{ site.baseurl }}/images/post_images/your_profile/profile.png)
+![profile main]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/profile.png)
 
 The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
@@ -30,7 +30,7 @@ The main area of your profile also includes some basis stats like the number of 
 
 The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, will be labeled "default-key", and will show up in the algorithm console when trying out algorithms in the browser.
 
-![Credentials]({{ site.baseurl }}/images/post_images/your_profile/credentials.png)
+![Credentials]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/credentials.png)
 
 Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide]({{ site.baseurl }}/basics/customizing-api-keys/) to learn more.
 
@@ -38,7 +38,7 @@ Click the pencil icon to edit the permissions and update the key. You can also c
 
 The account section of your profile is where you'll find the information about your account usage and your credits.
 
-![Credits main]({{ site.baseurl }}/images/post_images/your_profile/credits_main.png)
+![Credits main]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/credits_main.png)
 
 The graph on the left shows your account balance history over the last 30 day period. On the right, you'll more details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking on the purple button.
 
@@ -47,7 +47,7 @@ If you have earned credits by publishing your own algorithms, you'll see the amo
 Below the account overview, you'll see menu options to view your Usage, Earnings, and Transactions.
 
 ### Usage
-![Usage]({{ site.baseurl }}/images/post_images/your_profile/usage.png)
+![Usage]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/usage.png)
 
 The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
@@ -62,7 +62,7 @@ For more information about pricing check out [Pricing]({{ site.baseurl }}/pricin
 
 The next section, Earnings, is where you will find the records of the calls made to your algorithms:
 
-![earnings]({{ site.baseurl }}/images/post_images/your_profile/earning.png)
+![earnings]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/earning.png)
 
 In this section, you'll see the algorithm listed by date as well as the version number for the algorithm. This is important if you are updating your algorithms and notice that people are still calling old versions. Knowing which versions of your algorithms that people are using will help you understand what backwards-compatibility you need as well as which versions are improvements for the algorithm callers.
 
@@ -72,7 +72,7 @@ In the case of earnings, you will only see the number of billable calls and thei
 
 Find the history of your credits in the transactions section.
 
-![Transactions]({{ site.baseurl }}/images/post_images/your_profile/transactions.png)
+![Transactions]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/transactions.png)
 
 Here you'll see any purchases you've made for more credits as well as any credits that have been granted to your account.
 

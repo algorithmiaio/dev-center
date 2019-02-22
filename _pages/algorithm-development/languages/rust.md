@@ -34,7 +34,7 @@ Furthermore, algorithms can call other algorithms and manage data on the Algorit
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -43,13 +43,13 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_rust.png" alt="Algorithm console Rust" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_rust.png" alt="Algorithm console Rust" class="screenshot">
 
 ## Managing Dependencies
 
 Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/" target="_blank">Crates.io</a> (though it is also possible to specify dependencies from a git URL). If working locally, you can edit `Cargo.toml` and run `cargo install` to update your lockfile. Alternatively, from the web IDE, there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_rust.png" alt="Rust Dependency File" class="screenshot img-md">
 
 Add dependencies at the end of the file, under the `[dependencies]` section (for details on versioning and on git-based dependencies, see the <a href="http://doc.crates.io/specifying-dependencies.html" target="_blank">cargo documentation</a>).  Then click "Save dependencies" to close the modal window.
 
@@ -195,7 +195,7 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
-You may call up to 24 other algorithms, either in parallel or recursively.
+You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
 
 ## Error Handling
 
@@ -241,7 +241,7 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -253,7 +253,7 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 

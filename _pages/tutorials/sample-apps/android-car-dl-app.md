@@ -21,7 +21,7 @@ In this tutorial, we'll go through how to use a deep learning algorithm that pre
 The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
 
 
-You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build an Android app that utilizes deep learning. 
+You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build an Android app that utilizes deep learning.
 
 We'll use the native <a href="https://developer.android.com/reference/android/hardware/camera2/package-summary.html">Camera2 API</a> to take a picture of a car, then we'll use the [Car Make and Model](https://algorithmia.com/algorithms/LgoBE/CarMakeandModelRecognition) algorithm on Algorithmia to process the image in order to display the car's make and model along with other metadata.
 
@@ -31,7 +31,7 @@ First things first, let's create a new app in Android Studio.
 
 Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
 
-<img src="{{ site.baseurl }}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="screenshot">
 
 Then name it "MainActivity". This activity will hold the code that we'll write to access the camera and save the picture. Then we'll use File Provider to pass the URI to the next activity which we'll create now.
 
@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
 }
 {% endhighlight %}
 
-Now let's go through the code. 
+Now let's go through the code.
 
 Directly inside our "MainActivity" class, notice the [onCreate](https://developer.android.com/guide/components/activities/activity-lifecycle.html) method where we initialize our view: "setContentView(R.layout.activity_main)". This will display our button for taking a picture.
 
@@ -301,7 +301,7 @@ In the "getOutputMediaFileUri" method we check [External Storage](https://develo
 
 First arg is our application context (MainActivity.this), then the authority that we set in our Manifest file that allows for URI permissions (R.string.file_provider_authority), and finally the timestamped file that we just created.
 
-If we print out the URI we created, it looks like this: 
+If we print out the URI we created, it looks like this:
 
 {% highlight java %}
 content://com.example.carmakemodelapp.fileprovider/external_files/Android/data/com.example.carmakemodelapp/files/Pictures/pic_20171016_115903.jpg
@@ -415,14 +415,14 @@ Note that you can also use [Dropbox or Amazon S3 to host your data](https://algo
 
 Finally, our last method is "onClickRun" where we set our TextView and use an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html) to call our algorithm.
 
-In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client](https://algorithmia.com/developers/clients/android/) and pass in our API string from our "res/values/strings.xml". 
+In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client](https://algorithmia.com/developers/clients/android/) and pass in our API string from our "res/values/strings.xml".
 
-We then create a DataDirectory object that references a directory in your [data collection](https://algorithmia.com/data/hosted). If you haven't used Data sources check out our [Android Client Guide](https://algorithmia.com/developers/clients/android/). 
+We then create a DataDirectory object that references a directory in your [data collection](https://algorithmia.com/data/hosted). If you haven't used Data sources check out our [Android Client Guide](https://algorithmia.com/developers/clients/android/).
 
 Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [data sources](https://algorithmia.com/developers/data/).
 {: .notice-warning}
 
-Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file. 
+Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file.
 
 In "onPostExecute()" we'll handle the algorithm response. All we are doing here is handling a null case and when we get an "AlgoSuccess" response, we get that as a JSON string and set the view's text to show the algorithm's response. Then, we have some error handling in case our algorithm call isn't successful!
 

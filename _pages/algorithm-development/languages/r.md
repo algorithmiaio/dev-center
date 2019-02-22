@@ -16,6 +16,7 @@ Table of Contents
 
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
+* [Saving and Loading R Models](#saving-and-loading-r-models)
 * [Managing Dependencies](#managing-dependencies)
 * [I/O for your Algorithms](#io-for-your-algorithms)
 * [Error Handling](#error-handling)
@@ -35,7 +36,7 @@ via the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console. 
+If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the algorithm() function.
 
@@ -44,7 +45,21 @@ The algorithm() function defines the input point of the algorithm. We use the al
 
 Go ahead and remove the boilerplate code below that's inside the algorithm() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
+
+## Saving and Loading R Models
+When you have an R model that has been serialized as an .rds file, you can deploy it easily on Algorithmia. All you need to do is save your model:
+
+{% highlight r %}
+saveRDS(iris_fit_naive, "./naive_bayes_iris.rds")
+{% endhighlight %}
+
+Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{ site.baseurl }}/clients/r/) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{ site.baseurl }}/data/).
+
+Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
+
+* [Arima Time Series Forecasting Model](https://algorithmia.com/algorithms/demo/rdemo)
+* [Naive Bayes Iris Classication Model](https://algorithmia.com/algorithms/demo/irisrdemo)
 
 ## Managing Dependencies
 
@@ -54,36 +69,83 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://cran
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="screenshot img-md">
 
-You can add dependencies by simply adding the library name to the file.
+As you can see in the dependency file above, there are four different ways you can load packages in R.
+If you want the latest version from CRAN, than you simply type in the dependency name (this example uses the package e1071):
 
-For older dependency versions, use the syntax: `-t <CRAN archive url>`
-<br/>Example: `-t https://cran.r-project.org/src/contrib/algorithmia_0.0.2.tar.gz`
+{% highlight bash %}
+e1071
+{% endhighlight %}
 
-To add a GitHub repo as a dependency: `-g username/repo[/subdir][@ref|#pull]`
-<br/>Example: `-g algorithmiaio/algorithmia-r` 
+If you wanted that same package in an older version, all you have to do is install from CRAN the exact version by finding it in the packages archive, which in this instance, should be listed in the <a href="https://cran.r-project.org/web/packages/e1071/index.html">e1071</a> docs found under “Old Sources”. There you’ll find the <a href="https://cran.r-project.org/src/contrib/Archive/e1071/">archived packages</a>, so simply choose your version and load your dependency:
 
-For more detailed instructions, please read the comments at the top of the default dependency file which is generated when you create your algorithm.
+{% highlight bash %}
+https://cran.r-project.org/src/contrib/Archive/e1071/e1071_1.6-6.tar.gz
+{% endhighlight %}
+
+Or, if you need to pull a dependency off of GitHub instead, all you need to do is install the package with:
+
+{% highlight bash %}
+-g /cran/e1071
+{% endhighlight %}
+
+Similar to how you would install through dev.tools() in R.
+
+And finally, if you’re having issues with version conflicts, for instance package A requires version of package B while package C requires a different version of package B, then you can install with in your dependency file using install.packages():
+
+{% highlight bash %}
+-e install.packages(“e1071”)
+{% endhighlight %}
+
+The last format will take longer to load the dependencies than the other formats, so it's best to use it as a last resort.
+
+Note, that if you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
 {: .notice-info}
+
+For example, to make use of e1071, you would include the line:
+
+{% highlight bash %}
+e1071
+{% endhighlight %}
+
+in the dependencies file and the line
+
+{% highlight bash %}
+library(e1071)
+{% endhighlight %}
+
+in the main file.
 
 The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia's R package visit:
 <a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia's CRAN package</a> documentation.
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-If you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
+There are a few packages that require a little something extra in the dependencies file to work on Algorithmia.
 {: .notice-info}
 
-For example, to make use of lubridate, you would include the line:
+If you're using *tidyverse*, add the following lines to your dependencies:
+{% highlight bash %}
+tidyverse
+-t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
+-t https://cran.r-project.org/src/contrib/httr_1.3.1.tar.gz
+-t https://cran.r-project.org/src/contrib/jsonlite_1.5.tar.gz
+withr
+{% endhighlight %}
 
-`lubridate`
+For *dplyr*, use:
+{% highlight bash %}
+dplyr
+-t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
+{% endhighlight %}
 
-in the dependencies file and the line
-
-`library(lubridate)`
-
-in the main file.
+If you're using both *caret* and *nnet* in the same Algorithm add:
+{% highlight bash %}
+caret
+-t https://cran.r-project.org/src/contrib/R6_2.2.2.tar.gz
+-t https://cran.r-project.org/src/contrib/nnet_7.3-12.tar.gz
+{% endhighlight %}
 
 ## I/O for your Algorithms
 
@@ -224,7 +286,7 @@ client$file(file_uri)$putFile(tempfile)
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/r/">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
-You may call up to 24 other algorithms, either in parallel or recursively.
+You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -268,7 +330,7 @@ algorithm <- function(input){
 
 This should return a split up list of strings:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -316,7 +378,7 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -328,7 +390,7 @@ Under the Versioning tab, you can select whether your algorithm will be for publ
 
 Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
+Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 

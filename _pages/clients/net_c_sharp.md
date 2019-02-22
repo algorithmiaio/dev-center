@@ -12,7 +12,18 @@ image:
 
 We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).
 
-Note that this currently works with .NET Framework, not .NET Core ([learn about Framework vs Core](https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server)).
+The Algorithmia .NET client supports .NET Standard 2.0 which means it can be used within apps targeting:
+- .NET Core
+- ASP.NET Core
+- .NET Framework (> 4.6.1)
+- Mono
+- Xamarin.iOS
+- Xamarin.Mac
+- Xamarin.Android
+- Universal Windows Platform Apps
+- Unity
+
+You can find out more about .NET Standard and the versions of related frameworks that are supported here: [.NET Standard - .NET Implementation Support](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) and [Learn more about .NET Framework vs .NET Core](https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server).
 
 #### Getting Started with Algorithmia in .NET
 The Algorithmia client is available on NuGet.org and is as easy as adding the package to your .NET project using Visual Studio or the NuGet Packet Manager.
@@ -48,7 +59,7 @@ A single algorithm may have different input and output types, or accept multiple
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ### Create a Data Collection
 
@@ -172,14 +183,16 @@ Now you've seen how to upload a local data file, check if a file exists in a dat
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
+{% if site.enterprise %}
 #### Specifying an On-Premises Algorithmia Enterprise Endpoint
-This .NET Client also works for customers running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
+This .NET Client also works for customers running [Algorithmia Enterprise](https://algorithmia.com/enterprise).  You can specify the API endpoint when you create the client object.
 
 {% highlight csharp %}
 var client = new Client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+{% endif %}
 
 
 #### Additional information

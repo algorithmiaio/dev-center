@@ -1,16 +1,14 @@
 ---
 autogen: true
 layout: article
-title:  "404 Error Scanner for URL Validation"
+title:  "How to Find Broken Links and Email Yourself a 404 Not Found Report"
 categories: recipes
-recipe_tags: [utilities]
-tags: [utilities]
+tags: [utilities, text-analysis]
 show_related: false
+excerpt: "Use the 404 Scanner Microservice to Generate a Report of Broken Links via Mailgun"
 
-excerpt: "Incorporate email service Mailgun to validate and report on your URL's and find broken links on your website."
-
-generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/404-Error-Scanner/readme.md
-repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/404-Error-Scanner/
-blog: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/404-Error-Scanner/readme.md
+repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/404-Error-Scanner
+generate_from: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/404-Error-Scanner/readme.md
+blog: https://blog.algorithmia.com/broken-links-404-not-found-report/
 thumbnail: /developers/images/monster-1.png
 ---

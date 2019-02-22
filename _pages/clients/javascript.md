@@ -9,13 +9,15 @@ image:
     teaser: /language_logos/js.svg
 ---
 
+{% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/HF04Ge-3XdE" %}
+
 We offer a vanilla JavaScript client for calling algorithms in the marketplace.
 
 ### Download
 
 You can download our JavaScript client from:
 
-<a href="{{ site.baseurl }}/v1/clients/js/algorithmia-0.2.0.js" download="algorithmia-0.2.0.js">https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js</a>
+<a href="{{ site.url }}/v1/clients/js/algorithmia-0.2.0.js" download="algorithmia-0.2.0.js">https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js</a>
 
 You can include the JavaScript file as a script tag:
 
@@ -52,22 +54,24 @@ client.algo("docs/JavaAddOne").pipe(input).then(function(output) {
 });
 {% endhighlight %}
 
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight javascript %}
-var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
+var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint/v1/web/algo");
 {% endhighlight %}
+{% endif %}
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ### Note: Working with Files
 
 Because of security concerns, the JavaScript client does not implement the [Data API](http://docs.algorithmia.com/#data-api-specification) which other clients use to move files into and out of [Data Sources](https://algorithmia.com/developers/data/). This can be a problem if you call an algorithm which writes its output to a file (instead of returning it directly).  However, there are workarounds:
 
-For smaller files, the [util/Cat](https://algorithmia.com/algorithms/util/Cat) and [ANaimi/Base64DataConverter](https://algorithmia.com/algorithms/ANaimi/Base64DataConverter) algorithms can be used for retrieving file contents.
+For smaller files, the [util/Cat]({{ site.url }}/algorithms/util/Cat) and [ANaimi/Base64DataConverter](https://algorithmia.com/algorithms/ANaimi/Base64DataConverter) algorithms can be used for retrieving file contents.
 
 For larger files, you can set up an [Amazon S3 Connector](https://algorithmia.com/developers/data/s3/) to an S3 bucket with public read access. Then, direct the algorithms you call to write their output into that S3 connector (or use [s3utilities/UploadFiletoS3/](https://algorithmia.com/algorithms/s3utilities/UploadFiletoS3/) to move it there). Once it is in the S3 bucket, you can access the file via its publicly-readable URL.
 

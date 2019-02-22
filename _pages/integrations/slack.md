@@ -1,13 +1,14 @@
 ---
 layout: article
 title:  "Slack"
-excerpt: "Integrate Machine Learning directly into your Slack channels."
-excerpt-short: "Use Machine Learning directly from Slack."
+excerpt: "Integrate Machine Learning directly into your Slack channels"
+excerpt-short: "Use Machine Learning directly from Slack"
 categories: [integrations, recipes]
 tags: [integrations, utilities, text-analysis]
 show_related: true
 image:
     teaser: /language_logos/slack.svg
+author: jon_peck
 repository: https://gist.github.com/gagejustins/ecfb471f297c1a01341139dca50d89f3
 blog: https://blog.algorithmia.com/how-to-integrate-machine-learning-into-your-slack-channels/
 thumbnail: /developers/images/language_logos/slack.svg
@@ -198,4 +199,4 @@ Once you've mastered this, you're ready to move on to more complex solutions, ch
 
 See the [NodeJS guide](../node) for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).

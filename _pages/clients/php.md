@@ -21,6 +21,10 @@ The official Algorithmia PHP Client is [available](https://packagist.org/package
 {% highlight bash %}
 composer require algorithmia/algorithmia 
 {% endhighlight %}
+or
+{% highlight bash %}
+php composer.phar require algorithmia/algorithmia
+{% endhighlight %}
 
 For non-Composer installs, use the [source](https://github.com/algorithmiaio/algorithmia-php).
 
@@ -125,7 +129,7 @@ Next check if the file that you just uploaded to data collections exists, and tr
  
 {% highlight php %}
 //download the file
-if(!$remote_file->exists()) {
+if($remote_file->exists()) {
   $temp_file = $remote_file->getFile();
 }
 {% endhighlight %}
@@ -136,7 +140,7 @@ Alternately, if you just need the text content of the file to be stored in a var
 
 {% highlight php %}
 //download contents of file as a string
-if(!$remote_file->exists()) {
+if($remote_file->exists()) {
   $file_contents = $remote_file->getString();
 }
 {% endhighlight %}
@@ -173,11 +177,11 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
-This guide covered installing Algorithmia via pip, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
+This guide covered installing the Algorithmia client, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
 For more information on the methods available using the Data API in PHP check out the [Data API](http://docs.algorithmia.com/?php#data-api-specification) documentation or the [PHP Client Docs](https://github.com/algorithmiaio/algorithmia-php).
 

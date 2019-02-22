@@ -24,15 +24,18 @@ This guide will show how to create a collection and walk you through the differe
 
 ## Create a Data Collection
 
-To create a new data collection first navigate to <a href="{{ site.baseurl }}/data" target="_blank">Algorithmia's Data Portal</a>. On the panel that says "Algorithmia Hosted Data" click the button that says **"Browse Files"** which takes you to <a href="{{ site.baseurl }}/data/hosted">Data Collections</a>.
+To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/manage_connector_all.png" alt="Create a data connector" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Connect a data source" class="screenshot img-md">
 
-Then you will find yourself in the collections panel where you can click on **"Add Collection"** under the 'My Collections' section on your data collections page:
+Select **'Hosted Data Collection'** and a modal window will open to create a new collection.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collections_visual.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/new_hosted_data_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-Notice that when you create a collection you can set the read and write access by using the drop downs shown in the above screenshot. Below are the details regarding access permissions for user collections and what they mean.
+Notice that once you create a collection you can set the read access by using the drop down shown in the below screenshot. Below are the details regarding access permissions for user collections and what they mean.
+
+<img src="{{ site.baseurl }}/images/post_images/data_connectors/hosted_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+
 
 ## Read and Write Permissions
 
@@ -105,7 +108,7 @@ Access temporary collections with this URI format from inside of Algorithmia or 
 
 - 'data://.algo/:author/:algoname/temp/:filename'
 
-Temporary algorithm collections give you a space to store data on a temporary basis. You will find the temporary collections under a `temp` directory inside of an algorithm collection. For example, a user can have an algorithm that produces a file inside of a temporary collection.
+Temporary algorithm collections give you a space to store data on a temporary basis. You will find the temporary collections under a `temp` directory inside of an algorithm collection, and files placed into it are accessible only to the user who ran the algorithm. For example, a user can have an algorithm that produces a file inside of a temporary collection.
 
 The temporary algorithm collections are particularly useful for algorithms that produce files as a result of the sample input. For example, if your sample input generates a file, using a temporary algorithm collection allows the algorithm to store its output but will be cleaned up after a day.
 
@@ -125,7 +128,7 @@ Access permanent collections with this URI format from inside of Algorithmia or 
 
 - 'data://.algo/:author/:algoname/perm/:filename'
 
-If you need to access a collection from a specific algorithm, you can use the permanent collection. This allows users to generate output that is saved permanently as a result of running the algorithm. Unlike the Temporary Algorithm Collections, the data stored in the permanent is not cleared after one day.
+If you need to access a collection from a specific algorithm, you can use the permanent collection. This allows users to generate output that is saved permanently as a result of running the algorithm, and is only accessible by that user. Unlike the Temporary Algorithm Collections, the data stored in the permanent collection is not cleared after one day.
 
 ### The Simplified Format
 

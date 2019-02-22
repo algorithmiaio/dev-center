@@ -1,0 +1,4 @@
+# Enterprise Config Overrides
+
+# Is this an enterprise (non http://algorithmia.com) site?
+enterprise: true

@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "OpenCV"
-excerpt: "Bring your OpenCV model to Algorithmia."
+excerpt: "Deploying your OpenCV model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
@@ -13,27 +13,48 @@ image:
     teaser: /language_logos/opencv.png
 ---
 
-Welcome to Algorithmia! This guide is designed as an introduction to hosting your <a href="http://opencv.org/">OpenCV</a> model and publishing it as an algorithm, even if you’ve never used Algorithmia before!
+Welcome to Algorithmia! This guide is designed as an introduction to deploying your <a href="http://opencv.org/">OpenCV</a> model and publishing it as an algorithm, even if you’ve never used Algorithmia before!
+
+## Table of Contents
+* [Prerequisites](#prerequisites)
+  * [Create a Data Collection](#create-a-data-collection)
+  * [Save your Pre-Trained Model](#save-your-pre-trained-model)
+* [Create your Algorithm](#create-your-algorithm)
+* [Set your Dependencies](#set-your-dependencies)
+* [Load your Model](#load-your-model)
+* [Publish your Algorithm](#publish-your-algorithm)
 
 ## Prerequisites
+Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
 
 ### Create a Data Collection
 
-Here you'll want to create a data collection to host your model.
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
+In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
-- Click on **“Add Collection”** under the “My Collections” section on your data collections page.
+First, you'll want to create a data collection to host your graph and variables.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
+- Log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+- Click on **“Add Collection”** under the “My Collections” section.
 
-Let's create a data collection where we'll save our model.
+- After you create your collection you can set the read and write access on your data collection.
 
-### Training a model
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-Before we create our algorithm, let's first train our model on the handwriting digits dataset and save it to the DataAPI.
+For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
+
+Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
+
+### Save your Pre-Trained Model
+You'll want to do the training and saving of your model on your local machine, or the platform you're using for training, before you deploy it to production on the Algorithmia platform.
+
+After training your OpenCV model, can save it as a `.dat` binary file. In this example we use the `SVM.save()` method.
+
+Because we'll be saving the model to a data collection, let's create that directory right now.
+
+Before we create our algorithm, let's first train our model on our local machine on the handwriting digits dataset and save it to the DataAPI.
 
 This requires version `3.4.1.15` of `opencv-python`.
 
@@ -100,49 +121,41 @@ The last line will save your model to the data collection you've created.
 
 ## Create your Algorithm
 
-Creating your algorithm is easy!
+Hopefully you've already followed along with the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-- To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
-- Name your algorithm, select the language, choose permissions and make the code either open or closed source.
+Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
-**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
+The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
+
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
+
+Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
+
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 **Note**: Make sure that your version of python is the same between your development environment and the algorithm. There may be version conflicts otherwise.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
-
-### Set your dependencies
+### Set your Dependencies
 
 Now is the time to set the dependencies your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and add `opencv-python==3.4.1.15` under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-### Load your model
+## Load your model
+Here is where you load and run your model which will be called by the apply() function.
 
-Here is where you load your model, which will be called by the `apply()` function when you pass input to the algorithm using our API.
+When you load your model, our recommendation is to preload your model in a separate function external to the apply() function.
 
-Our recommendation is to preload your model in a separate function before the apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
+This is because when a model is first loaded it can take time to load depending on the file size.
 
-Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a JSON blob passing in a csv file hosted on [Algorithmia, Amazon S3, or Dropbox](https://algorithmia.com/developers/data/).
-{: .notice-info}
+Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
-We'll deploy our newly trained model. For testing the model we have, we'll crop a single zero digit from the dataset for testing.
+If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
+{: .notice-warning}
 
-### Example Input:
+Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
-{% highlight python %}
-{
-  "image": "data://opencv/dataset/zero_sample.png"
-}
-{% endhighlight %}
-
-### Example Output:
-
-{% highlight python %}
-{
-  "prediction": 0
-}
-{% endhighlight %}
+Now, we'll deploy our newly trained model. For testing the model we have, we'll crop a single zero digit from the dataset for testing.
 
 ### Preloading function
 
@@ -249,35 +262,35 @@ def apply(input):
     return {"prediction": pred}
 {% endhighlight %}
 
-## Publish your Algorithm
+Now when you run this code, the expected input is:
 
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+{% highlight python %}
+{
+  "image": "data://opencv/dataset/zero_sample.png"
+}
+{% endhighlight %}
+
+With the expected output:
+
+{% highlight python %}
+{
+  "prediction": 0
+}
+{% endhighlight %}
+
+## Publish your Algorithm
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-Changes shows you your commit history and release notes.
-
-Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
-
-Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
-
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
-
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
-
-If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
-
-
-For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+If you don't recall from the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 ## Credit
 
 This guide is based on the OpenCV tutorial [here](https://docs.opencv.org/3.4.1/dd/d3b/tutorial_py_svm_opencv.html).
-
-In the meantime check out the other model hosting guides such as <a href="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href="{{ site.baseurl }}/model-deployment/keras/">Keras</a>, <a href="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/caffe/">Caffe</a>, <a href="{{ site.baseurl }}/model-deployment/mxnet/">MXNet</a>, <a href="{{ site.baseurl }}/model-deployment/theano/">Theano</a>, or <a href="{{ site.baseurl }}/model-deployment/nltk/">NLTK</a>, and <a href="{{ site.baseurl }}/model-deployment/cntk/">CNTK</a>.
 
 If you run into any trouble, please contact us at <a href="mailto:support@algorithmia.com">support@algorithmia.com</a>.

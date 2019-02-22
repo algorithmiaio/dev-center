@@ -45,14 +45,16 @@ client <- getAlgorithmiaClient(apiKey)
 
 Now you’re ready to start working with Algorithmia in R.
 
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight r %}
 client <- getAlgorithmiaClient("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+{% endif %}
 
 ## Working with Data Using the Data API
 
@@ -138,7 +140,7 @@ if (client$file(text_file)$exists()) {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
@@ -173,8 +175,8 @@ algo <- client$algo('nlp/Summarizer/0.1.3')
 
 tryCatch({
     # Get the summary result of your file's contents.
-	response <- algo$pipe(input)$result
-	print(response)
+    response <- algo$pipe(input)$result
+    print(response)
 },
 error = function(e) {
     stop(e)
@@ -189,7 +191,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to 80 Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
@@ -236,11 +238,11 @@ algo <- client$algo('nlp/Summarizer/0.1.3')
 
 tryCatch({
     # Get the summary result of your file's contents.
-	response <- algo$pipe(input)$result
-	print(response)
+    response <- algo$pipe(input)$result
+    print(response)
 },
 error = function(e) {
-  	# Algorithm error if the input is not correctly formatted.
+    # Algorithm error if the input is not correctly formatted.
     stop()
 })
 {% endhighlight %}

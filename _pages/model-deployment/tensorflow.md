@@ -14,228 +14,418 @@ image:
 ---
 
 
-Welcome to hosting your <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
-This guide is designed as an introduction to hosting a Tensorflow model and publishing an algorithm even if you’ve never used Algorithmia before.
+Welcome to deploying your pre-trained <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
 
 **Currently we support tensorflow-gpu up to version 1.3.0, future versions such as the latest 1.7.0 will not function properly due to gpu limitations.**
 
-For tensorflow-gpu==1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
+For tensorflow-gpu 1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
 
-# Table of Contents
-* [Prerequsites](#prerequisites)
-  * [Train and save your model](#train-and-save-your-model)
+Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
+{: .notice-info}
+
+## Table of Contents
+* [Prerequisites](#prerequisites)
+  * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
+  * [Host Your Model File](#host-your-model-file)
 * [Create your Algorithm](#create-your-algorithm)
-* [Editing your Algorithm locally](#editing-your-algorithm-locally-via-git-&-cli)
-* [Editing your Algorithm remotely](#editing-your-algorithm-via-the-web-ide)
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
-  * [Frozen inference graph method](#frozen-inference-graph-method)
-  * [SavedModel method](#savedmodel-method)
+  * [Using the SavedModel Method](#using-the-savedmodel-method)
   * [GPU memory tricks](#gpu-memory-tricks)
 * [Publish your Algorithm](#publish-your-algorithm)
 
 
 ## Prerequisites
-Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
+Before you get started deploying your pre-trained model on Algorithmia, there are a few things you'll want to do first:
 
-### Train and save your model.
-After training your Tensorflow model, you'll want to [save your variable checkpoints](https://www.tensorflow.org/programmers_guide/variables) and the graph from your trained model so you can upload it to Algorithmia.
+### Save your Pre-Trained Model
+You'll want to do the training and saving of your model on your local machine, or the platform you're using for training, before you deploy it to production on the Algorithmia platform.
+
+After training your Tensorflow model, you'll need to save it, along with its assets and variables.
+
+There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
+
+Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
+{: .notice-warning}
+
+```python
+from tensorflow.examples.tutorials.mnist import input_data
+import tensorflow as tf
+import shutil
+
+# Pulls data from a folder in your local directory data/MNIST
+mnist = input_data.read_data_sets("data/MNIST/", one_hot=True)
+
+
+def preprocessing(save_directory):
+    """
+    Read data from mnist dataset.
+    Every data point has two parts: image (xs) and label (ys).
+    """
+    x = tf.placeholder(tf.float32, [None, 784])
+
+    # Weights and biases for model
+    W = tf.Variable(tf.zeros([784, 10]))
+    b = tf.Variable(tf.zeros([10]))
+
+    # Implement model.
+    y = tf.nn.softmax(tf.matmul(x, W) + b)
+
+    # Add new placeholder for correct answers
+    y_ = tf.placeholder(tf.float32, [None, 10])
+    # Implement cross-entropy to meausre the inefficiency of our
+    # predictions
+    cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ *
+                                                  tf.log(y), reduction_indices=[1]))
+    train_step = tf.train.GradientDescentOptimizer(
+        0.5).minimize(cross_entropy)
+
+    # Initialize variables we created
+    init = tf.initialize_all_variables()
+
+    return save_model(train_step, init, x, y_, save_directory, y)
+
+def save_model(train_step, init, x, y_, save_directory, y):
+    """
+    Launch model, initialize variables and save variables to disk after
+    training
+    """
+    try:
+        shutil.rmtree(save_directory)
+    except:
+        pass
+
+
+    builder = tf.saved_model.builder.SavedModelBuilder(save_directory)
+    with tf.Session() as sess:
+        sess.run(init)
+        for i in range(1000):
+            batch_xs, batch_ys = mnist.train.next_batch(100)
+            sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+
+        # We define our input tensors by name
+        inputs = {"Placeholder": tf.saved_model.utils.build_tensor_info(x)}
+
+        #  We also define our output tensors
+        outputs = {"Softmax": tf.saved_model.utils.build_tensor_info(y),
+                   "Placeholder_1": tf.saved_model.utils.build_tensor_info(y_)}
+        # Then we create a SignatureDef
+        signature = tf.saved_model.signature_def_utils.build_signature_def(
+            inputs=inputs,
+            outputs=outputs,
+            method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME
+        )
+
+        builder.add_meta_graph_and_variables(sess,
+                                             [tf.saved_model.tag_constants.SERVING],
+                                             signature_def_map={'foo': signature})
+
+
+        print("Model saved in file: {0}".format(save_directory))
+        # argmax gives you the index of the highest entry in a tensor along an
+        # axis
+        correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+        # Cast floating points to take mean
+        calculate_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+        accuracy = sess.run(calculate_accuracy, feed_dict={
+            x: mnist.test.images, y_: mnist.test.labels})
+        print("accuracy before serialization: {}".format(accuracy))
+        builder.save()
+
+
+```
+
+In the above code, the Manual Builder API is used to save your graph using a MetaGraph. That way all of the graph and its variables, assets, and signatures will be saved as a protocol buffer. Note that the signature is the set of inputs and outputs from your graph.
+
+Now that you've trained and saved your Tensorflow model elsewhere, we'll deploy it on Algorithmia.
 
 ### Create a Data Collection
-Here you'll want to create a data collection to host your graph and variable checkpoint data.
+Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
+In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
 
-- Click on **“Add Collection”** under the “My Collections” section on your data collections page.
+First, you'll want to create a data collection to host your graph and variables.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
+- Log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
 
+- Click on **“Add Collection”** under the “My Collections” section.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+- After you create your collection you can set the read and write access on your data collection.
 
-### Upload your Model into a Collection
-Next, upload your Tensorflow checkpoint and graph to your newly created data collection.
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+
+For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
+
+Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
+
+### Host Your Model File
+Next, upload your Tensorflow variables and graph to your newly created data collection. They should be in a .zip file or .gzip, although note our examples show using zip format so you'll need to change the code in your main model file in the function `extract_model()` to extract your gzip accordingly or simply save your model as a .zip file.
 
 - Load model by clicking box **“Drop files here to upload”**
 
-- Note the path to your files: data://user_name/collections_name/tensorflow.ckpt, data://user_name/collections_name/graph_model_tensorflow.pb
+- Note the path to your data collection and the zip folder: data://user_name/collections_name/model.zip
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
-Creating your algorithm is easy!
 
-- To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
-- Name your algorithm, select the language, choose permissions and make the code either open or closed source.
+Hopefully you've already followed along with the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-**Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
+Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
+{: .notice-info}
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
+Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
-Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
+The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_cli.png" alt="cli info modal" class="screenshot">
+The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 
-You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
+Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-#### Editing your algorithm locally via GIT & CLI
-
-The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
-
-To learn more about this process, Algorithmia's [CLI]({{ site.baseurl }}/clients/cli/) and [Git]({{ site.baseurl }}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
-
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) ) 
-2. Clone your algorithm: `algo clone username/algoname`
-3. Use your preferred editor to modify the code
-4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
-5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: for now, you must do this via the web IDE:
-    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
-    2. click on your algorithm
-    3. click "Edit Source"
-    4. click "Compile", then "[Publish](#publish-algorithm)"
-
-
-#### Editing your algorithm via the web IDE
-
-If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
-
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_page.png" alt="Algorithm descrption page" class="screenshot">
-
-Notice the tabs: Run, Docs, Cost, Discussion, Manage, and Source.
-
-The tab currently showing "Run" is where users can run the algorithm with the default input that you will provide during the publishing step of the algorithm or they can run their own input to test out your algorithm. Also, on this tab, you can add a short summary stating what your algorithm is and why people might be interested in it (for example how it solves a particular problem in a use case). 
-
-"Docs" consists of the section that you will want to show how to use your algorithm including complete information about the input types allowed and what the expected outputs will be.
-
-"Cost" will be filled out automatically once you publish your algorithm and will show if you've chosen to charge royalites or if you've decided to open source your algorithm. It will also give the estimated cost so the user consuming your algorithm can see how much it will cost.
-
-The "Discussion" tab shows the comments and questions from users so you can keep up to date regarding user feedback. 
-
-Under the "Manage" tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist and see permissions for your algorithm which were set when you created your algorithm.
-
-Finally click on the "Source" tab which will display the UI for creating your algorithm if you prefer it over the CLI.
-
-Algorithmia creates the skeleton for your algorithm and bring you to the Edit Algorithm page. The editor will have the "Hello world" code already filled out for you, as shown below.
-
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="screenshot img-md">
+
+If you plan on using tensorflow with GPU support, make sure to use the
+<code>tensorflow-gpu</code> python package instead of the <code>tensorflow</code> one, with the version number
+<code>1.2.0</code> as shown in the dependency file in the above screenshot.
 
 <div class='notice-warning'>
-If you plan on using tensorflow with GPU support, make sure to use the
- <code>tensorflow-gpu</code> python package instead of the <code>tensorflow</code> one, with the version number
-  <code>1.2.0</code>. It can be written in the dependency file like this: <code>tensorflow-gpu==1.2.0</code>.
-<br>
 We've recently added tensorflow 1.3.0 support, however it uses custom wheels which we've built. Please replace your <code>tensorflow-gpu==1.2.0</code> line with:
 <ul>
 <li> python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl </li>
 <li> python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl </li>
 </ul>
 If you run into any issues with these wheels, please get in touch with us using intercom.
+
+Note that with the Python 2 wheel you also must add your protobuf version to the dependency. For example:
+<code>protobuf==3.0.0b2.post1</code>
 </div>
 
+If you are creating an algorithm that is utilizing CPU's instead, then go ahead and either add the Tensorflow version like this `tensorflow==1.7.0` or simply `tensorflow` to your dependency file to get the latest version.
+
 ## Load your Model
-Here is where you load your graph and run your model which will be called by the apply() function.
-Our recommendation is to preload your model in a separate function before apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
+
+Now that you've seen how to save your model using SavedModelBuilder, you can load your model using the Algorithmia IDE.
+
+When you load your model, our recommendation is to preload your model in a separate function external to the apply() function.
+
+This is because when a model is first loaded it can take time to load depending on the file size.
+
+Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
 
-## Frozen inference graph method
-This was historically the preferred method of saving and loading a graph,
- however since version 1.3.0 - the SavedModel method has become the standard.
-This example is taken directly from the <a href=" https://algorithmia.com/algorithms/deeplearning/ObjectDetectionCOCO">ObjectDetectionCOCO</a> algorithm.
-Please bare in mind that not every tensorflow project contains loading mechanisms like this, but most using protocolbuffers do.
+Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
-Now to check out the code adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow:
+### Using the SavedModel Method
 
+This is where we'll show how to deploy your saved model to make predictions on the sample data.
+
+
+The following code sample is adapted from <a href="https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html">MNIST for Beginners</a> tutorial from Tensorflow.
+
+If you want to follow along, you can add the <a href="http://yann.lecun.com/exdb/mnist/">MNIST data files</a> to your data collection, but make sure you update the username and path to match your own.
+
+You will also need the file in the <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow Demo GPU</a> called loadmnistdata.py shown here to deal with unpacking the mnist files:
 
 ```python
+"""
+Functions to handle MNIST data extraction and loading
+
+Adopted from https://github.com/tensorflow/tensorflow/blob/v0.6.0/tensorflow/examples/tutorials/mnist/input_data.py
+"""
+
+import struct
+import gzip
+import numpy as np
+
+def extract_images(filename, img):
+    try:
+        with gzip.open(filename) as gz:
+            n = struct.unpack('I', gz.read(4))
+            # Read magic number.
+            if n[0] != 0x3080000:
+                raise Exception('Invalid file: unexpected magic number.')
+            # Read number of entries.
+            n = struct.unpack('>I', gz.read(4))[0]
+            if n != img:
+                raise Exception('Invalid file: expected {0} entries.'.format(img))
+            crow = struct.unpack('>I', gz.read(4))[0]
+            ccol = struct.unpack('>I', gz.read(4))[0]
+            if crow != 28 or ccol != 28:
+                raise Exception('Invalid file: expected 28 rows/cols per image.')
+            # Read data.
+            res = np.fromstring(gz.read(img * crow * ccol), dtype = np.uint8)
+    except Exception as e:
+        print(e)
+    return res.reshape((img, crow * ccol))
+
+def dense_to_one_hot(labels_dense, num_classes=10):
+  """Convert class labels from scalars to one-hot vectors."""
+  num_labels = labels_dense.shape[0]
+  index_offset = np.arange(num_labels) * num_classes
+  labels_one_hot = np.zeros((num_labels, num_classes))
+  labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
+  return labels_one_hot
+
+def extract_labels(filename, img):
+    try:
+        with gzip.open(filename) as gz:
+            n = struct.unpack('I', gz.read(4))
+            # Read magic number.
+            if n[0] != 0x1080000:
+                raise Exception('Invalid file: unexpected magic number.')
+            # Read number of entries.
+            n = struct.unpack('>I', gz.read(4))
+            if n[0] != img:
+                raise Exception('Invalid file: expected {0} rows.'.format(img))
+            # Read labels.
+            res = np.fromstring(gz.read(img), dtype = np.uint8)
+    except Exception as e:
+        print(e)
+    return dense_to_one_hot(res)
+
+def load_mnist(image_data, label_data, img):
+    data = extract_images(image_data, img)
+    labels = extract_labels(label_data, img)
+    # return np.hstack((data, labels))
+    return {"images": data, "labels": labels}
+```
+Now that you have that code saved in a separate file, let's get on with the meat of the algorithm that you'll replace the boilerplate code with in your main algorithm file:
+
+```python
+'''
+MNIST prediction from pre-trained model
+Tutorial created based on:
+https://www.tensorflow.org/versions/r1.0/get_started/mnist/beginners
+'''
+
+import Algorithmia
+import zipfile
 import os
-import tarfile
 import tensorflow as tf
+import shutil
+from .loadmnistdata import load_mnist
 
-def download_model(model_name):
+client = Algorithmia.client()
 
-    model_file = model_name + '.tar.gz'
-    download_base = 'data://deeplearning/objectDetectionCOCO/'
-    # Path to frozen detection graph. This is the actual model that is used for the object detection.
-    path_to_graph = model_name + '_coco_11_06_2017' + '/frozen_inference_graph.pb'
-    if model_name != MODEL_NAME:
-        print('model name not the same, reloading...')
-        if not os.path.isfile(path_to_graph):
-            try:
-                local_file = client.file(download_base+model_file).getFile().name
-            except Exception:
-                raise AlgorithmError("AlgoError3000: invalid model name.")
-                
-            tar_file = tarfile.open(local_file)
-            for file in tar_file.getmembers():
-                file_name = os.path.basename(file.name)
-                if 'frozen_inference_graph.pb' in file_name:
-                    tar_file.extract(file, os.getcwd())
-    
-        return path_to_graph
-
-""" And now we execute the function in global state, so it's run when the algorithm is loaded"""
-download_model("ssd_mobilenet_v1")
-saver = tf.train.Saver()
-graph = load_data()
-
-def inject_data(input):
+def load_data(input):
     """
-    Finds the prediction and accuracy of digit image
-
-    Prints accuracy and predictions on user input
+    Pass in {"mnist_images": "data://demo/tensorflow_mnist_data/t10k-images-idx3-ubyte.gz",
+        "mnist_labels": "data://demo/tensorflow_mnist_data/t10k-labels-idx1-ubyte.gz"
+    }
     """
+    if input["mnist_images"].startswith("data://"):
+        # "data://demo/tensorflow_mnist_data/t10k-images-idx3-ubyte.gz"
+        mnist_images = client.file(input["mnist_images"]).getFile().name
+    if input["mnist_labels"].startswith("data://"):
+        # "data://demo/tensorflow_mnist_data/t10k-labels-idx1-ubyte.gz"
+        mnist_labels = client.file(input["mnist_labels"]).getFile().name
+    try:
+        # load_mnist is a function from loadmnistdata.py to one hot encode images
+        data = load_mnist(mnist_images, mnist_labels, 10000)
+    except:
+        print("Check your mnist image path in your data collection")
+    return data
+
+
+def extract_zip():
+    """
+    Get zipped model file from data collections
+    """
+    # Saved model protocol buffer and variables
+    filename = "data://demo/tensorflow_mnist_model/model.zip"
+    model_file = client.file(filename).getFile().name
+    return model_file
+
+def extract_model():
+    """
+    Unzip model files from data collections
+    """
+    # Model path from data collections
+    input_zip = extract_zip()
+    try:
+        # Create directory to unzip model files into
+        os.mkdir("unzipped_files")
+        print("Created directory")
+    except:
+        print("Error in creating directory")
+    zipped_file = zipfile.ZipFile(input_zip)
+    # Extract unzipped files into directory created earlier returns none
+    return zipped_file.extractall("unzipped_files")
+
+def generate_gpu_config(memory_fraction):
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
+    return config
+
+# Unzip model files to directory
+extract_model()
+
+# Load model outside of apply() in global state so it only gets loaded one time
+def create_session():
     # Set your memory fraction equal to a value less than 1, 0.6 is a good starting point.
     # If no fraction is defined, the tensorflow algorithm may run into gpu out of memory problems.
     fraction = 0.6
-    
-    # Inject data into Tensor graph
-    with tf.Session(graph=graph, config=generate_gpu_config(fraction)) as sess:
-        # Load previously saved graph
-        with tf.gfile.FastGFile(graph, 'rb') as f:
-            graph_def = tf.GraphDef()
-            graph_def.ParseFromString(f.read())
-            tf.import_graph_def(graph_def, name='')
-        # Map variables
-        saver.restore(sess, checkpoints)
-        y_ = sess.graph.get_tensor_by_name('Placeholder_1:0')
-        y = sess.graph.get_tensor_by_name('Softmax:0')
-        x = sess.graph.get_tensor_by_name('Placeholder:0')
+    session = tf.Session(config=generate_gpu_config(fraction))
+    path_to_graph = "./unzipped_files/model"
 
-        correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-        accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-        print(sess.run(accuracy, feed_dict={
-              x: input, y_: mnist.test.labels}))
-        prediction = tf.argmax(y, 1)
-        print(prediction.eval(feed_dict={x: input}))
+    tf.saved_model.loader.load(
+        session,
+        [tf.saved_model.tag_constants.SERVING],
+        path_to_graph)
 
+    y_ = session.graph.get_tensor_by_name('Placeholder_1:0')
+    y = session.graph.get_tensor_by_name('Softmax:0')
+    x = session.graph.get_tensor_by_name('Placeholder:0')
+
+    return (y_, y, x, session)
+
+# Load model in global state so it only gets initialized once, subsequent calls will be faster
+Y_, Y, X, SESSION = create_session()
+
+def predict(mnist):
+    correct_prediction = tf.equal(tf.argmax(Y, 1), tf.argmax(Y_, 1))
+    calculate_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    accuracy = SESSION.run(calculate_accuracy, feed_dict={
+        X: mnist["images"], Y_: mnist["labels"]})
+    print("accuracy after serialization: {}".format(accuracy))
+    predict_values = tf.argmax(Y, 1)
+    prediction = predict_values.eval(session=SESSION,feed_dict={X: mnist["images"]})
+    print("predicted classes: {}".format(prediction))
+    return {"prediction": prediction, "accuracy": accuracy}
+
+
+# API calls will begin at the apply() method, with the request body passed as 'input'
+# For more details, see algorithmia.com/developers/algorithm-development/languages
 def apply(input):
-    """
-    Input would be an image file either from:
-
-    data sources via https://algorithmia.com/data using the Data API
-    or as an http request using urllib
-    """
-    output = inject_data(input)
-    return output
+    data = load_data(input)
+    inference = predict(data)
+    tf_version = tf.__version__
+    return "MNIST Predictions: {0}, TF version: {1}".format(inference, tf_version)
 ```
 
-## SavedModel Method
-SavedModel is the standard way of loading and saving models in recent versions of Tensorflow, for more info check out 
-<a href="https://www.tensorflow.org/programmers_guide/saved_model#apis_to_build_and_load_a_savedmodel"> Load a SavedModel </a>
+Now when you run this code, the expected input is:
 
-Lets take a look at an example that we've implemented ourselves, the tensor names entirely depend on your graph,
-replace our variables and types with yours as necessary.
+{% highlight python %}
+{"mnist_images": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-images-idx3-ubyte.gz", "mnist_labels": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-labels-idx1-ubyte.gz"}
+{% endhighlight %}
+
+With the expected output:
+{% highlight python %}
+MNIST Predictions: {'accuracy': 0.88910013, 'prediction': array([7, 2, 1, ..., 4, 8, 6])}, TF version: 1.2.0
+{% endhighlight %}
+
+Let's take a look at another example that we've implemented ourselves, the tensor names entirely depend on your graph, so replace our variables and types with yours as necessary.
 
 ```python
 import Algorithmia
@@ -247,7 +437,7 @@ import os
 from numpy import array, float32, object
 client = Algorithmia.client()
 
-    
+
 def _create_float(v):
     return tf.train.Feature(float_list=tf.train.FloatList(value=[v]))
 
@@ -282,7 +472,7 @@ def apply(input):
     occupation = _create_str(input['occupation'])
     relationship = _create_str(input['relationship'])
     workclass = _create_str(input['workclass'])
-    
+
     features = {
         'age': age,
         'capital_gain': capital_gain,
@@ -306,14 +496,12 @@ def apply(input):
 ```
 
 As you can see, most of the processing is similar, but we use a different endpoint to actually create the graph.
-We also have significantly more IO processing, the `feed_dict` in the frozen graph example only takes 1 input, whereas here we take a number of inputs.
-Again that can be changed as necessary to suit your model architecture.
-If you want to create a custom graph session (aka with gpu memory optimizations like those defined below), pass a
-graph variable to `predictor.from_saved_model` like this: `predict_fn = predictor.from_saved_model(graph_dir, graph=graph)`
 
-## GPU memory tricks
+If you want to create a custom graph session (aka with gpu memory optimizations like those defined below), pass a graph variable to `predictor.from_saved_model` like this: `predict_fn = predictor.from_saved_model(graph_dir, graph=graph)`
+
+### GPU memory tricks
 Are you running into out of memory exceptions? Tensorflow attempts to allocate all available
-gpu memory. 
+gpu memory.
 By defining a configuration with a max memory fraction you can ensure algorithm stability.
 Also, uncomment `allow_growth` if you aren't sure how much memory your algorithm needs, tensorflow will grow it's gpu memory allocation as necessary.
 
@@ -325,29 +513,17 @@ def generate_gpu_config(memory_fraction):
     return config
 ```
 
-# Publish your Algorithm
-Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
+## Publish your Algorithm
+Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-Changes shows you your commit history and release notes.
+If you don't recall from the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
-Sample I/O is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
-
-Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
-
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
-
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision. 
-
-If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
-
-If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href=" https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a>
-
-For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href=" https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a> or one of the demos for <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU</a> and <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow MNIST GPU</a> already mentioned in this guide.
 
 That's it for hosting your <a href="https://www.tensorflow.org/">tensorflow</a> model on Algorithmia!
