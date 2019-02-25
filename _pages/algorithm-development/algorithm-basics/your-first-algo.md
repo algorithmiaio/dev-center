@@ -174,7 +174,7 @@ if 'url' in input:
 
 This example shows an algorithm that checks the type of input passed in, and if it is a URL, will call into the Html2Text algorithm. The original caller of your algorithm will be charged for both the first algorithm call as well as the internal algorithm call. The algorithm will automatically use the credentials of the person calling your algorithm.
 
-## Delete your Algorithm
+## (Optional) Delete your Algorithm
 
 If your algorithm has never been published, or has only been published for Private use, you have the option to delete it when it is no longer needed. To do so, go to your algorithm's page and click on the *Manage* tab, then find the *Delete* button at the bottom.
 
