@@ -3,6 +3,7 @@ layout: article
 title:  "Algorithm Profile Checklist"
 excerpt: "Follow these tips to create the best algorithm profile possible."
 categories: algorithm-basics
+nav_index: 20
 tags: [algo-dev-basics]
 show_related: true
 image:

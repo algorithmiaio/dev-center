@@ -3,6 +3,7 @@ layout: article
 title:  "Customizing API Keys & Access"
 excerpt: "Did you know you can have multiple API keys with different access permissions?"
 categories: basics
+nav_index: 50
 tags: [basics]
 show_related: true
 image:

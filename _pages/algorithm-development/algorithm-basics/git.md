@@ -3,6 +3,7 @@ layout: article
 title:  "Using Git with Algorithmia"
 excerpt: "Learn how to use Git with Algorithmia and integrate with your current workflow."
 categories: algorithm-basics
+nav_index: 30
 tags: [algo-dev-basics]
 show_related: true
 image:

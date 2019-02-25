@@ -62,11 +62,17 @@ You will see an interactive prompt to guide you through setting up a default pro
 {% highlight text %}
 $ algo auth
 Configuring authentication for 'default' profile
+Enter API Endpoint [https://api.algorithmia.com]: (press Enter)
 Enter API Key (prefixed with 'sim'):
 Profile is ready to use. Test with 'algo ls'
 {% endhighlight %}
 
 See [Using multiple profiles](#using-multiple-profiles) for instructions on how to set authenticate and use more than one profile with the Algorithmia CLI tool.
+
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
+{% endif %}
 
 ## Usage
 
@@ -170,6 +176,7 @@ With the Algorithmia CLI, you can configure multiple custom profiles to use. To 
 {% highlight text %}
 $ algo auth --profile second_user
 Configuring authentication for 'second_user' profile
+Enter API Endpoint [https://api.algorithmia.com]: (press Enter)
 Enter API Key (prefixed with 'sim'):
 Profile is ready to use. Test with 'algo ls --profile second_user'
 {% endhighlight %}

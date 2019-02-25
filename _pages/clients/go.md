@@ -50,8 +50,8 @@ var client = algorithmia.NewClient(apiKey, "")
 Now you're ready to start working with Algorithmia in Go.
 
 {% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises Endpoint
-If you are running the [Algorithmia platform on-premises with Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight go %}
 var client = algorithmia.NewClient(apiKey, "https://mylocalendpoint");
@@ -231,7 +231,7 @@ Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }}
 
 ## Conclusion
 
-This guide covered installing Algorithmia via pip, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
+This guide covered installing the Algorithmia client, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
 
 For more information on the methods available using the Data API check out the [Data API](http://docs.algorithmia.com/) documentation or the [Go Client Docs](https://github.com/algorithmiaio/algorithmia-go).
 

@@ -3,6 +3,7 @@ layout: article
 title:  "Better Error Handling"
 excerpt: "How to handle errors between algorithms."
 categories: algorithm-basics
+nav_index: 40
 tags: [algo-dev-basics]
 show_related: true
 author: besir

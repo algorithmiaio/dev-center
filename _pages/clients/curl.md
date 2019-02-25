@@ -26,6 +26,12 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 
 ## Working with Data via cURL
 
+{% if site.enterprise %}
+#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), replace `https://api.algorithmia.com/v1/data/.my` in the codesamples below with your own API endpoint URL.
+{% endif %}
+
+
 #### Create a directory
 
 You can use cURL to interact with the Data API from the command line.

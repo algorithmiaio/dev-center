@@ -3,6 +3,7 @@ layout: article
 title:  "Getting Started"
 excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
 categories: algorithm-basics
+nav_index: 10
 tags: [algo-dev-basics]
 show_related: true
 image:
