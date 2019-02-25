@@ -182,10 +182,10 @@ If your algorithm has never been published, or has only been published for Priva
 
 If you have ever published your Algorithm with "Public" selected, it cannot be deleted. This is to ensure that others' code will not break if they have written algorithms or client code which depends on your algorithm.
 
-### Wrapping Up
+## Wrapping Up
 
 Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API! Get inspired by checking out our <a href="{{ site.baseurl }}/tutorials/recipes/">Recipes</a>.
 
-### Next Steps
+## Next Steps
 
 After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.
