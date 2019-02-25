@@ -23,6 +23,7 @@ Table of Contents
 * [Editing Your Algorithm Locally via GIT and CLI](#editing-your-algorithm-locally-via-git-and-cli)
 * [Editing Your Algorithm via the Web IDE](#editing-your-algorithm-via-the-web-ide)
 * [Publish Your Algorithm](#publish-your-algorithm)
+* [Deleting Algorithms](#delete-your-algorithm)
 
 ## Create your First Algorithm
 
@@ -173,10 +174,18 @@ if 'url' in input:
 
 This example shows an algorithm that checks the type of input passed in, and if it is a URL, will call into the Html2Text algorithm. The original caller of your algorithm will be charged for both the first algorithm call as well as the internal algorithm call. The algorithm will automatically use the credentials of the person calling your algorithm.
 
-#### Wrapping Up
+## Delete your Algorithm
+
+If your algorithm has never been published, or has only been published for Private use, you have the option to delete it when it is no longer needed. To do so, go to your algorithm's page and click on the *Manage* tab, then find the *Delete* button at the bottom.
+
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/delete_algorithm.png" alt="Delete algorithm" class="screenshot img-sm">
+
+If you have ever published your Algorithm with "Public" selected, it cannot be deleted. This is to ensure that others' code will not break if they have written algorithms or client code which depends on your algorithm.
+
+### Wrapping Up
 
 Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API! Get inspired by checking out our <a href="{{ site.baseurl }}/tutorials/recipes/">Recipes</a>.
 
-#### Next Steps
+### Next Steps
 
 After you've finished this tutorial, you'll probably want to check out the <a href="{{ site.baseurl }}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.
