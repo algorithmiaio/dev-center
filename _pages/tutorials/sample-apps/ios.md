@@ -77,7 +77,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
     func uploadImage() {
         // Upload file using Data API
         let file = client.file(sourcePath)
-        file.put(data: UIImageJPEGRepresentation(image!, 0.7)!) { error in
+        file.put(data: UIImageJPEGRepresentation(image!, 0.7)!) { _, error in
             if let error = error {
                 print(error)
                 self.display(error: error)

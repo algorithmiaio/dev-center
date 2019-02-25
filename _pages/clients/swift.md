@@ -71,7 +71,7 @@ let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 nlp_directory.exists() { exists, error in
     if (error == nil){
         if (exists == false) {
-            nlp_directory.create(readACL:.MY_ALGORITHMS) { error in
+            nlp_directory.create(readACL:.MY_ALGORITHMS) { _, error in
                 if (error == nil) {
                 	print("Folder created")
             	} else {
@@ -96,7 +96,7 @@ When we created the data collection in the previous code snippet, the default se
 
 {% highlight swift %}
 // Update a directory to be private
-nlp_directory.update(readACL:.PRIVATE) { error in
+nlp_directory.update(readACL:.PRIVATE) { _, error in
     print(error)
 }
 {% endhighlight %}
@@ -125,7 +125,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -154,7 +154,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -200,7 +200,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -265,7 +265,7 @@ let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 nlp_directory.exists() { exists, error in
     if (error == nil){
         if (exists == false) {
-            nlp_directory.create(readACL:.MY_ALGORITHMS) { error in
+            nlp_directory.create(readACL:.MY_ALGORITHMS) { _, error in
                 if (error == nil) {
                 	print("Folder created")
             	} else {
@@ -283,7 +283,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
