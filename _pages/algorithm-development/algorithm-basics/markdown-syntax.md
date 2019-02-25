@@ -3,6 +3,7 @@ layout: article
 title:  "Markdown Syntax"
 excerpt: "Markdown syntax for Algorithm descriptions."
 categories: algorithm-basics
+nav_index: 50
 tags: [algo-dev-basics]
 show_related: true
 image:
