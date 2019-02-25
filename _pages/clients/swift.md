@@ -276,7 +276,7 @@ nlp_directory.exists() { exists, error in
     }
 }
 
-let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+let text_file = "jack_london.txt"
 
 nlp_directory.file(name: text_file).exists() { exists, error in
     if (error == nil) {
