@@ -176,7 +176,7 @@ This example shows an algorithm that checks the type of input passed in, and if 
 
 ## (Optional) Delete your Algorithm
 
-If your algorithm has never been published, or has only been published for Private use, you have the option to delete it when it is no longer needed. To do so, go to your algorithm's page and click on the *Manage* tab, then find the *Delete* button at the bottom.
+If your algorithm has never been published, or has only been published for Private use, you have the option to delete it when it is no longer needed. To do so, go to your algorithm's page and click on the **Manage** tab, then find the **Delete** button at the bottom.
 
 <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/delete_algorithm.png" alt="Delete algorithm" class="screenshot img-sm">
 
