@@ -3,6 +3,7 @@ layout: article
 title:  "Algorithm Profiles"
 excerpt: "A walk through of the algorithm profile page."
 categories: basics
+nav_index: 20
 tags: [basics]
 show_related: true
 image:

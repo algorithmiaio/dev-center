@@ -3,6 +3,7 @@ layout: article
 title:  "Your User Profile"
 excerpt: "Information about your user profile."
 categories: basics
+nav_index: 10
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 author: steph_kim
