@@ -38,7 +38,7 @@ When you click the "Add Algorithm" link, you'll see a form for creating your alg
 **Algorithmia Account or Organization**
 Note: If you don't belong to an organization, skip this step and go to the next.
 
-If you belong to an organization then you'll see this option before Algorithmia Name. Go ahead and select which account or organization you want to create your algorithm under. 
+If you belong to an organization then you'll see this option before Algorithmia Name. Go ahead and select which account or organization you want to create your algorithm under.
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
@@ -47,6 +47,8 @@ For example this is the beginning portion of the <a href="{{ site.baseurl }}/alg
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
 **Language:** Next you'll pick the language of your choice.
+
+<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/create_algorithm_properties.png" alt="Create an algorithm" class="screenshot img-sm">
 
 **Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
 
