@@ -27,13 +27,29 @@ Once inside the profile section, you'll find a horizontal menu of profile sectio
 
 The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
+## Algorithms
+
+The algorithms section of your profile is where you can find and manage algorithms owned by you or your organizations.
+
+![Algorithms]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/algorithms.png)
+
+Click the menu icon next to an algorithm to view, manage, or edit it.
+
+## Organizations
+
+The organizations section of your profile is where you can find all organizations you belong to.
+
+![Organizations]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/organizations.png)
+
+For more information on creating and updating organizations, see our guide [here]({{site.baseurl}}/teams/).
+
 ## Credentials
 
 The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, will be labeled "default-key", and will show up in the algorithm console when trying out algorithms in the browser.
 
 ![Credentials]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/credentials.png)
 
-Click the pencil icon to edit the permissions and update the key. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide]({{ site.baseurl }}/basics/customizing-api-keys/) to learn more.
+Click the menu icon next to a key to edit or delete it. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide]({{ site.baseurl }}/basics/customizing-api-keys/) to learn more.
 
 ## Account
 
@@ -41,11 +57,11 @@ The account section of your profile is where you'll find the information about y
 
 ![Credits main]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/credits_main.png)
 
-The graph on the left shows your account balance history over the last 30 day period. On the right, you'll more details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking on the purple button.
+The card on the left shows details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking Purchase Credits. The card to the right displays your payment information, if any, and allows you to update or remove your current payment method.
 
 If you have earned credits by publishing your own algorithms, you'll see the amount you've earned in USD as well.
 
-Below the account overview, you'll see menu options to view your Usage, Earnings, and Transactions.
+Below the account overview, you'll see a chart of your balance over time, then menu options to view your Usage, Earnings, and Transactions.
 
 ### Usage
 ![Usage]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/your_profile/usage.png)
@@ -79,9 +95,7 @@ Here you'll see any purchases you've made for more credits as well as any credit
 
 ## Edit Profile & Payment Info
 
-In the edit profile section, you can update your name, email address, password, and notification settings.
-
-You can save billing information in your account under "Payment Info". This is especially helpful if you've set up your account to auto-reload when you run low on credits.
+In the Settings section of your profile, you can update your name, email address, password, and notification settings. Payment information can be updated in the Account section.
 
 ## Avatar
 
