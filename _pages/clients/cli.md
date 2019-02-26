@@ -100,14 +100,14 @@ There are several options for specifying the type and source of input data. The 
 
 | Option Flag               | Description |
 | :------------             | :--------------- |
-| -d, --data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
-| -D, --data-file <file>    | Same as --data, but the input data is read from a file |
+| -d, \--data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
+| -D, \--data-file <file>    | Same as --data, but the input data is read from a file |
 
 You may also explictly specify the input type as text (`-t`/`-T`), json (`-j`/`-J`), or binary (`-b`/`-B`) instead of using the auto-detection (`-d`/`-D`).
 
 #### Output Options
 
-The algorithm result is printed to STDOUT by defauft. Additional notices may be printed to STDERR. If you'd like to output the result to a file, use the output option flag followed by a filename:
+The algorithm result is printed to STDOUT by default. Additional notices may be printed to STDERR. If you'd like to output the result to a file, use the output option flag followed by a filename:
 
 {% highlight text %}
 $ algo run kenny/factor -d 17 --output results.txt
@@ -115,17 +115,17 @@ $ algo run kenny/factor -d 17 --output results.txt
 
 | Option Flag     | Description |
 | :------------   |:--------------- |
-| --debug         | Print algorithm's STDOUT (author-only) |
-| --response-body | Print HTTP response body (replaces result) |
-| --response      | Print full HTTP response including headers (replaces result) |
-| -s, --silence   | Suppress any output not explicitly requested (except result) |
-| -o, --output <file> |  Print result to a file |
+| \--debug         | Print algorithm's STDOUT (author-only) |
+| \--response-body | Print HTTP response body (replaces result) |
+| \--response      | Print full HTTP response including headers (replaces result) |
+| -s, \--silence   | Suppress any output not explicitly requested (except result) |
+| -o, \--output <file> |  Print result to a file |
 
 #### Other Options
 
 | Option Flag     | Description |
 | :------------   |:--------------- |
-| --timeout <seconds> | Sets algorithm timeout
+| \--timeout <seconds> | Sets algorithm timeout
 
 #### Examples:
 
