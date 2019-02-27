@@ -315,7 +315,7 @@ Now we use "startActivityForResult" which takes our Intent and our request code 
 
 Finally we'll look at the "onActivityResult" method where we create another Intent that references our "CarRecognitionActivity" Activity. Here we'll set the data for this Intent to our image URI we created in "getOutputMediaFileUri()" and start the activity.
 
-<!-- <img src="{{ site.baseurl }}/images/post_images/android/emulator_display_1.png" alt="Screenshot of Android emulator" width="540" height="960" class="screenshot img-sm"> -->
+<!-- <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/android/emulator_display_1.png" alt="Screenshot of Android emulator" width="540" height="960" class="screenshot img-sm"> -->
 
 Now we need to look at our next Activity that we created when setting up our app called: "CarRecognitionActivity":
 
@@ -426,7 +426,7 @@ Now we upload our byteArray to our data collection in a file called "myImage.jpg
 
 In "onPostExecute()" we'll handle the algorithm response. All we are doing here is handling a null case and when we get an "AlgoSuccess" response, we get that as a JSON string and set the view's text to show the algorithm's response. Then, we have some error handling in case our algorithm call isn't successful!
 
-<!-- <img src="{{ site.baseurl }}/images/post_images/android/emulator_display_2.png" alt="Screenshot of Android emulator" class="screenshot img-sm"> -->
+<!-- <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/android/emulator_display_2.png" alt="Screenshot of Android emulator" class="screenshot img-sm"> -->
 
 And here is the result when we run our app, take a picture and run the algorithma:
 
