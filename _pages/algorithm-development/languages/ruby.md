@@ -195,7 +195,7 @@ To call other algorithms or manage data from your algorithm, use the <a href="{{
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
-You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
+You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
 ## Error Handling
 

@@ -12,7 +12,7 @@ image:
 ---
 
 
-<a href="{{ site.url }}/data/hosted">Algorithmia's Data Sources</a> make it easy to host your data files on the Algorithmia platform for free, while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a cinch to work with your hosted data.
+<a href="{{site.url}}/data/hosted">Algorithmia's Data Sources</a> make it easy to host your data files on the Algorithmia platform for free, while our <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a> makes it a cinch to work with your hosted data.
 
 ## Data Source Basics
 For simple cases, you can feed data to an algorithm at request time, but for algorithms that have larger data requirements or that need to preserve state between calls, you can create collections of data files hosted on Algorithmia for free. This allows algorithms to access data from within the same session, but ensures that your data is safe. These collections are created on a per-user basis and you can control the access and visibility of the data.
@@ -24,7 +24,7 @@ This guide will show how to create a collection and walk you through the differe
 
 ## Create a Data Collection
 
-To create a new data connection first navigate to <a href="{{ site.url }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
+To create a new data connection first navigate to <a href="{{site.url}}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Connect a data source" class="screenshot img-md">
 

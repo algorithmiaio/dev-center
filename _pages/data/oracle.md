@@ -11,7 +11,7 @@ image:
     teaser: /language_logos/oracle.svg 
 ---
 
-Call the <a href="{{ site.url }}/algorithms/util/OracleDB/">OracleDB</a> algorithm to access data in your Oracle database.
+Call the <a href="{{site.url}}/algorithms/util/OracleDB/">OracleDB</a> algorithm to access data in your Oracle database.
 
 
 If your algorithm needs to read or write data from an Oracle database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
@@ -67,9 +67,9 @@ def apply(input):
 
 If you don't want to add database connection code directly into your algorithm, you can use our helper algorithms instead. Keep in mind that these incur the usual 1 credit per compute-second cost to run.
 
-First, configure your Oracle Database connection via <a href="{{ site.url }}/algorithms/util/OracleDBConfig/">OracleDBConfig</a> ( <a href="{{ site.url }}/algorithms/util/OracleDBConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{ site.url }}/algorithms/util/OracleDBConfig/">OracleDBConfig</a> as well.
+First, configure your Oracle Database connection via <a href="{{site.url}}/algorithms/util/OracleDBConfig/">OracleDBConfig</a> ( <a href="{{site.url}}/algorithms/util/OracleDBConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{site.url}}/algorithms/util/OracleDBConfig/">OracleDBConfig</a> as well.
 
-Then, access the data in your DB via the <a href="{{ site.url }}/algorithms/util/OracleDB/">OracleDB</a> (<a href="{{ site.url }}/algorithms/util/OracleDB/docs">docs</a>).
+Then, access the data in your DB via the <a href="{{site.url}}/algorithms/util/OracleDB/">OracleDB</a> (<a href="{{site.url}}/algorithms/util/OracleDB/docs">docs</a>).
 
 Here's an example of using a preconfigured connection inside one of your own algorithms:
 

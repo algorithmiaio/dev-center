@@ -84,4 +84,4 @@ This example grabs the file "somecollection/somefile.png" from our [Hosted Data]
 
 Your algorithm can contain abstract code, so feel free to experiment and use whichever public libraries fit your needs for connecting to the storage provider of your choice -- but do check our list of [Data Connectors](../) first to see if we already have a built-in connector ready for you to use.
 
-For a complete implementation example using Backblaze, check the "docs" and "source" tabs of the [BackblazeConfig]({{ site.url }}/algorithms/util/BackblazeConfig), [BackblazeUpload]({{ site.url }}/algorithms/util/BackblazeUpload), and [BackblazeDownload]({{ site.url }}/algorithms/util/BackblazeDownload) algorithms.   
+For a complete implementation example using Backblaze, check the "docs" and "source" tabs of the [BackblazeConfig]({{site.url}}/algorithms/util/BackblazeConfig), [BackblazeUpload]({{site.url}}/algorithms/util/BackblazeUpload), and [BackblazeDownload]({{site.url}}/algorithms/util/BackblazeDownload) algorithms.   

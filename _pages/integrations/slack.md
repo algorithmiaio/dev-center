@@ -199,4 +199,4 @@ Once you've mastered this, you're ready to move on to more complex solutions, ch
 
 See the [NodeJS guide](../node) for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.
 
-Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).

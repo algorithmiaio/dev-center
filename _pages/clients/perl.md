@@ -50,7 +50,7 @@ if ($resp->is_success) {
 
 While most algorithms accept JSON Objects, you can also use `Content-Type: text/plain` for ones which require bare string input, or `Content-Type: application/octet-stream` for those that require a binary (such as an image file). Adjust the line beginning with `my $post_data` as needed.
 
-Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 See the full [cURL Client Guide]({{site.baseurl}}/clients/curl) and [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
 on calling algorithms and managing data with POSTs.

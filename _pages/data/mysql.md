@@ -65,9 +65,9 @@ def apply(input):
 
 If you don't want to add database connection code directly into your algorithm, you can use our helper algorithms instead. Keep in mind that these incur the usual 1 credit per compute-second cost to run.
 
-First, configure your MySql Database connection via <a href="{{ site.url }}/algorithms/util/MySqlConfig/">MySqlConfig</a> ( <a href="{{ site.url }}/algorithms/util/MySqlConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{ site.url }}/algorithms/util/MySqlConfig/">MySqlConfig</a> as well.
+First, configure your MySql Database connection via <a href="{{site.url}}/algorithms/util/MySqlConfig/">MySqlConfig</a> ( <a href="{{site.url}}/algorithms/util/MySqlConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{site.url}}/algorithms/util/MySqlConfig/">MySqlConfig</a> as well.
 
-Then, access the data in your DB via the <a href="{{ site.url }}/algorithms/util/MySql/">MySql</a> (<a href="{{ site.url }}/algorithms/util/MySql/docs">docs</a>).
+Then, access the data in your DB via the <a href="{{site.url}}/algorithms/util/MySql/">MySql</a> (<a href="{{site.url}}/algorithms/util/MySql/docs">docs</a>).
 
 Here's an example of using a preconfigured connection inside one of your own algorithms:
 
