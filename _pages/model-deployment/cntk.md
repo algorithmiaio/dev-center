@@ -30,13 +30,13 @@ After your CNTK model is trained you should save the model graph with the idioma
 
 Here you'll want to create a data collection to host your model.
 
-- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
+- To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 ### Upload your Model into a Collection
 
@@ -46,7 +46,7 @@ After your collection is created, you're going to want to upload your saved grap
 
 - Note the path to your files: `data://username/collections_name/cntk.model`
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 ## Create your Algorithm
 
@@ -59,7 +59,7 @@ Creating your algorithm is easy!
 
 **Note**: Make sure that your version of python is the same between your development environment and the algorithm. There may be version conflicts otherwise.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="screenshot img-sm">
 
 
 ### set your dependencies
@@ -68,7 +68,7 @@ Now is the time to set the depenencies your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/cntk_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/cntk_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 
 ### Load your Model
@@ -174,7 +174,7 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -184,14 +184,14 @@ Sample I/O is where you'll create your sample input and output for the user to t
 
 Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 
-For more information and detailed steps: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 
 [whl]: https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python

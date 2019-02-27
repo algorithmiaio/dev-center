@@ -49,10 +49,10 @@ Now you’re ready to start working with Algorithmia for Android development.
 
 For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
-This guide will show you how to work with the [Hosted Data]({{ site.baseurl }}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
+This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
 
 If you want to check out how to build a simple Android app from start to finish using Algorithmia check out this [Android Sample App](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
 {: .notice-info}
@@ -129,7 +129,7 @@ if (nlp_directory.exists() == false) {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -172,13 +172,13 @@ Notice that we changed our data collection to private, which means that only you
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Upload Data to your Data Collection
 
 So far you've created your data collection and checked and updated directory permissions. Now you're ready to upload the text file that you created at the beginning of the guide to your data collection using the Data API.
 
-**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](https://algorithmia.com/data/hosted) and dragging and dropping the file into `nlp_directory`.
+**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](https://algorithmia.com/data/hosted) and dragging and dropping the file into `nlp_directory`.
 
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
@@ -235,7 +235,7 @@ try {
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
+This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{site.baseurl}}/tutorials/recipes/#computer-vision).
 
 Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 

@@ -16,7 +16,7 @@ github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier
 
 The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
 
-Before you get started with this Shiny sample app, check out our <a href="{{ site.baseurl }}/clients/r/">Algorithmia R language Client</a> and when you want to work with your own data, read up on [Algorithmia's Data Portal](https://algorithmia.com/data), which offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+Before you get started with this Shiny sample app, check out our <a href="{{site.baseurl}}/clients/r/">Algorithmia R language Client</a> and when you want to work with your own data, read up on [Algorithmia's Data Portal](https://algorithmia.com/data), which offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
 Here's a basic example of how to call an algorithm via our REST API inside a Shiny app, which updates the UI based on the API call and check out the example on <a href="https://algorithmia.shinyapps.io/fourier-deseasonality/">shinyapps.io</a>:
 

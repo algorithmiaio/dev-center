@@ -11,7 +11,7 @@ image:
 ---
 
 
-Before you get started learning about Ruby algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Ruby algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -30,12 +30,12 @@ Algorithmia makes a number of libraries available to make algorithm development 
 
 The full <a href="http://ruby-doc.org/core-2.2.0/" target="_blank">Ruby 2.2 language and standard library</a> is available for you to use in your algorithms.
 
-Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Ruby Client</a>.
+Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Ruby Client</a>.
 
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -44,7 +44,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Ruby" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_ruby.png" alt="Algorithm console Ruby" class="screenshot">
 
 ## Managing Dependencies
 
@@ -52,7 +52,7 @@ The algorithm we are about to create does not have any dependencies other than `
 
 Algorithmia supports adding 3rd partr.md#publish-algorithm <a href="https://rubygems.org/" target="_blank">Ruby Gems</a> using a Gemfile, but you don't need to create the Gemfile file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="Ruby Dependency File" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_ruby.png" alt="Ruby Dependency File" class="screenshot img-md">
 
 Add dependencies by adding the package name to the `Gemfile`.  For example, to make use of phony, you would include the line
 
@@ -80,7 +80,7 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
 
 Note, if the input to your algorithm is a bare string (e.g. `"world"`), then `input.instance_of? String` will be true.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
 
@@ -131,13 +131,13 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ## Working with Data Stored on Algorithmia
 
-This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted).
+This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
-While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{ site.baseurl }}/data/hosted) to host data for algorithm development.
+While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{site.baseurl}}/data/hosted) to host data for algorithm development.
 {: .notice-warning}
 
 #### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).
 
 This example shows how to create an algorithm that takes a user's file stored in a data collection on the Algorithmia platform and splits up the text into sentences and words.  This implementation simply splits the text on any dot, then on whitespace `\s` characters, and then filters out any empty strings.  Once done, it passes back an Object containing the properties "text" (the raw text extracted from the file), and "words" (an Array of Arrays representing sentences and words) into the callback function:
 
@@ -191,7 +191,7 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -209,11 +209,11 @@ In order to provide the user with useful feedback, raise an Error with a meaning
 	end
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -223,7 +223,7 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
@@ -233,7 +233,7 @@ Sample I/O is where you'll create your sample input and output for the user to t
 
 Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{ site.baseurl }}/pricing/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
@@ -245,7 +245,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{ site.baseurl }}/clients/ruby/">Algorithmia Client Ruby Docs</a>
-* [Hosted Data Source]({{ site.baseurl }}/data/)
+* <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Client Ruby Docs</a>
+* [Hosted Data Source]({{site.baseurl}}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?ruby)
 * <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 Docs</a>

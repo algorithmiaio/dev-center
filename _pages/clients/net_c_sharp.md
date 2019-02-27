@@ -114,7 +114,7 @@ Notice that we changed our data collection to private, which means that only you
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Upload Data to your Data Collection
 
@@ -147,7 +147,7 @@ This method will replace a file if it already exists. If you wish to avoid repla
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 
@@ -177,7 +177,7 @@ if (client.file(text_file).exists()) {
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
+This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{site.baseurl}}/tutorials/recipes/#computer-vision).
 
 Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents as a string.
 

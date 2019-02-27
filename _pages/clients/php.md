@@ -65,10 +65,10 @@ $client = Algorithmia::client();
 
 For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
-This guide will show you how to work with the [Hosted Data]({{ site.baseurl }}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
+This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
 
 ### Create a Data Collection
 
@@ -85,7 +85,7 @@ if(!$nlp_directory->exists()) {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -101,7 +101,7 @@ $newdir = $client->dir("data://.my/mynewfolder")->create(ACL::FULLY_PRIVATE);
 echo $newdir->getReadAcl();
 {% endhighlight %}
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Upload Data to your Data Collection
 
@@ -121,7 +121,7 @@ This endpoint will replace a file if it already exists. If you wish to avoid rep
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 
@@ -145,7 +145,7 @@ if($remote_file->exists()) {
 }
 {% endhighlight %}
 
-This will get your file as a string, saving it to the variable `$file_contents`.  If the file was binary (an image, etc), you could instead use the function `getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{ site.baseurl }}/tutorials/recipes/#computer-vision).
+This will get your file as a string, saving it to the variable `$file_contents`.  If the file was binary (an image, etc), you could instead use the function `getBytes()` to retrieve the file's content as a byte array. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{site.baseurl}}/tutorials/recipes/#computer-vision).
 
 Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
 

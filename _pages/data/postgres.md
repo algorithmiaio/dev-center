@@ -19,7 +19,7 @@ There are a variety of PostgreSQL packages publicly available. For Python, we re
 
 We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
 
-Instead, create a folder within your [Data Portal]({{ site.baseurl }}/data/) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the database regardless of who calls it, but does not give them direct access to your DB).
+Instead, create a folder within your [Data Portal]({{site.baseurl}}/data/) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the database regardless of who calls it, but does not give them direct access to your DB).
 
 Inside this folder, create a `.json` file containing your connection credentials:
 ```
