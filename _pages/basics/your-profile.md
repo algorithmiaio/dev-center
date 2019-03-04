@@ -17,7 +17,7 @@ This guide will usher you through your user profile and cover how to find your A
 
 ## Your Profile
 
-To access your profile, simple click on the user drop down next to the notifications icon in the top right of the navigation bar:
+To access your profile, simple click on the user drop down, located in the bottom left on desktop:
 
 ![Accessing the user drop down]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
 
