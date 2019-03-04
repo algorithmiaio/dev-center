@@ -27,11 +27,11 @@ Table of Contents
 
 ## Create your First Algorithm
 
-Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and by hovering over your profile avatar at the top right of the navbar, you'll see a dropdown with a link that says "Add Algorithm". Go ahead and click that link.
+Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and click the plus sign in the navbar to open the create menu, where you'll see the "Algorithm" option.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
-When you click the "Add Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
+When you click the "Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
 
@@ -124,14 +124,14 @@ The main thing to note about the algorithm is that it's wrapped in the apply() f
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 
-To run this algorithm first hit the "Compile" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{site.baseurl}}/basics/versioning/).
+To run this algorithm first hit the "Build" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{site.baseurl}}/basics/versioning/).
 
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-Once you have finished editing and want to run the algorithm, click the blue **Compile** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code.
+Once you have finished editing and want to run the algorithm, click the green **Build** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code.
 
 Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
 
