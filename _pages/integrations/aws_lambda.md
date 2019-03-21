@@ -31,11 +31,18 @@ Algorithmia and Lambda make it easy to rapidly build and deploy serverless solut
 #### Getting started
 
 * Navigate to the [AWS Lambda console](https://console.aws.amazon.com/lambda/home)
-* Select `Create a Lambda function`
+* Select `Create function`
+* Pick "Blueprints"
+<!-- "Browse serverless app repository" -->
 * Type `Algorithmia` into the filter
-* Select the Algorithmia blueprint
-* Setup Auth in your Lambda function using the below guide
-* Specify your algorithm and input data
+* set an Application Name and Topic, and click "Deploy" 
+* wait for AWS to deploy, then click "algorithmia" under the Resources section
+* click "Add Trigger" and configure as needed for your workflow
+* click on the Lambda icon next to "serverless-algorithmia-YourFunctionName" at the top
+* edit the code, setting `const algorithm` under `processEvent`, modifying `const inputData` to handle the triggering event's datastructure (the template assumes an S3 event), and modifying the output (in `client.algo(algorithm).pipe(inputData).then((output) =>` as needed for your workflow.
+* for higher security, configure your KMS Encrypted Key as shown below, and set `const kmsEncryptedApiKey` in your code
+* for a simpler but less secure config, you can embed your API Key directly into your code by assigning a value to `let apiKey`
+* save and test your code
 
 ### Authentication
 
