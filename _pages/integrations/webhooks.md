@@ -62,9 +62,13 @@ def lambda_handler(event, context):
     api_key = 'YOUR_API_KEY'
     data = event['Records'][0]['s3']['object']['key']
     headers = {'Content-Type':'application/json','Authorization':'Simple '+api_key}
-    response = requests.post('https://api.algorithmia.com/v1/algo/'+algorithm,headers=headers,data=json.dumps(data))
+    response = requests.post(
+        'https://api.algorithmia.com/v1/algo/'+algorithm,
+        headers=headers,
+        data=json.dumps(data)
+    )
     return {
-        'statusCode': 200,
+        'statusCode': response.status_code,
         'body': response.json()
     }
 {% endhighlight %}
