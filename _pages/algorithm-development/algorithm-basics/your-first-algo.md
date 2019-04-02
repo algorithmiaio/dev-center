@@ -27,7 +27,7 @@ Table of Contents
 
 ## Create your First Algorithm
 
-Let's start by creating an algorithm. First navigate to [Algorithmia](https://algorithmia.com) and click the plus sign in the navbar to open the create menu, where you'll see the "Algorithm" option.
+Let's start by creating an algorithm. First navigate to [Algorithmia](/) and click the plus sign in the navbar to open the create menu, where you'll see the "Algorithm" option.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
@@ -73,13 +73,13 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, Algorithmia's [CLI]({{site.baseurl}}/clients/cli/) and [Git]({{site.baseurl}}/algorithm-development/git/) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
-1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here](https://algorithmia.com/developers/clients/cli/#installing-the-algorithmia-cli) )
+1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo runlocal -D [JSON FILE]`
 5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: for now, you must do this via the web IDE:
-    1. visit [https://algorithmia.com/user](https://algorithmia.com/user)
+6. Publish your changes: you can do so using [the Algo Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) or via the web IDE:
+    1. visit [https://algorithmia.com/user](/user)
     2. click on your algorithm
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"

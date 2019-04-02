@@ -13,7 +13,7 @@ image:
 
 ## NodeJS / Google Cloud Function example
 
-Here's a simple Google Cloud Function example that can be easily adapted to any Node server or other cloud function service.  Just replace YOUR_API_KEY with [your own key](https://algorithmia.com/user#credentials), and use the algorithm of your choice instead of `demo/Hello`.  You can then parse fields out of the incoming `request` object, grabbing any relevant info from the service calling the webhook, and passing it on to the downstream Algorithm.
+Here's a simple Google Cloud Function example that can be easily adapted to any Node server or other cloud function service.  Just replace YOUR_API_KEY with [your own key](/user#credentials), and use the algorithm of your choice instead of `demo/Hello`.  You can then parse fields out of the incoming `request` object, grabbing any relevant info from the service calling the webhook, and passing it on to the downstream Algorithm.
 
 Note that if your Algorithm does anything privileged, you'll want to validate any authentication passed by the webhook caller.  For example, if it was being triggered by a secure GitHub call, you'd check the [X-Hub_signature field of the request header](https://developer.github.com/webhooks/securing/).
 

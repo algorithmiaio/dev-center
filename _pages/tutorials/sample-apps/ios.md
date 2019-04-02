@@ -50,7 +50,7 @@ Now we need to add this API key to your Environment.  From the menu, pick Produc
 
 Since this demo app will be processing images, we'll need to create a temporary directory at Algorithmia to hold them.
 
-Head to your [Data Portal](https://algorithmia.com/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
+Head to your [Data Portal](/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
 
 ## Run the app
 
@@ -166,7 +166,7 @@ Try re-running the app.  You should get back an image which highlights the most 
 
 Integrating Algorithmia into iOS is an easy and convenient way add immense power to your mobile app, so now that you've got the basic API integration down, you can follow this pattern to start hacking away at your own apps!
 
-Browse through [Algorithmia's microservice catalog](https://algorithmia.com/algorithms) to see what other algorithms interest you.  Not all are image-related; for example, you could send text to [SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis) in order to determine if a user's messages convey anger or happiness, or pull down a lict of [recent tweets relating to a specific keyword](https://algorithmia.com/algorithms/twitter/RetrieveTweetsWithKeyword).  With over 4000 cloud-scaled microservices at your fingertips, the possibilities are endless.
+Browse through [Algorithmia's microservice catalog](/algorithms) to see what other algorithms interest you.  Not all are image-related; for example, you could send text to [SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis) in order to determine if a user's messages convey anger or happiness, or pull down a lict of [recent tweets relating to a specific keyword](https://algorithmia.com/algorithms/twitter/RetrieveTweetsWithKeyword).  With over 4000 cloud-scaled microservices at your fingertips, the possibilities are endless.
 
 ### Further Reading:
 

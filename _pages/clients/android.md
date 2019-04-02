@@ -31,7 +31,7 @@ To install the Algorithmia Android Client, add the following line to your `app/b
 
 ## Authentication
 
-Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+Next, login to [Algorithmia](/) to get your [API key](/user#credentials):
 
 Now import the Algorithmia library and create the Algorithmia client:
 
@@ -47,7 +47,7 @@ Now you’re ready to start working with Algorithmia for Android development.
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+For application developers, [Algorithmia's Data Portal](/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
 This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
@@ -178,7 +178,7 @@ For more information on collection-based Access Control Lists (ACLs) and other d
 
 So far you've created your data collection and checked and updated directory permissions. Now you're ready to upload the text file that you created at the beginning of the guide to your data collection using the Data API.
 
-**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](https://algorithmia.com/data/hosted) and dragging and dropping the file into `nlp_directory`.
+**Note:** If you want to follow along and don't wish to upload the file programatically you can upload <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a> file to your data collection by navigating to your [Hosted Data](/data/hosted) and dragging and dropping the file into `nlp_directory`.
 
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
@@ -197,7 +197,7 @@ nlp_directory.putFile(new File(local_file));
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
 {: .notice-warning}
 
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
 ### Downloading Data from a Data Collection
 

@@ -19,7 +19,7 @@ Next, click Add a Step, then search for and select "Webhooks". Pick "POST", and 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/zapier/zapier_webhook_put.png">
 
-Now, head to [algorithmia.com/algorithms](http://algorithmia.com/algorithms) and find an Algorithm you'd like to run. Under the "Install and Use" section, click "Curl": this codesample has all the info you'll need to configure Zapier.
+Now, head to [the Algorithm directory](/algorithms) and find an Algorithm you'd like to run. Under the "Install and Use" section, click "Curl": this codesample has all the info you'll need to configure Zapier.
 
 Here's what it looks like for [nlp/SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis): note the URL (**https://api.algorithmia.com/v1/algo/nlp/SentimentAnalysis/1.0.5?timeout=300**), the input data (**{"document": "I really like Algorithmia!"}**), and the Authorization header (**Authorization: Simple YOUR_API_KEY**)
 

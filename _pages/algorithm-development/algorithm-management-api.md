@@ -12,7 +12,7 @@ image:
 
 Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms.
 
-For the full specification, see the [Algorithm Management API doc](https://documenter.getpostman.com/view/6515899/Rztiuqao) or the "algorithms" section of the official [OpenAPI Spec](https://algorithmia.com/v1/openapispec)
+For the full specification, see the [Algorithm Management API doc](https://documenter.getpostman.com/view/6515899/Rztiuqao) or the "algorithms" section of the official [OpenAPI Spec](/v1/openapispec)
 
 Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use Simple API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
 
@@ -20,7 +20,7 @@ Note that there are two different types of API Keys, used with different endpoin
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
+If you are running [Algorithmia Enterprise](/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
 {% endif %}
 
 

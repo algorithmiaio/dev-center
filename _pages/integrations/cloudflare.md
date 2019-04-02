@@ -11,7 +11,7 @@ image:
 
 *Cloudflare* speeds up your website by distributing and caching content across its CDN -- but they also provide a way to modify the content on-the-fly, using JavaScript workers which run on the edge, close to where your content is actually delivered.
 
-[Read more about Cloudflare Workers](https://cloudflare.com/products/cloudflare-workers/), then try out this sample code, which calls an Algorithmia algorithm to auto-summarize the content and prepend the summary into the page. Next, drop in [your own API Key](https://algorithmia.com/user#credentials) and try out any of our other [algorithms](http://algorithmia.com/algorithms) to drop the power of Machine Learning right into your cached pages, running at the Edge! 
+[Read more about Cloudflare Workers](https://cloudflare.com/products/cloudflare-workers/), then try out this sample code, which calls an Algorithmia algorithm to auto-summarize the content and prepend the summary into the page. Next, drop in [your own API Key](/user#credentials) and try out any of our other [algorithms](http://algorithmia.com/algorithms) to drop the power of Machine Learning right into your cached pages, running at the Edge! 
 
 {% highlight javascript %}
 addEventListener('fetch', event => {

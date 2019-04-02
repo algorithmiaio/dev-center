@@ -92,7 +92,7 @@ Next, because we want to use [FileProvider](https://developer.android.com/refere
 
 **Step Three: API Key**
 
-In "strings.xml", replace the demo API key with your API key, which can be found under the credentials section of [your profile](https://algorithmia.com/users/) on the Algorithmia website. Also make sure the file provider authority string is set to your package name. For more information on File Provider check out the [Android Docs](https://developer.android.com/reference/android/support/v4/content/FileProvider.html).
+In "strings.xml", replace the demo API key with your API key, which can be found under the credentials section of [your profile](/users/) on the Algorithmia website. Also make sure the file provider authority string is set to your package name. For more information on File Provider check out the [Android Docs](https://developer.android.com/reference/android/support/v4/content/FileProvider.html).
 
 {% highlight xml %}
 <resources>
@@ -408,18 +408,18 @@ Next, we create a new Intent to tell our app we are about to perform some operat
 
 Moving through the code, if you check inside the try/catch, you'll notice that we are using [streams](https://developer.android.com/reference/android/content/ContentResolver.html#openInputStream(android.net.Uri)) to get our data, and then we pass the image to [BitmapFactory.decodeFileDescriptor](https://developer.android.com/reference/android/graphics/BitmapFactory.html#decodeFileDescriptor(java.io.FileDescriptor)).
 
-Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data](https://algorithmia.com/developers/data/hosted/) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
+Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data]({{site.baseurl}}/data/hosted/) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
 
-Note that you can also use [Dropbox or Amazon S3 to host your data](https://algorithmia.com/developers/data/).
+Note that you can also use [Dropbox or Amazon S3 to host your data]({{site.baseurl}}/data/).
 {: .notice-info}
 
 Finally, our last method is "onClickRun" where we set our TextView and use an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html) to call our algorithm.
 
-In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client](https://algorithmia.com/developers/clients/android/) and pass in our API string from our "res/values/strings.xml".
+In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client]({{site.baseurl}}/clients/android/) and pass in our API string from our "res/values/strings.xml".
 
-We then create a DataDirectory object that references a directory in your [data collection](https://algorithmia.com/data/hosted). If you haven't used Data sources check out our [Android Client Guide](https://algorithmia.com/developers/clients/android/).
+We then create a DataDirectory object that references a directory in your [data collection](/data/hosted). If you haven't used Data sources check out our [Android Client Guide]({{site.baseurl}}/clients/android/).
 
-Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [data sources](https://algorithmia.com/developers/data/).
+Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [Data Sources]({{site.baseurl}}/data/).
 {: .notice-warning}
 
 Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file.

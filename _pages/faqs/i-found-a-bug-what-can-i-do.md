@@ -8,4 +8,4 @@ image:
   teaser: /icons/fa-bolt.png
 ---
 
-The quickest way to give feedback on a particular algorithm is by leaving a comment on the algorithm's page so that the author will be immediately notified. You can also [contact us](https://algorithmia.com/contact).
+The quickest way to give feedback on a particular algorithm is by leaving a comment on the algorithm's page so that the author will be immediately notified. You can also [contact us](/contact).
