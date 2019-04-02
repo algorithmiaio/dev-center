@@ -8,7 +8,7 @@ image:
     teaser: /icons/algo.svg
 ---
 
-{% if not site.enterprise %}
+{% if site.enterprise %}
 **Enterprise Users:** Check with your administrator to verify which version of Algorithmia you are running.
 {: .notice-info}
 {% endif %}
