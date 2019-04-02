@@ -9,13 +9,13 @@ image:
     teaser: /language_logos/US_64.svg
 ---
 
-For managing files, Algorithmia recommends using [Hosted Data]({{site.baseurl/data}}) to store files, and the [Data API](https://docs.algorithmia.com#data-api-specification) to manage them, as with our [Multipart Forms Example](./multipartforms).
+For managing files, Algorithmia recommends using [Hosted Data]({{site.baseurl}}/data) to store files, and the [Data API](https://docs.algorithmia.com#data-api-specification) to manage them, as with our [Multipart Forms Example](./multipartforms).
 
 However, there are times when you must directly transfer a file right from the user to the Algorithm; in these cases, you'll need an Algorithm which accepts base64-encoded files.
 
 ### Writing Algorithms which accept base64-encoded files
 
-Some algorithms in our [directory](/algorithms) already accept base64-encoded files, such as [pdf64 to text](https://algorithmia.com/algo/jpeck/pdf64_to_text). However, if you are writing your own, it is not difficult to make it base64-encoding capable.
+Some algorithms in our [directory](/algorithms) already accept base64-encoded files, such as [pdf64 to text](https://algorithmia.com/algorithms/jpeck/pdf64_to_text). However, if you are writing your own, it is not difficult to make it base64-encoding capable.
 
 In Python, simply change your `apply(input)` method to add the line:
 
@@ -23,7 +23,7 @@ In Python, simply change your `apply(input)` method to add the line:
 bytes = base64.decodestring(bytearray(input,'utf8'))
 ```
 
-This reads the input as base64, and turns it into a byte-array representing the file. Inspect the [code of pdf64 to text](https://algorithmia.com/algo/jpeck/pdf64_to_text/source) to see this in action.
+This reads the input as base64, and turns it into a byte-array representing the file. Inspect the [code of pdf64 to text](https://algorithmia.com/algorithms/jpeck/pdf64_to_text/source) to see this in action.
 
 ### Calling base64-capable Algorithms directly from cURL
 

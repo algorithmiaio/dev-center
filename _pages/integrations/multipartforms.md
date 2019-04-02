@@ -9,7 +9,7 @@ image:
     teaser: /language_logos/files.svg
 ---
 
-Algorithmia only accepts JSON as input, but sometimes you want to submit a form instead. For Algorithms which manipulate files (for example, [Image Colorization](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization)), you'll want a form which allows for a file upload. This is known as a multipart form.
+Algorithmia only accepts JSON as input, but sometimes you want to submit a form instead. For Algorithms which manipulate files (for example, [Image Colorization](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization)), you'll want a form which allows for a file upload. This is known as a multipart form. 
 
 Your HTML might look something like this:
 
@@ -21,7 +21,9 @@ Your HTML might look something like this:
 </form>
 ```
 
-In order to send a multipart form to an Algorithm, you'll create a form handler on some server or service, and use it to pass the request through to an Algorithm. The code below uses Python on a Flask server, but this could as easily be NodeJS on a serverless function provider such as Google Cloud Functions, Azure Function Apps, or AWS Lambda.
+If the Algorithm you'll be using accepts base64encoded files, you can use [direct base64 file transfer](./base64_files). But for all other algorithms, you'll create a form handler on some server or service, and use it to pass the request through to an Algorithm.
+
+The code below uses Python on a Flask server, but this could as easily be NodeJS on a serverless function provider such as Google Cloud Functions, Azure Function Apps, or AWS Lambda.
 
 Note that we included the API Key as a user-fillable value in the form. Another option would be to omit this field and hard-code the API Key into the Python code below.
 
