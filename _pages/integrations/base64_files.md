@@ -9,7 +9,7 @@ image:
     teaser: /language_logos/US_64.svg
 ---
 
-For managing files, Algorithmia recommends using [Hosted Data]({{site.baseurl}}/data) to store files, and the [Data API](https://docs.algorithmia.com#data-api-specification) to manage them, as with our [Multipart Forms Example](./multipartforms).
+For managing files, Algorithmia recommends using [Hosted Data and Data Connectors]({{site.baseurl}}/data) to store files, and the [Data API](https://docs.algorithmia.com#data-api-specification) to manage them, as with our [Multipart Forms Example](./multipartforms).
 
 However, there are times when you must directly transfer a file right from the user to the Algorithm; in these cases, you'll need an Algorithm which accepts base64-encoded files.
 
@@ -23,7 +23,7 @@ In Python, simply change your `apply(input)` method to add the line:
 bytes = base64.decodestring(bytearray(input,'utf8'))
 ```
 
-This reads the input as base64, and turns it into a byte-array representing the file. Inspect the [code of pdf64 to text](https://algorithmia.com/algorithms/jpeck/pdf64_to_text/source) to see this in action.
+This reads the input as base64, and turns it into a byte-array representing the file. Inspect the [source code of pdf64_to_text](https://algorithmia.com/algorithms/jpeck/pdf64_to_text/source) to see this in action.
 
 ### Calling base64-capable Algorithms directly from cURL
 
@@ -33,7 +33,7 @@ To send a file directly to a base64-capable Algorithm, you must first encode it 
 cat minimal.pdf | base64 | curl --data @- -X POST -H 'Content-Type: text/plain' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/jpeck/pdf64_to_text/0.1.0?timeout=300
 ```
 
-To test this out, download [minimal.pdf]({{site.baseurl}}/images/language_logos/minimal.pdf) and run the line above on a linux or OSX machine, or replace **minimal.pdf** in the codesample with any PDF file you have locally. If you're on Windows, you'll need to install [base64.exe](https://www.google.com/search?q=base64.exe) and [curl](https://curl.haxx.se/windows/) since these functions are not built-in.
+To test this out, download [minimal.pdf]({{site.baseurl}}/images/language_logos/minimal.pdf) and run the line above on a linux or OSX machine, or replace **minimal.pdf** in the codesample with any PDF file you have locally. If you're on Windows, you'll need to install [base64.exe](https://www.proxoft.com/base64.aspx) and [curl](https://curl.haxx.se/windows/) since these functions are not built-in.
 
 ### Calling base64-capable Algorithms with Javascript
 
@@ -80,8 +80,6 @@ If you're logged in right now, try uploading [minimal.pdf]({{site.baseurl}}/imag
   <input type="file" id="file" onchange="loadfile()">
   <pre id="results"></pre>
 </form>
-
-<script src="https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js" type="text/javascript"></script>
 
 <script>
 

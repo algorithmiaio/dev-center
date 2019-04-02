@@ -21,7 +21,7 @@ Your HTML might look something like this:
 </form>
 ```
 
-If the Algorithm you'll be using accepts base64encoded files, you can use [direct base64 file transfer](./base64_files). But for all other algorithms, you'll create a form handler on some server or service, and use it to pass the request through to an Algorithm.
+If the Algorithm you'll be using accepts base64-encoded files, you can use [direct base64 file transfer](./base64_files). But for all other algorithms, you'll create a form handler on some server or service, and use it to pass the request through to an Algorithm.
 
 The code below uses Python on a Flask server, but this could as easily be NodeJS on a serverless function provider such as Google Cloud Functions, Azure Function Apps, or AWS Lambda.
 
