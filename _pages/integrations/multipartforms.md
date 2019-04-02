@@ -40,7 +40,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def handle():
-  # get form fields and check that 'api_key_ and 'file' are present
+  # get form fields and check that 'api_key' and 'file' are present
   form = request.form.to_dict()
   if not 'api_key' in form:
     return 'An api_key is required'
@@ -67,7 +67,7 @@ def handle():
     response_localfile = client.file(response_datafile).getFile()
     return send_file(response_localfile, attachment_filename='result.png')
   except Exception as x:
-    # show if the call to the Algorithm, or the Algorithm itself throws an error
+    # show if the call to the Algorithm throws an error
     return '%s'%x
   finally:
     # clean up temporary files
