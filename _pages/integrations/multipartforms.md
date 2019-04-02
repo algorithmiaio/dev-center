@@ -11,19 +11,23 @@ image:
 
 Algorithmia only accepts JSON as input, but sometimes you want to submit a Form instead. For Algorithms which manipulate files (for example, [Image Colorization](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization)), you'll want a form which allows for a file upload. This is known as a multipart form.
 
-In order to send a multipart form to an Algorithm, you'll create a form handler on some server or service you own, and use it to pass the request through to an Algorithm. The code below uses Python on a Flask server, but this could as easily be a serverless function provider such as Google Cloud Functions, Azure Function Apps, or AWS Lambda.
-
-Your HTML will look something like this:
+Your HTML might look something like this:
 
 ```html
 <form action="http://some.website/some/page" method="post" enctype="multipart/form-data">
-  <p><input type="text" name="api_key" value="">
-  <p><input type="file" name="file">
+  <p>Your API Key: <input type="text" name="api_key" value="">
+  <p>Your file: <input type="file" name="file">
   <p><button type="submit">Submit</button>
 </form>
 ```
 
-Note that we're including the API Key as a user-fillable value here. Another option would be to omit thus field and hard-code the API Key into the Python code below.
+In order to send a multipart form to an Algorithm, you'll create a form handler on some server or service, and use it to pass the request through to an Algorithm. The code below uses Python on a Flask server, but this could as easily be a serverless function provider such as Google Cloud Functions, Azure Function Apps, or AWS Lambda.
+
+Note that we included the API Key as a user-fillable value in the form. Another option would be to omit this field and hard-code the API Key into the Python code below.
+
+We then get the uploaded file from request.files, and put it into our Hosted Data using the Algorithmia client (be sure to create a collection called "temp" first). The function uuid4() lets us create a unique name so we don't overwrite any other files. 
+
+Next, we call the Algorithm we want to run -- in this case, ColorfulImageColorization. It returns the URI of a file, so we get that via the Algorithmia client, and send it back to the caller as a response.
 
 ```python
 from flask import Flask, request, send_file
@@ -60,4 +64,13 @@ def handle():
 	finally:
 		# clean up temporary files
 		client.file(temp_datafile).delete()
+```
+
+You can test this code locally by saving it as a local file, then running a local flask server:
+
+```python
+pip install flask
+export FLASK_APP=your_file_name.py
+export FLASK_DEBUG=1
+python -m flask run
 ```
