@@ -27,7 +27,7 @@ Here are just a few examples of how Slack users could utilize simple Slash Comma
 * [colorize](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization) or [stylize](https://algorithmia.com/algorithms/deeplearning/DeepFilter) images
 
 By adding just a little bit of glue code to pipeline one API into another, even more complex tasks are possible. For example, one could:
-* [connect to Dropbox](https://algorithmia.com/developers/data/) and [extract text from PDFs](https://algorithmia.com/algorithms/ANaimi/PDFToText)
+* [connect to Dropbox]({{site.baseurl}}/data/) and [extract text from PDFs](https://algorithmia.com/algorithms/ANaimi/PDFToText)
 * locate documents containing [phrases similar to their search query](https://algorithmia.com/algorithms/PetiteProgrammer/TextSimilarity)
 * crawl, scrape, analyze an [entire website](https://blog.algorithmia.com/web-scraping-crawling-python/)
 
@@ -93,7 +93,7 @@ exports.summarizeURL = function summarizeURL(req, res) {
 };
 {% endhighlight %}
 
-Replace `SLACK_VERIFICATION_TOKEN` with the Verification Token you copied in the prior step. Also replace `YOUR_API_KEY` with your own [Algorithmia API Key](https://algorithmia.com/user#credentials), if it isn't there already.
+Replace `SLACK_VERIFICATION_TOKEN` with the Verification Token you copied in the prior step. Also replace `YOUR_API_KEY` with your own [Algorithmia API Key](/user#credentials), if it isn't there already.
 
 Copy this code into your NodeJS app -- if you're using Google Cloud Functions, use an HTTP Trigger with the minimum memory allowed, and set the timeout to 300 seconds just in case some of your invocations run for a long time. Also be sure to add the following dependencies to your `package.json`:
 {% highlight python %}

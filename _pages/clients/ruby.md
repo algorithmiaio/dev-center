@@ -31,7 +31,7 @@ gem install algorithmia
 
 ## Authentication
 
-Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+Next, login to [Algorithmia](/) to get your [API key](/user#credentials):
 
 Now import the Algorithmia library and create the Algorithmia client:
 
@@ -48,7 +48,7 @@ Now you’re ready to start working with Algorithmia in Ruby.
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you can specify the API endpoint when you create the client object:
+If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight ruby %}
 client = Algorithmia.client(apiKey, "https://mylocalendpoint");
@@ -57,7 +57,7 @@ client = Algorithmia.client(apiKey, "https://mylocalendpoint");
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+For application developers, [Algorithmia's Data Portal](/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
 This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
@@ -91,7 +91,7 @@ Instead of your username you can also use '.my' when calling algorithms. For mor
 
 When we created the data collection in the previous code snippet, the default setting is `My Algorithms` which is a permission type that allows other users on the platform to interact with your data through the algorithms you create if you decide to contribute to algorithm development. This means users can call your algorithm to perform an operation on your data stored in this collection, otherwise the algorithm you created would only work for you.
 
-In order to change your data collection permissions you can go to [Hosted Data](https://algorithmia.com/data/hosted) and click on the collection you just created called **"nlp_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
+In order to change your data collection permissions you can go to [Hosted Data](/data/hosted) and click on the collection you just created called **"nlp_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
 
 -   My Algorithms (called by any user)
 -   Private (accessed only by me)
@@ -126,9 +126,9 @@ end
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
 {: .notice-warning}
 
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 

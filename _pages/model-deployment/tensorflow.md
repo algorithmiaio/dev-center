@@ -143,7 +143,7 @@ Now that you've trained and saved your Tensorflow model elsewhere, we'll deploy 
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3/">S3</a> or <a href="{{site.baseurl}}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
+In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3/">S3</a> or <a href="{{site.baseurl}}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb/) how we connected to a DynamoDB databasee.
 
 First, you'll want to create a data collection to host your graph and variables.
 
@@ -524,6 +524,6 @@ In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versio
 
 If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
-If you want to have a better idea of how a finished tensorflow algorithm looks like, check out: <a href=" https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a> or one of the demos for <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU</a> and <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow MNIST GPU</a> already mentioned in this guide.
+If you want to have a better idea of what a finished tensorflow algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a> or one of the demos for <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU</a> and <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow MNIST GPU</a> already mentioned in this guide.
 
 That's it for hosting your <a href="https://www.tensorflow.org/">tensorflow</a> model on Algorithmia!

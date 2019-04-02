@@ -8,5 +8,5 @@ image:
   teaser: /icons/fa-bolt.png
 ---
 
-You can log any bugs or propose a new features on [GitHub](https://github.com/algorithmiaio/dev-center/issues) or [contact us](https://algorithmia.com/contact) directly.
+You can log any bugs or propose a new features on [GitHub](https://github.com/algorithmiaio/dev-center/issues) or [contact us](/contact) directly.
 

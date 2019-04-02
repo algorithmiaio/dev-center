@@ -15,7 +15,7 @@ image:
 {: .notice-info}
 
 ### Pricing
-For an overview of algorithm pricing, see the [pricing page](https://algorithmia.com/pricing).
+For an overview of algorithm pricing, see the [pricing page](/pricing).
 
 Algorithm usage is calculated in Algorithmia Credits. The current exchange rate for purchasing new credits is 10,000 credits to $1 USD. This was chosen to translate into 1 credit = 1 second of compute time.
 

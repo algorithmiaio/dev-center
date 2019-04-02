@@ -54,7 +54,7 @@ If you'll be running Python algos, also set the version via `export LANGUAGE_VER
 
 ## Configure Authentication
 
-In order to make calls with the CLI, you'll need to configure the authentication with an API key. If you don't already have an API key, get started by signing up for an account at [Algorithmia.com](https://algorithmia.com). Once you've completed the sign up process, copy the API key from your account dashboard.
+In order to make calls with the CLI, you'll need to configure the authentication with an API key. If you don't already have an API key, get started by signing up for an account at [Algorithmia.com](/). Once you've completed the sign up process, copy the API key from your account dashboard.
 
 Begin the configuration process by running the command `algo auth`.
 You will see an interactive prompt to guide you through setting up a default profile:
@@ -71,7 +71,7 @@ See [Using multiple profiles](#using-multiple-profiles) for instructions on how 
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
+If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
 {% endif %}
 
 ## Usage

@@ -43,7 +43,7 @@ If you want a complete guide on how to navigate an algorithm's description page 
 
 ## Making your first API call
 
-We'll make our first call with the demo algorithm ["Hello"](https://algorithmia.com/algorithms/demo/Hello). This algorithm takes an input of a string (preferably your name!) and returns a greeting addressed to the input.
+We'll make our first call with the demo algorithm ["Hello"](/algorithms/demo/Hello). This algorithm takes an input of a string (preferably your name!) and returns a greeting addressed to the input.
 
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8 text-right">
