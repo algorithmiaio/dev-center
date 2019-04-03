@@ -62,6 +62,7 @@ function loadfile() {
 // get converted file and send to Algorithm
 function callalgorithm() {
   input = reader.result.substr(reader.result.indexOf(',')+1);
+  document.querySelector("#results").innerText = "Loading...";
   Algorithmia.client("YOUR_API_KEY")
   .algo("jpeck/pdf64_to_text/0.1.0?timeout=300")
   .pipe(input)
@@ -96,6 +97,7 @@ function loadfile() {
 // get converted file and send to Algorithm
 function callalgorithm() {
   input = reader.result.substr(reader.result.indexOf(',')+1);
+  document.querySelector("#results").innerText = "Loading...";
   Algorithmia.client("YOUR_API_KEY")
   .algo("jpeck/pdf64_to_text/0.1.0?timeout=300")
   .pipe(input)
