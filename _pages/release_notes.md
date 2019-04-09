@@ -23,8 +23,8 @@ Projects for this release focused on providing greater flexibility and data conn
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_update_list.png" alt="Release Notes Product Updates" class="screenshot">
 
- ### Image Per Algorithm ###
-
+### Image Per Algorithm ###
+ 
 We are really happy to announce the release of a major evolution to the architecture of how algorithm containers are created and loaded when requested on the Algorithmia platform. 
 We now enable more flexible instances and support new machine learning frameworks with many different combinations. 
 
@@ -65,12 +65,12 @@ The additional APIs that have been added in this release are:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_algo_mngt_apis.png" alt="Release Notes algorithmia management APIs" class="screenshot">
 
-These algorithm APIs do not require management API keys to use. Non-administrator users of an Algorithmia platform will be able to use their simple API keys to interact with algorithms they have permissions to work with. The use of Management API keys will not be supported 
+These algorithm APIs do not require management API keys to use. Non-administrator users of an Algorithmia platform will be able to use their [simple API keys](https://algorithmia.com/developers/basics/customizing-api-keys) to interact with algorithms they have permissions to work with. The use of Management API keys will not be supported 
 by these algorithm APIs.
 
-You can find the details for each of these APIs available in the OpenAPI spec.
+You can find the details for each of these APIs available in the [OpenAPI spec.](https://algorithmia.com/v1/openapispec)
 
-The OpenAPI spec allows developers to generate language-specific clients through code generators, test APIs, interact with APIs more easily. It can even generate a Postman collection that can be imported into your Postman workspace. You can find many of these tools on the OpenAPI website. 
+The OpenAPI spec allows developers to generate language-specific clients through code generators, test APIs, interact with APIs more easily. It can even generate a [Postman collection](https://algorithmia.com/algorithms/OpenAPI/openapi2postman) that can be imported into your [Postman](https://documenter.getpostman.com/view/6515899/Rztiuqao) workspace. You can find many of these tools on the [OpenAPI website.](https://openapi.tools/) 
 
 ### Update Algorithm Settings ###
 
@@ -97,22 +97,22 @@ Note: All previous versions of a published algorithm are immutable and unable to
 This release includes two new data storage connectors to allow data scientists and 
 developers to leverage additional input and output locations for algorithms. 
 
-The data connector system allows an Algorithmia instance to securely handle brokering connections between an algorithm and a data source provided by the developers without needing to provide connection credentials. 
+The [data connector system](https://algorithmia.com/developers/data) allows an Algorithmia instance to securely handle brokering connections between an algorithm and a data source provided by the developers without needing to provide connection credentials. 
 
 Additionally, since it’s a single data API for the algorithm developer, access to an underlying data source is abstracted, allowing for algorithm developers to support many types of data sources without needing to implement provider-specific logic.
 
 The two data connectors that are included in this release are:
 
-* Azure Blob storage
-* Google Cloud storage
+* [Azure Blob storage](https://algorithmia.com/developers/data/azureblob)
+* [Google Cloud storage](https://algorithmia.com/developers/data/googlecloudstorage)
 
 To find out more information about the Data API available in each Algorithmia instance, including 
-the Hosted Data Service, you can visit the overview topic in the Developer Center. 
+the [Hosted Data Service,](https://algorithmia.com/developers/data/hosted) you can visit the [overview topic](https://algorithmia.com/developers/data) in the Developer Center. 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_data_portal_guides.png" alt="Release Notes how to update algorithm settings" class="screenshot"> 
 
 ### Algorithmia .NET SDK Supports .NET Core and .NET Standard ###
-Customers have been adopting and transitioning to .NET Core and have been asking us to transition from only supporting the .NET framework. We’re happy to now include support for the Algorithmia .NET Client in all of the frameworks supported by .NET Standard 2.0, which includes .NET Core. This means that many more application types can run across Windows, Linux, MacOS, and mobile, and other devices will be able to directly make calls to algorithms.
+Customers have been adopting and transitioning to .NET Core and have been asking us to transition from only supporting the .NET framework. We’re happy to now include support for the Algorithmia .NET Client in all of the frameworks supported by **.NET Standard 2.0, which includes .NET Core.** This means that many more application types can run across Windows, Linux, MacOS, and mobile, and other devices will be able to directly make calls to algorithms.
 
 Supporting .NET Standard 2.0 provides support for the following frameworks:
 
@@ -126,18 +126,17 @@ Supporting .NET Standard 2.0 provides support for the following frameworks:
 * Universal Windows Platform Apps
 * Unity 
 
-All of the Algorithmia Clients are open-sourced on GitHub. You can follow the .NET Client on the GitHub website.
+All of the Algorithmia Clients are open-sourced on GitHub. You can follow the .NET Client on the [GitHub website.](https://github.com/algorithmiaio/algorithmia-c-sharp)
 
-To get going, you can install the updated NuGet package for the Algorithmia .NET Client and follow the walkthrough available in the Developer Center. 
+To get going, you can install the updated NuGet package for the Algorithmia .NET Client and follow the [walkthrough](https://algorithmia.com/developers/clients/c_sharp_net) available in the Developer Center. 
 
-' Install-Package Algorithmia.Client '
+'Install-Package Algorithmia.Client'
 
 ### Flexibility to Enable User Work Limits and Queuing ###
 
-Administrators need the flexibility to tune an algorithm’s usage of infrastructure while still running in production. Algorithmia has had the ability to provide “sticky slots” as one such flexibility example. This release introduces a new flexibility option to specify work limits for 
-a particular user running production workloads.
+Administrators need the flexibility to tune an algorithm’s usage of infrastructure while still running in production. Algorithmia has had the ability to provide “sticky slots” as one such flexibility example. This release introduces a new flexibility option to specify work limits for a particular user running production workloads.
 
-This option will set limits to accept calls from a user but will begin queueing requests that are above the maximum active jobs limit until the maximum concurrent sessions are reached. The setting is available on the Advanced options page of the Admin Panel by clicking the “Update User’s Work Limits” button.
+This option will set limits to accept calls from a user but will begin **queueing** requests that are above the maximum active jobs limit until the maximum concurrent sessions are reached. The setting is available on the Advanced options page of the Admin Panel by clicking the **“Update User’s Work Limits”** button.
 
 Administrators now have the flexibility to manage an algorithm’s use of their cluster. In one Algorithmia cluster, administrators were able to see a 30-percent decrease in monthly infrastructure costs by being able to finely tune production algorithms.
 
@@ -145,6 +144,11 @@ Administrators now have the flexibility to manage an algorithm’s use of their 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_update_work_limits.png" alt="Release Notes set work limits" class="screenshot">
 
-User to Update: Enter the username of the user you want to limit. 
-Max Concurrent Sessions: Input a max number of concurrent requests a user can make at one time to ensure resources are not being over allocated.
-Max Active Jobs: Insert a max number of active jobs a user can have before requests begin queueing to ensure other users have resources available to them.
+***User to Update:*** Enter the username of the user you want to limit. 
+***Max Concurrent Sessions:*** Input a max number of concurrent requests a user can make at one time to ensure resources are not being over allocated.
+***Max Active Jobs:*** Insert a max number of active jobs a user can have before requests begin queueing to ensure other users have resources available to them.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_update_max_work_limits.png" alt="Release Notes max work limits" class="screenshot">
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_contact_us.png" alt="Release Notes contact us" class="screenshot">
+
