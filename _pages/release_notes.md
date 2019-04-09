@@ -130,7 +130,7 @@ All of the Algorithmia Clients are open-sourced on GitHub. You can follow the .N
 
 To get going, you can install the updated NuGet package for the Algorithmia .NET Client and follow the [walkthrough](https://algorithmia.com/developers/clients/c_sharp_net) available in the Developer Center. 
 
-'Install-Package Algorithmia.Client'
+`Install-Package Algorithmia.Client`
 
 ### Flexibility to Enable User Work Limits and Queuing ###
 
