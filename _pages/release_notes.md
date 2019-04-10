@@ -63,7 +63,7 @@ The additional APIs that have been added in this release are:
 * **Update** algorithm
 * **Publish** algorithm
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_algo_mngt_apis.png" alt="Release Notes algorithmia management APIs" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_algorithm_actions.png" alt="Release Notes algorithmia management APIs" class="screenshot">
 
 These algorithm APIs do not require management API keys to use. Non-administrator users of an Algorithmia platform will be able to use their [simple API keys](https://algorithmia.com/developers/basics/customizing-api-keys) to interact with algorithms they have permissions to work with. The use of Management API keys will not be supported 
 by these algorithm APIs.
