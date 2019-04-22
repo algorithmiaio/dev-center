@@ -73,8 +73,9 @@ nlp_directory.exists(function(exists) {
         nlp_directory.create(function(response) {
             if (response.error) {
                 return console.log("Failed to create dir: " + response.error.message);
+            } else {
+              console.log("Created directory: " + nlp_directory.data_path);
             }
-            console.log("Created directory: " + nlp_directory.data_path);
         });
     } else {
         console.log("Your directory already exists.")
@@ -120,8 +121,9 @@ client.file(text_file).exists(function(exists) {
         nlp_directory.putFile(local_file, function(response) {
             if (response.error) {
                 return console.log("Failed to upload file: " + response.error.message);
+            } else {
+              console.log("File uploaded.");
             }
-            console.log("File uploaded.");
         });
     } else {
         console.log("Your file already exists.")
