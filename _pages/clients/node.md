@@ -124,7 +124,7 @@ client.file(text_file).exists(function(exists) {
             console.log("File uploaded.");
         });
     } else {
-        console.log("You're file already exists.")
+        console.log("Your file already exists.")
     }
 });
 {% endhighlight %}
@@ -252,7 +252,7 @@ client.file(text_file).exists(function(exists) {
             console.log("File uploaded.");
         });
     } else {
-        console.log("You're file already exists.")
+        console.log("Your file already exists.")
     }
 });
 
