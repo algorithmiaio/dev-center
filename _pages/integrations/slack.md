@@ -9,7 +9,7 @@ show_related: true
 image:
     teaser: /language_logos/slack.svg
 author: jon_peck
-repository: https://gist.github.com/gagejustins/ecfb471f297c1a01341139dca50d89f3
+repository: https://github.com/algorithmiaio/integrations/tree/master/Slack
 blog: https://blog.algorithmia.com/how-to-integrate-machine-learning-into-your-slack-channels/
 thumbnail: /developers/images/language_logos/slack.svg
 ---
