@@ -15,11 +15,11 @@ These directions will help you to set up an Algorithmia Event Listener, which wi
 
 You will need to have a user (or role that your user can assume) with the following AWS permissions:
 
-Cloud Formation: CreateStack and DescribeStacks (on all resources)
+**Cloud Formation**: CreateStack and DescribeStacks (on all resources)
 
-IAM: CreateRole, GetRole, and PutRolePolicy (on all resources)
+**IAM**: CreateRole, GetRole, and PutRolePolicy (on all resources)
 
-SQS: CreateQueue, GetQueueAttributes, and SetQueueAttributes (on all resources)
+**SQS**: CreateQueue, GetQueueAttributes, and SetQueueAttributes (on all resources)
 
 ## 2. Creating Event Listener resources in AWS
 
