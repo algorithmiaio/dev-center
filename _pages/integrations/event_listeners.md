@@ -107,11 +107,13 @@ On the following page, click the **Source** tab for the newly created algorithm.
 
 Replace the original source with the following:
 
+{% highlight python %}
 import Algorithmia
 
 def apply(input):
-
     Algorithmia.client().file("data://traack/event_output_directory/" + input.get("filename")).put(input.get("data"))
+
+{% endhighlight %}
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_19.png">
 
