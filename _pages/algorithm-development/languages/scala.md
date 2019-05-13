@@ -10,14 +10,14 @@ image:
     teaser: /language_logos/scala.svg
 ---
 
-Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 #### Available APIs
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html">Java 8 language and standard library</a>
 is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{ site.baseurl }}/clients/scala">Algorithmia Scala Client</a>.
+via the <a href="{{site.baseurl}}/clients/scala">Algorithmia Scala Client</a>.
 
 #### Managing Dependencies
 
@@ -120,7 +120,7 @@ Algorithms can throw any exception, and they will be returned as an error via th
 
 #### Writing files for the user to consume
  
-Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
+Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection]({{site.baseurl}}/data/hosted#temporary-algorithm-collections)):
  
 {% highlight scala %}
 val file_uri = "data://username/collection/filename.txt"
@@ -131,11 +131,11 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/scala">Algorithmia & Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/scala">Algorithmia & Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source](http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
-You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
+You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
 <aside class="warning">
 Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
@@ -144,5 +144,5 @@ Some older algorithms use our deprecated Java client. If it has an import from t
 
 #### Additional Resources
 
-* <a href="{{ site.baseurl }}/clients/java">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
+* <a href="{{site.baseurl}}/clients/java">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a>
 * <a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a>

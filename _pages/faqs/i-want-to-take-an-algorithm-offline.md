@@ -8,4 +8,4 @@ image:
   teaser: /icons/fa-bolt.png
 ---
 
-[Contact us](https://algorithmia.com/contact) and we will put you in contact with the original algorithm developer.
+[Contact us](/contact) and we will put you in contact with the original algorithm developer.

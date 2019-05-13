@@ -36,7 +36,7 @@ And then run `pod install`
 
 ## Authentication
 
-Next, login to [Algorithmia](https://algorithmia.com/) to get your [API key](https://algorithmia.com/user#credentials):
+Next, login to [Algorithmia](/) to get your [API key](/user#credentials):
 
 Now import the Algorithmia library and create the Algorithmia client:
 
@@ -51,12 +51,12 @@ Now you’re ready to start working with Algorithmia in Swift.
 
 ## Working with Data Using the Data API
 
-For application developers, [Algorithmia's Data Portal](https://algorithmia.com/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+For application developers, [Algorithmia's Data Portal](/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
-This guide will show you how to work with the [Hosted Data]({{ site.baseurl }}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
+This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
 
 ### Create a Data Collection
 
@@ -71,7 +71,7 @@ let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 nlp_directory.exists() { exists, error in
     if (error == nil){
         if (exists == false) {
-            nlp_directory.create(readACL:.MY_ALGORITHMS) { error in
+            nlp_directory.create(readACL:.MY_ALGORITHMS) { _, error in
                 if (error == nil) {
                 	print("Folder created")
             	} else {
@@ -85,7 +85,7 @@ nlp_directory.exists() { exists, error in
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -96,7 +96,7 @@ When we created the data collection in the previous code snippet, the default se
 
 {% highlight swift %}
 // Update a directory to be private
-nlp_directory.update(readACL:.PRIVATE) { error in
+nlp_directory.update(readACL:.PRIVATE) { _, error in
     print(error)
 }
 {% endhighlight %}
@@ -105,7 +105,7 @@ Notice that we changed our data collection to private, which means that only you
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions such as `readACL:.PUBLIC` go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions such as `readACL:.PUBLIC` go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Upload Data to your Data Collection
 
@@ -125,7 +125,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -140,9 +140,9 @@ nlp_directory.file(name: text_file).exists() { exists, error in
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
 {: .notice-warning}
 
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted) and finding your data collection and file.
+You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](https://algorithmia.com/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{ site.baseurl }}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
 
 ### Downloading Data from a Data Collection
 
@@ -154,7 +154,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -200,7 +200,7 @@ nlp_directory.file(name: text_file).exists() { exists, error in
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {
@@ -243,7 +243,7 @@ If you are interested in learning more about working with unstructured text data
 
 ### Limits
 
-Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 ## Conclusion
 
@@ -265,7 +265,7 @@ let nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
 nlp_directory.exists() { exists, error in
     if (error == nil){
         if (exists == false) {
-            nlp_directory.create(readACL:.MY_ALGORITHMS) { error in
+            nlp_directory.create(readACL:.MY_ALGORITHMS) { _, error in
                 if (error == nil) {
                 	print("Folder created")
             	} else {
@@ -276,14 +276,14 @@ nlp_directory.exists() { exists, error in
     }
 }
 
-let text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
+let text_file = "jack_london.txt"
 
 nlp_directory.file(name: text_file).exists() { exists, error in
     if (error == nil) {
         // Check if file exists
         let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
         if (exists == false) {
-            nlp_directory.put(file: local_file!) { error in
+            nlp_directory.put(file: local_file!) { _, error in
                 if (error == nil){
                     print("File Uploaded Succesfully")
                 } else {

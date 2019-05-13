@@ -28,7 +28,7 @@ First things first, let's create a new app in Android Studio.
 
 Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
 
-![Add Blank Activity in Android Studio]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/android/create_new_blank.png)
+![Add Blank Activity in Android Studio]({{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png)
 
 Since our app is just a simple example app, we'll use put our code in `MainActivity.java`. But first, we need to do a little bit more set up.
 
@@ -215,7 +215,7 @@ on [GitHub](https://github.com/algorithmiaio/sample-apps/blob/master/android/bas
 
 When you run the app in the emulator, you'll see this:
 
-![Android App]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/android/emulator.png)
+![Android App]({{site.cdnurl}}{{site.baseurl}}/images/post_images/android/emulator.png)
 
 ## Next Steps
 
@@ -225,6 +225,6 @@ Integrating Algorithmia into Android is an easy and convenient way to leverage a
 
 ### Further Reading:
 
-* [The Algorithmia Client]({{ site.baseurl }}/clients/java/)
+* [The Algorithmia Client]({{site.baseurl}}/clients/java/)
 * [Algorithmia Java Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) <i class="fa fa-external-link"></i>
 * <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>

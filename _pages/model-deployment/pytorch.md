@@ -46,19 +46,19 @@ Instead of using Pytorch’s built in `model.save()` functionality, use `ergonom
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-In this guide we'll use Algorithmia's <a href="{{ site.baseurl }}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{ site.baseurl }}/data/s3/">S3</a> or <a href="{{ site.baseurl }}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, <a href="https://algorithmia.com/developers/data/dynamodb/">check out</a> how we connected to a DynamoDB database.
+In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3/">S3</a> or <a href="{{site.baseurl}}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb/) how we connected to a DynamoDB databasee.
 
 First, you'll want to create a data collection to host your pre-trained model.
 
-- Log into your Algorithmia account and create a data collection via the <a href="{{ site.baseurl }}/data/hosted">Data Collections</a> page.
+- Log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
 
 - Click on **“Add Collection”** under the “My Collections” section.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-For more information check out: <a href="{{ site.baseurl }}/data/hosted/">Data Collection Types</a>.
+For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>.
 
 Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
 
@@ -69,12 +69,12 @@ Next, upload your pickled model to your newly created data collection.
 
 - Note the path to your files: data://username/collections_name/file_name.zip
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/pytorch_add_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/pytorch_add_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
-Hopefully you've already followed along with the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
+Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Once you've gone through the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
+Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -82,14 +82,14 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/model_hosting/pytorch_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/pytorch_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 For easy copy and paste:
 {% highlight python %}
@@ -245,11 +245,11 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-If you don't recall from the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
+If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 ## Working Demo
 If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/algorithmiahq/pytorchDemo">Pytorch CNN Demo.</a>

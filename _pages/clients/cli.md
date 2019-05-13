@@ -54,7 +54,7 @@ If you'll be running Python algos, also set the version via `export LANGUAGE_VER
 
 ## Configure Authentication
 
-In order to make calls with the CLI, you'll need to configure the authentication with an API key. If you don't already have an API key, get started by signing up for an account at [Algorithmia.com](https://algorithmia.com). Once you've completed the sign up process, copy the API key from your account dashboard.
+In order to make calls with the CLI, you'll need to configure the authentication with an API key. If you don't already have an API key, get started by signing up for an account at [Algorithmia.com](/). Once you've completed the sign up process, copy the API key from your account dashboard.
 
 Begin the configuration process by running the command `algo auth`.
 You will see an interactive prompt to guide you through setting up a default profile:
@@ -71,7 +71,7 @@ See [Using multiple profiles](#using-multiple-profiles) for instructions on how 
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
+If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
 {% endif %}
 
 ## Usage
@@ -100,14 +100,14 @@ There are several options for specifying the type and source of input data. The 
 
 | Option Flag               | Description |
 | :------------             | :--------------- |
-| -d, --data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
-| -D, --data-file <file>    | Same as --data, but the input data is read from a file |
+| -d, \--data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
+| -D, \--data-file <file>    | Same as --data, but the input data is read from a file |
 
 You may also explictly specify the input type as text (`-t`/`-T`), json (`-j`/`-J`), or binary (`-b`/`-B`) instead of using the auto-detection (`-d`/`-D`).
 
 #### Output Options
 
-The algorithm result is printed to STDOUT by defauft. Additional notices may be printed to STDERR. If you'd like to output the result to a file, use the output option flag followed by a filename:
+The algorithm result is printed to STDOUT by default. Additional notices may be printed to STDERR. If you'd like to output the result to a file, use the output option flag followed by a filename:
 
 {% highlight text %}
 $ algo run kenny/factor -d 17 --output results.txt
@@ -115,17 +115,17 @@ $ algo run kenny/factor -d 17 --output results.txt
 
 | Option Flag     | Description |
 | :------------   |:--------------- |
-| --debug         | Print algorithm's STDOUT (author-only) |
-| --response-body | Print HTTP response body (replaces result) |
-| --response      | Print full HTTP response including headers (replaces result) |
-| -s, --silence   | Suppress any output not explicitly requested (except result) |
-| -o, --output <file> |  Print result to a file |
+| \--debug         | Print algorithm's STDOUT (author-only) |
+| \--response-body | Print HTTP response body (replaces result) |
+| \--response      | Print full HTTP response including headers (replaces result) |
+| -s, \--silence   | Suppress any output not explicitly requested (except result) |
+| -o, \--output <file> |  Print result to a file |
 
 #### Other Options
 
 | Option Flag     | Description |
 | :------------   |:--------------- |
-| --timeout <seconds> | Sets algorithm timeout
+| \--timeout <seconds> | Sets algorithm timeout
 
 #### Examples:
 

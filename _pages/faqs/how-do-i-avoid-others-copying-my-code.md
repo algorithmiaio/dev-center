@@ -10,4 +10,4 @@ image:
 
 Algorithmia has multiple permission modes for your algorithm, including viewable source code and private code. While we encourage making your source code viewable, “black-box” algorithms are allowed.
 
-If you believe there has been a copyright violation, please report it by following the instructions under the section "Copyright Complaints" in the [Terms and Conditions](https://algorithmia.com/terms).
+If you believe there has been a copyright violation, please report it by following the instructions under the section "Copyright Complaints" in the [Terms and Conditions](/terms).

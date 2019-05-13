@@ -19,7 +19,7 @@ There are a variety of PostgreSQL packages publicly available. For Python, we re
 
 We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
 
-Instead, create a folder within your [Data Portal]({{ site.baseurl }}/data/) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the database regardless of who calls it, but does not give them direct access to your DB).
+Instead, create a folder within your [Data Portal]({{site.baseurl}}/data/) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the database regardless of who calls it, but does not give them direct access to your DB).
 
 Inside this folder, create a `.json` file containing your connection credentials:
 ```
@@ -65,9 +65,9 @@ def apply(input):
 
 If you don't want to add database connection code directly into your algorithm, you can use our helper algorithms instead. Keep in mind that these incur the usual 1 credit per compute-second cost to run.
 
-First, configure your PostgreSQL Database connection via <a href="{{ site.url }}/algorithms/util/PostgreSQLConfig/">PostgreSQLConfig</a> ( <a href="{{ site.url }}/algorithms/util/PostgreSQLConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{ site.url }}/algorithms/util/PostgreSQLConfig/">PostgreSQLConfig</a> as well.
+First, configure your PostgreSQL Database connection via <a href="{{site.url}}/algorithms/util/PostgreSQLConfig/">PostgreSQLConfig</a> ( <a href="{{site.url}}/algorithms/util/PostgreSQLConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{site.url}}/algorithms/util/PostgreSQLConfig/">PostgreSQLConfig</a> as well.
 
-Then, access the data in your DB via the <a href="{{ site.url }}/algorithms/util/PostgreSQL/">PostgreSQL</a> (<a href="{{ site.url }}/algorithms/util/PostgreSQL/docs">docs</a>).
+Then, access the data in your DB via the <a href="{{site.url}}/algorithms/util/PostgreSQL/">PostgreSQL</a> (<a href="{{site.url}}/algorithms/util/PostgreSQL/docs">docs</a>).
 
 Here's an example of using a preconfigured connection inside one of your own algorithms:
 

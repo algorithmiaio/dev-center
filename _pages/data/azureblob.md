@@ -17,9 +17,9 @@ Learn how to access the data you need from your Azure Blob in a few easy steps. 
 All data sources have a protocol and a label that you will use to reference your data. For instance `azureblob` is the protocol we'll use in this guide and the label will be automatically assigned to your data connection as a unique identifier, but you may change it later if you wish.
 
 ## Configure a New Data Connection to your Azure Blob
-To create a new data connection first navigate to <a href="{{ site.baseurl }}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
+To create a new data connection first navigate to <a href="{{site.baseurl}}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
 Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
 
@@ -28,9 +28,9 @@ Select **'Azure Blob'** and a form will open to configure a connection. Here you
 3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", and __just the protocol and domain__ (e.g. `https://mystore.blob.core.windows.net`) from "URL" -> "Storage URL"
 
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Azure, it is recommended that you provide access that:
 
@@ -42,19 +42,19 @@ You will need to provide a unique label for your data connector, editable in the
 
 We require these unique labels because you may want to add multiple connections to the same Azure account and they will each need a unique label for later reference in your algorithm. The reason you might want to have multiple connections to the same source is so you can set different access permissions to each connection such as read from one file and write to a different folder.
 
-**NOTE:** The unique label follows the protocol: 'azureblob+unique_label://restricted_path'
+**NOTE:** The unique label follows the protocol: 'azureblob+unique_label://'
 
 ### Setting Path Restrictions for Azure Folder and File Access
 The default path restrictions are set to allow access to all paths in your Azure account, however you may want to restrict your algorithm's access to specific folders or files:
 
-- Access to a single file: 'Algorithmia/team.jpg'
-- Access to everything in a specific folder: 'Algorithmia/*'
+- Access to a single file: 'team.jpg'
+- Access to everything in a specific subfolder: 'somefolder/*'
 
-**NOTE:** 'Algorithmia*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
+**NOTE:** 'somefolder*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
 
-Here we are setting our path restrictions to everything in the Azure blob 'Algorithmia':
+Here we are setting our path restrictions to everything in the subfolder 'Algorithmia', so I'd only be able to get files below azureblob://Algorithmia/* :
 
-<img src="{{ site.baseurl }}/images/post_images/data_connectors/azure_restricted_paths.png" alt="Add path restrictions" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_restricted_paths.png" alt="Add path restrictions" class="screenshot img-sm">
 
 ### Setting Read and Write Access
 The default access for your data source is set to read only, but you can change this to read *and* write access by checking the **'Write Access'** box.
@@ -65,7 +65,7 @@ The default access for your data source is set to read only, but you can change 
 Accessing your data via the <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia Data API</a> is easy. Whether you're writing your algorithm in Rust, Ruby, Python, Scala, Java or JavaScript simply import your data with a couple lines of code. With your data connection now configured you can read and write data to and from it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data:
 
 - client = Algorithmia.client('YOUR_API_KEY')
-- client.file('azureblob+unique_label://container_name/my_file.csv').getFile().name
+- client.file('azureblob+unique_label://my_file.csv').getFile().name
 
 For example, to retrieve and print a file's contents in Python:
 
@@ -77,7 +77,7 @@ client = Algorithmia.client('your_api_key')
 
 def azure_data():
     # Get file from Azure data source
-    data_file = client.file('azureblob+hawking://Algorithmia/test_data.csv').get()
+    data_file = client.file('azureblob+hawking://test_data.csv').get()
     # Pass in file and pass in args required from the algorithm FpGrowth
     input = [data_file, 5, 2]
     algo = client.algo('paranoia/FpGrowth/0.2.0')
@@ -90,7 +90,7 @@ azure_data()
 If you're working with an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data sources:
 
 {% highlight python %}
-algo.pipeJson({'inputFile':'azureblob+hawking://Algorithmia/test_data.csv'})
+algo.pipeJson({'inputFile':'azureblob+hawking://test_data.csv'})
 {% endhighlight %}
 
 **NOTE:** If you call an algorithm it can only access your data source. This means that it is NOT possible for an algorithm to read data from your Azure blob and write that data to an account controlled by an another algorithm author. Algorithms do NOT have direct access to any credentials associated with your data sources, and can only access data from a data source using the Algorithmia API.
@@ -104,7 +104,7 @@ Once a data source connection has been created and configured, all of the Algori
 If you're implementing a new client or using cURL it is preferred to use the following URL structure:
 
 - '/v1/connector/protocol+unique_label/path':
-    - '/v1/connector/azureblob+unique_label/container_name/foo.txt'
+    - '/v1/connector/azureblob+unique_label/foo.txt'
 
 ## Algorithm support
 We have tested to ensure that data source paths function in all of our Algorithmia clients, however:

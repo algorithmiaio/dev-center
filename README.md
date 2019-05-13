@@ -104,7 +104,7 @@ When you're mentioning the number of algorithms in the marketplace, or the maxim
 For example, if you want to mention the number of algorithms we have in an article, use the following:
 
 ```
-And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
+And if you need a pre-trained model or utility function for your project, check out the over {{site.data.stats.marketplace.total_num_algorithms}} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
 ```
 
 You can find more variables in the `_data/stats.yml` file.

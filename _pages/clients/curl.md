@@ -28,7 +28,7 @@ curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Author
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), replace `https://api.algorithmia.com/v1/data/.my` in the codesamples below with your own API endpoint URL.
+If you are running [Algorithmia Enterprise](/enterprise), replace `https://api.algorithmia.com/v1/data/.my` in the codesamples below with your own API endpoint URL.
 {% endif %}
 
 
@@ -82,5 +82,5 @@ curl -X GET -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/
 See the full [API Specification](http://docs.algorithmia.com/#api-specification) for additional details
 on calling algorithms and managing data with cURL.
 
-Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 

@@ -12,15 +12,15 @@ image:
 
 Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms.
 
-For the full specification, see the [Algorithm Management API doc](https://documenter.getpostman.com/view/6515899/Rztiuqao) or the "algorithms" section of the official [OpenAPI Spec](https://algorithmia.com/v1/openapispec)
+For the full specification, see the [Algorithm Management API doc](https://documenter.getpostman.com/view/6515899/Rztiuqao) or the "algorithms" section of the official [OpenAPI Spec](/v1/openapispec)
 
 Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use Simple API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](https://algorithmia.com/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
+If you are running [Algorithmia Enterprise](/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
 {% endif %}
 
 
@@ -65,7 +65,7 @@ print(response.text)
 
 #### 2. Edit and Build your Algorithm
 
-Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{ site.cdnurl }}{{ site.baseurl }}/algorithm-development/algorithm-basics/git/) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{ site.cdnurl }}{{ site.baseurl }}/clients/cli/) (`algo clone USERNAME/ALGORITHMNAME`).
+Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{site.cdnurl}}{{site.baseurl}}/algorithm-development/algorithm-basics/git/) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{site.cdnurl}}{{site.baseurl}}/clients/cli/) (`algo clone USERNAME/ALGORITHMNAME`).
 
 Before attempting to publish, you must either click "Build" in the Web IDE, or `git push` your code (which implicitly triggers a build).
 

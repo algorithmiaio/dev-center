@@ -9,4 +9,4 @@ image:
 ---
 
 
-Yes! Please [contact us](https://algorithmia.com/contact). We would love to learn about your project and see if we can donate free credits.
+Yes! Please [contact us](/contact). We would love to learn about your project and see if we can donate free credits.

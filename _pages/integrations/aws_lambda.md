@@ -11,6 +11,9 @@ image:
     teaser: /language_logos/aws_lambda.svg
 ---
 
+This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).
+{: .notice-info}
+
 AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,
 making it easy to build applications that respond quickly to new information.
 
@@ -31,11 +34,18 @@ Algorithmia and Lambda make it easy to rapidly build and deploy serverless solut
 #### Getting started
 
 * Navigate to the [AWS Lambda console](https://console.aws.amazon.com/lambda/home)
-* Select `Create a Lambda function`
+* Select `Create function`
+* Pick "Blueprints"
+<!-- "Browse serverless app repository" -->
 * Type `Algorithmia` into the filter
-* Select the Algorithmia blueprint
-* Setup Auth in your Lambda function using the below guide
-* Specify your algorithm and input data
+* set an Application Name and Topic, and click "Deploy" 
+* wait for AWS to deploy, then click "algorithmia" under the Resources section
+* click "Add Trigger" and configure as needed for your workflow
+* click on the Lambda icon next to "serverless-algorithmia-YourFunctionName" at the top
+* edit the code, setting `const algorithm` under `processEvent`, modifying `const inputData` to handle the triggering event's datastructure (the template assumes an S3 event), and modifying the output (in `client.algo(algorithm).pipe(inputData).then((output) =>` as needed for your workflow.
+* for higher security, configure your KMS Encrypted Key as shown below, and set `const kmsEncryptedApiKey` in your code
+* for a simpler but less secure config, you can embed your API Key directly into your code by assigning a value to `let apiKey`
+* save and test your code
 
 ### Authentication
 
@@ -98,6 +108,6 @@ kmsEncryptedApiKey = "<kmsEncryptedApiKey>";
 
 See the [NodeJS guide](../node) for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.
 
-Your account can make up to {{ site.data.stats.platform.max_num_algo_requests }} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
 See also the [AWS Lambda walk through on our blog](https://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).

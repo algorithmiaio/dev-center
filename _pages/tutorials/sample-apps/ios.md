@@ -44,13 +44,13 @@ On your [Algorithmia credentials page](algorithmia.com/user#credentials), create
 
 Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value.
 
-![Set environment variables]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/ios/envs.png)
+![Set environment variables]({{site.cdnurl}}{{site.baseurl}}/images/post_images/ios/envs.png)
 
 **Create a Data Collection to store your images during processing**
 
 Since this demo app will be processing images, we'll need to create a temporary directory at Algorithmia to hold them.
 
-Head to your [Data Portal](https://algorithmia.com/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
+Head to your [Data Portal](/data) and click "Browse Files" under "My Hosted Data".  Then click "Add Collection", and type the name "test".  Note that this corresponds to the folders used by `sourcePath` and `resultPath` in "AlgorithmiaSwiftDemo/AlgorithmiaSwiftDemo/ViewController.swift".
 
 ## Run the app
 
@@ -58,7 +58,7 @@ Before changing any code, build and run the app to test out the default function
 
 If all is working properly, you'll see a mostly-blank screen with options to take a photo or pick one from your phone's library. Once you've selected a photo, it will upload it to the `sourcePath` specified earlier, run Algorithmia's [DeepFilter algorithm](https://algorithmia.com/algorithms/deeplearning/DeepFilter) on the image, and render the result on the screen (as well as storing it your [Hosted Data](https://algorithmia.com/data/hosted) under `resultPath`):
 
-![Running the app in the iPhone Simulator]({{ site.cdnurl }}{{ site.baseurl }}/images/post_images/ios/demo.png)
+![Running the app in the iPhone Simulator]({{site.cdnurl}}{{site.baseurl}}/images/post_images/ios/demo.png)
 
 
 ## Revising the Code
@@ -77,7 +77,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
     func uploadImage() {
         // Upload file using Data API
         let file = client.file(sourcePath)
-        file.put(data: UIImageJPEGRepresentation(image!, 0.7)!) { error in
+        file.put(data: UIImageJPEGRepresentation(image!, 0.7)!) { _, error in
             if let error = error {
                 print(error)
                 self.display(error: error)
@@ -166,9 +166,9 @@ Try re-running the app.  You should get back an image which highlights the most 
 
 Integrating Algorithmia into iOS is an easy and convenient way add immense power to your mobile app, so now that you've got the basic API integration down, you can follow this pattern to start hacking away at your own apps!
 
-Browse through [Algorithmia's microservice catalog](https://algorithmia.com/algorithms) to see what other algorithms interest you.  Not all are image-related; for example, you could send text to [SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis) in order to determine if a user's messages convey anger or happiness, or pull down a lict of [recent tweets relating to a specific keyword](https://algorithmia.com/algorithms/twitter/RetrieveTweetsWithKeyword).  With over 4000 cloud-scaled microservices at your fingertips, the possibilities are endless.
+Browse through [Algorithmia's microservice catalog](/algorithms) to see what other algorithms interest you.  Not all are image-related; for example, you could send text to [SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis) in order to determine if a user's messages convey anger or happiness, or pull down a lict of [recent tweets relating to a specific keyword](https://algorithmia.com/algorithms/twitter/RetrieveTweetsWithKeyword).  With over 4000 cloud-scaled microservices at your fingertips, the possibilities are endless.
 
 ### Further Reading:
 
-* [The Algorithmia Swift Client]({{ site.baseurl }}/clients/swift/)
+* [The Algorithmia Swift Client]({{site.baseurl}}/clients/swift/)
 * <a href="https://github.com/algorithmiaio/algorithmia-swift">[Algorithmia Swift Client Source Code](https://github.com/algorithmiaio/algorithmia-swift) <i class="fa fa-external-link"></i>

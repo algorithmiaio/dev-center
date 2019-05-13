@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/python.svg
 ---
 
-Before you get started learning about Python algorithm development, make sure you go through our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -25,22 +25,23 @@ Table of Contents
 
 ## Available Libraries
 
-Algorithmia makes a number of libraries available to make algorithm development easier.  We support three Python versions, with more to come:
+Algorithmia makes a number of libraries available to make algorithm development easier.  We support four Python versions, with more to come:
 
 1. <a href="https://docs.python.org/2/">Python 2.7.13 language and standard library</a>, for both CPU and GPU algorithms
 2. <a href="https://docs.python.org/3/">Python 3.5.3 language and standard library</a>, CPU and GPU
-3. Python 3.7.1, CPU only (found under the `Python 3.x - Beta` Language selection)
+3. Python 3.6.8, CPU and GPU, plus a preinstalled TensorFlow 1.12 option (found under the `Python 3.x - Beta` Language selection)
+4. Python 3.7.1, CPU and GPU (found under the `Python 3.x - Beta` Language selection)
 
 We'll continue to add variants as needed, and broaden GPU support.
 
-You can utilize common Python libraries such as <a href ="{{ site.baseurl }}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{ site.baseurl }}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
+You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
-via the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a>.
+via the <a href="{{site.baseurl}}/clients/python/">Algorithmia Python Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -49,7 +50,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 
 ## Managing Dependencies
@@ -58,7 +59,7 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot img-md">
 
 If you have any dependencies you can add them by typing in the package name to the `requirements.txt` file.
 
@@ -95,7 +96,7 @@ This path is based on your Algorithmia user name and the name of your algorithm,
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
 
 {% highlight python %}
 import Algorithmia
@@ -149,13 +150,13 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 ### Working with Data Stored on Algorithmia
 
-This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{ site.baseurl }}/data/hosted).
+This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
-While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{ site.baseurl }}/data/hosted) to host data for algorithm development.
+While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{site.baseurl}}/data/hosted) to host data for algorithm development.
 {: .notice-warning}
 
 #### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{ site.baseurl }}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](https://algorithmia.com/data/hosted).
+If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted).
 
 This example shows how to create an algorithm that takes a user's file which is stored in a data collection on the Algorithmia platform. It then splits up the text into sentences and then splits those sentences up into words:
 
@@ -193,9 +194,9 @@ def apply(input):
       raise AlgorithmError("Please provide a valid input")
 {% endhighlight %}
 
-After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](https://algorithmia.com/data/hosted).
+After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](/data/hosted).
 
-Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](https://algorithmia.com/data/hosted):
+Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](/data/hosted):
 
 {% highlight python %}
 {"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
@@ -214,7 +215,7 @@ When you are creating an algorithm be mindful of the data types you require from
 
 ### Writing files for the user to consume
 
-Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection](https://algorithmia.com/developers/data/hosted#temporary-algorithm-collections)):
+Sometimes it is more appropriate to write your output to a file than to return it directly to the caller.  In these cases, you may need to create a temporary file, then copy it to a [Data URI](http://docs.algorithmia.com/#data-api-specification) (usually one which the caller specified in their request, or a [Temporary Algorithm Collection]({{site.baseurl}}/data/hosted#temporary-algorithm-collections)):
 
 {% highlight python %}
 # {"target_file":"data://username/collection/filename.txt"}
@@ -226,9 +227,9 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{ site.baseurl }}/clients/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
-You may call up to {{ site.data.stats.platform.max_num_parallel_algo_requests }} other algorithms, either in parallel or recursively.
+You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -278,7 +279,7 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This returns a list of words:
 
-<img src="{{ site.cdnurl }}{{ site.baseurl }}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -320,11 +321,11 @@ except Exception as error:
     print(error)
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{ site.baseurl }}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{ site.baseurl }}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -332,7 +333,7 @@ Both links will go over important best practices such as how to create a good al
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
-To learn how to publish your algorithm: <a href="{{ site.baseurl }}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+To learn how to publish your algorithm: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 ## Caveats
 #### Algorithms with multiple files
@@ -378,8 +379,8 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{ site.baseurl }}/clients/python/">Algorithmia Client Python Docs</a>
-* [Hosted Data Source]({{ site.baseurl }}/data/)
+* <a href="{{site.baseurl}}/clients/python/">Algorithmia Client Python Docs</a>
+* [Hosted Data Source]({{site.baseurl}}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="fa fa-external-link"></i></a>
