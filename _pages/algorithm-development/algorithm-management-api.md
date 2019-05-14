@@ -18,9 +18,12 @@ Note that there are two different types of API Keys, used with different endpoin
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
 
+### Forward: Python Notebook for Publishing Algorithms
+
+The step-by-step guide below will familiarize you with the Python and OpenAPI spec for creating Algorithms. However, a complete end-to-end Jupyter Notebook (and Google Colab Notebook) is also available. To see a working end-to-end example of training a Model, then *immediately* deploying it as an Algorithm within the same Notebook, see the [GitHub repo with working Model Deployment Notebooks](https://github.com/algorithmiaio/model-deployment) 
+ 
 
 ### Step-by-step: Creating and Publishing an Algorithm via the API, using the official Python Client (recommended)
-
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
