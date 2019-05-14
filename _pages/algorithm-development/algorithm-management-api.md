@@ -37,7 +37,7 @@ client = Algorithmia.client('MANAGEMENT_API_KEY', 'https://mylocalendpoint')
 
 #### 1. Create your Algorithm
 
-First, set upo an Algorithmia client using an API Key from your account, which **must** have "Allow this key to manage my algorithm" enabled.
+First, set up an Algorithmia client using an API Key from your account, which **must** have "Allow this key to manage my algorithm" enabled.
 
 Then, create your Algorithm by creating a `client.algo('username/algoname)` with the name you wish it to have: 'username' here might be your own username, or thge name of an Organization to which you belong, and 'algoname' can be any Algorithm name which doesn't already exist in that userspace.
 
