@@ -10,7 +10,7 @@ image:
   teaser: /icons/algo.svg
 ---
 
-Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms.
+Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.
 
 For the full specification, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/Rztiuqao) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
 
