@@ -31,7 +31,7 @@ The rest is boilerplate -- no need to change it. We just send the HTTPRequest vi
 {% highlight bash%}
 algo = "https://api.algorithmia.com/v1/algo/nlp/SentimentAnalysis/1.0.5"
 input = {"document":"I love Algorithmia"}
-headers = {"Authorization" -> "Simple YOUR_API_KEY", "Content-Type" -> "application/json"}
+headers = {"Authorization"->"Simple YOUR_API_KEY","Content-Type"->"application/json"}
 req = HTTPRequest[algo, <|Method->"POST","Headers"->headers,"Body"->input|>]
 response = URLRead[req, {"Body"}]
 {% endhighlight %}
