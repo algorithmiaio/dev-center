@@ -26,13 +26,13 @@ Next, we specify the input we want to send to the Algorithm.
 
 Lastly, we set the Authorization and Content-Type headers (your API Key is in [your Account Page](/user#credentials)).
 
-The rest is boilerplate -- no need to change it. We just send the HTTPRequest via URLRead:
+The rest is boilerplate -- no need to change it. We just send the JSON-encoded HTTPRequest via URLRead:
 
 {% highlight bash%}
 algo = "https://api.algorithmia.com/v1/algo/nlp/SentimentAnalysis/1.0.5"
-input = {"document":"I love Algorithmia"}
+input = {"document"->"I love Algorithmia"}
 headers = {"Authorization"->"Simple YOUR_API_KEY","Content-Type"->"application/json"}
-req = HTTPRequest[algo, <|Method->"POST","Headers"->headers,"Body"->input|>]
+req = HTTPRequest[algo, <|Method->"POST", "Headers"->headers,"Body"->ExportString[input,"json"]|>]
 response = URLRead[req, {"Body"}]
 {% endhighlight %}
 
