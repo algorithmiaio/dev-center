@@ -15,7 +15,7 @@ When you're ready to extend this with any of the 8,000+ algorithms available fro
 
 You can run this code sample by downloading the free [Wolfram Engine](http://www.wolfram.com/engine/) and/or [WolframScript](https://www.wolfram.com/wolframscript), or by using any product you already have which supports the Wolfram Language (such as [Wolfram One](http://www.wolfram.com/wolfram-one/)).
 
-First, we specify the URL of the algorithm we want to run; you can get this from the Algorithm's page, such as https://algorithmia.com/algorithms/nlp/SentimentAnalysis, under the "Install and Use" -> cURL sample, but in most cases it is just "https://api.algorithmia.com/v1/algo/" followed by the algorithm and version you want to use.
+First, we specify the URL of the algorithm we want to run. You can get this from the Algorithm's page (such as [https://algorithmia.com/algorithms/nlp/SentimentAnalysis](https://algorithmia.com/algorithms/nlp/SentimentAnalysis)) under the "Install and Use"> cURL sample -- but in most cases it is just "https://api.algorithmia.com/v1/algo/" followed by the algorithm and version you want to use.
 
 {% if site.enterprise %}
 Enterprise users: your URL will be custom for your domain, e.g. "https://mydomainendpoint.com/v1/algo/" followed by the algorithm.
