@@ -138,6 +138,7 @@ For *dplyr*, use:
 {% highlight bash %}
 dplyr
 -t https://cran.r-project.org/src/contrib/Archive/R6/R6_2.2.2.tar.gz
+withr
 {% endhighlight %}
 
 If you're using both *caret* and *nnet* in the same Algorithm add:
