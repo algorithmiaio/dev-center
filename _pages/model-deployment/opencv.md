@@ -15,6 +15,9 @@ image:
 
 Welcome to Algorithmia! This guide is designed as an introduction to deploying your <a href="http://opencv.org/">OpenCV</a> model and publishing it as an algorithm, even if you’ve never used Algorithmia before!
 
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
+{: .notice-info}
+
 ## Table of Contents
 * [Prerequisites](#prerequisites)
   * [Create a Data Collection](#create-a-data-collection)

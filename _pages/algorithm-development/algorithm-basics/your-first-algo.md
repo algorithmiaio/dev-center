@@ -15,7 +15,10 @@ redirect_from:
 
 One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.
 
-Note that this example shows how to create a Python algorithm, however all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages/">Algorithm Development Languages</a>.
+This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages/">Algorithm Development Languages</a>.
+
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see the [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api).
+{: .notice-info}
 
 Table of Contents
 
