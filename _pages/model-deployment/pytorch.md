@@ -73,7 +73,7 @@ The main thing to note about the algorithm is that it's wrapped in the `apply()`
 
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
 
-Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
+Go ahead and remove the boilerplate code below that's inside the `apply()` function at bottom of page, but leave the `apply()` function intact:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/algorithm_console_pytorch.png" alt="Algorithm console Python" class="screenshot">
 
