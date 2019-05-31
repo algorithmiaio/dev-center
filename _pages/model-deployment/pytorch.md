@@ -170,6 +170,6 @@ In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versio
 If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 ## Working Demo
-If you would like to check a demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/pytorchjitgpu"><PyTorchJitGPU</a>
+If you would like to check a demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/pytorchjitgpu">PyTorchJitGPU</a>
 
 That's it for hosting your <a href="http://pytorch.org/">Pytorch</a> model on Algorithmia!
