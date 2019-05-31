@@ -98,10 +98,6 @@ If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the so
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the <a href="/algorithm-development/languages/python/#io-for-your-algorithms">Client Guides</a>.
 
-### CPUs vs. GPUs on Pytorch
-
-Pytorch offers a few different distributions for download that are split by CPU and GPU. The Pytorch files for CPU usage are normal sized, but when using the GPU packages the files can get very large.
-
 ### Example Hosted Model (Main):
 
 {% highlight python %}
