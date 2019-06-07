@@ -59,7 +59,7 @@ Organizations allow teams of customers to work in a private subset of models, mo
 
 
 
-Upon clicking on the organization-hosted data link, users are taken to `/data/:orgname/collections`, where they can browse their organization's collections and interact with them as they would interact with their own data collections.
+To view your hosted data, click on Data Sources in the main toolbar, then select an organiation. From here, browse the organization's collections as you would your own data collections.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">
 
