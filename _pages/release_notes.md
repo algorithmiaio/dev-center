@@ -14,7 +14,7 @@ image:
 
 ### Jupyter Notebook Integration ###
 
-Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook,] (https://github.com/algorithmiaio/model-deployment/blob/master/tensorflow_classify_text_deploy_algorithmia/tensorflow_classify_text_deploy_algorithmia.ipynb) completing the entire data science life cycle—model training, visualization, and deployment—without ever leaving their Notebook. 
+Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook,](https://github.com/algorithmiaio/model-deployment/blob/master/tensorflow_classify_text_deploy_algorithmia/tensorflow_classify_text_deploy_algorithmia.ipynb) completing the entire data science life cycle—model training, visualization, and deployment—without ever leaving their Notebook. 
 
 Our updated APIs enable easier integrations like this and [Zapier](https://algorithmia.com/developers/integrations/zapier) (from the last release), and we will be offering more endpoints moving forward. Please don’t hesitate to suggest tools you’d like to integrate.
 
