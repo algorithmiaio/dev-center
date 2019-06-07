@@ -25,7 +25,7 @@ Our updated APIs enable easier integrations like this and [Zapier] (https://algo
 
 ### Event-Driven Algorithm Runs ###
 
-Event listeners allow external services to trigger actions such as model runs within the AI Layer. The first of our supported event sources is Amazon SQS, with a [tutorial available] (https://algorithmia.com/developers/integrations/event_listeners) in our Developer Center. 
+Event listeners allow external services to trigger actions such as model runs within the AI Layer. The first of our supported event sources is **Amazon SQS**, with a [tutorial available] (https://algorithmia.com/developers/integrations/event_listeners) in our Developer Center. 
 
 ### Additional Management APIs ###
 New APIs allow you to create, recompile, and publish models directly from CI/CD pipelines, without using the Web API.
@@ -51,19 +51,19 @@ Organizations allow teams of customers to work in a private subset of models, mo
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot">
 
-Upon clicking on the organization-hosted data link, users are taken to /data/:orgname/collections, where they can browse their organization's collections and interact with them as they would interact with their own data collections.
+Upon clicking on the organization-hosted data link, users are taken to `/data/:orgname/collections`, where they can browse their organization's collections and interact with them as they would interact with their own data collections.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">
 
 Organization data collections have the same permissions as user data collections, including:
 
-Private Read: Only members of the organization may access the data, either directly or via an algorithm.
+`Private Read`: Only members of the organization may access the data, either directly or via an algorithm.
 
-My Algorithms Read: Any caller may access the data of organization-owned algorithms, but only organization members may directly view the data.
+`My Algorithms Read`: Any caller may access the data of organization-owned algorithms, but only organization members may directly view the data.
 
-Public Read: Anyone may interact with the data.
+`Public Read`: Anyone may interact with the data.
 
-Private Write: Only members of the organization may write to the collection. This is the only available write setting.
+`Private Write`: Only members of the organization may write to the collection. This is the only available write setting.
  
 ### Enterprise UI Customization ###
 
