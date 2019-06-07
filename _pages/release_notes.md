@@ -14,7 +14,7 @@ image:
 
 ### Jupyter Notebook Integration ###
 
-Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook,](https://github.com/algorithmiaio/model-deployment/blob/master/tensorflow_classify_text_deploy_algorithmia/tensorflow_classify_text_deploy_algorithmia.ipynb) completing the entire data science life cycle—model training, visualization, and deployment—without ever leaving their Notebook. 
+Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook](https://github.com/algorithmiaio/model-deployment/blob/master/tensorflow_classify_text_deploy_algorithmia/tensorflow_classify_text_deploy_algorithmia.ipynb) completing the entire data science life cycle—model training, visualization, and deployment—without ever leaving their Notebook. 
 
 Our updated APIs enable easier integrations like this and [Zapier](https://algorithmia.com/developers/integrations/zapier) (from the last release), and we will be offering more endpoints moving forward. Please don’t hesitate to suggest tools you’d like to integrate.
 
@@ -30,7 +30,7 @@ Event listeners allow external services to trigger actions such as model runs wi
 ### Additional Management APIs ###
 New APIs allow you to create, recompile, and publish models directly from CI/CD pipelines, without using the Web API.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot"> . 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot">    
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Publish_Algorithm.png" alt="Release Notes" class="screenshot">
 
@@ -49,11 +49,11 @@ A new data-browsing UX makes it even easier to browse and share data and models 
 
 Organizations allow teams of customers to work in a private subset of models, moderate model publishing, and organize models into logical groups based on teams. This feature makes an organization more powerful by coupling the algorithms with the data necessary for models.   
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot"> . 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot">    
 
 Upon clicking on the organization-hosted data link, users are taken to `/data/:orgname/collections`, where they can browse their organization's collections and interact with them as they would interact with their own data collections.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot"> . 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">    
 
 Organization data collections have the same permissions as user data collections, including:
 
