@@ -8,6 +8,77 @@ image:
     teaser: /icons/algo.svg
 ---
 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Banner.png" alt="1904 Release Notes Banner" class="screenshot">
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Updates_List.png" alt="1904 Release Notes Banner" class="screenshot">
+
+### Jupyter Notebook Integration ###
+
+Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook,] (https://github.com/algorithmiaio/model-deployment/blob/master/tensorflow_classify_text_deploy_algorithmia/tensorflow_classify_text_deploy_algorithmia.ipynb) completing the entire data science life cycle—model training, visualization, and deployment—without ever leaving their Notebook. 
+
+Our updated APIs enable easier integrations like this and [Zapier] (https://algorithmia.com/developers/integrations/zapier) (from the last release), and we will be offering more endpoints moving forward. Please don’t hesitate to suggest tools you’d like to integrate.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oSOlbenfFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Deploy.png" alt="Release Notes" class="screenshot">
+
+### Event-Driven Algorithm Runs ###
+
+Event listeners allow external services to trigger actions such as model runs within the AI Layer. The first of our supported event sources is Amazon SQS, with a [tutorial available] (https://algorithmia.com/developers/integrations/event_listeners) in our Developer Center. 
+
+### Additional Management APIs ###
+New APIs allow you to create, recompile, and publish models directly from CI/CD pipelines, without using the Web API.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot">
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Publish_Algorithm.png" alt="Release Notes" class="screenshot">
+
+### Additional IPA Package Sets ###
+
+As introduced in the 19.01 release, We now enable more flexible instances and support new machine learning frameworks with many different combinations. New package sets execute faster and support a wider range of developer choices. 
+
+Our shift towards package sets allows the platform to iterate faster and increases the performance of algorithm runtimes.
+This allows the Algorithmia cluster to target package sets toward tailored scenarios. 
+
+We’re delivering a continuous stream of new sets, so check back for the latest versions often. 
+
+### Organization-Hosted Data ###
+
+A new data-browsing UX makes it even easier to browse and share data and models within your organization.
+
+Organizations allow teams of customers to work in a private subset of models, moderate model publishing, and organize models into logical groups based on teams. This feature makes an organization more powerful by coupling the algorithms with the data necessary for models. 
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot">
+
+Upon clicking on the organization-hosted data link, users are taken to /data/:orgname/collections, where they can browse their organization's collections and interact with them as they would interact with their own data collections.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">
+
+Organization data collections have the same permissions as user data collections, including:
+
+Private Read: Only members of the organization may access the data, either directly or via an algorithm.
+My Algorithms Read: Any caller may access the data of organization-owned algorithms, but only organization members may directly view the data.
+
+Public Read: Anyone may interact with the data.
+
+Private Write: Only members of the organization may write to the collection. This is the only available write setting.
+ 
+### Enterprise UI Customization ###
+
+Enterprise customers now have the ability to tailor the UI of their AI Layer instances to their corporate brands. 
+
+What can now be customized:
+* Brand Color
+* Logo
+* Favicon
+* Navigation Title (Title that appears in browser tab)
+* Header Title (Title that appears beneath logo)
+* Title Of Sidenav Buttons
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Footer.png" alt="Release Notes" class="screenshot">
+
+
+
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="screenshot">
 
