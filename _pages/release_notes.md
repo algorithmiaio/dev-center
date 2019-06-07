@@ -77,7 +77,7 @@ What can now be customized:
 * Header Title (Title that appears beneath logo)
 * Title Of Sidenav Buttons
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Footer.png" alt="Release Notes" class="screenshot"> . 
+For questions and requests, please contact Algorithmia at support@algorithmia.com.  
 
 
 
