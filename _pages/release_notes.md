@@ -20,6 +20,7 @@ Our updated APIs enable easier integrations like this and [Zapier] (https://algo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oSOlbenfFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Deploy.png" alt="Release Notes" class="screenshot">
 
 ### Event-Driven Algorithm Runs ###
@@ -57,6 +58,7 @@ Upon clicking on the organization-hosted data link, users are taken to /data/:or
 Organization data collections have the same permissions as user data collections, including:
 
 Private Read: Only members of the organization may access the data, either directly or via an algorithm.
+
 My Algorithms Read: Any caller may access the data of organization-owned algorithms, but only organization members may directly view the data.
 
 Public Read: Anyone may interact with the data.
