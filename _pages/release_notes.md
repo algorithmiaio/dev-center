@@ -19,8 +19,7 @@ Data scientists can now [deploy to the AI Layer directly from a Jupyter Notebook
 Our updated APIs enable easier integrations like this and [Zapier](https://algorithmia.com/developers/integrations/zapier) (from the last release), and we will be offering more endpoints moving forward. Please don’t hesitate to suggest tools you’d like to integrate.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oSOlbenfFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-
-  
+-----
   
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Deploy.png" alt="Release Notes" class="screenshot">
 
@@ -86,11 +85,10 @@ What can now be customized:
 * Header Title (Title that appears beneath logo)
 * Title Of Sidenav Buttons
 
-
+---- 
 
 For questions and requests, please contact Algorithmia at support@algorithmia.com.  
-
-
+-----
 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="screenshot">
