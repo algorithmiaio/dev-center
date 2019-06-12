@@ -1,8 +1,10 @@
 ---
 layout: article_page
-title:  "Basics"
+title:  "Platform"
 show_related: false
-excerpt: "Basics"
+excerpt: "Platform"
+redirect_from:
+ - /basics/
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}

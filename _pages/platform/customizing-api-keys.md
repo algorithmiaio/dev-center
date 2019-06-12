@@ -8,6 +8,9 @@ tags: [basics]
 show_related: true
 image:
   teaser: /icons/algo.svg
+permalink: /platform/customizing-api-keys/
+redirect_from:
+  - /basics/customizing-api-keys/
 ---
 
 To call algorithms and interact with the Data API, you'll use an API key to authenticate. But did you know you can create additional API keys and customize their access permissions? This guide will show you how.

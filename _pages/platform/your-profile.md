@@ -9,6 +9,9 @@ show_related: true
 author: steph_kim
 image:
   teaser: /icons/algo.svg
+permalink: /platform/your-profile/
+redirect_from:
+  - /basics/your-profile/
 ---
 
 This guide will usher you through your user profile and cover how to find your API key, check your account credits and look at your recent API calls.

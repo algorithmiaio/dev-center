@@ -8,6 +8,9 @@ tags: [basics]
 show_related: true
 image:
     teaser: /icons/algo.svg
+permalink: /platform/algorithm-profiles/
+redirect_from:
+  - /basics/algorithm-profiles/
 ---
 
 Each algorithm is showcased on the marketplace through the profile page. Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of one of the most popular algorithms: [Nudity Detection](https://algorithmia.com/algorithms/sfw/NudityDetection)

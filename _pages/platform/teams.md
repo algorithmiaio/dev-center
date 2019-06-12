@@ -2,10 +2,15 @@
 layout: article
 title:  "Teams and Organizations"
 excerpt: "Understanding Teams and Organizations on Algorithmia"
-tags: [alg-dev-getting-started, app-dev-getting-started]
+categories: basics
+nav_index: 20
+tags: [basics]
 show_related: true
 image:
     teaser: /icons/algo.svg
+permalink: /platform/organizations/
+redirect_from:
+  - /teams/
 ---
 
 If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. The following sections cover the basics of using teams and organizations on the Algorithmia platform, including how to create and invite users to an organization, how to approve published algorithms, and how to check your organization's earnings.
