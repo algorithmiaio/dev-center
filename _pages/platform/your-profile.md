@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Your User Profile"
+title:  "User Profile"
 excerpt: "Information about your user profile."
 categories: basics
 nav_index: 10

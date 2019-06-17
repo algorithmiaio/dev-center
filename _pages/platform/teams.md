@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Teams and Organizations"
+title:  "Organizations"
 excerpt: "Understanding Teams and Organizations on Algorithmia"
 categories: basics
 nav_index: 20

@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Customizing API Keys & Access"
+title:  "API Keys"
 excerpt: "Did you know you can have multiple API keys with different access permissions?"
 categories: basics
 nav_index: 50
