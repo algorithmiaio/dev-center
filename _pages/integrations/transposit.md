@@ -27,6 +27,6 @@ SELECT result FROM algorithmiaconnector.algorithm
 
 Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Transposit and Algorithmia are flexible enough to put together just about any workflow you need!
 
-Ready to get started? Start by forking the demo application on Transposit and mix up your own solution:
+Ready to get started? Start by forking the demo application on Transposit (and click "Connect" under "Auth & user settings" to set "Simple YOUR_API_KEY"), then mix up your own solution:
 
 <a href="https://console.transposit.com/t/jpeck/algorithmiademo/" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> FORK ON TRANSPOSIT</a>
