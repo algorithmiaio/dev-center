@@ -89,7 +89,7 @@ In the row for each build is a menu, with options to view the detail page for th
 
 ![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png)
 
-The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the logs for the build.
+The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the compilation logs for the build.
 
 ![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png)
 
