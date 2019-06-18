@@ -68,6 +68,31 @@ At the bottom of the Settings page is the option to delete the algorithm, if it 
 
 ![Algorithm Deletion]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png)
 
+#### Algorithm Builds
+
+The Builds page lists all builds of your algorithm, beginning with the most recent. Builds are started when you push local commits to Algorithmia, or by using the "Build" option in the Algorithmia web IDE.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_builds_list.png)
+
+The following information is shown for each build:
+
+* The commit SHA
+* The build's start time
+* The build's end time (or a spinner if still in progress)
+* The build's duration, if complete
+* The build's status
+* The version published from the build, if there is one
+
+If your latest build is successful and unpublished, you will see a "Publish" option in the version column. Clicking on this will start the publish flow for that build, with the same steps described [here]({{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo#publish-your-algorithm).
+
+In the row for each build is a menu, with options to view the detail page for the build, download the build's logs, or publish the build if it is publishable.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png)
+
+The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the logs for the build.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png)
+
 #### Wrapping Up
 
 You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{site.baseurl}}/getting-started/) or learn more about [algorithm pricing]({{site.baseurl}}/pricing/), [permissions]({{site.baseurl}}/basics/permissions/), and [versioning]({{site.baseurl}}/basics/versioning/).
