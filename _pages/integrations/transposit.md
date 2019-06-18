@@ -23,7 +23,7 @@ The actual steps to use Algorithmia in Transposit are pretty simple... just use 
 SELECT result FROM algorithmiaconnector.algorithm
   WHERE algorithm='nlp/SentimentAnalysis'
   AND $body='{"document": "I really like Algorithmia!"}'
-{% endhilight %}
+{% endhighlight %}
 
 Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Transposit and Algorithmia are flexible enough to put together just about any workflow you need!
 
