@@ -25,7 +25,20 @@ SELECT result FROM algorithmiaconnector.algorithm
   AND $body='{"document": "I really like Algorithmia!"}'
 {% endhighlight %}
 
-Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Transposit and Algorithmia are flexible enough to put together just about any workflow you need!
+Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Just for fun, let's add in the github connector and analyze the sentiment scores of commit messages:
+
+{% highlight sql %}
+SELECT C.commit.message, S.result[0].sentiment
+FROM github.list_commits AS C
+  JOIN algorithmiaconnector.algorithm AS S 
+   ON S.$body.document = C.commit.message
+WHERE C.owner='dropwizard'
+AND C.repo='dropwizard'
+AND S.algorithm='nlp/SentimentAnalysis'
+LIMIT 100
+{% endhighlight %}
+
+Transposit and Algorithmia are flexible enough to put together just about any workflow you need!
 
 Ready to get started? Start by forking the demo application on Transposit (and click "Connect" under "Auth & user settings" to set "Simple YOUR_API_KEY"), then mix up your own solution:
 
