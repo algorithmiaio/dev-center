@@ -52,6 +52,12 @@ If the algorithm developer has published under an Open Source license, you will 
 
  Click this button to see the algorithm code!
 
+### Profiles for Your Owned Algorithms
+
+Profiles for algorithms owned by your account, or one of your organizations, will have additional features. You will see two additional tabs: "Settings" and "Builds." Additionally, you will always see the "Source" tab.
+
+![Owned Algorithm Profile]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png)
+
 #### Wrapping Up
 
 You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{site.baseurl}}/getting-started/) or learn more about [algorithm pricing]({{site.baseurl}}/pricing/), [permissions]({{site.baseurl}}/basics/permissions/), and [versioning]({{site.baseurl}}/basics/versioning/).
