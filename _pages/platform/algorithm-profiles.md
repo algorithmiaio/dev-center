@@ -30,20 +30,11 @@ Below the main details, you can see the various tags that the author has include
 
 Finally, the last section of the algorithm header is the Permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here]({{ site.baseurl}}/basics/permissions/).
 
-#### Description, Pricing, & Permissions:
+#### Description:
 
 The algorithm README documentation is easily available on the algorithm profile page by clicking the "Docs" tab. The Docs is where the algorithm developer writes an explanation of what the algorithm does, what kind of input you need to use, and what kind of output you can expect from the algorithm. Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
 ![Algorithm Profile docs]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png)
-
-By using the next tab on the profile page, "Cost", you can see see the pricing and permissions information for the algorithm.
-
-![Algorithm Profile pricing]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/pricing.png)
-
-The Cost tab, shown above, is an interactive section of the profile where you can estimate the cost of the algorithm. It uses the average duration of calls across the system and the number of API calls to calculate the estimated cost in credits.
-
-The estimate is based off the average duration of API calls. Your call duration may vary slightly.
-{: .notice-warning }
 
 #### Algorithm Console & Sample Input:
 
