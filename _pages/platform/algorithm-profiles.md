@@ -58,6 +58,16 @@ Profiles for algorithms owned by your account, or one of your organizations, wil
 
 ![Owned Algorithm Profile]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png)
 
+#### Algorithm Settings
+
+The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist). Below these you can edit your algorithm's settings, including source code visibility, license, hardward type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
+
+![Algorithm Settings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png)
+
+At the bottom of the Settings page is the option to delete the algorithm, if it does not have a public version. **Use with care: deleted algorithms are gone forever.**
+
+![Algorithm Deletion]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png)
+
 #### Wrapping Up
 
 You should now have a good idea of how to understand the algorithm profile page. Be sure to [make your first API call]({{site.baseurl}}/getting-started/) or learn more about [algorithm pricing]({{site.baseurl}}/pricing/), [permissions]({{site.baseurl}}/basics/permissions/), and [versioning]({{site.baseurl}}/basics/versioning/).
