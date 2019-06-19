@@ -2,15 +2,15 @@
 layout: article
 title:  "Getting Started"
 excerpt: "Getting your algorithm on Algorithmia is easy. Find out how with this tutorial."
-categories: algorithm-basics
-nav_index: 10
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
+nav_index: 0
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/your-first-algo/
+permalink: /algorithm-development/your-first-algo/
 redirect_from:
-  - /algorithm-development/your-first-algo/
+  - /algorithm-development/algorithm-basics/your-first-algo/
 ---
 
 One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.

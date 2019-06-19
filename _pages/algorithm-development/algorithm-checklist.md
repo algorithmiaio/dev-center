@@ -1,16 +1,15 @@
 ---
 layout: article
-title:  "Algorithm Profile Checklist"
+title:  "Algorithm Checklist"
 excerpt: "Follow these tips to create the best algorithm profile possible."
-categories: algorithm-basics
-nav_index: 20
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/algorithm-checklist/
+permalink: /algorithm-development/algorithm-checklist/
 redirect_from:
-  - /algorithm-development/algorithm-checklist/
+  - /algorithm-development/algorithm-basics/algorithm-checklist/
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.

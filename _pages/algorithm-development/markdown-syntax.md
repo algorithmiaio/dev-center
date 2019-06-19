@@ -1,16 +1,16 @@
 ---
 layout: article
-title:  "Markdown Syntax"
+title:  "Markdown"
 excerpt: "Markdown syntax for Algorithm descriptions."
-categories: algorithm-basics
-nav_index: 50
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
+nav_index: 1
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/markdown-syntax/
+permalink: /algorithm-development/markdown-syntax/
 redirect_from:
-  - /algorithm-development/markdown-syntax/
+  - /algorithm-development/algorithm-basics/markdown-syntax/
 ---
 
 When you are ready to write the documentation for your algorithm under the "Docs" tab on your algorithm's page, you can use markdown to make your documentation clear.

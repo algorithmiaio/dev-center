@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Advanced Algorithm Development"
+title:  "Deep Dives"
 excerpt: "Best Practices and Deep Dives for Algorithm Development and Model Deployment"
 categories: algorithm-development
 tags: [algo-dev]

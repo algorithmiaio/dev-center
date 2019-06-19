@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Algorithm Management APIs"
+title:  "Management APIs"
 excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithm Management API"
 categories: algorithm-development
 tags: [algo-dev]

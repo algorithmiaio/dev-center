@@ -1,8 +1,7 @@
 ---
 layout: article_page
 title:  "Algorithm Development Overview"
-nav_overview: "Overview"
-nav_index: 0
+nav_index: 2
 excerpt: "Basic Guides for Algorithm Developers"
 show_related: false
 ---
@@ -29,8 +28,8 @@ show_related: false
 <p>If you have a trained machine or deep learning model and want to deploy it on our platform, check out the <a href="{{site.baseurl}}/model-deployment/">Deploy Model Guides</a> where you'll see tutorials for popular frameworks such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/pytorch/">PyTorch</a>, and <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>.</p>
 
 <div class="row overview-container">
-{% assign pages = site.pages | where: "categories", "algorithm-development" %}
-{% for post in pages %}
+{% assign sorted_pages = site.pages | where: "categories", "algorithm-development" | sort:"nav_index" %}
+{% for post in sorted_pages %}
   <div class="col-md-12 overview-brief">
     <h3><a href="{{ post.url | relative_url }}">{{post.title}}</a></h3>
     <p class="lg">{{post.excerpt}}</p>

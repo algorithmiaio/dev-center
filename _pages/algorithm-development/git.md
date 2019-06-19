@@ -1,16 +1,15 @@
 ---
 layout: article
-title:  "Using Git with Algorithmia"
+title:  "Git Versioning"
 excerpt: "Learn how to use Git with Algorithmia and integrate with your current workflow."
-categories: algorithm-basics
-nav_index: 30
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/git/
+permalink: /algorithm-development/git/
 redirect_from:
-  - /algorithm-development/git/
+  - /algorithm-development/algorithm-basics/git/
 ---
 
 Every algorithm on Algorithmia has a dedicated git repository. Using this repository allows you to seamlessly integrate Algorithmia with your current workflows,

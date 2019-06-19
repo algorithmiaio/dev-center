@@ -1,17 +1,16 @@
 ---
 layout: article
-title:  "Better Error Handling"
+title:  "Error Handling"
 excerpt: "How to handle errors between algorithms."
-categories: algorithm-basics
-nav_index: 40
-tags: [algo-dev-basics]
+categories: algorithm-development
+tags: [algo-dev]
 show_related: true
 author: besir
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-basics/algorithm-errors/
+permalink: /algorithm-development/algorithm-errors/
 redirect_from:
-  - /algorithm-development/algorithm-errors/
+  - /algorithm-development/algorithm-basics/algorithm-errors/
 ---
 
 On Algorithmia you can develop in several different programming languages. Being language agnostic gives you access to libraries and functions in other languages that would not be possible otherwise. For example, you can call a NodeJS library inside of a Python algorithm. All you have to do is to write a wrapper algorithm for that library.
