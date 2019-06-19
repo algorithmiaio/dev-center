@@ -9,7 +9,7 @@ image:
     teaser: /language_logos/transposit.png
 ---
 
-Transposit enables developers to create complex SQL-like queries spanning multiple services' APIs. For example, I can pull records from Airtable create Stripe charges for each match, all in a single query:
+Transposit enables developers to create complex SQL-like queries spanning multiple services' APIs. For example, I can pull records from Airtable and create Stripe charges for each match, all in a single query:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/transposit/airtable_stripe.png" alt="Create Stripe charges for each record from Airtable" class="screenshot">
 
