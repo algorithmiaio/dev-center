@@ -25,7 +25,7 @@ SELECT result FROM algorithmiaconnector.algorithm
   AND $body='{"document": "I really like Algorithmia!"}'
 {% endhighlight %}
 
-Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Just for fun, let's add in the github connector and analyze the sentiment scores of commit messages:
+Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Just for fun, let's add in the github connector and analyze the sentiment scores of commit messages (looks like [seattlerb](https://github.com/seattlerb/heckle/commits/master) was having a bad day):
 
 {% highlight sql %}
 SELECT C.commit.message, S.result[0].sentiment
