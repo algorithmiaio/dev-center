@@ -28,14 +28,17 @@ SELECT result FROM algorithmiaconnector.algorithm
 Of course, in a real use case you'd probably be pulling many records from another data source, such as the titles of your incoming emails or your Slack messages, then using the resultant sentiment scores to flag or forward particularly high- or low-scoring content. Just for fun, let's add in the github connector and analyze the sentiment scores of commit messages (looks like [seattlerb](https://github.com/seattlerb/heckle/commits/master) was having a bad day):
 
 {% highlight sql %}
-SELECT C.commit.message, S.result[0].sentiment
-FROM github.list_commits AS C
-  JOIN algorithmiaconnector.algorithm AS S 
-   ON S.$body.document = C.commit.message
-WHERE C.owner='seattlerb'
-AND C.repo='heckle'
-AND S.algorithm='nlp/SentimentAnalysis'
-LIMIT 100
+SELECT * 
+FROM (SELECT C.commit.message, S.result[0].sentiment
+      FROM github.list_commits AS C
+        JOIN algorithmiaconnector.algorithm AS S 
+         ON S.$body.document = C.commit.message
+      WHERE C.owner='seattlerb'
+      AND C.repo='heckle'
+      AND S.algorithm='nlp/SentimentAnalysis'
+      LIMIT 100)
+WHERE (sentiment > 0.2 OR sentiment < -0.2)
+ORDER BY sentiment
 {% endhighlight %}
 
 Transposit and Algorithmia are flexible enough to put together just about any workflow you need!
