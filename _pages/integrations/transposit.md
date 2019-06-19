@@ -32,8 +32,8 @@ SELECT C.commit.message, S.result[0].sentiment
 FROM github.list_commits AS C
   JOIN algorithmiaconnector.algorithm AS S 
    ON S.$body.document = C.commit.message
-WHERE C.owner='dropwizard'
-AND C.repo='dropwizard'
+WHERE C.owner='seattlerb'
+AND C.repo='heckle'
 AND S.algorithm='nlp/SentimentAnalysis'
 LIMIT 100
 {% endhighlight %}
