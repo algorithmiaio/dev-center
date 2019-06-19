@@ -60,7 +60,7 @@ Profiles for algorithms owned by your account, or one of your organizations, wil
 
 #### Algorithm Settings
 
-The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist). Below these you can edit your algorithm's settings, including source code visibility, license, hardward type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
+The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist). Below these you can edit your algorithm's settings, including source code visibility, license, hardware type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
 
 ![Algorithm Settings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png)
 
