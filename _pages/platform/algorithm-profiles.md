@@ -30,20 +30,11 @@ Below the main details, you can see the various tags that the author has include
 
 Finally, the last section of the algorithm header is the Permissions section. Here you will see more details on the algorithm's permissions, such as if it needs access to the Internet or if it calls another algorithm. Learn more about permissions [here]({{ site.baseurl}}/basics/permissions/).
 
-#### Description, Pricing, & Permissions:
+#### Description:
 
 The algorithm README documentation is easily available on the algorithm profile page by clicking the "Docs" tab. The Docs is where the algorithm developer writes an explanation of what the algorithm does, what kind of input you need to use, and what kind of output you can expect from the algorithm. Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
 ![Algorithm Profile docs]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png)
-
-By using the next tab on the profile page, "Cost", you can see see the pricing and permissions information for the algorithm.
-
-![Algorithm Profile pricing]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/pricing.png)
-
-The Cost tab, shown above, is an interactive section of the profile where you can estimate the cost of the algorithm. It uses the average duration of calls across the system and the number of API calls to calculate the estimated cost in credits.
-
-The estimate is based off the average duration of API calls. Your call duration may vary slightly.
-{: .notice-warning }
 
 #### Algorithm Console & Sample Input:
 
@@ -60,6 +51,47 @@ If the algorithm developer has published under an Open Source license, you will 
 
 
  Click this button to see the algorithm code!
+
+### Profiles for Your Owned Algorithms
+
+Profiles for algorithms owned by your account, or one of your organizations, will have additional features. You will see two additional tabs: "Settings" and "Builds." Additionally, you will always see the "Source" tab.
+
+![Owned Algorithm Profile]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png)
+
+#### Algorithm Settings
+
+The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist). Below these you can edit your algorithm's settings, including source code visibility, license, hardware type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
+
+![Algorithm Settings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png)
+
+At the bottom of the Settings page is the option to delete the algorithm, if it does not have a public version. **Use with care: deleted algorithms are gone forever.**
+
+![Algorithm Deletion]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png)
+
+#### Algorithm Builds
+
+The Builds page lists all builds of your algorithm, beginning with the most recent. Builds are started when you push local commits to Algorithmia, or by using the "Build" option in the Algorithmia web IDE.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_builds_list.png)
+
+The following information is shown for each build:
+
+* The commit SHA
+* The build's start time
+* The build's end time (or a spinner if still in progress)
+* The build's duration, if complete
+* The build's status
+* The version published from the build, if there is one
+
+If your latest build is successful and unpublished, you will see a "Publish" option in the version column. Clicking on this will start the publish flow for that build, with the same steps described [here]({{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo#publish-your-algorithm).
+
+In the row for each build is a menu, with options to view the detail page for the build, download the build's logs, or publish the build if it is publishable.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png)
+
+The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the compilation logs for the build.
+
+![Algorithm Builds]({{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png)
 
 #### Wrapping Up
 
