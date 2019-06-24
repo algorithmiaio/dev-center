@@ -49,7 +49,7 @@ Go ahead and remove the boilerplate code below that's inside the apply() functio
 ## Managing Dependencies
 
 Algorithmia supports adding 3rd party dependencies via Maven packages. Specifically, any packages from
-<a href="http://search.maven.org/">Maven Central</a> can be added to algorithms.
+<a href="https://search.maven.org/artifact/com.algorithmia/algorithmia-client/">Maven Central</a> can be added to algorithms.
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
