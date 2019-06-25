@@ -12,4 +12,10 @@ image:
     teaser: /post_images/multithreading/multithreading.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" class="img-fill">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading_wide.png" class="img-fill">
+
+Algorithmia can spin up many copies of your Algorithm in parallel, allowing you to break up a large batch job into many parts and have them all run at once.
+
+Here's a sample Algorithm which takes a single array of inputs, then runs up to four parallel threads at once, reassembling the results into a single output:
+
+<a href="https://algorithmia.com/algorithms/jpeck/multiprocessing_hello/source/" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> VIEW CODESAMPLE</a>
