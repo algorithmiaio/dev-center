@@ -9,7 +9,7 @@ excerpt: "The Learning Center hosts training modules to guide users along their 
 {% if site.enterprise %}
 
 ## The Algorithmia Training Center
-The Learning Center hosts training modules to guide users along their Algorithmia journey. Think of it as the place you can go to for long-form and introductory content to the Algorithmia system.
+The Training Center hosts training modules to guide users along their Algorithmia journey. Think of it as the place you can go to for long-form and introductory content to the Algorithmia system.
 
 <a href="https://training.algorithmia.com" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> KEEP LEARNING</a>
 
