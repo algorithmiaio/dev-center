@@ -21,7 +21,7 @@ Here you'll find blog posts that highlight advanced algorithm development includ
       <div class="dev-card-text">
         <p class="secondary">June 24, 2019</p>
         <p class="lg">
-          <a href="https://algorithmia.com/algorithms/jpeck/multiprocessing_hello/source/">Multithreading on Algorithmia: calling many Algorithms in parallel</a>
+          <a href="https://algorithmia.com/algorithms/jpeck/multiprocessing_hello/source/">Multithreading: call many Algorithms in parallel</a>
         </p>
       </div>
     </div>
