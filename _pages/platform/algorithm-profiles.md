@@ -45,18 +45,19 @@ Each Overview page displays the number of stars and followers an algorithm has.
 
 Following an algorithm will subscribe you to comments and help you keep up to date with activity on that particular algorithm. 
 
-Starring an algorithm is a social indicator saying you like the developers algorithm.
+Starring an algorithm is a social indicator saying you like the developer's algorithm.
 
 #### Tags
 Algorithm developers provide tags as the primary means for categorizing their algorithms and also allow you to navigate to similar algorithms by clicking on any tag.
 
 #### Algorithm Metrics
-Includes number of API calls, average duration of API call.
+Includes number of API calls, and average duration of API calls.
 
 #### Permissions
 
 Includes information about licensing, internet accessibility, GPU environments, and more.
-For a deeper dive: [permissions]({{site.baseurl}}/basics/permissions/).
+
+For a deeper dive see: [permissions]({{site.baseurl}}/basics/permissions/).
 
 #### Run An Example
 
@@ -64,15 +65,17 @@ The console appears below the header and allows you to quickly experiment with t
 
 Click the "Run Example" button to have the algorithm run on the sample input in the left hand box, and the results will show in the output box on the right.
 
+You can also experiment with your own data as long as it's in a format the algorithm accepts.
+
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/console.png" alt="Algorithm Profile console" class="screenshot img-md">
 
 ### Docs
 
 The algorithm README documentation should help answer:
 
-* What does the algorithm does
-* What kind of input you need to use
-* What kind of output you can expect from the algorithm
+* What the algorithm does
+* Expected input for that algorithm
+* The expected output from that algorithm
 
 Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
