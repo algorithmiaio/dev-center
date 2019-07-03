@@ -79,13 +79,13 @@ The algorithm README documentation should help answer:
 
 Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png" alt="Algorithm Profile docs" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png" alt="Algorithm Profile docs" class="screenshot">
 
 ### Source Availability
 
-If the algorithm developer has published under an Open Source license, you will see an additional tab in the algorithm profile header that says "Source Code" so you can see how that algorithm was implemented.
+Open source licensed algorithms will show an additional tab in the algorithm profile header that says "Source Code" so you can see how that algorithm was implemented.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/viewsource.png" alt="Algorithm Profile View Source Code tab" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/viewsource.png" alt="Algorithm Profile View Source Code tab" class="screenshot">
 
 ### Profiles For Owned Algorithms
 
@@ -93,7 +93,7 @@ Profiles for algorithms owned by your account, or one of your organizations, wil
 
 You will see two additional tabs: "Settings" and "Builds." Additionally, you will always see the "Source Code" tab.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png" alt="Owned Algorithm Profile" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png" alt="Owned Algorithm Profile" class="screenshot">
 
 #### Algorithm Settings
 
@@ -101,14 +101,14 @@ The top of the Settings page includes information for working on an algorithm lo
 
 You can also edit your algorithm's settings, including source code visibility, license, hardware type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png" alt="Algorithm Settings" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png" alt="Algorithm Settings" class="screenshot">
 
 At the bottom of the Settings page is the option to delete the algorithm, if it does not have a public version.
 
 Use with care: deleted algorithms are gone forever.
 {: .notice-warning }
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png" alt="Algorithm Deletion" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png" alt="Algorithm Deletion" class="screenshot">
 
 #### Algorithm Builds
 
@@ -116,7 +116,7 @@ The Builds page lists all builds of your algorithm, beginning with the most rece
 
 Builds are started when you push local commits to Algorithmia, or by using the "Build" option in the Algorithmia web IDE.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_builds_list.png" alt="Algorithm Builds" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_builds_list.png" alt="Algorithm Builds" class="screenshot">
 
 The following information is shown for each build:
 
@@ -131,11 +131,11 @@ If your latest build is successful and unpublished, you will see a "Publish" opt
 
 In the row for each build is a menu, with options to view the detail page for the build, download the build's logs, or publish the build if it is publishable.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png" alt="Algorithm Builds" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png" alt="Algorithm Builds" class="screenshot">
 
 The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the compilation logs for the build.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png" alt="Algorithm Builds" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png" alt="Algorithm Builds" class="screenshot">
 
 #### Wrapping Up
 
