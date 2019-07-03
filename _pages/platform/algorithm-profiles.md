@@ -23,7 +23,7 @@ Below, we'll explain how to understand each portion of the algorithm profile by 
 
 #### Algorithm Name, Version, and Royalties
 
-Every algorithm page has a: Username, Algorithm Name, and Semantic Version:
+Every algorithm page has a Username, Algorithm Name, and Semantic Version:
 
 ```sfw/NudityDetectioni2v/0.2.13```
 
