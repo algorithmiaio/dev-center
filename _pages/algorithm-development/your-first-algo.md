@@ -147,17 +147,17 @@ On the upper right hand side of the algorithm page you'll see a purple button **
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-In this modal, you'll see a **Changes** tab, a **Sample I/O** tab, and one called **Versioning**.
+This modal has 3 steps: documenting changes, adding example input and output, and configuring algorithm settings.
 
-Changes shows you your commit history and release notes.
+The **Changes** step shows you your commit history and allows you to add release notes.
 
-**Sample I/O** is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
+The **Example I/O** step is where you'll create your sample input and output for the user to try under Try the API in the Run tab. When you add a sample input, make sure to test it out with all the inputs that you accept since users will be able to test your algorithm with their own inputs.
 
-Under the **Versioning** tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
+During the  **Settings** step you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
 Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
 
-Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
+Under "Semantic Version" you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 Under "Pending Changes" you'll see any revisions you've made under the "Manage" tab.
 
