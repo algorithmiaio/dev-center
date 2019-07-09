@@ -143,11 +143,11 @@ Once your algorithm has successfully complied, you can test it out by passing in
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
-On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will bring up a modal:
+On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will start the publish flow:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
-This modal has 3 steps: documenting changes, adding example input and output, and configuring algorithm settings.
+There are 3 steps to publishing an algorithm: documenting changes, adding example input and output, and configuring algorithm settings.
 
 The **Changes** step shows you your commit history and allows you to add release notes.
 
