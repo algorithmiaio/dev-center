@@ -22,8 +22,8 @@ module Jekyll
       if title.split.last == 'Blog'
         long_title_length = title.split.length-4
         title = title.split[0..long_title_length].join(" ")
-        if title.length > 60
-          title = title[0..60] + "..."
+        if title.length > 84
+          title = title[0..84] + "..."
         end
         
       end
