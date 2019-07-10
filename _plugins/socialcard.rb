@@ -46,16 +46,11 @@ module Jekyll
       site.static_files << Jekyll::StaticFile.new(site, '_tmp', image_dir, filename)
 
       <<-HEREDOC
-        <div class="blog-card">
-        <div class="crop flex flex--center">
-          <img src="#{baseurl}/#{image_path}" class="img-fill">
-        </div>
-          <div class="dev-card-text">
-            <p class="secondary">#{published_at}</p>
-            <p class="lg">
-              <a href="#{@card_url}">#{title}</a>
-            </p>
-          </div>
+        <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
+        <a href="#{@card_url}" title="#{title}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
+          <img class="larger_icon" src="#{baseurl}/#{image_path}" alt="icon" itemprop="image">
+          <header itemprop="name" class="lg mb-0">#{title}</header>
+        </a>
         </div>
       HEREDOC
     end

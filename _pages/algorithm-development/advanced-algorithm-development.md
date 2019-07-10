@@ -10,34 +10,17 @@ image:
   teaser: /icons/algo.svg
 ---
 
-
-Here you'll find blog posts that highlight advanced algorithm development including best practices for algorithm design, a deep dive into parallelized video processing, and object detection in Tensorflow with Open Images.
-<div class="row">
-  <div class="col-md-4">
-    <div class="blog-card">
-    <div class="crop flex flex--center">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" class="img-fill">
-    </div>
-      <div class="dev-card-text">
-        <p class="secondary">June 24, 2019</p>
-        <p class="lg">
-          <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading/">Multithreading: call many Algorithms in parallel</a>
-        </p>
-      </div>
-    </div>
-    
+<div class="row lang-tile-container">
+  {% assign post_title = "Multithreading: call many Algorithms in parallel" %}
+  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
+    <a href="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
+      <img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" alt="icon" itemprop="image">
+      <header itemprop="name" class="lg mb-0">{{ post_title }}</header>
+    </a>
   </div>
-  <div class="col-md-4">
-    {% socialcard https://blog.algorithmia.com/advanced-grammar-and-natural-language-processing-with-syntaxnet/ %}
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    {% socialcard https://blog.algorithmia.com/deep-dive-into-object-detection-with-open-images-using-tensorflow/ %}
-  </div>
-  <div class="col-md-4">
-    {% socialcard https://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/ %}
-  </div>
+  {% socialcard https://blog.algorithmia.com/advanced-grammar-and-natural-language-processing-with-syntaxnet/ %}
+  {% socialcard https://blog.algorithmia.com/deep-dive-into-object-detection-with-open-images-using-tensorflow/ %}
+  {% socialcard https://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/ %}
 </div>
 <div class="row section">
   <div class="col-md-12">
