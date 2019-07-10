@@ -22,8 +22,8 @@ module Jekyll
       if title.split.last == 'Blog'
         long_title_length = title.split.length-4
         title = title.split[0..long_title_length].join(" ")
-        if title.length > 42
-          title = title[0..42] + "..."
+        if title.length > 60
+          title = title[0..60] + "..."
         end
         
       end
@@ -49,7 +49,7 @@ module Jekyll
         <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
         <a href="#{@card_url}" title="#{title}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
           <img class="larger_icon" src="#{baseurl}/#{image_path}" alt="icon" itemprop="image">
-          <header itemprop="name" class="lg mb-0">#{title}</header>
+          <p itemprop="name" class="lg text-primary">#{title}</p>
         </a>
         </div>
       HEREDOC

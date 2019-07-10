@@ -15,7 +15,7 @@ image:
   <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
     <a href="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
       <img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" alt="icon" itemprop="image">
-      <header itemprop="name" class="lg mb-0">{{ post_title }}</header>
+      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
     </a>
   </div>
   {% socialcard https://blog.algorithmia.com/advanced-grammar-and-natural-language-processing-with-syntaxnet/ %}
