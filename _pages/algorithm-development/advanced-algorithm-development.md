@@ -22,8 +22,3 @@ image:
   {% socialcard https://blog.algorithmia.com/deep-dive-into-object-detection-with-open-images-using-tensorflow/ %}
   {% socialcard https://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/ %}
 </div>
-<div class="row section">
-  <div class="col-md-12">
-    <a href="https://blog.algorithmia.com/" class="btn btn-primary btn-flat mt-16" target="_blank">Visit the blog <i class="fa fa-external-link" aria-hidden="true"></i></a>
-  </div>
-</div>
