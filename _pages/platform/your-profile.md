@@ -17,7 +17,7 @@ This guide will explain the information available in your account including api 
 
 ## Your Profile
 
-To access your profile, simple click on the user drop down, located in the bottom left on desktop:
+To access your profile, click on the user drop down, located in the bottom left once you login to your account:
 
 ![Accessing the user drop down]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
 
