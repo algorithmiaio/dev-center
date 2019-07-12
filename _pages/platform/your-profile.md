@@ -1,12 +1,11 @@
 ---
 layout: article
-title:  "User Profile"
-excerpt: "Information about your user profile."
+title:  "Account"
+excerpt: "Information about your api calls and credits."
 categories: basics
 nav_index: 10
 tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
-author: steph_kim
 image:
   teaser: /icons/algo.svg
 permalink: /platform/your-profile/
@@ -14,9 +13,7 @@ redirect_from:
   - /basics/your-profile/
 ---
 
-This guide will usher you through your user profile and cover how to find your API key, check your account credits and look at your recent API calls.
-
-{% include toc.html %}
+This guide will explain the information available in your account including api calls and credits.
 
 ## Your Profile
 
@@ -24,35 +21,7 @@ To access your profile, simple click on the user drop down, located in the botto
 
 ![Accessing the user drop down]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
 
-Once inside the profile section, you'll find a horizontal menu of profile sections such as Credentials, Earnings, Account, and Payment Info. We'll go over each section to understand your profile below, but first let's start with the main profile page:
-
-![profile main]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/profile.png)
-
 The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
-
-## Algorithms
-
-The algorithms section of your profile is where you can find and manage algorithms owned by you or your organizations.
-
-![Algorithms]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/algorithms.png)
-
-Click the menu icon next to an algorithm to view, manage, or edit it.
-
-## Organizations
-
-The organizations section of your profile is where you can find all organizations you belong to.
-
-![Organizations]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/organizations.png)
-
-For more information on creating and updating organizations, see our guide [here]({{site.baseurl}}/teams/).
-
-## Credentials
-
-The credentials section of your profile is where you can find and manage your API keys. Below, you'll see that your profile comes with a pre-populated API key that was created when you signed up. This key, will be labeled "default-key", and will show up in the algorithm console when trying out algorithms in the browser.
-
-![Credentials]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/credentials.png)
-
-Click the menu icon next to a key to edit or delete it. You can also create and delete new API keys if you are looking for more modular API key permissions. Follow this [Customizing API Keys & Access guide]({{site.baseurl}}/basics/customizing-api-keys/) to learn more.
 
 ## Account
 
