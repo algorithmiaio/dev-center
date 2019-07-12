@@ -99,7 +99,7 @@ A common gotcha for setting and updating the sample input is that you must publi
 
 ### Update Pricing:
 
-If you are publishing a new version of your algorithm, you can update the pricing of each call. This will be displayed on the pricing section of your algorithm profile. Remember, you can set the royalty price even if your code is open source!
+If you are publishing a new version of your algorithm, you can update the pricing of each call. This will be displayed next to your algorithm's name on the overview page. Remember, you can set the royalty price even if your code is open source!
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/cost.png" alt="inputs and outputs" class="screenshot img-md">
 
