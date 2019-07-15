@@ -15,7 +15,7 @@ redirect_from:
 
 To call algorithms and interact with the Data API, you'll use an API key for authenticatication. 
 
-This guide will show how to create new API keys, and customize API access to suit your security needs.
+This guide will show how to create new API keys and customize API access to suit your security needs.
 
 {% include toc.html %}
 
