@@ -13,9 +13,9 @@ redirect_from:
   - /basics/customizing-api-keys/
 ---
 
-To call algorithms and interact with the Data API, you'll use an API key to authenticate. 
+To call algorithms and interact with the Data API, you'll use an API key for authenticatication. 
 
-**Note:** You can also create new API keys, and customize API access.
+This guide will show how to create new API keys, and customize API access to suit your security needs.
 
 {% include toc.html %}
 
