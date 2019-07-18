@@ -75,4 +75,26 @@ def apply(text):
 reload_model()
 {% endhighlight %}
 
-Next, we need to check for updates to the model, and calll reload_model() when it does.
+Next, we need a way to periodically call **reload_model()**. Since the algorithm only runs code when it is actively called, we'll attach this to the **apply()** function, checking against a **last_reload_time**:
+
+{% highlight python %}
+import Algorithmia
+from sklearn.externals import joblib
+import time
+
+client = Algorithmia.client()
+last_reload_time = None
+max_reload_time = 3600 # 1 hour
+
+def reload_model():
+    modelFile = client.file('data://username/demo/mymodel.pkl').getFile().name
+    model = joblib.load(modelFile)
+    last_reload_time = time.time()
+
+def apply(text):
+    if (time.time() - last_reload_time > max_reload_time):
+        reload_model()
+    return int(model.predict(text))
+    
+reload_model()
+{% endhighlight %}
