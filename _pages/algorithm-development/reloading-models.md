@@ -19,7 +19,19 @@ There are two ways to resolve this problem, depending on whether you want to for
 
 ### Changing your Algorithm Version Number while Updating your Model
 
+One of the benefits of versioning your Algorithm while updating your model is that users can choose which version to call, and won't be surprised by a sudden change in result values.
 
+#### 1. Upload your new model file with a new name, preferably one indicating a date or revision, e.g. "mymodel-201902".
+
+This can be done manually in [Hosted Data]({{site.url}}/data), or via the [File API](https://docs.algorithmia.com/#upload-a-file), or externally in your preferred cloud storage system if you have previously set up a [Data Connector]({{site.url}}{{site.baseurl}}/data/hosted).
+
+#### 2. Change your Algorithm's code to use this new filename.
+
+Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [git repo]({{site.url}}{{site.baseurl}}/algorithm-development/git).
+
+#### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
+
+Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithm Management API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management-api).  
 
 ### Updating your Model immediately, without changing Version Numbers
 
