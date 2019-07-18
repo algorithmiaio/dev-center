@@ -56,3 +56,23 @@ def apply(text):
 {% endhighlight %}
   
 We need to alter this code so that instead of only loading the model file once on warm-up, it periodically checks to see if a new version is available, and reloads the model.
+
+We do so by adding a function to reload the model. We'll call this function once, in the outer scope, to make sure it gets loaded at warm-up:
+
+{% highlight python %}
+import Algorithmia
+from sklearn.externals import joblib
+
+client = Algorithmia.client()
+
+def reload_model():
+    modelFile = client.file('data://username/demo/mymodel.pkl').getFile().name
+    model = joblib.load(modelFile)
+
+def apply(text):
+    return int(model.predict(text))
+    
+reload_model()
+{% endhighlight %}
+
+Next, we need to check for updates to the model, and calll reload_model() when it does.
