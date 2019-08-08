@@ -1,7 +1,7 @@
 ---
 layout: article
-title:  "Deploying Models via Jenkins CI/CD"
-excerpt: "Using CI/CD to (re)deploy your ML Models via Jenkins"
+title:  "Deploy Models via Jenkins CI/CD"
+excerpt: "Using CI/CD to (re)deploy your ML models via Jenkins"
 categories: algorithm-development
 tags: [algo-dev]
 show_related: true
