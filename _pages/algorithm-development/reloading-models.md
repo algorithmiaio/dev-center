@@ -99,3 +99,8 @@ def apply(text):
     
 reload_model()
 {% endhighlight %}
+
+
+### Alternative: use CI/CD for model redeployments
+
+If you wish to set up Continuous Integration/Deployment in a system such as Jenkins, see [Deploying Models via CI/CD]({{site.url}}{{site.baseurl}}/algorithm-development/ci-cd).
