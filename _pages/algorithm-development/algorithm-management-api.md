@@ -26,8 +26,6 @@ In addition, customers using Jenkins for their CI/CD can use our [Jenkins script
 
 For those using another CI/CD tool, or who simply wish to deploy from a simple pure-Python script, the Python scripts used in the Jenkins repo can be used in any Python-capable environment; they are not Jenkins-specific. Read through the [documentation](https://github.com/algorithmiaio/model-deployment/tree/master/jenkins_deploy_algorithmia#redeploying-retrained-models) to understand their use, then copy and modify the model_*.py files from that repo and modify them to point to your own Algorithm.
 
-#### TBD: reference https://algorithmia.com/developers/algorithm-development/ci-cd
-
 ### Step-by-step: Creating and Publishing an Algorithm via the API, using the official Python Client (recommended)
 
 {% if site.enterprise %}
