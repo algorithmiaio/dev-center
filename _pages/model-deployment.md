@@ -19,7 +19,7 @@ After you learn how to call algorithms, check out our <a href="http://docs.algor
 
 Pick any framework listed below for a customized guide, or start with our <a href="{{site.baseurl}}/model-deployment/scikit/">Scikit-Learn guide</a>, which includes a hands-on video.
 
-Also note that our [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) can be used to deploy and redeploy your model via Python scripts, Jupyter Notebook, or CI/CD such as Jenkins.
+Also note that our [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) can be used to deploy and redeploy your model via Python scripts, Jupyter Notebook, or CI/CD such as Jenkins or GitHub Actions.
 
 If you have any questions about Algorithmia or <a href="https://blog.algorithmia.com/how-we-hosted-our-model-as-a-microservice/">hosting your model</a> on the Algorithmia platform please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
