@@ -52,4 +52,4 @@ def apply(input):
         ctx.close()
 ``` 
 
-Build and test this Algorithm; assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.
+Build and test this Algorithm. Assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.
