@@ -169,6 +169,6 @@ If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/alg
 For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
 
 ## Working Demo
-If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/demo/scikitlearnbostonhousingdemo">Scikit-Learn-demo</a>
+If you would like to check this demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/allenai/constituency_parsing/source">constituency_parsing</a>
 
-That's it for hosting your <a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> model on Algorithmia!
+That's it for hosting your <a href="https://allennlp.org/">AllenNLP</a> model on Algorithmia!
