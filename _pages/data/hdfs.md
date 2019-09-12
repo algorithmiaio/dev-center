@@ -40,14 +40,38 @@ def apply(input):
 
 ```
 
+We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
+
+Instead, create a folder within your [Data Portal]({{site.baseurl}}/data/) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the data regardless of who calls it, but does not give them direct access to your hadoop cluster).
+
+Inside this folder, create a `.json` file containing your connection credentials:
+```
+{
+  "host":"hostname.example.com",
+  "username":"algorithmiauser",
+  "namenodeaddress":"192.0.2.0:9000"
+  "port": "9864"
+} 
+```
+
+And then you can simply use the data api to load the credentials file into your algorithm:
+```
+creds = client.file('data://.my/SomePrivateFolder/hdfs_credentials.json').getJson()
+```
+
+Which will return your credentials so you can inject them into your payload.
+
 So it would look like (note that this is not a runnable example):
 
 ```
 import Algorithmia
 import requests
 
-payload = {"op": "OPEN", "user.name": "algorithmiauser", "namenoderpcaddress": "192.0.2.0:9000"}
-r = requests.get("http:hostname.example.com:9864/webhdfs/v1/user/hduser/gutenberg/ldnotebooks.txt", params=payload, allow_redirects=True)
+# "http:hostname.example.com:9864/webhdfs/v1/user/hduser/gutenberg/ldnotebooks.txt"
+query_string = f"http:{creds["host"]}:{creds["port"]}/webhdfs/v1/user/hduser/gutenberg/ldnotebooks.txt"
+
+payload = {"op": "OPEN", "user.name": creds["username"], "namenoderpcaddress": creds["namenodeaddress"]}
+r = requests.get(query_string, params=payload, allow_redirects=True)
 
 # API calls will begin at the apply() method, with the request body passed as 'input'
 # For more details, see algorithmia.com/developers/algorithm-development/languages
