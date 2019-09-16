@@ -11,9 +11,10 @@ image:
 permalink: /platform/algorithm-profiles/
 redirect_from:
   - /basics/algorithm-profiles/
+  - /basics/algorithm_profiles/
 ---
 
-Each algorithm is showcased through its profile page. 
+Each algorithm is showcased through its profile page.
 
 Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of one of the most popular algorithms: [Nudity Detection i2v](https://algorithmia.com/algorithms/sfw/NudityDetectioni2v).
 
@@ -43,7 +44,7 @@ This description also appears under the title of the algorithm in search results
 
 Each Overview page displays the number of stars and followers an algorithm has.
 
-Following an algorithm will subscribe you to comments and help you keep up to date with activity on that particular algorithm. 
+Following an algorithm will subscribe you to comments and help you keep up to date with activity on that particular algorithm.
 
 Starring an algorithm is a social indicator saying you like the developer's algorithm.
 
@@ -89,7 +90,7 @@ Open source licensed algorithms will show an additional tab in the algorithm pro
 
 ### Profiles For Owned Algorithms
 
-Profiles for algorithms owned by your account, or one of your organizations, will have additional features. 
+Profiles for algorithms owned by your account, or one of your organizations, will have additional features.
 
 You will see two additional tabs: "Settings" and "Builds." Additionally, you will always see the "Source Code" tab.
 
@@ -97,7 +98,7 @@ You will see two additional tabs: "Settings" and "Builds." Additionally, you wil
 
 #### Algorithm Settings
 
-The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist). 
+The top of the Settings page includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist).
 
 You can also edit your algorithm's settings, including source code visibility, license, hardware type, and the other permissions listed [here]({{site.baseurl}}/platform/permissions).
 
@@ -112,7 +113,7 @@ Use with care: deleted algorithms are gone forever.
 
 #### Algorithm Builds
 
-The Builds page lists all builds of your algorithm, beginning with the most recent. 
+The Builds page lists all builds of your algorithm, beginning with the most recent.
 
 Builds are started when you push local commits to Algorithmia, or by using the "Build" option in the Algorithmia web IDE.
 
@@ -139,6 +140,6 @@ The details page contains the same information and options as the builds list en
 
 #### Wrapping Up
 
-You should now have a good idea of how to understand the algorithm profile page. 
+You should now have a good idea of how to understand the algorithm profile page.
 
 Be sure to [make your first API call]({{site.baseurl}}/getting-started/) or learn more about [algorithm pricing]({{site.baseurl}}/pricing/), [permissions]({{site.baseurl}}/basics/permissions/), and [versioning]({{site.baseurl}}/basics/versioning/).
