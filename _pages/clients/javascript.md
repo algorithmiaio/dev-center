@@ -9,6 +9,8 @@ image:
     teaser: /language_logos/js.svg
 redirect_from:
   - /algorithm-development/client-guides/javascript/
+  - /algorithm-development/guides/javascript/
+  - /algorithm-development/guides/javascript-guide/
   - /application-development/client-guides/javascript/
 ---
 

@@ -10,6 +10,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-java
 redirect_from:
   - /algorithm-development/client-guides/java/
+  - /algorithm-development/guides/java/
+  - /algorithm-development/guides/java-guide/
   - /application-development/client-guides/java/
 ---
 

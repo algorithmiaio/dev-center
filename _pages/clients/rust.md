@@ -11,6 +11,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-rust
 redirect_from:
   - /algorithm-development/client-guides/rust/
+  - /algorithm-development/guides/rust/
+  - /algorithm-development/guides/rust-guide/
   - /application-development/client-guides/rust/
 ---
 

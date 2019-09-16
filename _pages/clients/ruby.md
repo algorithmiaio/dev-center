@@ -11,6 +11,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-ruby
 redirect_from:
   - /algorithm-development/client-guides/ruby/
+  - /algorithm-development/guides/ruby/
+  - /algorithm-development/guides/ruby-guide/
   - /application-development/client-guides/ruby/
 ---
 

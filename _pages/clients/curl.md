@@ -8,6 +8,7 @@ show_related: true
 image:
     teaser: /language_logos/curl.svg
 redirect_from:
+  - /application-development/client-guides/cURL/
   - /application-development/client-guides/curl/
 ---
 

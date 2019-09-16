@@ -10,6 +10,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-scala
 redirect_from:
   - /algorithm-development/client-guides/scala/
+  - /algorithm-development/guides/scala/
+  - /algorithm-development/guides/scala-guide/
   - /application-development/client-guides/scala/
 ---
 

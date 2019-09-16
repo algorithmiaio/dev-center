@@ -11,6 +11,8 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-python
 redirect_from:
   - /algorithm-development/client-guides/python/
+  - /algorithm-development/guides/python/
+  - /algorithm-development/guides/python-guide/
   - /application-development/client-guides/python/
 ---
 
