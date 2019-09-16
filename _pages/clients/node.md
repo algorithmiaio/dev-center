@@ -11,6 +11,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-nodejs
 redirect_from:
   - /application-development/client-guides/node/
+  - /application-development/guides/node/
 ---
 
 

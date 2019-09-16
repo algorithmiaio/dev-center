@@ -14,6 +14,7 @@ redirect_from:
   - /algorithm-development/guides/ruby/
   - /algorithm-development/guides/ruby-guide/
   - /application-development/client-guides/ruby/
+  - /application-development/guides/ruby/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Ruby client to call algorithms and manage your data
