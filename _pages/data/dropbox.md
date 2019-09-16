@@ -10,6 +10,7 @@ author: steph_kim
 image:
     teaser: /language_logos/dropbox.svg
 redirect_from:
+  - /application-development/data-connectors/dropbox-guide/
   - /application-development/data-sources/dropbox-guide/
 ---
 

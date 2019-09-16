@@ -11,6 +11,7 @@ redirect_from:
   - /algorithm-development/client-guides/
   - /algorithm-development/guides/
   - /application-development/client-guides/
+  - /application-development/guides/
 ---
 
 
