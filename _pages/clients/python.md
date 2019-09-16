@@ -9,6 +9,8 @@ show_related: true
 image:
     teaser: /language_logos/python.svg
 repository: https://github.com/algorithmiaio/algorithmia-python
+redirect_from:
+  - /algorithm-development/client-guides/python/
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/bZB2vu0v6A0" %}

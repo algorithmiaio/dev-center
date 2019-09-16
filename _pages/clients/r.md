@@ -9,6 +9,8 @@ author: steph_kim
 image:
     teaser: /language_logos/r.svg
 repository: https://github.com/algorithmiaio/algorithmia-r
+redirect_from:
+  - /algorithm-development/client-guides/r/
 ---
 
 

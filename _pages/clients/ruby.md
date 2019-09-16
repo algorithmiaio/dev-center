@@ -9,6 +9,8 @@ show_related: true
 image:
     teaser: /language_logos/ruby.svg
 repository: https://github.com/algorithmiaio/algorithmia-ruby
+redirect_from:
+  - /algorithm-development/client-guides/ruby/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Ruby client to call algorithms and manage your data
@@ -141,7 +143,7 @@ if (client.file(text_file).exists? == TRUE)
 end
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
