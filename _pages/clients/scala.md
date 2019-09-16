@@ -10,6 +10,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-scala
 redirect_from:
   - /algorithm-development/client-guides/scala/
+  - /application-development/client-guides/scala/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Scala Client to call algorithms and manage data through the Algorithmia platform.

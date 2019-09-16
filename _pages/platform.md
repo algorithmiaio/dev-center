@@ -5,6 +5,7 @@ show_related: false
 excerpt: "Platform"
 redirect_from:
  - /basics/
+ - /application-development/basic-guides/
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}

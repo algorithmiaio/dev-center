@@ -11,6 +11,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-rust
 redirect_from:
   - /algorithm-development/client-guides/rust/
+  - /application-development/client-guides/rust/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Rust Client to call algorithms and manage your data

@@ -9,6 +9,7 @@ show_related: false
 author: steph_kim
 redirect_from:
   - /algorithm-development/client-guides/
+  - /application-development/client-guides/
 ---
 
 

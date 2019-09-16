@@ -10,6 +10,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-java
 redirect_from:
   - /algorithm-development/client-guides/java/
+  - /application-development/client-guides/java/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Java Client to call algorithms and manage data through the Algorithmia platform.

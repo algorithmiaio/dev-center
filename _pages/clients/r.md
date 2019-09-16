@@ -11,6 +11,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-r
 redirect_from:
   - /algorithm-development/client-guides/r/
+  - /application-development/client-guides/r/
 ---
 
 

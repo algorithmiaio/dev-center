@@ -11,6 +11,7 @@ image:
     teaser: /language_logos/algo_hosted.svg
 redirect_from:
   - /algorithm-development/data-sources/hosted-data-guide/
+  - /application-development/data-sources/hosted-data-guide/
 ---
 
 

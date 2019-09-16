@@ -11,6 +11,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-ruby
 redirect_from:
   - /algorithm-development/client-guides/ruby/
+  - /application-development/client-guides/ruby/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Ruby client to call algorithms and manage your data

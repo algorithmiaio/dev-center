@@ -9,6 +9,8 @@ tags: [clients, integrations]
 show_related: true
 image:
     teaser: /language_logos/aws_lambda.svg
+redirect_from:
+  - /application-development/client-guides/aws-lambda/
 ---
 
 This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).
@@ -38,7 +40,7 @@ Algorithmia and Lambda make it easy to rapidly build and deploy serverless solut
 * Pick "Blueprints"
 <!-- "Browse serverless app repository" -->
 * Type `Algorithmia` into the filter
-* set an Application Name and Topic, and click "Deploy" 
+* set an Application Name and Topic, and click "Deploy"
 * wait for AWS to deploy, then click "algorithmia" under the Resources section
 * click "Add Trigger" and configure as needed for your workflow
 * click on the Lambda icon next to "serverless-algorithmia-YourFunctionName" at the top

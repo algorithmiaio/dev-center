@@ -9,6 +9,8 @@ show_related: true
 image:
     teaser: /language_logos/node.svg
 repository: https://github.com/algorithmiaio/algorithmia-nodejs
+redirect_from:
+  - /application-development/client-guides/node/
 ---
 
 
