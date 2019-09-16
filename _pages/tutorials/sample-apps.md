@@ -7,6 +7,8 @@ show_related: false
 excerpt: "All the sample apps"
 image:
     teaser: /icons/sample apps.svg
+redirect_from:
+  - /samples/
 ---
 
 

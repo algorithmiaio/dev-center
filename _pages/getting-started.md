@@ -7,6 +7,8 @@ show_related: true
 author: steph_kim
 image:
   teaser: /icons/hexicon_desktop_purple.svg
+redirect_from:
+  - /basics/getting-started/
 ---
 
 Welcome to Getting Started with the Algorithmia API. This guide will show you how to call an algorithm via our API in a few lines of code using our supported language clients.
