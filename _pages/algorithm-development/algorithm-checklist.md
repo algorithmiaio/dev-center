@@ -11,6 +11,7 @@ permalink: /algorithm-development/algorithm-checklist/
 redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-checklist/
   - /basics/algorithm_checklist/
+  - /guides/algorithm_checklist/
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.
