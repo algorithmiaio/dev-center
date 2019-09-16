@@ -65,7 +65,7 @@ module Jekyll
         href = if item['url'].start_with?('http://', 'https://')
           item['url']
         else
-          "#{@baseurl}#{item['url']}"
+          "#{@baseurl}#{item['url'] == '/' ? '' : item['url']}"
         end
 
         html << "<a href='#{href}' #{target}>#{item['title']}#{icon}</a>"
@@ -101,9 +101,9 @@ module Jekyll
     end
 
     def is_ancestor(page_url, prefix, is_category)
-      if prefix == '/' && page_url == '/'
+      if prefix == '' && page_url == '/'
         true
-      elsif prefix == '/'
+      elsif prefix == ''
         false
       elsif page_url == prefix
         true

@@ -268,7 +268,7 @@ In this guide we covered how to create an algorithm, work with different types o
 For more resources:
 
 * <a href="{{site.baseurl}}/clients/node">Algorithmia Client NodeJS Docs</a>
-* [Hosted Data Source](/developers/data/)
+* [Hosted Data Source](/developers/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
 * <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="fa fa-external-link"></i></a>
 
