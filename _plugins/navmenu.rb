@@ -40,7 +40,7 @@ module Jekyll
       html = []
       html << '<ul class="nav sidebar">'
       items.each do |item|
-        prefix = item['url'].chomp('/') + '/'
+        prefix = item['url'].chomp('/')
 
         is_category = item['children'] && item['children'].count > 0
         is_active = is_ancestor(page_url, prefix, is_category)
