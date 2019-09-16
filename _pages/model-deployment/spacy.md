@@ -28,9 +28,9 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 
 
 ## Create your Algorithm
-Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
+Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
+Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -123,7 +123,7 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
+If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 ## Working Demo
 

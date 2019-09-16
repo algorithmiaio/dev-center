@@ -15,7 +15,7 @@ redirect_from:
 
 One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.
 
-This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages/">Algorithm Development Languages</a>.
+This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see the [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api).
 {: .notice-info}
@@ -45,7 +45,7 @@ If you belong to an organization then you'll see this option before Algorithmia 
 
 **Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
 
-For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages/">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
 
 **Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
 
@@ -166,7 +166,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 ### Editing Your Algorithm
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API.
-You can also <a href="{{site.baseurl}}/algorithm-development/git/">use Git to push directly to Algorithmia</a> from your current workflow.
+You can also <a href="{{site.baseurl}}/algorithm-development/git">use Git to push directly to Algorithmia</a> from your current workflow.
 
 ### Calling Other Algorithms
 
@@ -189,8 +189,8 @@ If you have ever published your Algorithm with "Public" selected, it cannot be d
 
 ## Wrapping Up
 
-Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API! Get inspired by checking out our <a href="{{site.baseurl}}/tutorials/recipes/">Recipes</a>.
+Now that you've published your first simple algorithm on the platform, you can feel empowered to add even more algorithms. You can write them from scratch, adopt and modify open source algorithms, or even chain multiple pre-existing algorithms together to make a micro service you can call with the Algorithmia API! Get inspired by checking out our <a href="{{site.baseurl}}/tutorials/recipes">Recipes</a>.
 
 ## Next Steps
 
-After you've finished this tutorial, you'll probably want to check out the <a href="{{site.baseurl}}/algorithm-development/languages/">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.
+After you've finished this tutorial, you'll probably want to check out the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a> for how to write algorithms in the language you prefer, such as R, Python, Rust, Ruby, Java, Scala, or JavaScript.

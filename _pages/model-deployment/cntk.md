@@ -34,7 +34,7 @@ Here you'll want to create a data collection to host your model.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
@@ -191,7 +191,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 
-For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo">creating and publishing your algorithm</a>
 
 
 [whl]: https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python

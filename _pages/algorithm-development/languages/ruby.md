@@ -11,7 +11,7 @@ image:
 ---
 
 
-Before you get started learning about Ruby algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Ruby algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -30,12 +30,12 @@ Algorithmia makes a number of libraries available to make algorithm development 
 
 The full <a href="http://ruby-doc.org/core-2.2.0/" target="_blank">Ruby 2.2 language and standard library</a> is available for you to use in your algorithms.
 
-Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Ruby Client</a>.
+Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/ruby">Algorithmia Ruby Client</a>.
 
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -80,7 +80,7 @@ Your algorithm will output a JSON formatted object, which the user will consume 
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
 
 Note, if the input to your algorithm is a bare string (e.g. `"world"`), then `input.instance_of? String` will be true.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
 
@@ -191,7 +191,7 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/ruby">Algorithmia Ruby Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/).
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -209,7 +209,7 @@ In order to provide the user with useful feedback, raise an Error with a meaning
 	end
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
@@ -245,7 +245,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{site.baseurl}}/clients/ruby/">Algorithmia Client Ruby Docs</a>
+* <a href="{{site.baseurl}}/clients/ruby">Algorithmia Client Ruby Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?ruby)
 * <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 Docs</a>

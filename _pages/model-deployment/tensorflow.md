@@ -145,7 +145,7 @@ Now that you've trained and saved your Tensorflow model elsewhere, we'll deploy 
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3/">S3</a> or <a href="{{site.baseurl}}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb/) how we connected to a DynamoDB databasee.
+In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3">S3</a> or <a href="{{site.baseurl}}/data/dropbox">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb/) how we connected to a DynamoDB databasee.
 
 First, you'll want to create a data collection to host your graph and variables.
 
@@ -157,7 +157,7 @@ First, you'll want to create a data collection to host your graph and variables.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>.
+For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
 Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
 
@@ -172,12 +172,12 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 ## Create your Algorithm
 
-Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
+Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
 Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
 {: .notice-info}
 
-Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
+Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -524,7 +524,7 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
+If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 If you want to have a better idea of what a finished tensorflow algorithm looks like, check out: <a href="https://algorithmia.com/algorithms/deeplearning/InceptionNet/edit">InceptionNet</a> or one of the demos for <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU</a> and <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow MNIST GPU</a> already mentioned in this guide.
 

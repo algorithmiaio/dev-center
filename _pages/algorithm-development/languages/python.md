@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/python.svg
 ---
 
-Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -37,11 +37,11 @@ We'll continue to add variants as needed, and broaden GPU support.
 You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
-via the <a href="{{site.baseurl}}/clients/python/">Algorithmia Python Client</a>.
+via the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -96,7 +96,7 @@ This path is based on your Algorithmia user name and the name of your algorithm,
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
 
 {% highlight python %}
 import Algorithmia
@@ -227,7 +227,7 @@ client.file(file_uri).putFile(tempfile)
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
 You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
@@ -321,7 +321,7 @@ except Exception as error:
     print(error)
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
@@ -333,7 +333,7 @@ Both links will go over important best practices such as how to create a good al
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
-To learn how to publish your algorithm: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+To learn how to publish your algorithm: <a href="{{site.baseurl}}/algorithm-development/your-first-algo">creating and publishing your algorithm</a>
 
 ## Caveats
 #### Algorithms with multiple files
@@ -379,7 +379,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{site.baseurl}}/clients/python/">Algorithmia Client Python Docs</a>
+* <a href="{{site.baseurl}}/clients/python">Algorithmia Client Python Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>

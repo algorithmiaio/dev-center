@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/java.svg
 ---
 
-Before you get started learning about Java algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Java algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -31,11 +31,11 @@ The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{site.baseurl}}/clients/java/">Algorithmia Java Client</a>.
+via the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -88,7 +88,7 @@ This path is based on your Algorithmia user name and the name of your algorithm,
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
 
 This example shows how to get the value of the key "URL" from a Map object that the user passes in when calling the algorithm:
 
@@ -273,7 +273,7 @@ client.file(file_uri).put(tempfile);
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/java/">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/).
 
 Here is an example of creating an algorithm that relies on data from another algorithm:
 
@@ -351,7 +351,7 @@ throw new AlgorithmException("Invalid graph structure");
 
 Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
-For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 

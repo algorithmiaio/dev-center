@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/js.svg
 ---
 
-Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -31,11 +31,11 @@ The full <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank"
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{site.baseurl}}/clients/node/">Algorithmia NodeJS Client</a>.
+via the <a href="{{site.baseurl}}/clients/node">Algorithmia NodeJS Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
@@ -85,7 +85,7 @@ Your algorithm will output a JSON formatted object, returned via the callback fu
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
 
 Note, that if the input to your algorithm is a bare string (e.g. `"world"`), then `typeof input` will be 'string'.  However, we do not recommend accepting bare strings (JSON-encoded Objects are preferable), so we'll return an error message in that case.
 
@@ -213,7 +213,7 @@ client.dir(dir_uri).putFile(tempfile);
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/node/">Algorithmia NodeJS Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/node">Algorithmia NodeJS Client</a> which is automatically available to any algorithm you create on the Algorithmia platform.  For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/?nodejs">Data API docs</a>.
 
 When designing your algorithm, don't forget that there are special data directories, `.session` and `.algo`, that are available only to algorithms to help you manage data over the course of the algorithm execution.
 
@@ -231,7 +231,7 @@ try {
 }
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
@@ -267,7 +267,7 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
-* <a href="{{site.baseurl}}/clients/node/">Algorithmia Client NodeJS Docs</a>
+* <a href="{{site.baseurl}}/clients/node">Algorithmia Client NodeJS Docs</a>
 * [Hosted Data Source](/developers/data/)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
 * <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="fa fa-external-link"></i></a>
