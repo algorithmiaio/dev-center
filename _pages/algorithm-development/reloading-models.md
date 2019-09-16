@@ -8,7 +8,7 @@ show_related: true
 author: jpeck
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/reloading-models/
+permalink: /algorithm-development/reloading-models
 ---
 
 Most Machine Learning Models will change at some point, and when they do, you want to make your retrained model available quickly and efficiently.

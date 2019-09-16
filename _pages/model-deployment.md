@@ -6,7 +6,7 @@ nav_overview: "Supported Frameworks"
 nav_index: 0
 show_related: false
 author: steph_kim
-permalink: /model-deployment/
+permalink: /model-deployment
 redirect_from:
   - /algorithm-development/model-guides/
 ---

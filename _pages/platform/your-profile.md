@@ -8,7 +8,7 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /platform/your-profile/
+permalink: /platform/your-profile
 redirect_from:
   - /basics/your-profile/
 ---

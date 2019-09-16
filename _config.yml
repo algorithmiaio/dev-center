@@ -27,7 +27,7 @@ enterprise: false
 collections:
   pages:
     output: true
-    permalink: /:path/
+    permalink: /:path
 
 # Jekyll configuration
 sass:

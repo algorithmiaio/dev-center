@@ -8,7 +8,7 @@ nav_index: 0
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/your-first-algo/
+permalink: /algorithm-development/your-first-algo
 redirect_from:
   - /algorithm-development/algorithm-basics/your-first-algo/
 ---

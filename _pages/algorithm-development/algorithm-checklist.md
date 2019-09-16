@@ -7,7 +7,7 @@ tags: [algo-dev]
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-checklist/
+permalink: /algorithm-development/algorithm-checklist
 redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-checklist/
 ---

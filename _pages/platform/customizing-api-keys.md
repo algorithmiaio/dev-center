@@ -8,7 +8,7 @@ tags: [basics]
 show_related: true
 image:
   teaser: /icons/algo.svg
-permalink: /platform/customizing-api-keys/
+permalink: /platform/customizing-api-keys
 redirect_from:
   - /basics/customizing-api-keys/
 ---

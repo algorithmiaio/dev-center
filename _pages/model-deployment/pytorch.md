@@ -5,7 +5,7 @@ excerpt: "Deploying your PyTorch model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
-permalink: /model-deployment/pytorch/
+permalink: /model-deployment/pytorch
 redirect_from:
   - /algorithm-development/model-guides/pytorch/
 image:

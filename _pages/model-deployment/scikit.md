@@ -6,7 +6,7 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
-permalink: /model-deployment/scikit/
+permalink: /model-deployment/scikit
 redirect_from:
   - /algorithm-development/model-guides/scikit/
 image:

@@ -8,7 +8,7 @@ show_related: true
 author: besir
 image:
   teaser: /icons/algo.svg
-permalink: /algorithm-development/algorithm-errors/
+permalink: /algorithm-development/algorithm-errors
 redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-errors/
 ---

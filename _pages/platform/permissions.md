@@ -8,7 +8,7 @@ tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /platform/permissions/
+permalink: /platform/permissions
 redirect_from:
   - /basics/permissions/
 ---
