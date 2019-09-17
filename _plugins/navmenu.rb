@@ -43,7 +43,7 @@ module Jekyll
         prefix = item['url'].chomp('/')
 
         is_category = item['children'] && item['children'].count > 0
-        is_active = is_ancestor(page_url, prefix, is_category)
+        is_active = is_ancestor(page_url.chomp('/'), prefix, is_category)
 
         if is_active && is_category
           html << '<li class="active category">'
@@ -65,7 +65,7 @@ module Jekyll
         href = if item['url'].start_with?('http://', 'https://')
           item['url']
         else
-          "#{@baseurl}#{item['url'] == '/' ? '' : item['url']}"
+          "#{@baseurl}#{item['url'] == '/' ? '' : prefix}"
         end
 
         html << "<a href='#{href}' #{target}>#{item['title']}#{icon}</a>"
@@ -101,7 +101,7 @@ module Jekyll
     end
 
     def is_ancestor(page_url, prefix, is_category)
-      if prefix == '' && page_url == '/'
+      if prefix == '' && page_url == ''
         true
       elsif prefix == ''
         false
