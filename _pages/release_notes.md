@@ -8,7 +8,7 @@ image:
     teaser: /icons/algo.svg
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Banner.png" alt="1904 Release Notes Banner" class="screenshot">
+# Algorithmia Enterprise Release Notes 19.05 # 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Updates_List.png" alt="1904 Release Notes Banner" class="screenshot">
 
