@@ -7,7 +7,7 @@ tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /algorithm-development/git
+permalink: /algorithm-development/git/
 redirect_from:
   - /algorithm-development/algorithm-basics/git/
 ---

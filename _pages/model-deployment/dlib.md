@@ -6,7 +6,7 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
-permalink: /model-deployment/dlib
+permalink: /model-deployment/dlib/
 redirect_from:
   - /algorithm-development/model-guides/dlib/
 image:

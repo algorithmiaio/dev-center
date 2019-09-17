@@ -8,7 +8,7 @@ tags: [basics]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /platform/organizations
+permalink: /platform/organizations/
 redirect_from:
   - /teams/
 ---

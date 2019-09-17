@@ -8,7 +8,7 @@ show_related: true
 author: jpeck
 image:
   teaser: /language_logos/jenkins.png
-permalink: /algorithm-development/ci-cd
+permalink: /algorithm-development/ci-cd/
 ---
 
 Continuous Integration & Deployment are standard practice in the world of software development, and Machine Learning is no exception: you need a robust CI/CD workflow to ensure that your latest models are deployed efficiently and correctly into production.

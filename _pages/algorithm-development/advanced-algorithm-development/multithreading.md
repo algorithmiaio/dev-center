@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Multithreading"
-permalink: algorithm-development/advanced-algorithm-development/multithreading
+permalink: algorithm-development/advanced-algorithm-development/multithreading/
 excerpt: "Multithreading: call many Algorithms in parallel, from a parent Algorithm or Client"
 excerpt-short: "Multithreading: call many Algorithms in parallel"
 categories: [algo-dev]

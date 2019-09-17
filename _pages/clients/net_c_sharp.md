@@ -2,7 +2,7 @@
 layout: article
 title: ".NET / C#"
 excerpt: "Add machine learning to your .NET / C# app with Algorithmia"
-permalink: clients/c_sharp_net
+permalink: clients/c_sharp_net/
 categories: clients
 tags: [clients]
 show_related: true

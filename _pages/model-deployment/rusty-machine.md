@@ -6,7 +6,7 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
-permalink: /model-deployment/rusty-machine
+permalink: /model-deployment/rusty-machine/
 redirect_from:
   - /algorithm-development/model-guides/rusty-machine/
 image:

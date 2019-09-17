@@ -8,7 +8,7 @@ tags: [basics]
 show_related: true
 image:
     teaser: /icons/algo.svg
-permalink: /platform/algorithm-profiles
+permalink: /platform/algorithm-profiles/
 redirect_from:
   - /basics/algorithm-profiles/
 ---

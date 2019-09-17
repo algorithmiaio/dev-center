@@ -6,7 +6,7 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: besir_kurtulmus
-permalink: /model-deployment/mxnet
+permalink: /model-deployment/mxnet/
 redirect_from:
   - /algorithm-development/model-guides/mxnet/
 image:

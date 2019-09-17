@@ -6,7 +6,7 @@ categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: field_cady
-permalink: /model-deployment/allennlp
+permalink: /model-deployment/allennlp/
 redirect_from:
   - /algorithm-development/model-guides/allennlp/
 image:
