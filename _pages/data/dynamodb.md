@@ -13,7 +13,7 @@ image:
 
 Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/sdk-for-python/) package and securely storing their access credentials in a data collection.
 
-Begin by creating a [collection]({{site.url}}/data/hosted/) named "DynamoDBCredentials", and uploading a file "credentials.json" with the following structure (don't forget to set [your id, secret, and region](https://console.aws.amazon.com/iam/home?#/security_credentials)):
+Begin by creating a [collection]({{site.url}}/data/hosted) named "DynamoDBCredentials", and uploading a file "credentials.json" with the following structure (don't forget to set [your id, secret, and region](https://console.aws.amazon.com/iam/home?#/security_credentials)):
 
 ```json
 {
@@ -25,7 +25,7 @@ Begin by creating a [collection]({{site.url}}/data/hosted/) named "DynamoDBCrede
 }
 ```
 
-Next, you can test it by calling our sample algorithm, [DynamoDB]({{site.url}}/algorithms/util/DynamoDB/), which allows you to scan a table in your DynamoDB database. Give it the name of any table in your DB, and it will return a list of all the items present.
+Next, you can test it by calling our sample algorithm, [DynamoDB]({{site.url}}/algorithms/util/DynamoDB), which allows you to scan a table in your DynamoDB database. Give it the name of any table in your DB, and it will return a list of all the items present.
 
 Copy the [source code]({{site.url}}/algorithms/util/DynamoDB/source) of that algorithm, and use it as a template to access DynamoDB from within your own algorithm:
 

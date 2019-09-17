@@ -54,7 +54,7 @@ When you have an R model that has been serialized as an .rds file, you can deplo
 saveRDS(iris_fit_naive, "./naive_bayes_iris.rds")
 {% endhighlight %}
 
-Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{site.baseurl}}/clients/r/) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{site.baseurl}}/data/).
+Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{site.baseurl}}/clients/r) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{site.baseurl}}/data).
 
 Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
 
@@ -369,7 +369,7 @@ For more information on error handling see the <a href="{{site.baseurl}}/algorit
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -389,7 +389,7 @@ Sample I/O is where you'll create your sample input and output for the user to t
 
 Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{site.baseurl}}/pricing) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
@@ -403,6 +403,6 @@ In this guide we covered how to create an algorithm, work with different types o
 ## Additional Resources
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
-* [Algorithmia R client documentation]({{site.baseurl}}/clients/r/)
-* [Hosted Data Source]({{site.baseurl}}/data/)
+* [Algorithmia R client documentation]({{site.baseurl}}/clients/r)
+* [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?r)

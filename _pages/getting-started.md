@@ -38,7 +38,7 @@ For a given user and algorithm name, API calls are made to the following URL:
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
-If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles/) guide.
+If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles) guide.
 {: .notice-info}
 
 ## Making your first API call
@@ -64,7 +64,7 @@ We'll make our first call with the demo algorithm ["Hello"](/algorithms/demo/Hel
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
 
-You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients/) for details on how to call algorithms and work with data in your language of choice.
+You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 
 {% raw %}
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
@@ -421,4 +421,4 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
-For more thorough tutorials in the language of your choice go back to <a href="{{site.baseurl}}/clients">Client Guides</a> or if you want more information about pricing, check out our [Pricing Guide]({{site.baseurl}}/pricing/).
+For more thorough tutorials in the language of your choice go back to <a href="{{site.baseurl}}/clients">Client Guides</a> or if you want more information about pricing, check out our [Pricing Guide]({{site.baseurl}}/pricing).

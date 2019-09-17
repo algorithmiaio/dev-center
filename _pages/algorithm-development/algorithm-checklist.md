@@ -51,7 +51,7 @@ It is also helpful to explain what the output of the algorithm should be. If you
 
 #### Configure error handling
 
-To make your algorithm easy to use, it's key to implement informative error handling. Check out the [Algorithmia Guide to Better Error Handling]({{site.baseurl}}/algorithm-development/algorithm-errors/) for some guidance. Extensive functionality is only available in Python for now, but we're working on adding support for other languages.
+To make your algorithm easy to use, it's key to implement informative error handling. Check out the [Algorithmia Guide to Better Error Handling]({{site.baseurl}}/algorithm-development/algorithm-errors) for some guidance. Extensive functionality is only available in Python for now, but we're working on adding support for other languages.
 
 #### Link to any papers or external documentation
 

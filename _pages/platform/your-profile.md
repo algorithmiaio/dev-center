@@ -45,7 +45,7 @@ The number of calls is the full number of the times that you've called the algor
 
 The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column.
 
-For more information about pricing check out [Pricing]({{site.baseurl}}/pricing/).
+For more information about pricing check out [Pricing]({{site.baseurl}}/pricing).
 
 ### Earnings
 

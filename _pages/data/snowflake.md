@@ -13,7 +13,7 @@ image:
 
 Algorithms can easily access databases hosted by Snowflake Computing using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/) .
 
-Begin by creating a [collection]({{site.url}}/data/hosted/) named "SnowflakeCredentials", and uploading a file "credentials.json" with the following structure (see their docs to find your [Account Name](https://docs.snowflake.net/manuals/user-guide/connecting.html)):
+Begin by creating a [collection]({{site.url}}/data/hosted) named "SnowflakeCredentials", and uploading a file "credentials.json" with the following structure (see their docs to find your [Account Name](https://docs.snowflake.net/manuals/user-guide/connecting.html)):
 
 ```json
 {
