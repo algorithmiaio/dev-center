@@ -95,7 +95,7 @@ You can also use one of the clients to make your call. See below for examples or
 input = <span class="hljs-string">"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>
 client = Algorithmia.client(<span class="hljs-string">'<span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>'</span>)
 algo = client.algo(<span class="hljs-string">'demo/Hello/'</span>)
-<span class="hljs-keyword">print</span> algo.pipe(input)</code></pre>
+<span class="hljs-keyword">print</span>(algo.pipe(input))</code></pre>
   <textarea id="python-copy-text" class="copy-text">import Algorithmia
 
 input = "YOUR_USERNAME"
