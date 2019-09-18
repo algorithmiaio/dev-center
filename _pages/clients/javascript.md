@@ -75,10 +75,10 @@ Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} A
 
 ### Note: Working with Files
 
-Because of security concerns, the JavaScript client does not implement the [Data API](http://docs.algorithmia.com/#data-api-specification) which other clients use to move files into and out of [Data Sources]({{site.baseurl}}/data/). This can be a problem if you call an algorithm which writes its output to a file (instead of returning it directly).  However, there are workarounds:
+Because of security concerns, the JavaScript client does not implement the [Data API](http://docs.algorithmia.com/#data-api-specification) which other clients use to move files into and out of [Data Sources]({{site.baseurl}}/data). This can be a problem if you call an algorithm which writes its output to a file (instead of returning it directly).  However, there are workarounds:
 
 For smaller files, the [util/Cat]({{site.url}}/algorithms/util/Cat) and [ANaimi/Base64DataConverter](https://algorithmia.com/algorithms/ANaimi/Base64DataConverter) algorithms can be used for retrieving file contents.
 
-For larger files, you can set up an [Amazon S3 Connector]({{site.baseurl}}/data/s3/) to an S3 bucket with public read access. Then, direct the algorithms you call to write their output into that S3 connector (or use [s3utilities/UploadFiletoS3/](https://algorithmia.com/algorithms/s3utilities/UploadFiletoS3/) to move it there). Once it is in the S3 bucket, you can access the file via its publicly-readable URL.
+For larger files, you can set up an [Amazon S3 Connector]({{site.baseurl}}/data/s3) to an S3 bucket with public read access. Then, direct the algorithms you call to write their output into that S3 connector (or use [s3utilities/UploadFiletoS3/](https://algorithmia.com/algorithms/s3utilities/UploadFiletoS3/) to move it there). Once it is in the S3 bucket, you can access the file via its publicly-readable URL.
 
-Alternately, you could implement a small piece of backend code in [another language]({{site.baseurl}}/clients/) and use it to retrieve the file for you.
+Alternately, you could implement a small piece of backend code in [another language]({{site.baseurl}}/clients) and use it to retrieve the file for you.

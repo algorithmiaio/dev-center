@@ -58,7 +58,7 @@ Includes number of API calls, and average duration of API calls.
 
 Includes information about licensing, internet accessibility, GPU environments, and more.
 
-For a deeper dive see: [permissions]({{site.baseurl}}/basics/permissions/).
+For a deeper dive see: [permissions]({{site.baseurl}}/basics/permissions).
 
 #### Run An Example
 
@@ -142,4 +142,4 @@ The details page contains the same information and options as the builds list en
 
 You should now have a good idea of how to understand the algorithm profile page.
 
-Be sure to [make your first API call]({{site.baseurl}}/getting-started/) or learn more about [algorithm pricing]({{site.baseurl}}/pricing/), [permissions]({{site.baseurl}}/basics/permissions/), and [versioning]({{site.baseurl}}/basics/versioning/).
+Be sure to [make your first API call]({{site.baseurl}}/getting-started) or learn more about [algorithm pricing]({{site.baseurl}}/pricing), [permissions]({{site.baseurl}}/basics/permissions), and [versioning]({{site.baseurl}}/basics/versioning).

@@ -34,7 +34,7 @@ Here you'll want to create a data collection to host your model.
 
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
 
-- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>
+- After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
@@ -77,7 +77,7 @@ Here is where you load your model, which will be called by the `apply()` functio
 
 Our recommendation is to preload your model in a separate function before the apply(). The reasoning behind this is because when your model is first loaded it can take some time to load depending on the file size. However, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded!
 
-Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a JSON blob passing in a csv file hosted on [Algorithmia, Amazon S3, or Dropbox]({{site.baseurl}}/data/).
+Note that you always want to create valid JSON input and output in your algorithm. For example this algorithm takes a JSON blob passing in a csv file hosted on [Algorithmia, Amazon S3, or Dropbox]({{site.baseurl}}/data).
 {: .notice-info}
 
 ### Example Input:
@@ -184,14 +184,14 @@ Sample I/O is where you'll create your sample input and output for the user to t
 
 Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{site.baseurl}}/pricing) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
 
-For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo/">creating and publishing your algorithm</a>
+For more information and detailed steps: <a href="{{site.baseurl}}/algorithm-development/your-first-algo">creating and publishing your algorithm</a>
 
 
 [whl]: https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python

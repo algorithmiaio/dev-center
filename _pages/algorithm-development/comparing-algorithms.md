@@ -27,7 +27,7 @@ Here we look at the top-1, top-3, and top-5 prediction accuracy rates for image 
 Want to use a general purpose image classifier for a narrow task? Evaluations like these will definitely help!
 
 **Note:** Things you should have before we begin:
-- A working knowledge of [algorithm development on Algorithmia]({{site.url}}{{site.baseurl}}/algorithm-development/).
+- A working knowledge of [algorithm development on Algorithmia]({{site.url}}{{site.baseurl}}/algorithm-development).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
 - A testing dataset (or data point) you plan to use to compare algorithms, ideally already in the [data api]({{site.url}}{{site.baseurl}}/data/hosted).
 - Some criteria you want to compare your algorithms with.

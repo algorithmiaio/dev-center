@@ -170,5 +170,5 @@ Browse through [Algorithmia's microservice catalog](/algorithms) to see what oth
 
 ### Further Reading:
 
-* [The Algorithmia Swift Client]({{site.baseurl}}/clients/swift/)
+* [The Algorithmia Swift Client]({{site.baseurl}}/clients/swift)
 * <a href="https://github.com/algorithmiaio/algorithmia-swift">[Algorithmia Swift Client Source Code](https://github.com/algorithmiaio/algorithmia-swift) <i class="fa fa-external-link"></i>

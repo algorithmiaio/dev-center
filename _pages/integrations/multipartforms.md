@@ -27,7 +27,7 @@ The code below uses Python on a Flask server, but this could as easily be NodeJS
 
 Note that we included the API Key as a user-fillable value in the form. Another option would be to omit this field and hard-code the API Key into the Python code below.
 
-We then get the uploaded file from request.files, and put it into our [Hosted Data]({{site.baseurl}}/data/) using the Algorithmia client (creating a collection called "temp" if needed). The function uuid4() lets us create a unique name so we don't overwrite any other files. 
+We then get the uploaded file from request.files, and put it into our [Hosted Data]({{site.baseurl}}/data) using the Algorithmia client (creating a collection called "temp" if needed). The function uuid4() lets us create a unique name so we don't overwrite any other files. 
 
 Next, we call the Algorithm we want to run -- in this case, ColorfulImageColorization. It returns the URI of a file, so we get that via the Algorithmia client, and send it back to the caller as a response.
 

@@ -39,7 +39,7 @@ You'll want to do the training and saving of your model on your local machine, o
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
 
-In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted/">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3/">S3</a> or <a href="{{site.baseurl}}/data/dropbox/">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb/) how we connected to a DynamoDB databasee.
+In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted">Hosted Data Collection</a>, but you can host it in <a href="{{site.baseurl}}/data/s3">S3</a> or <a href="{{site.baseurl}}/data/dropbox">Dropbox</a> as well. Alternatively, if your data lies in a database, [check out]({{site.baseurl}}/data/dynamodb) how we connected to a DynamoDB database.
 
 First, you'll want to create a data collection to host your pre-trained model.
 
@@ -51,7 +51,7 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
-For more information check out: <a href="{{site.baseurl}}/data/hosted/">Data Collection Types</a>.
+For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
 Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri">Data API</a> to create data collections and upload files.
 
@@ -65,9 +65,9 @@ Next, upload your pickled model to your newly created data collection.
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/pytorch_add_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
-Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
+Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor. If you've chosen the Python 3.X beta PyTorch version when you created your algorithm, then you'll see more verbose boilerplate code. Otherwise it will be a simple "Hello World" algorithm.
+Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor. If you've chosen the Python 3.X beta PyTorch version when you created your algorithm, then you'll see more verbose boilerplate code. Otherwise it will be a simple "Hello World" algorithm.
 
 The main thing to note about the algorithm is that it's wrapped in the `apply()` function.
 
@@ -167,7 +167,7 @@ On the upper right hand side of the algorithm page you'll see a purple button "P
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
-If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
+If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> how to go through the process of publishing your model, check that out before you finish publishing.
 
 ## Working Demo
 If you would like to check a demo out on the platform you can find it here: <a href="https://algorithmia.com/algorithms/stephanie/pytorchjitgpu">PyTorchJitGPU</a>

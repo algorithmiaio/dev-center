@@ -27,7 +27,7 @@ Here are just a few examples of how Slack users could utilize simple Slash Comma
 * [colorize](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization) or [stylize](https://algorithmia.com/algorithms/deeplearning/DeepFilter) images
 
 By adding just a little bit of glue code to pipeline one API into another, even more complex tasks are possible. For example, one could:
-* [connect to Dropbox]({{site.baseurl}}/data/) and [extract text from PDFs](https://algorithmia.com/algorithms/ANaimi/PDFToText)
+* [connect to Dropbox]({{site.baseurl}}/data) and [extract text from PDFs](https://algorithmia.com/algorithms/ANaimi/PDFToText)
 * locate documents containing [phrases similar to their search query](https://algorithmia.com/algorithms/PetiteProgrammer/TextSimilarity)
 * crawl, scrape, analyze an [entire website](https://blog.algorithmia.com/web-scraping-crawling-python/)
 
