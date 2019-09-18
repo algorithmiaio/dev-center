@@ -7,6 +7,11 @@ nav_overview: "Overview"
 nav_index: 0
 show_related: false
 author: steph_kim
+redirect_from:
+  - /algorithm-development/client-guides/
+  - /algorithm-development/guides/
+  - /application-development/client-guides/
+  - /application-development/guides/
 ---
 
 

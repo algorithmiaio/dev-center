@@ -9,6 +9,13 @@ show_related: true
 image:
     teaser: /language_logos/rust.svg
 repository: https://github.com/algorithmiaio/algorithmia-rust
+redirect_from:
+  - /algorithm-development/client-guides/rust/
+  - /algorithm-development/guides/rust/
+  - /algorithm-development/guides/rust-guide/
+  - /application-development/client-guides/rust/
+  - /application-development/guides/rust/
+  - /application-development/lang-guides/rust/examples/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Rust Client to call algorithms and manage your data
@@ -141,7 +148,7 @@ if client.file(text_file).exists().unwrap() {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 

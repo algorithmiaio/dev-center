@@ -9,6 +9,8 @@ show_related: true
 image:
     teaser: /language_logos/go.svg
 repository: https://github.com/algorithmiaio/algorithmia-go
+redirect_from:
+  - /application-development/client-guides/go/
 ---
 
 This guide provides a walk-through of how to use the Algorithmia Go client to call algorithms and manage your data
@@ -112,7 +114,7 @@ nlp_directory.UpdatePermissions(algorithmia.ReadAclPrivate)
 fmt.Println(acl.ReadAcl() == algorithmia.AclTypePrivate) // true
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
@@ -155,7 +157,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 
 
 Next check if the file that you just uploaded to data collections exists, and try downloading it to a (new) local file:
- 
+
 {% highlight go %}
 if file_err != nil {
 	fmt.Println(file_err)
@@ -169,7 +171,7 @@ if file_err != nil {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 

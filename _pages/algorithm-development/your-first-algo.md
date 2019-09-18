@@ -11,6 +11,7 @@ image:
 permalink: /algorithm-development/your-first-algo/
 redirect_from:
   - /algorithm-development/algorithm-basics/your-first-algo/
+  - /basics/your_first_algo/
 ---
 
 One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.

@@ -9,6 +9,9 @@ show_related: true
 author: steph_kim
 image:
     teaser: /language_logos/dropbox.svg
+redirect_from:
+  - /application-development/data-connectors/dropbox-guide/
+  - /application-development/data-sources/dropbox-guide/
 ---
 
 Here you'll learn how to connect and access your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

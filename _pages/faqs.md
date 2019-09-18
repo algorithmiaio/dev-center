@@ -7,6 +7,9 @@ show_related: false
 excerpt: "Frequently asked questions"
 image:
     teaser: /icons/Algorithmia_FAQs.png
+redirect_from:
+  - /basics/algo-dev-faq/
+  - /basics/platform-faq/
 ---
 
 <div id="faqs-index">

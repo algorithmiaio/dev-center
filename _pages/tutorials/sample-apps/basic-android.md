@@ -11,6 +11,8 @@ image:
   feature: /post_images/android/android_robot_skateboarding.png
   teaser: /language_logos/android.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
+redirect_from:
+  - /samples/basic-android/
 ---
 
 {% include toc.html %}

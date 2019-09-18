@@ -7,6 +7,12 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/js.svg
+redirect_from:
+  - /algorithm-development/client-guides/javascript/
+  - /algorithm-development/guides/javascript/
+  - /algorithm-development/guides/javascript-guide/
+  - /application-development/client-guides/javascript/
+  - /application-development/guides/javascript/
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/HF04Ge-3XdE" %}

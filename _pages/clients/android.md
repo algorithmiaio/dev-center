@@ -9,6 +9,8 @@ show_related: true
 image:
     teaser: /language_logos/android.svg
 repository: https://github.com/algorithmiaio/algorithmia-android
+redirect_from:
+  - /application-development/client-guides/android/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Android Client to call algorithms and manage your data through the Algorithmia platform.
@@ -168,7 +170,7 @@ try {
 }
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
@@ -217,7 +219,7 @@ try {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
