@@ -100,6 +100,8 @@ def apply(input):
 
 Whether using a wrapper function or altering the original Algorithm, remember that the maximum runtime for an Algorithm is 50 minutes, and you must specify this longer timeout in the call to the Algorithm via the [timeout parameter](https://algorithmia.com/developers/api/#query-parameters). If 50 minutes will not be sufficient for the entire batch to complete, break the batch up into smaller sub-batches, and call each sub-batch serially from a loop on your external server.
 
+Similarly, there is a 10MB maximum on the total data sent in or returned on a single call, so consider breaking up batches into smaller chunks, or using sideband data loading (from files or a datastore) if this becomes a limiting factor.
+
 ## Parallel Batch Predictions via wrapper code
 
 The advantage of using **serial** batch predictions is that you won't create significant load on Algorithmia: because each prediction is called immediately after the prior, a single endpoint instance will handle all the calls. However, if overall speed is more important than limiting the load, make parallel calls to your Algorithm instead. This will cause multiple copies of the endpoint to spin up simultaneously, creating more server load, but improving throughput.
