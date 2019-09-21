@@ -104,6 +104,8 @@ Similarly, there is a 10MB maximum on the total data sent in or returned on a si
 
 ## Parallel Batch Predictions via wrapper code
 
-The advantage of using **serial** batch predictions is that you won't create significant load on Algorithmia: because each prediction is called immediately after the prior, a single endpoint instance will handle all the calls. However, if overall speed is more important than limiting the load, make parallel calls to your Algorithm instead. This will cause multiple copies of the endpoint to spin up simultaneously, creating more server load, but improving throughput.
+The advantage of using **serial** batch predictions is that you won't create significant load on Algorithmia: because each prediction is called immediately after the prior, a single endpoint instance will handle all the calls. However, if overall speed is more important than limiting the load, make **parallel** calls to your Algorithm instead. This will cause multiple copies of the endpoint to spin up simultaneously, creating more server load, but improving throughput.
 
-We can use the same basic approach as outlined in the Serial Batch Predictions approach, but instead of using loops around the `algo.pipe()` calls, we [use multithreading to parallelize these calls]({{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading).
+We can use the same basic approach as outlined in the Serial Batch Predictions approach, but instead of using loops around the `algo.pipe()` calls, we use multithreading to parallelize these calls.
+
+<a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> EXPLORE MULTITHREADING</a>
