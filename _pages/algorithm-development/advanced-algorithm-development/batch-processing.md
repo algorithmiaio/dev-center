@@ -78,14 +78,16 @@ def apply(input):
 
 Then, your external server can make a single call to the batch wrapper Algorithm, passing all inputs in a single network call, thus reducing the impact of network overhead on overall throughput.
 
-If possible, it is even better to alter the original Algorithm to take either single inputs or batch; this eliminates the need for a wrapper Algorithm which consumes extra resources. If the original Algorithm contained:
+If possible, it is even better to alter the original Algorithm so that it can accept **either** a single input or batch inputs; this eliminates the need for a wrapper Algorithm which consumes extra resources.
+
+For example, if the original Algorithm contained:
 
 ```python
 def apply(input):
     return someCalculation(input)
 ``` 
 
-It can be simply rewritten to check for an input of type list:
+Then it could be easily altered to check for an `input` of type list:
 
 ```python
 def apply(input):
@@ -98,13 +100,15 @@ def apply(input):
         return someCalculation(input)
 ```
 
-Whether using a wrapper function or altering the original Algorithm, remember that the maximum runtime for an Algorithm is 50 minutes, and you must specify this longer timeout in the call to the Algorithm via the [timeout parameter](https://algorithmia.com/developers/api/#query-parameters). If 50 minutes will not be sufficient for the entire batch to complete, break the batch up into smaller sub-batches, and call each sub-batch serially from a loop on your external server.
+Whether using a wrapper function or altering the original Algorithm, remember that the maximum runtime for an Algorithm is 50 minutes, and you must specify this longer timeout in the call to the Algorithm via the [timeout parameter](https://algorithmia.com/developers/api/#query-parameters). If 50 minutes will not be sufficient for the entire batch to complete, break the batch up into smaller chunks, and call each chunk serially from a loop on your external server.
 
 Similarly, there is a 10MB maximum on the total data sent in or returned on a single call, so consider breaking up batches into smaller chunks, or using sideband data loading (from files or a datastore) if this becomes a limiting factor.
 
 ## Parallel Batch Predictions via wrapper code
 
-The advantage of using **serial** batch predictions is that you won't create significant load on Algorithmia: because each prediction is called immediately after the prior, a single endpoint instance will handle all the calls. However, if overall speed is more important than limiting the load, make **parallel** calls to your Algorithm instead. This will cause multiple copies of the endpoint to spin up simultaneously, creating more server load, but improving throughput.
+The advantage of using **serial** batch predictions is that you won't create significant load on Algorithmia: because each prediction is called immediately after the prior, a single endpoint instance will handle all the calls.
+
+However, if overall speed is more important than limiting the load, make **parallel** calls to your Algorithm instead. This will cause multiple copies of the endpoint to spin up simultaneously, creating more server load, but improving throughput.
 
 We can use the same basic approach as outlined in the Serial Batch Predictions approach, but instead of using loops around the `algo.pipe()` calls, we use multithreading to parallelize these calls.
 
