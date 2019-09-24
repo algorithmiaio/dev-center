@@ -5,16 +5,15 @@
         <div class="syn-mb-8">
           <a href="/">
             <img
-              v-if="stage.publicMarketplace"
-              src="~@/assets/synapse/logos/binary_tree.svg"
+            src="{{ '/images/logos/binary_tree.svg' | relative_url }}"
               alt="Algorithmia Logo"
             />
-            <img
+            <!-- <img
               v-else
               src="~@/assets/algo-black.svg"
               alt="algorithmia logo"
               class="img-responsive enterprise-logo"
-            />
+            /> -->
           </a>
         </div>
         <div
@@ -24,7 +23,7 @@
             'mb-8': stage.publicMarketplace,
           }"
         >
-          © {{ copyrightYear }} Algorithmia Inc.
+          © 2019 Algorithmia Inc.
         </div>
 
         <!-- <template v-if="stage.publicMarketplace"> -->
@@ -46,7 +45,7 @@
               target="_blank"
               class="syn-text-secondary syn-link-no-decoration syn-link-animated"
             >
-              <img src="~@/assets/synapse/icons/github.svg" />
+              <img src="{{ '/images/icons/github.svg' | relative_url }}" />
             </a>
             <a
               href="https://twitter.com/algorithmia"
@@ -54,7 +53,7 @@
               target="_blank"
               class="syn-text-secondary syn-link-no-decoration syn-link-animated"
             >
-              <img src="~@/assets/synapse/icons/twitter.svg" />
+              <img src="{{ '/images/icons/twitter.svg' | relative_url }}" />
             </a>
             <a
               href="https://www.facebook.com/algorithmia"
@@ -62,7 +61,7 @@
               target="_blank"
               class="syn-text-secondary syn-link-no-decoration syn-link-animated"
             >
-              <img src="~@/assets/synapse/icons/facebook.svg" />
+              <img src="{{ '/images/icons/facebook.svg' | relative_url }}" />
             </a>
             <a
               href="https://www.linkedin.com/company/algorithmia-inc"
@@ -70,7 +69,7 @@
               target="_blank"
               class="syn-text-secondary syn-link-no-decoration syn-link-animated"
             >
-              <img src="~@/assets/synapse/icons/linkedin.svg" />
+              <img src="{{ '/images/icons/linkedin.svg' | relative_url }}" />
             </a>
             <a
               href="https://www.glassdoor.com/Overview/Working-at-Algorithmia-EI_IE2030295.11,22.htm"
@@ -78,7 +77,7 @@
               target="_blank"
               class="syn-text-secondary syn-link-no-decoration syn-link-animated"
             >
-              <img src="~@/assets/synapse/icons/glassdoor.svg" />
+              <img src="{{ '/images/icons/glassdoor.svg' | relative_url }}" />
             </a>
           </div>
         <!-- </template> -->
