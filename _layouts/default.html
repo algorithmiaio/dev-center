@@ -11,6 +11,7 @@
     {% endif %}
     {% include open-graph.html %}
     <link rel="stylesheet" href="{{ site.cdnurl }}{{ site.baseurl }}/css/pygments-github.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/vendors.css">
     <!-- END_HEAD_EMBED -->
 
     <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
@@ -26,18 +27,9 @@
     {% else %}
       {% assign webserver = "https://algorithmia.com" %}
     {% endif %}
-    <link rel="stylesheet" media="screen" href="{{ webserver }}/versioned/stylesheets/bootstrap3.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ webserver }}/versioned/stylesheets/algo.min.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,600,700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,100" rel="stylesheet" type="text/css">
   </head>
 
   <body id="js-body">
-    {% include browser-upgrade.html %}
-    {% include header.html %}
     {% strip %}
 
     <!-- BEGIN_BODY_EMBED -->
@@ -63,13 +55,10 @@
     <!-- END_BODY_EMBED -->
 
     {% endstrip %}
-    {% include footer.html %}
-
-    <script src="//s3.amazonaws.com/algorithmia-assets/js/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//s3.amazonaws.com/algorithmia-assets/js/angular/1.6.1/angular.min.js"></script>
 
     <!-- BEGIN_SCRIPTS_EMBED -->
-    <script src="{{ site.cdnurl }}{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ site.baseurl }}/js/core.cat.js"></script>
+    <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     $(function() {
       $('#search-query').lunrSearch({
@@ -107,6 +96,5 @@
     });
     </script>
     <!-- END_SCRIPTS_EMBED -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/custom_css.css">
   </body>
 </html>
