@@ -1,0 +1,35 @@
+image: docker:stable
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  BUILDER_TAG: index.docker.io/algorithmiahq/dev-center:latest
+  IMAGE_TAG: index.docker.io/algorithmiahq/dev-center:$CI_COMMIT_SHA
+
+services:
+  - docker:18.09.7-dind
+
+stages:
+  - build
+
+#
+# Build
+#
+
+quick-build:
+  stage: build
+  image:
+    name: docker:stable
+    entrypoint: [""]
+  before_script:
+    - mkdir ~/.docker
+    - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
+    - docker pull $BUILDER_TAG || true
+  script:
+    - docker build
+      -t $BUILDER_TAG
+      -t $IMAGE_TAG
+      --file $CI_PROJECT_DIR/Dockerfile
+      --cache-from $BUILDER_TAG
+      $CI_PROJECT_DIR
+    - docker push $BUILDER_TAG
