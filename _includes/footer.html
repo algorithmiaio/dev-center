@@ -4,16 +4,19 @@
       <div class="syn-col syn-col-lg-2 syn-col-md-3">
         <div class="syn-mb-8">
           <a href="/">
+            {% if site.enterprise %}
+            <img
+              v-else
+              src="{{ '/images/logos/algo-black.svg' | relative_url }}"
+              alt="algorithmia logo"
+              class="img-responsive enterprise-logo"
+            />
+            {% else %}
             <img
             src="{{ '/images/logos/binary_tree.svg' | relative_url }}"
               alt="Algorithmia Logo"
             />
-            <!-- <img
-              v-else
-              src="~@/assets/algo-black.svg"
-              alt="algorithmia logo"
-              class="img-responsive enterprise-logo"
-            /> -->
+            {% endif %}
           </a>
         </div>
         <div
