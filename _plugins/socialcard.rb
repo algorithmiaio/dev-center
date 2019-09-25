@@ -25,7 +25,7 @@ module Jekyll
         if title.length > 84
           title = title[0..84] + "..."
         end
-        
+
       end
 
       image_url = properties['og:image'].first
@@ -48,7 +48,7 @@ module Jekyll
       <<-HEREDOC
         <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
         <a href="#{@card_url}" title="#{title}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-          <img class="larger_icon" src="#{baseurl}/#{image_path}" alt="icon" itemprop="image">
+          <div style="min-height:60%"><img class="larger_icon" src="#{baseurl}/#{image_path}" alt="icon" itemprop="image"></div>
           <p itemprop="name" class="lg text-primary">#{title}</p>
         </a>
         </div>
