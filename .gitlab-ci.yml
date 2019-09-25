@@ -16,7 +16,7 @@ stages:
 # Build
 #
 
-quick-build:
+build:
   stage: build
   image:
     name: docker:stable
