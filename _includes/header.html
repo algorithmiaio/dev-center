@@ -69,15 +69,14 @@
         </div>
         {% endunless %}
         <a
-          v-if="!isLoggedIn"
           href="/signin"
-          data-e2e="header-signin-link"
+          class="hide-auth syn-link-no-decoration"
         >
           <button class="syn-btn text theme-primary syn-visible-lg syn-ml-16">
             Sign in
           </button>
         </a>
-        <a v-if="!isLoggedIn" href="/signup" class="syn-link-no-decoration">
+        <a href="/signup" class="hide-auth syn-link-no-decoration">
           <button
             class="syn-btn outlined theme-primary syn-visible-lg syn-ml-16"
           >
@@ -89,7 +88,7 @@
           </button>
         </a>
         {% unless site.enterprise %}
-        <a href="/demo" class="syn-link-no-decoration">
+        <a href="/demo" class="hide-auth syn-link-no-decoration">
           <button
             class="syn-btn contained theme-accent syn-visible-lg syn-ml-16"
           >
@@ -97,7 +96,7 @@
           </button>
         </a>
         {% endunless %}
-        <a v-if="isLoggedIn" href="/">
+        <a class="hide-unauth" href="/">
           <button
             class="syn-btn outlined theme-primary syn-ml-16 syn-visible-lg"
           >
@@ -109,15 +108,14 @@
     <div class="syn-page-header-nav" @click="toggleNavMenu">
       <nav class="syn-nav pt-16">
         <ul>
-          <li>
+          <li class="hide-auth">
             <a
-              v-if="!isLoggedIn && stage.publicMarketplace"
               href="/demo"
               >Get Your Demo</a
             >
           </li>
-          <li>
-            <a v-if="!isLoggedIn" href="/signup">
+          <li class="hide-auth">
+            <a href="/signup">
               {% if site.enterprise %}
               <span>Create Account</span>
               {% else %}
@@ -125,11 +123,11 @@
               {% endif %}
             </a>
           </li>
-          <li>
-            <a v-if="!isLoggedIn" href="/signin">Sign In</a>
+          <li class="hide-auth">
+            <a href="/signin">Sign In</a>
           </li>
-          <li>
-            <a v-if="isLoggedIn" href="/">Return to App</a>
+          <li class="hide-unauth">
+            <a href="/">Return to App</a>
           </li>
         </ul>
         {% unless site.enterprise %}

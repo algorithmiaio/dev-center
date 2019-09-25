@@ -20,3 +20,12 @@ body,
   top: 0;
   z-index: 500;
 }
+.hide-unauth {
+  display: none !important;
+}
+.show-auth-nav .hide-unauth {
+  display: initial !important;
+}
+.show-auth-nav .hide-auth {
+  display: none !important;
+}
