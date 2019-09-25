@@ -48,3 +48,12 @@ FROM node:10.14-slim
 WORKDIR /opt/src/app
 
 COPY --from=builder /opt/builds/sites ./sites
+
+COPY server/index.js ./server/index.js
+COPY config ./config
+COPY package.json package-lock.json ./
+
+RUN npm install --production
+
+EXPOSE 3000
+ENTRYPOINT [ "node", "server/index.js" ]

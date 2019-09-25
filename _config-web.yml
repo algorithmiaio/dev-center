@@ -2,4 +2,4 @@
 
 # If dev-center is deployed as a submodule of the web app, its assets won't
 # exist on the CDN and will instead be served via the app itself.
-cdnurl: __CDN_BASE_URL__
+cdnurl: http://localhost:3000
