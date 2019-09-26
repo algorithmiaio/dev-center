@@ -21,14 +21,11 @@
             style="max-height: 24px; max-width: 100%"
           />
         </a>
-        <template v-if="stage.publicMarketplace || stage.brandTitle">
-          <div
-            class="syn-page-header-divider vertical syn-ml-16 syn-mr-16"
-          ></div>
-          <span class="syn-font-mono syn-caption syn-text-tertiary syn-mb-0">{{
-            stage.brandTitle || 'AI LAYER'
-          }}</span>
-        </template>
+        <div
+          class="syn-page-header-divider vertical syn-ml-16 syn-mr-16 {% if site.enterprise %}syn-hidden-lg syn-hidden-md syn-hidden-sm{% endif %}"
+          id="before-brand-title"
+        ></div>
+        <span class="syn-font-mono syn-caption syn-text-tertiary syn-mb-0 {% if site.enterprise %}syn-hidden-lg syn-hidden-md syn-hidden-sm{% endif %}" id="brand-title">AI LAYER</span>
       </div>
       <div>
         {% unless site.enterprise %}
@@ -108,12 +105,14 @@
     <div class="syn-page-header-nav" @click="toggleNavMenu">
       <nav class="syn-nav pt-16">
         <ul>
+          {% unless site.enterprise %}
           <li class="hide-auth">
             <a
               href="/demo"
               >Get Your Demo</a
             >
           </li>
+          {% endunless %}
           <li class="hide-auth">
             <a href="/signup">
               {% if site.enterprise %}
