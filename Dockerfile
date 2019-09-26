@@ -5,7 +5,7 @@
 FROM node:10.14 as style-builder
 
 WORKDIR /app
-COPY ./synapse .
+COPY synapse .
 
 # Install dependencies
 RUN npm ci
