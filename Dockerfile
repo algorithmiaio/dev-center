@@ -5,12 +5,10 @@
 FROM node:10.14 as style-builder
 
 WORKDIR /app
+COPY ./synapse .
 
 # Install dependencies
-COPY synapse/package.json synapse/package-lock.json ./
 RUN npm ci
-
-COPY synapse .
 
 # Build files
 RUN npm run build
