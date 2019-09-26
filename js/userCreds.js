@@ -24,7 +24,7 @@
 
   function updateUserCreds(username, apiKey = 'YOUR_API_KEY') {
     const codeExampleNodes = document.querySelectorAll(
-      '[ng-controller=GettingStartedControl]'
+      '[class*=gs-code-container]'
     )
 
     if (!codeExampleNodes.length) return
