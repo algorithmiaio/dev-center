@@ -33,4 +33,3 @@ build:
       --file $CI_PROJECT_DIR/Dockerfile
       --cache-from $BUILDER_TAG
       $CI_PROJECT_DIR
-    - docker push $BUILDER_TAG
