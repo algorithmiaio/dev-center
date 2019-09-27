@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 
 // Remove trailing slashes
 app.get('*', (req, res, next) => {
-  if (req.path.endsWith('/')) {
+  if (/.+\/$/.test(req.path)) {
     res.redirect(req.path.replace(/\/$/, ''))
   } else {
     next()
