@@ -30,15 +30,15 @@
       </div>
       <div>
         {% unless site.enterprise %}
-        <a href="/product" class="syn-link-no-decoration">
+        <a href="/product" class="syn-link-no-decoration show-auth show-unauth">
           <button class="syn-btn text syn-visible-lg">Product</button>
         </a>
-        <a href="/pricing" class="syn-link-no-decoration">
+        <a href="/pricing" class="syn-link-no-decoration show-auth show-unauth">
           <button class="syn-btn text syn-visible-lg syn-ml-16">
             Pricing
           </button>
         </a>
-        <div direction="left" class="syn-dropdown syn-ml-16">
+        <div direction="left" class="syn-dropdown syn-ml-16 show-auth show-unauth">
           <button class="syn-btn text syn-visible-lg" onclick="this.parentNode.classList.toggle('open')">
             Learn <svg class="syn-ml-4" width="7px" height="4px" viewBox="0 0 7 4">
               <polygon fill="currentColor" points="0 0 6.688 0 3.344 3.344"></polygon>
@@ -78,13 +78,13 @@
         {% endunless %}
         <a
           href="/signin"
-          class="hide-auth syn-link-no-decoration"
+          class="show-unauth syn-link-no-decoration"
         >
           <button class="syn-btn text theme-primary syn-visible-lg syn-ml-16">
             Sign in
           </button>
         </a>
-        <a href="/signup" class="hide-auth syn-link-no-decoration">
+        <a href="/signup" class="show-unauth syn-link-no-decoration">
           <button
             class="syn-btn outlined theme-primary syn-visible-lg syn-ml-16"
           >
@@ -96,7 +96,7 @@
           </button>
         </a>
         {% unless site.enterprise %}
-        <a href="/demo" class="hide-auth syn-link-no-decoration">
+        <a href="/demo" class="show-unauth syn-link-no-decoration">
           <button
             class="syn-btn contained theme-accent syn-visible-lg syn-ml-16"
           >
@@ -104,7 +104,7 @@
           </button>
         </a>
         {% endunless %}
-        <a class="hide-unauth" href="/">
+        <a class="show-auth" href="/">
           <button
             class="syn-btn outlined theme-primary syn-ml-16 syn-visible-lg"
           >
@@ -117,15 +117,12 @@
       <nav class="syn-nav pt-16">
         <ul>
           {% unless site.enterprise %}
-          <li class="hide-auth">
-            <a
-              href="/demo"
-              >Get Your Demo</a
-            >
+          <li>
+            <a href="/demo" class="show-unauth">Get Your Demo</a>
           </li>
           {% endunless %}
-          <li class="hide-auth">
-            <a href="/signup">
+          <li>
+            <a href="/signup" class="show-unauth">
               {% if site.enterprise %}
               <span>Create Account</span>
               {% else %}
@@ -133,74 +130,76 @@
               {% endif %}
             </a>
           </li>
-          <li class="hide-auth">
-            <a href="/signin">Sign In</a>
+          <li>
+            <a href="/signin" class="show-unauth">Sign In</a>
           </li>
-          <li class="hide-unauth">
-            <a href="/">Return to App</a>
+          <li>
+            <a href="/" class="show-auth">Return to App</a>
           </li>
         </ul>
         {% unless site.enterprise %}
-        <div class="syn-break syn-mt-16"></div>
-        <ul>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/product">Product</a></li>
-        </ul>
-        <div class="syn-break syn-mt-16"></div>
-        <p class="syn-overline pt-16">Industries</p>
-        <ul>
-          <li>
-            <a href="/enterprise/energy">Energy</a>
-          </li>
-          <li>
-            <a href="/enterprise/finance">Finance</a>
-          </li>
-          <li>
-            <a href="/enterprise/government">Government</a>
-          </li>
-          <li>
-            <a href="/enterprise/pharma">Pharma</a>
-          </li>
-          <li>
-            <a href="/enterprise/retail">Retail</a>
-          </li>
-          <li>
-            <a href="/enterprise/tech">Tech</a>
-          </li>
-        </ul>
-        <div class="syn-break syn-mt-16"></div>
-        <p class="syn-overline pt-16">Learn</p>
-        <ul class="syn-mb-16">
-          <li><a class="active" href="/developers">Docs</a></li>
-          <li><a href="/resources">Resources</a></li>
-          <li>
-            <a
-              class="syn-flex align-center"
-              href="https://blog.algorithmia.com"
-            >
-              Blog <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+        <div class="show-auth show-unauth">
+          <div class="syn-break syn-mt-16"></div>
+          <ul>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/product">Product</a></li>
+          </ul>
+          <div class="syn-break syn-mt-16"></div>
+          <p class="syn-overline pt-16">Industries</p>
+          <ul>
+            <li>
+              <a href="/enterprise/energy">Energy</a>
+            </li>
+            <li>
+              <a href="/enterprise/finance">Finance</a>
+            </li>
+            <li>
+              <a href="/enterprise/government">Government</a>
+            </li>
+            <li>
+              <a href="/enterprise/pharma">Pharma</a>
+            </li>
+            <li>
+              <a href="/enterprise/retail">Retail</a>
+            </li>
+            <li>
+              <a href="/enterprise/tech">Tech</a>
+            </li>
+          </ul>
+          <div class="syn-break syn-mt-16"></div>
+          <p class="syn-overline pt-16">Learn</p>
+          <ul class="syn-mb-16">
+            <li><a class="active" href="/developers">Docs</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li>
+              <a
+                class="syn-flex align-center"
+                href="https://blog.algorithmia.com"
+              >
+                Blog <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+                    <path
+                      fill="currentColor"
+                      d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                    />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="syn-flex align-center"
+                href="https://learn.algorithmia.com"
+              >
+                Learning Center
+                <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
                   <path
                     fill="currentColor"
                     d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
                   />
                 </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="syn-flex align-center"
-              href="https://learn.algorithmia.com"
-            >
-              Learning Center
-              <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
-                <path
-                  fill="currentColor"
-                  d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
         {% endunless %}
       </nav>
     </div>

@@ -39,8 +39,9 @@
     })
   }
 
-  function enableAuthNav() {
-    document.querySelector('.syn-page-header').classList.add('show-auth-nav')
+  function enableNavButtons(authenticated) {
+    const navClass = authenticated ? 'show-auth-nav' : 'show-unauth-nav'
+    document.querySelector('.syn-page-header').classList.add(navClass)
   }
 
   async function getCurrentUser() {
@@ -59,10 +60,15 @@
 
     if (username) {
       updateUserCreds(username, apiKey)
-      enableAuthNav()
+      enableNavButtons(true)
+    } else {
+      // No username, show unauthenticated nav buttons.
+      enableNavButtons(false)
     }
   } catch (err) {
     // User is logged out. Safe to ignore error since this is an enhancement
     // and the page is perfectly useable without credentials replaced.
+    // We do, however, want to show the unauthenticated nav buttons.
+    enableNavButtons(false)
   }
 })()
