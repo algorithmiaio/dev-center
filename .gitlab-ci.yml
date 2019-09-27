@@ -5,6 +5,7 @@ variables:
   DOCKER_DRIVER: overlay2
   BUILDER_TAG: index.docker.io/algorithmiahq/dev-center:latest
   IMAGE_TAG: index.docker.io/algorithmiahq/dev-center:$CI_COMMIT_SHA
+  GIT_SUBMODULE_STRATEGY: recursive
 
 services:
   - docker:18.09.7-dind
@@ -32,4 +33,3 @@ build:
       --file $CI_PROJECT_DIR/Dockerfile
       --cache-from $BUILDER_TAG
       $CI_PROJECT_DIR
-    - docker push $BUILDER_TAG

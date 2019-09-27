@@ -1,3 +1,18 @@
+
+#
+# Build Synapse dist/ files
+#
+FROM node:10.14 as style-builder
+
+WORKDIR /app
+COPY ./synapse .
+
+# Install dependencies
+RUN npm ci
+
+# Build files
+RUN npm run build
+
 #
 # Builder stage
 #
@@ -14,6 +29,12 @@ WORKDIR /opt/builds
 COPY . .
 
 RUN bundle install
+
+#
+# Build Dev Center sites
+#
+# Copy Synapse dist/ files
+COPY --from=style-builder /app/dist ./synapse/dist
 
 RUN mkdir /sites && \
   bundle exec jekyll build -d sites/public/developers -c _config.yml,_config-web.yml && \

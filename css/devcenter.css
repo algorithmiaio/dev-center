@@ -1,0 +1,14 @@
+/* Temporary styles until we can switch all of devcenter to use synapse */
+
+body {
+  min-height: 100vh;
+}
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#wrapper,
+.dev-center-content-container {
+  flex-grow: 1;
+}

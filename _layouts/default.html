@@ -12,6 +12,8 @@
     {% include open-graph.html %}
     <link rel="stylesheet" href="{{ site.cdnurl }}{{ site.baseurl }}/css/pygments-github.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/vendors.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/scoped-synapse.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/devcenter.css">
     <!-- END_HEAD_EMBED -->
 
     <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
@@ -36,7 +38,7 @@
     <div id="wrapper">
       {% include hero.html %}
 
-      <div class="container">
+      <div class="container dev-center-content-container">
         <div class="row section">
           <div class="col-sm-8 col-md-8 col-sm-push-3 col-md-push-3">
             {% include search.html %}
@@ -51,6 +53,7 @@
           </div> <!-- END NAV CONTAINER -->
         </div>
       </div>
+      {% include footer.html %}
     </div> <!-- end wrapper -->
     <!-- END_BODY_EMBED -->
 
