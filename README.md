@@ -112,10 +112,6 @@ And if you need a pre-trained model or utility function for your project, check 
 
 You can find more variables in the `_data/stats.yml` file.
 
-### CDN
-
-Image and video assets can be prefixed with `` to automatically serve them via CDN.  Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
-
 ### Plugins
 
 This Jekyll site uses several plugins to help generate content and make the site extra-awesome. Included in the `_plugins` directory:
