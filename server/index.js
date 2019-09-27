@@ -91,8 +91,7 @@ function gracefulShutdown() {
     process.exit()
   })
 
-  // const gracePeriod = isProduction ? 10 : 1
-  const gracePeriod = 0
+  const gracePeriod = isProduction ? 10 : 1
 
   setTimeout(() => {
     console.error(
