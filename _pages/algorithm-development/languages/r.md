@@ -278,7 +278,7 @@ Sometimes it is more appropriate to write your output to a file than to return i
 {% highlight r %}
 # {"target_file":"data://username/collection/filename.txt"}
 file_uri <- input$target_file
-tmpfile <- sprintf("/tmp/%s.tmp",UUIDgenerate())
+tempfile <- sprintf("/tmp/%s.tmp",UUIDgenerate())
 save_some_output_to(tempfile)
 client$file(file_uri)$putFile(tempfile)
 {% endhighlight %}
