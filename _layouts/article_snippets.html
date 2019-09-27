@@ -6,7 +6,7 @@ layout: default
 	{% if page.image.feature %}
 	<div class="page-feature">
 		<div class="page-image">
-			<img src="{{ site.cdnurl }}{{ page.image.feature | prepend:'/images/' | relative_url }}" class="page-feature-image" alt="{{ page.title }}" itemprop="image">
+			<img src="{{ page.image.feature | prepend:'/images/' | relative_url }}" class="page-feature-image" alt="{{ page.title }}" itemprop="image">
 			{% if page.image.credit %}{% include image-credit.html %}{% endif %}
 		</div><!-- /.page-image -->
 	</div><!-- /.page-feature -->

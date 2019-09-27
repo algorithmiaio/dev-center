@@ -1,5 +1,0 @@
-# Config overrides when dev-center is deployed as submodule of web app
-
-# If dev-center is deployed as a submodule of the web app, its assets won't
-# exist on the CDN and will instead be served via the app itself.
-cdnurl: http://localhost:3000

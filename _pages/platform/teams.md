@@ -21,7 +21,7 @@ If you are looking to share algorithms privately or publish algorithms on behalf
 
 The profile overview provides a rich source of information about an organization. In the overview, you can find the name of an organization, its members, and a listing of its algorithms. If you are the owner of the organization you will also be able to add and delete members as well as edit basic information regarding the organization.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_profile.png" alt="Organizations profile" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_profile.png" alt="Organizations profile" class="screenshot img-md">
 
 
 #### Things to know about Organizations:
@@ -34,7 +34,7 @@ The profile overview provides a rich source of information about an organization
 
 To create your new organization simply go to your profile page and click "+Create Organization"
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization.png" alt="create organization" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/organizations/new_organization.png" alt="create organization" class="screenshot img-sm">
 
 At this time you will be asked to fill out some information regarding your organization:
 
@@ -47,11 +47,11 @@ This will determine the URL where your organization will be showcased. It is req
 * *Logo:* You may optionally add an image to brand your organization.
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization_form.png" alt="Organization info" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/organizations/new_organization_form.png" alt="Organization info" class="screenshot img-sm">
 
 Once your organization has been created you can edit all the provided information as well as add a logo and a Terms of Use document.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/edit_organization.png" alt="Organization info" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/organizations/edit_organization.png" alt="Organization info" class="screenshot img-sm">
 
 **Note**: The Terms of Use are organization specific. When users accept an invite to your organization they will be accepting the Terms of Use uploaded. Algorithmia records the date when the terms where accepted. These terms are completely independent of the Algorthmia Terms of Use.
 
@@ -62,11 +62,11 @@ You can invite users to your organization either by using their Algorithmia user
 
 To invite a user simply click 'Invite User':
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user.png" alt="Inviting Users" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_invite_user.png" alt="Inviting Users" class="screenshot">
 
 After clicking 'Invite User' a form will appear and you can enter the users name or email address:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user_form.png" alt="Inviting Users" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_invite_user_form.png" alt="Inviting Users" class="screenshot img-sm">
 
 As an organization owner, you may view any pending invitations by clicking on the "Invitations" tab
 
@@ -76,15 +76,15 @@ If you invite a user that already has an account, then you must invite them usin
 #### Approving Algorithms:
 Once members of your organization have created an algorithm and submitted it for approval, a purple indicator with the version to be published will show on your organization profile under algorithms.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
 
 **Note:** Every new version of the algorithm to be published will require independent approval.
 
 At this time you will be able to set the royalty (if any) for that algorithm and finalize publishing to Algorithmia's marketplace.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
 
 #### Check Earnings:
 To view your organization's earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organization's profile.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="screenshot img-md">

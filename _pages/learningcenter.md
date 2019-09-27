@@ -8,7 +8,7 @@ excerpt: "The Learning Center hosts training modules to guide users along their 
 
 {% if site.enterprise %}
 
-<a href="https://training.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>
+<a href="https://training.algorithmia.com"><img src="{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>
 
 ## The Algorithmia Training Center
 
@@ -18,7 +18,7 @@ The Training Center hosts training modules to guide users along their Algorithmi
 
 {% else %}
 
-<a href="https://learn.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_public_wide.png" alt="The Learning Center" class="screenshot img-md"></a>
+<a href="https://learn.algorithmia.com"><img src="{{site.baseurl}}/images/post_images/learningcenter/lms_public_wide.png" alt="The Learning Center" class="screenshot img-md"></a>
 
 ## The Algorithmia Learning Center
 

@@ -48,7 +48,7 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -64,7 +64,7 @@ Next, upload your model files to your newly created data collection.
     - data://username/collections_name/resnet-152-symbol.json,
     - data://username/collections_name/synset.txt
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/mxnet_update_collections.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/mxnet_update_collections.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 
@@ -78,7 +78,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -96,7 +96,7 @@ import sys
 sys.path.remove("/opt/anaconda2/lib/python2.7/site-packages/mxnet-0.9.4-py2.7-linux-x86_64.egg")
 {% endhighlight %}
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/mxnet_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/mxnet_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
@@ -227,7 +227,7 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

@@ -1,9 +1,9 @@
 <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
   <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
     {% if post.image.teaser %}
-      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
+      <img src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
     {% else %}
-      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
+      <img class="larger_icon" src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
     {% endif %}
 
     <header itemprop="name" class="lg mb-0">{{ post.title }}</header>

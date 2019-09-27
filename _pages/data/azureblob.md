@@ -19,7 +19,7 @@ All data sources have a protocol and a label that you will use to reference your
 ## Configure a New Data Connection to your Azure Blob
 To create a new data connection first navigate to <a href="{{site.baseurl}}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
 Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
 
@@ -28,9 +28,9 @@ Select **'Azure Blob'** and a form will open to configure a connection. Here you
 3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", and __just the protocol and domain__ (e.g. `https://mystore.blob.core.windows.net`) from "URL" -> "Storage URL"
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Azure, it is recommended that you provide access that:
 
@@ -54,7 +54,7 @@ The default path restrictions are set to allow access to all paths in your Azure
 
 Here we are setting our path restrictions to everything in the subfolder 'Algorithmia', so I'd only be able to get files below azureblob://Algorithmia/* :
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_restricted_paths.png" alt="Add path restrictions" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/data_connectors/azure_restricted_paths.png" alt="Add path restrictions" class="screenshot img-sm">
 
 ### Setting Read and Write Access
 The default access for your data source is set to read only, but you can change this to read *and* write access by checking the **'Write Access'** box.

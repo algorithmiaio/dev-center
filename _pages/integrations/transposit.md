@@ -11,7 +11,7 @@ image:
 
 Transposit enables developers to create complex SQL-like queries spanning multiple services' APIs. For example, I can pull records from Airtable and create Stripe charges for each match, all in a single query:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/transposit/airtable_stripe.png" alt="Create Stripe charges for each record from Airtable" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/transposit/airtable_stripe.png" alt="Create Stripe charges for each record from Airtable" class="screenshot">
 
 Now you can go even further, using Algorithmia's Machine Learning APIs to acquire data or transform results.
 

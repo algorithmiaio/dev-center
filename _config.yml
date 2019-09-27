@@ -12,9 +12,6 @@ locale: en_US
 # Do not include a trailing /.
 url: https://algorithmia.com
 
-# URL for assets we serve via CDN
-cdnurl: https://cdn.algorithmia.com
-
 # The entire site is nested under this baseurl
 baseurl: /developers
 

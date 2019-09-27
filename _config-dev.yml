@@ -1,4 +1,0 @@
-# Dev Config Overrides
-
-# URL for assets we serve via CDN
-cdnurl: http://localhost:4000

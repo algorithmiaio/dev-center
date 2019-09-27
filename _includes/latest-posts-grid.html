@@ -3,7 +3,7 @@
   <ul class="th-grid">
   {% capture category_name %}{{ page.categories | first }}{% endcapture %}
   {% for post in site.categories.[category_name] limit:4 %}
-    <li><a href="{{ post.url | relative_url }}" title="{{ post.title }}"><img src="{{ site.cdnurl }}{{ post.image.thumb | prepend:'/images/' | relative_url }}" alt=""></a></li>
+    <li><a href="{{ post.url | relative_url }}" title="{{ post.title }}"><img src="{{ post.image.thumb | prepend:'/images/' | relative_url }}" alt=""></a></li>
   {% endfor %}
   </ul>
 </div><!-- /.archive-wrap -->

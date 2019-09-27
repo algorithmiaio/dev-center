@@ -29,7 +29,7 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
       <div class="col-xs-4 col-sm-4 col-md-3">
         <a  href="{{ post.url | relative_url }}" class="lang-tile">
           {% if post.image.teaser %}
-            <img  src="{{site.cdnurl}}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
+            <img  src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
           {% endif %}
           {{post.title}}
         </a>

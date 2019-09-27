@@ -44,7 +44,7 @@ On your [Algorithmia credentials page](algorithmia.com/user#credentials), create
 
 Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value.
 
-![Set environment variables]({{site.cdnurl}}{{site.baseurl}}/images/post_images/ios/envs.png)
+![Set environment variables]({{site.baseurl}}/images/post_images/ios/envs.png)
 
 **Create a Data Collection to store your images during processing**
 
@@ -58,7 +58,7 @@ Before changing any code, build and run the app to test out the default function
 
 If all is working properly, you'll see a mostly-blank screen with options to take a photo or pick one from your phone's library. Once you've selected a photo, it will upload it to the `sourcePath` specified earlier, run Algorithmia's [DeepFilter algorithm](https://algorithmia.com/algorithms/deeplearning/DeepFilter) on the image, and render the result on the screen (as well as storing it your [Hosted Data](https://algorithmia.com/data/hosted) under `resultPath`):
 
-![Running the app in the iPhone Simulator]({{site.cdnurl}}{{site.baseurl}}/images/post_images/ios/demo.png)
+![Running the app in the iPhone Simulator]({{site.baseurl}}/images/post_images/ios/demo.png)
 
 
 ## Revising the Code

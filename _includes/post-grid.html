@@ -1,9 +1,9 @@
 <div class="col-xs-6 col-sm-6 col-md-3">
 	  <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="post-teaser lang-tile">
 	    {% if post.image.teaser %}
-	      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
+	      <img src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
 	    {% else %}
-	      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
+	      <img class="larger_icon" src="{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
 	    {% endif %}
 	    {{ post.title }}
 	  </a>

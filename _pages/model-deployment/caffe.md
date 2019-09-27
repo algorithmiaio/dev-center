@@ -49,7 +49,7 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -64,7 +64,7 @@ Next, upload your model files to your newly created data collection.
     - data://username/collections_name/file_name.prototxt.txt,
     - data://username/collections_name/file_name.caffemodel
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
@@ -77,7 +77,7 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -96,7 +96,7 @@ Click on the **"Dependencies"** button at the top right of the UI and list your 
 Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
 {: .notice-warning}
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
@@ -171,7 +171,7 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

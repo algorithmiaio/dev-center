@@ -19,7 +19,7 @@ We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Sc
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/face_detection.png" class="screenshot img-sm">
 
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 

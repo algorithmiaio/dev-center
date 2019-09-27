@@ -16,7 +16,7 @@ redirect_from:
 Every algorithm on Algorithmia has a dedicated git repository. Using this repository allows you to seamlessly integrate Algorithmia with your current workflows,
 such as your code editor, IDE, or deployment pipelines. If you're unfamiliar with git we recommend <a rel="nofollow" target="_blank" href="http://rogerdudler.github.io/git-guide/">this brief guide</a>.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/legit/legit-demo.gif" alt="Demo for Git" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/legit/legit-demo.gif" alt="Demo for Git" class="screenshot">
 
 ## Accessing a repository
 

@@ -50,7 +50,7 @@ First, you'll want to create a data collection to host any data associated with 
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="screenshot img-sm">
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -63,7 +63,7 @@ Next, upload your serialized model to your newly created data collection.
 
 - Note the path to your data collection and the zip folder: data://user_name/collections_name/model.zip
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/XGBoost_data_collection.png" alt="Create a data collection" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/XGBoost_data_collection.png" alt="Create a data collection" class="screenshot img-md">
 
 ## Create your Algorithm
 
@@ -77,14 +77,14 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/XGBoost_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.baseurl}}/images/post_images/model_hosting/XGBoost_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 ```
 numpy
@@ -154,7 +154,7 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

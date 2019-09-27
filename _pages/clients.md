@@ -19,8 +19,8 @@ redirect_from:
   <div class="col-md-12">
     <h3>Get Started</h3>
     <div class="dev-card">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="img-fill get-started-img">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/icons/hexicon_desktop.svg" alt="icon" class="hexicon">
+      <img src="{{site.baseurl}}/images/get_started.png" alt="Get Started" class="img-fill get-started-img">
+      <img src="{{site.baseurl}}/images/icons/hexicon_desktop.svg" alt="icon" class="hexicon">
       <div class="dev-card-text">
         <p class="lead">Get up to speed with the Algorithmia marketplace</p>
         <a href="{{site.baseurl}}/getting-started" class="btn btn-default btn-accent">Get Started Now</a>

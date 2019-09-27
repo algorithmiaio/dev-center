@@ -19,7 +19,7 @@ This guide will explain the information available in your account including api 
 
 To access your profile, click on the user drop down, located in the bottom left once you login to your account:
 
-![Accessing the user drop down]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
+![Accessing the user drop down]({{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
 
 The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
@@ -27,7 +27,7 @@ The main area of your profile also includes some basis stats like the number of 
 
 The account section of your profile is where you'll find the information about your account usage and your credits.
 
-![Credits main]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/credits_main.png)
+![Credits main]({{site.baseurl}}/images/post_images/your_profile/credits_main.png)
 
 The card on the left shows details about your account, such as the number of free credits remaining in this 30 day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking Purchase Credits. The card to the right displays your payment information, if any, and allows you to update or remove your current payment method.
 
@@ -36,7 +36,7 @@ If you have earned credits by publishing your own algorithms, you'll see the amo
 Below the account overview, you'll see a chart of your balance over time, then menu options to view your Usage, Earnings, and Transactions.
 
 ### Usage
-![Usage]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/usage.png)
+![Usage]({{site.baseurl}}/images/post_images/your_profile/usage.png)
 
 The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
@@ -51,7 +51,7 @@ For more information about pricing check out [Pricing]({{site.baseurl}}/pricing)
 
 The next section, Earnings, is where you will find the records of the calls made to your algorithms:
 
-![earnings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/earning.png)
+![earnings]({{site.baseurl}}/images/post_images/your_profile/earning.png)
 
 In this section, you'll see the algorithm listed by date as well as the version number for the algorithm. This is important if you are updating your algorithms and notice that people are still calling old versions. Knowing which versions of your algorithms that people are using will help you understand what backwards-compatibility you need as well as which versions are improvements for the algorithm callers.
 
@@ -61,7 +61,7 @@ In the case of earnings, you will only see the number of billable calls and thei
 
 Find the history of your credits in the transactions section.
 
-![Transactions]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/transactions.png)
+![Transactions]({{site.baseurl}}/images/post_images/your_profile/transactions.png)
 
 Here you'll see any purchases you've made for more credits as well as any credits that have been granted to your account.
 

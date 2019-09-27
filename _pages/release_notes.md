@@ -10,7 +10,7 @@ image:
 
 # Algorithmia Enterprise Release Notes 19.05 # 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Updates_List.png" alt="1904 Release Notes Banner" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Updates_List.png" alt="1904 Release Notes Banner" class="screenshot">
 
 ### Jupyter Notebook Integration ###
 
@@ -21,7 +21,7 @@ Our updated APIs enable easier integrations like this and [Zapier](https://algor
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oSOlbenfFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 -----
   
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Deploy.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Deploy.png" alt="Release Notes" class="screenshot">
 
 ### Event-Driven Algorithm Runs ###
 
@@ -30,12 +30,12 @@ Event listeners allow external services to trigger actions such as model runs wi
 ### Additional Management APIs ###
 New APIs allow you to create, recompile, and publish models directly from CI/CD pipelines, without using the Web API.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot">
 
 
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Publish_Algorithm.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Publish_Algorithm.png" alt="Release Notes" class="screenshot">
 
 ### Additional IPA Package Sets ###
 
@@ -54,13 +54,13 @@ Organizations allow teams of customers to work in a private subset of models, mo
 
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Left_Nav_Bar.png" alt="Release Notes" class="screenshot">
 
 
 
 To view your hosted data, click on Data Sources in the main toolbar, then select an organiation. From here, browse the organization's collections as you would your own data collections.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Data_Portal.png" alt="Release Notes" class="screenshot">
 
 
 Organization data collections have the same permissions as user data collections, including:
@@ -91,7 +91,7 @@ For questions and requests, please contact Algorithmia at support@algorithmia.co
 -----
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="screenshot">
 
 {% if site.enterprise %}
 **Enterprise Users:** Check with your administrator to verify which version of Algorithmia you are running.
@@ -103,7 +103,7 @@ Algorithmia is moving into the new year with a lot of great improvements to the 
 
 Projects for this release focused on providing greater flexibility and data connectivity options and enabling queuing for user calls. These updates are part of our dedication to continuously improve our platform for our users. We've made a number of changes under the hood that will provide tangible boosts to speed, flexibility, and supportability.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_update_list.png" alt="Release Notes Product Updates" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_update_list.png" alt="Release Notes Product Updates" class="screenshot">
 
 ### Image Per Algorithm ###
  
@@ -118,7 +118,7 @@ This allows the Algorithmia cluster to target package sets toward tailored scena
 
 The Algorithmia team will be creating new package sets in future releases and over time will transition all class algorithm base templates to new Image Per Algorithm-based package sets. 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_create_algo_ipa.png" alt="Release Notes IPA" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_create_algo_ipa.png" alt="Release Notes IPA" class="screenshot">
 
 New package sets will be released to the Hosted Service on Algorithmia first and then rolled up together in future quarterly releases for Algorithmia Enterprise. 
 
@@ -128,7 +128,7 @@ If you are interested in any package sets that have been released to the Hosted 
 
 This release includes the following package sets that can be used for newly created algorithms going forward. New package sets will be created and shipped to the Algorithmia Hosted Service and bundled into future releases of Algorithmia Enterprise.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_CPU_GPU_table.png" alt="Release Notes CPU, GPU python table" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_CPU_GPU_table.png" alt="Release Notes CPU, GPU python table" class="screenshot">
 
 We will enable Enterprise Admins to create custom package sets to help provide best practices and templates for their data science teams specific to their organization.
 
@@ -145,7 +145,7 @@ The additional APIs that have been added in this release are:
 * **Update** algorithm
 * **Publish** algorithm
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_algorithm_actions.png" alt="Release Notes algorithmia management APIs" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_algorithm_actions.png" alt="Release Notes algorithmia management APIs" class="screenshot">
 
 These algorithm APIs do not require management API keys to use. Non-administrator users of an Algorithmia platform will be able to use their [simple API keys](https://algorithmia.com/developers/basics/customizing-api-keys) to interact with algorithms they have permissions to work with. The use of Management API keys will not be supported 
 by these algorithm APIs.
@@ -164,11 +164,11 @@ However, to make settings changes available to developers consuming your algorit
 
 The two immediate settings that don’t require a publish are Source Visibility and License:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_algo_settings.png" alt="Release Notes algorithm settings" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_algo_settings.png" alt="Release Notes algorithm settings" class="screenshot">
 
 ### How to Update Algorithm Settings ###
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_how_to_update_settings.png" alt="Release Notes how to update algorithm settings" class="screenshot"> 
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_how_to_update_settings.png" alt="Release Notes how to update algorithm settings" class="screenshot"> 
 
 During the publishing process, we’ll detect which settings will be changed for the next published version and inform the publisher the type of Semantic Versioning increase that will be required.  
 
@@ -191,7 +191,7 @@ The two data connectors that are included in this release are:
 To find out more information about the Data API available in each Algorithmia instance, including 
 the [Hosted Data Service,](https://algorithmia.com/developers/data/hosted) you can visit the [overview topic](https://algorithmia.com/developers/data) in the Developer Center. 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_data_portal_guides.png" alt="Release Notes how to update algorithm settings" class="screenshot"> 
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_data_portal_guides.png" alt="Release Notes how to update algorithm settings" class="screenshot"> 
 
 ### Algorithmia .NET SDK Supports .NET Core and .NET Standard ###
 Customers have been adopting and transitioning to .NET Core and have been asking us to transition from only supporting the .NET framework. We’re happy to now include support for the Algorithmia .NET Client in all of the frameworks supported by **.NET Standard 2.0, which includes .NET Core.** This means that many more application types can run across Windows, Linux, MacOS, and mobile, and other devices will be able to directly make calls to algorithms.
@@ -224,13 +224,13 @@ Administrators now have the flexibility to manage an algorithm’s use of their 
 
 ### How to Update a User’s Work Limits ###
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_update_work_limits.png" alt="Release Notes set work limits" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_update_work_limits.png" alt="Release Notes set work limits" class="screenshot">
 
 ***User to Update:*** Enter the username of the user you want to limit. 
 ***Max Concurrent Sessions:*** Input a max number of concurrent requests a user can make at one time to ensure resources are not being over allocated.
 ***Max Active Jobs:*** Insert a max number of active jobs a user can have before requests begin queueing to ensure other users have resources available to them.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_update_max_work_limits.png" alt="Release Notes max work limits" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_update_max_work_limits.png" alt="Release Notes max work limits" class="screenshot">
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_contact_us.png" alt="Release Notes contact us" class="screenshot">
+<img src="{{site.baseurl}}/images/post_images/release_notes/19.01_contact_us.png" alt="Release Notes contact us" class="screenshot">
 
