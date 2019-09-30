@@ -35,6 +35,7 @@
     {% strip %}
 
     <!-- BEGIN_BODY_EMBED -->
+    {% include header.html %}
     <div id="wrapper">
       {% include hero.html %}
 
@@ -63,6 +64,7 @@
     <script src="{{ site.baseurl }}/js/core.cat.js"></script>
     <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/userCreds.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ site.baseurl }}/js/stageCustomization.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     $(function() {
       $('#search-query').lunrSearch({
