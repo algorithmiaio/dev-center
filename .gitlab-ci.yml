@@ -12,6 +12,7 @@ services:
 
 stages:
   - build
+  - push
 
 #
 # Build
@@ -33,3 +34,28 @@ build:
       --file $CI_PROJECT_DIR/Dockerfile
       --cache-from $BUILDER_TAG
       $CI_PROJECT_DIR
+    - docker push $BUILDER_TAG
+    - mkdir image
+    - docker save $IMAGE_TAG > image/golduck.tar
+  artifacts:
+    paths:
+      - image
+
+#
+# Push
+#
+
+push:
+  stage: push
+  image:
+    name: docker:stable
+    entrypoint: [""]
+  before_script:
+    - mkdir ~/.docker
+    - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
+  script:
+    - docker load -i image/golduck.tar
+    - docker push $IMAGE_TAG
+  only:
+    - /^FRONTEND-1700$/
+
