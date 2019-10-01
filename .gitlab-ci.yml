@@ -57,7 +57,7 @@ push:
     - docker load -i image/golduck.tar
     - docker push $IMAGE_TAG
   only:
-    - /^FRONTEND-1700$/
+    - /^(master|develop)$/
   except:
     - tags
 
