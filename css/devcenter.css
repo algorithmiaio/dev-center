@@ -12,3 +12,19 @@ body,
 .dev-center-content-container {
   flex-grow: 1;
 }
+#wrapper {
+  margin-top: 2rem;
+}
+.syn-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+.show-unauth,
+.show-auth {
+  display: none !important;
+}
+.show-auth-nav .show-auth,
+.show-unauth-nav .show-unauth {
+  display: initial !important;
+}
