@@ -1,6 +1,5 @@
 _site
 sites
-vendor
 _tmp
 .DS_Store
 *.sublime-project
