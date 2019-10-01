@@ -67,9 +67,7 @@ Note: the header and footer may not look right. This is inconsequential as they 
  1. First, build the `./sites` folder to serve content out of:
 
     ```
-    mkdir /sites && \
-      bundle exec jekyll build -d sites/public/developers -c _config.yml && \
-      bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml
+    ./build.sh
     ```
 2. Run `npm install` to install Node dependencies.
 3. Run `node server/index.js` to start the server.

@@ -33,12 +33,11 @@ RUN bundle install
 #
 # Build Dev Center sites
 #
+
 # Copy Synapse dist/ files
 COPY --from=style-builder /app/dist ./synapse/dist
 
-RUN mkdir /sites && \
-  bundle exec jekyll build -d sites/public/developers -c _config.yml && \
-  bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml
+RUN ./build.sh
 
 #
 # Final stage: use the build artifacts from builder stage
