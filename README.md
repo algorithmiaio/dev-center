@@ -62,6 +62,18 @@ You can now see the developer center at <http://localhost:4000>.
 
 Note: the header and footer may not look right. This is inconsequential as they are stripped from the page before embedding into the webserver.
 
+### Running the Node server locally
+
+ 1. First, build the `./sites` folder to serve content out of:
+
+    ```
+    mkdir /sites && \
+      bundle exec jekyll build -d sites/public/developers -c _config.yml && \
+      bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml
+    ```
+2. Run `npm install` to install Node dependencies.
+3. Run `node server/index.js` to start the server.
+
 Making changes
 -------------
 
