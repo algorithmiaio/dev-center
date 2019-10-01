@@ -58,4 +58,6 @@ push:
     - docker push $IMAGE_TAG
   only:
     - /^FRONTEND-1700$/
+  except:
+    - tags
 
