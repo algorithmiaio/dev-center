@@ -42,11 +42,36 @@ app.get('*', (req, res, next) => {
   }
 })
 
+// Local Development - Proxy requests to local hot-reloading Jekyll servers.
+
+if (process.env.LOCAL) {
+  const apiDocsProxyConfig = {
+    target: config.env.stage.webserverUrl,
+    filter: (pathname) => /^\/api.*/.test(pathname),
+    changeOrigin: true,
+  }
+  app.use(
+    require('http-proxy-middleware')(
+      apiDocsProxyConfig.filter,
+      apiDocsProxyConfig
+    )
+  )
+  const devCenterProxyConfig = {
+    target: config.env.stage.webserverUrl,
+    changeOrigin: true,
+  }
+  app.use(
+    require('http-proxy-middleware')(devCenterProxyConfig)
+  )
+}
+
 // API Docs
 
 app.use(
   '/api',
-  express.static(path.join(__dirname, '/docs/'))
+  express.static(path.join(__dirname, '../docs'), {
+    redirect: false
+  })
 )
 
 // Dev Center
