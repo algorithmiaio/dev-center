@@ -42,6 +42,13 @@ app.get('*', (req, res, next) => {
   }
 })
 
+// API Docs
+
+app.use(
+  '/api',
+  express.static(path.join(__dirname, '/docs/'))
+)
+
 // Dev Center
 
 const isDirectory = path => !/\w+\.\w+$/.test(path)
