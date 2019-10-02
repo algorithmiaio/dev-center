@@ -6,7 +6,13 @@
   "author": "Algorithmia <mia@algorithmia.com>",
   "homepage": "https://algorithmia.com/",
   "license": "The MIT License (MIT)",
+  "scripts": {
+    "start": "NODE_ENV=production node ./server/index.js",
+    "test": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/*.spec.js --timeout=10000"
+  },
   "devDependencies": {
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-uglify": "~0.3.2",
@@ -15,6 +21,14 @@
     "grunt-svgmin": "~0.3.1",
     "grunt-imgcompress": "~0.1.1",
     "grunt-newer": "^0.7.0",
-    "grunt-surround": "^0.1.0"
+    "grunt-surround": "^0.1.0",
+    "mocha": "^6.2.0",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^6.0.0",
+    "express": "^4.17.1"
   }
 }

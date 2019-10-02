@@ -33,12 +33,11 @@ RUN bundle install
 #
 # Build Dev Center sites
 #
+
 # Copy Synapse dist/ files
 COPY --from=style-builder /app/dist ./synapse/dist
 
-RUN mkdir /sites && \
-  bundle exec jekyll build -d sites/public/developers -c _config.yml,_config-web.yml && \
-  bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml,_config-web.yml
+RUN ./build.sh
 
 #
 # Final stage: use the build artifacts from builder stage
@@ -48,3 +47,12 @@ FROM node:10.14-slim
 WORKDIR /opt/src/app
 
 COPY --from=builder /opt/builds/sites ./sites
+
+COPY server/index.js ./server/index.js
+COPY config ./config
+COPY package.json package-lock.json ./
+
+RUN npm install --production
+
+EXPOSE 3000
+ENTRYPOINT [ "node", "server/index.js" ]

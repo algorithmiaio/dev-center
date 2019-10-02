@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
   <head>
     <meta charset="utf-8">
     <!-- BEGIN_HEAD_EMBED -->
@@ -31,31 +31,32 @@
     {% endif %}
   </head>
 
-  <body id="js-body">
+  <body>
     {% strip %}
 
     <!-- BEGIN_BODY_EMBED -->
-    {% include header.html %}
-    <div id="wrapper">
-      {% include hero.html %}
-
-      <div class="container dev-center-content-container">
-        <div class="row section">
-          <div class="col-sm-8 col-md-8 col-sm-push-3 col-md-push-3">
-            {% include search.html %}
-            <div id="main-content">
-              {{ content | emojify }}
+    <div data-ng-app="algorithmia">
+      {% include header.html %}
+      <div id="wrapper">
+        {% include hero.html %}
+        <div class="container dev-center-content-container">
+          <div class="row section">
+            <div class="col-sm-8 col-md-8 col-sm-push-3 col-md-push-3">
+              {% include search.html %}
+              <div id="main-content">
+                {{ content | emojify }}
+              </div>
             </div>
+            <div class="col-sm-3 col-md-3 col-sm-pull-8 col-md-pull-8 col-xs-12">
+              <nav class="hidden-print">
+                {% include navigation-side.html %}
+              </nav>
+            </div> <!-- END NAV CONTAINER -->
           </div>
-          <div class="col-sm-3 col-md-3 col-sm-pull-8 col-md-pull-8 col-xs-12">
-            <nav class="hidden-print">
-              {% include navigation-side.html %}
-            </nav>
-          </div> <!-- END NAV CONTAINER -->
         </div>
-      </div>
-      {% include footer.html %}
-    </div> <!-- end wrapper -->
+        {% include footer.html %}
+      </div> <!-- end wrapper -->
+    </div>
     <!-- END_BODY_EMBED -->
 
     {% endstrip %}
@@ -65,6 +66,7 @@
     <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/userCreds.js" type="text/javascript" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/stageCustomization.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     $(function() {
       $('#search-query').lunrSearch({
