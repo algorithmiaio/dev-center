@@ -127,7 +127,7 @@ Note: if you see an error similar to:
 Error: Failed to start algorithm - Loading required package: methods
 Error: package or namespace load failed...
 {% endhighlight %}
-You'll need to try and add different versions of the following packages.
+You'll need to try and add different versions of certain R packages.
 {: .notice-info}
 
 If you're using *tidyverse*, add the following lines to your dependencies:
