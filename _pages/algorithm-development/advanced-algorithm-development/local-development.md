@@ -19,14 +19,14 @@ Algorithmia provides a handy [Web IDE](https://algorithmia.com/developers/algori
 
 ## Language version and dependencies
 
-First, ensure that you are running the same major and minor version of the language you've selected for your Algorithm. New versions of languages don't just add new features or syntaxes -- they can also change behaviors in subtle ways, such as the [postponed evaluation of type annotations](https://docs.python.org/3/whatsnew/3.7.html#whatsnew37-pep563) introduced in Python 3.7.
+First, ensure that you are running the same major and minor version of the language you've selected for your Algorithm. New versions of languages don't just add new features or syntaxes -- they can also change behaviors in subtle ways, such as the [postponed evaluation of annotations](https://docs.python.org/3/whatsnew/3.7.html#whatsnew37-pep563) introduced in Python 3.7.
 
 Also be sure to keep your dependencies identical, down to the minor (or even the patch / sub-minor) version. If possible, use a virtual environment tool such as [Virtualenv](https://virtualenv.pypa.io/) to ensure that you aren't accidentally depending on globally-installed packages which haven't been explicitly declared in your dependencies file. Note that Algorithmia uses PyPi, not Conda, so use `pip` to install your Python packages.
 
 To help you identify the exact language and dependency versions, we've put together [code you can run inside your Algorithm to examine the environment and installed packages](list-packages/) -- and even to [help set up your virtual environment](list-packages/#creating-a-local-python-virtualenv-to-emulate-the-algorithms-environment).
 
-[{{site.baseurl}}/algorithm-development/languages/python/#managing-dependencies](Python dependencies guide)
-[{{site.baseurl}}/algorithm-development/languages/r/#managing-dependencies](R dependencies guide)
+Dependencies guides: [Python]({{site.baseurl}}/algorithm-development/languages/python/#managing-dependencies), 
+[R]({{site.baseurl}}/algorithm-development/languages/r/#managing-dependencies)
 {: .notice-info}
 
 ## Running your Algorithm locally
