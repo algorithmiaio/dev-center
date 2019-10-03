@@ -11,14 +11,14 @@ image:
 author: jon_peck
 repository: https://github.com/algorithmiaio/integrations/tree/master/Slack
 blog: https://blog.algorithmia.com/how-to-integrate-machine-learning-into-your-slack-channels/
-thumbnail: /developers/images/language_logos/slack.svg
+thumbnail: /images/language_logos/slack.svg
 ---
 
 Looking to add Machine Learning to your Slack App? Algorithmia provides over 5000 individual algorithms, from simple utilities to advanced Deep Learning tools, which can be called via Slack <a href="https://api.slack.com/slash-commands" target="_blank">Slash Commands</a> or utilized by your Slack <a href="https://api.slack.com/bot-users" target="_blank">Bot Users</a>.
 
 ## Algorithmia + Slack Slash Commands
 
-Algorithmia gives immense power to your Slack users and bots, thanks to its wide variety of tools and AI available via simple API calls. By invoking a Slash Command (`/commandname parameters`) in Slack, users can trigger an abstract API to respond either immediately or via a delayed callback. 
+Algorithmia gives immense power to your Slack users and bots, thanks to its wide variety of tools and AI available via simple API calls. By invoking a Slash Command (`/commandname parameters`) in Slack, users can trigger an abstract API to respond either immediately or via a delayed callback.
 
 Here are just a few examples of how Slack users could utilize simple Slash Commands backed by Algorithmia:
 * get a quick [summary of all social shares for a URL](https://algorithmia.com/algorithms/web/ShareCounts)
@@ -44,7 +44,7 @@ Slack Bots take things a bit further, giving the user a chatbot-like context in 
 ## Sample code: use a Slack Slash Command to get a quick summary of any website
 
 To demonstrate a very simple use of Algorithmia via Slack, let's look at at how easy it is to create a Slach command which takes a web address and response with an auto-generated summary of that page's content.
- 
+
 After you've followed Slack's guide to [create a Slack App](https://api.slack.com/slack-apps), and read up on [how Slash Commands work](https://api.slack.com/slash-commands), head to your [Slack App Management Page](https://api.slack.com/apps) and click on the App name to see the details of our Slack App. Under "Basic Information", copy the "Verification Token" -- you'll need it for the code below.
 
 In order for your Slack App to connect to Algorithmia, you'll need an intermediate function: and API endpoint which can accept a GET request from Slack, validate the content, and then POST to one of Algorithmia's APIs. There are many ways to do this, but for simplicity I've chosen to create a simple NodeJS function which will can run as a Google Cloud Function, or be easily ported into your own NodeJS server:
@@ -167,8 +167,8 @@ exports.handleSlashCommand = function handleSlashCommand(req, res) {
   console.log(options);
   // call the relevant algo
   request(options, function (error, response, body) {
-    console.log('alg error:', error); 
-    console.log('alg statusCode:', response&&response.statusCode); 
+    console.log('alg error:', error);
+    console.log('alg statusCode:', response&&response.statusCode);
     console.log('alg body:', body);
     // check if there's a valid response (200), and parse JSON
   	// TBD: handle errors if a non-400 or non-JSON response is received!

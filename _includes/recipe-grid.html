@@ -5,7 +5,11 @@
         <div class="recipe-card-body mb-16">
           {% if post.thumbnail %}
             <div class="recipe-card-image">
-              <div style="background-image: url({{post.thumbnail}});"></div>
+              {% if post.thumbnail contains '://' %}
+                <div style="background-image: url({{post.thumbnail}});"></div>
+              {% else %}
+                <div style="background-image: url({{post.thumbnail | relative_url }});"></div>
+              {% endif %}
             </div>
           {% endif %}
           <div class="recipe-card-info">
