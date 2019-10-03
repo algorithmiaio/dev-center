@@ -158,6 +158,9 @@ It will output a JSON formatted object which the user will consume with an API c
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “demo” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be demo/TokenizeText/0.1.1
 
+Note that Algorithmia uses `rjson` to automatically (de)serialize input and output for you. If you are used to using `jsonlite` or another JSON package, certain datastructures (especially matrices and dataframes) will be structured differently in the I/O. We recommend reviewing [this excellent guide](https://rstudio-pubs-static.s3.amazonaws.com/31702_9c22e3d1a0c44968a4a1f9656f1800ab.html) which explains the differences.
+{: .notice-warning}
+
 ### Working with Basic Data Structures
 
 Below is a code sample showing how to create an algorithm working with basic user input.
