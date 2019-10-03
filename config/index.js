@@ -15,5 +15,9 @@ module.exports = {
       process.env.DISABLE_X_FRAME_OPTIONS,
       'true'
     ),
+    stage: {
+      apiDocsUrl: 'http://localhost:4567',
+      devCenterUrl: 'http://localhost:4000',
+    },
   },
 }

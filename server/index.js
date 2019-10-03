@@ -46,23 +46,25 @@ app.get('*', (req, res, next) => {
 
 if (process.env.LOCAL) {
   const apiDocsProxyConfig = {
-    target: config.env.stage.webserverUrl,
-    filter: (pathname) => /^\/api.*/.test(pathname),
+    target: config.env.stage.apiDocsUrl,
+    filter: (pathname) => {
+      return /^\/api.*/.test(pathname)
+    },
+    pathRewrite: {
+      '^/api': '/',
+    },
     changeOrigin: true,
   }
-  app.use(
-    require('http-proxy-middleware')(
+  app.use(require('http-proxy-middleware')(
       apiDocsProxyConfig.filter,
       apiDocsProxyConfig
     )
   )
   const devCenterProxyConfig = {
-    target: config.env.stage.webserverUrl,
+    target: config.env.stage.devCenterUrl,
     changeOrigin: true,
   }
-  app.use(
-    require('http-proxy-middleware')(devCenterProxyConfig)
-  )
+  app.use(require('http-proxy-middleware')(devCenterProxyConfig))
 }
 
 // API Docs
@@ -77,29 +79,26 @@ app.use(
 // Dev Center
 
 const isDirectory = path => !/\w+\.\w+$/.test(path)
-app.use(
-  /^\/developers/,
-  (req, res, next) => {
-    const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
+app.use(/^\/developers/, (req, res, next) => {
+  const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
 
-    if (isDirectory(req.path)) {
-      req.url = `${req.url.replace(/\/$/, '')}/index.html`
-    }
-
-    const options = {
-      redirect: false,
-      maxAge: isProduction ? '1y' : '0',
-    }
-
-    const basePath = path.join(
-      __dirname,
-      `../sites/${usePublic ? 'public' : 'enterprise'}`,
-      'developers'
-    )
-
-    express.static(basePath, options)(req, res, next);
+  if (isDirectory(req.path)) {
+    req.url = `${req.url.replace(/\/$/, '')}/index.html`
   }
-)
+
+  const options = {
+    redirect: false,
+    maxAge: isProduction ? '1y' : '0',
+  }
+
+  const basePath = path.join(
+    __dirname,
+    `../sites/${usePublic ? 'public' : 'enterprise'}`,
+    'developers'
+  )
+
+  express.static(basePath, options)(req, res, next)
+})
 
 app.get('*', (req, res) => {
   res.status(404).end()
@@ -109,9 +108,8 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 3000
 const server = app.listen(PORT, () => {
-    log.info(`Server started on port ${PORT}.`)
-  }
-)
+  log.info(`Server started on port ${PORT}.`)
+})
 
 // Graceful Shutdown
 
