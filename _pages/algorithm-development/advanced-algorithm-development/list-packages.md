@@ -28,7 +28,7 @@ algorithm <- function(input) {
 }
 ```
 
-You can see this in action for a default, blank R Algorithm on our public platform at [https://algorithmia.com/algorithms/jpeck/ListPackagesR](https://algorithmia.com/algorithms/jpeck/ListPackagesR).
+You can see this in action for a default, blank R Algorithm on our public platform at [https://algorithmia.com/algorithms/util/ListPackagesR](https://algorithmia.com/algorithms/util/ListPackagesR).
 
 ## Listing packages in Python   
 
@@ -46,7 +46,7 @@ def apply(input):
     }
 ```
 
-You can see this on our public site for a default [Python 2.7 - Beta](https://algorithmia.com/algorithms/jpeck/ListPackagesPython27Beta) or [Python 3.6 - Beta](https://algorithmia.com/algorithms/jpeck/ListPackagesPython36Beta) Algorithm.
+You can see this on our public site for a default [Python 2.7 - Beta](https://algorithmia.com/algorithms/util/ListPackagesPython27Beta) or [Python 3.6 - Beta](https://algorithmia.com/algorithms/util/ListPackagesPython36Beta) Algorithm.
 
 
 ## Creating a local Python Virtualenv to emulate the Algorithm's environment
@@ -94,4 +94,4 @@ Now try the `pip` installation. If it fails, try running it for each package ind
 
 When you're done working in this virtualenv, exit it by typing `deactivate`. You can return anytime by running the `source` line... no need to reinstall your packages unless they change!
 
-You can see this in action for a default [Python 2.7 - Beta](https://algorithmia.com/algorithms/jpeck/CreateVenvScriptPython27) or [Python 3.6 - Beta](https://algorithmia.com/algorithms/jpeck/CreateVenvScriptPython36) on Algorithmia.com
+You can see this in action for a default [Python 2.7 - Beta](https://algorithmia.com/algorithms/util/CreateVenvScriptPython27Beta) or [Python 3.6 - Beta](https://algorithmia.com/algorithms/util/CreateVenvScriptPython36Beta) on Algorithmia.com
