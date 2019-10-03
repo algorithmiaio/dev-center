@@ -12,7 +12,7 @@ image:
 
 The [Wolfram Language](http://www.wolfram.com/language/principles/) is quite powerful and puts a wide variety of algorithms and curated data at your fingertips.
 
-When you're ready to extend this with any of the 8,000+ algorithms available from Algorithmia, or by hosting your own ML Model written in your [preferred language](/developers/algorithm-development/languages), you can easily do so by calling your Algorithm directly from within Wolfram!
+When you're ready to extend this with any of the 8,000+ algorithms available from Algorithmia, or by hosting your own ML Model written in your [preferred language]({{site.baseurl}}/algorithm-development/languages), you can easily do so by calling your Algorithm directly from within Wolfram!
 
 You can run this code sample by downloading the free [Wolfram Engine](http://www.wolfram.com/engine/) and/or [WolframScript](https://www.wolfram.com/wolframscript), or by using any product you already have which supports the Wolfram Language (such as [Wolfram One](http://www.wolfram.com/wolfram-one/)).
 
@@ -39,14 +39,14 @@ response = URLRead[req, {"Body"}]
 The response variable now contains the Algorithm response, for you to use as you wish:
 
 {% highlight json%}
-{  
-   "result":[  
-      {  
+{
+   "result":[
+      {
          "document":"I love Algorithmia",
          "sentiment":0.6369
       }
    ],
-   "metadata":{  
+   "metadata":{
       "content_type":"json",
       "duration":0.000866891
    }
