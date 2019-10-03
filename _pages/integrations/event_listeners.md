@@ -9,9 +9,20 @@ image:
     teaser: /language_logos/amazon_sqs.png
 ---
 
-These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue 
+These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
 
-## 1. User permissions
+This is only available for Enterprise installations of Algorithmia. 
+
+## 1. Obtain a template file and account info from Algorithmia
+
+Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you will need during CloudFormation setup:
+
+* the CloudFormation template file, `client-aws-cloudformation-template.yaml`
+* AlgorithmiaAccountNumber
+* QueueName
+* QueueDLQName
+
+## 2. Set AWS user permissions
 
 You will need to have a user (or role that your user can assume) with the following AWS permissions:
 
@@ -21,7 +32,7 @@ You will need to have a user (or role that your user can assume) with the follow
 
 **SQS**: CreateQueue, GetQueueAttributes, and SetQueueAttributes (on all resources)
 
-## 2. Creating Event Listener resources in AWS
+## 3. Creating Event Listener resources in AWS
 
 Open the [CloudFormation page](https://console.aws.amazon.com/cloudformation/home) in the AWS console.
 
@@ -81,7 +92,7 @@ Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you w
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_13.png">
 
-## 3. Creating an Event Listener in the Algorithmia platform
+## 4. Creating an Event Listener in the Algorithmia platform
 
 *Any* algorithm can be used with an Event Listener. This tutorial shows one possible sample algorithm.
 
@@ -155,7 +166,7 @@ Enter the full path of your algorithm published earlier and click **Create New E
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_28.png">
 
-## 4. Triggering the Event Listener
+## 5. Triggering the Event Listener
 
 Many methods exist for sending messages to AWS SQS queues. Here is one method using the AWS SQS queue web user interface.
 

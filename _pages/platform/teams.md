@@ -11,6 +11,7 @@ image:
 permalink: /platform/organizations/
 redirect_from:
   - /teams/
+  - /basics/organization_profiles/
 ---
 
 If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. The following sections cover the basics of using teams and organizations on the Algorithmia platform, including how to create and invite users to an organization, how to approve published algorithms, and how to check your organization's earnings.
@@ -67,7 +68,7 @@ After clicking 'Invite User' a form will appear and you can enter the users name
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user_form.png" alt="Inviting Users" class="screenshot img-sm">
 
-As an organization owner, you may view any pending invitations by clicking on the "Invitations" tab 
+As an organization owner, you may view any pending invitations by clicking on the "Invitations" tab
 
 If you invite a user that already has an account, then you must invite them using their username, not their email.
 {: .notice-warning }

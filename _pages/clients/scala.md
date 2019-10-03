@@ -8,6 +8,12 @@ show_related: true
 image:
     teaser: /language_logos/scala.svg
 repository: https://github.com/algorithmiaio/algorithmia-scala
+redirect_from:
+  - /algorithm-development/client-guides/scala/
+  - /algorithm-development/guides/scala/
+  - /algorithm-development/guides/scala-guide/
+  - /application-development/client-guides/scala/
+  - /application-development/guides/scala/
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Scala Client to call algorithms and manage data through the Algorithmia platform.
@@ -57,7 +63,7 @@ Alternately, you can ensure that each of your servers interacting with your Algo
 
 For application developers, [Algorithmia's Data Portal](/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
-This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted/) option on the Algorithmia platform which is available to both algorithm and application developers.
+This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
 
 ### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
@@ -88,7 +94,7 @@ try {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.url}}/data/hosted/).
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.url}}/data/hosted).
 {: .notice-info}
 
 ### Work with Directory Permissions
@@ -123,11 +129,11 @@ try {
 }
 {% endhighlight %}
 
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection. 
+Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
 
 Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
 
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
+For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 
 ### Upload Data to your Data Collection
 
@@ -157,7 +163,7 @@ This endpoint will replace a file if it already exists. If you wish to avoid rep
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted/).
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 
 ### Downloading Data from a Data Collection
 
@@ -177,7 +183,7 @@ try {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 

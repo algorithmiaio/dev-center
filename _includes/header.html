@@ -1,11 +1,208 @@
-<header id="masthead">
-  <div class="container">
-    <a href="{{ site.url }}/" class="site-title">
-      <img src="{{ '/images/logos/algorithmia-white-logo.png' | relative_url }}" class="nav-image" alt="{{ site.title }}" itemprop="image">
-    </a>
-
-    <nav role="navigation" class="menu top-menu">
-      {% include navigation.html %}
-    </nav>
-  </div><!-- /.inner-wrap -->
-</header><!-- /.masthead -->
+<div class="syn-styles-supported syn-header-wrapper">
+  <header class="syn-page-header">
+    <div class="syn-page-header-nav-backdrop" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))"></div>
+    <div class="syn-page-header-content syn-flex justify-space-between">
+      <div class="syn-flex align-center">
+        <button
+          class="syn-btn icon text grow syn-hidden-lg"
+          onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))"
+        >
+          <svg width="16px" height="16px" viewBox="0 0 12 12">
+            <path
+              fill="currentColor"
+              d="M0,2 L12,2 L12,3.344 L0,3.344 L0,2 Z M0,6.67 L0,5.33 L12,5.33 L12,6.67 L0,6.67 Z M0,10 L0,8.656 L12,8.656 L12,10 L0,10 Z"
+            />
+          </svg>
+        </button>
+        <a class="syn-flex" href="/">
+          <img
+            class="syn-ml-8"
+            src="/v1/config/logo"
+            style="max-height: 24px; max-width: 100%"
+            onerror="this.onerror=null; this.src=`{{ '/images/algo-purple.svg' | relative_url }}`;"
+          />
+        </a>
+        <div
+          class="syn-page-header-divider vertical syn-ml-16 syn-mr-16 {% if site.enterprise %}syn-hidden-lg syn-hidden-md syn-hidden-sm{% endif %}"
+          id="before-brand-title"
+        ></div>
+        <span class="syn-font-mono syn-caption syn-text-tertiary syn-mb-0 {% if site.enterprise %}syn-hidden-lg syn-hidden-md syn-hidden-sm{% endif %}" id="brand-title">AI LAYER</span>
+      </div>
+      <div>
+        {% unless site.enterprise %}
+        <a href="/product" class="syn-link-no-decoration show-auth show-unauth">
+          <button class="syn-btn text syn-visible-lg">Product</button>
+        </a>
+        <a href="/pricing" class="syn-link-no-decoration show-auth show-unauth">
+          <button class="syn-btn text syn-visible-lg syn-ml-16">
+            Pricing
+          </button>
+        </a>
+        <div direction="left" class="syn-dropdown syn-ml-16 show-auth show-unauth">
+          <button class="syn-btn text syn-visible-lg" onclick="this.parentNode.classList.toggle('open')">
+            Learn <svg class="syn-ml-4" width="7px" height="4px" viewBox="0 0 7 4">
+              <polygon fill="currentColor" points="0 0 6.688 0 3.344 3.344"></polygon>
+            </svg>
+          </button>
+          <div class="syn-dropdown-bg" onclick="this.parentNode.classList.toggle('open')"></div>
+          <div class="syn-dropdown-list">
+            <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+              <a href="/resources">Resources</a>
+            </div>
+            <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+              <a href="/developers">Docs</a>
+            </div>
+            <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+              <a href="https://blog.algorithmia.com" target="_blank"
+                >Blog
+                <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+                  <path
+                    fill="currentColor"
+                    d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+              <a href="https://learn.algorithmia.com" target="_blank"
+                >Learning Center
+                <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+                  <path
+                    fill="currentColor"
+                    d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endunless %}
+        <a
+          href="/signin"
+          class="show-unauth syn-link-no-decoration"
+        >
+          <button class="syn-btn text theme-primary syn-visible-lg syn-ml-16">
+            Sign in
+          </button>
+        </a>
+        <a href="/signup" class="show-unauth syn-link-no-decoration">
+          <button
+            class="syn-btn outlined theme-primary syn-visible-lg syn-ml-16"
+          >
+            {% if site.enterprise %}
+            <span>Create Account</span>
+            {% else %}
+            <span>Try It For Free</span>
+            {% endif %}
+          </button>
+        </a>
+        {% unless site.enterprise %}
+        <a href="/demo" class="show-unauth syn-link-no-decoration">
+          <button
+            class="syn-btn contained theme-accent syn-visible-lg syn-ml-16"
+          >
+            Get Your Demo
+          </button>
+        </a>
+        {% endunless %}
+        <a class="show-auth" href="/">
+          <button
+            class="syn-btn outlined theme-primary syn-ml-16 syn-visible-lg"
+          >
+            Return to App
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="syn-page-header-nav">
+      <nav class="syn-nav pt-16">
+        <ul>
+          {% unless site.enterprise %}
+          <li>
+            <a href="/demo" class="show-unauth">Get Your Demo</a>
+          </li>
+          {% endunless %}
+          <li>
+            <a href="/signup" class="show-unauth">
+              {% if site.enterprise %}
+              <span>Create Account</span>
+              {% else %}
+              <span>Try It For Free</span>
+              {% endif %}
+            </a>
+          </li>
+          <li>
+            <a href="/signin" class="show-unauth">Sign In</a>
+          </li>
+          <li>
+            <a href="/" class="show-auth">Return to App</a>
+          </li>
+        </ul>
+        {% unless site.enterprise %}
+        <div class="show-auth show-unauth">
+          <div class="syn-break syn-mt-16"></div>
+          <ul>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/product">Product</a></li>
+          </ul>
+          <div class="syn-break syn-mt-16"></div>
+          <p class="syn-overline pt-16">Industries</p>
+          <ul>
+            <li>
+              <a href="/enterprise/energy">Energy</a>
+            </li>
+            <li>
+              <a href="/enterprise/finance">Finance</a>
+            </li>
+            <li>
+              <a href="/enterprise/government">Government</a>
+            </li>
+            <li>
+              <a href="/enterprise/pharma">Pharma</a>
+            </li>
+            <li>
+              <a href="/enterprise/retail">Retail</a>
+            </li>
+            <li>
+              <a href="/enterprise/tech">Tech</a>
+            </li>
+          </ul>
+          <div class="syn-break syn-mt-16"></div>
+          <p class="syn-overline pt-16">Learn</p>
+          <ul class="syn-mb-16">
+            <li><a class="active" href="/developers">Docs</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li>
+              <a
+                class="syn-flex align-center"
+                href="https://blog.algorithmia.com"
+              >
+                Blog <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+                    <path
+                      fill="currentColor"
+                      d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                    />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="syn-flex align-center"
+                href="https://learn.algorithmia.com"
+              >
+                Learning Center
+                <svg class="syn-ml-4" width="14" height="14" viewBox="0 2 24 20">
+                  <path
+                    fill="currentColor"
+                    d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        {% endunless %}
+      </nav>
+    </div>
+  </header>
+</div>

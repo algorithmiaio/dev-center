@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/r.svg
 ---
 
-Before you get started learning about R algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about R algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
 Table of Contents
 
@@ -32,11 +32,11 @@ The full <a href="https://www.r-project.org/about.html">R language and standard 
 is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{site.baseurl}}/clients/r/">Algorithmia R language Client</a>.
+via the <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a>.
 
 ## Write your First Algorithm
 
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
+If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
 The main thing to note about the algorithm is that it's wrapped in the algorithm() function.
 
@@ -54,7 +54,7 @@ When you have an R model that has been serialized as an .rds file, you can deplo
 saveRDS(iris_fit_naive, "./naive_bayes_iris.rds")
 {% endhighlight %}
 
-Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{site.baseurl}}/clients/r/) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{site.baseurl}}/data/).
+Then follow the instructions for how to work with data using the Data Api in the [R Client Docs]({{site.baseurl}}/clients/r) in order to upload your saved model to Algorithmia hosted data or you can store it in Dropbox or an S3 bucket. To find out more about working with data check out the [Data Portal]({{site.baseurl}}/data).
 
 Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
 
@@ -173,11 +173,14 @@ It will output a JSON formatted object which the user will consume with an API c
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “demo” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be demo/TokenizeText/0.1.1
 
+Note that Algorithmia uses `rjson` to automatically (de)serialize input and output for you. If you are used to using `jsonlite` or another JSON package, certain datastructures (especially matrices and dataframes) will be structured differently in the I/O. We recommend reviewing [this excellent guide](https://rstudio-pubs-static.s3.amazonaws.com/31702_9c22e3d1a0c44968a4a1f9656f1800ab.html) which explains the differences.
+{: .notice-warning}
+
 ### Working with Basic Data Structures
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a> for more information.
+You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
 
 {% highlight r %}
 library(algorithmia)
@@ -293,14 +296,14 @@ Sometimes it is more appropriate to write your output to a file than to return i
 {% highlight r %}
 # {"target_file":"data://username/collection/filename.txt"}
 file_uri <- input$target_file
-tmpfile <- sprintf("/tmp/%s.tmp",UUIDgenerate())
+tempfile <- sprintf("/tmp/%s.tmp",UUIDgenerate())
 save_some_output_to(tempfile)
 client$file(file_uri)$putFile(tempfile)
 {% endhighlight %}
 
 ### Calling Other Algorithms and Managing Data
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/r/">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/r">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
 You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
@@ -380,11 +383,11 @@ algo <- client$algo("util/Url2Text/0.1.4")
 algo$pipe(list())$error$message
 {% endhighlight %}
 
-For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors/">Better Error Handling Guide</a>.
+For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist/) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -404,7 +407,7 @@ Sample I/O is where you'll create your sample input and output for the user to t
 
 Under the Versioning tab, you can select whether your algorithm will be for public use or private use as well as set the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.
 
-Check out [Algorithm Pricing]({{site.baseurl}}/pricing/) for more information on how much algorithms will cost to run.
+Check out [Algorithm Pricing]({{site.baseurl}}/pricing) for more information on how much algorithms will cost to run.
 
 Under Semantic Versioning you can choose which kind of release your change should fall under: Major, Minor, or Revision.
 
@@ -418,6 +421,6 @@ In this guide we covered how to create an algorithm, work with different types o
 ## Additional Resources
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
-* [Algorithmia R client documentation]({{site.baseurl}}/clients/r/)
-* [Hosted Data Source]({{site.baseurl}}/data/)
+* [Algorithmia R client documentation]({{site.baseurl}}/clients/r)
+* [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?r)

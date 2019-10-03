@@ -1,4 +1,5 @@
 _site
+sites
 _tmp
 .DS_Store
 *.sublime-project
@@ -12,4 +13,3 @@ _asset_bundler_cache
 .jekyll-metadata
 .idea/
 CLIPBOARD.txt
-package-lock.json

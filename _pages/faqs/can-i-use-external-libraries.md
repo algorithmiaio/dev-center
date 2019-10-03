@@ -22,7 +22,7 @@ Use this dialog the same way you would specific the dependencies of any other pr
 
 You can explore an open source algorithm: [LDA](https://algorithmia.com/algorithms/kenny/LDA/edit) by opening up the Dependencies dialog to see an example of the dependencies specified in Java.
 
-For learning how to add dependencies in the language of your choice check out the [Algorithm Development]({{site.baseurl}}/algorithm-development/languages/) section.
+For learning how to add dependencies in the language of your choice check out the [Algorithm Development]({{site.baseurl}}/algorithm-development/languages) section.
 
 ### Adding dependencies through Git
 

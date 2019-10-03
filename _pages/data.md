@@ -7,11 +7,14 @@ excerpt: "Guides for connecting to your data sources through Dropbox, S3, or Alg
 tags: [data-connectors-overview]
 show_related: false
 author: steph_kim
+redirect_from:
+  - /algorithm-development/data-sources/
+  - /application-development/data-sources/
 ---
 
 <a href="/data">Algorithmia's Data Portal</a> makes it easy to connect your application or website to data sources. You'll find guides on how to connect to <a href="https://aws.amazon.com/s3/">Amazon's S3 service</a>, <a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a>, <a href="https://cloud.google.com/storage">Google Cloud Storage</a>, <a href="https://www.dropbox.com/">Dropbox</a> or you can host your files for free on the Algorithmia platform with our <a href="https://algorithmia.com/data/hosted">Hosted Data Service</a>. With these options it's easy to integrate your data into the app you're building.
 
-How easy is it? By creating an Algorithmia account you automatically have access to <a href="/data/hosted">Algorithmia's Hosted Data Source</a> where you can store your data or algorithm output and if you have a <a href="https://algorithmia.com/developers/data/dropbox/">Dropbox</a>, <a href="https://algorithmia.com/developers/data/azureblob/">Azure Blob Storage</a>, <a href="https://algorithmia.com/developers/data/googlecloudstorage/">Google Cloud Storage</a>, or an <a href="https://algorithmia.com/developers/data/s3/">Amazon S3</a> account you can configure a new data source to permit Algorithmia to read and write files on your behalf. Once you've set up your data connections all three file hosting options are accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
+How easy is it? By creating an Algorithmia account you automatically have access to <a href="/data/hosted">Algorithmia's Hosted Data Source</a> where you can store your data or algorithm output and if you have a <a href="https://algorithmia.com/developers/data/dropbox">Dropbox</a>, <a href="https://algorithmia.com/developers/data/azureblob">Azure Blob Storage</a>, <a href="https://algorithmia.com/developers/data/googlecloudstorage">Google Cloud Storage</a>, or an <a href="https://algorithmia.com/developers/data/s3">Amazon S3</a> account you can configure a new data source to permit Algorithmia to read and write files on your behalf. Once you've set up your data connections all three file hosting options are accessable via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
 
 **Note:** If you are calling the Algorithmia API with one of our clients, then you have access to all three data connection options. However, If you are creating an algorithm as an algorithm developer, then you will need to use the Algorithmia <a href="/data/hosted">Hosted Data</a> option for processing and storing data for your algorithms.
 

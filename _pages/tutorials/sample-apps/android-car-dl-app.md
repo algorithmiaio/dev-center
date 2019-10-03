@@ -408,18 +408,18 @@ Next, we create a new Intent to tell our app we are about to perform some operat
 
 Moving through the code, if you check inside the try/catch, you'll notice that we are using [streams](https://developer.android.com/reference/android/content/ContentResolver.html#openInputStream(android.net.Uri)) to get our data, and then we pass the image to [BitmapFactory.decodeFileDescriptor](https://developer.android.com/reference/android/graphics/BitmapFactory.html#decodeFileDescriptor(java.io.FileDescriptor)).
 
-Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data]({{site.baseurl}}/data/hosted/) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
+Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data]({{site.baseurl}}/data/hosted) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
 
-Note that you can also use [Dropbox or Amazon S3 to host your data]({{site.baseurl}}/data/).
+Note that you can also use [Dropbox or Amazon S3 to host your data]({{site.baseurl}}/data).
 {: .notice-info}
 
 Finally, our last method is "onClickRun" where we set our TextView and use an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html) to call our algorithm.
 
-In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client]({{site.baseurl}}/clients/android/) and pass in our API string from our "res/values/strings.xml".
+In the [doInBackground](https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground) method we create our [Algorithmia Client]({{site.baseurl}}/clients/android) and pass in our API string from our "res/values/strings.xml".
 
-We then create a DataDirectory object that references a directory in your [data collection](/data/hosted). If you haven't used Data sources check out our [Android Client Guide]({{site.baseurl}}/clients/android/).
+We then create a DataDirectory object that references a directory in your [data collection](/data/hosted). If you haven't used Data sources check out our [Android Client Guide]({{site.baseurl}}/clients/android).
 
-Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [Data Sources]({{site.baseurl}}/data/).
+Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [Data Sources]({{site.baseurl}}/data).
 {: .notice-warning}
 
 Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file.
@@ -434,6 +434,6 @@ And here is the result when we run our app, take a picture and run the algorithm
 
 ### Further Reading:
 
-* [The Algorithmia Client]({{site.baseurl}}/clients/java/)
+* [The Algorithmia Client]({{site.baseurl}}/clients/java)
 * [Algorithmia Java Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) <i class="fa fa-external-link"></i>
 * <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>

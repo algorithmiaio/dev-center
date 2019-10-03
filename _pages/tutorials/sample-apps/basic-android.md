@@ -11,6 +11,8 @@ image:
   feature: /post_images/android/android_robot_skateboarding.png
   teaser: /language_logos/android.svg
 github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
+redirect_from:
+  - /samples/basic-android/
 ---
 
 {% include toc.html %}
@@ -225,6 +227,6 @@ Integrating Algorithmia into Android is an easy and convenient way to leverage a
 
 ### Further Reading:
 
-* [The Algorithmia Client]({{site.baseurl}}/clients/java/)
+* [The Algorithmia Client]({{site.baseurl}}/clients/java)
 * [Algorithmia Java Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) <i class="fa fa-external-link"></i>
 * <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>

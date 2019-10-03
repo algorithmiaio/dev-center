@@ -67,7 +67,7 @@ algo.create(
 
 #### 2. Edit and Build your Algorithm
 
-Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{site.cdnurl}}{{site.baseurl}}/algorithm-development/algorithm-basics/git/) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{site.cdnurl}}{{site.baseurl}}/clients/cli/) (`algo clone USERNAME/ALGORITHMNAME`).
+Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{site.cdnurl}}{{site.baseurl}}/algorithm-development/algorithm-basics/git) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{site.cdnurl}}{{site.baseurl}}/clients/cli) (`algo clone USERNAME/ALGORITHMNAME`).
 
 Before attempting to publish, you must either click "Build" in the Web IDE, or `git push` your code (which implicitly triggers a build).
 
@@ -141,7 +141,7 @@ print(response.text)
 
 #### 2. Edit and Build your Algorithm
 
-Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{site.cdnurl}}{{site.baseurl}}/algorithm-development/algorithm-basics/git/) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{site.cdnurl}}{{site.baseurl}}/clients/cli/) (`algo clone USERNAME/ALGORITHMNAME`).
+Now that your Algorithm exists, you can edit the source code the Web IDE, or locally via [Git]({{site.cdnurl}}{{site.baseurl}}/algorithm-development/algorithm-basics/git) (`git clone https://git.algorithmia.com/git/USERNAME/ALGORITHMNAME.git`) or the [CLI]({{site.cdnurl}}{{site.baseurl}}/clients/cli) (`algo clone USERNAME/ALGORITHMNAME`).
 
 Before attempting to publish, you must either click "Build" in the Web IDE, or `git push` your code (which implicitly triggers a build).
 

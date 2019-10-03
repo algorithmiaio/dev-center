@@ -1,0 +1,3 @@
+[submodule "synapse"]
+	path = synapse
+	url = ../synapse.git

@@ -10,6 +10,8 @@ image:
 permalink: /algorithm-development/algorithm-checklist/
 redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-checklist/
+  - /basics/algorithm_checklist/
+  - /guides/algorithm_checklist/
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.
@@ -51,7 +53,7 @@ It is also helpful to explain what the output of the algorithm should be. If you
 
 #### Configure error handling
 
-To make your algorithm easy to use, it's key to implement informative error handling. Check out the [Algorithmia Guide to Better Error Handling]({{site.baseurl}}/algorithm-development/algorithm-errors/) for some guidance. Extensive functionality is only available in Python for now, but we're working on adding support for other languages.
+To make your algorithm easy to use, it's key to implement informative error handling. Check out the [Algorithmia Guide to Better Error Handling]({{site.baseurl}}/algorithm-development/algorithm-errors) for some guidance. Extensive functionality is only available in Python for now, but we're working on adding support for other languages.
 
 #### Link to any papers or external documentation
 
