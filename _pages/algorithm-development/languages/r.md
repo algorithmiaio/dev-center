@@ -122,7 +122,12 @@ The Algorithmia dependency is already installed for your convenience and relies 
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-There are a few packages that require a little something extra in the dependencies file to work on Algorithmia.
+Note: if you see an error similar to: 
+{% highlight bash %}
+Error: Failed to start algorithm - Loading required package: methods
+Error: package or namespace load failed...
+{% endhighlight %}
+You'll need to try and add different versions of the following packages.
 {: .notice-info}
 
 If you're using *tidyverse*, add the following lines to your dependencies:
@@ -131,6 +136,16 @@ tidyverse
 -t https://cran.r-project.org/src/contrib/Archive/R6/R6_2.2.2.tar.gz
 -t https://cran.r-project.org/src/contrib/httr_1.3.1.tar.gz
 -t https://cran.r-project.org/src/contrib/jsonlite_1.5.tar.gz
+withr
+{% endhighlight %}
+
+If you still get an error, try a different version directly from the CRAN archives:
+
+{% highlight bash %}
+tidyverse
+-t https://cran.r-project.org/src/contrib/Archive/R6/R6_2.2.2.tar.gz
+-t https://cran.r-project.org/src/contrib/Archive/httr/httr_1.4.0.tar.gz
+-t https://cran.r-project.org/src/contrib/Archive/jsonlite/jsonlite_1.5.tar.gz
 withr
 {% endhighlight %}
 
