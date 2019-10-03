@@ -144,7 +144,7 @@ def predict(image):
     return predicted
 
 # API calls will begin at the apply() method, with the request body passed as 'input'
-# For more details, see algorithmia.com/developers/algorithm-development/languages
+# For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
 def apply(input):
     # data://YOUR_USERNAME/YOUR_DATACOLLECTION/sample_animal1.jpg
     processed_data = preprocessing(input)

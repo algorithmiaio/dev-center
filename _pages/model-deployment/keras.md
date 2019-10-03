@@ -159,7 +159,7 @@ def process_input(input):
         except Exception as e:
             print("Could not create numpy array from data", e)
     else:
-        url = "https://algorithmia.com/developers/data"
+        url = "{{site.url}}{{site.baseurl}}/data"
         print("Incorrect url: Check how to host your data: {0}".format(url))
 
 

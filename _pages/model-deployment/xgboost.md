@@ -140,9 +140,9 @@ def process_input(input):
             sys.exit(0)
 
 # API calls will begin at the apply() method, with the request body passed as 'input'
-# For more details, see algorithmia.com/developers/algorithm-development/languages
+# For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
 def apply(input):
-	# Expects a csv file 
+	# Expects a csv file
     np_data = process_input(input)
     prediction = model.predict(np_data)
     return "hello {}".format(prediction)
