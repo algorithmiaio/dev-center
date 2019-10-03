@@ -75,7 +75,7 @@ You can now clone your Algorithm (via Git) and install the CLI to edit/test loca
 
 The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
 
-To learn more about this process, Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
@@ -90,6 +90,8 @@ To learn more about this process, Algorithmia's [CLI]({{site.baseurl}}/clients/c
 
 If you're using Python, you must [set an environment variable](https://www.schrodinger.com/kb/1842): `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
 {: .notice-info}
+
+For more tips and tricks on local development, see our guide: [setting up your local environment for Algorithm development]({{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development).
 
 ## Editing your algorithm via the web IDE
 

@@ -18,7 +18,6 @@ image:
       <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
     </a>
   </div>
-<div class="row lang-tile-container">
   {% assign post_title = "Inspecting Algorithms: determining the live list of packages/dependencies" %}
   <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
     <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/list-packages" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
