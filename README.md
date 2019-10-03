@@ -56,7 +56,16 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
  5. Run `git submodule init`, initializing the submodule for our UI toolkit, Synapse. **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
  6. Run `git submodule update`, cloning down submodule code.
  7. To build Synapse dist files, run `cd synapse && npm ci && npm run build && cd ..`
- 8. Start the test server: `bundle exec jekyll serve` (append `--config _config.yml,_config-enterprise.yml` to simulate an enterprise deploy)
+ 8. Start the local server:
+
+    __Public__
+    
+    `bundle exec jekyll serve --config _config.yml,_config-dev.yml`
+    
+    __Enterprise__ 
+    
+    `bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml`
+  
 
 You can now see the developer center at <http://localhost:4000>.
 
