@@ -33,33 +33,33 @@ app.use((req, res, next) => {
   next()
 })
 
-// Remove trailing slashes
+// API Docs - Handle **before** trailing slash changes so that assets
+// don't break
+
+app.use(
+  '/developers/api',
+  express.static(path.join(__dirname, '../api-docs/build/'), {
+    redirect: false,
+  })
+)
+
+// Remove trailing slashes, unless we're in local dev mode, in which case
+// we need the slashes to communicate with the Jekyll server
+
+const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 app.get('*', (req, res, next) => {
-  if (/.+\/$/.test(req.path)) {
+  if (hasTrailingSlash(req.path) && !process.env.LOCAL) {
     res.redirect(req.path.replace(/\/$/, ''))
+  } else if (!hasTrailingSlash(req.path) && process.env.LOCAL) {
+    res.redirect(`${req.path}/`)
   } else {
     next()
   }
 })
 
-// Local Development - Proxy requests to local hot-reloading Jekyll servers.
+// Local Development - Proxy requests to local hot-reloading Jekyll server
 
 if (process.env.LOCAL) {
-  const apiDocsProxyConfig = {
-    target: config.env.stage.apiDocsUrl,
-    filter: (pathname) => {
-      return /^\/api.*/.test(pathname)
-    },
-    pathRewrite: {
-      '^/api': '/',
-    },
-    changeOrigin: true,
-  }
-  app.use(require('http-proxy-middleware')(
-      apiDocsProxyConfig.filter,
-      apiDocsProxyConfig
-    )
-  )
   const devCenterProxyConfig = {
     target: config.env.stage.devCenterUrl,
     changeOrigin: true,
@@ -67,18 +67,9 @@ if (process.env.LOCAL) {
   app.use(require('http-proxy-middleware')(devCenterProxyConfig))
 }
 
-// API Docs
-
-app.use(
-  '/api',
-  express.static(path.join(__dirname, '../docs'), {
-    redirect: false
-  })
-)
-
 // Dev Center
 
-const isDirectory = path => !/\w+\.\w+$/.test(path)
+const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
 app.use(/^\/developers/, (req, res, next) => {
   const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
 

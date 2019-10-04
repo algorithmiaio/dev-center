@@ -8,7 +8,6 @@
   "license": "The MIT License (MIT)",
   "scripts": {
     "apidocs:build": "cd api-docs && bundle exec rake build",
-    "apidocs:dev": "cd api-docs && bundle exec rake serve",
     "apidocs:setup": "git submodule init && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
     "apidocs:update": "git submodule update && cd api-docs && bundle install",
     "dev": "cross-env LOCAL=true npm run start",
