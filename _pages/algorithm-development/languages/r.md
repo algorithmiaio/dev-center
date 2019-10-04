@@ -122,7 +122,12 @@ The Algorithmia dependency is already installed for your convenience and relies 
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-There are a few packages that require a little something extra in the dependencies file to work on Algorithmia.
+Note: if you see an error similar to: 
+{% highlight bash %}
+Error: Failed to start algorithm - Loading required package: methods
+Error: package or namespace load failed...
+{% endhighlight %}
+You'll need to try and add different versions of certain R packages.
 {: .notice-info}
 
 If you're using *tidyverse*, add the following lines to your dependencies:
@@ -131,6 +136,16 @@ tidyverse
 -t https://cran.r-project.org/src/contrib/Archive/R6/R6_2.2.2.tar.gz
 -t https://cran.r-project.org/src/contrib/httr_1.3.1.tar.gz
 -t https://cran.r-project.org/src/contrib/jsonlite_1.5.tar.gz
+withr
+{% endhighlight %}
+
+If you still get an error, try a different version directly from the CRAN archives:
+
+{% highlight bash %}
+tidyverse
+-t https://cran.r-project.org/src/contrib/Archive/R6/R6_2.2.2.tar.gz
+-t https://cran.r-project.org/src/contrib/Archive/httr/httr_1.4.0.tar.gz
+-t https://cran.r-project.org/src/contrib/Archive/jsonlite/jsonlite_1.5.tar.gz
 withr
 {% endhighlight %}
 
@@ -157,6 +172,9 @@ The first algorithm that we'll create will take a JSON formatted object passed a
 It will output a JSON formatted object which the user will consume with an API call to the algorithm path which is found at the bottom of the algorithm description page.
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “demo” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be demo/TokenizeText/0.1.1
+
+Note that Algorithmia uses `rjson` to automatically (de)serialize input and output for you. If you are used to using `jsonlite` or another JSON package, certain datastructures (especially matrices and dataframes) will be structured differently in the I/O. We recommend reviewing [this excellent guide](https://rstudio-pubs-static.s3.amazonaws.com/31702_9c22e3d1a0c44968a4a1f9656f1800ab.html) which explains the differences.
+{: .notice-warning}
 
 ### Working with Basic Data Structures
 

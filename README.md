@@ -52,13 +52,25 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
  1. Fork this repository on Github.
  2. Clone *your forked repository* with `git clone https://github.com/YOURUSERNAME/dev-center.git`
  3. `cd dev-center`
- 5. To set up submodules and install dependencies, run `npm run setup`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
+ 5. To set up submodules and install dependencies, run `npm run setup`.
+ * **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
+ * If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
  8. To start both the Node and Jekyll test servers with auto-regeneration, run `npm run dev`.
  9. If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
 
 You can now see the developer center at <http://localhost:3000/developers/>. The API docs are located at <http://localhost:3000/developers/api/>.
 
 ### Running the Jekyll Dev Server
+
+8. Start the local server:
+
+    __Public__
+
+    `bundle exec jekyll serve`
+
+    __Enterprise__
+
+    `bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml`
 
 To run only the Jekyll server at <http://localhost:4000/developers/>, follow steps 1-5 above, then run `npm run devcenter:dev`.
 
