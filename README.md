@@ -52,25 +52,15 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
  1. Fork this repository on Github.
  2. Clone *your forked repository* with `git clone https://github.com/YOURUSERNAME/dev-center.git`
  3. `cd dev-center`
- 4. Install all dependencies: `bundle install`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
- 5. Run `git submodule init`, initializing the submodule for our UI toolkit, Synapse. **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
- 6. Run `git submodule update`, cloning down submodule code.
- 7. To build Synapse dist files, run `cd synapse && npm ci && npm run build && cd ..`
- 8. Start the test server: `bundle exec jekyll serve` (append `--config _config.yml,_config-enterprise.yml` to simulate an enterprise deploy)
+ 5. To set up submodules and install dependencies, run `npm run setup`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
+ 8. To start both the Node and Jekyll test servers with auto-regeneration, run `npm run dev`.
+ 9. If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
 
-You can now see the developer center at <http://localhost:4000>.
+You can now see the developer center at <http://localhost:3000/developers/>. The API docs are located at <http://localhost:3000/developers/api/>.
 
-Note: the header and footer may not look right. This is inconsequential as they are stripped from the page before embedding into the webserver.
+### Running the Jekyll Dev Server
 
-### Running the Node server locally
-
- 1. First, build the `./sites` folder to serve content out of:
-
-    ```
-    ./build.sh
-    ```
-2. Run `npm install` to install Node dependencies.
-3. Run `node server/index.js` to start the server.
+To run only the Jekyll server at <http://localhost:4000/developers/>, follow steps 1-5 above, then run `npm run devcenter:dev`.
 
 Making changes
 -------------
