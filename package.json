@@ -12,6 +12,8 @@
     "dev": "(npm run apidocs:build && npm run synapse:build && npm run devcenter:dev) & npm server:dev",
     "devcenter:build": "./build.sh",
     "devcenter:dev": "bundle exec jekyll serve",
+    "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml",
+    "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml",
     "setup": "npm run apidocs:setup && npm run synapse:setup && bundle install && npm install",
     "server:dev": "cross-env LOCAL=true npm run server:start",
     "server:start": "NODE_ENV=production node ./server/index.js",

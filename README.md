@@ -62,22 +62,20 @@ You can now see the developer center at <http://localhost:3000/developers/>. The
 
 ### Running the Jekyll Dev Server
 
-8. Start the local server:
+To run only the Jekyll server at <http://localhost:4000/developers/>, first follow steps 1-5 above, then
 
-    __Public__
+__To Run Public Marketplace Version:__
 
-    `bundle exec jekyll serve`
+`npm run devcenter:public`
 
-    __Enterprise__
+__To Run Enterprise Version:__
 
-    `bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml`
-
-To run only the Jekyll server at <http://localhost:4000/developers/>, follow steps 1-5 above, then run `npm run devcenter:dev`.
+`npm run devcenter:enterprise`
 
 Making changes
 -------------
 
-###Project Organization
+### Project Organization
 
 All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder.
 
