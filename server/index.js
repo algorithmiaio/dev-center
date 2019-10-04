@@ -33,9 +33,19 @@ app.use((req, res, next) => {
   next()
 })
 
+// API Docs - resolve before trailing slash redirect so assets don't break
+
+app.use(
+  '/developers/api',
+  express.static(path.join(__dirname, '../api-docs/build/'), {
+    redirect: false,
+  })
+)
+
 // Remove trailing slashes, UNLESS
-// We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
-// Request is for an API docs landing, which needs the slash to not break assets
+// A) We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
+// B) Request is for an API docs landing, which needs the slash to not break assets
+// If A or B is true, ensure trailing slash is there
 
 const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath)
@@ -55,14 +65,6 @@ app.get('*', (req, res, next) => {
   }
 })
 
-// API Docs
-
-app.use(
-  '/developers/api',
-  express.static(path.join(__dirname, '../api-docs/build/'), {
-    redirect: false,
-  })
-)
 
 // Local Development - Proxy requests to local hot-reloading Jekyll server
 
