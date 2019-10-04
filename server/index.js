@@ -33,8 +33,29 @@ app.use((req, res, next) => {
   next()
 })
 
-// API Docs - Handle **before** trailing slash changes so that assets
-// don't break
+// Remove trailing slashes, UNLESS
+// We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
+// Request is for an API docs landing, which needs the slash to not break assets
+
+const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
+const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath)
+app.get('*', (req, res, next) => {
+  if (
+    hasTrailingSlash(req.path) &&
+    !(process.env.LOCAL || isApiDocs(req.path))
+  ) {
+    res.redirect(req.path.replace(/\/$/, ''))
+  } else if (
+    !hasTrailingSlash(req.path) &&
+    (process.env.LOCAL || isApiDocs(req.path))
+  ) {
+    res.redirect(`${req.path}/`)
+  } else {
+    next()
+  }
+})
+
+// API Docs
 
 app.use(
   '/developers/api',
@@ -42,20 +63,6 @@ app.use(
     redirect: false,
   })
 )
-
-// Remove trailing slashes, unless we're in local dev mode, in which case
-// we need the slashes to communicate with the Jekyll server
-
-const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
-app.get('*', (req, res, next) => {
-  if (hasTrailingSlash(req.path) && !process.env.LOCAL) {
-    res.redirect(req.path.replace(/\/$/, ''))
-  } else if (!hasTrailingSlash(req.path) && process.env.LOCAL) {
-    res.redirect(`${req.path}/`)
-  } else {
-    next()
-  }
-})
 
 // Local Development - Proxy requests to local hot-reloading Jekyll server
 
