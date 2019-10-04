@@ -8,23 +8,23 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim
 image:
-    teaser: /language_logos/filefolder.svg 
+    teaser: /language_logos/filefolder.svg
 ---
 
-If your algorithm needs to read or write data from your hadoop cluster, you can do so using [webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html). 
+If your algorithm needs to read or write data from your hadoop cluster, you can do so using [webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html).
 
 You'll need to enable webhdfs in your hdfs config file [hdfs-site.xml](https://hadoop.apache.org/docs/r3.1.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml):
 
 ```
-<property> 
-    <name>dfs.webhdfs.enabled</name> 
-    <value>true</value> 
+<property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
 </property>
 ```
 
-Here we'll show how to access a file stored on a hadoop single node cluster using webhdfs via the Python requests library. 
+Here we'll show how to access a file stored on a hadoop single node cluster using webhdfs via the Python requests library.
 
-Hdfs requests library from a Python algorithm. While there are other webhdfs libraries available, most aren't maintained or they require Java to be running in the same container. 
+Hdfs requests library from a Python algorithm. While there are other webhdfs libraries available, most aren't maintained or they require Java to be running in the same container.
 
 Here is an example using the Python library "requests" to submit a HTTP GET request using webhdfs:
 
@@ -51,7 +51,7 @@ Inside this folder, create a `.json` file containing your connection credentials
   "username":"algorithmiauser",
   "namenodeaddress":"192.0.2.0:9000"
   "port": "9864"
-} 
+}
 ```
 
 And then you can simply use the data api to load the credentials file into your algorithm:
@@ -74,7 +74,7 @@ payload = {"op": "OPEN", "user.name": creds["username"], "namenoderpcaddress": c
 r = requests.get(query_string, params=payload, allow_redirects=True)
 
 # API calls will begin at the apply() method, with the request body passed as 'input'
-# For more details, see algorithmia.com/developers/algorithm-development/languages
+# For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
 def apply(input):
     return r.text
 
