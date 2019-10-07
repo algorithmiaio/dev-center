@@ -7,7 +7,7 @@
   "homepage": "https://algorithmia.com/",
   "license": "The MIT License (MIT)",
   "scripts": {
-    "apidocs:build": "cd api-docs && bundle exec rake build",
+    "apidocs:build": "cd api-docs && bundle install && bundle exec rake build",
     "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
     "dev": "(npm run apidocs:build && npm run synapse:build && npm run devcenter:dev) & npm run server:dev",
     "devcenter:build": "./build.sh",
