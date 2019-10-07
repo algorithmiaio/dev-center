@@ -9,7 +9,7 @@
   "scripts": {
     "apidocs:build": "cd api-docs && bundle exec rake build",
     "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
-    "dev": "(npm run apidocs:build && npm run synapse:build && npm run devcenter:dev) & npm server:dev",
+    "dev": "(npm run apidocs:build && npm run synapse:build && npm run devcenter:dev) & npm run server:dev",
     "devcenter:build": "./build.sh",
     "devcenter:dev": "bundle exec jekyll serve",
     "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml",
