@@ -1,14 +1,14 @@
 ---
 layout: article
 title:  "Serverless.com"
-permalink: clients/serverless-com/
 excerpt: "Integrate Algorithmia into your Serverless Framework app"
 excerpt-short: "Integrate Algorithmia into your Serverless Framework app"
 categories: [integrations]
 tags: [integrations]
-show_related: true
+show_related: false
 image:
     teaser: /language_logos/serverless_com.png
+author: jon_peck
 ---
 
 With the [Serverless Framework](https://serverless.com), you can quickly build serverless apps across multiple infrastructure providers -- defining your cloud functions and associated services in a single place, then deploying them out to cloud providers such as AWS, Azure, and Google.
