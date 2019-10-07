@@ -59,7 +59,7 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
  6. To start both the Node and Jekyll test servers with auto-regeneration, run `npm run dev`.
  7. If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
 
-You can now see the developer center at <http://localhost:3000/developers/>. The API docs are located at <http://localhost:3000/developers/api/>.
+You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
 
 ### Running the Jekyll Dev Server
 

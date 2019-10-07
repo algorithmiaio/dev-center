@@ -10,7 +10,7 @@ let serverPid;
 
 const waitForServer = async (done) => {
   try {
-    await axios.get('http://localhost:3000/developers')
+    await axios.get('http://localhost:4000/developers')
     console.log('Server set up, running test...')
     done()
   } catch (err) {
@@ -37,7 +37,7 @@ const cleanup = (done) => {
   const command = os.platform() === 'linux' ? 'pkill' : 'kill'
   shell.exec(`${command} -9 -P ${serverPid}`, { silent: true }, function (code, stdout, stderr) {
     console.log('Killed server')
-    shell.exec('lsof -t -i :3000')
+    shell.exec('lsof -t -i :4000')
     console.log({ code, stdout, stderr })
     done()
   })
@@ -49,7 +49,7 @@ describe('Node Server: Defaults', () => {
   afterEach(cleanup)
 
   it('should return a 200 when spun up.', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
       expect(res.status).to.equal(200);
     })
   })
@@ -64,7 +64,7 @@ describe('Disable X-XSS-Protection: Set', () => {
   afterEach(cleanup)
 
   it('should not set an x-xss-protection header if disabled', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
       expect(res.headers['x-xss-protection']).to.equal(undefined);
     })
   })
@@ -79,7 +79,7 @@ describe('Disable X-Content-Type-Options: Set', () => {
   afterEach(cleanup)
 
   it('should not send a X-Content-Type-Options header if disabled', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
       expect(res.headers['x-content-type-options']).to.equal(undefined);
     })
   })
@@ -94,7 +94,7 @@ describe('Disable X-Frame-Options: Set', () => {
   afterEach(cleanup)
 
   it('should not send a X-Frame-Options header if disabled', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
       expect(res.headers['x-frame-options']).to.equal(undefined);
     })
   })
@@ -109,7 +109,7 @@ describe('Disable HSTS: Set', () => {
   afterEach(cleanup)
 
   it('should not send a Strict-Transport-Security header if disabled', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
       expect(res.headers['strict-transport-security']).to.equal(undefined);
     })
   })
@@ -123,7 +123,7 @@ describe('Defaults', () => {
   afterEach(cleanup)
 
   it('should set security headers by default', () => {
-    return axios.get('http://localhost:3000/developers').then(function(res) {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
 
       expect(res.headers['x-xss-protection']).to.equal('1');
       expect(res.headers['x-content-type-options']).to.equal('nosniff');

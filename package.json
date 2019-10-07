@@ -11,7 +11,7 @@
     "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
     "dev": "(npm run apidocs:build && npm run synapse:build && npm run devcenter:dev) & npm run server:dev",
     "devcenter:build": "./build.sh",
-    "devcenter:dev": "bundle exec jekyll serve",
+    "devcenter:dev": "bundle exec jekyll serve --port 4001",
     "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml",
     "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml",
     "setup": "npm run apidocs:setup && npm run synapse:setup && bundle install && npm install",

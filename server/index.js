@@ -102,7 +102,7 @@ app.get('*', (req, res) => {
 
 // Initialization
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 const server = app.listen(PORT, () => {
   log.info(`Server started on port ${PORT}.`)
 })
