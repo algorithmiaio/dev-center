@@ -4,8 +4,8 @@ title:  "Serverless.com"
 permalink: clients/serverless-com/
 excerpt: "Integrate Algorithmia into your Serverless Framework app"
 excerpt-short: "Integrate Algorithmia into your Serverless Framework app"
-categories: [clients, integrations]
-tags: [clients, integrations]
+categories: [integrations]
+tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/serverless_com.png
