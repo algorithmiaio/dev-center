@@ -1,8 +1,8 @@
 ---
 layout: article
-title:  "Inspecting Algorithms: determining the live list of packages/dependencies"
+title:  "Inspecting Algorithms: determining the live list of packages / dependencies"
 permalink: algorithm-development/advanced-algorithm-development/list-packages/
-excerpt: "Determining an Algorithm's live list of packages/dependencies and creating local execution environments"
+excerpt: "Determining an Algorithm's live list of packages / dependencies and creating local execution environments"
 categories: [algo-dev]
 tags: [algo-dev]
 show_related: true
