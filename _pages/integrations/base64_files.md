@@ -45,7 +45,7 @@ You can easily connect a standalone HTML form to a base64-capable Algorithm by u
   <pre id="results"></pre>
 </form>
 
-<script src="https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js" type="text/javascript"></script>
+<script src="https://algorithmia.com/v1/clients/js/algorithmia-0.2.1.js" type="text/javascript"></script>
 
 <script>
 
