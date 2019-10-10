@@ -7,7 +7,18 @@ Welcome to the repository for Algorithmia's Developer Center. Here you will find
 
 These docs are built on Jekyll. Learn more over at [the official Jekyll page](http://jekyllrb.com/).
 
-Running locally
+
+Running locally - minimal preview
+------------------------------
+
+[mkdocs](https://www.mkdocs.org/user-guide/writing-your-docs/#multilevel-documentation) can be used to quickly start a minimal local server and preview the markdown files. This supports only basic markdown, relies on mkdocs.yml for its navigation tree, and does render with the same styling or extended page properties/functions as the real server. Some images may not render.
+
+```bash
+pip install mkdocs
+mkdocs serve
+```
+
+Running locally - full server
 ------------------------------
 
 ### Prerequisites

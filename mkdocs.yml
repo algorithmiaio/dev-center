@@ -1,0 +1,10 @@
+site_name: Developer Center
+docs_dir: _pages
+nav:
+  - Home: getting-started.md
+  - Clients:
+      - clients/android.md
+      - clients/cli.md
+      - clients/python.md
+  - data.md
+theme: readthedocs
