@@ -3,7 +3,7 @@ docs_dir: _pages
 theme: readthedocs
 nav:
   - Home: getting-started.md
-  - platform.md
+  #- platform.md
   - Platform:
       - platform/algorithm-profiles.md
       - platform/customizing-api-keys.md
@@ -11,8 +11,8 @@ nav:
       - platform/teams.md
       - platform/versioning.md
       - platform/your-profile.md
-  - Clients: clients.md
-  - Clients:
+  - Client Guides:
+      - Overview: clients.md
       - clients/android.md
       - clients/cli.md
       - clients/curl.md
@@ -29,8 +29,9 @@ nav:
       - clients/rust.md
       - clients/scala.md
       - clients/swift.md
-  - Data: data.md
-  - Data:
+      - AWS Lambda: integrations/aws_lambda.md
+  - Connecting Your Data:
+      - Overview: data.md
       - data/azureblob.md
       - data/dropbox.md
       - data/dynamodb.md
@@ -39,23 +40,23 @@ nav:
       - data/hosted.md
       - data/mssqlserver.md
       - data/mysql.md
-      - data/oracle.md
+      #- data/oracle.md
       - data/otherfiles.md
       - data/postgres.md
       - data/s3.md
       - data/snowflake.md
-  - integrations.md
   - Integrations:
+      - Overview: integrations.md
       - integrations/aws_lambda.md
       - integrations/base64_files.md
       - integrations/cloudflare.md
       - integrations/cloudinary.md
       - integrations/dataworld.md
+      - integrations/rundexter.md
       - integrations/event_listeners.md
       - integrations/googlesheets.md
       - integrations/h2o.md
       - integrations/multipartforms.md
-      - integrations/rundexter.md
       - integrations/serverless_com.md
       - integrations/slack.md
       - integrations/spark-streaming.md
@@ -72,8 +73,8 @@ nav:
       - tutorials/recipes.md
       - tutorials/sample-apps.md
       - tutorials/webinars.md
-  - Algorithm Development: algorithm-development.md
   - Algorithm Development:
+      - Getting Started: algorithm-development.md
       - algorithm-development/advanced-algorithm-development.md
       - algorithm-development/algorithm-checklist.md
       - algorithm-development/algorithm-errors.md
@@ -81,16 +82,17 @@ nav:
       - algorithm-development/ci-cd.md
       - algorithm-development/comparing-algorithms.md
       - algorithm-development/git.md
-      - algorithm-development/languages.md
+      - Languages:
+          - TBD: algorithm-development/languages.md
       - algorithm-development/markdown-syntax.md
       - algorithm-development/reloading-models.md
       - algorithm-development/your-first-algo.md
-  - Model Deployment: model-deployment.md
   - Model Deployment:
+      - Supported Frameworks: model-deployment.md
       - model-deployment/allennlp.md
       - model-deployment/caffe.md
       - model-deployment/chainer.md
-      - model-deployment/cntk.md
+      #- model-deployment/cntk.md
       - model-deployment/dlib.md
       - model-deployment/gensim.md
       - model-deployment/keras.md
@@ -107,6 +109,7 @@ nav:
       - model-deployment/weka.md
       - model-deployment/xgboost.md
   - learningcenter.md
+  - Teams & Organizations: platform/teams.md
   - pricing.md
   - release_notes.md
   - faqs.md
