@@ -40,7 +40,7 @@ nav:
       - data/hosted.md
       - data/mssqlserver.md
       - data/mysql.md
-      #- data/oracle.md
+      - data/oracle.md
       - data/otherfiles.md
       - data/postgres.md
       - data/s3.md
@@ -75,7 +75,12 @@ nav:
       - tutorials/webinars.md
   - Algorithm Development:
       - Getting Started: algorithm-development.md
-      - algorithm-development/advanced-algorithm-development.md
+      - Deep Dives:
+        - Overview: algorithm-development/advanced-algorithm-development.md
+        - 'Local Development: emulating the Algorithmia execution environment': algorithm-development/advanced-algorithm-development/local-development.md
+        - algorithm-development/advanced-algorithm-development/list-packages.md
+        - 'Multithreading: call many Algorithms in parallel': algorithm-development/advanced-algorithm-development/multithreading.md
+        - 'Batch Processing: efficiently run predictions on large data volumes': algorithm-development/advanced-algorithm-development/batch-processing.md
       - algorithm-development/algorithm-checklist.md
       - algorithm-development/algorithm-errors.md
       - algorithm-development/algorithm-management-api.md
@@ -83,31 +88,40 @@ nav:
       - algorithm-development/comparing-algorithms.md
       - algorithm-development/git.md
       - Languages:
-          - TBD: algorithm-development/languages.md
+          - Overview: algorithm-development/languages.md
+          - algorithm-development/languages/java.md
+          - algorithm-development/languages/javascript.md
+          - algorithm-development/languages/python.md
+          - algorithm-development/languages/r.md
+          - algorithm-development/languages/ruby.md
+          - algorithm-development/languages/rust.md
+          - algorithm-development/languages/scala.md
       - algorithm-development/markdown-syntax.md
       - algorithm-development/reloading-models.md
       - algorithm-development/your-first-algo.md
   - Model Deployment:
-      - Supported Frameworks: model-deployment.md
-      - model-deployment/allennlp.md
-      - model-deployment/caffe.md
-      - model-deployment/chainer.md
-      #- model-deployment/cntk.md
-      - model-deployment/dlib.md
-      - model-deployment/gensim.md
-      - model-deployment/keras.md
-      - model-deployment/mxnet.md
-      - model-deployment/nltk.md
-      - model-deployment/opencv.md
-      - model-deployment/pmml.md
-      - model-deployment/pytorch.md
-      - model-deployment/rusty-machine.md
-      - model-deployment/scikit.md
-      - model-deployment/spacy.md
-      - model-deployment/tensorflow.md
-      - model-deployment/theano.md
-      - model-deployment/weka.md
-      - model-deployment/xgboost.md
+      - Supported Frameworks:
+        - Overview: model-deployment.md
+        - model-deployment/allennlp.md
+        - model-deployment/caffe.md
+        - model-deployment/chainer.md
+        - model-deployment/cntk.md
+        - model-deployment/dlib.md
+        - model-deployment/gensim.md
+        - integrations/h2o.md
+        - model-deployment/keras.md
+        - model-deployment/mxnet.md
+        - model-deployment/nltk.md
+        - model-deployment/opencv.md
+        - model-deployment/pmml.md
+        - model-deployment/pytorch.md
+        - model-deployment/rusty-machine.md
+        - model-deployment/scikit.md
+        - model-deployment/spacy.md
+        - model-deployment/tensorflow.md
+        - model-deployment/theano.md
+        - model-deployment/weka.md
+        - model-deployment/xgboost.md
   - learningcenter.md
   - Teams & Organizations: platform/teams.md
   - pricing.md
