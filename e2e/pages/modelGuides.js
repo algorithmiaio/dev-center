@@ -1,8 +1,8 @@
 const DeveloperCenterBase = require('./DeveloperCenterBase')
 
 class ModelGuidesPage extends DeveloperCenterBase {
-  get redirectUrl() {
-    return 'https://test.algorithmia.com/developers/model-deployment'
+  get redirectPath() {
+    return '/developers/model-deployment'
   }
 
   open() {

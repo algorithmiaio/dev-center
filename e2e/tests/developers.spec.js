@@ -10,8 +10,13 @@ describe('Developer Center', () => {
   describe('Deployment redirect', () => {
     it('should redirect to model-deployment url', () => {
       modelGuidesPage.open()
-      browser.waitForUrl(modelGuidesPage.redirectUrl)
-      assert.equal(browser.getUrl(), modelGuidesPage.redirectUrl)
+      browser.waitUntil(() =>
+        (browser.getUrl() || '').endsWith(modelGuidesPage.redirectPath)
+      )
+      assert.equal(
+        browser.getUrl().endsWith(modelGuidesPage.redirectPath),
+        true
+      )
     })
   })
 
@@ -58,7 +63,7 @@ describe('Developer Center', () => {
       assert.equal(gettingStartedPage.toastMessage.isExisting(), false)
       gettingStartedPage.open()
       gettingStartedPage.firstCodeExampleCopyIcon.scrollIntoView({
-        block: 'center',
+        block: 'center'
       })
       gettingStartedPage.firstCodeExampleCopyIcon.click()
       assert.equal(gettingStartedPage.toastMessage.isExisting(), true)
@@ -67,7 +72,7 @@ describe('Developer Center', () => {
     it('should show YOUR_USERNAME and YOUR_API_KEY in examples if logged out', () => {
       gettingStartedPage.open()
       gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-        block: 'center',
+        block: 'center'
       })
       const codeText = gettingStartedPage.secondCodeExampleCodePane.getText()
       assert.equal(codeText.includes('YOUR_USERNAME'), true)
@@ -77,7 +82,7 @@ describe('Developer Center', () => {
     it('should show message if user hovers over YOUR_USERNAME', () => {
       gettingStartedPage.open()
       gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-        block: 'center',
+        block: 'center'
       })
       assert.equal(gettingStartedPage.usernameHoverMessage.isDisplayed(), false)
       gettingStartedPage.usernamePlaceholder.click()
@@ -88,7 +93,7 @@ describe('Developer Center', () => {
     it('should show message if user hovers over YOUR_API_KEY', () => {
       gettingStartedPage.open()
       gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-        block: 'center',
+        block: 'center'
       })
       assert.equal(gettingStartedPage.apiKeyHoverMessage.isDisplayed(), false)
       gettingStartedPage.apiKeyPlaceholder.click()
@@ -100,7 +105,7 @@ describe('Developer Center', () => {
       const containsJavaCode = text => text.includes('System.out.println')
       gettingStartedPage.open()
       gettingStartedPage.languageToggleButton.scrollIntoView({
-        block: 'center',
+        block: 'center'
       })
       assert.equal(gettingStartedPage.selectedLanguage.getText(), 'Python')
       assert.equal(
@@ -114,51 +119,6 @@ describe('Developer Center', () => {
         containsJavaCode(gettingStartedPage.languageCodeBlock.getText()),
         true
       )
-    })
-
-    describe('authenticated routes', () => {
-      before(() => {
-        auth.signIn()
-      })
-
-      it('should show user credentials instead of placeholders if logged in', () => {
-        gettingStartedPage.open()
-        gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-          block: 'center',
-        })
-        const codeText = gettingStartedPage.secondCodeExampleCodePane.getText()
-        assert.equal(codeText.includes('YOUR_USERNAME'), false)
-        assert.equal(codeText.includes('YOUR_API_KEY'), false)
-        assert.equal(codeText.includes(USERNAME), true)
-      })
-
-      it('should show message if user hovers over YOUR_USERNAME', () => {
-        gettingStartedPage.open()
-        gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-          block: 'center',
-        })
-        assert.equal(
-          gettingStartedPage.usernameHoverMessage.isDisplayed(),
-          false
-        )
-        gettingStartedPage.usernamePlaceholder.click()
-        gettingStartedPage.usernameHoverMessage.waitForDisplayed()
-        assert.equal(
-          gettingStartedPage.usernameHoverMessage.isDisplayed(),
-          true
-        )
-      })
-
-      it('should show message if user hovers over YOUR_API_KEY', () => {
-        gettingStartedPage.open()
-        gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-          block: 'center',
-        })
-        assert.equal(gettingStartedPage.apiKeyHoverMessage.isDisplayed(), false)
-        gettingStartedPage.apiKeyPlaceholder.click()
-        gettingStartedPage.apiKeyHoverMessage.waitForDisplayed()
-        assert.equal(gettingStartedPage.apiKeyHoverMessage.isDisplayed(), true)
-      })
     })
   })
 })
