@@ -1,5 +1,4 @@
 const assert = require('assert')
-const auth = require('../utilities/auth')
 const { isEquivalent } = require('../utilities/url')
 const page = require('../pages/developerCenter')
 const gettingStartedPage = require('../pages/gettingStarted')
