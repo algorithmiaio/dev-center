@@ -1,15 +1,12 @@
 [![Run Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge?branch=master)](https://app.shippable.com/projects/56a12f721895ca447472408e)
 
-Algorithmia Developer Center
-========
+# Algorithmia Developer Center
 
 Welcome to the repository for Algorithmia's Developer Center. Here you will find guides, tutorials, sample apps, as well as some documentation on getting started with the API and basic set up.
 
 These docs are built on Jekyll. Learn more over at [the official Jekyll page](http://jekyllrb.com/).
 
-
-Running locally - minimal preview
-------------------------------
+## Running locally - minimal preview
 
 [mkdocs](https://www.mkdocs.org/user-guide/writing-your-docs/#multilevel-documentation) can be used to quickly start a minimal local server and preview the markdown files. This supports only basic markdown, relies on mkdocs.yml for its navigation tree, and does render with the same styling or extended page properties/functions as the real server. Some images may not render.
 
@@ -18,17 +15,17 @@ pip install mkdocs
 mkdocs serve
 ```
 
-Running locally - full server
-------------------------------
+## Running locally - full server
 
 ### Prerequisites
 
 You're going to need:
 
- - **Linux or OS X** — Windows may work, but is unsupported.
- - **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
- - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
- - **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+- **Linux or OS X** — Windows may work, but is unsupported.
+- **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
+- **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
+- **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+
 #### Ubuntu 16.10 Notes:
 
 ```bash
@@ -44,39 +41,41 @@ sudo apt-get install imagemagick
 ### Mac OSX (High Sierra) Notes:
 
 Install imagemagick:
+
 ```
 brew install imagemagick
 ```
 
 Install via:
+
 ```
 bundle install --path vendor/bundle
 ```
 
 If installation for nokogiri fails due to libxml2 support, install it via:
+
 ```
 gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
 ```
 
 ### Getting Set Up
 
- 1. Fork this repository on Github.
- 2. Clone *your forked repository* with `git clone https://github.com/YOURUSERNAME/dev-center.git`
- 3. `cd dev-center`
- 4. Install all dependencies: `bundle install`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
- 5. Run `git submodule init`, initializing the submodule for our UI toolkit, Synapse. **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
- 6. Run `git submodule update`, cloning down submodule code.
- 7. To build Synapse dist files, run `cd synapse && npm ci && npm run build && cd ..`
- 8. Start the local server:
+1.  Fork this repository on Github.
+2.  Clone _your forked repository_ with `git clone https://github.com/YOURUSERNAME/dev-center.git`
+3.  `cd dev-center`
+4.  Install all dependencies: `bundle install`. If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again. If `bundle` is not available, `gem install bundler`.
+5.  Run `git submodule init`, initializing the submodule for our UI toolkit, Synapse. **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
+6.  Run `git submodule update`, cloning down submodule code.
+7.  To build Synapse dist files, run `cd synapse && npm ci && npm run build && cd ..`
+8.  Start the local server:
 
-    __Public__
-    
+    **Public**
+
     `bundle exec jekyll serve --config _config.yml,_config-dev.yml`
-    
-    __Enterprise__ 
-    
+
+    **Enterprise**
+
     `bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml`
-  
 
 You can now see the developer center at <http://localhost:4000>.
 
@@ -84,16 +83,34 @@ Note: the header and footer may not look right. This is inconsequential as they 
 
 ### Running the Node server locally
 
- 1. First, build the `./sites` folder to serve content out of:
+1. First, build the `./sites` folder to serve content out of:
 
-    ```
-    ./build.sh
-    ```
+   ```
+   ./build.sh
+   ```
+
 2. Run `npm install` to install Node dependencies.
 3. Run `node server/index.js` to start the server.
 
-Making changes
--------------
+## Running End to End Tests
+
+There are three different options you can use for running end to end tests: local, tunnel, and cloud:
+
+    • Local: WebDriver runs tests using locally installed browsers against a local Node server.
+    • Tunnel: WebDriver uses a BrowserStack integration to run the tests inside browsers within virtual machines. The requests are proxied to a local Node server.
+    • Cloud: Same as tunnel, except the tests are run against our test environment instead of a local server.
+
+To run end to end tests:
+
+1. Reach out to the UX team to get BrowserStack credentials.
+2. Ensure the following environment variables are set when calling the below scripts:
+   - `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY`
+3. Run one of the following:
+   - `npm run e2e:local`
+   - `npm run e2e:tunnel`
+   - `npm run e2e:cloud`
+
+## Making changes
 
 ###Project Organization
 
@@ -102,7 +119,6 @@ All posts, layouts, includes, stylesheets, assets, and whatever else is grouped 
 Find all pages under the `_pages` directory, organized by URL route structure.
 
 The compiled Jekyll site outputs to `_site/`. Do not edit anything in this directory (or your changes will be lost).
-
 
 ### Writing Pages
 
@@ -144,7 +160,7 @@ You can find more variables in the `_data/stats.yml` file.
 
 ### CDN
 
-Image and video assets can be prefixed with `{{site.cdnurl}}` to automatically serve them via CDN.  Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
+Image and video assets can be prefixed with `{{site.cdnurl}}` to automatically serve them via CDN. Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
 
 ### Plugins
 
@@ -156,15 +172,11 @@ This Jekyll site uses several plugins to help generate content and make the site
 - `navmenu.rb`: A tag plugin to generate the side navigation menu.
 - `strip.rb`: Removes some excess whitespace and new lines generated by the Liquid templating process.
 
-
-Contributing
--------------
+## Contributing
 
 First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue.
 
-
-Need Help? Found a bug?
-----------------
+## Need Help? Found a bug?
 
 If you find a bug, can't follow the documentation, or have a question -- please [submit an issue!](https://github.com/algorithmiaio/dev-center/issues)
 
