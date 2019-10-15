@@ -1,23 +1,22 @@
 [![Run Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge?branch=master)](https://app.shippable.com/projects/56a12f721895ca447472408e)
 
-Algorithmia Developer Center
-========
+# Algorithmia Developer Center
 
 Welcome to the repository for Algorithmia's Developer Center. Here you will find guides, tutorials, sample apps, as well as some documentation on getting started with the API and basic set up.
 
 These docs are built on Jekyll. Learn more over at [the official Jekyll page](http://jekyllrb.com/).
 
-Running locally
-------------------------------
+## Running locally
 
 ### Prerequisites
 
 You're going to need:
 
- - **Linux or OS X** — Windows may work, but is unsupported.
- - **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
- - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
- - **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+- **Linux or OS X** — Windows may work, but is unsupported.
+- **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
+- **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
+- **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+
 #### Ubuntu 16.10 Notes:
 
 ```bash
@@ -33,31 +32,36 @@ sudo apt-get install imagemagick
 ### Mac OSX (High Sierra) Notes:
 
 Install imagemagick:
+
 ```
 brew install imagemagick
 ```
 
 Install via:
+
 ```
 bundle install --path vendor/bundle
 ```
 
 If installation for nokogiri fails due to libxml2 support, install it via:
+
 ```
 gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
 ```
 
 ### Getting Set Up
 
- 1. Fork this repository on Github.
- 2. Clone *your forked repository* with `git clone https://github.com/YOURUSERNAME/dev-center.git`
- 3. `cd dev-center`
- 4. Make sure you have [rvm](https://rvm.io/rvm/install) and [node](https://nodejs.org/en/) installed.
- 5. To set up submodules and install dependencies, run `npm run setup`.
- * **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
- * If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again.  If `bundle` is not available, `gem install bundler`.
- 6. To start both the Node and Jekyll test servers with auto-regeneration, run `npm run dev`.
- 7. If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
+1.  Fork this repository on Github.
+2.  Clone _your forked repository_ with `git clone https://github.com/YOURUSERNAME/dev-center.git`
+3.  `cd dev-center`
+4.  Make sure you have [rvm](https://rvm.io/rvm/install) and [node](https://nodejs.org/en/) installed.
+5.  To set up submodules and install dependencies, run `npm run setup`.
+
+- **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
+- If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again. If `bundle` is not available, `gem install bundler`.
+
+6.  To start both the Node and Jekyll test servers with auto-regeneration, run `npm run devcenter:dev` and `npm run server:dev` in two separate terminal windows.
+7.  If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
 
 You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
 
@@ -65,16 +69,15 @@ You can now see the developer center at <http://localhost:4000/developers/>. The
 
 To run only the Jekyll server at <http://localhost:4000/developers/>, first follow steps 1-5 above, then
 
-__To Run Public Marketplace Version:__
+**To Run Public Marketplace Version:**
 
 `npm run devcenter:public`
 
-__To Run Enterprise Version:__
+**To Run Enterprise Version:**
 
 `npm run devcenter:enterprise`
 
-Making changes
--------------
+## Making changes
 
 ### Project Organization
 
@@ -83,7 +86,6 @@ All posts, layouts, includes, stylesheets, assets, and whatever else is grouped 
 Find all pages under the `_pages` directory, organized by URL route structure.
 
 The compiled Jekyll site outputs to `_site/`. Do not edit anything in this directory (or your changes will be lost).
-
 
 ### Writing Pages
 
@@ -125,7 +127,7 @@ You can find more variables in the `_data/stats.yml` file.
 
 ### CDN
 
-Image and video assets can be prefixed with `{{site.cdnurl}}` to automatically serve them via CDN.  Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
+Image and video assets can be prefixed with `{{site.cdnurl}}` to automatically serve them via CDN. Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
 
 ### Plugins
 
@@ -137,15 +139,11 @@ This Jekyll site uses several plugins to help generate content and make the site
 - `navmenu.rb`: A tag plugin to generate the side navigation menu.
 - `strip.rb`: Removes some excess whitespace and new lines generated by the Liquid templating process.
 
-
-Contributing
--------------
+## Contributing
 
 First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue.
 
-
-Need Help? Found a bug?
-----------------
+## Need Help? Found a bug?
 
 If you find a bug, can't follow the documentation, or have a question -- please [submit an issue!](https://github.com/algorithmiaio/dev-center/issues)
 
