@@ -67,7 +67,7 @@ You can now see the developer center at <http://localhost:4000/developers/>. The
 
 ### Running the Jekyll Dev Server
 
-To run only the Jekyll server at <http://localhost:4000/developers/>, first follow steps 1-5 above, then
+To run only the Jekyll server at <http://localhost:4001/developers/>, first follow steps 1-5 above, then
 
 **To Run Public Marketplace Version:**
 
@@ -76,6 +76,24 @@ To run only the Jekyll server at <http://localhost:4000/developers/>, first foll
 **To Run Enterprise Version:**
 
 `npm run devcenter:enterprise`
+
+## Running End to End Tests
+
+There are three different options you can use for running end to end tests: local, tunnel, and cloud:
+
+    • Local: WebDriver runs tests using locally installed browsers against a local Node server.
+    • Tunnel: WebDriver uses a BrowserStack integration to run the tests inside browsers within virtual machines. The requests are proxied to a local Node server.
+    • Cloud: Same as tunnel, except the tests are run against our test environment instead of a local server.
+
+To run end to end tests:
+
+1. Reach out to the UX team to get BrowserStack credentials.
+2. Ensure the following environment variables are set when calling the below scripts:
+   - `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY`
+3. Run one of the following:
+   - `npm run e2e:local`
+   - `npm run e2e:tunnel`
+   - `npm run e2e:cloud`
 
 ## Making changes
 

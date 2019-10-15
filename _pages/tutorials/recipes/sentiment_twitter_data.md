@@ -10,5 +10,5 @@ excerpt: "Perform Sentiment Analysis on Twitter data"
 
 repository: https://github.com/algorithmiaio/integrations/tree/master/Twitter/SentimentAnalysis
 blog: https://blog.algorithmia.com/sentiment-analysis-with-twitter/
-thumbnail: /developers/images/language_logos/twitter.svg
+thumbnail: /images/language_logos/twitter.svg
 ---

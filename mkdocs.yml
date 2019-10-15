@@ -1,0 +1,146 @@
+site_name: Developer Center
+docs_dir: _pages
+theme: readthedocs
+nav:
+  - Home: getting-started.md
+  #- platform.md
+  - Platform:
+      - platform/algorithm-profiles.md
+      - platform/customizing-api-keys.md
+      - platform/permissions.md
+      - platform/teams.md
+      - platform/versioning.md
+      - platform/your-profile.md
+  - Client Guides:
+      - Overview: clients.md
+      - clients/android.md
+      - clients/cli.md
+      - clients/curl.md
+      - clients/go.md
+      - clients/java.md
+      - clients/javascript.md
+      - clients/net_c_sharp.md
+      - clients/node.md
+      - clients/perl.md
+      - clients/php.md
+      - clients/python.md
+      - clients/r.md
+      - clients/ruby.md
+      - clients/rust.md
+      - clients/scala.md
+      - clients/swift.md
+      - AWS Lambda: integrations/aws_lambda.md
+  - Connecting Your Data:
+      - Overview: data.md
+      - data/azureblob.md
+      - data/dropbox.md
+      - data/dynamodb.md
+      - data/googlecloudstorage.md
+      - data/hdfs.md
+      - data/hosted.md
+      - data/mssqlserver.md
+      - data/mysql.md
+      - data/oracle.md
+      - data/otherfiles.md
+      - data/postgres.md
+      - data/s3.md
+      - data/snowflake.md
+  - Integrations:
+      - Overview: integrations.md
+      - integrations/aws_lambda.md
+      - integrations/base64_files.md
+      - integrations/cloudflare.md
+      - integrations/cloudinary.md
+      - integrations/dataworld.md
+      - integrations/rundexter.md
+      - integrations/event_listeners.md
+      - integrations/googlesheets.md
+      - integrations/h2o.md
+      - integrations/multipartforms.md
+      - integrations/serverless_com.md
+      - integrations/slack.md
+      - integrations/spark-streaming.md
+      - integrations/tableau.md
+      - integrations/telegram.md
+      - integrations/transposit.md
+      - integrations/twitter.md
+      - integrations/webhooks.md
+      - integrations/wolfram.md
+      - integrations/wordpress.md
+      - integrations/zapier.md
+  - tutorials.md
+  - Tutorials:
+      - tutorials/recipes.md
+      - tutorials/sample-apps.md
+      - tutorials/webinars.md
+  - Algorithm Development:
+      - Getting Started: algorithm-development.md
+      - Deep Dives:
+        - Overview: algorithm-development/advanced-algorithm-development.md
+        - 'Local Development: emulating the Algorithmia execution environment': algorithm-development/advanced-algorithm-development/local-development.md
+        - algorithm-development/advanced-algorithm-development/list-packages.md
+        - 'Multithreading: call many Algorithms in parallel': algorithm-development/advanced-algorithm-development/multithreading.md
+        - 'Batch Processing: efficiently run predictions on large data volumes': algorithm-development/advanced-algorithm-development/batch-processing.md
+      - algorithm-development/algorithm-checklist.md
+      - algorithm-development/algorithm-errors.md
+      - algorithm-development/algorithm-management-api.md
+      - algorithm-development/ci-cd.md
+      - algorithm-development/comparing-algorithms.md
+      - algorithm-development/git.md
+      - Languages:
+          - Overview: algorithm-development/languages.md
+          - algorithm-development/languages/java.md
+          - algorithm-development/languages/javascript.md
+          - algorithm-development/languages/python.md
+          - algorithm-development/languages/r.md
+          - algorithm-development/languages/ruby.md
+          - algorithm-development/languages/rust.md
+          - algorithm-development/languages/scala.md
+      - algorithm-development/markdown-syntax.md
+      - algorithm-development/reloading-models.md
+      - algorithm-development/your-first-algo.md
+  - Model Deployment:
+      - Supported Frameworks:
+        - Overview: model-deployment.md
+        - model-deployment/allennlp.md
+        - model-deployment/caffe.md
+        - model-deployment/chainer.md
+        - model-deployment/cntk.md
+        - model-deployment/dlib.md
+        - model-deployment/gensim.md
+        - integrations/h2o.md
+        - model-deployment/keras.md
+        - model-deployment/mxnet.md
+        - model-deployment/nltk.md
+        - model-deployment/opencv.md
+        - model-deployment/pmml.md
+        - model-deployment/pytorch.md
+        - model-deployment/rusty-machine.md
+        - model-deployment/scikit.md
+        - model-deployment/spacy.md
+        - model-deployment/tensorflow.md
+        - model-deployment/theano.md
+        - model-deployment/weka.md
+        - model-deployment/xgboost.md
+  - learningcenter.md
+  - Teams & Organizations: platform/teams.md
+  - pricing.md
+  - release_notes.md
+  - faqs.md
+  - FAQs:
+      - faqs/algorithmia-is-misbehaving.md
+      - faqs/can-i-use-external-libraries.md
+      - faqs/how-do-i-avoid-others-copying-my-code.md
+      - faqs/how-do-i-connect-with-algorithmia.md
+      - faqs/how-do-i-get-my-data-into-algorithmia.md
+      - faqs/how-do-i-make-money.md
+      - faqs/how-much-does-using-algorithmia-cost.md
+      - faqs/i-am-part-of-an-educational-program.md
+      - faqs/i-found-a-bug-what-can-i-do.md
+      - faqs/i-want-my-algorithm-to-be-open-source.md
+      - faqs/i-want-to-take-an-algorithm-offline.md
+      - faqs/what-is-the-apply-function.md
+      - faqs/what-languages-can-i-write-algos-in.md
+      - faqs/what-languages-do-you-support.md
+      - faqs/who-can-contribute-algorithms.md
+      - faqs/who-owns-the-intellectual-property-rights.md
