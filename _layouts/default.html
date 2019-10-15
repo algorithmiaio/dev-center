@@ -10,6 +10,9 @@
       {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
     {% endif %}
     {% include open-graph.html %}
+    {% if site.setCanonicalLink %}
+      <link rel="canonical" href="{{ page.url | absolute_url | replace:'index.html','' | no_trailing_slash }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ site.cdnurl }}{{ site.baseurl }}/css/pygments-github.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/vendors.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/scoped-synapse.css">
