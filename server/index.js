@@ -33,41 +33,68 @@ app.use((req, res, next) => {
   next()
 })
 
-// Remove trailing slashes
+// API Docs - resolve before trailing slash redirect so assets don't break
+
+app.use(
+  '/developers/api',
+  express.static(path.join(__dirname, '../api-docs/build/'), {
+    redirect: false,
+  })
+)
+
+// Remove trailing slashes, UNLESS
+// A) We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
+// B) Request is for an API docs landing, which needs the slash to not break assets
+// If A or B is true, ensure trailing slash is there
+
+const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
+const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath)
 app.get('*', (req, res, next) => {
-  if (/.+\/$/.test(req.path)) {
+  if (hasTrailingSlash(req.path) && !(!isProduction || isApiDocs(req.path))) {
     res.redirect(req.path.replace(/\/$/, ''))
+  } else if (
+    !hasTrailingSlash(req.path) &&
+    (!isProduction || isApiDocs(req.path))
+  ) {
+    res.redirect(`${req.path}/`)
   } else {
     next()
   }
 })
 
+// Local Development - Proxy requests to local hot-reloading Jekyll server
+
+if (!isProduction) {
+  const devCenterProxyConfig = {
+    target: config.env.stage.devCenterUrl,
+    changeOrigin: true,
+  }
+  app.use(require('http-proxy-middleware')(devCenterProxyConfig))
+}
+
 // Dev Center
 
-const isDirectory = path => !/\w+\.\w+$/.test(path)
-app.use(
-  /^\/developers/,
-  (req, res, next) => {
-    const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
+const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
+app.use(/^\/developers/, (req, res, next) => {
+  const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
 
-    if (isDirectory(req.path)) {
-      req.url = `${req.url.replace(/\/$/, '')}/index.html`
-    }
-
-    const options = {
-      redirect: false,
-      maxAge: isProduction ? '1y' : '0',
-    }
-
-    const basePath = path.join(
-      __dirname,
-      `../sites/${usePublic ? 'public' : 'enterprise'}`,
-      'developers'
-    )
-
-    express.static(basePath, options)(req, res, next);
+  if (isDirectory(req.path)) {
+    req.url = `${req.url.replace(/\/$/, '')}/index.html`
   }
-)
+
+  const options = {
+    redirect: false,
+    maxAge: isProduction ? '1y' : '0',
+  }
+
+  const basePath = path.join(
+    __dirname,
+    `../sites/${usePublic ? 'public' : 'enterprise'}`,
+    'developers'
+  )
+
+  express.static(basePath, options)(req, res, next)
+})
 
 app.get('*', (req, res) => {
   res.status(404).end()
@@ -75,11 +102,10 @@ app.get('*', (req, res) => {
 
 // Initialization
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 const server = app.listen(PORT, () => {
-    log.info(`Server started on port ${PORT}.`)
-  }
-)
+  log.info(`Server started on port ${PORT}.`)
+})
 
 // Graceful Shutdown
 
