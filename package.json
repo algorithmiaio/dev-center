@@ -23,7 +23,6 @@
     "server:dev": "NODE_ENV=development npm run server",
     "server:prod": "NODE_ENV=production npm run server",
     "start": "npm run server:prod",
-    "synapse:build": "cd synapse && npm run build",
     "synapse:setup": "git submodule init && git submodule update && cd synapse && npm ci",
     "test": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/*.spec.js --timeout=10000"
   },
