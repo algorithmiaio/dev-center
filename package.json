@@ -7,10 +7,21 @@
   "homepage": "https://algorithmia.com/",
   "license": "The MIT License (MIT)",
   "scripts": {
+    "e2e": "./node_modules/.bin/wdio wdio.conf.js",
+    "e2e:cloud": "E2E_RUN_IN_CLOUD=true npm run e2e",
+    "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true npm run e2e:cloud",
+    "e2e:local": "E2E_BASE_URL=http://localhost:3000 npm run e2e",
     "start": "NODE_ENV=production node ./server/index.js",
     "test": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/*.spec.js --timeout=10000"
   },
   "devDependencies": {
+    "@wdio/browserstack-service": "^5.13.2",
+    "@wdio/cli": "^5.15.0",
+    "@wdio/local-runner": "^5.15.0",
+    "@wdio/mocha-framework": "^5.15.0",
+    "@wdio/selenium-standalone-service": "^5.15.0",
+    "@wdio/spec-reporter": "^5.14.5",
+    "@wdio/sync": "^5.14.4",
     "axios": "^0.19.0",
     "chai": "^4.2.0",
     "grunt": "~0.4.2",
