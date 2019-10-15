@@ -77,6 +77,12 @@ To run only the Jekyll server at <http://localhost:4001/developers/>, first foll
 
 `npm run devcenter:enterprise`
 
+## Submodules
+
+The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) and [Synapse UX Toolkit](https://github.com/algorithmiaio/synapse) are included as submodules in this project. If you make updates to either of these repositories that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
+
+If updates are made to the [api-docs](https://github.com/algorithmiaio/api-docs), **you will need to run `npm run apidocs:build` in order to see the changes**.
+
 ## Running End to End Tests
 
 There are three different options you can use for running end to end tests: local, tunnel, and cloud:
