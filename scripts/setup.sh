@@ -2,7 +2,7 @@
 
 initApiDocs() {
   echo "Setting up API docs..."
-  cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install && cd ..
+  cd api-docs && rvm install 2.3.0 && gem install bundler && bundle install && cd ..
 }
 
 initSynapse() {
