@@ -16,7 +16,7 @@ module.exports = {
       'true'
     ),
     stage: {
-      devCenterUrl: 'http://localhost:4000',
+      devCenterUrl: 'http://localhost:4001',
     },
   },
 }

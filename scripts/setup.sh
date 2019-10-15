@@ -10,4 +10,6 @@ initSynapse() {
   cd synapse && npm ci && cd ..
 }
 
-git submodule init && git submodule update && initApiDocs && initSynapse
+git submodule init && git submodule update && \
+  initApiDocs && initSynapse && \
+  bundle install && npm install

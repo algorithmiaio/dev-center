@@ -50,14 +50,11 @@ app.use(
 const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath)
 app.get('*', (req, res, next) => {
-  if (
-    hasTrailingSlash(req.path) &&
-    !(process.env.LOCAL || isApiDocs(req.path))
-  ) {
+  if (hasTrailingSlash(req.path) && !(!isProduction || isApiDocs(req.path))) {
     res.redirect(req.path.replace(/\/$/, ''))
   } else if (
     !hasTrailingSlash(req.path) &&
-    (process.env.LOCAL || isApiDocs(req.path))
+    (!isProduction || isApiDocs(req.path))
   ) {
     res.redirect(`${req.path}/`)
   } else {
@@ -65,10 +62,9 @@ app.get('*', (req, res, next) => {
   }
 })
 
-
 // Local Development - Proxy requests to local hot-reloading Jekyll server
 
-if (process.env.LOCAL) {
+if (!isProduction) {
   const devCenterProxyConfig = {
     target: config.env.stage.devCenterUrl,
     changeOrigin: true,
@@ -106,7 +102,7 @@ app.get('*', (req, res) => {
 
 // Initialization
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 const server = app.listen(PORT, () => {
   log.info(`Server started on port ${PORT}.`)
 })
