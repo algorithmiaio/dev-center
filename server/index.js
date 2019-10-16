@@ -33,12 +33,18 @@ app.use((req, res, next) => {
   next()
 })
 
+// Kubernetes readiness probe
+
+app.use('/ping', (req, res) => {
+  res.status(200).end('ok')
+})
+
 // API Docs - resolve before trailing slash redirect so assets don't break
 
 app.use(
   '/developers/api',
   express.static(path.join(__dirname, '../api-docs/build/'), {
-    redirect: false,
+    redirect: false
   })
 )
 
@@ -67,7 +73,7 @@ app.get('*', (req, res, next) => {
 if (!isProduction) {
   const devCenterProxyConfig = {
     target: config.env.stage.devCenterUrl,
-    changeOrigin: true,
+    changeOrigin: true
   }
   app.use(require('http-proxy-middleware')(devCenterProxyConfig))
 }
@@ -84,7 +90,7 @@ app.use(/^\/developers/, (req, res, next) => {
 
   const options = {
     redirect: false,
-    maxAge: isProduction ? '1y' : '0',
+    maxAge: isProduction ? '1y' : '0'
   }
 
   const basePath = path.join(
