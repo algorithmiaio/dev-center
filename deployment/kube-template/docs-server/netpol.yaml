@@ -1,0 +1,38 @@
+---
+apiVersion: extensions/v1beta1
+kind: NetworkPolicy
+metadata:
+  name: docs-server-access
+  namespace: {{kubernetes_namespace}}
+spec:
+  podSelector:
+    matchLabels:
+      app: docs-server
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: web-server
+    ports:
+      - port: 3000
+---
+apiVersion: extensions/v1beta1
+kind: NetworkPolicy
+metadata:
+  name: docs-server-metrics-access
+  namespace: {{kubernetes_namespace}}
+spec:
+  podSelector:
+    matchLabels:
+      app: docs-server
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 9404
+      from:
+        - podSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - prometheus
