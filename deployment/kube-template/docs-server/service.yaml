@@ -9,10 +9,10 @@ metadata:
   namespace: {{kubernetes_namespace}}
 spec:
   ports:
-  - name: docs-http
-    port: 80
-    protocol: TCP
-    targetPort: 3000
+    - name: docs-http
+      port: 80
+      protocol: TCP
+      targetPort: 4000
   selector:
     app: docs-server
   sessionAffinity: None

@@ -9,12 +9,12 @@ spec:
     matchLabels:
       app: docs-server
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: web-server
-    ports:
-      - port: 3000
+    - from:
+        - podSelector:
+            matchLabels:
+              app: web-server
+      ports:
+        - port: 4000
 ---
 apiVersion: extensions/v1beta1
 kind: NetworkPolicy
