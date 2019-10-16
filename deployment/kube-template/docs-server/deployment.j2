@@ -45,6 +45,8 @@ spec:
           name: nodejs
           protocol: TCP
         env:
+        - name: NODE_ENV
+          value: production
         - name: STAGE
           value: {{stage}}
         - name: BASE_URL
