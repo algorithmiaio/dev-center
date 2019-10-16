@@ -1,0 +1,79 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    description: algorithmia docs
+  labels:
+    app: docs-server
+  name: docs-server
+  namespace: {{kubernetes_namespace}}
+spec:
+  replicas: 3
+  minReadySeconds: 60  # Service refresh interval is 30s want to make sure nodes exist long enough to be propagated
+  selector:
+    matchLabels:
+      app: docs-server
+  template:
+    metadata:
+      annotations:
+        description: algorithmia docs
+      creationTimestamp: null
+      labels:
+        app: docs-server
+      name: docs-server
+    spec:
+      # Prefer to not run on same node as another docs-server
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - docs-server
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      nodeSelector:
+        algorithmia.com/role: general
+      serviceAccountName: autoscaler
+      containers:
+      - name: docs
+        ports:
+        - containerPort: 3000
+          name: nodejs
+          protocol: TCP
+        env:
+        - name: STAGE
+          value: {{stage}}
+        - name: BASE_URL
+          value: {{domain}}
+        - name: PROMETHEUS_TOKEN
+          value: {{secrets.prometheus_token}}
+        {% if extra_ca_certs %}
+        - name: NODE_EXTRA_CA_CERTS
+          value: /etc/algorithmia/ssl/single-combined.pem
+        {% endif %}
+        image: {{versions.docs}}
+        imagePullPolicy: IfNotPresent
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ping
+            port: 3000
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        {% if extra_ca_certs %}
+        volumeMounts:
+        - name: ssl-ca-certs-single
+          mountPath: /etc/algorithmia/ssl
+        {% endif %}
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: dockerhub
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 86400 # 1 day - timeout starts PRIOR to the preStop hook completing!
