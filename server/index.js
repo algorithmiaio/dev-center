@@ -41,9 +41,10 @@ app.use('/ping', (req, res) => {
 
 // API Docs - resolve before trailing slash redirect so assets don't break
 
+const buildPath = isProduction ? '../docs/' : '../api-docs/build/'
 app.use(
   '/developers/api',
-  express.static(path.join(__dirname, '../api-docs/build/'), {
+  express.static(path.join(__dirname, buildPath), {
     redirect: false
   })
 )
