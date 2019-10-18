@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
+const querystring = require('querystring')
 const Bunyan = require('bunyan')
 const config = require('../config')
 const prometheus = require('prom-client')
@@ -115,7 +116,10 @@ app.use(/^\/developers/, (req, res, next) => {
   const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
 
   if (isDirectory(req.path)) {
-    req.url = `${req.url.replace(/\/$/, '')}/index.html`
+    const qs = querystring.stringify(req.query)
+    const newPath = `${req.path.replace(/\/$/, '')}/index.html`
+    const newQs = qs ? `?${qs}`: ''
+    req.url = `${newPath}${newQs}`
   }
 
   const options = {
