@@ -13,6 +13,11 @@ log.info('Starting server')
 
 app.use(cookieParser())
 
+app.use((req, res, next) => {
+  log.info(`${req.method} ${req.originalUrl}`)
+  next()
+})
+
 // Add security headers to all responses
 app.use((req, res, next) => {
   if (!config.env.disableXXSSProtection) {
