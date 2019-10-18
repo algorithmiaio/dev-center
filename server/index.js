@@ -3,9 +3,14 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const Bunyan = require('bunyan')
 const config = require('../config')
+const prometheus = require('prom-client')
+const { monitor } = require('./prometheus')
 
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
+
+const metricsInterval = prometheus.collectDefaultMetrics()
+monitor.routes(app)
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -42,6 +47,25 @@ app.use((req, res, next) => {
 
 app.use('/ping', (req, res) => {
   res.status(200).end('ok')
+})
+
+// Prometheus
+
+app.get('/metrics', (req, res, next) => {
+  const auth = req.headers.authorization || ''
+  const segments = auth.split(' ')
+  const expectedToken = config.env.stage.prometheusToken
+
+  // In addition to checking that the tokens match, we also check that the
+  // token has been set in the env. This lets us prevent a case where the
+  // token is an empty string and the user gains access by submitting an
+  // empty bearer token.
+  if (expectedToken && segments.length === 2 && segments[1] === expectedToken) {
+    res.set('Content-Type', prometheus.register.contentType)
+    res.end(prometheus.register.metrics())
+  } else {
+    next()
+  }
 })
 
 // API Docs - resolve before trailing slash redirect so assets don't break
@@ -119,6 +143,8 @@ const server = app.listen(PORT, () => {
   log.info(`Server started on port ${PORT}.`)
 })
 
+monitor.server(server)
+
 // Graceful Shutdown
 
 function gracefulShutdown() {
@@ -129,6 +155,7 @@ function gracefulShutdown() {
     process.exit()
   })
 
+  clearInterval(metricsInterval)
   const gracePeriod = isProduction ? 10 : 1
 
   setTimeout(() => {

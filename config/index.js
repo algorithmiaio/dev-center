@@ -17,6 +17,7 @@ module.exports = {
     ),
     stage: {
       devCenterUrl: 'http://localhost:4001',
+      prometheusToken: process.env.PROMETHEUS_TOKEN,
     },
   },
 }

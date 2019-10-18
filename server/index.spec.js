@@ -151,3 +151,55 @@ describe('/ping', () => {
     })
   })
 })
+
+describe('/metrics', () => {
+  const TOKEN = 'abc123'
+  let i = 0
+
+  beforeEach(function(done) {
+    customEnv.PROMETHEUS_TOKEN = i === 3 ? '' : TOKEN
+    init(done)
+    i++
+  })
+
+  afterEach(cleanup)
+
+  it('should return a 404 if the bearer token doesnt match', () => {
+    return axios
+      .get('http://localhost:4000/metrics', {
+        headers: { Authorization: 'Bearer: invalid' },
+      })
+      .catch(function(err) {
+        expect(err.response.status).to.equal(404)
+      })
+  })
+
+  it('should return a 404 if the bearer token doesnt exist', () => {
+    return axios
+      .get('http://localhost:4000/metrics', { headers: {} })
+      .catch(function(err) {
+        expect(err.response.status).to.equal(404)
+      })
+  })
+
+  it('should return a 200 if PROMETHEUS_TOKEN is valid', () => {
+    return axios
+      .get('http://localhost:4000/metrics', {
+        headers: { Authorization: `Bearer: ${TOKEN}` },
+      })
+      .then(function(res) {
+        expect(res.status).to.equal(200)
+        expect(res.data.includes('process_cpu_user_seconds_total')).to.be.true
+      })
+  })
+
+  it('should return a 404 if PROMETHEUS_TOKEN and bearer token are both empty strings', () => {
+    return axios
+      .get('http://localhost:4000/metrics', {
+        headers: { Authorization: `Bearer: ` },
+      })
+      .catch(function(err) {
+        expect(err.response.status).to.equal(404)
+      })
+  })
+})
