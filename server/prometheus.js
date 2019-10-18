@@ -53,9 +53,9 @@ function monitorServer(server, stats) {
   stats = stats || requestStats(server)
 
   stats.on('complete', ({ req, res, time: ms }) => {
-    inboundByteCounter.labels(req.method).inc(req.bytes),
-      outboundByteCounter.labels(req.method).inc(res.bytes),
-      responseTimeHistogram.labels(req.method).observe(ms / 1000)
+    inboundByteCounter.labels(req.method).inc(req.bytes)
+    outboundByteCounter.labels(req.method).inc(res.bytes)
+    responseTimeHistogram.labels(req.method).observe(ms / 1000)
     responseCounter.labels(req.method, res.status).inc()
   })
 }
