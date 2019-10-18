@@ -19,11 +19,6 @@ log.info('Starting server')
 
 app.use(cookieParser())
 
-app.use((req, res, next) => {
-  log.info(`${req.method} ${req.originalUrl}`)
-  next()
-})
-
 // Add security headers to all responses
 app.use((req, res, next) => {
   if (!config.env.disableXXSSProtection) {
@@ -67,6 +62,14 @@ app.get('/metrics', (req, res, next) => {
   } else {
     next()
   }
+})
+
+// Log all requests, but ignore Kubernetes and Prometheus requests for waaaaaay
+// less noise.
+
+app.use((req, res, next) => {
+  log.info(`${req.method} ${req.originalUrl}`)
+  next()
 })
 
 // API Docs - resolve before trailing slash redirect so assets don't break
