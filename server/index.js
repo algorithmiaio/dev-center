@@ -116,7 +116,7 @@ if (!isProduction) {
 
 const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
 app.use(/^\/developers/, (req, res, next) => {
-  const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
+  const usePublic = req.headers['x-public-marketplace-documentation'] === 'true'
 
   if (isDirectory(req.path)) {
     const qs = querystring.stringify(req.query)
