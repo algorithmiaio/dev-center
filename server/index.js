@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-const cookieParser = require('cookie-parser')
 const querystring = require('querystring')
 const Bunyan = require('bunyan')
 const config = require('../config')
@@ -16,8 +15,6 @@ monitor.routes(app)
 const isProduction = process.env.NODE_ENV === 'production'
 
 log.info('Starting server')
-
-app.use(cookieParser())
 
 // Add security headers to all responses
 app.use((req, res, next) => {
