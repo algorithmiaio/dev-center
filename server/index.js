@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   if (config.env.stage.cspEnabled) {
     const cdn = 'cdn.algorithmia.com'
     // No convenient way to hook into these dynamically. If adding an inline
-    // script, a new CSP sha will have to be added manually here.
+    // script, a new CSP SHA will have to be added manually here.
     // Chrome will tell you which SHA it expects if you have any CSP errors,
     // so you don't have to calculate them yourself.
     const cspShas = [
@@ -87,7 +87,7 @@ app.get('/metrics', (req, res, next) => {
 // less noise.
 
 app.use((req, res, next) => {
-  log.info(`${req.method} ${req.originalUrl}`)
+  log.info(`${req.method} ${req.originalUrl}`, req.headers)
   next()
 })
 
@@ -136,9 +136,6 @@ if (!isProduction) {
 const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
 app.use(/^\/developers/, (req, res, next) => {
   const usePublic = req.headers['x-public-marketplace-documentation'] === 'true'
-
-  log.info('usePublic', usePublic)
-  log.info('Headers', JSON.stringify(req.headers))
 
   if (isDirectory(req.path)) {
     const qs = querystring.stringify(req.query)
