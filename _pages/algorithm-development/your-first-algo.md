@@ -42,25 +42,27 @@ When you click the "Algorithm" link, you'll see a form for creating your algorit
 **Algorithmia Account or Organization**
 Note: If you don't belong to an organization, skip this step and go to the next.
 
-If you belong to an organization then you'll see this option before Algorithmia Name. Go ahead and select which account or organization you want to create your algorithm under.
+If you belong to an organization then you'll have the option to set the owner of the algorithm. Go ahead and select which account or organization you want to own this algorithm.
 
-**Algorithmia Name:** The first thing you'll notice in the form is the field "Algorithm Name" which will be the name of your algorithm. You'll want to name your algorithm something descriptive based on what the algorithm does.
+**Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the api. It should be something descriptive based on what the algorithm does.
 
-For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "Tokenize Text", but go ahead and name your algorithm according to what your code does.
+For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "TokenizeText", but go ahead and name your algorithm according to what your code does.
 
-**Algorithm ID:** The unique AlgoURL path users will use to call your algorithm.
+**Language:** Next you'll pick the language of your choice. Here we'll be using the default of Python 3.
 
-**Language:** Next you'll pick the language of your choice.
+**Instance type:** Here you can enable a GPU environment for you algorithm. Since we don't require that for this example, we'll leave the instance set to CPU.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_properties.png" alt="Create an algorithm" class="screenshot img-sm">
 
-**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Open Source".
+In the Settings section, you can select your algorithm's license, and customize its permissions if you need to. We're using the Algorithmia Platform License, and choosing custom permissions.
+
+**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Unrestricted".
 
 As an incentive to promote community contributions, open source algorithms that are not charging a royalty on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
 
-**Special Permissions:** Next is the "Special Permissions" section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we'll want access to the internet and since our final algorithm will call another algorithm we want to select "Can call other algorithms" as well.
+**Internet:** In this example we'll want access to the internet, so we'll leave this enabled.
 
-Also under Special Permissions, you can enable "CUDA/GPU". Since our algorithm doesn't require a GPU environment, we'll leave this disabled.
+**Pipelining:** This permission sets whether an algorithm can call other Algorithmia-hosted algorithms. Our example will need this enabled.
 
 You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{site.baseurl}}/basics/permissions).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
 {: .notice-info}
