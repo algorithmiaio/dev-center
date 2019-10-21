@@ -119,6 +119,21 @@ describe('Disable HSTS: Set', () => {
   })
 })
 
+describe('Enforce CSP: Set', () => {
+  before(function(done) {
+    customEnv['ENFORCE_CSP'] = 'true'
+    init(done)
+  })
+
+  afterEach(cleanup)
+
+  it('should set CSP header', () => {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
+      expect(res.headers['content-security-policy']).to.not.be.undefined
+    })
+  })
+})
+
 describe('Defaults', () => {
   before(function(done) {
     init(done)
@@ -134,6 +149,7 @@ describe('Defaults', () => {
       expect(res.headers['strict-transport-security']).to.equal(
         'max-age=86400; includeSubDomains'
       )
+      expect(res.headers['content-security-policy']).to.be.undefined
     })
   })
 })
