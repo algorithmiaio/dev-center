@@ -115,6 +115,9 @@ const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
 app.use(/^\/developers/, (req, res, next) => {
   const usePublic = req.headers['x-public-marketplace-documentation'] === 'true'
 
+  log.info('usePublic', usePublic)
+  log.info('Headers', JSON.stringify(req.headers))
+
   if (isDirectory(req.path)) {
     const qs = querystring.stringify(req.query)
     const newPath = `${req.path.replace(/\/$/, '')}/index.html`
