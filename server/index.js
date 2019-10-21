@@ -33,6 +33,28 @@ app.use((req, res, next) => {
       'max-age=86400; includeSubDomains'
     )
   }
+  if (config.env.stage.cspEnabled) {
+    const cdn = 'cdn.algorithmia.com'
+    // No convenient way to hook into these dynamically. If adding an inline
+    // script, a new CSP sha will have to be added manually here.
+    // Chrome will tell you which SHA it expects if you have any CSP errors,
+    // so you don't have to calculate them yourself.
+    const cspShas = [
+      'WmaB/BZsNpo2j+CMricdhZ2p4mn+Q54VCeUr3ceYLFA='
+    ]
+    res.setHeader(
+      'Content-Security-Policy',
+      [
+        `default-src 'self'`,
+        `img-src ${cdn} 'self'`,
+        `style-src ${cdn} 'unsafe-inline' 'self'`,
+        `script-src ${cspShas
+          .map(sha => `'sha256-${sha}'`)
+          .join(' ')} ${cdn} 'self'`,
+        `frame-src https://www.youtube.com 'self'`,
+      ].join(';')
+    )
+  }
   next()
 })
 
