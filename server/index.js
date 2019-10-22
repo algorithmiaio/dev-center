@@ -40,6 +40,7 @@ app.use((req, res, next) => {
     // Chrome will tell you which SHA it expects if you have any CSP errors,
     // so you don't have to calculate them yourself.
     const cspShas = [
+      // The inline script in _layouts/default.html where Lunr is initialized.
       'WmaB/BZsNpo2j+CMricdhZ2p4mn+Q54VCeUr3ceYLFA='
     ]
     res.setHeader(
