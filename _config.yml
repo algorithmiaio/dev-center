@@ -21,6 +21,9 @@ baseurl: /developers
 # Is this an enterprise (non http://algorithmia.com) site?
 enterprise: false
 
+# Provide hook for templates to account for dev-specific cases
+isLocalDev: false
+
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
 
