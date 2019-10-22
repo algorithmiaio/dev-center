@@ -12,8 +12,8 @@
     "build": "npm run apidocs:build && npm run devcenter:build",
     "devcenter:build": "./build.sh",
     "devcenter:dev": "bundle exec jekyll serve --port 4001",
-    "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml",
-    "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml",
+    "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml --port 4001",
+    "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001",
     "e2e": "./node_modules/.bin/wdio wdio.conf.js",
     "e2e:cloud": "E2E_RUN_IN_CLOUD=true npm run e2e",
     "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true npm run e2e:cloud",
@@ -41,9 +41,10 @@
   },
   "dependencies": {
     "bunyan": "^1.8.12",
-    "cookie-parser": "^1.4.4",
     "cross-env": "^6.0.0",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^0.20.0"
+    "http-proxy-middleware": "^0.20.0",
+    "prom-client": "^11.5.3",
+    "request-stats": "^3.0.0"
   }
 }
