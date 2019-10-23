@@ -3,7 +3,7 @@ const { isEquivalent } = require('../utilities/url')
 const page = require('../pages/developerCenter')
 const gettingStartedPage = require('../pages/gettingStarted')
 const modelGuidesPage = require('../pages/modelGuides')
-const { E2E_BASE_URL, USERNAME } = require('../config')
+const { E2E_BASE_URL } = require('../config')
 
 describe('Developer Center', () => {
   describe('Deployment redirect', () => {
