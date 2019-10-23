@@ -1,17 +1,20 @@
 const express = require('express')
 const path = require('path')
-const cookieParser = require('cookie-parser')
+const querystring = require('querystring')
 const Bunyan = require('bunyan')
 const config = require('../config')
+const prometheus = require('prom-client')
+const { monitor } = require('./prometheus')
 
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
 
+const metricsInterval = prometheus.collectDefaultMetrics()
+monitor.routes(app)
+
 const isProduction = process.env.NODE_ENV === 'production'
 
 log.info('Starting server')
-
-app.use(cookieParser())
 
 // Add security headers to all responses
 app.use((req, res, next) => {
@@ -30,15 +33,72 @@ app.use((req, res, next) => {
       'max-age=86400; includeSubDomains'
     )
   }
+  if (config.env.stage.cspEnabled) {
+    const cdn = 'cdn.algorithmia.com'
+    // No convenient way to hook into these dynamically. If adding an inline
+    // script, a new CSP SHA will have to be added manually here.
+    // Chrome will tell you which SHA it expects if you have any CSP errors,
+    // so you don't have to calculate them yourself.
+    const cspShas = [
+      // The inline script in _layouts/default.html where Lunr is initialized.
+      'WmaB/BZsNpo2j+CMricdhZ2p4mn+Q54VCeUr3ceYLFA='
+    ]
+    res.setHeader(
+      'Content-Security-Policy',
+      [
+        `default-src 'self'`,
+        `img-src ${cdn} 'self'`,
+        `style-src ${cdn} 'unsafe-inline' 'self'`,
+        `script-src ${cspShas
+          .map(sha => `'sha256-${sha}'`)
+          .join(' ')} ${cdn} 'self'`,
+        `frame-src https://www.youtube.com 'self'`,
+      ].join(';')
+    )
+  }
+  next()
+})
+
+// Kubernetes readiness probe
+
+app.use('/ping', (req, res) => {
+  res.status(200).end('ok')
+})
+
+// Prometheus
+
+app.get('/metrics', (req, res, next) => {
+  const auth = req.headers.authorization || ''
+  const segments = auth.split(' ')
+  const expectedToken = config.env.stage.prometheusToken
+
+  // In addition to checking that the tokens match, we also check that the
+  // token has been set in the env. This lets us prevent a case where the
+  // token is an empty string and the user gains access by submitting an
+  // empty bearer token.
+  if (expectedToken && segments.length === 2 && segments[1] === expectedToken) {
+    res.set('Content-Type', prometheus.register.contentType)
+    res.end(prometheus.register.metrics())
+  } else {
+    next()
+  }
+})
+
+// Log all requests, but ignore Kubernetes and Prometheus requests for waaaaaay
+// less noise.
+
+app.use((req, res, next) => {
+  log.info(`${req.method} ${req.originalUrl}`, req.headers)
   next()
 })
 
 // API Docs - resolve before trailing slash redirect so assets don't break
 
+const buildPath = isProduction ? '../docs/' : '../api-docs/build/'
 app.use(
   '/developers/api',
-  express.static(path.join(__dirname, '../api-docs/build/'), {
-    redirect: false,
+  express.static(path.join(__dirname, buildPath), {
+    redirect: false
   })
 )
 
@@ -67,7 +127,7 @@ app.get('*', (req, res, next) => {
 if (!isProduction) {
   const devCenterProxyConfig = {
     target: config.env.stage.devCenterUrl,
-    changeOrigin: true,
+    changeOrigin: true
   }
   app.use(require('http-proxy-middleware')(devCenterProxyConfig))
 }
@@ -76,15 +136,18 @@ if (!isProduction) {
 
 const isDirectory = devCenterPath => !/\w+\.\w+$/.test(devCenterPath)
 app.use(/^\/developers/, (req, res, next) => {
-  const usePublic = req.cookies['x-public-marketplace-documentation'] === 'true'
+  const usePublic = req.headers['x-public-marketplace-documentation'] === 'true'
 
   if (isDirectory(req.path)) {
-    req.url = `${req.url.replace(/\/$/, '')}/index.html`
+    const qs = querystring.stringify(req.query)
+    const newPath = `${req.path.replace(/\/$/, '')}/index.html`
+    const newQs = qs ? `?${qs}`: ''
+    req.url = `${newPath}${newQs}`
   }
 
   const options = {
     redirect: false,
-    maxAge: isProduction ? '1y' : '0',
+    maxAge: isProduction ? '1y' : '0'
   }
 
   const basePath = path.join(
@@ -107,6 +170,8 @@ const server = app.listen(PORT, () => {
   log.info(`Server started on port ${PORT}.`)
 })
 
+monitor.server(server)
+
 // Graceful Shutdown
 
 function gracefulShutdown() {
@@ -117,6 +182,7 @@ function gracefulShutdown() {
     process.exit()
   })
 
+  clearInterval(metricsInterval)
   const gracePeriod = isProduction ? 10 : 1
 
   setTimeout(() => {

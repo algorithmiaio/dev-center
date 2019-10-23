@@ -15,12 +15,21 @@
           </svg>
         </button>
         <a class="syn-flex" href="/">
+          {% if site.isLocalDev %}
+          <img
+            class="syn-ml-8"
+            src="https://test.algorithmia.com/v1/config/logo"
+            alt="Algorithmia Logo"
+            style="max-height: 24px; max-width: 100%"
+          />
+          {% else %}
           <img
             class="syn-ml-8"
             src="/v1/config/logo"
+            alt="Algorithmia Logo"
             style="max-height: 24px; max-width: 100%"
-            onerror="this.onerror=null; this.src=`{{ '/images/algo-purple.svg' | relative_url }}`;"
           />
+          {% endif %}
         </a>
         <div
           class="syn-page-header-divider vertical syn-ml-16 syn-mr-16 {% if site.enterprise %}syn-hidden-lg syn-hidden-md syn-hidden-sm{% endif %}"
