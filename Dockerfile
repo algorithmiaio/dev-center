@@ -63,7 +63,7 @@ COPY --from=docs-builder /opt/builds/build ./docs
 
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
-COPY server/utils ./server/utils
+COPY server/utils/isHtmlRequest.js ./server/utils/isHtmlRequest.js
 COPY config ./config
 COPY package.json package-lock.json ./
 
