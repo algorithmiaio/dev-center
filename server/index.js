@@ -156,11 +156,11 @@ app.use(/^\/developers/, (req, res, next) => {
     'developers'
   )
 
-  express.static(basePath, options)(req, res, next)
-})
-
-app.get('*', (req, res) => {
-  res.status(404).end()
+  express.static(basePath, options)(req, res, () => {
+    // If by this point we are still unable to discover a resource,
+    // lovingly return a 404 page to the user.
+    res.status(404).sendFile(`${basePath}/404.html`)
+  })
 })
 
 // Initialization
