@@ -5,7 +5,6 @@ const Bunyan = require('bunyan')
 const config = require('../config')
 const prometheus = require('prom-client')
 const { monitor } = require('./prometheus')
-const isHtmlRequest = require('./utils/isHtmlRequest')
 
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
@@ -146,13 +145,13 @@ app.use(/^\/developers/, (req, res, next) => {
     req.url = `${newPath}${newQs}`
   }
 
-  const cacheControl = (isHtmlRequest(req.url) || !isProduction)
-    ? 'no-cache'
-    : 'public, max-age=31536000'
   const options = {
     redirect: false,
-    setHeaders: (res) => {
-      res.set('cache-control', cacheControl)
+    setHeaders: (res, filepath) => {
+      res.set(
+        'cache-control',
+        (filepath.endsWith('.html') || !isProduction) ? 'no-cache' : 'public, max-age=31536000'
+      )
     }
   }
 

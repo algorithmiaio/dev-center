@@ -219,3 +219,31 @@ describe('/metrics', () => {
       })
   })
 })
+
+describe('Request for .html file', () => {
+  before(function(done) {
+    init(done)
+  })
+
+  after(cleanup)
+
+  it('should return Cache-Control: no-cache', () => {
+    return axios.get('http://localhost:4000/developers').then(function(res) {
+      expect(res.headers['cache-control']).to.equal('no-cache')
+    })
+  })
+})
+
+describe('Request for asset file', () => {
+  before(function(done) {
+    init(done)
+  })
+
+  after(cleanup)
+
+  it('should return Cache-Control with max age set to one year', () => {
+    return axios.get('http://localhost:4000/developers/js/search.min.js').then(function(res) {
+      expect(res.headers['cache-control']).to.equal('public, max-age=31536000')
+    })
+  })
+})
