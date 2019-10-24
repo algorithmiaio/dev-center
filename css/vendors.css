@@ -11,6 +11,11 @@ body {
   margin: 0
 }
 
+p,
+code {
+  word-break: break-word;
+}
+
 article,
 aside,
 details,
