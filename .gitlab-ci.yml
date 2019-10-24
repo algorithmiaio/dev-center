@@ -8,7 +8,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 services:
-  - docker:19.03.4-dind
+  - docker:19.03.4
 
 stages:
   - build
