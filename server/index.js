@@ -147,7 +147,12 @@ app.use(/^\/developers/, (req, res, next) => {
 
   const options = {
     redirect: false,
-    maxAge: isProduction ? '1y' : '0'
+    setHeaders: (res, filepath) => {
+      res.set(
+        'cache-control',
+        (filepath.endsWith('.html') || !isProduction) ? 'no-cache' : 'public, max-age=31536000'
+      )
+    }
   }
 
   const basePath = path.join(
