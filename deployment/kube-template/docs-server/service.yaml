@@ -16,4 +16,4 @@ spec:
   selector:
     app: docs-server
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
