@@ -13,7 +13,13 @@
     {% if site.setCanonicalLink %}
       <link rel="canonical" href="{{ page.url | absolute_url | replace:'index.html','' | no_trailing_slash }}">
     {% endif %}
+
+    {% if site.isLocalDev %}
     <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
+    {% else %}
+    <link rel="shortcut icon" type="image/png" href="/v1/config/favicon">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ site.cdnurl }}{{ site.baseurl }}/css/pygments-github.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/vendors.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/scoped-synapse.css">
