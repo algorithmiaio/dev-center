@@ -54,6 +54,9 @@ spec:
           value: {{secrets.prometheus_token}}
         image: {{versions.docs}}
         imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: 3G
         readinessProbe:
           failureThreshold: 3
           httpGet:
