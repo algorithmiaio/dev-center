@@ -15,10 +15,10 @@
           </svg>
         </button>
         <a class="syn-flex" href="/">
-          {% if site.isLocalDev %}
+          {% if site.isLocalDev or site.enterprise %}
           <img
             class="syn-ml-8"
-            src="https://test.algorithmia.com/v1/config/logo"
+            src="{{ site.baseurl }}/images/algo-purple.svg"
             alt="Algorithmia Logo"
             style="max-height: 24px; max-width: 100%"
           />
