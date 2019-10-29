@@ -152,7 +152,7 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
-While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia [Hosted Data Source]({{site.baseurl}}/data/hosted) to host data for algorithm development.
+Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?python#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?python#files).
 {: .notice-warning}
 
 #### Prerequisites
