@@ -42,14 +42,14 @@ client = Algorithmia.client('MANAGEMENT_API_KEY', 'https://mylocalendpoint')
 
 First, set up an Algorithmia client using an API Key from your account, which **must** have "Allow this key to manage my algorithm" enabled.
 
-Then, create your Algorithm by creating a `client.algo('username/algoname)` with the name you wish it to have: 'username' here might be your own username, or thge name of an Organization to which you belong, and 'algoname' can be any Algorithm name which doesn't already exist in that userspace.
+Then, create your Algorithm by creating a `client.algo('username/algoname')` with the name you wish it to have: 'username' here might be your own username, or the name of an Organization to which you belong, and 'algoname' can be any Algorithm name which doesn't already exist in that userspace.
 
-Next, we call the `.create()` method of that new Algorithm. The fields roughly correspond to those you'd see in the [Add Algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#create-your-first-algorithm) user interface, butr are fully described in the [API Docs](https://docs.algorithmia.com/?python#create-an-algorithm).
+Next, we call the `.create()` method of that new Algorithm. The fields roughly correspond to those you'd see in the [Add Algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#create-your-first-algorithm) user interface, but are fully described in the [API Docs](https://docs.algorithmia.com/?python#create-an-algorithm).
 
 {% highlight python %}
 import Algorithmia
 client=Algorithmia.client('MANAGEMENT_API_KEY')
-algo = client.algo('demo/Hello')
+algo = client.algo('YOUR_USERNAME/Hello')
 algo.create(
     details = {
         "label": "Hello World",
