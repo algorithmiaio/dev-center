@@ -40,7 +40,7 @@ Make sure you have [added a developer profile](http://stackoverflow.com/a/412174
 
 **Set your API key**
 
-On your [Algorithmia credentials page](algorithmia.com/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.  Save this API key.
+On your [Algorithmia credentials page]({{site.url}}/user#credentials), create a new Key.  Set its **Algorithm Access** to `'algo://deeplearning/DeepFilter'` and set the **Data access** to `read and write`.  Save this API key.
 
 Now we need to add this API key to your Environment.  From the menu, pick Product > Scheme > Edit Scheme.  In the popup, select "Run", then "Arguments".  Add an entry under "Environment Variables" with the name "ALGORITHMIA_API_KEY", and paste your API Key in as its value.
 
