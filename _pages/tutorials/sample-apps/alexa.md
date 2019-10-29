@@ -9,6 +9,7 @@ permalink: /tutorials/sample-apps/alexa/
 redirect_from:
   - /algorithm-development/clients/alexa/
   - /algorithm-development/tutorials/sample-apps/alexa/
+  - /clients/alexa/
 image:
     teaser: /language_logos/alexa.svg
 ---
