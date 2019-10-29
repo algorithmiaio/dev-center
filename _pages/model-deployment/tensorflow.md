@@ -225,7 +225,7 @@ Then, with all subsequent calls only the apply() function gets called which will
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
 
-Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Client Guides]({{site.url}}{{site.baseurl}}//languages/python/#io-for-your-algorithms).
+Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 
 ### Using the SavedModel Method
 
