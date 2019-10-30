@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: synapse-default
 ---
 
 <article itemscope itemtype="http://schema.org/Article">
@@ -14,7 +14,7 @@ layout: default
 
 	{% include breadcrumbs.html %}
 
-	<h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
+	<h1 id="page-title">{{ page.title }}</h1>
 	{% include page-meta.html %}
 
 	{% if page.repository %}
@@ -24,7 +24,7 @@ layout: default
 	{% endif %}
 
 	<div id="content" class="page-content" itemprop="articleBody">
-		{{ content }}
+    {{ content }}
 
 		<aside>
 			{% if page.comments == true %}<hr />{% include comments.html %}{% endif %}
