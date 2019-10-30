@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
+  {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+  {% if page.author %}
+    {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+  {% endif %}
+  {% include open-graph.html %}
+  {% if site.setCanonicalLink %}
+    <link rel="canonical" href="{{ page.url | absolute_url | replace:'index.html','' | no_trailing_slash }}">
+  {% endif %}
+
+  {% if site.isLocalDev %}
+  <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
+  {% else %}
+  <link rel="shortcut icon" type="image/png" href="/v1/config/favicon">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/synapse.css">
+
+  <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
+  <link href="{{ site.url }}{{ site.baseurl }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <meta http-equiv="cleartype" content="on">
+
+  {% if site.webserver %}
+    {% assign webserver = site.webserver %}
+  {% else %}
+    {% assign webserver = "https://algorithmia.com" %}
+  {% endif %}
+</head>
+
+<body>
+  <div class="syn-page syn-page-drawer-navigation">
+    <header class="syn-page-header syn-header-brand">
+      <div class="syn-page-header-content">
+        <button onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))" class="syn-btn text icon rounded grow theme-light no-shadow" data-v-3352aef0="" data-v-19ae9fc3="">
+          <svg width="1rem" height="1rem" viewBox="0 0 12 12">
+            <path fill="currentColor" d="M0,2 L12,2 L12,3.344 L0,3.344 L0,2 Z M0,6.67 L0,5.33 L12,5.33 L12,6.67 L0,6.67 Z M0,10 L0,8.656 L12,8.656 L12,10 L0,10 Z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="syn-page-header-nav" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
+        <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16">
+          <a href="/">
+            <img src="/assets/logo_purple.svg" class="logo-auth" />
+          </a>
+          <p class="syn-font-mono syn-caption syn-text-tertiary tagline syn-mt-8 syn-mb-0">Documentation</p>
+        </div>
+        <nav class="syn-nav">
+          <p class="syn-overline syn-mb-0">Menu Placeholder</p>
+          <ul>
+            <li><a class="syn-text-secondary" href="#logos" title="Logos">Coming Later</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="syn-page-header-nav-backdrop" onclick="document.querySelector('.syn-page-header').classList.toggle('nav-open')"></div>
+    </header>
+    <main class="syn-page-main">
+      <div class="syn-container">
+        {{ content | emojify }}
+      </div>
+    </main>
+  </main>
+  <footer class="syn-page-footer"></footer>
+</div>
+</body>
+</html>
