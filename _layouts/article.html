@@ -14,12 +14,12 @@ layout: synapse-default
 
 	{% include breadcrumbs.html %}
 
-	<h1 id="page-title">{{ page.title }}</h1>
+	<h1 id="page-title" class="syn-mb-4">{{ page.title }}</h1>
 	{% include page-meta.html %}
 
 	{% if page.repository %}
-      <p class="github-note">
-		Available on <a href='{{ page.repository }}' target='_blank' rel='nofollow'>GitHub</a>.
+    <p class="syn-body-2">
+		  Available on <a href='{{ page.repository }}' target='_blank' rel='nofollow'>GitHub</a>.
 	  </p>
 	{% endif %}
 
