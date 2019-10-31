@@ -7,7 +7,7 @@ show_related: false
 author: jon_peck
 ---
 
-<div class="row lang-tile-container">
+<div class="syn-row">
 {% assign sorted_tiles = site.pages | where: "categories", "integrations" | sort:"title" %}
 {% for post in sorted_tiles %}
   {% include post-grid-with-excerpt.html %}
