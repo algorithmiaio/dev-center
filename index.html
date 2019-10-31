@@ -5,8 +5,8 @@ excerpt: "Resources to get started with Algorithmia"
 exclude_from_search: true
 ---
 
-<div class="section">
-  <div class="col-md-12">
+<div class="syn-row">
+  <div class="syn-col syn-col-md-12">
     {% include breadcrumbs.html %}
     <h1 id="page-title">{{ page.title }}</h1>
     <p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
@@ -16,61 +16,61 @@ exclude_from_search: true
   </div>
 </div>
 
-<div class="row mb-64">
+<div class="syn-row syn-mb-64">
 <!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
-  <div class="col-md-5">
+  <div class="syn-col syn-col-md-5">
     <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="syn-image-responsive">
   </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-md-7">
+  <div class="syn-col syn-col-md-7">
     <p class="lead">Deploy your machine and deep learning models and leave the devops to us:</p>
     <a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised">Deploy Models</a>
   </div>
 </div>
 
 
-<div class="row mb-64">
+<div class="syn-row syn-mb-64">
   <!--For larger screens-->
-  <div class="col-md-5 hidden-sm hidden-xs">
+  <div class="syn-col syn-col-md-5 syn-hidden-sm">
     <p class="lead">Learn how to call algorithms in the language of your choice via our API's:</p>
     <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
   </div>
-  <div class="col-md-7">
-  <pre class="code_snippet">
-  import Algorithmia
-  input = "YOUR_USERNAME"
-  client = Algorithmia.client("YOUR_API_KEY")
-  algo = client.algo("demo/Hello/")
-  print(algo.pipe(input))
-  </pre>
+  <div class="syn-col syn-col-md-7">
+    <div class="syn-code-block">
+<pre><code>
+import Algorithmia
+input = "YOUR_USERNAME"
+client = Algorithmia.client("YOUR_API_KEY")
+algo = client.algo("demo/Hello/")
+print(algo.pipe(input))</code></pre>
+    </div>
   </div>
   <!--For smaller screens-->
-  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
+  <div class="syn-col syn-col-sm-12 syn-visible-sm">
     <p class="lead">Learn how to call algorithms in the language of your choice via our API's:</p>
     <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
   </div>
 </div>
 
-<div class="row mb-64">
-  <div class="col-md-5">
+<div class="syn-row syn-mb-64">
+  <div class="syn-col syn-col-md-5">
     <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/sample_apps.jpg" alt="Contribute" class="syn-image-responsive">
     <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/icons/hexicon_box.svg" alt="icon" class="hexicon">
   </div>
-  <div class="col-md-7">
+  <div class="syn-col syn-col-md-7">
     <p class="lead">Contribute to the marketplace by adding your own algorithms:</p>
     <a href="{{ site.baseurl }}/algorithm-development" class="btn btn-primary btn-raised">Create Algorithms</a>
   </div>
 </div>
 
-<div class="row mb-64">
-  <div class="col-md-5">
-    <p class="lead hidden-xs hidden-sm">Connect to Dropbox, Amazon S3, or Algorithmia's Hosted Data:</p>
+<div class="syn-row syn-mb-64">
+  <div class="syn-col syn-col-md-5">
+    <p class="lead syn-hidden-sm">Connect to Dropbox, Amazon S3, or Algorithmia's Hosted Data:</p>
     <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised hidden-xs hidden-sm">Data Source Guides</a>
   </div>
-  <div class="col-md-7">
+  <div class="syn-col syn-col-md-7">
     <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/test_smallest_data_icons.jpg" alt="Sample Apps" class="syn-image-responsive">
   </div>
-  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
+  <div class="syn-col syn-col-sm-12 syn-visible-sm">
     <p class="lead">Connect to your Data</p>
     <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised">Data Source Guides</a>
   </div>
