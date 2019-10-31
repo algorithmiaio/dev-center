@@ -2,6 +2,8 @@
 ---
 /* Temporary styles until we can switch all of devcenter to use synapse */
 @import "../synapse/images";
+@import "../synapse/code";
+@import "../synapse/variables";
 
 body {
   min-height: 100vh;
@@ -35,4 +37,17 @@ body,
 
 img {
   @extend .syn-image-responsive;
+}
+
+figure.highlight {
+  @extend .syn-code-block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-size: $font-size-body-2;
+
+  pre {
+    overflow: scroll;
+  }
 }
