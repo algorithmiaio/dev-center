@@ -49,7 +49,19 @@
       <div class="syn-page-header-nav" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
         <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16">
           <a href="/">
-            <img src="/assets/logo_purple.svg" class="logo-auth" />
+            {% if site.isLocalDev or site.enterprise %}
+            <img
+              src="{{ site.baseurl }}/images/algo-purple.svg"
+              alt="Algorithmia Logo"
+              style="max-height: 24px; max-width: 100%"
+            />
+            {% else %}
+            <img
+              src="/v1/config/logo"
+              alt="Algorithmia Logo"
+              style="max-height: 24px; max-width: 100%"
+            />
+            {% endif %}
           </a>
           <p class="syn-font-mono syn-caption syn-text-tertiary tagline syn-mt-8 syn-mb-0">Documentation</p>
         </div>
