@@ -15,8 +15,8 @@ redirect_from:
 ---
 
 
-<div class="row mb-64">
-  <div class="col-md-12">
+<div class="syn-row mb-64">
+  <div class="syn-col syn-col-md-12">
     <h3>Get Started</h3>
     <div class="dev-card">
       <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="syn-image-responsive get-started-img">
@@ -38,7 +38,7 @@ And if you're looking to call the API in Spark Streaming, H2O, and more check ou
 
 Also, after checking out the Getting Started Guide above, go through a more thorough tutorial in your preferred language. The guides below will take you step-by-step showing you how to work with data, call algorithms and get the response:
 
-<div class="row lang-tile-container">
+<div class="syn-row">
 {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
 {% for post in sorted_clients %}
   {% include post-grid.html %}
