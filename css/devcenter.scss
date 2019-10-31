@@ -52,3 +52,17 @@ figure.highlight {
     white-space: pre-wrap;
   }
 }
+
+.syn-user-image {
+  &.full-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: calc(100% / 1.41);
+      height: calc(100% / 1.41);
+      border-radius: 0 !important;
+    }
+  }
+}
