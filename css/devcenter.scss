@@ -1,4 +1,7 @@
+---
+---
 /* Temporary styles until we can switch all of devcenter to use synapse */
+@import "../synapse/images";
 
 body {
   min-height: 100vh;
@@ -28,4 +31,8 @@ body,
 .show-auth-nav .show-auth,
 .show-unauth-nav .show-unauth {
   display: initial !important;
+}
+
+img {
+  @extend .syn-image-responsive;
 }
