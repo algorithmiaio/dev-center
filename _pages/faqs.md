@@ -13,8 +13,8 @@ redirect_from:
 ---
 
 <div id="faqs-index">
-  <section class="row row-sm">
-    <div class="col-md-6">
+  <div class="syn-row syn-mb-32">
+    <div class="syn-col syn-col-md-6">
        <!-- Pulls from data/tags.yml to allow for data defined name attr -->
       {% assign platform_tag = site.data.tags["platform-faq"] %}
       <h2>{{platform_tag.name}}</h2>
@@ -23,17 +23,17 @@ redirect_from:
       <a href="{{ page.url | relative_url }}#platform-faq">Jump to {{platform_tag.name}}</a>
     </div>
 
-    <div class="col-md-6">
+    <div class="syn-col syn-col-md-6">
       {% assign algo_dev_tag = site.data.tags["algo-dev-faq"] %}
       <h2>{{algo_dev_tag.name}}</h2>
 
       <p>With the Algorithmia platform, you can get your algorithms in to the hands of developers, researchers, and businesses. In the Algorithm Developer FAQs, you'll get fast answers to your algorithm development questions.</p>
       <a href="{{ page.url | relative_url }}#algo-dev-faq">Jump to {{algo_dev_tag.name}}</a>
     </div>
-  </section>
+  </div>
 
-  <section class="row">
-    <div class="col-md-12">
+  <div class="syn-row">
+    <div class="syn-col syn-col-md-12">
       {% assign faq_tags = "platform-faq|algo-dev-faq" | split:"|" %}
       {% assign faq_pages = site.pages | where: "categories", "faqs" %}
       {% for tag in faq_tags %}
@@ -43,13 +43,13 @@ redirect_from:
       	 <h2 id="{{tag}}">{{tag_info.name}}</h2>
 
         	<!-- list posts in tag -->
-        	<section class="faq-posts">
+        	<div class="faq-posts">
         	{% for post in tagged_pages %}
         		{% include faq-list-item.html %}
         	{% endfor %}
-        	</section>
+        	</div>
 
       {% endfor %}
     </div>
-  </section>
+  </div>
 </div>

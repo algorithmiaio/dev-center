@@ -1,14 +1,11 @@
-<li class="list-index" id="{{post.title | slugify }}">
-  <h4>{{ post.title }}</h4>
-  <p>
-
-    {% assign full_content = post.content | size %}
-    {% if full_content > 500 %}
-      {{ post.excerpt | truncate: 500 }}
-      <a href="{{ post.url | relative_url }}">Read more</a>
-    {% else %}
-      {% assign replacer = '{{ site.baseurl }}' %}
-      {{ post.content | replace: replacer, site.baseurl | markdownify }}
-    {% endif %}
-  </p>
-</li>
+<div class="syn-card outlined syn-mb-32" id="{{post.title | slugify }}">
+  <h4 class="syn-mb-0">{{ post.title }}</h4>
+  {% assign full_content = post.content | size %}
+  {% if full_content > 500 %}
+    {{ post.excerpt | truncate: 500 }}
+    <a href="{{ post.url | relative_url }}">Read more</a>
+  {% else %}
+    {% assign replacer = '{{ site.baseurl }}' %}
+    {{ post.content | replace: replacer, site.baseurl | markdownify }}
+  {% endif %}
+</div>
