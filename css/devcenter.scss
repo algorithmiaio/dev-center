@@ -60,8 +60,9 @@ figure.highlight {
     align-items: center;
 
     & img {
-      width: calc(100% / 1.41);
-      height: calc(100% / 1.41);
+      max-width: calc(100% / 1.41);
+      max-height: calc(100% / 1.41);
+      object-fit: contain;
       border-radius: 0 !important;
     }
   }
