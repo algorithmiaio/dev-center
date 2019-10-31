@@ -11,7 +11,7 @@ image:
     teaser: /post_images/list_packages/dependencies.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies_wide.png" class="img-fill">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies_wide.png" class="syn-image-responsive">
 
 With Algorithmia, specifying dependencies is easy: you don't need to create a dockerfile or build any local images. Instead, you just specify your dependencies via the Web IDE or by including a file such as `requirements.txt` in your Algorithm's repo. The dependency tree is automatically resolved on Algorithmia's servers.
 
@@ -19,7 +19,7 @@ This is convenient -- but can also lead to a situation where you aren't sure exa
 
 ## Listing packages in R
 
-To get a list of which packages (and which R version) are currently being used by your Algorithm, temporarily replace your main algorithm function with the following code snippet: 
+To get a list of which packages (and which R version) are currently being used by your Algorithm, temporarily replace your main algorithm function with the following code snippet:
 
 ```r
 algorithm <- function(input) {
@@ -30,7 +30,7 @@ algorithm <- function(input) {
 
 You can see this in action for a default, blank R Algorithm on our public platform at [https://algorithmia.com/algorithms/util/ListPackagesR](https://algorithmia.com/algorithms/util/ListPackagesR).
 
-## Listing packages in Python   
+## Listing packages in Python
 
 To list which packages (and which version of Python) are currently being used by your Algorithm, temporarily replace your `apply()` function with the following:
 
@@ -53,7 +53,7 @@ You can see this on our public site for a default [Python 2.7 - Beta](https://al
 
 When working in Python, [virtual environments](https://docs.python-guide.org/dev/virtualenvs/) are a lightweight way to create an execution environment for a specific Python version and set of installed packages.
 
-This code snippet will generate a script you can use to set up a local virtualenv. Paste it into your own Algorithm, temporarily replacing your own `apply()` function:  
+This code snippet will generate a script you can use to set up a local virtualenv. Paste it into your own Algorithm, temporarily replacing your own `apply()` function:
 
 ```python
 import sys

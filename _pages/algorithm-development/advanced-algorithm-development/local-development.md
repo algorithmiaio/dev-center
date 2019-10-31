@@ -11,7 +11,7 @@ image:
     teaser: /post_images/local_development/local_development.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="img-fill">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="syn-image-responsive">
 
 ## Why develop locally?
 
@@ -25,7 +25,7 @@ Also be sure to keep your dependencies identical, down to the minor (or even the
 
 To help you identify the exact language and dependency versions, we've put together [code you can run inside your Algorithm to examine the environment and installed packages](list-packages/) -- and even to [help set up your virtual environment](list-packages/#creating-a-local-python-virtualenv-to-emulate-the-algorithms-environment).
 
-Dependencies guides: [Python]({{site.baseurl}}/algorithm-development/languages/python/#managing-dependencies), 
+Dependencies guides: [Python]({{site.baseurl}}/algorithm-development/languages/python/#managing-dependencies),
 [R]({{site.baseurl}}/algorithm-development/languages/r/#managing-dependencies)
 {: .notice-info}
 
@@ -41,16 +41,16 @@ import json
 
 if __name__ == '__main__':
     input = '{"foo":"bar"}'
-    print(apply(json.loads(input))) 
+    print(apply(json.loads(input)))
  ```
- 
+
  Now, we can test our Algorithm locally by simply changing the value of `input` and running the script. This extra code won't affect how it runs on Algorithmia in any way, so you can leave it in when you commit your code.
- 
+
  Similarly, in R we would add a wrapper function to do the same thing:
- 
+
  ```R
  import(rjson)
- 
+
  algorithm_local <- function(json) {
      algorithm(fromJSON(json))
  }
