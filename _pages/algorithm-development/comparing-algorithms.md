@@ -45,19 +45,19 @@ Got all that? Great! Lets dive in.
     - Ensure that your evaluation algorithm is passing data to your evaluable algorithms correctly! If they expect json, make sure you're passing something that can be serialized into json.
     - If some of your evaluable algorithms handle input differently, make an an `if` statement that pattern matches the 'evaluated_algorithm' key. For more info check out the example above.
     - Make sure to publish your algorithm before using it.
-    
+
  **Note:** Not sure what the I/O should look like for your evaluator algorithm? Check out the the API [documentation](https://algorithmia.com/algorithms/algoevaldemo/StringReversalEvaluator/docs) for the string reversal evaluator, it should get you on the right track.
 
 ## Step 2: Create a New Evaluation
 
 ##### Go to the [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) and click "Create Evaluation"
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/create_evaluation.png" alt="Create Evaluation" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/create_evaluation.png" alt="Create Evaluation" class="syn-image-responsive">
 
 ## Step 3: Set up your Evaluation
 
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="syn-image-responsive">
 
 - If you can't find your evaluator, make sure its:
     - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
@@ -65,7 +65,7 @@ Got all that? Great! Lets dive in.
     - Not created by an Organization (for now)
 
 ### Step 3.2: Add your Evaluable Algorithms
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="syn-image-responsive">
 
 -  If you can't find your Evaluable Algorithm, make sure its:
     - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
@@ -73,7 +73,7 @@ Got all that? Great! Lets dive in.
 
 ### Step 3.3: Provide an input to your evaluator algorithm
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="syn-image-responsive">
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
     - Remember that the `evaluated_algorithm` input variable defined in the evaluator algorithm is passed automatically.
@@ -81,13 +81,13 @@ Got all that? Great! Lets dive in.
 
 ## Step 4: Run your Evaluation
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/run_your_evaluation.png" alt="Run your Evaluation" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/run_your_evaluation.png" alt="Run your Evaluation" class="syn-image-responsive">
 
 - Once your input is ready, you can click the big "run evaluation" button at the top
 - Once your evaluation is executing, you can click the "results" tab and check the results.
 - If any errors or exceptions are detected during algorithm execution, they'll be declared in the `Error` column on the far right.
 
-**Note:** Running an evaluation costs credits, since both the evaluator algorithm and the evaluated algorithms will be executed.  
+**Note:** Running an evaluation costs credits, since both the evaluator algorithm and the evaluated algorithms will be executed.
 
 And by following this guide, you should be able to create your very own evaluation!
 

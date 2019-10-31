@@ -33,11 +33,11 @@ Table of Contents
 
 Let's start by creating an algorithm. First navigate to [Algorithmia](/) and click the plus sign in the navbar to open the create menu, where you'll see the "Algorithm" option.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="syn-image-responsive">
 
 When you click the "Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="syn-image-responsive">
 
 **Algorithmia Account or Organization**
 Note: If you don't belong to an organization, skip this step and go to the next.
@@ -52,7 +52,7 @@ For example this is the beginning portion of the <a href="{{site.baseurl}}/algor
 
 **Instance type:** Here you can enable a GPU environment for you algorithm. Since we don't require that for this example, we'll leave the instance set to CPU.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_properties.png" alt="Create an algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_properties.png" alt="Create an algorithm" class="syn-image-responsive">
 
 In the Settings section, you can select your algorithm's license, and customize its permissions if you need to. We're using the Algorithmia Platform License, and choosing custom permissions.
 
@@ -69,7 +69,7 @@ You can find out more about algorithm permissions in the [Algorithm Permissions 
 
 Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="syn-image-responsive">
 
 You can now clone your Algorithm (via Git) and install the CLI to edit/test locally, **or** you can close the modal and continue to create your algorithm in the Web IDE.
 
@@ -99,7 +99,7 @@ For more tips and tricks on local development, see our guide: [setting up your l
 
 If you prefer to continue creating your algorithm in the Web IDE, simply close the modal and you should see the algorithm description page for your newly created algorithm:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="syn-image-responsive">
 
 Notice the tabs: **Run**, **Docs**, **Cost**, **Discussion**, **Manage**, and **Source**.
 
@@ -137,20 +137,20 @@ To run this algorithm first hit the "Build" button on the top right hand corner 
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
 {: .notice-info}
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
 
 Once you have finished editing and want to run the algorithm, click the green **Build** button at the top right of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code.
 
 Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="syn-image-responsive">
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will start the publish flow:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
 
 There are 3 steps to publishing an algorithm: documenting changes, adding example input and output, and configuring algorithm settings.
 
@@ -188,7 +188,7 @@ This example shows an algorithm that checks the type of input passed in, and if 
 
 If your algorithm has never been published, or has only been published for Private use, you have the option to delete it when it is no longer needed. To do so, go to your algorithm's page and click on the **Manage** tab, then find the **Delete** button at the bottom.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/delete_algorithm.png" alt="Delete algorithm" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/delete_algorithm.png" alt="Delete algorithm" class="syn-image-responsive">
 
 If you have ever published your Algorithm with "Public" selected, it cannot be deleted. This is to ensure that others' code will not break if they have written algorithms or client code which depends on your algorithm.
 
