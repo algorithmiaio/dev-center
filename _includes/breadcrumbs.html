@@ -1,7 +1,7 @@
 {% if page.categories and page.categories != empty %}
-  <nav class="breadcrumbs-title">
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-        <span itemprop="title">{{ page.categories | first | replace: '-',' ' | capitalize }}</span>
+  <nav class="breadcrumbs syn-mb-0">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item">
+        <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{ page.categories | first | replace: '-',' ' | capitalize }}</span>
     </span>
   </nav><!-- /.breadcrumbs -->
 {% endif %}
