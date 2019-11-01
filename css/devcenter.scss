@@ -52,18 +52,3 @@ figure.highlight {
     white-space: pre-wrap;
   }
 }
-
-.syn-user-image {
-  &.full-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & img {
-      max-width: calc(100% / 1.41);
-      max-height: calc(100% / 1.41);
-      object-fit: contain;
-      border-radius: 0 !important;
-    }
-  }
-}
