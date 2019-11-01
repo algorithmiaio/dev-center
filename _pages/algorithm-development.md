@@ -18,7 +18,6 @@ redirect_from:
     <h3>Get Started</h3>
     <div class="dev-card">
       <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="syn-image-responsive get-started-img">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/icons/hexicon_desktop.svg" alt="icon" class="hexicon">
       <div class="dev-card-text">
         <p class="lead">Learn how to create and publish your algorithms</p>
         <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo" class="btn btn-default btn-accent">Get Started Now</a>
