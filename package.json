@@ -45,6 +45,7 @@
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
     "prom-client": "^11.5.3",
-    "request-stats": "^3.0.0"
+    "request-stats": "^3.0.0",
+    "vue": "^2.6.10"
   }
 }
