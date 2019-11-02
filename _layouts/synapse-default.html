@@ -38,7 +38,7 @@
 </head>
 
 <body>
-  <div class="syn-page syn-page-drawer-navigation">
+  <div class="syn-page syn-page-drawer-navigation" id="vue-app">
     <header class="syn-page-header syn-header-brand">
       <div class="syn-page-header-content">
         <button onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))" class="syn-btn text icon rounded grow theme-light no-shadow" data-v-3352aef0="" data-v-19ae9fc3="">
@@ -78,10 +78,12 @@
     <main class="syn-page-main">
       <div class="syn-container syn-mt-32 syn-mb-48">
         <!-- temporary formatting: going to have to handle elsewhere for asides -->
+
         <div class="syn-row">
           <div class="syn-col syn-col-lg-7">
             {{ content | emojify }}
           </div>
+          <div class="syn-col-syn-col-lg-5"><hello-world></hello-world></div>
         </div>
       </div>
     </main>
@@ -90,6 +92,7 @@
       <script src="{{ site.baseurl }}/js/sentry.5.7.1.min.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
       <script src="{{ site.baseurl }}/js/sentry.init.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
     {% endunless %}
+    <script src="{{site.baseurl}}/dist/build.js" type="text/javascript" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/core.cat.js"></script>
     <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/userCreds.js" type="text/javascript" charset="utf-8"></script>

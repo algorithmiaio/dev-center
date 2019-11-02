@@ -24,7 +24,10 @@
     "server:prod": "NODE_ENV=production npm run server",
     "start": "npm run server:prod",
     "synapse:setup": "git submodule init && git submodule update && cd synapse && npm ci",
-    "test:server": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000"
+    "test:server": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000",
+    "vue:build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "vue:dev": "cross-env NODE_ENV=development webpack",
+    "vue:watch": "cross-env NODE_ENV=development webpack --watch"
   },
   "devDependencies": {
     "@wdio/browserstack-service": "^5.13.2",
@@ -36,16 +39,24 @@
     "@wdio/sync": "^5.14.4",
     "axios": "^0.19.0",
     "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
     "mocha": "^6.2.0",
-    "shelljs": "^0.8.3"
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "bunyan": "^1.8.12",
-    "cross-env": "^6.0.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
     "prom-client": "^11.5.3",
     "request-stats": "^3.0.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "webpack": "^4.41.2"
   }
 }
