@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld'
+import CodeSample from './components/CodeSample'
 
-Vue.component('helloWorld', HelloWorld)
+Vue.component('codeSample', CodeSample)
 
 const app = new Vue({
   el: '#vue-app'

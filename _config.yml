@@ -88,4 +88,5 @@ exclude:
     "shippable.yml",
     "_tmp",
     "vendor",
+    "src/"
   ]
