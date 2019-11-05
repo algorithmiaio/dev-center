@@ -1,14 +1,17 @@
 <template>
   <div class="syn-code-block">
-    <div class="syn-code-block-btn">
-      <select v-if="languages.length > 1" v-model="selectedLanguage">
-        <option v-for="language in languages" :key="language" :value="language">
-          {{ language }}
-        </option>
-      </select>
-      <button class="syn-btn" @click="copySample">Copy</button>
+    <div class="syn-code-block-header syn-flex justify-space-between">
+      <span class="syn-overline syn-mb-0">{{title}}</span>
+      <div class="syn-ma-8">
+        <select class="syn-code-language-selector syn-mr-8" v-if="languages.length > 1" v-model="selectedLanguage">
+          <option v-for="language in languages" :key="language" :value="language">
+            {{ language }}
+          </option>
+        </select>
+        <button class="syn-btn" @click="copySample">Copy</button>
+      </div>
     </div>
-    <div ref="codeContent">
+    <div class="syn-code-block-body" ref="codeContent">
       <slot>
         <pre><code>// Sample Code Block
   console.log('Hello world!')</code></pre>
@@ -20,6 +23,12 @@
 <script>
 export default {
   name: 'CodeSample',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       languages: [],
@@ -28,7 +37,7 @@ export default {
   },
   methods: {
     copySample() {
-      const copyText = this.$refs.codeContent.textContent
+      const copyText = this.$refs.codeContent.querySelector(`figure.${this.selectedLanguage}`).innerText
       const el = document.createElement('textarea')
       el.value = copyText
       document.body.appendChild(el)
