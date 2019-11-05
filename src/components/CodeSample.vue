@@ -24,7 +24,7 @@ export default {
       el.select()
       document.execCommand('copy')
       document.body.removeChild(el)
-      console.log('success')
+      this.$root.$emit('show-toast', 'Copied to clipboard!')
     }
   }
 }
