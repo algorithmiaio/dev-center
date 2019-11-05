@@ -17,8 +17,14 @@ export default {
   name: 'CodeSample',
   methods: {
     copySample() {
-      const sampleText = this.$refs.codeContent.textContent
-      console.log(sampleText)
+      const copyText = this.$refs.codeContent.textContent
+      const el = document.createElement('textarea')
+      el.value = copyText
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand('copy')
+      document.body.removeChild(el)
+      console.log('success')
     }
   }
 }
