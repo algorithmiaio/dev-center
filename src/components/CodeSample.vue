@@ -37,20 +37,37 @@ export default {
       document.body.removeChild(el)
       this.$root.$emit('show-toast', 'Copied to clipboard!')
     },
-    getLanguages() {
+    processLanguages() {
       const samples = this.$refs.codeContent.querySelectorAll('figure')
       const langs = []
       samples.forEach((sample) => {
         const sampleCode = sample.querySelector('code')
-        langs.push(sampleCode.getAttribute('data-lang'))
+        const sampleLang = sampleCode.getAttribute('data-lang')
+        langs.push(sampleLang)
+        sample.classList.add(sampleLang)
       })
       return langs
+    },
+    showSelectedLanguage() {
+      const samples = this.$refs.codeContent.querySelectorAll('figure')
+      samples.forEach((sample) => {
+        if (sample.classList.contains(this.selectedLanguage)) {
+          sample.hidden = false
+        } else {
+          sample.hidden = true
+        }
+      })
     }
   },
   mounted() {
     // Wait to check for languages till mounted
-    this.languages = this.getLanguages()
+    this.languages = this.processLanguages()
     if (this.languages.length) this.selectedLanguage = this.languages[0]
+  },
+  watch: {
+    selectedLanguage(newVal, oldVal) {
+      if (newVal !== oldVal) this.showSelectedLanguage()
+    }
   }
 }
 </script>
