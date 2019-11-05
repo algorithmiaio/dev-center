@@ -4,6 +4,7 @@
 @import "../synapse/images";
 @import "../synapse/code";
 @import "../synapse/variables";
+@import "../synapse/typography-modifiers";
 
 body {
   min-height: 100vh;
@@ -51,4 +52,8 @@ figure.highlight {
     overflow: scroll;
     white-space: pre-wrap;
   }
+}
+
+p {
+  @extend .syn-body-1;
 }
