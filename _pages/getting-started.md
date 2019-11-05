@@ -47,6 +47,24 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 
+<code-sample>
+{% highlight python %}import Algorithmia
+
+input = "YOUR_USERNAME"
+client = Algorithmia.client('YOUR_API_KEY')
+algo = client.algo('demo/Hello/')
+print algo.pipe(input){% endhighlight %}
+
+{% highlight java %}import com.algorithmia.*;
+import com.algorithmia.algo.*;
+
+String input = "YOUR_USERNAME"
+AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
+Algorithm algo = client.algo("demo/Hello/");
+AlgoResponse result = algo.pipe(input);
+System.out.println(result.asJsonString());{% endhighlight %}
+</code-sample>
+
 {% raw %}
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8">
