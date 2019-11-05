@@ -38,6 +38,8 @@ For a given user and algorithm name, API calls are made to the following URL:
   </div>
 </div>
 
+<code-sample></code-sample>
+
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
 If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles) guide.

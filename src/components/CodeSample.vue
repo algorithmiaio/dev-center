@@ -1,17 +1,25 @@
 <template>
   <div class="syn-code-block">
     <div class="syn-code-block-btn">
-      <button class="syn-btn">Copy</button>
+      <button class="syn-btn" @click="copySample">Copy</button>
     </div>
-    <slot ref="code-content">
-      <pre><code>// Sample Code Block
-console.log('Hello world!')</code></pre>
-    </slot>
+    <div ref="codeContent">
+      <slot>
+        <pre><code>// Sample Code Block
+  console.log('Hello world!')</code></pre>
+      </slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CodeSample'
+  name: 'CodeSample',
+  methods: {
+    copySample() {
+      const sampleText = this.$refs.codeContent.textContent
+      console.log(sampleText)
+    }
+  }
 }
 </script>
