@@ -87,52 +87,52 @@
       </div>
     </main>
     <footer class="syn-page-footer"></footer>
-    {% unless site.enterprise %}
-      <script src="{{ site.baseurl }}/js/sentry.5.7.1.min.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
-      <script src="{{ site.baseurl }}/js/sentry.init.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
-    {% endunless %}
-    <script src="{{site.baseurl}}/dist/build.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ site.baseurl }}/js/core.cat.js"></script>
-    <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ site.baseurl }}/js/userCreds.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ site.baseurl }}/js/stageCustomization.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-    $(function() {
-      $('#search-query').lunrSearch({
-        indexUrl: '{{ site.baseurl }}/js/index.json',
-        results:  '#search-results',
-        template: '#search-results-template',
-        titleMsg: '<h3><small>SEARCH RESULTS</small></h3>',
-        emptyMsg: '<p>No results found...</p>'
-      });
+  </div>
+  {% unless site.enterprise %}
+    <script src="{{ site.baseurl }}/js/sentry.5.7.1.min.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
+    <script src="{{ site.baseurl }}/js/sentry.init.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
+  {% endunless %}
+  <script src="{{site.baseurl}}/dist/build.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ site.baseurl }}/js/core.cat.js"></script>
+  <script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ site.baseurl }}/js/userCreds.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ site.baseurl }}/js/stageCustomization.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ site.baseurl }}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '{{ site.baseurl }}/js/index.json',
+      results:  '#search-results',
+      template: '#search-results-template',
+      titleMsg: '<h3><small>SEARCH RESULTS</small></h3>',
+      emptyMsg: '<p>No results found...</p>'
+    });
 
-      $('#search-query').on('input', function(evt) {
-        if(evt.target.value.length < 3) {
-          $('#main-content').show();
-        } else {
-          $('#main-content').hide();
-        }
-      });
-
-      $('.sidebar .category > a').on('click', function(evt) {
-        evt.preventDefault();
-        evt.currentTarget.parentNode.classList.toggle('active');
-      });
-
-      // If there is a query string that will get picked up by lunrSearch
-      //   then hide the page content by default
-      // Note: the search input field doesn't get set by lunrSearch until index.json loads
-      var uri = new URI(window.location.search.toString());
-      var queryString = uri.search(true);
-      if (queryString.hasOwnProperty('q')) {
-        if(queryString.q.length >= 3) {
-          $('#main-content').hide();
-          $('#search-query').focus();
-        }
+    $('#search-query').on('input', function(evt) {
+      if(evt.target.value.length < 3) {
+        $('#main-content').show();
+      } else {
+        $('#main-content').hide();
       }
     });
-    </script>
-  </div>
+
+    $('.sidebar .category > a').on('click', function(evt) {
+      evt.preventDefault();
+      evt.currentTarget.parentNode.classList.toggle('active');
+    });
+
+    // If there is a query string that will get picked up by lunrSearch
+    //   then hide the page content by default
+    // Note: the search input field doesn't get set by lunrSearch until index.json loads
+    var uri = new URI(window.location.search.toString());
+    var queryString = uri.search(true);
+    if (queryString.hasOwnProperty('q')) {
+      if(queryString.q.length >= 3) {
+        $('#main-content').hide();
+        $('#search-query').focus();
+      }
+    }
+  });
+  </script>
 </body>
 </html>
