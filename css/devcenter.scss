@@ -39,6 +39,11 @@ img {
   @extend .syn-image-responsive;
 }
 
+pre {
+  overflow: scroll;
+  white-space: pre-wrap;
+}
+
 figure.highlight {
   @extend .syn-code-block;
   margin-block-start: 0;
@@ -46,9 +51,4 @@ figure.highlight {
   margin-inline-start: 0;
   margin-inline-end: 0;
   font-size: $font-size-body-2;
-
-  pre {
-    overflow: scroll;
-    white-space: pre-wrap;
-  }
 }

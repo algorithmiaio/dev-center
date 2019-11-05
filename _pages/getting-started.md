@@ -24,21 +24,10 @@ To get started, find an algorithm you'd like to call. You can do this by using t
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 
 For a given user and algorithm name, API calls are made to the following URL:
-<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
-  <div class="code-toolbar ph-16 pv-8 text-right">
-    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('api')">
-      <i class="fa fa-copy"></i>
-    </button>
-  </div>
 
-  <div class="tab-pane code__pane gs-pane" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">POST https://api.algorithmia.com/v1/algo/:owner/:algoname</code></pre>
-
-  <textarea id="api-copy-text" class="copy-text curl">POST https://api.algorithmia.com/v1/algo/:owner/:algoname</textarea>
-  </div>
-</div>
-
-<code-sample></code-sample>
+<code-sample>
+  {% highlight bash %}POST https://api.algorithmia.com/v1/algo/:owner/:algoname{% endhighlight %}
+</code-sample>
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
@@ -49,21 +38,9 @@ If you want a complete guide on how to navigate an algorithm's description page 
 
 We'll make our first call with the demo algorithm ["Hello"](/algorithms/demo/Hello). This algorithm takes an input of a string (preferably your name!) and returns a greeting addressed to the input.
 
-<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
-  <div class="code-toolbar ph-16 pv-8 text-right">
-    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('curl')">
-      <i class="fa fa-copy"></i>
-    </button>
-  </div>
-
-  <!-- CURL -->
-  <!-- Here and below we use the markdown produced by hljs so that we can add the js/css needed for the cards that appear when hovering over username/api key -->
-  <div class="tab-pane code__pane gs-pane" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/</code></pre>
-
-  <textarea id="curl-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/</textarea>
-  </div>
-</div>
+<code-sample>
+  {% highlight bash %}curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/{% endhighlight %}
+</code-sample>
 
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
 {: .notice-warning}
