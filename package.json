@@ -47,6 +47,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "jest": "^24.9.0",
+    "jest-serializer-vue": "^2.0.2",
     "mocha": "^6.2.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",

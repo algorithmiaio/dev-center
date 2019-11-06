@@ -4,6 +4,7 @@ module.exports = {
     "json",
     "vue"
   ],
+  snapshotSerializers: ["jest-serializer-vue"],
   testMatch: ["**/jest/*.+(ts|tsx|js)"],
   transform: {
     ".*\\.(vue)$": "vue-jest",
