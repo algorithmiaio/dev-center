@@ -56,6 +56,7 @@ figure.highlight {
 }
 
 code-sample[v-cloak] {
+  // Hide all but the first element inside a code sample until vue component mounts
   & > :not(:first-child) {
     display: none;
   }

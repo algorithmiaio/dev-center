@@ -62,6 +62,7 @@ gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "
 
 6.  To start both the Node and Jekyll test servers with auto-regeneration, run `npm run devcenter:dev` and `npm run server:dev` in two separate terminal windows.
 7.  If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
+8.  To build our vue components, run `npm run vue:dev`, or if you want auto-regeneration, run `npm run vue:watch` in another terminal window.
 
 You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
 

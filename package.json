@@ -9,7 +9,7 @@
   "scripts": {
     "apidocs:build": "cd api-docs gem install bundler && bundle install && bundle exec rake build",
     "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
-    "build": "npm run apidocs:build && npm run devcenter:build",
+    "build": "npm run apidocs:build && npm run vue:build && npm run devcenter:build",
     "devcenter:build": "./build.sh",
     "devcenter:dev": "bundle exec jekyll serve --port 4001",
     "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml --port 4001",
