@@ -47,7 +47,7 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 
-<code-sample>
+<code-sample class="syn-mb-16">
 <!-- PYTHON -->
 {% highlight python %}import Algorithmia
 
@@ -208,26 +208,8 @@ $ch = curl_init();
 
 Each algorithm returns a response in JSON. It will include the `"result"` as well as metadata about the API call you made. The metadata will include the `content_type` as well as a duration.
 
-<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
-  <div class="code-toolbar ph-16 pv-8 text-right">
-    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode('result')">
-      <i class="fa fa-copy"></i>
-    </button>
-  </div>
-
-  <!-- CURL RESULT -->
-  <div class="tab-pane code__pane gs-pane" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST <span class="hljs-_">-d</span> <span class="hljs-string">'"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"'</span> -H <span class="hljs-string">'Content-Type: application/json'</span> -H <span class="hljs-string">'Authorization: Simple <span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>'</span> https://api.algorithmia.com/v1/algo/demo/Hello/
-
-{
-  <span class="hljs-string">"result"</span>: <span class="hljs-string">"Hello <span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>,
-  <span class="hljs-string">"metadata"</span>: {
-     <span class="hljs-string">"content_type"</span>: <span class="hljs-string">"text"</span>,
-     <span class="hljs-string">"duration"</span>: 0.000187722
-  }
-}</code></pre>
-
-  <textarea id="result-copy-text" class="copy-text curl">curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
+<code-sample>
+{% highlight bash %}curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/
 
 {
   "result": "Hello YOUR_USERNAME",
@@ -235,9 +217,8 @@ Each algorithm returns a response in JSON. It will include the `"result"` as wel
      "content_type": "text",
      "duration": 0.000187722
   }
-}</textarea>
-  </div>
-</div>
+}{% endhighlight %}
+</code-sample>
 
 The duration is the compute time of the API call into the algorithm. This is the time in seconds between the start of the execution of the algorithm and when it produces a response. Because you are charged on the compute time of the API call, this information will help you optimize your use of the API.
 
