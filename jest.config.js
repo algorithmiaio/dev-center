@@ -4,6 +4,9 @@ module.exports = {
     "json",
     "vue"
   ],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
   snapshotSerializers: ["jest-serializer-vue"],
   testMatch: ["**/jest/*.+(ts|tsx|js)"],
   transform: {

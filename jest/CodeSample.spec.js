@@ -1,5 +1,5 @@
-import { mount, createWrapper } from '@vue/test-utils'
-import CodeSample from '../src/components/CodeSample'
+import { mount } from '@vue/test-utils'
+import CodeSample from '@/components/CodeSample'
 
 describe('CodeSample', () => {
   test('should render default slot content if no custom content provided', () => {
