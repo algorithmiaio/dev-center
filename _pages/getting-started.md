@@ -48,6 +48,7 @@ If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 
 <code-sample>
+<!-- PYTHON -->
 {% highlight python %}import Algorithmia
 
 input = "YOUR_USERNAME"
@@ -55,6 +56,7 @@ client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
 print algo.pipe(input){% endhighlight %}
 
+<!-- JAVA -->
 {% highlight java %}import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
@@ -64,6 +66,7 @@ Algorithm algo = client.algo("demo/Hello/");
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asJsonString());{% endhighlight %}
 
+<!-- R -->
 {% highlight r %}library(algorithmia)
 
 input <- "YOUR_USERNAME"
@@ -72,6 +75,8 @@ algo <- client$algo("demo/Hello/")
 result <- algo$pipe(input)$result
 print(result){% endhighlight %}
 
+<!-- JAVASCRIPT -->
+<div code-sample-language="JavaScript">
 {% highlight javascript %}var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY")
           .algo("demo/Hello/")
@@ -79,7 +84,20 @@ Algorithmia.client("YOUR_API_KEY")
           .then(function(output) {
             console.log(output);
           });{% endhighlight %}
+</div>
 
+<!-- NODEJS -->
+<div code-sample-language="Node">
+{% highlight javascript %}var input = "YOUR_USERNAME";
+Algorithmia.client("YOUR_API_KEY")
+          .algo("algo://demo/Hello/")
+          .pipe(input)
+          .then(function(response) {
+            console.log(response.get());
+          });{% endhighlight %}
+</div>
+
+<!-- RUBY -->
 {% highlight ruby %}require 'algorithmia'
 
 input = "YOUR_USERNAME"
@@ -88,6 +106,7 @@ algo = client.algo("demo/Hello/")
 response = algo.pipe(input).result
 puts response{% endhighlight %}
 
+<!-- RUST -->
 {% highlight rust %}use algorithmia::*;
 
 let input = "YOUR_USERNAME";
@@ -96,6 +115,7 @@ let algo = client.algo("demo/Hello/");
 let response = algo.pipe(input);
 println!(response){% endhighlight %}
 
+<!-- SCALA -->
 {% highlight scala %}import com.algorithmia._
 import com.algorithmia.algo._
 
@@ -105,6 +125,7 @@ val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString){% endhighlight %}
 
+<!-- SWIFT -->
 {% highlight swift %}import Algorithmia
 
 let input = "YOUR_USERNAME";
@@ -113,6 +134,8 @@ let algo = client.algo(algoUri: "demo/Hello/") { resp, error in
   print(resp)
 }{% endhighlight %}
 
+<!-- C-SHARP -->
+<div code-sample-language=".NET/C#">
 {% highlight csharp %}using Algorithmia;
 
 var input = "YOUR_USERNAME";
@@ -120,7 +143,9 @@ var client = new Client("YOUR_API_KEY");
 var algo = client.algo(client, "algo://demo/hello");
 var response = algo.pipe&lt;string&gt;(input);
 System.Console.WriteLine(response.result.ToString());{% endhighlight %}
+</div>
 
+<!-- GO -->
 {% highlight go %}import (
   algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
@@ -133,6 +158,7 @@ resp, _ := algo.Pipe(input)
 response := resp.(*algorithmia.AlgoResponse)
 fmt.Println(response.Result){% endhighlight %}
 
+<!-- PERL -->
 {% highlight perl %}use LWP::UserAgent;
 
 my $input = 'YOUR_USERNAME';
@@ -149,6 +175,8 @@ if ($resp->is_success) {
     print 'POST error: ', $resp->code, ': ', $resp->message;
 }{% endhighlight %}
 
+<!-- PHP -->
+<div code-sample-language="PHP">
 {% highlight php %}$input = 'YOUR_USERNAME';
 $api_key = 'YOUR_API_KEY';
 $data_json = json_encode($input);
@@ -173,27 +201,8 @@ $ch = curl_init();
   } else {
     print_r($response->result);
   }{% endhighlight %}
+</div>
 </code-sample>
-
-{% raw %}
-<!-- NODE -->
-  <div class="tab-pane code__pane gs-pane" id="node" ng-show="lang==='node'" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs js"><span class="hljs-keyword">var</span> input = <span class="hljs-string">"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>;
-Algorithmia.client(<span class="hljs-string">"<span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>)
-          .algo(<span class="hljs-string">"algo://demo/Hello/"</span>)
-          .pipe(input)
-          .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) </span>{
-            <span class="hljs-built_in">console</span>.log(response.get());
-          });</code></pre>
-  <textarea class="copy-text" id="node-copy-text">var input = "YOUR_USERNAME";
-Algorithmia.client("YOUR_API_KEY")
-          .algo("algo://demo/Hello/")
-          .pipe(input)
-          .then(function(response) {
-            console.log(response.get());
-          });</textarea>
-  </div>
-{% endraw %}
 
 ## Understanding the response
 

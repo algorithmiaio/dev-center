@@ -50,8 +50,15 @@ export default {
       const samples = this.$refs.codeContent.querySelectorAll('figure')
       const langs = []
       samples.forEach((sample) => {
-        const sampleCode = sample.querySelector('code')
-        const sampleLang = sampleCode.getAttribute('data-lang')
+        let sampleLang = ''
+        if (sample.parentElement.getAttribute('code-sample-language')) {
+          // First check if code-sample-language was specified and use that if it was
+          sampleLang = sample.parentElement.getAttribute('code-sample-language')
+        } else {
+          // Otherwise default to the language specified on the highlight block
+          const sampleCode = sample.querySelector('code')
+          sampleLang = sampleCode.getAttribute('data-lang')
+        }
         langs.push(sampleLang)
         sample.classList.add(sampleLang)
       })
