@@ -19,6 +19,7 @@
     "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true npm run e2e:cloud",
     "e2e:local": "E2E_BASE_URL=http://localhost:3000 npm run e2e",
     "jest": "./node_modules/jest/bin/jest.js",
+    "jest:update": "./node_modules/jest/bin/jest.js -u",
     "setup": "npm run apidocs:setup && npm run apidocs:build && npm run synapse:setup && gem install bundler && bundle install && npm install",
     "server": "node ./server/index.js",
     "server:dev": "NODE_ENV=development npm run server",

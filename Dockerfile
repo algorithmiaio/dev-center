@@ -10,6 +10,10 @@ COPY ./synapse .
 # Install dependencies
 RUN npm ci
 
+# Run Jest Tests
+
+RUN npm run jest
+
 # Build files
 RUN npm run build
 
