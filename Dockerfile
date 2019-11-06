@@ -10,15 +10,30 @@ COPY ./synapse .
 # Install dependencies
 RUN npm ci
 
-# Run Jest Tests
-
-RUN npm run jest
-
 # Build files
 RUN npm run build
 
+
 #
-# Stage 2: build API docs
+# Stage 2: build Vue app
+#
+FROM node:10.14 as vue-builder
+
+WORKDIR /app
+COPY . .
+
+# Install dependencies
+RUN npm ci
+
+
+# Run Jest Tests
+RUN npm run jest
+
+# Build files
+RUN npm run vue:build
+
+#
+# Stage 3: build API docs
 #
 FROM ruby:2.3 AS docs-builder
 
@@ -35,7 +50,7 @@ RUN bundle install
 RUN rake build
 
 #
-# Stage 3: build dev center
+# Stage 4: build dev center
 #
 FROM ubuntu:19.10 as dev-center-builder
 
@@ -52,6 +67,7 @@ COPY . .
 RUN bundle install
 
 COPY --from=style-builder /app/dist ./synapse/dist
+COPY --from=vue-builder /app/js/vue-build.js ./js
 
 RUN ./build.sh
 
