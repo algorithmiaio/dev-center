@@ -11,13 +11,13 @@ image:
     teaser: /post_images/batch-processing/batch_processing.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing_wide.png" class="img-fill">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing_wide.png" class="syn-image-responsive">
 
 Many Machine Learning models are initially coded to accept a single input and return a single prediction. In batch processing (aka batch prediction), we wish to send a large volume of inputs -- possibly millions. Then, the model should score each input and aggregate the results into a file, datastore, or queue.
 
 Some systems enforce a rigid separation between single and batch prediction mode. Algorithmia does not; instead, it provides a flexible system in which you can perform individual, serial-batch, or parallel-batch prediction using the same model.
 
-## Single Predictions   
+## Single Predictions
 
 This is the default mode for Algorithmia: your model is hosted as a web endpoint (an "Algorithm"), which accepts an API call containing some data it should run a prediction against, and it returns the result as a JSON payload. In some cases, the Algorithm developer may chose to write the results to a file or datastore instead of (or in addition to) returning them as JSON; this is up to the individual Algorithm developer to decide.
 
@@ -74,7 +74,7 @@ def apply(input):
         results.append(algo.pipe(single).result)
     # optional: write "results" to a logfile or datastore
     return results
-``` 
+```
 
 Then, your external server can make a single call to the batch wrapper Algorithm, passing all inputs in a single network call, thus reducing the impact of network overhead on overall throughput.
 
@@ -85,7 +85,7 @@ For example, if the original Algorithm contained:
 ```python
 def apply(input):
     return someCalculation(input)
-``` 
+```
 
 Then it could be easily altered to check for an `input` of type list:
 

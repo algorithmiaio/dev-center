@@ -25,7 +25,7 @@ If you have any questions about Algorithmia or <a href="https://blog.algorithmia
 
 ### Supported Machine and Deep Learning Frameworks
 {% assign model_tags = "algo-model-guide" | split:"|" %}
-<div class="row lang-tile-container">
+<div class="syn-row lang-tile-container">
   {% assign pages = site.pages | where: "categories", "model-guides" | sort:"title" %}
   {% for post in pages %}
 		{% include post-grid.html %}

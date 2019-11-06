@@ -12,7 +12,7 @@ redirect_from:
 ---
 
 
-<div class="row overview-container lang-tile-container">
+<div class="syn-row">
   {% assign sorted_tiles = site.pages | where: "categories", "sample-apps" %}
   {% for post in sorted_tiles %}
   	{% include post-grid-with-excerpt.html %}

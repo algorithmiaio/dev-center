@@ -1,10 +1,12 @@
-<div class="col-xs-6 col-sm-6 col-md-3">
-	  <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="post-teaser lang-tile">
-	    {% if post.image.teaser %}
-	      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
-	    {% else %}
-	      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
-	    {% endif %}
-	    {{ post.title }}
-	  </a>
+<div class="syn-col syn-col-sm-6 syn-col-md-3 syn-mb-32">
+  <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="syn-card outlined actionable full-height syn-link-no-decoration">
+    <div class="syn-user-image syn-user-image-56 contained syn-mh-auto syn-mb-8 full-image">
+    {% if post.image.teaser %}
+      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="syn-image-responsive grow">
+    {% else %}
+      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image" class="syn-image-responsive grow">
+    {% endif %}
+    </div>
+    <div class="syn-h6 syn-text-center syn-mb-0">{{ post.title }}</div>
+  </a>
 </div>

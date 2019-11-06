@@ -1,14 +1,15 @@
-<div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-  <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
+<div class="syn-col syn-col-sm-6 syn-col-md-4 syn-mb-32" style="text-decoration: none!important;">
+  <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="syn-card outlined actionable full-height syn-text-center" style="text-decoration: none!important;">
+    <div class="syn-user-image syn-user-image-56 syn-mh-auto syn-mb-8 full-image">
     {% if post.image.teaser %}
-      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
+      <img src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="syn-image-responsive">
     {% else %}
-      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image">
+      <img class="larger_icon" src="{{ site.cdnurl }}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="icon" itemprop="image" class="syn-image-responsive">
     {% endif %}
-
-    <header itemprop="name" class="lg mb-0">{{ post.title }}</header>
+    </div>
+    <header itemprop="name" class="syn-h6 syn-mb-0">{{ post.title }}</header>
     {% if post.excerpt-short %}
-    <p class="caption text-primary">{{ post.excerpt-short }}</p>
+    <p class="syn-caption syn-text-secondary syn-mt-8 syn-mb-0">{{ post.excerpt-short }}</p>
     {% endif %}
   </a>
 </div>

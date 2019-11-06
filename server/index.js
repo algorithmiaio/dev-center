@@ -109,11 +109,13 @@ app.use(
 
 const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath)
+const isFile = reqPath => /\.\w+$/.test(reqPath)
 app.get('*', (req, res, next) => {
   if (hasTrailingSlash(req.path) && !(!isProduction || isApiDocs(req.path))) {
     res.redirect(req.path.replace(/\/$/, ''))
   } else if (
     !hasTrailingSlash(req.path) &&
+    !isFile(req.path) &&
     (!isProduction || isApiDocs(req.path))
   ) {
     res.redirect(`${req.path}/`)
