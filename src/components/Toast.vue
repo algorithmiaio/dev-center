@@ -58,6 +58,9 @@ export default {
       // Set Toast Dismiss Delay
       this.timeout = setTimeout(this.closeToast, 4000)
     },
+  },
+  beforeDestroy() {
+    this.clearCloseTimeout()
   }
 }
 </script>
