@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { copyToClipboard } from '../utilities/clipboard'
+
 export default {
   name: 'CodeSample',
   props: {
@@ -45,12 +47,7 @@ export default {
   methods: {
     copySample() {
       const copyText = this.$refs.codeContent.querySelector(`figure.${this.selectedLanguage}`).innerText
-      const el = document.createElement('textarea')
-      el.value = copyText
-      document.body.appendChild(el)
-      el.select()
-      document.execCommand('copy')
-      document.body.removeChild(el)
+      copyToClipboard(copyText)
       this.$root.$emit('show-toast', 'Copied to clipboard!')
     },
     processLanguages() {
