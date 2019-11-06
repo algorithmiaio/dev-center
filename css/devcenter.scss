@@ -54,3 +54,9 @@ figure.highlight {
   margin-inline-end: 0;
   font-size: $font-size-body-2;
 }
+
+code-sample[v-cloak] {
+  & > :not(:first-child) {
+    display: none;
+  }
+}
