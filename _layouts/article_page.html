@@ -4,19 +4,22 @@ layout: synapse-default
 
 <article itemscope itemtype="http://schema.org/Article">
 
-	{% if page.image.feature %}
-	<div class="page-feature">
-		<div class="page-image">
-			{% if page.image.credit %}{% include image-credit.html %}{% endif %}
-		</div><!-- /.page-image -->
-	</div><!-- /.page-feature -->
-	{% endif %}
+  <div class="syn-row">
+    <div class="syn-col syn-col-lg-7">
+      {% if page.image.feature %}
+      <div class="page-feature">
+        <div class="page-image">
+          {% if page.image.credit %}{% include image-credit.html %}{% endif %}
+        </div><!-- /.page-image -->
+      </div><!-- /.page-feature -->
+      {% endif %}
 
-	{% include breadcrumbs.html %}
+      {% include breadcrumbs.html %}
 
-	<h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
-
-	<div id="content" itemprop="articleBody">
+      <h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
+    </div>
+  </div>
+	<div id="content" itemprop="articleBody" class="syn-article">
 		{{ content }}
 	</div><!-- /.content -->
 
