@@ -5,7 +5,7 @@
 @import "../synapse/code";
 @import "../synapse/variables";
 @import "../synapse/typography-modifiers";
-@import "../synapse/grid";
+@import "../synapse/article";
 
 body {
   min-height: 100vh;
@@ -66,34 +66,4 @@ code-sample[v-cloak] {
 
 p {
   @extend .syn-body-1;
-}
-
-.syn-article {
-  @extend .syn-row;
-
-  & > * {
-    @extend .syn-col;
-
-    &:not(.syn-aside) {
-      @extend .syn-col-lg-7;
-      margin-bottom: $space-16;
-    }
-
-    &.syn-aside {
-      @extend .syn-col-lg-12;
-      @extend .syn-row;
-      flex-grow: 1;
-      max-width: unset;
-
-      & .syn-aside-main {
-        @extend .syn-col;
-        @extend .syn-col-lg-7;
-      }
-
-      & .syn-aside-side {
-        @extend .syn-col;
-        @extend .syn-col-lg-5;
-      }
-    }
-  }
 }
