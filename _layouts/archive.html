@@ -1,18 +1,19 @@
 ---
 layout: synapse-default
 ---
-
-{% if page.image.feature %}
-<div class="page-feature">
-	<div class="page-image">
-		<img src="{{ site.cdnurl }}{{ page.image.feature | prepend:'/images/' | relative_url }}" class="page-feature-image" alt="{{ page.title }}">
-		{% if page.image.credit %}{% include image-credit.html %}{% endif %}
-	</div><!-- /.page-image -->
-</div><!-- /.page-feature -->
-{% endif %}
-<h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
-{% if page.excerpt %}<h2>{{ page.excerpt }}</h2>{% endif %}
-<div class="archive-wrap">
-	{{ content }}
-</div><!-- /.archive-wrap -->
-{% if page.show_related == true %}<div class="sidebar">{% include related-authors.html %}</div>{% endif %}
+<div class="syn-article">
+  {% if page.image.feature %}
+  <div class="page-feature">
+    <div class="page-image">
+      <img src="{{ site.cdnurl }}{{ page.image.feature | prepend:'/images/' | relative_url }}" class="page-feature-image" alt="{{ page.title }}">
+      {% if page.image.credit %}{% include image-credit.html %}{% endif %}
+    </div><!-- /.page-image -->
+  </div><!-- /.page-feature -->
+  {% endif %}
+  <h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
+  {% if page.excerpt %}<h2>{{ page.excerpt }}</h2>{% endif %}
+  <div class="archive-wrap">
+    {{ content }}
+  </div><!-- /.archive-wrap -->
+  {% if page.show_related == true %}<div class="sidebar">{% include related-authors.html %}</div>{% endif %}
+</div>
