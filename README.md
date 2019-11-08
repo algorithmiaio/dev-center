@@ -202,6 +202,25 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 **Description**: The authorization bearer token necessary for the application to expose Prometheus metrics at the /metrics endpoint.
 
+## Custom Components
+
+We have a couple different custom components for formatting the Dev Center:
+
+### Asides
+
+**Note:** In order to use asides, the page content must be wrapped in the `.syn-article` class, which makes page content take up, by default, 7 of the 12 columns in the main content section. This allows space for asides in the right-hand 5 columns.
+
+To add an aside, `include` the `aside-start`, `-middle`, and `-end` html partials in the page like so:
+
+```markdown
+{% include aside-start.html %}
+<!-- Left-hand main content that the aside is associated with.
+Aside will appear after this content on mobile and tablet screens -->
+{% include aside-middle.html %}
+<!-- Right-hand aside content -->
+{% include aside-end.html %}
+```
+
 ## Contributing
 
 First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue.
