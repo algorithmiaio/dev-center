@@ -82,18 +82,17 @@ p {
     &.syn-aside {
       @extend .syn-col-lg-12;
       @extend .syn-row;
-      margin-bottom: $space-16;
+      flex-grow: 1;
+      max-width: unset;
 
       & .syn-aside-main {
         @extend .syn-col;
         @extend .syn-col-lg-7;
-         margin-bottom: $space-16;
       }
 
       & .syn-aside-side {
         @extend .syn-col;
         @extend .syn-col-lg-5;
-        margin-bottom: $space-16;
       }
     }
   }
