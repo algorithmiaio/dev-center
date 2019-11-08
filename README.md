@@ -221,6 +221,41 @@ Aside will appear after this content on mobile and tablet screens -->
 {% include aside-end.html %}
 ```
 
+### Code Samples
+
+Our code samples use Vue to allow multiple languages and click-to-copy functionality. For a basic code sample, include the following in your page:
+
+```markdown
+<code-sample>
+  {% highlight bash %}<!-- Code to display -->{% endhighlight %}
+</code-sample>
+```
+
+To include multiple language options for a sample, just add more than one `{% highlight [language] %}` section between the `code-sample` tags. By default, the component will use the language specified in the `highlight` liquid tag.
+
+```markdown
+<code-sample v-cloak>
+  {% highlight python %}<!-- Python version of code -->{% endhighlight %}
+
+  {% highlight java %}<!-- Java version of code -->{% endhighlight %}
+</code-sample>
+```
+
+**Note:** For multi-language code samples. Be sure to add `v-cloak` to the `code-sample` opening tag. This will prevent a [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content) while Vue is initializing.
+
+If you don't want to use the `highlight` language name for display, or you need to include multiple `highlight` blocks with the same language (client-side JS and Node, for example), you can wrap the `{% highlight %}` in a `div` with a `code-sample-language` attribute specifying the language to use.
+
+```html
+<code-sample v-cloak>
+  <div code-sample-language="JavaScript">
+    {% highlight javascript %}<!-- Client-side JS version of code -->{% endhighlight %}
+  </div>
+  <div code-sample-language="NodeJS">
+    {% highlight javascript %}<!-- Node version of code -->{% endhighlight %}
+  </div>
+</code-sample>
+```
+
 ## Contributing
 
 First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue.
