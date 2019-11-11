@@ -89,7 +89,7 @@ var client = Algorithmia.client('YOUR_API_KEY');
 {% endhighlight %}
 </div>
 
-<div code-sample-language="NodeJS">
+<div code-sample-language="Node">
 {% highlight javascript %}
 var client = Algorithmia.client('YOUR_API_KEY');
 {% endhighlight %}
@@ -102,7 +102,7 @@ $client = Algorithmia::client("YOUR_API_KEY");
 {% endhighlight %}
 </code-sample>
 <div class="syn-caption syn-mt-4">
-  Make sure to replace `YOUR_API_KEY` with your API key.
+  Make sure to replace YOUR_API_KEY with your API key.
 </div>
 {% include aside-end.html %}
 
