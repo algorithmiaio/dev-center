@@ -5,7 +5,7 @@ title:  "API Documentation"
 
 Welcome to the Algorithmia API documentation! You can use the API to access any algorithm in the marketplace.
 
-We have clients & libraries in multiple languages. We encourage you to click on the different language tabs at the top of the right-side pane to see code samples in your language of choice.
+We have clients & libraries in multiple languages. We encourage you to select your language of choice from the dropdown above each code sample.
 
 This documentation will serve as a reference as you start to integrate the Algorithmia API into your code.
 
