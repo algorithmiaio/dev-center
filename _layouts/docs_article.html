@@ -1,0 +1,37 @@
+---
+layout: synapse-default
+---
+
+<article itemscope itemtype="http://schema.org/Article">
+
+  <div class="syn-row">
+    <div class="syn-col syn-col-lg-7">
+      {% if page.image.feature %}
+      <div class="page-feature">
+        <div class="page-image">
+          {% if page.image.credit %}{% include image-credit.html %}{% endif %}
+        </div><!-- /.page-image -->
+      </div><!-- /.page-feature -->
+      {% endif %}
+
+      {% include breadcrumbs.html %}
+
+      <h1 id="page-title" class="syn-mb-4">{{ page.title }}</h1>
+      {% include page-meta.html %}
+
+      {% if page.repository %}
+        <p class="syn-body-2">
+          Available on <a href='{{ page.repository }}' target='_blank' rel='nofollow'>GitHub</a>.
+        </p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div id="content" class="page-content syn-article even-split" itemprop="articleBody">
+    {{ content }}
+
+    <aside>
+      {% if page.comments == true %}<hr />{% include comments.html %}{% endif %}
+    </aside>
+  </div><!-- /.content -->
+</article>

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: docs_article
 title:  "API Documentation"
 ---
 
