@@ -101,6 +101,9 @@ $client = Algorithmia::client("YOUR_API_KEY");
 ?>
 {% endhighlight %}
 </code-sample>
+<div class="syn-caption syn-mt-4">
+  Make sure to replace `YOUR_API_KEY` with your API key.
+</div>
 {% include aside-end.html %}
 
 ## Key Restrictions
