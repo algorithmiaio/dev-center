@@ -90,7 +90,7 @@ var client = Algorithmia.client('YOUR_API_KEY');
 </div>
 
 <div code-sample-language="NodeJS">
-{% highlight nodejs %}
+{% highlight javascript %}
 var client = Algorithmia.client('YOUR_API_KEY');
 {% endhighlight %}
 </div>
