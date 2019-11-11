@@ -3,8 +3,9 @@ layout: docs_article
 title:  "API Authentication"
 ---
 
-{% include aside-start.html %}
 ## API Keys
+
+{% include aside-start.html %}
 
 API requests are authenticated by a key which can be found and managed from your user profile.
 With every call to the API, the user must be authenticated. The API has a simple means to do this by passing in your key as an HTTP "Authorization" header with the request.
@@ -20,7 +21,7 @@ When you signed up for Algorithmia, a 'default-key' was generated for your conve
 </div>
 
 {% include aside-middle.html %}
-<code-sample v-cloak>
+<code-sample v-cloak title="To authorize, use this code:">
 
 <div code-sample-language="Shell">
 {% highlight bash %}
