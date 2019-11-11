@@ -13,6 +13,8 @@ The size limit for a request is 10MiB. Check out the [Data API]({{site.basurl}}/
 
 ## Call an Algorithm
 
+{% include aside-start.html %}
+
 For each algorithm on the marketplace, you'll find an owner (the user who created the algorithm), an algorithm name, and a version number.
 Algorithms are called using this HTTP endpoint:
 
@@ -32,6 +34,134 @@ Version         | Description
     To call private versions of an algorithm you own, you must use a fully specified semantic version or a version hash
   </div>
 </div>
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak>
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -d 'YOUR_NAME' -H 'Content-Type: text/plain' \
+    https://api.algorithmia.com/v1/algo/demo/Hello/
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo run -d 'YOUR_NAME' demo/Hello/
+Hello YOUR_NAME
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+import Algorithmia
+
+input = "YOUR_NAME"
+client = Algorithmia.client('YOUR_API_KEY')
+# Pass in the unique algoUrl path found on each algorithm description page.
+algo = client.algo('demo/Hello/')
+# Calls an algorithm with the input provided.
+result = algo.pipe(input)
+
+# If you are using the 1.0+ client you can access both the output and the metadata.
+print(result.result)    # Hello YOUR_NAME
+print(result.metadata)  # Metadata(content_type='text',duration=0.0002127)
+{% endhighlight %}
+
+{% highlight r %}
+library(algorithmia)
+
+input <- "YOUR_NAME"
+client <- getAlgorithmiaClient('YOUR_API_KEY')
+algo <- client$algo('demo/Hello/')
+result <- algo$pipe(input)$result
+print(result)
+{% endhighlight %}
+
+{% highlight ruby %}
+require 'algorithmia'
+
+client = Algorithmia.client('YOUR_API_KEY')
+algo = client.algo('demo/Hello/')
+response = algo.pipe('YOUR_NAME')
+puts response.result
+{% endhighlight %}
+
+{% highlight java %}
+import com.algorithmia.*;
+import com.algorithmia.algo.*;
+
+String input = "\"YOUR_NAME\"";
+AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
+Algorithm algo = client.algo("algo://demo/Hello/");
+AlgoResponse result = algo.pipe(input);
+System.out.println(result.asJsonString());
+{% endhighlight %}
+
+{% highlight scala %}
+import com.algorithmia._
+import com.algorithmia.algo._
+
+val input = "YOUR_NAME"
+val client = Algorithmia.client("YOUR_API_KEY")
+val algo = client.algo("algo://demo/Hello/")
+val result = algo.pipeJson(input)
+System.out.println(result.asString)
+{% endhighlight %}
+
+{% highlight rust %}
+use algorithmia::*;
+use algorithmia::algo::*;
+
+let input = "YOUR_NAME";
+let client = Algorithmia::client("YOUR_API_KEY");
+let algo = client.algo("algo://demo/Hello/");
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+// include the algorithmia.js library
+// https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js
+
+var input = "YOUR_NAME";
+Algorithmia.client("YOUR_API_KEY");
+
+client.algo("algo://demo/Hello/")
+      .pipe(input)
+      .then(function(output) {
+        console.log(output);
+      });
+{% endhighlight %}
+</div>
+
+<div code-sample-language="NodeJS">
+{% highlight javascript %}
+var algorithmia = require("algorithmia");
+
+var input = "YOUR_NAME";
+var client = algorithmia.client("YOUR_API_KEY");
+
+client.algo("algo://demo/Hello/")
+       .pipe(input)
+       .then(function(response) {
+         console.log(response.get());
+       });
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+require_once "vendor/autoload.php";
+
+$input = "YOUR_NAME";
+$client = Algorithmia::client("YOUR_API_KEY");
+$algo = $client->algo("demo/Hello/0.1.0");
+echo $algo->pipe($input)->result;
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
 
 ## Input/Output
 
