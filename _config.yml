@@ -89,5 +89,6 @@ exclude:
     "_tmp",
     "vendor",
     "src/",
-    "jest/"
+    "jest/",
+    "server/"
   ]
