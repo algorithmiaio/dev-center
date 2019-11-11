@@ -3,6 +3,7 @@ layout: article
 title:  "API Authentication"
 ---
 
+{% include aside-start.html %}
 ## API Keys
 
 API requests are authenticated by a key which can be found and managed from your user profile.
@@ -17,6 +18,89 @@ When you signed up for Algorithmia, a 'default-key' was generated for your conve
     </div>
   </div>
 </div>
+
+{% include aside-middle.html %}
+<code-sample v-cloak>
+
+<div code-sample-language="Shell">
+{% highlight bash %}
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here" -H 'Authorization: Simple YOUR_API_KEY'
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo auth
+Configuring authentication for 'default' profile
+Enter API Key (prefixed with 'sim'): YOUR_API_KEY
+Profile is ready to use. Test with 'algo ls'
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+import Algorithmia
+
+client = Algorithmia.client('YOUR_API_KEY')
+{% endhighlight %}
+
+{% highlight r %}
+library(algorithmia)
+
+client <- getAlgorithmiaClient('YOUR_API_KEY')
+{% endhighlight %}
+
+{% highlight ruby %}
+require 'algorithmia'
+
+client = Algorithmia.client('YOUR_API_KEY')
+{% endhighlight %}
+
+
+{% highlight java %}
+import com.algorithmia.*;
+import com.algorithmia.algo.*;
+
+AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
+{% endhighlight %}
+
+{% highlight scala %}
+import com.algorithmia._
+import com.algorithmia.algo._
+
+val client = Algorithmia.client("YOUR_API_KEY")
+{% endhighlight %}
+
+{% highlight rust %}
+extern crate algorithmia
+use algorithmia::*;
+use algorithmia::algo::*;
+
+let client = Algorithmia::client("YOUR_API_KEY");
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+// include the algorithmia.js library
+// https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js
+
+var client = Algorithmia.client('YOUR_API_KEY');
+{% endhighlight %}
+</div>
+
+<div code-sample-language="NodeJS">
+{% highlight nodejs %}
+var client = Algorithmia.client('YOUR_API_KEY');
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$client = Algorithmia::client("YOUR_API_KEY");
+?>
+{% endhighlight %}
+</code-sample>
+{% include aside-end.html %}
 
 ## Key Restrictions
 
