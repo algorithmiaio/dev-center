@@ -3,10 +3,23 @@ layout: api_docs_article
 title:  "Data API Specification"
 ---
 
+{% include aside-start.html %}
+
 The Algorithmia Data API provides a way of getting data into and out of algorithms
 with support for Algorithmia Hosted Data as well as working directly with data
 in your Dropbox account or Amazon S3 buckets. For an introduction to working with data from these different data sources,
 see our [data portal guides]({{site.baseurl}}/data).
+
+{% include aside-middle.html %}
+<div class="syn-alert theme-primary">
+  <div class="syn-body-1">
+    The Javascript client does not currently have support for the Data API. Contact us at <a href="https://algorithmia.com/contact">algorithmia.com/contact</a> if you need this feature and we'll prioritize it right away.
+  </div>
+  <div class="syn-body-1 syn-mb-0">
+    <b>Note:</b> The NodeJS client does currently support the Data API.
+  </div>
+</div>
+{% include aside-end.html %}
 
 ## Data URI
 
