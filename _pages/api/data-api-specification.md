@@ -343,6 +343,8 @@ foreach ($mydir->list() as $item) {
 
 ### Creating a directory
 
+{% include aside-start.html %}
+
 To create a directory through the Algorithmia Data API, use the following endpoint:
 
 `POST https://api.algorithmia.com/v1/connector/:connector/*path`
@@ -403,7 +405,101 @@ Example: `"acl": {"read": []}` implies the directory is fully private
 
 Empty 200 response on success
 
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Creating a directory">
+<div code-sample-language="Shell">
+{% highlight bash %}
+# Create a directory named 'robots'
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -H 'Content-Type: application/json' \
+    -d '{"name": "robots"}' \
+    https://api.algorithmia.com/v1/connector/data/.my
+# Empty 200 response on success
+
+# Create a publicly accessible directory named 'public_robots'
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -H 'Content-Type: application/json' \
+    -d '{"name": "public_robots", "acl": {"read": ["user://*"]}}' \
+    https://api.algorithmia.com/v1/connector/data/.my
+# Empty 200 response on success
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo mkdir data://.my/robots
+Created directory: data://.my/robots
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+robots = client.dir("data://.my/robots")
+robots.create()
+
+# You can also create a directory with different permissions
+from Algorithmia.acl import ReadAcl
+# Supports: ReadAcl.public, ReadAcl.private, ReadAcl.my_algos
+robots.create(ReadAcl.public)
+{% endhighlight %}
+
+{% highlight r %}
+robots <- client$dir("data://.my/robots")
+robots$create()
+
+# You can also create a directory with different permissions
+# Supports: ReadAcl.PUBLIC, ReadAcl.PRIVATE, ReadAcl.MY_ALGORITHMS
+robots$create(ReadAcl.PUBLIC)
+{% endhighlight %}
+
+{% highlight ruby %}
+robots = client.dir("data://.my/robots")
+robots.create
+{% endhighlight %}
+
+{% highlight java %}
+DataDirectory robots = client.dir("data://.my/robots");
+//optional: com.algorithmia.data.DataAcl.PUBLIC, DataAcl.PRIVATE, DataAcl.MY_ALGOS
+robots.create(DataAcl.PUBLIC);
+{% endhighlight %}
+
+{% highlight scala %}
+val robots = client.dir("data://.my/robots")
+robots.create()
+{% endhighlight %}
+
+{% highlight rust %}
+let robots = client.dir("data://.my/robots");
+robots.create(DataAcl::default())
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var robots = client.dir("data://.my/robots");
+robots.create(function(response) {
+    if(response.error) {
+        return console.log("Failed to create dir: " + response.error.message);
+    }
+    console.log("Created directory: " + robots.data_path);
+});
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$robots = dir("data://.my/robots");
+if(!$robots->exists()) {
+  $robots->create();
+}
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ### Updating a directory
+
+{% include aside-start.html %}
 
 To update a directory, use the following API:
 
@@ -446,7 +542,74 @@ Example: `"acl": {"read": []}` implies the directory is fully private
 
 Empty 200 response on success
 
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Updating a directory">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X PATCH -H 'Authorization: Simple YOUR_API_KEY' \
+    -H 'Content-Type: application/json' \
+    -d '{"acl": {"read": ["user://*"]}}' \
+    https://api.algorithmia.com/v1/connector/data/.my
+# Empty 200 response on success
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+from Algorithmia.acl import ReadAcl, AclType
+robots = client.dir("data://.my/robots")
+robots.create()
+print(robots.get_permissions().read_acl == AclType.my_algos) # True
+# Supports: ReadAcl.public, ReadAcl.private, ReadAcl.my_algos
+robots.update_permissions(ReadAcl.private)  # True if update succeeded
+{% endhighlight %}
+
+
+{% highlight r %}
+robots <- client$dir("data://.my/robots")
+# Create a directory with public permissions
+robots$create(ReadAcl.PUBLIC)
+acl <- robots$getPermissions()  # Acl object
+acl$read_acl # Returns Permission Type, "PUBLIC" if update succeeded.
+
+# Supports: ReadAcl.PUBLIC, ReadAcl.PRIVATE, and ReadAcl.MY_ALGORITHMS.
+robots$updatePermissions(ReadAcl.PRIVATE)
+acl$read_acl # Returns Permission Type, "PRIVATE" if update succeeded.
+{% endhighlight %}
+
+{% highlight java %}
+DataDirectory robots = client.dir("data://.my/robots");
+
+// Create the directory as private
+robots.create(DataAcl.PRIVATE);
+
+// Supports: DataAcl.PUBLIC, DataAcl.PRIVATE, DataAcl.My_ALGOS
+robots.updatePermissions(DataAcl.PUBLIC);
+
+// Check a directory's permissions
+if (robots.getPermissions().getReadPermissions() == DataAclType.PRIVATE) {
+    System.out.println("fooLimited is private");
+}
+{% endhighlight %}
+
+{% highlight php %}
+<?
+$robots = dir("data://.my/robots");
+// Create the directory as private
+$robots->create(ACL::FULLY_PRIVATE);
+// Supports: PUBLIC, FULLY_PRIVATE, MY_ALGORITHMS
+$robots->create(ACL::MY_ALGORITHMS)
+// Check a directory's permissions
+echo $robots>getReadAcl();
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ### Deleting a directory
+
+{% include aside-start.html %}
 
 To delete a directory, use the following endpoint:
 
@@ -485,6 +648,100 @@ result.deleted  | The number of files successfully deleted
 error.deleted   | The number of files successfully deleted if an error encountered during deletion
 
 </div>
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Deleting a directory">
+<div code-sample-language="Shell">
+{% highlight bash %}
+# Delete the empty directory data://.my/public_robots
+curl -X DELETE -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/public_robots
+
+-> { "result": { "deleted": 0 }}
+
+# Force delete the directory data://.my/robots even if it contains files
+curl -X DELETE -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots?force=true
+
+-> { "result": { "deleted": 25 }}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo rmdir data://.my/public_robots
+Deleted directory: data://.my/public_robots
+
+$ algo rmdir -f data://.my/robots
+Deleted directory: data://.my/robots
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+robots = client.dir("data://.my/robots")
+if robots.exists():
+	robots.delete()
+{% endhighlight %}
+
+{% highlight r %}
+robots <- client$dir("data://.my/robots")
+if (robots$exists()){
+  robots$delete()
+}
+{% endhighlight %}
+
+{% highlight ruby %}
+robots = client.dir("data://.my/robots")
+robots.delete
+# to force deletion even if dir contains file, use:
+# robots.delete(true)
+{% endhighlight %}
+
+
+{% highlight java %}
+DataDirectory robots = client.dir("data://.my/robots");
+robots.delete(false);
+// use `true` to force deletion even if dir contains files
+{% endhighlight %}
+
+{% highlight scala %}
+val robots = client.dir("data://.my/robots")
+robots.delete(false)
+// use `true` to force deletion even if dir contains files
+{% endhighlight %}
+
+{% highlight rust %}
+let robots = client.dir("data://.my/robots");
+robots.delete(false);
+// use `true` to force deletion even if dir contains files
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var robots = client.dir("data://.my/robots");
+robots.delete(false, function(response) {
+    if(response.error) {
+        return console.log("Failed to delete dir: " + response.error.message);
+    }
+    console.log("Deleted directory: " + robots.data_path);
+});
+/*
+  Use `robots.delete(true, callback)`
+  to force deletion even if dir contains files
+*/
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$robots = dir("data://.my/robots");
+$robots->delete();
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
 
 ## Files
 
