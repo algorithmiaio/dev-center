@@ -10,11 +10,13 @@
       case '#input-output':
       case '#query-parameters':
       case '#error-handling': return `/developers/api/api-specification${hash}`
-      default: return `/developers/api${hash}`
+      default: return undefined
     }
   }
 
-  if (window.location.pathname.match(/^\/developers\/api\/?$/) && window.location.hash) {
+  if (window.location.pathname.match(/^\/developers\/api\/?$/)
+    && window.location.hash
+    && getRedirectRoute(window.location.hash)) {
     window.location.assign(getRedirectRoute(window.location.hash))
   }
 })()
