@@ -18,7 +18,9 @@ The size limit for a request is 10MiB. Check out the [Data API]({{site.basurl}}/
 For each algorithm on the marketplace, you'll find an owner (the user who created the algorithm), an algorithm name, and a version number.
 Algorithms are called using this HTTP endpoint:
 
-`POST https://api.algorithmia.com/v1/algo/:owner/:algoname/[:version]`
+<code class="syn-text-break-word">
+  POST https://api.algorithmia.com/v1/algo/:owner/:algoname/[:version]
+</code>
 
 Specifying a version is recommended, but optional. If not specified, the latest publicly published version will be used.
 When explicitly specifying a version, the following following formats are accepted:
