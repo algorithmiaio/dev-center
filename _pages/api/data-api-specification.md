@@ -53,6 +53,8 @@ Directories are a collection of files or other directories.
 
 ### Listing a directory
 
+{% include aside-start.html %}
+
 List the contents of a directory with this HTTP endpoint:
 
 `GET https://api.algorithmia.com/api/v1/connector/:connector/*path`
@@ -120,6 +122,211 @@ all contents of a directory may require multiple paginated requests.
 
 `X-Data-Type: directory`
 
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Listing a directory">
+<div code-sample-language="Shell">
+{% highlight bash %}
+# List top-level user directory
+curl -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my
+
+-> {
+    "folders": [
+        { "name": "robots" },
+        { "name": "cats" }
+    ]
+}
+
+# List a directory with ACLs
+curl -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots?acl=true
+
+-> {
+    "files": [
+        {
+            "filename": "R2-D2.txt",
+            "last_modified": "2016-01-06T00:52:34.000Z"
+            "size": 48
+        },
+        {
+            "filename": "T-800.txt",
+            "last_modified": "2016-01-06T00:52:34.000Z"
+            "size": 36
+        }
+    ],
+    "acl": {
+        "read": [ "algo://.my/*" ]
+    },
+    "marker": "12-abcdefgj9ao72LHhjglh3AcRtCuf7T1FeSoZTA1gycqRHaDrdp254LV9S1LjKgQZ"
+}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo ls data://.my
+robots  cats
+
+$ algo ls -l data://.my/robots
+2016-01-06 00:52:34    48 R2-D2.txt
+2016-01-06 00:52:34    36 T-800.txt
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+# List top level directories
+import Algorithmia
+
+client = Algorithmia.client('YOUR_API_KEY')
+
+# The .dir() method takes a Data URI path and returns an Algorithmia.datadirectory.DataDirectory object for the child directory.
+client.dir("data://.my")
+
+# Check if a specific directory exists
+client.dir("data://.my/robots").exists()
+
+# The .dirs() method returns a generator object of all the child directories.
+for dir in client.dir("data://.my").dirs():
+    # The .url is a convenience field that holds "/v1/data/" + dir.path
+    # The .path is the path to the directory
+    print("Directory %s  at URL %s" % (dir.path, dir.url))
+
+# List files in the 'robots' directory
+dir = client.dir("data://.my/robots")
+# The .files() method returns a generator object of all the files in directory
+for file in dir.files():
+    print("File %s at URL %s last modified %s" % (file.path, file.url, file.last_modified))
+{% endhighlight %}
+
+{% highlight r %}
+# List top level directories
+dir <- client$dir("data://.my/")
+dirs <- dir$dirs()
+
+while (dirs$hasNext()) {
+  d <- try(dirs$getNext())
+  print(paste(d$dataDirectoryUrl, d$dataDirectoryPath))
+}
+
+# List files in the 'robots' directory
+file_dir <- client$dir("data://.my/robots/")
+get_files <- file_dir$files()
+
+while (get_files$hasNext()) {
+  d <- try(get_files$getNext())
+  print(paste(d$dataFileUrl))
+}
+{% endhighlight %}
+
+{% highlight ruby %}
+# List top level directories
+client.dir("data://.my").each_dir do |dir|
+    puts "Directory " + dir.data_uri
+end
+
+# List files in the 'robots' directory
+client.dir("data://.my/robots").each_file do |file|
+    puts "File " + file.data_uri
+end
+{% endhighlight %}
+
+
+{% highlight java %}
+import com.algorithmia.*;
+import com.algorithmia.data.*;
+
+// List top level directories
+DataDirectory myRoot = client.dir("data://.my");
+for(DataDirectory dir : myRoot.dirs()) {
+    System.out.println("Directory " + dir + " at URL " + dir.url());
+}
+
+// List files in the 'robots' directory
+DataDirectory robots = client.dir("data://.my/robots");
+for(DataFile file : robots.files()) {
+    System.out.println("File " + file + " at URL: " + file.url());
+}
+{% endhighlight %}
+
+{% highlight scala %}
+import com.algorithmia._
+import com.algorithmia.data._
+
+// List top level directories
+val myRoot = client.dir("data://.my")
+for(dir <- myRoot.getDirIter) {
+  println(s"Directory ${dir} at URL: ${dir.url}")
+}
+
+// List files in the 'robots' directory
+val robots = client.dir("data://.my/robots")
+for(file <- robots.getFileIter) {
+  println(s"File ${file} at URL: ${file.url}")
+}
+{% endhighlight %}
+
+{% highlight rust %}
+use algorithmia::*;
+use algorithmia::data::*;
+
+let my_robots = client.dir("data://.my/robots");
+for entry in my_robots.list() {
+    match entry {
+        Ok(DirEntry::Dir(dir)) => println!("Directory {}", dir.to_data_uri()),
+        Ok(DirEntry::File(file)) => println!("File {}", file.to_data_uri()),
+        Err(err) => println!("Error listing my robots: {}", err),
+    }
+}
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+// List top level directories
+client.dir("data://.my").forEachDir(function(err, dir) {
+    if(err) {
+        return console.log("Error: " + JSON.stringify(err));
+    }
+
+    console.log(dir.data_path);
+}).then(function() {
+    console.log("Finished listing directory");
+});
+
+
+// List files in the 'robots' directory
+client.dir("data://.my/robots").forEachFile(function(err, file) {
+    if(err) {
+        return console.log("Error: " + JSON.stringify(err));
+    }
+
+    console.log(file.data_path);
+}).then(function() {
+    console.log("Finished listing directory");
+});
+
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$mydir = $client->dir("data://.my");
+// List files in $mydir
+foreach($mydir->files() as $file){
+    echo $file->getPath()."\n";
+}
+// List directories in $mydir
+foreach ($mydir->folders() as $dir){
+    echo $dir->getPath()."\n";
+}
+// List everything in $mydir
+foreach ($mydir->list() as $item) {
+    echo $item->getPath()."\n";
+}
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
 
 ### Creating a directory
 
