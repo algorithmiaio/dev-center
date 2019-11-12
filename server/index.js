@@ -92,10 +92,9 @@ app.use((req, res, next) => {
   next()
 })
 
-// Remove trailing slashes, UNLESS
-// A) We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
-// If A or B is true, ensure trailing slash is there
-
+// Remove trailing slashes, UNLESS we're in local dev mode,
+// in which case we need the slashes to communicate with the Jekyll server,
+// so we ensure trailing slash is there
 const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 const isFile = reqPath => /\.\w+$/.test(reqPath)
 app.get('*', (req, res, next) => {
