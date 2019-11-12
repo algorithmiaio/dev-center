@@ -23,11 +23,15 @@ Algorithms are called using this HTTP endpoint:
 Specifying a version is recommended, but optional. If not specified, the latest publicly published version will be used.
 When explicitly specifying a version, the following following formats are accepted:
 
+<div class="syn-table-container" markdown="1">
+
 Version         | Description
 --------------  | --------------
 `1.1.1`         | Fully specified version
 `1.2.*`         | Specified to the minor level. Will resolve to the latest publicly published version with a minor version of 1.2
 `1.*`           | Specified to a major version. Will resolve to the latest publicly published version with major version 1
+
+</div>
 
 <div>
   <div class="syn-alert theme-primary syn-body-1">
@@ -181,15 +185,21 @@ See the code samples to the right for examples in the language of your choice.
 To specify input when making a raw HTTP request, the body of the request is the input to the algorithm you are calling.
 To specify the input type, set the `Content-Type` header accordingly. These are
 
+<div class="syn-table-container" markdown="1">
+
 Content-Type          | Description
 -------------------   | --------------
 `application/json`    | body specifies JSON input data (UTF-8 encoded)
 `application/text`    | body specifies text input data (UTF-8 encoded)
 `application/octet-stream` | body specifies binary input data (raw bytes)
 
+</div>
+
 #### HTTP output specification
 
 The `metadata.content_type` specifies which type of encoding the result element is in.
+
+<div class="syn-table-container" markdown="1">
 
 Content-Type | Description
 --------------  | --------------
@@ -197,6 +207,8 @@ void | The result element is null
 text | The result element is a JSON string using UTF-8 encoding
 json | The result element is any valid JSON type
 binary | The result element is a Base64 encoded binary data in a JSON String
+
+</div>
 
 {% include aside-middle.html %}
 
@@ -526,12 +538,15 @@ print_r($algo->pipe($input)->result);
 
 The API also provides the following configurable parameters when calling an algorithm:
 
+<div class="syn-table-container" markdown="1">
+
 Parameter             | Description
 -------------------   | --------------
 timeout               | number: Specifies a timeout for the call in seconds. default=300 (5min), max=3000 (50min)
 stdout                | boolean: Indicates algorithm stdout should be returned in the response metadata (ignored unless you are the algorithm owner)
-output                | raw|void: Indicates the algorithm
+output                | raw or void: Indicates the algorithm
 
+</div>
 <div class="syn-body-1" markdown="1">
 * `timeout={seconds}`
   * Specifies a timeout for the call in seconds
@@ -643,10 +658,14 @@ echo $algo->pipe("HAL 9000")->result;
 
 If an error occurs, an Exception will be raised/thrown (Java, Python, PHP, R, Ruby, Rust, Scala) or the response be modified (JavaScript, NodeJS) to contain the following fields:
 
+<div class="syn-table-container" markdown="1">
+
 Field            | Description
 --------------   | --------------
 error.message    | The error message
 error.stacktrace | (Optional) a stacktrace if the error occurred within the algorithm (only if caller has access to algorithm source)
+
+</div>
 
 Each client provides a language-specific solution for error handling. The examples on the right
 come from calling an algorithm that expects text input in it's implementation of the `apply` entrypoint,

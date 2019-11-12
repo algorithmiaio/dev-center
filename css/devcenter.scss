@@ -6,6 +6,7 @@
 @import "../synapse/variables";
 @import "../synapse/typography-modifiers";
 @import "../synapse/article";
+@import "../synapse/table";
 
 body {
   min-height: 100vh;
@@ -66,4 +67,8 @@ code-sample[v-cloak] {
 
 p {
   @extend .syn-body-1;
+}
+
+table {
+  @extend .syn-table;
 }
