@@ -749,6 +749,8 @@ Files can be any type of data and are uniquely identified by a <a href="#data-ur
 
 ### Getting a file
 
+{% include aside-start.html %}
+
 To retrieve a file through the Algorithmia Data API, use the following endpoint:
 
 `GET https://api.algorithmia.com/v1/connector/:connector/*path`
@@ -779,6 +781,156 @@ Upon 200 success, response body is the content of the file.
 **Response Headers:**
 
 `X-Data-Type: file`
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Getting a file">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -O -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots/T-800.png
+# Downloaded to `T-800.png` in local working directory
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+# Download file to current directory with 'algo cp'
+$ algo cp data://.my/robots/T-800.png .
+Downloaded data://.my/robots/T-800.png (657kB)
+Finished downloading 1 file(s)
+
+# Echo file contents to STDOUT with 'algo cat'
+$ algo cat data://.my/robots/T-800.txt
+Cyberdyne Systems Series 800 Terminator
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+# Download file and get the file handle
+t800File = client.file("data://.my/robots/T-800.png").getFile()
+
+# Get file's contents as a string
+t800Text = client.file("data://.my/robots/T-800.txt").getString()
+
+# Get file's contents as JSON
+t800Json =  client.file("data://.my/robots/T-800.txt").getJson()
+
+# Get file's contents as a byte array
+t800Bytes = client.file("data://.my/robots/T-800.png").getBytes()
+{% endhighlight %}
+
+{% highlight r %}
+# Download file and get the file handle
+t800File <- client$file("data://.my/robots/T-800.png")$getFile()
+
+# Get file's contents as a string
+t800Text <- client$file("data://.my/robots/T-800.txt")$getString()
+
+# Get file's contents as JSON
+t800Json <-  client$file("data://.my/robots/T-800.txt")$getJson()
+
+# Get file's contents as a byte array
+t800Bytes <- client$file("data://.my/robots/T-800.png")$getBytes()
+{% endhighlight %}
+
+{% highlight ruby %}
+# Download file and get the file handle
+t800File = client.file("data://.my/robots/T-800.png").get_file
+
+# Get file's contents as a string
+t800Text = client.file("data://.my/robots/T-800.txt").get
+
+# Get file's contents as JSON
+t800JsonString = client.file("data://.my/robots/T-800.txt").get
+t800Json =  JSON.parse(t800JsonString)
+
+# Get file's contents as a byte array
+t800Bytes = client.file("data://.my/robots/T-800.png").get
+{% endhighlight %}
+
+{% highlight java %}
+DataDirectory robots = client.dir("data://.my/robots");
+
+// Download file and get the file handle
+File t800File = robots.file("T-800.png").getFile();
+
+// Get the file's contents as a string
+String t800Text = robots.file("T-800.txt").getString();
+
+// Get the file's contents as a byte array
+byte[] t800Bytes = robots.file("T-800.png").getBytes();
+{% endhighlight %}
+
+{% highlight scala %}
+val robots = client.dir("data://.my/robots")
+
+// Download file and get the file handle
+val t800File = robots.file("T-800.png").getFile()
+
+// Get the file's contents as a string
+val t800Text = robots.file("T-800.txt").getString()
+
+// Get the file's contents as a byte array
+val t800Bytes = robots.file("T-800.png").getBytes()
+{% endhighlight %}
+
+{% highlight rust %}
+// Download and locally save file
+let mut t800_png_reader = client.file("data://.my/robots/T-800.png").get().unwrap();
+let mut t800_png = File::create("/path/to/save/t800.png").unwrap();
+std::io::copy(&mut t800_png_reader, &mut t800_png);
+
+// Get the file's contents as a string
+let mut t800_text_reader = robots.file("data://.my/robots/T-800.txt").get().unwrap();
+let mut t800_text = String::new();
+t800_text_reader.read_to_string(&mut t800_text);
+
+// Get the file's contents as a byte array
+let mut t800_png_reader = robots.file("data://.my/robots/T-800.png").get().unwrap();
+let mut t800_bytes = Vec::new();
+t800_png_reader.read_to_end(&mut t800_bytes);
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var robots = client.dir("data://.my/robots");
+
+// Get the file's contents
+robots.file("T-800.txt").get(function(err, data) {
+  // on success, data will be string or Buffer
+  console.log(response);
+});
+
+// Get a file and write it to a local file
+robots.file("T-800.jpg").get(function(err, data) {
+  console.log("Read " + data.length + " bytes");
+  fs.writeFileSync("/path/to/save/T-800.jpg", data);
+});
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+// Download file to tmpdir and get the file handle
+$temp_file_name = $foo_dir->file("data://.my/robots/T-800.png")->getFile();
+
+// Download file to specified dir and get the file handle
+$specified_file_name = $foo_dir->file("data://.my/robots/T-800.png")->getFile('/path/to/file');
+
+// Get file's contents as a string
+$file_content_text = $foo_dir->file("data://.my/robots/T-800.txt")->getString();  # String object
+
+// Get file's contents as JSON
+$json_object = $foo_dir->file("data://.my/robots/T-800.txt")->getJson(); #Json object
+
+// Get file's contents as a byte array
+$binary_content = $foo_dir->file("data://.my/robots/T-800.png")->getBytes();  # Binary data
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
 
 ### Check if file exists
 
