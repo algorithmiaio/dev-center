@@ -934,6 +934,8 @@ $binary_content = $foo_dir->file("data://.my/robots/T-800.png")->getBytes();  # 
 
 ### Check if file exists
 
+{% include aside-start.html %}
+
 To check if a file exists without downloading it, use the following endpoint:
 
 `HEAD https://api.algorithmia.com/v1/connector/:connector/*path`
@@ -970,7 +972,85 @@ To check if a file exists without downloading it, use the following endpoint:
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Checking if a file exists">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -I -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots/HAL9000.png
+
+->
+HTTP/1.1 200 OK
+Content-Length: 0
+ETag: d41d8cd98f00b204e9800998ecf8427e
+Strict-Transport-Security: max-age=0; includeSubDomains; preload
+X-Data-Type: file
+X-Frame-Options: DENY
+Connection: keep-alive
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+if client.file("data://.my/robots/T-800.png").exists():
+    print("HAL 9000 exists")
+{% endhighlight %}
+
+{% highlight r %}
+if (client$file("data://.my/robots/T-800.png")$exists()){
+    print("HAL 9000 exists")
+}
+{% endhighlight %}
+
+{% highlight ruby %}
+if client.file("data://.my/robots/T-800.png").exists?
+    puts "HAL 9000 exists"
+{% endhighlight %}
+
+{% highlight java %}
+if(client.file("data://.my/robots/HAL_9000.png").exists()){
+    System.out.println("HAL 9000 exists");
+}
+{% endhighlight %}
+
+{% highlight scala %}
+if(client.file("data://.my/robots/HAL_9000.png").exists()){
+    System.out.println("HAL 9000 exists")
+}
+{% endhighlight %}
+
+{% highlight rust %}
+if client.file("data://.my/robots/HAL_9000.png").exists().unwrap() {
+    println!("HAL 9000 exists");
+}
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var hal = client.file("data://.my/robots/HAL_9000.png");
+
+hal.exists(function(exists) {
+    if(exists) {
+        console.log("HAL 9000 exists");
+    }
+});
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+if($client->dir("data://.my/robots/HAL_9000.png")->exists()) {
+    echo "HAL 9000 exists";
+}
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ### Upload a file
+
+{% include aside-start.html %}
 
 To upload a file through the Algorithmia Data API, use the following endpoint:
 
@@ -1009,7 +1089,134 @@ result    | The full Data URI of resulting file
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Uploading a file">
+<div code-sample-language="Shell">
+{% highlight bash %}
+# Write a text file
+curl -X PUT -H 'Authorization: Simple YOUR_API_KEY' \
+    -d 'Leader of the Autobots' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots/Optimus_Prime.txt
+
+-> { "result": "data://.my/robots/Optimus_Prime.txt" }
+
+# Upload local file
+curl -X PUT -H 'Authorization: Simple YOUR_API_KEY' \
+    --data-binary @Optimus_Prime.png \
+    https://api.algorithmia.com/v1/connector/data/.my/robots/Optimus_Prime.png
+
+-> { "result": "data://.my/robots/Optimus_Prime.png" }
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+# Upload files with 'algo cp'
+$ algo cp Optimus_Prime.png data://.my/robots
+Uploaded data://.my/robots/Optimus_Prime.png
+Finished uploading 1 file(s)
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+# Upload local file
+client.file("data://.my/robots/Optimus_Prime.png").putFile("/path/to/Optimus_Prime.png")
+# Write a text file
+client.file("data://.my/robots/Optimus_Prime.txt").put("Leader of the Autobots")
+# Write a dict to a JSON file
+client.file("data://.my/robots/Optimus_Prime.json").putJson({"faction": "Autobots"})
+{% endhighlight %}
+
+{% highlight r %}
+# Upload local file
+client$file("data://.my/robots/Optimus_Prime.png")$putFile("/path/to/Optimus_Prime.png")
+# Write a text file
+client$file("data://.my/robots/Optimus_Prime.txt")$put("Leader of the Autobots")
+# Write a list to a JSON file
+client$file("data://.my/robots/Optimus_Prime.json")$putJson(list(faction="Autobots"))
+{% endhighlight %}
+
+{% highlight ruby %}
+robots = client.dir("data://.my/robots")
+
+# Upload local file
+robots.put_file("/path/to/Optimus_Prime.png")
+# Write a text file
+robots.file("Optimus_Prime.txt").put("Leader of the Autobots")
+# Write a binary file
+robots.file("Optimus_Prime.key").put([71, 101, 101, 107].pack('C*'))
+{% endhighlight %}
+
+{% highlight java %}
+DataDirectory robots = client.dir("data://.my/robots");
+
+// Upload local file
+robots.putFile(new File("/path/to/Optimus_Prime.png"));
+// Write a text file
+robots.file("Optimus_Prime.txt").put("Leader of the Autobots");
+// Write a binary file
+robots.file("Optimus_Prime.key").put(new byte[] { (byte)0xe0, 0x4f, (byte)0xd0, 0x20 });
+{% endhighlight %}
+
+{% highlight scala %}
+val robots = client.dir("data://.my/robots")
+
+// Upload local file
+robots.putFile(new File("/path/to/Optimus_Prime.png"))
+// Write a text file
+robots.file("Optimus_Prime.txt").put("Leader of the Autobots")
+// Write a binary file
+robots.file("Optimus_Prime.key").put(new byte[] { (byte)0xe0, 0x4f, (byte)0xd0, 0x20 })
+{% endhighlight %}
+
+{% highlight rust %}
+let robots = client.dir("data://.my/robots");
+
+// Upload local file
+robots.put_file("/path/to/Optimus_Prime.png");
+// Write a text file
+robots.child::<DataFile>("Optimus_Prime.txt").put("Leader of the Autobots");
+// Write a binary file
+robots.child::<DataFile>("Optimus_Prime.key").put(b"transform");
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var robots = client.dir("data://.my/robots");
+
+// Upload a file from a local path
+robots.putFile("/path/to/Optimus_Prime.jpg", function(response) {
+  if(response.error) {
+    return console.log("Error: " + response.error.message);
+  }
+  console.log("Success");
+});
+
+// Write string or Buffer to a file
+robots.file("Optimus_Prime.txt").put("Leader of the Autobots", function(response) {
+    /* check for error or success */
+);
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+// Upload local file
+$client->file("data://.my/robots/Optimus_Prime.png")->put("/path/to/Optimus_Prime.png");
+// Write a text file
+$client->file("data://.my/robots/Optimus_Prime.txt")->put("Leader of the Autobots");
+// Write a dict to a JSON file
+$client->file("data://.my/robots/Optimus_Prime.json")->putJson(array("faction"=>"Autobots"));
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ### Deleting a file
+
+{% include aside-start.html %}
 
 To delete a file through the Algorithmia Data API, use the following endpoint:
 
@@ -1038,3 +1245,73 @@ result.deleted  | The number of files successfully deleted
 error.deleted   | The number of files successfully deleted if an error encountered during deletion
 
 </div>
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Deleting a file">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X DELETE -H 'Authorization: Simple YOUR_API_KEY' \
+    https://api.algorithmia.com/v1/connector/data/.my/robots/C-3PO.txt
+
+-> { "result": { "deleted": 1 }}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo rm data://.my/robots/C-3PO.txt
+Deleted file data://.my/robots/C-3PO.txt
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+c3po = client.file("data://.my/robots/C-3PO.txt")
+c3po.delete()
+{% endhighlight %}
+
+{% highlight r %}
+c3po <- client$file("data://.my/robots/C-3PO.txt")
+c3po$delete()
+{% endhighlight %}
+
+{% highlight ruby %}
+c3po = client.file("data://.my/robots/C-3PO.txt")
+c3po.delete
+{% endhighlight %}
+
+{% highlight java %}
+DataFile c3po = client.file("data://.my/robots/C-3PO.txt")
+c3po.delete();
+{% endhighlight %}
+
+{% highlight scala %}
+val c3po = client.file("data://.my/robots/C-3PO.txt")
+c3po.delete()
+{% endhighlight %}
+
+{% highlight rust %}
+let c3po = client.file("data://.my/robots/C-3PO.txt");
+c3po.delete();
+{% endhighlight %}
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var c3po = client.file("data://.my/robots/C-3PO.txt");
+c3po.delete(function(response) {
+    if(response.error) {
+        return console.log("Failed to delete file: " + response.error.message);
+    }
+    console.log("Deleted file: " + c3po.data_path);
+});
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$client->file("data://.my/robots/C-3PO.txt")->delete();
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
