@@ -4,13 +4,13 @@ layout: synapse-default
 <div id="page-wrapper">
 
   <div id="main" role="main">
-    <article itemscope itemtype="http://schema.org/Article">
+    <article itemscope itemtype="http://schema.org/Article" class="syn-article">
       {% include breadcrumbs.html %}
       {% assign tag = page.tags | first %}
       {% assign main_tag = site.data.tags[tag] %}
 
       <div class="faq-navigation">
-      <h3><{{ main_tag.name }}</h3>
+      <h3>{{ main_tag.name }}</h3>
       </div>
 
       <div>
