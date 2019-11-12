@@ -3,9 +3,19 @@ layout: api_docs_article
 title:  "Algorithm Management API"
 ---
 
+{% include aside-start.html %}
+
 Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms. At present, these are only available in Python.
 
 To try out a complete training-to-deployment pipeline, get the [runnable Jupyter Notebook](https://github.com/algorithmiaio/model-deployment).
+
+{% include aside-middle.html %}
+
+<div class="syn-alert theme-primary syn-body-1">
+  Python is our only client that currently supports Algorithm Management, therefore all examples on this page are in Python. You can find further documentation for our Management APIs <a href="{{site.baseurl}}/algorithm-development/algorithm-management-api">here</a>.
+</div>
+
+{% include aside-end.html %}
 
 IMPORTANT:
 
