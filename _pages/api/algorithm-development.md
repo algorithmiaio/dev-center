@@ -9,12 +9,12 @@ We currently support algorithm development in:
 
 <div class="syn-body-1" markdown="1">
 
-* [Java](http://developers.algorithmia.com/algorithm-development/guides/java-guide/)
-* [JavaScript](http://developers.algorithmia.com/algorithm-development/guides/javascript-guide/)
-* [Python](http://developers.algorithmia.com/algorithm-development/guides/python-guide/)
-* [R](http://developers.algorithmia.com/algorithm-development/client-guides/r)
-* [Ruby](http://developers.algorithmia.com/algorithm-development/guides/ruby-guide/)
-* [Rust](http://developers.algorithmia.com/algorithm-development/guides/rust-guide/)
-* [Scala](http://developers.algorithmia.com/algorithm-development/guides/scala-guide/)
+* [Java]({{site.baseurl}}/clients/java)
+* [JavaScript]({{site.baseurl}}/clients/javascript)
+* [Python]({{site.baseurl}}/clients/python)
+* [R]({{site.baseurl}}/clients/r)
+* [Ruby]({{site.baseurl}}/clients/ruby)
+* [Rust]({{site.baseurl}}/clients/rust)
+* [Scala]({{site.baseurl}}/clients/scala)
 
 </div>
