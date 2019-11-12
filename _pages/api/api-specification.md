@@ -168,6 +168,8 @@ echo $algo->pipe($input)->result;
 
 ## Input/Output
 
+{% include aside-start.html %}
+
 Algorithmia supports calling algorithms that use any combination of text, JSON, or binary as their input and output.
 
 Each client SDK provides idiomatic abstractions for calling algorithms
@@ -195,6 +197,328 @@ void | The result element is null
 text | The result element is a JSON string using UTF-8 encoding
 json | The result element is any valid JSON type
 binary | The result element is a Base64 encoded binary data in a JSON String
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Text Input/Output" class="syn-mb-16">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -d 'HAL 9000' -H 'Content-Type: text/plain' \
+    https://api.algorithmia.com/v1/algo/demo/Hello/
+
+-> {
+    "result":"Hello HAL 9000",
+    "metadata":{"content_type":"text","duration":0.034232617}
+}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo run demo/Hello/ -d 'HAL 9000'
+Hello HAL 9000
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+algo = client.algo('demo/Hello/')
+print(algo.pipe("HAL 9000").result)
+# -> Hello HAL 9000
+{% endhighlight %}
+
+{% highlight r %}
+algo <- client$algo('demo/Hello/')
+print(algo$pipe("HAL 9000")$result)
+# -> Hello HAL 9000
+{% endhighlight %}
+
+{% highlight ruby %}
+algo = client.algo('demo/Hello/')
+puts algo.pipe('HAL 9000').result
+# -> Hello HAL 900
+{% endhighlight %}
+
+{% highlight java %}
+Algorithm algo = client.algo("algo://demo/Hello/");
+AlgoResponse result = algo.pipe("HAL 9000");
+System.out.println(result.asString());
+// -> Hello HAL 9000
+{% endhighlight %}
+
+{% highlight scala %}
+val algo = client.algo("algo://demo/Hello/")
+val result = algo.pipe("HAL 9000")
+System.out.println(result.asString)
+// -> Hello HAL 9000
+{% endhighlight %}
+
+{% highlight rust %}
+let algo = client.algo("algo://demo/Hello/");
+let response = algo.pipe("HAL 9000").unwrap();
+println!("{}", response.as_string().unwrap());
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/")
+      .pipe("HAL 9000")
+      .then(function(output) {
+        console.log(output.result);
+      });
+// -> Hello HAL 9000
+{% endhighlight %}
+</div>
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/")
+      .pipe("HAL 9000")
+      .then(function(response) {
+        console.log(response.get());
+      });
+// -> Hello HAL 9000
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$algo = $client->algo("demo/Hello/0.1.0");
+echo $algo->pipe("HAL 9000")->result;
+// -> Hello HAL 9000
+?>
+{% endhighlight %}
+</code-sample>
+
+<code-sample v-cloak title="JSON Input/Output (including serialized objects/arrays)" class="syn-mb-16">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -H 'Content-Type: application/json' \
+    -d '["transformer", "terraforms", "retransform"]' \
+    https://api.algorithmia.com/v1/algo/WebPredict/ListAnagrams/0.1
+
+-> {
+    "result": ["transformer","retransform"],
+    "metadata":{"content_type":"json","duration":0.039351226}
+}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+# -d automatically detects if input is valid JSON
+$ algo run WebPredict/ListAnagrams/0.1 \
+    -d '["transformer", "terraforms", "retransform"]'
+["transformer","retransform"]
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+algo = client.algo('WebPredict/ListAnagrams/0.1.0')
+result = algo.pipe(["transformer", "terraforms", "retransform"]).result
+# -> ["transformer","retransform"]
+{% endhighlight %}
+
+{% highlight r %}
+algo <- client$algo('WebPredict/ListAnagrams/0.1.0')
+result <- algo$pipe(["transformer", "terraforms", "retransform"])$result
+# Returns a list in R
+[[1]]
+[1] "transformer"
+
+[[2]]
+[1] "retransform"
+{% endhighlight %}
+
+{% highlight ruby %}
+algo = client.algo('WebPredict/ListAnagrams/0.1.0')
+result = algo.pipe(["transformer", "terraforms", "retransform"]).result
+# -> ["transformer","retransform"]
+{% endhighlight %}
+
+{% highlight java %}
+Algorithm algo = client.algo("algo://WebPredict/ListAnagrams/0.1.0");
+List<String> words = Arrays.asList(("transformer", "terraforms", "retransform");
+AlgoResponse result = algo.pipe(words);
+// WebPredict/ListAnagrams returns an array of strings, so cast the result:
+List<String> anagrams = result.as(new TypeToken<List<String>>(){});
+// -> List("transformer", "retransform")
+
+// Or using raw JSON
+String jsonWords = "[\"transformer\", \"terraforms\", \"retransform\"]"
+AlgoResponse result2 = algo.pipeJson(jsonWords);
+String anagrams = result2.asJsonString();
+// -> "[\"transformer\", \"retransform\"]"
+{% endhighlight %}
+
+{% highlight scala %}
+val algo = client.algo("algo://WebPredict/ListAnagrams/0.1.0")
+val result = algo.pipe(List("transformer", "terraforms", "retransform"))
+// WebPredict/ListAnagrams returns an array of strings, so cast the result:
+val anagrams = result.as(new TypeToken<List<String>>(){})
+// -> List("transformer", "retransform")
+
+// Or using raw JSON
+val result2 = algo.pipeJson("""["transformer", "terraforms", "retransform"]""")
+String anagrams = result.asString;
+// -> "[\"transformer\", \"retransform\"]"
+{% endhighlight %}
+
+{% highlight rust %}
+let algo = client.algo("algo://WebPredict/ListAnagrams/0.1.0");
+let response = algo.pipe(vec!["transformer", "terraforms", "retransform"]).unwrap();
+let output: Vec<String> = response.decode().unwrap();
+// -> ["transformer", "retransform"] as Vec<String>
+
+// Or working with raw JSON
+let response2 = algo.pipe_json(r#"["transformer", "terraforms", "retransform"]"#).unwrap();
+let output = response2.as_json().unwrap().to_string();
+// -> "[\"transformer\", \"retransform\"]"
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+client.algo("algo://WebPredict/ListAnagrams/0.1.0")
+      .pipe(["transformer", "terraforms", "retransform"])
+      .then(function(output) {
+        console.log(output.result);
+        // -> ["transformer","retransform"]
+      });
+
+// Or using raw JSON
+client.algo("algo://WebPredict/ListAnagrams/0.1.0")
+      .pipeJson('["transformer", "terraforms", "retransform"]')
+      .then(function(output) {
+        console.log(output.result);
+        // -> ["transformer","retransform"]
+      });
+{% endhighlight %}
+</div>
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+client.algo("algo://WebPredict/ListAnagrams/0.1.0")
+      .pipe(["transformer", "terraforms", "retransform"])
+      .then(function(response) {
+        console.log(response.get());
+        // -> ["transformer","retransform"]
+      });
+
+// Or using raw JSON
+client.algo("algo://WebPredict/ListAnagrams/0.1.0")
+      .pipeJson('["transformer", "terraforms", "retransform"]')
+      .then(function(response) {
+        console.log(response.get());
+        // -> ["transformer","retransform"]
+      });
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$algo = $client->algo("algo://WebPredict/ListAnagrams/0.1.0");
+print_r($algo->pipe(["transformer", "terraforms", "retransform"])->result);
+?>
+{% endhighlight %}
+</code-sample>
+
+<code-sample v-cloak title="Binary Input/Output">
+<div code-sample-language="Shell">
+{% highlight bash %}
+# Save output to bender_thumb.png since consoles don't handle printing binary well
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -H 'Content-Type: application/octet-stream' \
+    --data-binary @bender.jpg \
+    -o bender_thumb.png \
+    https://api.algorithmia.com/v1/algo/opencv/SmartThumbnail/0.1
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+# -D reads input from a file
+# -o saves output to a file since consoles don't print binary well
+$ algo run opencv/SmartThumbnail/0.1 -D bender.jpg -o bender_thumb.png
+Completed in 1.1 seconds
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+input = bytearray(open("/path/to/bender.png", "rb").read())
+result = client.algo("opencv/SmartThumbnail/0.1").pipe(input).result
+# -> [binary byte sequence]
+{% endhighlight %}
+
+{% highlight r %}
+algo <- client$algo("opencv/SmartThumbnail/0.1")
+response <- algo$pipe(input)$result
+# -> [raw vector]
+{% endhighlight %}
+
+{% highlight ruby %}
+input = File.binread("/path/to/bender.png")
+result = client.algo("opencv/SmartThumbnail/0.1").pipe(input).result
+# -> [ASCII-8BIT string of binary data]
+{% endhighlight %}
+
+{% highlight java %}
+byte[] input = Files.readAllBytes(new File("/path/to/bender.jpg").toPath());
+AlgoResponse result = client.algo("opencv/SmartThumbnail/0.1").pipe(input);
+byte[] buffer = result.as(new TypeToken<byte[]>(){});
+// -> [byte array]
+{% endhighlight %}
+
+{% highlight scala %}
+let input = Files.readAllBytes(new File("/path/to/bender.jpg").toPath())
+let result = client.algo("opencv/SmartThumbnail/0.1").pipe(input)
+let buffer = result.as(new TypeToken<byte[]>(){})
+// -> [byte array]
+{% endhighlight %}
+
+{% highlight rust %}
+let mut input = Vec::new();
+File::open("/path/to/bender.jpg").read_to_end(&mut input);
+let response = client.algo("opencv/SmartThumbnail/0.1").pipe(&input).unwrap();
+let output = response.as_bytes().unwrap();
+// -> Vec<u8>
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+/*
+  Support for binary I/O in the javascript client is planned.
+  Contact us if you need this feature, and we'll prioritize it right away:
+  https://algorithmia.com/contact
+
+  Note: The NodeJS client does currently support binary I/O.
+*/
+{% endhighlight %}
+</div>
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+var buffer = fs.readFileSync("/path/to/bender.jpg");
+client.algo("opencv/SmartThumbnail")
+    .pipe(buffer)
+    .then(function(response) {
+        var buffer = response.get();
+        // -> Buffer(...)
+    });
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$algo = $client->algo("opencv/SmartThumbnail/0.1");
+$input = new Algorithmia\ByteArray(file_get_contents("/path/to/myimage.png"));
+print_r($algo->pipe($input)->result);
+// -> [binary byte sequence]
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
 
 ## Query Parameters
 
