@@ -1,7 +1,7 @@
 <template>
   <div class="syn-code-block">
-    <div class="syn-code-block-header syn-flex justify-space-between">
-      <span class="syn-overline syn-mb-0">{{title}}</span>
+    <div class="syn-code-block-header syn-flex justify-space-between align-center">
+      <span class="syn-overline syn-text-light-primary syn-mb-0 syn-ml-16 syn-mr-8">{{title}}</span>
       <div class="syn-ma-8 syn-flex align-center">
         <select class="syn-code-language-selector syn-mr-8" v-if="languages.length > 1" v-model="selectedLanguage">
           <option v-for="language in languages" :key="language" :value="language">
