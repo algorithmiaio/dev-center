@@ -656,6 +656,8 @@ echo $algo->pipe("HAL 9000")->result;
 
 ## Error Handling
 
+{% include aside-start.html %}
+
 If an error occurs, an Exception will be raised/thrown (Java, Python, PHP, R, Ruby, Rust, Scala) or the response be modified (JavaScript, NodeJS) to contain the following fields:
 
 <div class="syn-table-container" markdown="1">
@@ -670,3 +672,130 @@ error.stacktrace | (Optional) a stacktrace if the error occurred within the algo
 Each client provides a language-specific solution for error handling. The examples on the right
 come from calling an algorithm that expects text input in it's implementation of the `apply` entrypoint,
 but instead receives a JSON array as input.
+
+{% include aside-middle.html %}
+
+<code-sample v-cloak title="Error Handling">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -d '[]' -H 'Content-Type: application/json' \
+    https://api.algorithmia.com/v1/algo/demo/Hello/
+
+-> {
+    "error":{
+      "message":"apply() functions do not match input data",
+      "stacktrace":"apply() functions do not match input data"
+    },
+    "metadata":{"duration":0.046542354}}
+}
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+$ algo run demo/Hello/ -d '[]'
+API error: apply() functions do not match input data
+apply() functions do not match input data
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+algo = client.algo('demo/Hello/')
+try:
+    print(algo.pipe([]).result)
+except Exception as x:
+    print(x)
+# -> API error: apply() functions do not match input data
+{% endhighlight %}
+
+{% highlight r %}
+algo <- client$algo('demo/Hello/')
+tryCatch({
+    algo$pipe(list())$result
+}, error = function(e) {
+    e
+})
+# -> API error: apply() functions do not match input data
+{% endhighlight %}
+
+{% highlight ruby %}
+algo = client.algo('demo/Hello/')
+begin
+  puts puts algo.pipe([]).result
+rescue Exception => x
+  puts x
+end
+# -> API error: apply() functions do not match input data
+{% endhighlight %}
+
+{% highlight java %}
+Algorithm algo = client.algo("algo://demo/Hello/");
+AlgoResponse result = algo.pipe([]);
+try {
+  result.asString();
+} catch (AlgorithmException ex) {
+  System.out.println(ex.getMessage());
+}
+// -> API error: apply() functions do not match input data
+{% endhighlight %}
+
+{% highlight scala %}
+val algo = client.algo("algo://demo/Hello/")
+val result = algo.pipe("HAL 9000")
+try {
+  result.asString();
+} catch {
+  case ex: AlgorithmException => System.out.println(ex.getMessage)
+}
+// -> API error: apply() functions do not match input data
+{% endhighlight %}
+
+{% highlight rust %}
+let algo = client.algo("algo://demo/Hello/");
+match algo.pipe(&[]) {
+    Ok(response) => { /* success */ },
+    Err(err) => println!("error calling demo/Hello: {}", err),
+}
+// -> error calling demo/Hello: apply() functions do not match input data
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/")
+      .pipe("HAL 9000")
+      .then(function(output) {
+        if(output.error) {
+          console.log(output.error.message);
+        }
+      });
+// -> API error: apply() functions do not match input data
+{% endhighlight %}
+</div>
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/")
+      .pipe("HAL 9000")
+      .then(function(response) {
+        if(response.error) {
+          console.log(response.error.message);
+        }
+      });
+// -> API error: apply() functions do not match input data
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+try {
+  $client->algo("util/whoopsWrongAlgo")->pipe("Hello, world!");
+} catch (Algorithmia\AlgoException $x) {
+    echo $x;
+}
+// -> Algorithmia\\AlgoException: algorithm algo://util/whoopsWrongAlgo not found
+?>
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
