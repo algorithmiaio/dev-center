@@ -198,6 +198,8 @@ binary | The result element is a Base64 encoded binary data in a JSON String
 
 ## Query Parameters
 
+{% include aside-start.html %}
+
 The API also provides the following configurable parameters when calling an algorithm:
 
 Parameter             | Description
@@ -225,6 +227,93 @@ output                | raw|void: Indicates the algorithm
   * Returns immediately and does not wait for the algorithm to run
   * The result of the algorithm will not be accessible; this is useful in some cases where an algorithm outputs to a `data://` file with a long running time (see [Data API]({{site.basurl}}/api/data-api-specification) for more information)
 </div>
+
+{% include aside-middle.html %}
+<code-sample v-cloak title="Query Parameters">
+<div code-sample-language="Shell">
+{% highlight bash %}
+curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
+    -d 'HAL 9000' -H 'Content-Type: text/plain' \
+    https://api.algorithmia.com/v1/algo/demo/Hello/?timeout=10
+{% endhighlight %}
+</div>
+
+<div code-sample-language="CLI">
+{% highlight bash %}
+# use --timeout to set the call timeout
+$ algo run demo/Hello/ -d 'HAL 9000' --timeout 10
+
+# use --debug to print STDOUT if available
+$ algo run demo/Hello/ -d 'HAL 9000' --debug
+{% endhighlight %}
+</div>
+
+{% highlight python %}
+algo = client.algo('demo/Hello/').set_options(timeout=10, stdout=True)
+result = algo.pipe("HAL 9000")
+
+from Algorithmia.algorithm import OutputType
+algo = client.algo('demo/Hello/').set_options(output=OutputType.raw)
+{% endhighlight %}
+
+{% highlight r %}
+algo <- client$algo('util/echo')
+algo$setOptions(timeout=40, stdout=FALSE)
+result <- algo$pipe('HAL 9000')$result
+{% endhighlight %}
+
+{% highlight ruby %}
+algo = client.algo('demo/Hello/').set('timeout':300)
+result = algo.pipe('HAL 9000').result
+{% endhighlight %}
+
+{% highlight java %}
+Algorithm algo = client.algo("algo://demo/Hello/").setTimeout(10L, TimeUnit.SECONDS);
+AlgoResponse result = algo.pipe("HAL 9000");
+{% endhighlight %}
+
+{% highlight scala %}
+val algo = client.algo("algo://demo/Hello/?timeout=10")
+val result = algo.pipe(input)
+{% endhighlight %}
+
+{% highlight rust %}
+let mut algo = client.algo("algo://demo/Hello/");
+let algo = algo.timeout(10).enable_stdout();
+let response = algo.pipe(input).unwrap();
+if let Some(ref stdout) = response.metadata.stdout {
+      println!("{}", stdout);
+}
+{% endhighlight %}
+
+<div code-sample-language="JavaScript">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/?timeout=10")
+      .pipe("HAL 9000")
+      .then(function(output) {
+        console.log(output);
+      });
+{% endhighlight %}
+</div>
+
+<div code-sample-language="Node">
+{% highlight javascript %}
+client.algo("algo://demo/Hello/?timeout=10")
+      .pipe("HAL 9000")
+      .then(function(output) {
+        console.log(output);
+      });
+{% endhighlight %}
+</div>
+
+{% highlight php %}
+<?
+$algo = $client->algo("demo/Hello/")->setOptions(["timeout" => 60]);
+echo $algo->pipe("HAL 9000")->result;
+?>
+{% endhighlight %}
+</code-sample>
+{% include aside-end.html %}
 
 ## Error Handling
 
