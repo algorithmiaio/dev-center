@@ -10,6 +10,7 @@
       case '#input-output':
       case '#query-parameters':
       case '#error-handling': return `/developers/api/api-specification${hash}`
+      case '#clients': return '/developers/api/clients'
       default: return undefined
     }
   }
