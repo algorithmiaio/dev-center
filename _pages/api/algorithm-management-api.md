@@ -12,7 +12,7 @@ To try out a complete training-to-deployment pipeline, get the [runnable Jupyter
 {% include aside-middle.html %}
 
 <div class="syn-alert theme-primary syn-body-1">
-  Python is our only client that currently supports Algorithm Management, therefore all examples on this page are in Python. You can find further documentation for our Management APIs <a href="{{site.baseurl}}/algorithm-development/algorithm-management-api">here</a>.
+  Python is our only client that currently supports Algorithm Management, therefore all examples on this page are in Python unless otherwise specified. You can find further documentation for our Management APIs <a href="{{site.baseurl}}/algorithm-development/algorithm-management-api">here</a>.
 </div>
 
 {% include aside-end.html %}
@@ -28,6 +28,8 @@ IMPORTANT:
 </div>
 
 ## Create an Algorithm
+
+{% include aside-start.html %}
 
 First, define an algo using `client.algo('USERNAME/ALGONAME')`, making sure that "USERNAME/ALGONAME" is *not* the name of an existing Algorithm.
 
@@ -59,7 +61,33 @@ Then, call `algo.create(details, settings)` -- the parameters are dictionaries w
 
 Once this has been done, your algorithm will be visible at https://algorithmia.com/algorithms/USERNAME/ALGONAME ... but it doesn't have any code yet. You'll need to `git clone https://git.algorithmia.com/git/USERNAME/ALGONAME.git`, then add and commit code, before continuing on to the Publishing step.
 
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+client=Algorithmia.client('MANAGEMENT_API_KEY')
+algo = client.algo('demo/Hello')
+algo.create(
+    details = {
+        "label": "Hello World",
+    },
+    settings = {
+        "language": "python3-1",
+        "source_visibility": "closed",
+        "license": "apl",
+        "network_access": "full",
+        "pipeline_enabled": True,
+        "environment": "cpu"
+    }
+)
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Update an Algorithm
+
+{% include aside-start.html %}
 
 If you need to change an Algorithm's settings after it cas been created, this can be done with a call to `algo.update(details, settings)` which takes these parameters:
 
@@ -85,11 +113,48 @@ If you need to change an Algorithm's settings after it cas been created, this ca
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+algo.update(
+    details = {
+        "label": "Echo", #user-readable name of the algorithm
+    },
+    settings = {
+        "source_visibility": "open",
+        "license": "apl",
+        "network_access": "full",
+        "pipeline_enabled": True,
+        "environment": "cpu"
+    }
+)
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Recompile your Algorithm
+
+{% include aside-start.html %}
 
 Any `git push` to your Algorithm's repo implicitly causes a compile to run on Algorithmia's servers. However, you can also manually force a compile if desired, using `algo.compile()`
 
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+algo.compile()
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Get List of Algorithm Builds
+
+{% include aside-start.html %}
+
+<code class="syn-text-break-word">GET https://api.algorithmia.com/v1/algorithms/:owner/:algoname/builds/:build_id</code>
 
 ##### Query Parameters
 
@@ -133,7 +198,22 @@ resource_type | [Optional] string, always "algorithm_build"
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample title="Get Algorithm Builds (Shell)">
+{% highlight bash %}
+curl -H 'Authorization: Simple MANAGEMENT_API_KEY' \
+    https://api.algorithmia.com/v1/algorithms/demo/Hello/builds
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Get Algorithm Build
+
+{% include aside-start.html %}
+
+<code class="syn-text-break-word">GET https://api.algorithmia.com/v1/algorithms/:owner/:algoname/builds/:build_id</code>
 
 ##### Path Parameters
 
@@ -162,7 +242,22 @@ resource_type | [Optional] string, always "algorithm_build"
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample title="Get Algorithm Build (Shell)">
+{% highlight bash %}
+curl -H 'Authorization: Simple MANAGEMENT_API_KEY' \
+    https://api.algorithmia.com/v1/algorithms/demo/Hello/builds/b57ee29b-31dd-4252-839d-edcb7e0c0ae3
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Get Algorithm Build Logs
+
+{% include aside-start.html %}
+
+<code class="syn-text-break-word">GET https://api.algorithmia.com/v1/algorithms/:owner/:algoname/builds/:build_id/logs</code>
 
 ##### Path Parameters
 
@@ -186,7 +281,20 @@ logs | string, a set of newline separated logs that were output during a build. 
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample title="Get Algorithm Build Logs (Shell)">
+{% highlight bash %}
+curl -H 'Authorization: Simple MANAGEMENT_API_KEY' \
+    https://api.algorithmia.com/v1/algorithms/demo/Hello/builds/b57ee29b-31dd-4252-839d-edcb7e0c0ae3/logs
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Publish an Algorithm
+
+{% include aside-start.html %}
 
 Once you've committed code, you can use `algo.publish(details, settings, version_info)` to make the Algorithm callable. All parameters are optional, and will overwrite those specified in the initial create() call if they conflict.
 
@@ -222,10 +330,48 @@ Under version_info, even if your sample_input is a dictionary, it must be encaps
 
 </div>
 
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+algo.publish(
+    version_info = {
+        "sample_input": "world"
+    }
+)
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## Get info about an an Algorithm
+
+{% include aside-start.html %}
 
 To inspect a previously created Algorithm, call `algo.info()` on it to obtain details similar to those specified at create(), as well as additional info such as the hash value of the latest compile (available in version_info.git_hash only if code has been pushed) or the last published version number (version_info.semantic_version only if it has been published).
 
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+algo.info() #optional params: algo_hash
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
+
 ## List Versions of an Algorithm
 
+{% include aside-start.html %}
+
 To get info about every individual published version of your Algorithm, use `algo.versions()`
+
+{% include aside-middle.html %}
+
+<code-sample>
+{% highlight python %}
+algo.versions() #optional params: limit (<int>), marker (<string>), published (<boolean>), callable (<boolean>)
+{% endhighlight %}
+</code-sample>
+
+{% include aside-end.html %}
