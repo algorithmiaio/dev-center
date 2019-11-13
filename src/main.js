@@ -7,6 +7,7 @@ import { setupPage } from './utils/setupPage'
 Vue.component('codeSample', CodeSample)
 Vue.component('toast', Toast)
 
+
 const app = new Vue({
   el: '#vue-app',
   data: {

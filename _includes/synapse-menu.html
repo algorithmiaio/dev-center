@@ -1,16 +1,26 @@
 <ul>
-  {% for item in site.menus.main %}
-    <li>
-      <a class="syn-text-secondary" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
-    </li>
-    {% if item.children %}
-      <ul>
-        {% for child in item.children %}
-        <li>
-          <a class="syn-text-secondary" href="{{ child.url }}" title="Go to {{ child.title }}">{{ child.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+  {% for domain in site.menus.main %}
+    <li class="">
+      <a
+        class="syn-text-secondary syn-font-weight-medium {% if page.menus[domain.identifier] %}active{% endif %}"
+        href="{{ domain.url }}"
+        title="{{ domain.title }}">
+        {{ domain.title }}
+      </a>
+      {% if domain.children %}
+        <ul id="{{domain.identifier}}-sub-menu">
+          {% for section in domain.children %}
+          <li>
+            <a
+              class="syn-text-secondary {% if page.menus[domain.identifier].url == section.url %}active{% endif %}"
+              href="{{ section.url }}"
+              title="{{ section.title }}">
+              {{ section.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
       {% endif %}
+    </li>
   {% endfor %}
 </ul>
