@@ -11,6 +11,7 @@
       case '#query-parameters':
       case '#error-handling': return `/developers/api/api-specification${hash}`
       case '#api-versioning': return '/developers/api/api-versioning'
+      case '#algorithm-development': return '/developers/api/algorithm-development'
       default: return undefined
     }
   }
