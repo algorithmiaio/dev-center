@@ -10,6 +10,9 @@
       case '#input-output':
       case '#query-parameters':
       case '#error-handling': return `/developers/api/api-specification${hash}`
+      case '#need-help': return '/developers/api/need-help'
+      case '#connect-with-us':
+      case '#contribute-to-the-docs': return `/developers/api/need-help${hash}`
       default: return undefined
     }
   }
