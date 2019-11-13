@@ -70,7 +70,9 @@ Directories are a collection of files or other directories.
 
 List the contents of a directory with this HTTP endpoint:
 
-`GET https://api.algorithmia.com/api/v1/connector/:connector/*path`
+<code class="syn-text-break-word">
+  GET https://api.algorithmia.com/api/v1/connector/:connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -347,7 +349,9 @@ foreach ($mydir->list() as $item) {
 
 To create a directory through the Algorithmia Data API, use the following endpoint:
 
-`POST https://api.algorithmia.com/v1/connector/:connector/*path`
+<code class="syn-text-break-word">
+  POST https://api.algorithmia.com/v1/connector/:connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -503,7 +507,9 @@ if(!$robots->exists()) {
 
 To update a directory, use the following API:
 
-`PATCH https://api.algorithmia.com/v1/connector/*path`
+<code class="syn-text-break-word">
+  PATCH https://api.algorithmia.com/v1/connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -613,7 +619,9 @@ echo $robots>getReadAcl();
 
 To delete a directory, use the following endpoint:
 
-`DELETE https://api.algorithmia.com/v1/connector/:connector/*path`
+<code class="syn-text-break-word">
+  DELETE https://api.algorithmia.com/v1/connector/:connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -753,7 +761,9 @@ Files can be any type of data and are uniquely identified by a <a href="#data-ur
 
 To retrieve a file through the Algorithmia Data API, use the following endpoint:
 
-`GET https://api.algorithmia.com/v1/connector/:connector/*path`
+<code class="syn-text-break-word">
+  GET https://api.algorithmia.com/v1/connector/:connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -938,7 +948,9 @@ $binary_content = $foo_dir->file("data://.my/robots/T-800.png")->getBytes();  # 
 
 To check if a file exists without downloading it, use the following endpoint:
 
-`HEAD https://api.algorithmia.com/v1/connector/:connector/*path`
+<code class="syn-text-break-word">
+  HEAD https://api.algorithmia.com/v1/connector/:connector/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -1054,7 +1066,9 @@ if($client->dir("data://.my/robots/HAL_9000.png")->exists()) {
 
 To upload a file through the Algorithmia Data API, use the following endpoint:
 
-`PUT https://api.algorithmia.com/v1/connector/data/:owner/*path`
+<code class="syn-text-break-word">
+  PUT https://api.algorithmia.com/v1/connector/data/:owner/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
@@ -1220,7 +1234,9 @@ $client->file("data://.my/robots/Optimus_Prime.json")->putJson(array("faction"=>
 
 To delete a file through the Algorithmia Data API, use the following endpoint:
 
-`DELETE https://api.algorithmia.com/v1/connector/data/*path`
+<code class="syn-text-break-word">
+  DELETE https://api.algorithmia.com/v1/connector/data/*path
+</code>
 
 <div class="syn-body-1" markdown="1">
 
