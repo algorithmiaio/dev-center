@@ -2,10 +2,6 @@
 layout: api_docs_article
 title:  "API Documentation"
 menus:
-  side:
-    title: "API Documentation"
-    identifier: api
-    url: /developers/api
   api:
     title: "Home"
     url: /developers/api
