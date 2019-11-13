@@ -9,7 +9,7 @@ client-specific guides are located in the [Algorithmia Developer Center]({{site.
 
 This table provides links to various resources for each client:
 
-<div class="syn-table-container" markdown="1">
+<div class="syn-table-container scrollable-x" markdown="1">
 
 Client      |  DevCenter Guide   |  GitHub Repo  |  Language Docs  |  Package
 ----------- | -------- | ------------- | --------------- | -----------
