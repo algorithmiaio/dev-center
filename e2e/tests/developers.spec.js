@@ -19,43 +19,43 @@ describe('Developer Center', () => {
     })
   })
 
-  describe('Landing page', () => {
-    it('should show the landing page', () => {
-      page.open()
-      assert.equal(page.header.getText(), 'Developer Center')
-    })
-
-    it('should display search results', () => {
-      page.open()
-      browser.pause(5000) // wait for jQuery to initialize
-      page.searchFor('getting started')
-      page.pageTitle.waitForExist()
-      const firstResultText = page.firstSearchResult.getText()
-      const searchResultIsRelevant = /getting started/i.test(firstResultText)
-      assert.equal(searchResultIsRelevant, true)
-    })
-
-    it('should contain sidenav with expandable items', () => {
-      page.open()
-      page.clientGuidesListItem.click()
-      assert.equal(page.clientGuidesList.isDisplayed(), true)
-    })
-
-    it('should contain sidenav with expandable items', () => {
-      page.open()
-      page.clientGuidesListItem.click()
-      assert.equal(page.clientGuidesList.isDisplayed(), true)
-    })
-
-    it('should allow navigation to side nav pages', () => {
-      page.open()
-      page.clientGuidesListItem.click()
-      page.curlGuideListItem.click()
-      const expectedUrl = `${E2E_BASE_URL}/developers/clients/curl/`
-      browser.waitForUrl(expectedUrl)
-      assert(isEquivalent(browser.getUrl(), expectedUrl))
-    })
+describe('Landing page', () => {
+  it('should show the landing page', () => {
+  page.open()
+    assert.equal(page.header.getText(), 'Developer Center')
   })
+
+  it('should display search results', () => {
+    page.open()
+    browser.pause(5000) // wait for jQuery to initialize
+    page.searchFor('getting started')
+    page.pageTitle.waitForExist()
+    const firstResultText = page.firstSearchResult.getText()
+    const searchResultIsRelevant = /getting started/i.test(firstResultText)
+    assert.equal(searchResultIsRelevant, true)
+  })
+
+  it('should contain sidenav with expandable items', () => {
+    page.open()
+    page.clientGuidesListItem.click()
+    assert.equal(page.clientGuidesList.isDisplayed(), true)
+  })
+
+  it('should contain sidenav with expandable items', () => {
+    page.open()
+    page.clientGuidesListItem.click()
+    assert.equal(page.clientGuidesList.isDisplayed(), true)
+  })
+
+  it('should allow navigation to side nav pages', () => {
+    page.open()
+    page.clientGuidesListItem.click()
+    page.curlGuideListItem.click()
+    const expectedUrl = `${E2E_BASE_URL}/developers/clients/curl/`
+    browser.waitForUrl(expectedUrl)
+    assert(isEquivalent(browser.getUrl(), expectedUrl))
+  })
+ })
 
   describe('Getting started page', () => {
     it('should show toast notification when you copy text', () => {
@@ -78,46 +78,15 @@ describe('Developer Center', () => {
       assert.equal(codeText.includes('YOUR_API_KEY'), true)
     })
 
-    it('should show message if user hovers over YOUR_USERNAME', () => {
-      gettingStartedPage.open()
-      gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-        block: 'center'
-      })
-      assert.equal(gettingStartedPage.usernameHoverMessage.isDisplayed(), false)
-      gettingStartedPage.usernamePlaceholder.click()
-      gettingStartedPage.usernameHoverMessage.waitForDisplayed()
-      assert.equal(gettingStartedPage.usernameHoverMessage.isDisplayed(), true)
-    })
-
-    it('should show message if user hovers over YOUR_API_KEY', () => {
-      gettingStartedPage.open()
-      gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({
-        block: 'center'
-      })
-      assert.equal(gettingStartedPage.apiKeyHoverMessage.isDisplayed(), false)
-      gettingStartedPage.apiKeyPlaceholder.click()
-      gettingStartedPage.apiKeyHoverMessage.waitForDisplayed()
-      assert.equal(gettingStartedPage.apiKeyHoverMessage.isDisplayed(), true)
-    })
-
     it('allows you to select languages', () => {
-      const containsJavaCode = text => text.includes('System.out.println')
       gettingStartedPage.open()
-      gettingStartedPage.languageToggleButton.scrollIntoView({
+      gettingStartedPage.languageSelector.scrollIntoView({
         block: 'center'
       })
-      assert.equal(gettingStartedPage.selectedLanguage.getText(), 'Python')
-      assert.equal(
-        containsJavaCode(gettingStartedPage.languageCodeBlock.getText()),
-        false
-      )
-      gettingStartedPage.languageToggleButton.click()
-      gettingStartedPage.javaLanguageOption.click()
-      assert.equal(gettingStartedPage.selectedLanguage.getText(), 'Java')
-      assert.equal(
-        containsJavaCode(gettingStartedPage.languageCodeBlock.getText()),
-        true
-      )
+      assert.equal(gettingStartedPage.selectedLanguage, 'python')
+
+      gettingStartedPage.javaOption.click()
+      assert.equal(gettingStartedPage.selectedLanguage, 'java')
     })
   })
 })
