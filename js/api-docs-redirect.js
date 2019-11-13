@@ -23,6 +23,7 @@
       case '#upload-a-file':
       case '#deleting-a-file': return `/developers/api/data-api-specification${hash}`
       case '#api-versioning': return '/developers/api/api-versioning'
+      case '#clients': return '/developers/api/clients'
       case '#algorithm-development': return '/developers/api/algorithm-development'
       default: return undefined
     }
