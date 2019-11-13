@@ -10,6 +10,18 @@
       case '#input-output':
       case '#query-parameters':
       case '#error-handling': return `/developers/api/api-specification${hash}`
+      case '#data-api-specification': return '/developers/api/data-api-specification'
+      case '#data-uri':
+      case '#directories':
+      case '#listing-a-directory':
+      case '#creating-a-directory':
+      case '#updating-a-directory':
+      case '#deleting-a-directory':
+      case '#files':
+      case '#getting-a-file':
+      case '#check-if-file-exists':
+      case '#upload-a-file':
+      case '#deleting-a-file': return `/developers/api/data-api-specification${hash}`
       case '#api-versioning': return '/developers/api/api-versioning'
       case '#algorithm-development': return '/developers/api/algorithm-development'
       default: return undefined
