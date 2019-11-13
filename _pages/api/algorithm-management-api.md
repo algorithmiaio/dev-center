@@ -59,7 +59,19 @@ Then, call `algo.create(details, settings)` -- the parameters are dictionaries w
 
 </div>
 
-Once this has been done, your algorithm will be visible at https://algorithmia.com/algorithms/USERNAME/ALGONAME ... but it doesn't have any code yet. You'll need to `git clone https://git.algorithmia.com/git/USERNAME/ALGONAME.git`, then add and commit code, before continuing on to the Publishing step.
+Once this has been done, your algorithm will be visible at
+
+<code class="syn-text-break-word">
+  https://algorithmia.com/algorithms/USERNAME/ALGONAME
+</code>
+
+...but it doesn't have any code yet. You'll need to run
+
+<code class="syn-text-break-word">
+  git clone https://git.algorithmia.com/git/USERNAME/ALGONAME.git
+</code>
+
+and add and commit code, before continuing on to the Publishing step.
 
 {% include aside-middle.html %}
 
