@@ -2,51 +2,31 @@ const DeveloperCenterPage = require('./DeveloperCenterBase')
 
 class GettingStartedPage extends DeveloperCenterPage {
   get toastMessage() {
-    return $('#toast-container')
+    return $('.syn-toast')
   }
 
   get firstCodeExampleCopyIcon() {
-    return $('.gs-code-container button')
+    return $('.syn-code-block button')
   }
 
   get secondCodeExampleCodePane() {
-    return $$('.gs-code-container')[1]
+    return $$('.syn-code-block')[1]
   }
 
-  get usernamePlaceholder() {
-    return $$('.hover-info')[0]
-  }
-
-  get apiKeyPlaceholder() {
-    return $$('.hover-info')[1]
-  }
-
-  get usernameHoverMessage() {
-    return this.usernamePlaceholder.$(`.hover-content`)
-  }
-
-  get apiKeyHoverMessage() {
-    return this.apiKeyPlaceholder.$(`.hover-content`)
-  }
-
-  get languageToggleButton() {
-    return $('button.dropdown-toggle')
+  get languageSelector() {
+    return $('.syn-code-language-selector')
   }
 
   get selectedLanguage() {
-    return this.languageToggleButton.$('span:first-of-type')
+    return this.languageSelector.getValue()
   }
 
-  get languageCodeBlock() {
-    return $$('.gs-code-container')[2].$('.gs-pane:not(.ng-hide)')
-  }
-
-  get javaLanguageOption() {
-    return $$('.gs-languages li')[1]
+  get javaOption() {
+    return this.languageSelector.$('option[value="java"]')
   }
 
   open() {
-    return browser.url('/developers/getting-started')
+    return browser.url('/developers/getting-started/')
   }
 
   searchFor(query) {
