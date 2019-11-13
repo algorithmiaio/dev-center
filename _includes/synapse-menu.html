@@ -1,0 +1,16 @@
+<ul>
+  {% for item in site.menus.side %}
+    <li>
+      <a class="syn-text-secondary" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+    </li>
+    {% if item.children %}
+      <ul>
+        {% for child in item.children %}
+        <li>
+          <a class="syn-text-secondary" href="{{ child.url }}" title="Go to {{ child.title }}">{{ child.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+  {% endfor %}
+</ul>

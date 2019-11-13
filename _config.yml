@@ -42,6 +42,7 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-last-modified-at
+  - jekyll-menus
 
 # Site owner
 owner:

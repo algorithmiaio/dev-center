@@ -1,6 +1,10 @@
 ---
 layout: api_docs_article
 title:  "API Authentication"
+menus:
+  api:
+    title: "API Authentication"
+    url: /developers/api/authentication
 ---
 
 ## API Keys
