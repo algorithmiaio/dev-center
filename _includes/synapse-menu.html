@@ -2,7 +2,7 @@
   {% for domain in site.menus.main %}
     <li class="">
       <a
-        class="syn-text-secondary syn-font-weight-medium {% if page.menus[domain.identifier] %}active{% endif %}"
+        class="syn-font-weight-bold no-bg{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
         href="{{ domain.url }}"
         title="{{ domain.title }}">
         {{ domain.title }}
@@ -12,7 +12,7 @@
           {% for section in domain.children %}
           <li>
             <a
-              class="syn-text-secondary {% if page.menus[domain.identifier].url == section.url %}active{% endif %}"
+              class="{% if page.menus[domain.identifier].url == section.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %}"
               href="{{ section.url }}"
               title="{{ section.title }}">
               {{ section.title }}
