@@ -19,23 +19,24 @@
       .classList.remove('syn-hidden-lg', 'syn-hidden-md', 'syn-hidden-sm')
   }
 
-  function setBrandTitle(customizationVals) {
+  function setBrandTitle(customizationVals = []) {
+    const defaultBrandTitle = window.__ENTERPRISE ? '' : 'AI LAYER'
     const brandTitle =
-      customizationVals.find(val => val.keyname === 'brandTitle') || {}
+      customizationVals.find(val => val.keyname === 'brandTitle') || {
+        value: defaultBrandTitle
+      }
 
     if (brandTitle && brandTitle.value) {
       document.getElementById('brand-title').innerText = brandTitle.value
+      showBrandTitle()
     }
-
-    showBrandTitle()
   }
 
+  let customizationVals = []
   try {
-    const customizationVals = await getStageCustomization()
-
-    setBrandTitle(customizationVals)
+    customizationVals = await getStageCustomization()
   } catch (err) {
-    // If we can't get customization values, leave brand title as is.
-    showBrandTitle()
+    // If we can't get customization values, use default brand title.
   }
+  setBrandTitle(customizationVals)
 })()
