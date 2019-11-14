@@ -72,3 +72,12 @@ p {
 table {
   @extend .syn-table;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.scrollable-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
