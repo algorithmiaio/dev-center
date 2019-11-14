@@ -12,6 +12,11 @@ redirect_from:
   - /algorithm-development/guides/
   - /application-development/client-guides/
   - /application-development/guides/
+menus:
+  devcenter:
+    url: /developers/clients
+    title: "Client Guides"
+    weight: 3
 ---
 
 

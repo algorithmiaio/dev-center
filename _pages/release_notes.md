@@ -6,6 +6,11 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 image:
     teaser: /icons/algo.svg
+menus:
+  devcenter:
+    url: /developers/release_notes
+    title: "Release Notes"
+    weight: 12
 ---
 
 # Algorithmia Enterprise Release Notes 19.05 #

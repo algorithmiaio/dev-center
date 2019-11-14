@@ -9,6 +9,11 @@ author: steph_kim
 permalink: /model-deployment/
 redirect_from:
   - /algorithm-development/model-guides/
+menus:
+  devcenter:
+    url: /developers/model-deployment
+    title: "Model Deployment"
+    weight: 8
 ---
 
 Here you'll find guides for hosting your machine or deep learning model. Below you'll find featured frameworks that are commonly used in machine and deep learning, however if you want to write your own model in the language of your choice using a different library, that's an option too. We currently support Java, Python, Rust, Ruby, R, JavaScript and Scala so checkout the <a href="{{site.baseurl}}/algorithm-development">Algorithm Development Guides</a>.

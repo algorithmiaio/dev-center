@@ -5,6 +5,11 @@ excerpt: "Guides and Plugins to integrate Algorithmia into other services/apps"
 tags: [app-guide-overview]
 show_related: false
 author: jon_peck
+menus:
+  devcenter:
+    url: /developers/integrations
+    title: Integrations
+    weight: 5
 ---
 
 <div class="syn-row">

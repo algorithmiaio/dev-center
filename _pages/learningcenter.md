@@ -4,6 +4,11 @@ layout: article_page
 title:  "Learning / Training Center"
 show_related: false
 excerpt: "The Learning Center hosts training modules to guide users along their Algorithmia journey."
+menus:
+  devcenter:
+    url: /developers/learningcenter
+    title: "Learning & Training Center"
+    weight: 9
 ---
 
 {% if site.enterprise %}
