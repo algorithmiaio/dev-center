@@ -1,6 +1,6 @@
-<ul class="syn-flex direction-column flex-item-grow overflow-hidden">
+<ul class="syn-flex direction-column flex-item-grow syn-overflow-hidden">
   {% for domain in site.menus.main %}
-    <li class="{% if page.menus[domain.identifier] %}flex-item-grow syn-flex direction-column{% else %}flex-item-no-shrink{% endif %} overflow-hidden">
+    <li class="{% if page.menus[domain.identifier] %}flex-item-grow syn-flex direction-column{% else %}flex-item-no-shrink{% endif %} syn-overflow-hidden">
       <a
         class="syn-font-weight-bold no-bg-active flex-item-no-shrink syn-flex justify-space-between align-center bordered{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
         href="{{ domain.url }}"
@@ -17,7 +17,7 @@
         {% endif %}
       </a>
       {% if domain.children %}
-        <ul id="{{domain.identifier}}-sub-menu" class="flex-item-grow scrollable-y">
+        <ul id="{{domain.identifier}}-sub-menu" class="flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
           {% for section in domain.children %}
           <li>
             <a
