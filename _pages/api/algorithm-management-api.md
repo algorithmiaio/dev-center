@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "Algorithm Management API"
+menus:
+  api:
+    title: "Algorithm Management API"
+    url: /developers/api/algorithm-management-api
+    weight: 8
 ---
 
 {% include aside-start.html %}

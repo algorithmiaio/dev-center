@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "Data API Specification"
+menus:
+  api:
+    title: "Data API Specification"
+    url: /developers/api/data-api-specification
+    weight: 4
 ---
 
 {% include aside-start.html %}

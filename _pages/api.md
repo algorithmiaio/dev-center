@@ -5,6 +5,7 @@ menus:
   api:
     title: "Home"
     url: /developers/api
+    weight: 1
 ---
 
 Welcome to the Algorithmia API documentation! You can use the API to access any algorithm in the marketplace.
