@@ -39,6 +39,10 @@
     {% else %}
       {% assign webserver = "https://algorithmia.com" %}
     {% endif %}
+
+    <script>
+      window.__ENTERPRISE = {{ site.enterprise }}
+    </script>
   </head>
 
   <body>
