@@ -14,7 +14,7 @@ exports[`CodeSample should change code sample to selected language if changed 1`
           <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
         </svg></button></div>
   </div>
-  <div class="syn-code-block-body">
+  <div replace-user-creds="" class="syn-code-block-body">
     <figure class="highlight python" hidden=""><pre><code data-lang="python" class="language-python"><span class="kn">import</span> <span class="nn">Algorithmia</span></code></pre>
     </figure>
     <figure class="highlight javascript"><pre><code data-lang="javascript" class="language-javascript"><span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">"YOUR_USERNAME"</span><span class="p">;</span></code></pre>
@@ -31,7 +31,7 @@ exports[`CodeSample should render default slot content if no custom content prov
           <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
         </svg></button></div>
   </div>
-  <div class="syn-code-block-body"><pre><code>// Sample Code Block
+  <div replace-user-creds="" class="syn-code-block-body"><pre><code>// Sample Code Block
 console.log('Hello world!')</code></pre>
   </div>
 </div>
@@ -45,7 +45,7 @@ exports[`CodeSample should render provided content in slot 1`] = `
           <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
         </svg></button></div>
   </div>
-  <div class="syn-code-block-body">
+  <div replace-user-creds="" class="syn-code-block-body">
     <figure class="highlight bash"><pre><code data-lang="bash" class="language-bash">POST https://api.algorithmia.com/v1/algo/:owner/:algoname</code></pre>
     </figure>
   </div>
@@ -66,7 +66,7 @@ exports[`CodeSample should show language dropdown and hide additional figures if
           <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
         </svg></button></div>
   </div>
-  <div class="syn-code-block-body">
+  <div replace-user-creds="" class="syn-code-block-body">
     <figure class="highlight python"><pre><code data-lang="python" class="language-python"><span class="kn">import</span> <span class="nn">Algorithmia</span></code></pre>
     </figure>
     <figure class="highlight javascript" hidden=""><pre><code data-lang="javascript" class="language-javascript"><span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">"YOUR_USERNAME"</span><span class="p">;</span></code></pre>
@@ -89,7 +89,7 @@ exports[`CodeSample should use code-sample-language instead of data-lang if prov
           <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
         </svg></button></div>
   </div>
-  <div class="syn-code-block-body">
+  <div replace-user-creds="" class="syn-code-block-body">
     <figure class="highlight python"><pre><code data-lang="python" class="language-python"><span class="kn">import</span> <span class="nn">Algorithmia</span></code></pre>
     </figure>
     <div code-sample-language="JavaScript">

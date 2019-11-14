@@ -33,24 +33,7 @@ RUN npm run jest
 RUN npm run vue:build
 
 #
-# Stage 3: build API docs
-#
-FROM ruby:2.3 AS docs-builder
-
-RUN apt-get update && apt-get install -y nodejs \
-  && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /opt/builds
-COPY ./api-docs .
-
-# Install dependencies
-RUN bundle install
-
-# Build docs
-RUN rake build
-
-#
-# Stage 4: build dev center
+# Stage 3: build dev center
 #
 FROM ubuntu:19.10 as dev-center-builder
 
@@ -79,7 +62,6 @@ FROM node:10.14-slim
 WORKDIR /opt/src/app
 
 COPY --from=dev-center-builder /opt/builds/sites ./sites
-COPY --from=docs-builder /opt/builds/build ./docs
 
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
