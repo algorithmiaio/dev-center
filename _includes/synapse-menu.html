@@ -2,10 +2,19 @@
   {% for domain in site.menus.main %}
     <li class="">
       <a
-        class="syn-font-weight-bold no-bg{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
+        class="syn-font-weight-bold no-bg syn-flex justify-space-between align-center{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
         href="{{ domain.url }}"
         title="{{ domain.title }}">
-        {{ domain.title }}
+        <span>
+          {{ domain.title }}
+        </span>
+        {% if domain.children %}
+          {% if page.menus[domain.identifier] %}
+            {% include angle-up-svg.html %}
+          {% else %}
+            {% include angle-down-svg.html %}
+          {% endif %}
+        {% endif %}
       </a>
       {% if domain.children %}
         <ul id="{{domain.identifier}}-sub-menu">
