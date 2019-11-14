@@ -1,10 +1,11 @@
-<ul>
+<ul class="syn-flex direction-column flex-item-grow">
   {% for domain in site.menus.main %}
-    <li class="">
+    <li {% if page.menus[domain.identifier] %} class="flex-item-grow syn-flex direction-column" {% endif %}>
       <a
-        class="syn-font-weight-bold no-bg-active syn-flex justify-space-between align-center{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
+        class="syn-font-weight-bold no-bg-active flex-item-no-shrink syn-flex justify-space-between align-center bordered{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
         href="{{ domain.url }}"
-        title="{{ domain.title }}">
+        title="{{ domain.title }}"
+        style="height: auto;">
         <span>
           {{ domain.title }}
         </span>
@@ -17,7 +18,7 @@
         {% endif %}
       </a>
       {% if domain.children %}
-        <ul id="{{domain.identifier}}-sub-menu">
+        <ul id="{{domain.identifier}}-sub-menu" class="flex-item-grow">
           {% for section in domain.children %}
           <li>
             <a

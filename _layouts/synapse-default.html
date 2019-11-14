@@ -47,8 +47,8 @@
           </svg>
         </button>
       </div>
-      <div class="syn-page-header-nav" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
-        <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16">
+      <div class="syn-page-header-nav syn-flex direction-column" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
+        <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16 flex-item-no-shrink">
           <a href="/">
             {% if site.isLocalDev or site.enterprise %}
             <img
@@ -66,7 +66,7 @@
           </a>
           <p class="syn-font-mono syn-caption syn-text-tertiary tagline syn-mt-8 syn-mb-0">Documentation</p>
         </div>
-        <nav class="syn-nav">
+        <nav class="syn-nav flex-item-grow syn-flex direction-column">
           {% include synapse-menu.html %}
         </nav>
       </div>
