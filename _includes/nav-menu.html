@@ -1,7 +1,7 @@
 <side-nav-menu
   v-cloak
-  class="syn-flex direction-column flex-item-grow syn-overflow-hidden">
-  <ul slot-scope="{ toggle, openSection }" class="syn-flex direction-column flex-item-grow syn-overflow-hidden">
+  class="syn-flex direction-column flex-item-grow syn-overflow-hidden{% unless include.menu_level == 0 %} syn-width-full {% endunless %}">
+  <ul slot-scope="{ toggle, openSection }" class="syn-flex direction-column flex-item-grow {% if include.menu_level == 0 %} syn-overflow-hidden {% else %}syn-width-full  syn-overflow-hidden-x syn-scrollable-y{% endif %}" id="{{ include.menu_level }}">
     {% for domain in site.menus[include.menu_id] %}
       {% assign domain_active = page.menus[domain.identifier] %}
       {% assign checking = domain %}
@@ -15,16 +15,16 @@
         id="{{ domain.identifier }}-list-item"
         >
         <a
-          class="syn-font-weight-bold no-bg-active flex-item-no-shrink syn-flex justify-space-between align-center bordered{% if domain_active %} active {% else %} syn-text-secondary {% endif %}"
+          class="{% if domain.children %}no-bg-active{% endif %} flex-item-no-shrink syn-flex justify-space-between align-center {% if include.menu_level == 0 %}syn-font-weight-bold bordered{% endif %} {% if domain_active or page.url == domain.url %}syn-font-weight-bold active {% else %} syn-text-secondary {% endif %}"
           href="{{ domain.url }}"
           title="{{ domain.title }}"
           {% if domain.children %}
             @click.prevent.stop="toggle('{{ domain.identifier }}')"
           {% endif %}
           id="{{ domain.identifier }}-link">
-          <span>
+          <div>
             {{ domain.title }}
-          </span>
+          </div>
           {% if domain.children %}
             <span v-if="openSection === '{{ domain.identifier }}'" {% unless page.menus[domain.identifier] %} class="cloak-hidden" {% endunless %}>
               {% include angle-up-svg.html %}
@@ -35,34 +35,8 @@
           {% endif %}
         </a>
         {% if domain.children %}
-          <ul id="{{domain.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
-            {% for section in domain.children %}
-            <li class="{% if page.menus[section.identifier] %}open-nav-item{% else %}closed-nav-item{% endif %} syn-overflow-hidden allow-wrap">
-              <a
-                class="{% if page.menus[domain.identifier].url == section.url or page.menus[section.identifier] %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %} {% if section.children %}no-bg-active{% endif %}"
-                href="{{ section.url }}"
-                title="{{ section.title }}">
-                {{ section.title }}
-              </a>
-              {% if section.children %}
-                <ul id="{{section.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
-                  {% for item in section.children %}
-                  <li class="allow-wrap">
-                    <a
-                      class="{% if page.menus[section.identifier].url == item.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %}"
-                      href="{{ item.url }}"
-                      title="{{ item.title }}">
-                      <div class="syn-ml-16">
-                        {{ item.title }}
-                      </div>
-                    </a>
-                  </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
+          {% assign next_menu_level = include.menu_level | plus:1 %}
+          {% include nav-menu.html menu_id=domain.identifier menu_level=next_menu_level %}
         {% endif %}
       </li>
     {% endfor %}
