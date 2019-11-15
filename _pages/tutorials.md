@@ -9,6 +9,7 @@ menus:
     url: /developers/tutorials
     title: Tutorials
     weight: 6
+    identifier: tutorials
 ---
 
 Here you will find sample apps and recipes (which are a little bit different).
