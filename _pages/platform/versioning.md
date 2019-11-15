@@ -11,6 +11,11 @@ image:
 permalink: /platform/versioning/
 redirect_from:
   - /basics/versioning/
+menus:
+  platform:
+    url: /developers/platform/versioning
+    title: "Versioning"
+    weight: 5
 ---
 
 ### Version Scheme

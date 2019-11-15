@@ -12,6 +12,7 @@ menus:
     url: /developers/platform
     title: Platform
     weight: 2
+    identifier: platform
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}
