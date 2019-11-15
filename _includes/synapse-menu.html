@@ -10,7 +10,7 @@
         {% endif %}
       {% endfor %}
       <li
-        class="{% if domain_active %}cloak-open-nav-item{% else %}cloak-closed-nav-item{% endif %} syn-overflow-hidden"
+        class="{% if domain_active %}cloak-open-nav-item{% else %}cloak-closed-nav-item{% endif %} syn-overflow-hidden allow-wrap"
         :class="{
           'open-nav-item': openSection === '{{domain.identifier}}',
           'closed-nav-item': openSection !== '{{domain.identifier}}'
@@ -40,7 +40,7 @@
         {% if domain.children %}
           <ul id="{{domain.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
             {% for section in domain.children %}
-            <li class="{% if page.menus[section.identifier] %}open-nav-item{% else %}closed-nav-item{% endif %} syn-overflow-hidden">
+            <li class="{% if page.menus[section.identifier] %}open-nav-item{% else %}closed-nav-item{% endif %} syn-overflow-hidden allow-wrap">
               <a
                 class="{% if page.menus[domain.identifier].url == section.url or page.menus[section.identifier] %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %} {% if section.children %}no-bg-active{% endif %}"
                 href="{{ section.url }}"
@@ -50,14 +50,14 @@
               {% if section.children %}
                 <ul id="{{section.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
                   {% for item in section.children %}
-                  <li>
+                  <li class="allow-wrap">
                     <a
                       class="{% if page.menus[section.identifier].url == item.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %}"
                       href="{{ item.url }}"
                       title="{{ item.title }}">
-                      <span class="syn-ml-16">
+                      <div class="syn-ml-16">
                         {{ item.title }}
-                      </span>
+                      </div>
                     </a>
                   </li>
                   {% endfor %}
