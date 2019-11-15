@@ -26,11 +26,12 @@
             {{ domain.title }}
           </span>
           {% if domain.children %}
-            {% if page.menus[domain.identifier] %}
+            <span v-if="activeSection === '{{ domain.identifier }}'" {% unless page.menus[domain.identifier] %} class="cloak-hidden" {% endunless %}>
               {% include angle-up-svg.html %}
-            {% else %}
+            </span>
+            <span v-else {% if page.menus[domain.identifier] %} class="cloak-hidden" {% endif %}>
               {% include angle-down-svg.html %}
-            {% endif %}
+            </span>
           {% endif %}
         </a>
         {% if domain.children %}

@@ -75,6 +75,7 @@ table {
   @extend .syn-table;
 }
 
+// Styles for side menu before vue finishes loading
 side-nav-menu[v-cloak] {
   .cloak-flex {
     @extend .syn-flex;
@@ -94,5 +95,9 @@ side-nav-menu[v-cloak] {
 
   .cloak-open {
     @extend .open;
+  }
+
+  .cloak-hidden {
+    display: none;
   }
 }
