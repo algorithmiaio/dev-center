@@ -12,6 +12,10 @@ image:
 redirect_from:
   - /application-development/data-connectors/dropbox-guide/
   - /application-development/data-sources/dropbox-guide/
+menus:
+  data:
+    url: /developers/data/dropbox
+    title: "Dropbox"
 ---
 
 Here you'll learn how to connect and access your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

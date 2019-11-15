@@ -13,6 +13,10 @@ redirect_from:
   - /algorithm-development/data-sources/hosted-data-guide/
   - /application-development/data-connectors/hosted-data-guide/
   - /application-development/data-sources/hosted-data-guide/
+menus:
+  data:
+    url: /developers/data/hosted
+    title: "Hosted Data"
 ---
 
 

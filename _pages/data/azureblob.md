@@ -9,6 +9,10 @@ show_related: true
 author: steph_kim
 image:
     teaser: /language_logos/azure_icon.svg
+menus:
+  data:
+    url: /developers/data/azureblob
+    title: "Azure Blob"
 ---
 
 Learn how to access the data you need from your Azure Blob in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

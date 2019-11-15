@@ -8,7 +8,11 @@ tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/mssql.png 
+    teaser: /language_logos/mssql.png
+menus:
+  data:
+    url: /developers/data/mssqlserver
+    title: "MS SQL Server"
 ---
 
 If your algorithm needs to read or write data from a MsSqlServer database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
@@ -27,7 +31,7 @@ Inside this folder, create a `.json` file containing your connection credentials
   "server":"fakeserver.net",
   "user":"someuser",
   "password":"somepass"
-} 
+}
 ```
 
 Then, inside your own algorithm, add a MsSqlServer library to your dependencies file (in this example, `pymssql`), then load the credentials from the JSON file and use them to make your DB connection:

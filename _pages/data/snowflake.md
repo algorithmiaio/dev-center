@@ -8,7 +8,11 @@ tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/snowflake_computing.png 
+    teaser: /language_logos/snowflake_computing.png
+menus:
+  data:
+    url: /developers/data/snowflake
+    title: "Snowflake Computing Databases"
 ---
 
 Algorithms can easily access databases hosted by Snowflake Computing using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/) .
@@ -50,6 +54,6 @@ def apply(input):
     finally:
         cs.close()
         ctx.close()
-``` 
+```
 
 Build and test this Algorithm. Assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.

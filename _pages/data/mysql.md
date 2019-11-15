@@ -8,7 +8,11 @@ tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/mysql.png 
+    teaser: /language_logos/mysql.png
+menus:
+  data:
+    url: /developers/data/mysql
+    title: "MySql"
 ---
 
 If your algorithm needs to read or write data from a MySql database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
@@ -28,7 +32,7 @@ Inside this folder, create a `.json` file containing your connection credentials
   "user":"someuser",
   "passwd":"somepass",
   "db":"somedb"
-} 
+}
 ```
 
 Then, inside your own algorithm, add a MySql library to your dependencies file (in this example, `PyMySql`), then load the credentials from the JSON file and use them to make your DB connection:
