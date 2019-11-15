@@ -3,9 +3,9 @@
 exports[`SideNavMenu should pass open section as a slot prop 1`] = `
 <div>
   <ul>
-    <li id="devcenter-list-item" class="cloak-closed-nav-item"></li>
-    <li id="api-list-item" class="cloak-open-nav-item open-nav-item"></li>
-    <li id="home-list-item" class="cloak-closed-nav-item"></li>
+    <li id="devcenter-list-item" nav-menu-identifier="main" class="cloak-closed-nav-item"></li>
+    <li id="api-list-item" nav-menu-identifier="main" class="cloak-open-nav-item open-nav-item"></li>
+    <li nav-menu-identifier="main" id="home-list-item" class="cloak-closed-nav-item"></li>
   </ul>
 </div>
 `;
