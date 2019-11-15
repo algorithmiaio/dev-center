@@ -34,13 +34,29 @@
         {% if domain.children %}
           <ul id="{{domain.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
             {% for section in domain.children %}
-            <li>
+            <li class="{% if page.menus[section.identifier] %}open-nav-item{% else %}closed-nav-item{% endif %} syn-overflow-hidden">
               <a
-                class="{% if page.menus[domain.identifier].url == section.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %}"
+                class="{% if page.menus[domain.identifier].url == section.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %} {% if section.children %}no-bg-active{% endif %}"
                 href="{{ section.url }}"
                 title="{{ section.title }}">
                 {{ section.title }}
               </a>
+              {% if section.children %}
+                <ul id="{{section.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
+                  {% for item in section.children %}
+                  <li>
+                    <a
+                      class="{% if page.menus[section.identifier].url == item.url %}active syn-font-weight-bold {% else %} syn-text-secondary {% endif %}"
+                      href="{{ item.url }}"
+                      title="{{ item.title }}">
+                      <span class="syn-ml-16">
+                        {{ item.title }}
+                      </span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </li>
             {% endfor %}
           </ul>
