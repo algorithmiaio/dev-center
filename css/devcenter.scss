@@ -73,3 +73,18 @@ p {
 table {
   @extend .syn-table;
 }
+
+// Styles for side menu before vue finishes loading
+side-nav-menu[v-cloak] {
+  .cloak-hidden {
+    display: none;
+  }
+
+  .cloak-open-nav-item {
+    @extend .open-nav-item;
+  }
+
+  .cloak-closed-nav-item {
+    @extend .closed-nav-item;
+  }
+}
