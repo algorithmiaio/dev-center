@@ -8,6 +8,7 @@
 @import "../synapse/table";
 @import "../synapse/nav";
 @import "../synapse/overflow";
+@import "../synapse/flex";
 
 body {
   min-height: 100vh;
@@ -72,4 +73,26 @@ p {
 
 table {
   @extend .syn-table;
+}
+
+side-nav-menu[v-cloak] {
+  .cloak-flex {
+    @extend .syn-flex;
+
+    &.cloak-direction-column {
+      @extend .direction-column;
+    }
+  }
+
+  .syn-flex .cloak-item-no-shrink {
+    @extend .flex-item-no-shrink;
+  }
+
+  .syn-flex .cloak-item-grow {
+    @extend .flex-item-grow;
+  }
+
+  .cloak-open {
+    @extend .open;
+  }
 }
