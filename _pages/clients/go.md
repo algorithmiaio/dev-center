@@ -15,6 +15,7 @@ menus:
   clients:
     url: /developers/clients/go
     title: "Go"
+    weight: 5
 ---
 
 This guide provides a walk-through of how to use the Algorithmia Go client to call algorithms and manage your data

@@ -11,6 +11,7 @@ menus:
   clients:
     url: /developers/clients/perl
     title: "Perl"
+    weight: 9
 ---
 
 The Perl client is still in development.  For now, you can do a raw POST inside your Perl code to call any algorithm:

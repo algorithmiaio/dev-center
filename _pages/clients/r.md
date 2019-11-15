@@ -16,6 +16,7 @@ menus:
   clients:
     url: /developers/clients/r
     title: "R"
+    weight: 12
 ---
 
 

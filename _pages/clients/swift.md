@@ -14,6 +14,7 @@ menus:
   clients:
     url: /developers/clients/swift
     title: "Swift"
+    weight: 15
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Swift Client to call algorithms and manage your data through the Algorithmia platform.

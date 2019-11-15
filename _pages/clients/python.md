@@ -19,6 +19,7 @@ menus:
   clients:
     url: /developers/clients/python
     title: "Python"
+    weight: 11
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/bZB2vu0v6A0" %}

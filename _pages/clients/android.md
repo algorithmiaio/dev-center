@@ -15,6 +15,7 @@ menus:
   clients:
     url: /developers/clients/android
     title: "Android"
+    weight: 2
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Android Client to call algorithms and manage your data through the Algorithmia platform.

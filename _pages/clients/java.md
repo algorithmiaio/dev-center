@@ -18,6 +18,7 @@ menus:
   clients:
     url: /developers/clients/java
     title: "Java"
+    weight: 6
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Java Client to call algorithms and manage data through the Algorithmia platform.

@@ -19,6 +19,7 @@ menus:
   clients:
     url: /developers/clients/ruby
     title: "Ruby"
+    weight: 12
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Ruby client to call algorithms and manage your data

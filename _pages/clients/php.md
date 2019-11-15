@@ -11,6 +11,7 @@ menus:
   clients:
     url: /developers/clients/php
     title: "PHP"
+    weight: 10
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia PHP Client to call algorithms and manage data through the Algorithmia platform.

@@ -18,6 +18,7 @@ menus:
   clients:
     url: /developers/clients/scala
     title: "Scala"
+    weight: 14
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Scala Client to call algorithms and manage data through the Algorithmia platform.

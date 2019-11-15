@@ -17,6 +17,7 @@ menus:
   clients:
     url: /developers/clients/node
     title: "Node"
+    weight: 8
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Node.js Client to call algorithms and manage data through the Algorithmia platform.
