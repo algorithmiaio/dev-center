@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/azureblob
     title: "Azure Blob"
+    weight: 2
 ---
 
 Learn how to access the data you need from your Azure Blob in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

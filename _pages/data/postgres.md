@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/postgres
     title: "PostgreSQL"
+    weight: 12
 ---
 
 If your algorithm needs to read or write data from a PostgreSQL database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.

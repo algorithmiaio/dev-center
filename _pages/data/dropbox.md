@@ -16,6 +16,7 @@ menus:
   data:
     url: /developers/data/dropbox
     title: "Dropbox"
+    weight: 3
 ---
 
 Here you'll learn how to connect and access your Dropbox account in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

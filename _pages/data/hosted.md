@@ -17,6 +17,7 @@ menus:
   data:
     url: /developers/data/hosted
     title: "Hosted Data"
+    weight: 7
 ---
 
 

@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/hdfs
     title: "HDFS"
+    weight: 6
 ---
 
 If your algorithm needs to read or write data from your hadoop cluster, you can do so using [webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html).

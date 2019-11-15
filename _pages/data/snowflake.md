@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/snowflake
     title: "Snowflake Computing Databases"
+    weight: 14
 ---
 
 Algorithms can easily access databases hosted by Snowflake Computing using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/) .

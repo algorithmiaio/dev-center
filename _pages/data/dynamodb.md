@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/dynamodb
     title: "DynamoDB"
+    weight: 4
 ---
 
 Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/sdk-for-python/) package and securely storing their access credentials in a data collection.

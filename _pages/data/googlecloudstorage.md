@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/googlecloudstorage
     title: "Google Cloud Storage"
+    weight: 5
 ---
 
 Learn how to access the data you need from your Google Cloud Storage in a few easy steps. This guide will tell you how to configure and connect to your data source and provide details about setting various permissions.

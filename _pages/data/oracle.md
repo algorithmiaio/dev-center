@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/oracle
     title: "Oracle DB"
+    weight: 10
 ---
 
 Call the <a href="{{site.url}}/algorithms/util/OracleDB">OracleDB</a> algorithm to access data in your Oracle database.

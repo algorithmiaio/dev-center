@@ -13,6 +13,7 @@ menus:
   data:
     url: /developers/data/otherfiles
     title: "Other File Storage"
+    weight: 11
 ---
 
 If your algorithm needs to read or write data files from a data source for which there is no [Data Connector](../), you can connect directly to that provider from within your algorithm.
