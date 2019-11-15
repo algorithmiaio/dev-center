@@ -18,6 +18,27 @@ describe('SideNavMenu', () => {
     expect(wrapper.vm.$data.openSection).toEqual('api')
   })
 
+  test('should not grab open list item if "nav-menu-identifier" is not the same as menuIdentifier prop', () => {
+    const wrapper = mount(SideNavMenu, {
+      propsData: {
+        menuIdentifier: 'main'
+      },
+      slots: {
+        default: `<ul>
+  <li class="cloak-closed-nav-item" id="devcenter-list-item" nav-menu-identifier="main">
+    <ul>
+      <li class="cloak-open-nav-item" id="api-list-item" nav-menu-identifier="secondary"></li>
+    </ul>
+  </li>
+  <li class="cloak-open-nav-item" id="api-list-item" nav-menu-identifier="main"></li>
+  <li class="cloak-closed-nav-item" id="home-list-item" nav-menu-identifier="main"></li>
+</ul>`
+      }
+    })
+    expect(wrapper.vm.$data.openSection).toEqual('api')
+  })
+
+
   test('should update active section when toggle method called by slot', () => {
     const wrapper = mount(SideNavMenu, {
       propsData: {
