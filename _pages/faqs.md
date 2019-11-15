@@ -10,6 +10,11 @@ image:
 redirect_from:
   - /basics/algo-dev-faq/
   - /basics/platform-faq/
+menus:
+  devcenter:
+    url: /developers/faqs
+    title: "FAQ"
+    weight: 13
 ---
 
 <div id="faqs-index">

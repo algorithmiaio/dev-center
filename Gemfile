@@ -13,6 +13,7 @@ gem 'nokogiri'
 gem 'git'
 gem 'metainspector'
 gem 'mini_magick'
+gem 'jekyll-menus'
 
 # Used for publishing
 group :deploy do

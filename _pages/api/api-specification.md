@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "API Specification"
+menus:
+  api:
+    title: "API Specification"
+    url: /developers/api/api-specification
+    weight: 3
 ---
 
 The Algorithmia API gives developers the ability to build applications that interact with and use all the features of Algorithmia in an automated fashion. Tasks can be generated, work can be ordered, and your application can be notified as data is processed by Algorithmia.

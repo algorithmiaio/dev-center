@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "Clients"
+menus:
+  api:
+    title: "Clients"
+    url: /developers/api/clients
+    weight: 6
 ---
 
 Algorithmia clients are available as libraries for you to use inside your project.

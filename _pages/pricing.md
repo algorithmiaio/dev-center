@@ -8,6 +8,11 @@ redirect_from:
 show_related: true
 image:
     teaser: /icons/algo.svg
+menus:
+  devcenter:
+    url: /developers/pricing
+    title: "Pricing"
+    weight: 11
 ---
 
 

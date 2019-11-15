@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "API Versioning"
+menus:
+  api:
+    title: "API Versioning"
+    url: /developers/api/api-versioning
+    weight: 5
 ---
 
 Algorithmia API is versioned with the version specified on the URL route:

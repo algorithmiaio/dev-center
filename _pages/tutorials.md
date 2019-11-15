@@ -4,6 +4,11 @@ layout: article_page
 title:  "Tutorials"
 show_related: false
 excerpt: "Tutorials. Sample apps and recipes to help you learn whats going on."
+menus:
+  devcenter:
+    url: /developers/tutorials
+    title: Tutorials
+    weight: 6
 ---
 
 Here you will find sample apps and recipes (which are a little bit different).

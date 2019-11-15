@@ -1,6 +1,11 @@
 ---
 layout: api_docs_article
 title:  "Need Help?"
+menus:
+  api:
+    title: "Need Help?"
+    url: /developers/api/need-help
+    weight: 9
 ---
 
 We're here to help you! If you are just getting started with Algorithmia, be sure to check out the guides and tutorials in the [Algorithmia Developer Center]({{site.baseurl}}).

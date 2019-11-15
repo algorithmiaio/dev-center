@@ -48,6 +48,8 @@ GEM
     jekyll-last-modified-at (1.1.0)
       jekyll (>= 3.7, < 5.0)
       posix-spawn (~> 0.3.9)
+    jekyll-menus (0.6.1)
+      jekyll (>= 3.6, < 5.0)
     jekyll-redirect-from (0.15.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
@@ -136,6 +138,7 @@ DEPENDENCIES
   git
   jekyll (= 3.8.5)
   jekyll-last-modified-at
+  jekyll-menus
   jekyll-redirect-from
   jekyll-sitemap
   metainspector

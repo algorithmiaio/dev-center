@@ -7,6 +7,11 @@ redirect_from:
  - /basics/
  - /application-development/basic-guides/
  - /basics/algorithm_basics/
+menus:
+  devcenter:
+    url: /developers/platform
+    title: Platform
+    weight: 2
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}
