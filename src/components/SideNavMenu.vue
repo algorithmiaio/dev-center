@@ -1,6 +1,6 @@
 <template>
   <div ref="menu">
-    <slot :toggle="toggle" :activeSection="activeSection"></slot>
+    <slot :toggle="toggle" :openSection="openSection"></slot>
   </div>
 </template>
 
@@ -9,18 +9,18 @@ export default {
   name: 'SideNavMenu',
   data() {
     return {
-      activeSection: ''
+      openSection: ''
     }
   },
   methods: {
     toggle(sectionName) {
       console.log('toggling', sectionName)
-      this.activeSection = this.activeSection === sectionName ? '' : sectionName
+      this.openSection = this.openSection === sectionName ? '' : sectionName
     },
     getOpenSection() {
       const openLink = this.$refs.menu.querySelector('a.cloak-open')
       if (openLink) {
-        this.activeSection = openLink.id.replace('-link', '')
+        this.openSection = openLink.id.replace('-link', '')
       }
     },
   },
