@@ -11,6 +11,7 @@ menus:
   algo_development:
     url: /developers/algorithm-development/comparing-algorithms
     title: "Evaluations"
+    weight: 7
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/QEddoz6xFao" %}

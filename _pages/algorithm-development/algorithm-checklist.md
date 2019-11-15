@@ -16,6 +16,7 @@ menus:
   algo_development:
     url: /developers/algorithm-development/algorithm-checklist
     title: "Algorithm Checklist"
+    weight: 3
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.

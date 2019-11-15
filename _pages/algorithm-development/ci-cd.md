@@ -13,6 +13,7 @@ menus:
   algo_development:
     url: /developers/algorithm-development/ci-cd
     title: "Deploy Models via Jenkins CI/CD or GitHub Actions"
+    weight: 6
 ---
 
 Continuous Integration & Deployment are standard practice in the world of software development, and Machine Learning is no exception: you need a robust CI/CD workflow to ensure that your latest models are deployed efficiently and correctly into production.

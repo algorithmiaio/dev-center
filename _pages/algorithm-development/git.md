@@ -15,6 +15,7 @@ menus:
   algo_development:
     url: /developers/algorithm-development/git
     title: "Git Versioning"
+    weight: 8
 ---
 
 Every algorithm on Algorithmia has a dedicated git repository. Using this repository allows you to seamlessly integrate Algorithmia with your current workflows,

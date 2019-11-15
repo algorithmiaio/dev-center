@@ -13,6 +13,7 @@ menus:
   algo_development:
     url: /developers/algorithm-development/reloading-models
     title: "Reloading Models"
+    weight: 11
 ---
 
 Most Machine Learning Models will change at some point, and when they do, you want to make your retrained model available quickly and efficiently.
