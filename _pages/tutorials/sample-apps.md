@@ -12,7 +12,8 @@ redirect_from:
 menus:
   tutorials:
     url: /developers/tutorials/sample-apps
-    title: "Recipes"
+    title: "Sample Apps"
+    weight: 3
 ---
 
 

@@ -11,6 +11,7 @@ menus:
   tutorials:
     url: /developers/tutorials/webinars
     title: "Webinars"
+    weight: 4
 ---
 
 ## Join us for a Webinar
