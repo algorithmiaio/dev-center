@@ -8,6 +8,11 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/rust.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/rust
+    title: "Rust"
+    weight: 7
 ---
 
 Before you get started learning about Rust algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
