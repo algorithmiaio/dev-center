@@ -22,7 +22,10 @@
             @click.prevent.stop="toggle('{{ domain.identifier }}')"
           {% endif %}
           id="{{ domain.identifier }}-link">
-          <div>
+          <div {% if include.menu_level > 1 %}
+              {% assign indent = include.menu_level | minus:1 | times:16 %}
+              class="syn-ml-{{indent}}"
+            {% endif %}>
             {{ domain.title }}
           </div>
           {% if domain.children %}
