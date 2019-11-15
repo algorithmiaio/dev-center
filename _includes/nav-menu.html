@@ -6,50 +6,50 @@
     class="syn-flex direction-column flex-item-grow
       {% if include.menu_level == 0 %}syn-overflow-hidden
       {% else %}syn-width-full  syn-overflow-hidden-x syn-scrollable-y{% endif %}">
-    {% for domain in site.menus[include.menu_id] %}
-      {% assign domain_active = page.menus[domain.identifier] %}
-      {% assign checking = domain %}
+    {% for section in site.menus[include.menu_id] %}
+      {% assign section_active = page.menus[section.identifier] %}
+      {% assign checking = section %}
       {% include section-active.html %}
       <li
         class="syn-overflow-hidden allow-wrap
-          {% if domain_active %}cloak-open-nav-item
+          {% if section_active %}cloak-open-nav-item
           {% else %}cloak-closed-nav-item{% endif %}"
         :class="{
-          'open-nav-item': openSection === '{{domain.identifier}}',
-          'closed-nav-item': openSection !== '{{domain.identifier}}'
+          'open-nav-item': openSection === '{{section.identifier}}',
+          'closed-nav-item': openSection !== '{{section.identifier}}'
         }"
-        id="{{ domain.identifier }}-list-item"
+        id="{{ section.identifier }}-list-item"
         >
         <a
           class="flex-item-no-shrink syn-flex justify-space-between align-center
-            {% if domain.children %}no-bg-active{% endif %}
+            {% if section.children %}no-bg-active{% endif %}
             {% if include.menu_level == 0 %}syn-font-weight-bold bordered{% endif %}
-            {% if domain_active or page.menus[include.menu_id].url == domain.url %}syn-font-weight-bold active
+            {% if section_active or page.menus[include.menu_id].url == section.url %}syn-font-weight-bold active
             {% else %}syn-text-secondary{% endif %}"
-          href="{{ domain.url }}"
-          title="{{ domain.title }}"
-          {% if domain.children %}
-            @click.prevent.stop="toggle('{{ domain.identifier }}')"
+          href="{{ section.url }}"
+          title="{{ section.title }}"
+          {% if section.children %}
+            @click.prevent.stop="toggle('{{ section.identifier }}')"
           {% endif %}
-          id="{{ domain.identifier }}-link">
+          id="{{ section.identifier }}-link">
           <div {% if include.menu_level > 1 %}
               {% assign indent = include.menu_level | minus:1 | times:16 %}
               class="syn-ml-{{indent}}"
             {% endif %}>
-            {{ domain.title }}
+            {{ section.title }}
           </div>
-          {% if domain.children %}
-            <span v-if="openSection === '{{ domain.identifier }}'" {% unless page.menus[domain.identifier] %} class="cloak-hidden" {% endunless %}>
+          {% if section.children %}
+            <span v-if="openSection === '{{ section.identifier }}'" {% unless page.menus[section.identifier] %} class="cloak-hidden" {% endunless %}>
               {% include angle-up-svg.html %}
             </span>
-            <span v-else {% if page.menus[domain.identifier] %} class="cloak-hidden" {% endif %}>
+            <span v-else {% if page.menus[section.identifier] %} class="cloak-hidden" {% endif %}>
               {% include angle-down-svg.html %}
             </span>
           {% endif %}
         </a>
-        {% if domain.children %}
+        {% if section.children %}
           {% assign next_menu_level = include.menu_level | plus:1 %}
-          {% include nav-menu.html menu_id=domain.identifier menu_level=next_menu_level %}
+          {% include nav-menu.html menu_id=section.identifier menu_level=next_menu_level %}
         {% endif %}
       </li>
     {% endfor %}
