@@ -18,9 +18,9 @@ export default {
       this.openSection = this.openSection === sectionName ? '' : sectionName
     },
     getOpenSection() {
-      const openLink = this.$refs.menu.querySelector('a.cloak-open')
+      const openLink = this.$refs.menu.querySelector('li.cloak-open-nav-item')
       if (openLink) {
-        this.openSection = openLink.id.replace('-link', '')
+        this.openSection = openLink.id.replace('-list-item', '')
       }
     },
   },

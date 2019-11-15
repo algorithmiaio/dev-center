@@ -4,24 +4,21 @@
   <ul slot-scope="{ toggle, openSection }" class="syn-flex direction-column flex-item-grow syn-overflow-hidden">
     {% for domain in site.menus.main %}
       <li
-        class="{% if page.menus[domain.identifier] %}cloak-item-grow cloak-flex cloak-direction-column{% else %}cloak-item-no-shrink{% endif %} syn-overflow-hidden main-nav-list-item"
+        class="{% if page.menus[domain.identifier] %}cloak-open-nav-item{% else %}cloak-closed-nav-item{% endif %} syn-overflow-hidden"
         :class="{
-          'flex-item-grow syn-flex direction-column': openSection === '{{domain.identifier}}',
-          'flex-item-no-shrink': openSection !== '{{domain.identifier}}'
+          'open-nav-item': openSection === '{{domain.identifier}}',
+          'closed-nav-item': openSection !== '{{domain.identifier}}'
         }"
+        id="{{ domain.identifier }}-list-item"
         >
         <a
-          class="syn-font-weight-bold no-bg-active flex-item-no-shrink syn-flex justify-space-between align-center bordered{% if page.menus[domain.identifier] %} active cloak-open {% else %} syn-text-secondary {% endif %}"
+          class="syn-font-weight-bold no-bg-active flex-item-no-shrink syn-flex justify-space-between align-center bordered{% if page.menus[domain.identifier] %} active {% else %} syn-text-secondary {% endif %}"
           href="{{ domain.url }}"
           title="{{ domain.title }}"
           {% if domain.children %}
             @click.prevent.stop="toggle('{{ domain.identifier }}')"
           {% endif %}
-          :class="{
-            'open': openSection === '{{domain.identifier}}',
-          }"
-          id="{{ domain.identifier }}-link"
-          >
+          id="{{ domain.identifier }}-link">
           <span>
             {{ domain.title }}
           </span>
@@ -35,7 +32,7 @@
           {% endif %}
         </a>
         {% if domain.children %}
-          <ul id="{{domain.identifier}}-sub-menu" class="flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
+          <ul id="{{domain.identifier}}-sub-menu" class="syn-width-full flex-item-grow syn-overflow-hidden-x syn-scrollable-y">
             {% for section in domain.children %}
             <li>
               <a

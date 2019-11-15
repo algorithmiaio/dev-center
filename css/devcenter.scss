@@ -8,7 +8,6 @@
 @import "../synapse/table";
 @import "../synapse/nav";
 @import "../synapse/overflow";
-@import "../synapse/flex";
 
 body {
   min-height: 100vh;
@@ -77,27 +76,15 @@ table {
 
 // Styles for side menu before vue finishes loading
 side-nav-menu[v-cloak] {
-  .cloak-flex {
-    @extend .syn-flex;
-
-    &.cloak-direction-column {
-      @extend .direction-column;
-    }
-  }
-
-  .syn-flex .cloak-item-no-shrink {
-    @extend .flex-item-no-shrink;
-  }
-
-  .syn-flex .cloak-item-grow {
-    @extend .flex-item-grow;
-  }
-
-  .cloak-open {
-    @extend .open;
-  }
-
   .cloak-hidden {
     display: none;
+  }
+
+  .cloak-open-nav-item {
+    @extend .open-nav-item;
+  }
+
+  .cloak-closed-nav-item {
+    @extend .closed-nav-item;
   }
 }
