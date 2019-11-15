@@ -1,4 +1,5 @@
 <side-nav-menu
+  menu-identifier="{{ include.menu_id }}"
   v-cloak
   class="syn-flex direction-column flex-item-grow syn-overflow-hidden
     {% unless include.menu_level == 0 %} syn-width-full {% endunless %}">
@@ -19,6 +20,7 @@
           'closed-nav-item': openSection !== '{{section.identifier}}'
         }"
         id="{{ section.identifier }}-list-item"
+        nav-menu-identifier="{{ include.menu_id }}"
         >
         <a
           class="flex-item-no-shrink syn-flex justify-space-between align-center
