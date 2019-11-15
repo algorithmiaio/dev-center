@@ -15,6 +15,10 @@ redirect_from:
   - /algorithm-development/guides/python-guide/
   - /application-development/client-guides/python/
   - /application-development/guides/python/
+menus:
+  clients:
+    url: /developers/clients/python
+    title: "Python"
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/bZB2vu0v6A0" %}

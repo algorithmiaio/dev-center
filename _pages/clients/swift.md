@@ -10,6 +10,10 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-swift
 redirect_from:
   - /application-development/client-guides/swift/
+menus:
+  clients:
+    url: /developers/clients/swift
+    title: "Swift"
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Swift Client to call algorithms and manage your data through the Algorithmia platform.

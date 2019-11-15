@@ -7,6 +7,10 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/perl.svg
+menus:
+  clients:
+    url: /developers/clients/perl
+    title: "Perl"
 ---
 
 The Perl client is still in development.  For now, you can do a raw POST inside your Perl code to call any algorithm:
@@ -14,7 +18,7 @@ The Perl client is still in development.  For now, you can do a raw POST inside 
 #### Calling an algorithm in Perl
 
 {% highlight perl %}
-  
+
 use LWP::UserAgent;
 
 # get your API Key at https://algorithmia.com/user#credentials

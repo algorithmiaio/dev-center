@@ -7,6 +7,10 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/php.svg
+menus:
+  clients:
+    url: /developers/clients/php
+    title: "PHP"
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia PHP Client to call algorithms and manage data through the Algorithmia platform.
@@ -19,7 +23,7 @@ Here you will learn how to install the Algorithmia PHP Client, run machine learn
 
 The official Algorithmia PHP Client is [available](https://packagist.org/packages/algorithmia/algorithmia) via [Composer](https://packagist.org/):
 {% highlight bash %}
-composer require algorithmia/algorithmia 
+composer require algorithmia/algorithmia
 {% endhighlight %}
 or
 {% highlight bash %}
@@ -96,7 +100,7 @@ If we instead wanted the folder to be completely private (only you can access it
 
 {% highlight php %}
 //Create a directory which only you can read:
-$newdir = $client->dir("data://.my/mynewfolder")->create(ACL::FULLY_PRIVATE); 
+$newdir = $client->dir("data://.my/mynewfolder")->create(ACL::FULLY_PRIVATE);
 //check the permission on a folder like so:
 echo $newdir->getReadAcl();
 {% endhighlight %}
@@ -126,7 +130,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 ### Downloading Data from a Data Collection
 
 Next check if the file that you just uploaded to data collections exists, and try downloading it to a local temp file:
- 
+
 {% highlight php %}
 //download the file
 if($remote_file->exists()) {
@@ -134,7 +138,7 @@ if($remote_file->exists()) {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `$temp_file`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `$temp_file`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 

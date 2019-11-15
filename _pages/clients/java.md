@@ -14,6 +14,10 @@ redirect_from:
   - /algorithm-development/guides/java-guide/
   - /application-development/client-guides/java/
   - /application-development/guides/java/
+menus:
+  clients:
+    url: /developers/clients/java
+    title: "Java"
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Java Client to call algorithms and manage data through the Algorithmia platform.
