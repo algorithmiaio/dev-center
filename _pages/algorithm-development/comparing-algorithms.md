@@ -7,6 +7,10 @@ tags: [algo-dev]
 show_related: true
 image:
     teaser: /icons/algo.svg
+menus:
+  algo_development:
+    url: /developers/algorithm-development/comparing-algorithms
+    title: "Evaluations"
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/QEddoz6xFao" %}

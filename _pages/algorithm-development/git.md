@@ -11,6 +11,10 @@ permalink: /algorithm-development/git/
 redirect_from:
   - /algorithm-development/algorithm-basics/git/
   - /algorithm-development/git-support/
+menus:
+  algo_development:
+    url: /developers/algorithm-development/git
+    title: "Git Versioning"
 ---
 
 Every algorithm on Algorithmia has a dedicated git repository. Using this repository allows you to seamlessly integrate Algorithmia with your current workflows,

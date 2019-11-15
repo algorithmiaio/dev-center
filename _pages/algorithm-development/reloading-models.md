@@ -9,6 +9,10 @@ author: jpeck
 image:
   teaser: /icons/algo.svg
 permalink: /algorithm-development/reloading-models/
+menus:
+  algo_development:
+    url: /developers/algorithm-development/reloading-models
+    title: "Reloading Models"
 ---
 
 Most Machine Learning Models will change at some point, and when they do, you want to make your retrained model available quickly and efficiently.
@@ -33,7 +37,7 @@ Either edit your Algorithm in the Web IDE, or push the modified code to your Alg
 
 ##### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
 
-Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithm Management API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management-api).  
+Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithm Management API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management-api).
 
 
 ### Option 2: Updating your Model immediately, without changing Version Numbers
@@ -54,7 +58,7 @@ model = joblib.load(modelFile)
 def apply(text):
     return int(model.predict(text))
 {% endhighlight %}
-  
+
 We need to alter this code so that instead of only loading the model file once on warm-up, it reloads the model periodically.
 
 We do so by adding a function to reload the model. We'll call this function once, in the outer scope, to make sure it gets loaded at warm-up:
@@ -71,7 +75,7 @@ def reload_model():
 
 def apply(text):
     return int(model.predict(text))
-    
+
 reload_model()
 {% endhighlight %}
 
@@ -96,7 +100,7 @@ def apply(text):
     if (time.time() - last_reload_time > reload_period):
         reload_model()
     return int(model.predict(text))
-    
+
 reload_model()
 {% endhighlight %}
 

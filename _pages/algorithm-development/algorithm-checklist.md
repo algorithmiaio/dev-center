@@ -12,6 +12,10 @@ redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-checklist/
   - /basics/algorithm_checklist/
   - /guides/algorithm_checklist/
+menus:
+  algo_development:
+    url: /developers/algorithm-development/algorithm-checklist
+    title: "Algorithm Checklist"
 ---
 
 To get the most out of your algorithm profile and boost its visibility, follow these tips to create the best algorithm profile possible.

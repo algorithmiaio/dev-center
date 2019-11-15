@@ -8,6 +8,10 @@ show_related: false
 author: jon_peck
 image:
   teaser: /icons/algo.svg
+menus:
+  algo_development:
+    url: /developers/algorithm-development/algorithm-management-api
+    title: "Management APIs"
 ---
 
 Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.

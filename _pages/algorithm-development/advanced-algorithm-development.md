@@ -8,6 +8,10 @@ show_related: false
 author: steph_kim
 image:
   teaser: /icons/algo.svg
+menus:
+  algo_development:
+    url: /developers/algorithm-development/advanced-algorithm-development
+    title: "Deep Dives"
 ---
 
 <div class="row lang-tile-container">
