@@ -14,7 +14,6 @@ export default {
   },
   methods: {
     toggle(sectionName) {
-      console.log('toggling', sectionName)
       this.openSection = this.openSection === sectionName ? '' : sectionName
     },
     getOpenSection() {
