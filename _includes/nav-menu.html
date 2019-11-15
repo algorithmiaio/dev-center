@@ -1,13 +1,19 @@
 <side-nav-menu
   v-cloak
-  class="syn-flex direction-column flex-item-grow syn-overflow-hidden{% unless include.menu_level == 0 %} syn-width-full {% endunless %}">
-  <ul slot-scope="{ toggle, openSection }" class="syn-flex direction-column flex-item-grow {% if include.menu_level == 0 %} syn-overflow-hidden {% else %}syn-width-full  syn-overflow-hidden-x syn-scrollable-y{% endif %}" id="{{ include.menu_level }}">
+  class="syn-flex direction-column flex-item-grow syn-overflow-hidden
+    {% unless include.menu_level == 0 %} syn-width-full {% endunless %}">
+  <ul slot-scope="{ toggle, openSection }"
+    class="syn-flex direction-column flex-item-grow
+      {% if include.menu_level == 0 %}syn-overflow-hidden
+      {% else %}syn-width-full  syn-overflow-hidden-x syn-scrollable-y{% endif %}">
     {% for domain in site.menus[include.menu_id] %}
       {% assign domain_active = page.menus[domain.identifier] %}
       {% assign checking = domain %}
       {% include section-active.html %}
       <li
-        class="{% if domain_active %}cloak-open-nav-item{% else %}cloak-closed-nav-item{% endif %} syn-overflow-hidden allow-wrap"
+        class="syn-overflow-hidden allow-wrap
+          {% if domain_active %}cloak-open-nav-item
+          {% else %}cloak-closed-nav-item{% endif %}"
         :class="{
           'open-nav-item': openSection === '{{domain.identifier}}',
           'closed-nav-item': openSection !== '{{domain.identifier}}'
@@ -15,7 +21,11 @@
         id="{{ domain.identifier }}-list-item"
         >
         <a
-          class="{% if domain.children %}no-bg-active{% endif %} flex-item-no-shrink syn-flex justify-space-between align-center {% if include.menu_level == 0 %}syn-font-weight-bold bordered{% endif %} {% if domain_active or page.menus[include.menu_id].url == domain.url %}syn-font-weight-bold active {% else %} syn-text-secondary {% endif %}"
+          class="flex-item-no-shrink syn-flex justify-space-between align-center
+            {% if domain.children %}no-bg-active{% endif %}
+            {% if include.menu_level == 0 %}syn-font-weight-bold bordered{% endif %}
+            {% if domain_active or page.menus[include.menu_id].url == domain.url %}syn-font-weight-bold active
+            {% else %}syn-text-secondary{% endif %}"
           href="{{ domain.url }}"
           title="{{ domain.title }}"
           {% if domain.children %}
