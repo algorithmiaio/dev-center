@@ -35,10 +35,23 @@
   {% else %}
     {% assign webserver = "https://algorithmia.com" %}
   {% endif %}
+  <script src="{{site.baseurl}}/userCustomizations.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    // Hide the app as soon as possible in the rendering of the DOM,
+    // to prevent a case where the default colors/titles are rendered before
+    // customization values are added. We hide with JS as soon as possible,
+    // to prevent a case where the page is completely hidden to someone
+    // with JS disabled.
+    const style = document.createElement('style')
+    style.appendChild(
+      document.createTextNode('.js-only-initial-hide { display: none; }')
+    )
+    document.head.appendChild(style)
+  </script>
 </head>
 
 <body>
-  <div class="syn-page syn-page-drawer-navigation" id="vue-app">
+  <div class="syn-page syn-page-drawer-navigation js-only-initial-hide" id="vue-app">
     <header class="syn-page-header syn-header-brand">
       <div class="syn-page-header-content">
         <button onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))" class="syn-btn text icon rounded grow theme-light no-shadow" data-v-3352aef0="" data-v-19ae9fc3="">
@@ -64,7 +77,7 @@
             />
             {% endif %}
           </a>
-          <p class="syn-font-mono syn-caption syn-text-tertiary tagline syn-mt-8 syn-mb-0">Documentation</p>
+          <p class="syn-font-mono syn-caption syn-text-tertiary tagline syn-mt-8 syn-mb-0" id="brand-title">Documentation</p>
         </div>
         <nav class="syn-nav flex-item-grow syn-flex direction-column syn-overflow-hidden">
           {% include synapse-menu.html %}

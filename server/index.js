@@ -6,6 +6,7 @@ const Bunyan = require('bunyan')
 const config = require('../config')
 const prometheus = require('prom-client')
 const { monitor } = require('./prometheus')
+const { renderCustomizationScript } = require('./customization')
 
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
@@ -110,6 +111,11 @@ app.get('/metrics', (req, res, next) => {
 app.use((req, res, next) => {
   log.info(`${req.method} ${req.originalUrl}`, req.headers)
   next()
+})
+
+app.get('/developers/userCustomizations.js', (req, res) => {
+  res.set('Content-Type', 'application/javascript')
+  res.status(200).send(renderCustomizationScript(customizationValues))
 })
 
 // Remove trailing slashes, UNLESS we're in local dev mode,
