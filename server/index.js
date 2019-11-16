@@ -113,6 +113,7 @@ app.use((req, res, next) => {
 
 app.get('/developers/userCustomizations.js', (req, res) => {
   res.set('Content-Type', 'application/javascript')
+  res.set('Cache-Control', 'public, max-age=86400') // 1 day
   res.status(200).send(renderCustomizationScript(customizationValues))
 })
 
