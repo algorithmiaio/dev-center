@@ -29,8 +29,6 @@ const loadCustomizationValues = async () => {
       if (r.keyname === 'brandTitle') customizationValues.brandTitle = r.value
       if (r.keyname === 'brandColor') customizationValues.brandColor = r.value
       if (r.keyname === 'siteTitle') customizationValues.siteTitle = r.value
-      if (r.keyname === 'libraryTitle')
-        customizationValues.libraryTitle = r.value
     })
   } catch (err) {
     log.warn(`Unable to load customization values! ${err.message}`)
