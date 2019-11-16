@@ -39,9 +39,9 @@
   <script>
     // Hide the app as soon as possible in the rendering of the DOM,
     // to prevent a case where the default colors/titles are rendered before
-    // customization values are added. We hide with JS as soon as possible,
-    // to prevent a case where the page is completely hidden to someone
-    // with JS disabled.
+    // customization values are added. We generate the CSS that hides the body
+    // content with JS to prevent a case where the page is completely hidden to
+    // someone with JS disabled.
     const style = document.createElement('style')
     style.appendChild(
       document.createTextNode('.js-only-initial-hide { display: none; }')
