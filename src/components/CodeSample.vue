@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <div class="syn-code-block-body" ref="codeContent" replace-user-creds>
+    <div class="syn-code-block-body" ref="codeContent">
       <slot>
         <pre><code>// Sample Code Block
   console.log('Hello world!')</code></pre>

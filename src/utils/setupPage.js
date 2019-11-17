@@ -8,8 +8,10 @@ function enableNavButtons(authenticated) {
 export function setupPage(user) {
   enableNavButtons(!!user)
 
+  console.log('USER', user)
+
   replaceUserCreds({
     user,
-    nodes: document.querySelectorAll('[replace-user-creds]')
+    nodes: document.querySelectorAll('pre code')
   })
 }
