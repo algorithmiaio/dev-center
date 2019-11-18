@@ -13,7 +13,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 You're going to need:
 
 - **Linux or OS X** — Windows may work, but is unsupported.
-- **Ruby, version 2.3.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
+- **Ruby, version 2.4.0 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
 - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
 - **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
 
