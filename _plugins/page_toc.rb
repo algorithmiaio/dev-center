@@ -13,8 +13,8 @@ module Jekyll
       doc = Nokogiri::HTML(content)
       doc.css('h2').each do |heading|
         html << "<li class=\"syn-overflow-hidden allow-wrap\">
-          <a class=\"flex-item-no-shrink syn-flex justify-space-between align-center syn-text-secondary syn-caption syn-mb-0\" href=\"\##{heading["id"]}\">
-            #{heading.text}
+          <a class=\"flex-item-no-shrink syn-flex justify-space-between align-center syn-text-secondary\" href=\"\##{heading["id"]}\">
+            <span class=\"syn-caption syn-mb-0\">#{heading.text}</span>
           </a>
         </li>"
       end
