@@ -76,6 +76,7 @@ module Jekyll
             "categories" => entry.categories,
             "tags" => entry.tags,
             "is_post" => entry.is_post,
+            "is_api_result" => entry.url.start_with?("/api/"),
             "body" => entry.body
           }
 
