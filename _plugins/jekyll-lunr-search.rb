@@ -76,6 +76,7 @@ module Jekyll
             "categories" => entry.categories,
             "tags" => entry.tags,
             "is_post" => entry.is_post,
+            "is_api_result" => entry.url.start_with?("/api/"),
             "body" => entry.body
           }
 
@@ -87,7 +88,7 @@ module Jekyll
         end
 
         FileUtils.mkdir_p(File.join(site.dest, @js_dir))
-        filename = File.join(@js_dir, 'index.json')
+        filename = File.join(@js_dir, 'search.json')
 
         total = {
           "docs" => @docs,
@@ -249,7 +250,7 @@ end
 module Jekyll
   module LunrJsSearch
     class SearchIndexFile < Jekyll::StaticFile
-      # Override write as the index.json index file has already been created
+      # Override write as the search.json index file has already been created
       def write(dest)
         true
       end
