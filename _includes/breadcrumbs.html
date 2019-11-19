@@ -2,9 +2,11 @@
   {% if page.menus %}
     {% include breadcrumb-section.html menu_id="main" %}
   {% else %}
-    <a href="{{site.baseurl}}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item syn-text-secondary syn-link-no-decoration syn-link-animated">
-      <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">Home</span>
-    </a>
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item">
+      <a href="{{site.baseurl}}" itemprop="title" class="syn-caption syn-text-secondary syn-link-no-decoration syn-link-animated syn-mb-0">
+        Home
+      </a>
+    </span>
   {% endif %}
   <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item active syn-text-primary">
     <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{page.title}}</span>
