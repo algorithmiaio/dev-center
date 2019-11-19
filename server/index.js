@@ -1,10 +1,12 @@
 const express = require('express')
+const axios = require('axios')
 const path = require('path')
 const querystring = require('querystring')
 const Bunyan = require('bunyan')
 const config = require('../config')
 const prometheus = require('prom-client')
 const { monitor } = require('./prometheus')
+const { renderCustomizationScript } = require('./customization')
 
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
@@ -15,6 +17,23 @@ monitor.routes(app)
 const isProduction = process.env.NODE_ENV === 'production'
 
 log.info('Starting server')
+
+const customizationValues = {}
+const loadCustomizationValues = async () => {
+  try {
+    const { data: frontendConfigResponse } = await axios.get(
+      `${config.env.stage.webapiUrl}/v1/config/frontend`
+    )
+
+    frontendConfigResponse.results.forEach(r => {
+      if (r.keyname === 'brandTitle') customizationValues.brandTitle = r.value
+      if (r.keyname === 'brandColor') customizationValues.brandColor = r.value
+      if (r.keyname === 'siteTitle') customizationValues.siteTitle = r.value
+    })
+  } catch (err) {
+    log.warn(`Unable to load customization values! ${err.message}`)
+  }
+}
 
 // Add security headers to all responses
 app.use((req, res, next) => {
@@ -92,6 +111,12 @@ app.use((req, res, next) => {
   next()
 })
 
+app.get('/developers/userCustomizations.js', (req, res) => {
+  res.set('Content-Type', 'application/javascript')
+  res.set('Cache-Control', 'public, max-age=86400') // 1 day
+  res.status(200).send(renderCustomizationScript(customizationValues))
+})
+
 // Remove trailing slashes, UNLESS we're in local dev mode,
 // in which case we need the slashes to communicate with the Jekyll server,
 // so we ensure trailing slash is there
@@ -159,6 +184,9 @@ app.use(/^\/developers/, (req, res, next) => {
 
 // Initialization
 
+loadCustomizationValues()
+const refreshCustomizationInterval = setInterval(loadCustomizationValues, 10000)
+
 const PORT = process.env.PORT || 4000
 const server = app.listen(PORT, () => {
   log.info(`Server started on port ${PORT}.`)
@@ -177,6 +205,7 @@ function gracefulShutdown() {
   })
 
   clearInterval(metricsInterval)
+  clearInterval(refreshCustomizationInterval)
   const gracePeriod = isProduction ? 10 : 1
 
   setTimeout(() => {

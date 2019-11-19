@@ -166,6 +166,12 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 ## Environment Variables
 
+#### `BASE_URL` | String
+
+**Default**: "localhost:4000" in development, "algorithmia.com" in production.
+
+**Description**: The base domain at which the app will serve its content.
+
 #### `ENFORCE_CSP` | Boolean
 
 **Default**: `false`
@@ -201,6 +207,12 @@ This Jekyll site uses several plugins to help generate content and make the site
 **Default**: `undefined`
 
 **Description**: The authorization bearer token necessary for the application to expose Prometheus metrics at the /metrics endpoint.
+
+#### `WEBAPI_BASE_URL` | String
+
+**Default**: "https?://" + `BASE_URL`
+
+**Description**: The internal URL that the server can use to talk to the Play server. Used to improve performance when makes calls internal to our VPC.
 
 ## Custom Components
 
