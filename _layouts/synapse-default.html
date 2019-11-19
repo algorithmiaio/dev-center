@@ -93,7 +93,7 @@
   <script type="text/javascript">
   $(function() {
     $('#search-query').lunrSearch({
-      indexUrl: '{{ site.baseurl }}/js/index.json',
+      indexUrl: '{{ site.baseurl }}/js/search.json',
       results:  '#search-results',
       template: '#search-results-template',
       titleMsg: '<h3><small>SEARCH RESULTS</small></h3>',
@@ -115,7 +115,7 @@
 
     // If there is a query string that will get picked up by lunrSearch
     //   then hide the page content by default
-    // Note: the search input field doesn't get set by lunrSearch until index.json loads
+    // Note: the search input field doesn't get set by lunrSearch until search.json loads
     var uri = new URI(window.location.search.toString());
     var queryString = uri.search(true);
     if (queryString.hasOwnProperty('q')) {
