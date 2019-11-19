@@ -1,7 +1,12 @@
-{% if page.categories and page.categories != empty %}
-  <nav class="breadcrumbs syn-mb-0">
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item">
-        <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{ page.categories | first | replace: '-',' ' | capitalize }}</span>
-    </span>
-  </nav><!-- /.breadcrumbs -->
-{% endif %}
+<nav class="syn-dropdown-list-header breadcrumbs syn-caption syn-mb-0">
+  {% if page.menus %}
+    {% include breadcrumb-section.html menu_id="main" %}
+  {% else %}
+    <a href="{{site.baseurl}}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item syn-text-secondary syn-link-no-decoration syn-link-animated">
+      <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">Home</span>
+    </a>
+  {% endif %}
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item active syn-text-primary">
+    <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{page.title}}</span>
+  </span>
+</nav>

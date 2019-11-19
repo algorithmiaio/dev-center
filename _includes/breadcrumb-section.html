@@ -1,0 +1,14 @@
+{% for section in site.menus[include.menu_id] %}
+  {% assign section_active = page.menus[section.identifier] %}
+  {% assign checking = section %}
+  {% include section-active.html %}
+
+  {% if section_active %}
+    <a href="{{ section.url }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item syn-text-secondary syn-link-no-decoration syn-link-animated">
+      <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{ section.title }}</span>
+    </a>
+    {% if section.children %}
+      {% include breadcrumb-section.html menu_id=section.identifier %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
