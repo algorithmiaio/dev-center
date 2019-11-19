@@ -53,7 +53,7 @@ echo $algo->pipe("World")->result;
 If you prefer not to have your API Key in the actual PHP files, you can set a system variable instead:
 
 {% highlight bash %}
-php -dALGORITHMIA_API_KEY="YOUR_API_KEY" myAI.php
+php -d ALGORITHMIA_API_KEY="YOUR_API_KEY" myAI.php
 {% endhighlight %}
 
 ...then omit the Key in your PHP files:

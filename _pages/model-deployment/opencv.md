@@ -72,9 +72,9 @@ bin_n = 16 # Number of bins
 affine_flags = cv.WARP_INVERSE_MAP|cv.INTER_LINEAR
 
 # Define your custom model path here
-model_file_save_data_path = "data://<username>/<collection>/svm_data.dat"
+model_file_save_data_path = "data://YOUR_USERNAME/COLLECTION/svm_data.dat"
 
-client = Algorithmia.client(<YOUR_API_KEY>)
+client = Algorithmia.client('YOUR_API_KEY')
 
 def deskew(img):
     m = cv.moments(img)
@@ -170,7 +170,7 @@ Here’s an example of what that looks like:
 import cv2 as cv
 
 def init_model():
-    model_abs_path = client.file("data://<username>/<collection>/svm_data.dat").getFile().name
+    model_abs_path = client.file("data://YOUR_USERNAME/COLLECTION/svm_data.dat").getFile().name
     model = cv.ml.SVM_load(model_abs_path)
     return model
 
@@ -223,7 +223,7 @@ SZ=20
 bin_n = 16 # Number of bins
 affine_flags = cv.WARP_INVERSE_MAP|cv.INTER_LINEAR
 
-model_file_path = "data://<username>/<collection>/svm_data.dat"
+model_file_path = "data://YOUR_USERNAME/COLLECTION/svm_data.dat"
 
 def deskew(img):
     m = cv.moments(img)

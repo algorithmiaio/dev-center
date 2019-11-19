@@ -52,22 +52,22 @@ Version         | Description
 <div code-sample-language="Shell">
 {% highlight bash %}
 curl -X POST -H 'Authorization: Simple YOUR_API_KEY' \
-    -d 'YOUR_NAME' -H 'Content-Type: text/plain' \
+    -d 'YOUR_USERNAME' -H 'Content-Type: text/plain' \
     https://api.algorithmia.com/v1/algo/demo/Hello/
 {% endhighlight %}
 </div>
 
 <div code-sample-language="CLI">
 {% highlight bash %}
-$ algo run -d 'YOUR_NAME' demo/Hello/
-Hello YOUR_NAME
+$ algo run -d 'YOUR_USERNAME' demo/Hello/
+Hello YOUR_USERNAME
 {% endhighlight %}
 </div>
 
 {% highlight python %}
 import Algorithmia
 
-input = "YOUR_NAME"
+input = "YOUR_USERNAME"
 client = Algorithmia.client('YOUR_API_KEY')
 # Pass in the unique algoUrl path found on each algorithm description page.
 algo = client.algo('demo/Hello/')
@@ -75,14 +75,14 @@ algo = client.algo('demo/Hello/')
 result = algo.pipe(input)
 
 # If you are using the 1.0+ client you can access both the output and the metadata.
-print(result.result)    # Hello YOUR_NAME
+print(result.result)    # Hello YOUR_USERNAME
 print(result.metadata)  # Metadata(content_type='text',duration=0.0002127)
 {% endhighlight %}
 
 {% highlight r %}
 library(algorithmia)
 
-input <- "YOUR_NAME"
+input <- "YOUR_USERNAME"
 client <- getAlgorithmiaClient('YOUR_API_KEY')
 algo <- client$algo('demo/Hello/')
 result <- algo$pipe(input)$result
@@ -94,7 +94,7 @@ require 'algorithmia'
 
 client = Algorithmia.client('YOUR_API_KEY')
 algo = client.algo('demo/Hello/')
-response = algo.pipe('YOUR_NAME')
+response = algo.pipe('YOUR_USERNAME')
 puts response.result
 {% endhighlight %}
 
@@ -102,7 +102,7 @@ puts response.result
 import com.algorithmia.*;
 import com.algorithmia.algo.*;
 
-String input = "\"YOUR_NAME\"";
+String input = "\"YOUR_USERNAME\"";
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 Algorithm algo = client.algo("algo://demo/Hello/");
 AlgoResponse result = algo.pipe(input);
@@ -113,7 +113,7 @@ System.out.println(result.asJsonString());
 import com.algorithmia._
 import com.algorithmia.algo._
 
-val input = "YOUR_NAME"
+val input = "YOUR_USERNAME"
 val client = Algorithmia.client("YOUR_API_KEY")
 val algo = client.algo("algo://demo/Hello/")
 val result = algo.pipeJson(input)
@@ -124,7 +124,7 @@ System.out.println(result.asString)
 use algorithmia::*;
 use algorithmia::algo::*;
 
-let input = "YOUR_NAME";
+let input = "YOUR_USERNAME";
 let client = Algorithmia::client("YOUR_API_KEY");
 let algo = client.algo("algo://demo/Hello/");
 {% endhighlight %}
@@ -134,7 +134,7 @@ let algo = client.algo("algo://demo/Hello/");
 // include the algorithmia.js library
 // https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js
 
-var input = "YOUR_NAME";
+var input = "YOUR_USERNAME";
 Algorithmia.client("YOUR_API_KEY");
 
 client.algo("algo://demo/Hello/")
@@ -149,7 +149,7 @@ client.algo("algo://demo/Hello/")
 {% highlight javascript %}
 var algorithmia = require("algorithmia");
 
-var input = "YOUR_NAME";
+var input = "YOUR_USERNAME";
 var client = algorithmia.client("YOUR_API_KEY");
 
 client.algo("algo://demo/Hello/")
@@ -164,14 +164,14 @@ client.algo("algo://demo/Hello/")
 <?
 require_once "vendor/autoload.php";
 
-$input = "YOUR_NAME";
+$input = "YOUR_USERNAME";
 $client = Algorithmia::client("YOUR_API_KEY");
 $algo = $client->algo("demo/Hello/0.1.0");
 echo $algo->pipe($input)->result;
 ?>
 {% endhighlight %}
 <div class="syn-caption syn-mt-4">
-  Make sure to replace YOUR_NAME with your name &amp; YOUR_API_KEY with your API key.
+  Make sure to replace YOUR_USERNAME with your name &amp; YOUR_API_KEY with your API key.
 </div>
 </code-sample>
 
