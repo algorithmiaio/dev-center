@@ -53,6 +53,7 @@
           {% assign next_menu_level = include.menu_level | plus:1 %}
           {% include nav-menu.html menu_id=section.identifier menu_level=next_menu_level %}
         {% elsif page.menus[include.menu_id].url == section.url %}
+          {% assign toc_indent = include.menu_level | times:16 %}
           {% pagetoc %}
         {% endif %}
       </li>
