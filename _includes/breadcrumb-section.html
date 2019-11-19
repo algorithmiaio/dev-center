@@ -3,11 +3,15 @@
   {% assign checking = section %}
   {% include section-active.html %}
 
-  {% if section_active %}
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item">
-      <a href="{{ section.url }}" itemprop="title" class="syn-caption syn-text-secondary syn-link-no-decoration syn-link-animated syn-mb-0">
-        {{ section.title }}
-      </a>
+  {% if section_active or page.menus[include.menu_id].url == section.url %}
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item {% unless section.children %}active{% endunless %}">
+      {% if section.children %}
+        <a href="{{ section.url }}" itemprop="title" class="syn-caption syn-text-secondary syn-link-no-decoration syn-link-animated syn-mb-0">
+          {{ section.title }}
+        </a>
+      {% else %}
+        <span itemprop="title" class="syn-caption syn-text-secondary syn-mb-0">{{section.title}}</span>
+      {% endif %}
     </span>
     {% if section.children %}
       {% include breadcrumb-section.html menu_id=section.identifier %}
