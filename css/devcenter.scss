@@ -88,28 +88,3 @@ side-nav-menu[v-cloak] {
     @extend .closed-nav-item;
   }
 }
-
-
-.toc-nav-link {
-  padding: 0rem 1rem !important;
-
-  &:hover {
-    background-color: inherit !important;
-
-    .toc-nav-text {
-      border-color: $color-black-tertiary;
-    }
-  }
-
-  .toc-nav-text {
-    border-left: 2px solid $color-border;
-    padding: .5rem 1rem;
-  }
-}
-
-.toc-nav-item.active {
-  .toc-nav-text {
-    color: $color-black !important;
-    border-color: $color-black-secondary;
-  }
-}
