@@ -9,7 +9,8 @@ module Jekyll
 
     def render(context)
       content = context['page']['content']
-      html = ['<ul class="syn-width-full syn-overflow-hidden-x syn-scrollable-y">']
+      html = ['<nav v-scrollspy:scrollspy-content class="syn-width-full">']
+      html << '<ul class="syn-width-full syn-overflow-hidden-x syn-scrollable-y">'
       doc = Nokogiri::HTML(content)
       doc.css('h2').each do |heading|
         html << "<li class=\"syn-overflow-hidden allow-wrap\">
@@ -19,6 +20,7 @@ module Jekyll
         </li>"
       end
       html << '</ul>'
+      html << '</nav>'
       html.join("\n")
     end
   end
