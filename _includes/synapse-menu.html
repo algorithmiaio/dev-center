@@ -25,10 +25,10 @@
           </span>
           {% if domain.children %}
             <span v-if="openSection === '{{ domain.identifier }}'" {% unless page.menus[domain.identifier] %} class="cloak-hidden" {% endunless %}>
-              {% include angle-up-svg.html %}
+              <i class="material-icons">keyboard_arrow_up</i>
             </span>
             <span v-else {% if page.menus[domain.identifier] %} class="cloak-hidden" {% endif %}>
-              {% include angle-down-svg.html %}
+                <i class="material-icons">keyboard_arrow_down</i>
             </span>
           {% endif %}
         </a>
