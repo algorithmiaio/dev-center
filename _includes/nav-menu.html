@@ -6,7 +6,7 @@
   <ul slot-scope="{ toggle, openSection }"
     class="syn-flex direction-column flex-item-grow
       {% if include.menu_level == 0 %}syn-overflow-hidden
-      {% else %}syn-width-full  syn-overflow-hidden-x syn-scrollable-y{% endif %}">
+      {% else %}syn-width-full syn-overflow-hidden-x syn-scrollable-y{% endif %}">
     {% for section in site.menus[include.menu_id] %}
       {% assign section_active = page.menus[section.identifier] %}
       {% assign checking = section %}
@@ -52,8 +52,12 @@
         {% if section.children %}
           {% assign next_menu_level = include.menu_level | plus:1 %}
           {% include nav-menu.html menu_id=section.identifier menu_level=next_menu_level %}
+        {% elsif page.menus[include.menu_id].url == section.url %}
+          {% assign toc_indent = include.menu_level | times:16 %}
+          {% pagetoc %}
         {% endif %}
       </li>
     {% endfor %}
   </ul>
 </side-nav-menu>
+
