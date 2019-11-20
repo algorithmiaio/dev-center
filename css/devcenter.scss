@@ -89,8 +89,27 @@ side-nav-menu[v-cloak] {
   }
 }
 
-.syn-nav {
-  li.active > a {
-    @extend a.active;
+
+.toc-nav-link {
+  padding: 0rem 1rem !important;
+
+  &:hover {
+    background-color: inherit !important;
+
+    .toc-nav-item {
+      border-color: $color-black-tertiary;
+    }
+  }
+
+  .toc-nav-item {
+    border-left: 2px solid $color-border;
+    padding: .5rem 1rem;
+  }
+}
+
+.toc-nav-li.active {
+  .toc-nav-item {
+    color: $color-black !important;
+    border-color: $color-black-secondary;
   }
 }
