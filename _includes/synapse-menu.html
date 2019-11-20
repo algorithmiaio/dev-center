@@ -19,7 +19,8 @@
             @click.prevent.stop="toggle('{{ domain.identifier }}')"
           {% endif %}
           id="{{ domain.identifier }}-link">
-          <span>
+          <span class="syn-flex align-center">
+            <i class="material-icons syn-mr-8">{{domain.icon}}</i>
             {{ domain.title }}
           </span>
           {% if domain.children %}

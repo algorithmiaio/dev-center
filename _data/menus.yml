@@ -3,9 +3,12 @@ main:
   - url: /developers
     title: "Developer Docs"
     identifier: devcenter
+    icon: 'chrome_reader_mode'
   - url: /developers/api
     title: "API Docs"
     identifier: api
+    icon: 'code'
   - url: /
     title: "Home"
+    icon: 'home'
 ---
