@@ -52,7 +52,7 @@ $sizes: (
   font-feature-settings: 'liga';
 
   @each $label, $size in $sizes {
-    .icon-size-#{$label} {
+    &.icon-size-#{$label} {
       font-size: $size !important;
     }
   }
