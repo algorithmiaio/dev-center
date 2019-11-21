@@ -119,7 +119,7 @@ However, if overall speed is more important than limiting the load, make **paral
 We can use the same basic approach as outlined in the Serial Batch Predictions approach, but instead of using loops around the `algo.pipe()` calls, we use multithreading to parallelize these calls.
 
 <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading">
-  <button class="syn-button contained theme-primary">
-    <i class="material-icons">book</i> EXPLORE MULTITHREADING
-  </a>
-</button>
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">library_books</i> EXPLORE MULTITHREADING
+  </button>
+</a>
