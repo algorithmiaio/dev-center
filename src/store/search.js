@@ -8,7 +8,7 @@ const searchIndex = Lunr.create('/developers/js/search.json')
 export const filter = {
   NONE: { name: 'All results', value: 'NONE' },
   API_DOCS: { name: 'API Docs', value: 'API_DOCS' },
-  DEV_CENTER: { name: 'Documentation', value: 'DEV-CENTER' },
+  DEV_CENTER: { name: 'Documentation', value: 'DEV_CENTER' },
 }
 
 export const search = {
@@ -25,7 +25,9 @@ export const search = {
       state.query = payload.query
     },
     SET_RESULTS: (state, payload) => {
-      state.results = payload.results
+      // console.log('NEW RESULTS: ', JSON.stringify(payload.results, null, 2))
+      Vue.set(state, 'results', payload.results)
+      // state.results = payload.results
     }
   },
   actions: {
@@ -41,6 +43,9 @@ export const search = {
     search: debounce(({ commit, getters }) => {
       const { query, filter, areSearchResultsShown } = getters
       if (!areSearchResultsShown) return
+
+      console.log('SEARCHING FOR: ', query)
+      console.log('FILTER: ', filter.value)
 
       commit(
         'SET_RESULTS',
