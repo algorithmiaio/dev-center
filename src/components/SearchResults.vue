@@ -1,29 +1,28 @@
 <template>
-  <h1>
-    Search results for "{{query}}"
-  </h1>
+  <div>
+    <h1>
+      Search results for "{{query}}"
+    </h1>
+    <div class="syn-flex align-center">
+      <span class="syn-mr-16">Filter by: </span>
+      <filter-selector />
+    </div>
+  </div>
+
 </template>
 
 <script>
-import { Lunr } from '../utils/lunr'
+import { mapGetters, mapActions } from 'vuex'
+import FilterSelector from './FilterSelector'
 
 export default {
   name: 'SearchResults',
-  data() {
-    return {
-      query: ''
-    }
-  },
-  mounted() {
-    this.query = this.getSearchQuery()
-    this.lunr = Lunr.create('/developers/js/search.json')
-
-    window.looner = this.lunr
+  components: { FilterSelector },
+  computed: {
+    ...mapGetters(['query'])
   },
   methods: {
-    getSearchQuery() {
-      return new URL(window.location).searchParams.get('q');
-    }
+    ...mapActions(['setFilter'])
   }
 }
 </script>

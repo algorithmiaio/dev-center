@@ -6,9 +6,9 @@ import { Lunr } from '../utils/lunr'
 const searchIndex = Lunr.create('/developers/js/search.json')
 
 export const filter = {
-  NONE: 'NONE',
-  API_DOCS: 'API_DOCS',
-  DEV_CENTER: 'DEV_CENTER'
+  NONE: { name: 'All results', value: 'NONE' },
+  API_DOCS: { name: 'API Docs', value: 'API_DOCS' },
+  DEV_CENTER: { name: 'Documentation', value: 'DEV-CENTER' },
 }
 
 export const search = {
@@ -29,7 +29,7 @@ export const search = {
     }
   },
   actions: {
-    setFilter({ commit, dispatch }) {
+    setFilter({ commit, dispatch }, filter) {
       commit('SET_FILTER', { filter })
       dispatch('search')
     },
@@ -44,7 +44,7 @@ export const search = {
 
       commit(
         'SET_RESULTS',
-        { results: searchIndex.search(query, filter) }
+        { results: searchIndex.search(query, filter.value) }
       )
     }),
   },

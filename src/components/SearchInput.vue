@@ -37,7 +37,6 @@ export default {
     ...mapActions(['setQuery']),
     updateQueryFromUrl() {
       const query = new URL(window.location).searchParams.get('q');
-      console.log('query', query)
 
       if (query) {
         this.setQuery(query)
