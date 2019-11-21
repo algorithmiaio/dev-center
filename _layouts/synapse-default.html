@@ -97,7 +97,10 @@
     </header>
     <main class="syn-page-main">
       <div class="syn-container syn-mt-32 syn-mb-48">
-        {{ content | emojify }}
+        <search-results />
+        <div id="main-content">
+          {{ content | emojify }}
+        </div>
       </div>
     </main>
     <footer class="syn-page-footer"></footer>

@@ -1,4 +1,5 @@
 import { replaceUserCreds } from './replaceUserCreds'
+import { showSearchPageIfQueryExists } from './lunr'
 
 function enableNavButtons(authenticated) {
   const navClass = authenticated ? 'show-auth-nav' : 'show-unauth-nav'
@@ -7,6 +8,8 @@ function enableNavButtons(authenticated) {
 
 export function setupPage(user) {
   enableNavButtons(!!user)
+
+  showSearchPageIfQueryExists()
 
   replaceUserCreds({
     user,
