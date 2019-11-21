@@ -88,10 +88,10 @@
     </header>
     <main class="syn-page-main">
       <div class="syn-container syn-mt-32 syn-mb-48">
-        <div id="search-content">
+        <div v-if="areSearchResultsShown">
           <search-results />
         </div>
-        <div id="main-content">
+        <div v-else>
           {{ content | emojify }}
         </div>
       </div>
