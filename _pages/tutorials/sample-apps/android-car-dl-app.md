@@ -18,7 +18,7 @@ github: https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMake
 In this tutorial, we'll go through how to use a deep learning algorithm that predicts the make and model of a car from a picture we take on Android.
 
 
-The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp"><button class="syn-btn contained theme-primary"><i class="material-icons">code</i> FORK</button></a>
 
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build an Android app that utilizes deep learning.
