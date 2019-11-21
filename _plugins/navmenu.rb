@@ -59,7 +59,7 @@ module Jekyll
           icon = ' <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i>'
         elsif item['url'].start_with?('http://', 'https://')
           target = "target='_blank'"
-          icon = ' <i class="fa fa-external-link" aria-hidden="true"></i>'
+          icon = ' <i class="material-icons">open_in_new</i>'
         end
 
         href = if item['url'].start_with?('http://', 'https://')
