@@ -7,6 +7,16 @@ nav_category: languages
 tags: [algo-dev]
 show_related: false
 author: steph_kim
+menus:
+  algo_development:
+    url: /developers/algorithm-development/languages
+    title: "Languages"
+    weight: 9
+    identifier: languages
+  languages:
+    url: /developers/algorithm-development/languages
+    title: "Overview"
+    weight: 1
 ---
 
 As an Algorithmia user, in addition to having access to hundreds of algorithms, you also have the ability to add your own algorithms. You can write a private algorithm for your own use, contribute an open source algorithm, or monetize an algorithm you authored. Our algorithms and platform are designed with composability in mind, so think of algorithms in the marketplace as building blocks.

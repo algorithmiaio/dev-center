@@ -14,6 +14,11 @@ redirect_from:
   - /algorithm-development/guides/scala-guide/
   - /application-development/client-guides/scala/
   - /application-development/guides/scala/
+menus:
+  clients:
+    url: /developers/clients/scala
+    title: "Scala"
+    weight: 14
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Scala Client to call algorithms and manage data through the Algorithmia platform.

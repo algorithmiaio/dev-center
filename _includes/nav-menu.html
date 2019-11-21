@@ -1,0 +1,60 @@
+<side-nav-menu
+  menu-identifier="{{ include.menu_id }}"
+  v-cloak
+  class="syn-flex direction-column flex-item-grow toggle-section
+    {% if include.menu_level == 0 %}syn-overflow-hidden
+    {% else %}syn-width-full syn-overflow-hidden-x syn-scrollable-y{% endif %}">
+  <ul slot-scope="{ toggle, openSection }"
+    class="syn-flex direction-column flex-item-grow
+      {% if include.menu_level == 0 %}syn-overflow-hidden
+      {% else %}syn-width-full syn-overflow-hidden-x syn-scrollable-y{% endif %}">
+    {% for section in site.menus[include.menu_id] %}
+      {% assign section_active = page.menus[section.identifier] %}
+      {% assign checking = section %}
+      {% include section-active.html %}
+      <li
+        class="syn-overflow-hidden allow-wrap
+          {% if section_active %}cloak-open-nav-item
+          {% else %}cloak-closed-nav-item{% endif %}"
+        :class="{
+          'open-nav-item': openSection === '{{section.identifier}}',
+          'closed-nav-item': openSection !== '{{section.identifier}}'
+        }"
+        id="{{ section.identifier }}-list-item"
+        nav-menu-identifier="{{ include.menu_id }}"
+        >
+        <a
+          class="flex-item-no-shrink syn-flex justify-space-between align-center
+            {% if section.children %}no-bg-active{% endif %}
+            {% if include.menu_level == 0 %}syn-font-weight-bold bordered{% endif %}
+            {% if section_active or page.menus[include.menu_id].url == section.url %}syn-font-weight-bold active
+            {% else %}syn-text-secondary{% endif %}"
+          href="{{ section.url }}"
+          title="{{ section.title }}"
+          {% if section.children %}
+            @click.prevent.stop="toggle('{{ section.identifier }}')"
+          {% endif %}
+          id="{{ section.identifier }}-link">
+          <div {% if include.menu_level > 1 %}
+              {% assign indent = include.menu_level | minus:1 | times:16 %}
+              class="syn-ml-{{indent}}"
+            {% endif %}>
+            {{ section.title }}
+          </div>
+          {% if section.children %}
+            <span v-if="openSection === '{{ section.identifier }}'" {% unless page.menus[section.identifier] %} class="cloak-hidden" {% endunless %}>
+              {% include angle-up-svg.html %}
+            </span>
+            <span v-else {% if page.menus[section.identifier] %} class="cloak-hidden" {% endif %}>
+              {% include angle-down-svg.html %}
+            </span>
+          {% endif %}
+        </a>
+        {% if section.children %}
+          {% assign next_menu_level = include.menu_level | plus:1 %}
+          {% include nav-menu.html menu_id=section.identifier menu_level=next_menu_level %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</side-nav-menu>

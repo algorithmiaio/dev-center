@@ -13,6 +13,11 @@ redirect_from:
   - /application-development/client-guides/aws-lambda/
   - /application-development/guides/lambda/
   - /clients/lambda/
+menus:
+  clients:
+    url: /developers/clients/aws-lambda
+    title: "AWS Lambda"
+    weight: 16
 ---
 
 This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).

@@ -11,6 +11,11 @@ image:
 permalink: /platform/permissions/
 redirect_from:
   - /basics/permissions/
+menus:
+  platform:
+    url: /developers/platform/permissions
+    title: "Permissions"
+    weight: 3
 ---
 
 

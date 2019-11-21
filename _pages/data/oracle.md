@@ -8,7 +8,12 @@ tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/oracle.svg 
+    teaser: /language_logos/oracle.svg
+menus:
+  data:
+    url: /developers/data/oracle
+    title: "Oracle DB"
+    weight: 10
 ---
 
 Call the <a href="{{site.url}}/algorithms/util/OracleDB">OracleDB</a> algorithm to access data in your Oracle database.
@@ -30,7 +35,7 @@ Inside this folder, create a `.json` file containing your connection credentials
   "dsn":"fakeserver.net",
   "user":"someuser",
   "password":"somepass"
-} 
+}
 ```
 
 Then, inside your own algorithm, add an Oracle library to your dependencies file (in this example, `cx_Oracle`), then load the credentials from the JSON file and use them to make your DB connection:

@@ -17,6 +17,11 @@ menus:
     url: /developers/clients
     title: "Client Guides"
     weight: 3
+    identifier: clients
+  clients:
+    url: /developers/clients
+    title: "Overview"
+    weight: 1
 ---
 
 
