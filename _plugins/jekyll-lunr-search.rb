@@ -36,6 +36,7 @@ module Jekyll
         raise "Could not find #{@lunr_path}" if !File.exist?(@lunr_path)
 
         # Set up all other instance variables
+        @base_url = config['baseurl'] || ''
         @docs = {}
         @excludes = lunr_config['excludes']
         # If web host supports index.html as default doc, then optionally exclude it from the url
@@ -69,7 +70,7 @@ module Jekyll
 
           # Add documents to index
           items.each_with_index do |item, i|
-            entry = SearchEntry.create(item, content_renderer)
+            entry = SearchEntry.create(item, content_renderer, @base_url)
 
             entry.strip_index_suffix_from_url! if @strip_index_html
             entry.strip_stopwords!(stopwords, @min_length) if File.exists?(@stopwords_file)
@@ -83,7 +84,7 @@ module Jekyll
               "categories" => entry.categories,
               "tags" => entry.tags,
               "is_post" => entry.is_post,
-              "is_api_result" => entry.url.start_with?("/api/"),
+              "is_api_result" => entry.url.start_with?(@base_url + "/api/"),
               "body" => entry.body
             }
 
@@ -220,7 +221,7 @@ require 'nokogiri'
 module Jekyll
   module LunrJsSearch
     class SearchEntry
-      def self.create(site, renderer)
+      def self.create(site, renderer, base_url)
         if site.is_a?(Jekyll::Page) or site.is_a?(Jekyll::Document)
           if defined?(site.date)
             date = site.date
@@ -230,7 +231,7 @@ module Jekyll
           categories = site.data['categories']
           tags = site.data['tags']
           excerpt =  Nokogiri::HTML(site.data['excerpt'].to_s).xpath("//text()").to_s
-          title, url = extract_title_and_url(site)
+          title, url = extract_title_and_url(site, base_url)
           is_post = site.is_a?(Jekyll::Document)
           body = renderer.render(site)
 
@@ -240,9 +241,9 @@ module Jekyll
         end
       end
 
-      def self.extract_title_and_url(item)
+      def self.extract_title_and_url(item, base_url)
         data = item.to_liquid
-        [ data['title'], data['url'] ]
+        [ data['title'], base_url + data['url'] ]
       end
 
       attr_reader :title, :url, :excerpt, :date, :categories, :tags, :is_post, :body, :collection
