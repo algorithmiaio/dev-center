@@ -3,7 +3,7 @@
     <h1>
       Search results for "{{query}}"
     </h1>
-    <div class="syn-flex align-center">
+    <div class="syn-flex align-center syn-mb-8">
       <span class="syn-mr-16">Filter by: </span>
       <filter-selector />
     </div>
