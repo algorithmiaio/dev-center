@@ -1,0 +1,11 @@
+{% unless section_active %}
+  {% for child in checking.children %}
+    {% if page.menus[child.identifier] %}
+      {% assign section_active = true %}
+    {% elsif child.children %}
+      {% assign checking = child %}
+      {% include section-active.html %}
+      {% assign checking = section %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}

@@ -15,6 +15,11 @@ redirect_from:
   - /algorithm-development/guides/ruby-guide/
   - /application-development/client-guides/ruby/
   - /application-development/guides/ruby/
+menus:
+  clients:
+    url: /developers/clients/ruby
+    title: "Ruby"
+    weight: 12
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Ruby client to call algorithms and manage your data

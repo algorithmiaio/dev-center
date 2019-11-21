@@ -11,6 +11,11 @@ image:
 permalink: /platform/your-profile/
 redirect_from:
   - /basics/your-profile/
+menus:
+  platform:
+    url: /developers/platform/your-profile
+    title: "Account"
+    weight: 6
 ---
 
 This guide will explain the information available in your account including api calls and credits.

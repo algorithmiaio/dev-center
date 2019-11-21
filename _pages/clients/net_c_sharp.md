@@ -8,6 +8,11 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/c_sharp_net.svg
+menus:
+  clients:
+    url: /developers/clients/c_sharp_net
+    title: ".NET / C#"
+    weight: 8
 ---
 
 We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).
@@ -163,7 +168,7 @@ if (client.file(text_file).exists()) {
 }
 {% endhighlight %}
 
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`. 
+This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
 
 Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 

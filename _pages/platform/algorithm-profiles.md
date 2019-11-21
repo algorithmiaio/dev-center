@@ -12,6 +12,11 @@ permalink: /platform/algorithm-profiles/
 redirect_from:
   - /basics/algorithm-profiles/
   - /basics/algorithm_profiles/
+menus:
+  platform:
+    url: /developers/platform/algorithm-profiles
+    title: "Algorithm Profiles"
+    weight: 1
 ---
 
 Each algorithm is showcased through its profile page.

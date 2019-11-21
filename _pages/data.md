@@ -15,6 +15,11 @@ menus:
     url: /developers/data
     title: "Connecting Your Data"
     weight: 4
+    identifier: data
+  data:
+    url: /developers/data
+    title: "Overview"
+    weight: 1
 ---
 
 <a href="/data">Algorithmia's Data Portal</a> makes it easy to connect your application or website to data sources. You'll find guides on how to connect to <a href="https://aws.amazon.com/s3/">Amazon's S3 service</a>, <a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a>, <a href="https://cloud.google.com/storage">Google Cloud Storage</a>, <a href="https://www.dropbox.com/">Dropbox</a> or you can host your files for free on the Algorithmia platform with our <a href="https://algorithmia.com/data/hosted">Hosted Data Service</a>. With these options it's easy to integrate your data into the app you're building.

@@ -8,6 +8,11 @@ show_related: true
 author: steph_kim
 image:
     teaser: /language_logos/python.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/python
+    title: "Python"
+    weight: 4
 ---
 
 Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.

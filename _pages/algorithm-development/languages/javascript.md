@@ -8,6 +8,11 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/js.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/javascript
+    title: "JavaScript"
+    weight: 3
 ---
 
 Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.

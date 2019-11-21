@@ -8,6 +8,11 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/ruby.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/ruby
+    title: "Ruby"
+    weight: 6
 ---
 
 

@@ -7,6 +7,12 @@
 <script>
 export default {
   name: 'SideNavMenu',
+  props: {
+    menuIdentifier: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       openSection: ''
@@ -17,7 +23,7 @@ export default {
       this.openSection = this.openSection === sectionName ? '' : sectionName
     },
     getOpenSection() {
-      const openLink = this.$refs.menu.querySelector('li.cloak-open-nav-item')
+      const openLink = this.$refs.menu.querySelector(`li.cloak-open-nav-item[nav-menu-identifier="${this.menuIdentifier}"]`)
       if (openLink) {
         this.openSection = openLink.id.replace('-list-item', '')
       }
