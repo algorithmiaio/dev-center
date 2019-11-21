@@ -1,5 +1,5 @@
 <template>
-  <form class="syn-form-group syn-ml-16 syn-mr-16" action="/developers{% if site.isLocalDev %}/{% endif %}" method="GET" onclick="event.stopPropagation();">
+  <form class="syn-form-group syn-ml-16 syn-mr-16" action="formAction" method="GET" onclick="event.stopPropagation();">
     <div class="syn-input-icon-group icon-left syn-width-full">
       <input
         ref="input"
@@ -32,6 +32,10 @@ export default {
   },
   computed: {
     ...mapGetters(['query', 'areSearchResultsShown']),
+    formAction() {
+      const isLocalDev = location.hostname === 'localhost'
+      return `/developers${isLocalDev ? '/' : ''}`
+    }
   },
   methods: {
     ...mapActions(['setQuery']),
