@@ -14,36 +14,30 @@ export class Lunr {
 
       this.docs = docs
       this.index = lunr.Index.load(index)
+
+      window.LOONER = this
     } catch (err) {
       console.error('Issue while initializing search: ', err)
     }
   }
 
   search(query, filter = '') {
-    if (!this.index) return
+    let matches = []
+
+    if (!this.index) return matches
 
     switch (filter) {
       case 'API-DOCS':
-        return this.index.search(`+is_api_result:true ${query}`)
+        matches = this.index.search(`+is_api_result:true ${query}`)
+        break
       case 'DEV-CENTER':
-        return this.index.search(`+is_api_result:false ${query}`)
-      case '':
+        matches = this.index.search(`+is_api_result:false ${query}`)
+        break
+      case 'NONE':
       default:
-        return this.index.search(query)
+        matches = this.index.search(query)
     }
+
+    return matches.map(({ ref }) => this.docs[ref])
   }
 }
-
-// If there is a query string that will get picked up by lunrSearch
-//   then hide the page content by default
-// Note: the search input field doesn't get set by lunrSearch until search.json loads
-export function showSearchPageIfQueryExists() {
-  const query = new URL(window.location).searchParams;
-
-  if (query.has('q') && query.get('q').length >= 3) {
-    console.log('Has query string')
-    // $('#main-content').hide();
-    document.getElementById('search-query').focus()
-  }
-}
-
