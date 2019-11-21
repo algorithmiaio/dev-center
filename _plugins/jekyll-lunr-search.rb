@@ -10,6 +10,7 @@ module Jekyll
       def initialize(config = {})
         super(config)
 
+        # Create final config based on values specified in _config.yml files.
         lunr_config = {
           'excludes' => [],
           'strip_index_html' => false,
@@ -19,86 +20,103 @@ module Jekyll
             'title' => 10,
             'categories' => 20,
             'tags' => 20,
-            'body' => 1
+            'body' => 1,
+            'is_api_result' => 1
           },
           'js_dir' => 'js'
         }.merge!(config['lunr_search'] || {})
 
+        # Save config on instance for use in generate call
+        @lunr_config = lunr_config
+
+        # Locate lunr.js, which will be used to generate the search index.
         @js_dir = lunr_config['js_dir']
         gem_lunr = File.join(File.dirname(__FILE__), "../../build/lunr.min.js")
         @lunr_path = File.exist?(gem_lunr) ? gem_lunr : File.join(@js_dir, File.basename(gem_lunr))
         raise "Could not find #{@lunr_path}" if !File.exist?(@lunr_path)
 
-        ctx = V8::Context.new
-        ctx.load(@lunr_path)
-        ctx['indexer'] = proc do |this|
-          this.ref('id')
-          lunr_config['fields'].each_pair do |name, boost|
-            this.field(name, { 'boost' => boost })
-          end
-        end
-        @index = ctx.eval('lunr(indexer)')
-        @lunr_version = ctx.eval('lunr.version')
+        # Set up all other instance variables
         @docs = {}
         @excludes = lunr_config['excludes']
-
-        # if web host supports index.html as default doc, then optionally exclude it from the url
+        # If web host supports index.html as default doc, then optionally exclude it from the url
         @strip_index_html = lunr_config['strip_index_html']
-
-        # stop word exclusion configuration
+        # Stop word exclusion configuration
         @min_length = lunr_config['min_length']
         @stopwords_file = lunr_config['stopwords']
       end
 
-      # Index all pages except pages matching any value in config['lunr_excludes'] or with date['exclude_from_search']
-      # The main content from each page is extracted and saved to disk as json
+      # Index all pages except pages matching any value in config['lunr_excludes']
+      # or with date['exclude_from_search'] The main content from each page is
+      # extracted and saved to disk as json
       def generate(site)
         Jekyll.logger.info "Lunr:", 'Creating search index...'
-
         @site = site
-        # gather pages and posts
+
+        # Gather pages and posts to add to index
         items = pages_to_index(site)
         content_renderer = PageRenderer.new(site)
         index = []
 
-        items.each_with_index do |item, i|
-          entry = SearchEntry.create(item, content_renderer)
+        # Create the JavaScript function to be passed to Lunr
+        ctx = V8::Context.new
+        ctx.load(@lunr_path)
+        ctx['indexInitCallback'] = proc do |this|
+          this.ref('id')
+          # Set up fields for each Lunr document
+          @lunr_config['fields'].each_pair do |name, boost|
+            this.field(name, { 'boost' => boost })
+          end
 
-          entry.strip_index_suffix_from_url! if @strip_index_html
-          entry.strip_stopwords!(stopwords, @min_length) if File.exists?(@stopwords_file)
+          # Add documents to index
+          items.each_with_index do |item, i|
+            entry = SearchEntry.create(item, content_renderer)
 
-          doc = {
-            "id" => i,
-            "title" => entry.title,
-            "excerpt" => entry.excerpt,
-            "url" => entry.url,
-            "date" => entry.date,
-            "categories" => entry.categories,
-            "tags" => entry.tags,
-            "is_post" => entry.is_post,
-            "is_api_result" => entry.url.start_with?("/api/"),
-            "body" => entry.body
-          }
+            entry.strip_index_suffix_from_url! if @strip_index_html
+            entry.strip_stopwords!(stopwords, @min_length) if File.exists?(@stopwords_file)
 
-          @index.add(doc)
-          doc.delete("body")
-          @docs[i] = doc
+            doc = {
+              "id" => i,
+              "title" => entry.title,
+              "excerpt" => entry.excerpt,
+              "url" => entry.url,
+              "date" => entry.date,
+              "categories" => entry.categories,
+              "tags" => entry.tags,
+              "is_post" => entry.is_post,
+              "is_api_result" => entry.url.start_with?("/api/"),
+              "body" => entry.body
+            }
 
-          Jekyll.logger.debug "Lunr:", (entry.title ? "#{entry.title} (#{entry.url})" : entry.url)
+            this.add(doc)
+            # We only need the body when adding the item to the index.
+            # Remove it from the docs since we use the excerpt when rendering
+            # and this cuts down on search.json size considerably.
+            doc.delete("body")
+            @docs[i] = doc
+
+            Jekyll.logger.debug "Lunr:", (entry.title ? "#{entry.title} (#{entry.url})" : entry.url)
+          end
         end
 
-        FileUtils.mkdir_p(File.join(site.dest, @js_dir))
-        filename = File.join(@js_dir, 'search.json')
+        # Create index using newly created callback
+        @index = ctx.eval('lunr(indexInitCallback)')
+        @lunr_version = ctx.eval('lunr.version')
 
-        total = {
+        # Define the JSON we want to save to search.json
+        searchJson = {
           "docs" => @docs,
           "index" => @index.to_hash
         }
 
+        added_files = []
+
+        # Write search.json to disk
+        FileUtils.mkdir_p(File.join(site.dest, @js_dir))
+        filename = File.join(@js_dir, 'search.json')
         filepath = File.join(site.dest, filename)
-        File.open(filepath, "w") { |f| f.write(JSON.dump(total)) }
+        File.open(filepath, "w") { |f| f.write(JSON.dump(searchJson)) }
         Jekyll.logger.info "Lunr:", "Index ready (lunr.js v#{@lunr_version})"
-        added_files = [filename]
+        added_files << filename
 
         site_js = File.join(site.dest, @js_dir)
         # If we're using the gem, add the lunr and search JS files to the _site
@@ -110,7 +128,7 @@ module Jekyll
           added_files.push(*extras)
         end
 
-        # Keep the written files from being cleaned by Jekyll
+        # Prevent Jekyll from deleting files we create.
         added_files.each do |filename|
           site.static_files << SearchIndexFile.new(site, site.dest, "/", filename)
         end
