@@ -25,7 +25,11 @@ This is the default mode for Algorithmia: your model is hosted as a web endpoint
 
 Apache spark is a map-reduce system, which automatically knows how to pull the data from distributed sources, and map them to computation resources elsewhere. If you already have Spark in your ecosystem, or wish to add it, it can be easily configured to use Algorithmia to run batch predictions without making any changes to your Algorithm code.
 
-<a href="{{site.baseurl}}/integrations/spark-streaming" class="btn btn-default btn-primary"><i class="fa fa-cog" aria-hidden="true"></i> CONFIGURE SPARK</a>
+<a href="{{site.baseurl}}/integrations/spark-streaming">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">settings</i> CONFIGURE SPARK
+  </button>
+</a>
 
 ## Batch Predictions using an external Message Queue
 
@@ -43,9 +47,11 @@ def apply(input):
     # then write "results" to a logfile or datastore
     return results
 ```
-
-<a href="{{site.baseurl}}/integrations/event_listeners" class="btn btn-default btn-primary"><i class="fa fa-cog" aria-hidden="true"></i> CONFIGURE AMAZON SQS</a>
-
+<a href="{{site.baseurl}}/integrations/event_listeners">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">settings</i> CONFIGURE AMAZON SQS
+  </button>
+</a>
 ## Serial Batch Predictions via wrapper code
 
 If you are not using Spark or a Message Queue, you can write a simple wrapper to serially call an Algorithm for each prediction in your batch, e.g.:
@@ -112,4 +118,8 @@ However, if overall speed is more important than limiting the load, make **paral
 
 We can use the same basic approach as outlined in the Serial Batch Predictions approach, but instead of using loops around the `algo.pipe()` calls, we use multithreading to parallelize these calls.
 
-<a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> EXPLORE MULTITHREADING</a>
+<a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading">
+  <button class="syn-button contained theme-primary">
+    <i class="material-icons">book</i> EXPLORE MULTITHREADING
+  </a>
+</button>
