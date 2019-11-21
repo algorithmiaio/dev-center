@@ -4,11 +4,9 @@ title:  "I am an algorithm developer, how do I make money?"
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
-image:
-  teaser: /icons/fa-bolt.png
 ---
 
-When adding your algorithm to the marketplace, you can determine the unit of charge in Algorithmia credits. Each time your algorithm is called through the API, we meter it and charge the caller's credit account. 
+When adding your algorithm to the marketplace, you can determine the unit of charge in Algorithmia credits. Each time your algorithm is called through the API, we meter it and charge the caller's credit account.
 
 The option to Cash Out earned credits appears once you've earned $100 or more worth of credits.
 
