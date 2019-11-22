@@ -14,8 +14,6 @@ export class Lunr {
 
       this.docs = docs
       this.index = lunr.Index.load(index)
-
-      window.LOONER = this
     } catch (err) {
       console.error('Issue while initializing search: ', err)
     }
