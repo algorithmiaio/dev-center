@@ -21,6 +21,8 @@ module Jekyll
       end
       html << '</ul>'
       html << '</nav>'
+      # If we have only the containing tags stored in the html array,
+      # and no actual list items, don't include in page
       if html.length > 4
         return html.join("\n")
       else
