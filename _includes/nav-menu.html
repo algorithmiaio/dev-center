@@ -35,18 +35,22 @@
             @click.prevent.stop="toggle('{{ section.identifier }}')"
           {% endif %}
           id="{{ section.identifier }}-link">
-          <div {% if include.menu_level > 1 %}
+          <div class="{% if section.icon %}syn-flex align-center{% endif %}
+            {% if include.menu_level > 1 %}
               {% assign indent = include.menu_level | minus:1 | times:16 %}
-              class="syn-ml-{{indent}}"
-            {% endif %}>
+              syn-ml-{{indent}}
+            {% endif %}">
+            {% if section.icon %}
+              <i class="material-icons syn-mr-8">{{section.icon}}</i>
+            {% endif %}
             {{ section.title }}
           </div>
           {% if section.children %}
             <span v-if="openSection === '{{ section.identifier }}'" {% unless page.menus[section.identifier] %} class="cloak-hidden" {% endunless %}>
-              {% include angle-up-svg.html %}
+              <i class="material-icons">keyboard_arrow_up</i>
             </span>
             <span v-else {% if page.menus[section.identifier] %} class="cloak-hidden" {% endif %}>
-              {% include angle-down-svg.html %}
+              <i class="material-icons">keyboard_arrow_down</i>
             </span>
           {% endif %}
         </a>

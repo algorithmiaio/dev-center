@@ -18,6 +18,7 @@
   <link rel="shortcut icon" type="image/png" href="/v1/config/favicon">
   {% endif %}
 
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/material-icons.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/pygments-monokai.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/synapse.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/devcenter.css">
@@ -55,9 +56,7 @@
     <header class="syn-page-header syn-header-brand">
       <div class="syn-page-header-content">
         <button onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))" class="syn-btn text icon rounded grow theme-light no-shadow" data-v-3352aef0="" data-v-19ae9fc3="">
-          <svg width="1rem" height="1rem" viewBox="0 0 12 12">
-            <path fill="currentColor" d="M0,2 L12,2 L12,3.344 L0,3.344 L0,2 Z M0,6.67 L0,5.33 L12,5.33 L12,6.67 L0,6.67 Z M0,10 L0,8.656 L12,8.656 L12,10 L0,10 Z"/>
-          </svg>
+          <i class="material-icons icon-size-24">menu</i>
         </button>
       </div>
       <div class="syn-page-header-nav syn-flex direction-column syn-overflow-hidden" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">

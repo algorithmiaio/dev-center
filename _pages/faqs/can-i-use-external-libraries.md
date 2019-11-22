@@ -4,8 +4,6 @@ title:  "Can I use external libraries with my algorithms?"
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
-image:
-  teaser: /icons/fa-bolt.png
 ---
 
 Of course! Dependencies are added to the algorithm through the Dependencies dialog inside the algorithm editor.

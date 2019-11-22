@@ -19,7 +19,7 @@ redirect_from:
 
 In this post, we'll walk through how to build a very simple Android app that uses the Algorithmia API.
 
-The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration"><button class="syn-btn contained theme-primary"><i class="material-icons">code</i> FORK</button></a>
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first Android app with Algorithmia!
 
@@ -228,5 +228,5 @@ Integrating Algorithmia into Android is an easy and convenient way to leverage a
 ### Further Reading:
 
 * [The Algorithmia Client]({{site.baseurl}}/clients/java)
-* [Algorithmia Java Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) <i class="fa fa-external-link"></i>
-* <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="fa fa-external-link"></i>
+* [Algorithmia Java Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) <i class="material-icons">open_in_new</i>
+* <a href="https://github.com/algorithmiaio/algorithmia-java">[Algorithmia Java Client Source Code](https://github.com/algorithmiaio/algorithmia-java) <i class="material-icons">open_in_new</i>

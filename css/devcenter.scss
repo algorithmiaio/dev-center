@@ -88,3 +88,9 @@ side-nav-menu[v-cloak] {
     @extend .closed-nav-item;
   }
 }
+
+.syn-btn {
+  i {
+    vertical-align: sub;
+  }
+}

@@ -19,7 +19,11 @@ menus:
 
 The Training Center hosts training modules to guide users along their Algorithmia journey. Think of it as the place you can go to for long-form and introductory content to the Algorithmia system.
 
-<a href="https://training.algorithmia.com" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> KEEP LEARNING</a>
+<a href="https://training.algorithmia.com">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">library_books</i> KEEP LEARNING
+  </button>
+</a>
 
 {% else %}
 
@@ -29,5 +33,9 @@ The Training Center hosts training modules to guide users along their Algorithmi
 
 The Learning Center hosts training modules to guide users along their Algorithmia journey. Think of it as the place you can go to for long-form and introductory content to the Algorithmia system.
 
-<a href="https://learn.algorithmia.com" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> KEEP LEARNING</a>
+<a href="https://learn.algorithmia.com">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">library_books</i> KEEP LEARNING
+  </button>
+</a>
 {% endif %}
