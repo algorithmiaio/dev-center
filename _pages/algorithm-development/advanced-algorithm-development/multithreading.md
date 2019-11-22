@@ -20,4 +20,8 @@ To make this happen, use whatever multithreading or multiprocessing library you 
 
 Here's a sample Algorithm which takes a single array of inputs, then runs up to four parallel threads at once to call a simple "hello world" Algorithm, reassembling the results into a single output:
 
-<a href="https://algorithmia.com/algorithms/jpeck/multiprocessing_hello/source/" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> VIEW CODESAMPLE</a>
+<a href="https://algorithmia.com/algorithms/jpeck/multiprocessing_hello/source/">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">code</i> VIEW CODESAMPLE
+  </button>
+</a>

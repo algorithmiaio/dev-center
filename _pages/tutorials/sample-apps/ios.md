@@ -18,7 +18,7 @@ github: https://github.com/algorithmiaio/algorithmia-swift
 
 In this post, we'll walk through a very simple iOS app that uses the Algorithmia API in Swift.
 
-The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/algorithmia-swift/" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/algorithmia-swift/"><button class="syn-btn contained theme-primary"><i class="material-icons">code</i> FORK</button></a>
 
 You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first iOS app with Algorithmia!
 
@@ -171,4 +171,4 @@ Browse through [Algorithmia's microservice catalog](/algorithms) to see what oth
 ### Further Reading:
 
 * [The Algorithmia Swift Client]({{site.baseurl}}/clients/swift)
-* <a href="https://github.com/algorithmiaio/algorithmia-swift">[Algorithmia Swift Client Source Code](https://github.com/algorithmiaio/algorithmia-swift) <i class="fa fa-external-link"></i>
+* <a href="https://github.com/algorithmiaio/algorithmia-swift">[Algorithmia Swift Client Source Code](https://github.com/algorithmiaio/algorithmia-swift) <i class="material-icons">open_in_new</i>

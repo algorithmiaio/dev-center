@@ -17,4 +17,8 @@ With the [Serverless Framework](https://serverless.com), you can quickly build s
 
 To add Algorithmia into apps built on the Serverless Framework, the Algorithm call merely needs to be enclosed in a function wrapper. Now all your favorite GPU-accelerated Machine Learning tools can be part of your Serverless deployment!
 
-<a href="https://github.com/bytekast/algo-lambda" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> TRY IT OUT</a>
+<a href="https://github.com/bytekast/algo-lambda">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">computer</i> TRY IT OUT
+  </button>
+</a>
