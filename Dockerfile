@@ -65,6 +65,7 @@ COPY --from=dev-center-builder /opt/builds/sites ./sites
 
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
+COPY server/customization.js ./server/customization.js
 COPY config ./config
 COPY package.json package-lock.json ./
 
