@@ -63,6 +63,7 @@
     "http-proxy-middleware": "^0.20.0",
     "prom-client": "^11.5.3",
     "request-stats": "^3.0.0",
+    "uiv": "^0.34.2",
     "vue": "^2.6.10",
     "webpack": "^4.41.2"
   }
