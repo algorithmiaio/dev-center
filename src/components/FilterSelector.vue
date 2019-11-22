@@ -36,8 +36,8 @@
 </template>
 
 <script lang="ts">
-import Dropdown from './synapse/Dropdown.vue'
-import CaretDownIcon from './icons/CaretDownIcon.vue'
+import Dropdown from '../../synapse/components/vue/Dropdown'
+import CaretDownIcon from '../../synapse/components/vue/icons/CaretDownIcon'
 import { filter } from '../store/search'
 import { mapGetters, mapActions } from 'vuex'
 

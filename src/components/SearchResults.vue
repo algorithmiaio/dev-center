@@ -11,7 +11,7 @@
     <div class="syn-aside">
 
       <div class="syn-aside-main">
-        <div class="syn-break"></div>
+        <div class="syn-break syn-mb-0"></div>
 
         <ul v-if="results.length" class="syn-list">
           <li v-for="result in results" :key="result.id">
@@ -66,10 +66,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import FilterSelector from './FilterSelector'
-import CodeIcon from './icons/CodeIcon'
-import DocIcon from './icons/DocIcon'
+import CodeIcon from '../../synapse/components/vue/icons/CodeIcon'
+import DocIcon from '../../synapse/components/vue/icons/DocIcon'
 import HelpIcon from './icons/HelpIcon'
-import RightArrowIcon from './icons/RightArrowIcon'
+import RightArrowIcon from '../../synapse/components/vue/icons/RightArrowIcon'
 
 export default {
   name: 'SearchResults',
