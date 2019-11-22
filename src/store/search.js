@@ -36,9 +36,7 @@ export const search = {
       dispatch('search')
     },
     search: debounce(({ commit, getters }) => {
-      const { query, filter, areSearchResultsShown } = getters
-      if (!areSearchResultsShown) return
-
+      const { query, filter } = getters
       commit(
         'SET_RESULTS',
         { results: searchIndex.search(query, filter.value) }

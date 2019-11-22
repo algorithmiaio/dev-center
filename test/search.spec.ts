@@ -86,7 +86,7 @@ describe('Vuex: Search Store', () => {
         sinon.stub(searchIndex, 'search').returns([])
       })
 
-      it('should process results if a query exists', (done) => {
+      it('should process results ', (done) => {
         store.state.search.query = 'something'
         search.actions.search(context)
 
@@ -94,16 +94,6 @@ describe('Vuex: Search Store', () => {
           expect(commitSpy.args).to.deep.equal([
             ['SET_RESULTS', { results: [] }],
           ])
-          done()
-        }, 1000)
-      })
-
-      it('should not process results if no query exists', (done) => {
-        store.state.search.query = ''
-        search.actions.search(context)
-
-        setTimeout(() => {
-          expect(commitSpy.args).to.deep.equal([])
           done()
         }, 1000)
       })
