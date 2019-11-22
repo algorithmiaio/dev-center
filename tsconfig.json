@@ -23,7 +23,6 @@
   ],
   "files" : [
     "./src/typings/vue-shims.d.ts",
-    "./src/typings/contentful/index.d.ts",
     "./src/typings/highlightjs.d.ts",
     "./src/typings/uiv.d.ts",
     "./src/typings/vue-meta.d.ts",
