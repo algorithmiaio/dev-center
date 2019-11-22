@@ -75,11 +75,7 @@ import RightArrowIcon from '../../synapse/components/vue/icons/RightArrowIcon'
 export default {
   name: 'SearchResults',
   components: { FilterSelector, CodeIcon, DocIcon, HelpIcon, RightArrowIcon },
-  computed: {
-    ...mapGetters(['query', 'results'])
-  },
-  methods: {
-    ...mapActions(['setFilter'])
-  }
+  computed: mapGetters(['query', 'results']),
+  methods: mapActions(['setFilter'])
 }
 </script>

@@ -18,6 +18,7 @@
   },
   "include": [
     "./src/**/*.ts",
+    "./src/**/*.js",
     "./src/**/*.vue"
   ],
   "files" : [
@@ -25,7 +26,6 @@
     "./src/typings/contentful/index.d.ts",
     "./src/typings/highlightjs.d.ts",
     "./src/typings/uiv.d.ts",
-    "./src/typings/moxios.d.ts",
     "./src/typings/vue-meta.d.ts",
     "./src/typings/vue-clipboards.d.ts",
     "./src/typings/webpack.d.ts"
