@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import clone from 'clone'
 import { debounce } from '../utils/debounce'
-import { Lunr } from '../utils/lunr'
-
-const searchIndex = Lunr.create('/developers/js/search.json')
+import { searchIndex } from '../utils/lunr'
 
 export const filter = {
   NONE: { name: 'All results', value: 'NONE' },
@@ -37,7 +35,6 @@ export const search = {
       commit('SET_QUERY', { query })
       dispatch('search')
     },
-
     search: debounce(({ commit, getters }) => {
       const { query, filter, areSearchResultsShown } = getters
       if (!areSearchResultsShown) return

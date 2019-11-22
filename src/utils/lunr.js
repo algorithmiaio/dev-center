@@ -1,6 +1,7 @@
 import lunr from 'lunr'
+import axios from 'axios'
 
-export class Lunr {
+class Lunr {
   static create(searchJsonPath) {
     const instance = new Lunr()
     instance.init(searchJsonPath)
@@ -9,8 +10,8 @@ export class Lunr {
 
   async init(searchJsonPath) {
     try {
-      const res = await fetch(searchJsonPath)
-      const { index, docs } = await res.json()
+      const { data } = await axios(searchJsonPath)
+      const { index, docs } = data
 
       this.docs = docs
       this.index = lunr.Index.load(index)
@@ -39,3 +40,5 @@ export class Lunr {
     return matches.map(({ ref }) => this.docs[ref])
   }
 }
+
+export const searchIndex = Lunr.create('/developers/js/search.json')
