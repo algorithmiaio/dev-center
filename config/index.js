@@ -1,5 +1,7 @@
 const { caseInsensitiveEquals } = require('./util')
 
+const baseUrl = process.env.BASE_URL || 'algorithmia.com'
+
 module.exports = {
   env: {
     disableHSTS: caseInsensitiveEquals(process.env.DISABLE_HSTS, 'true'),
@@ -18,6 +20,7 @@ module.exports = {
     stage: {
       cspEnabled: caseInsensitiveEquals(process.env.ENFORCE_CSP, 'true'),
       devCenterUrl: 'http://localhost:4001',
+      webapiUrl: process.env.WEBAPI_BASE_URL || `https://${baseUrl}`,
       prometheusToken: process.env.PROMETHEUS_TOKEN,
     },
   },

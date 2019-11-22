@@ -10,6 +10,6 @@ export function setupPage(user) {
 
   replaceUserCreds({
     user,
-    nodes: document.querySelectorAll('[replace-user-creds]')
+    nodes: document.querySelectorAll('pre code')
   })
 }

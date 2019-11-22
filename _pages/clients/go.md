@@ -97,7 +97,7 @@ if dir_err != nil {
 }
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "your_username/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 {: .notice-info}
@@ -132,7 +132,7 @@ So far you've created your data collection and checked and updated directory per
 First create a variable that holds the path to your data collection and the text file you will be uploading:
 
 {% highlight go %}
-var text_file = "data://your_username/nlp_directory/jack_london.txt"
+var text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt"
 {% endhighlight %}
 
 Next upload your local file to the data collection using the .putFile() method:

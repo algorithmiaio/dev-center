@@ -45,4 +45,8 @@ Transposit and Algorithmia are flexible enough to put together just about any wo
 
 Ready to get started? Start by forking the demo application on Transposit (and click "Connect" under "Auth & user settings" to set "Simple YOUR_API_KEY"), then mix up your own solution:
 
-<a href="https://console.transposit.com/t/transposit-sample/algorithmia_demo?readme=true" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> FORK ON TRANSPOSIT</a>
+<a href="https://console.transposit.com/t/transposit-sample/algorithmia_demo?readme=true">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">code</i> FORK ON TRANSPOSIT
+  </button>
+</a>

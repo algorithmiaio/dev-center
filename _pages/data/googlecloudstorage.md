@@ -71,7 +71,7 @@ For example, to retrieve and print a file's contents in Python:
 import Algorithmia
 import csv
 
-client = Algorithmia.client('your_api_key')
+client = Algorithmia.client('YOUR_API_KEY')
 
 def google_cloud_data():
     # Get file from Google Cloud Storage data source

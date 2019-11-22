@@ -4,8 +4,6 @@ title:  "What is the apply() function?"
 categories: faqs
 tags: [algo-dev-faq]
 show_related: true
-image:
-  teaser: /icons/fa-question-circle.png
 ---
 
 

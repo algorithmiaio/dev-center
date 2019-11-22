@@ -14,7 +14,7 @@ image:
 github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
 ---
 
-The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>
+The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example"><button class="syn-btn contained theme-primary"><i class="material-icons">code</i> FORK</button></a>
 
 Before you get started with this Shiny sample app, check out our <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a> and when you want to work with your own data, read up on [Algorithmia's Data Portal](/data), which offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
 
@@ -39,11 +39,11 @@ library(algorithmia)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-   
+
    # Application title
    titlePanel("NY Births with Fourier Detrend"),
-   
-   # Sidebar with a slider input for number of bins 
+
+   # Sidebar with a slider input for number of bins
    sidebarLayout(
       sidebarPanel(
          sliderInput("bins",
@@ -52,7 +52,7 @@ ui <- fluidPage(
                      max = 10,
                      value = 2)
       ),
-      
+
       # Show a plot of the generated distribution
       mainPanel(
          plotOutput("distPlot")
@@ -74,7 +74,7 @@ server <- function(input, output) {
     data_input <- list(as.list(births), input$bins)
     return(unlist(fourier_detrend(data_input)))
   })
-  
+
    output$distPlot <- renderPlot({
      detrend_data <- update_plot()
      dbl <- ts(detrend_data, frequency=12, start=c(1946,1))
@@ -82,7 +82,7 @@ server <- function(input, output) {
    })
 }
 
-# Run the application 
+# Run the application
 shinyApp(ui = ui, server = server)
 
 {% endhighlight %}

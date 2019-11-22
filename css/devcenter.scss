@@ -94,3 +94,9 @@ side-nav-menu[v-cloak] {
   overflow-y: auto;
   position: relative;
 }
+
+.syn-btn {
+  i {
+    vertical-align: sub;
+  }
+}

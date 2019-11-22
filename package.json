@@ -20,7 +20,7 @@
     "jest:update": "./node_modules/jest/bin/jest.js -u",
     "setup": "npm run synapse:setup && gem install bundler && bundle install && npm install",
     "server": "node ./server/index.js",
-    "server:dev": "NODE_ENV=development npm run server",
+    "server:dev": "NODE_ENV=development BASE_URL=test.algorithmia.com npm run server",
     "server:prod": "NODE_ENV=production npm run server",
     "start": "npm run server:prod",
     "synapse:setup": "git submodule init && git submodule update && cd synapse && npm ci",
@@ -38,7 +38,6 @@
     "@wdio/selenium-standalone-service": "^5.15.0",
     "@wdio/spec-reporter": "^5.14.5",
     "@wdio/sync": "^5.14.4",
-    "axios": "^0.19.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
     "babel-preset-env": "^1.7.0",
@@ -58,6 +57,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bunyan": "^1.8.12",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
