@@ -27,10 +27,10 @@ class Lunr {
 
     switch (filter) {
       case 'API_DOCS':
-        matches = this.index.search(`+is_api_result:true ${query}`)
+        matches = this.index.search(`+is_api_result:true +${query}`)
         break
       case 'DEV_CENTER':
-        matches = this.index.search(`+is_api_result:false ${query}`)
+        matches = this.index.search(`+is_api_result:false +${query}`)
         break
       case 'NONE':
       default:
