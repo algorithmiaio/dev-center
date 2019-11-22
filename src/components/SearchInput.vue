@@ -27,7 +27,7 @@ export default {
   components: { SearchIcon },
   name: 'SearchInput',
   mounted() {
-    this.updateQueryFromUrl()
+    this.setInputFromUrl()
     this.focusInputIfSearchResultsShown()
   },
   computed: {
@@ -39,9 +39,8 @@ export default {
   },
   methods: {
     ...mapActions(['setQuery']),
-    updateQueryFromUrl() {
+    setInputFromUrl() {
       const query = new URL(window.location).searchParams.get('q');
-
       if (query) {
         this.setQuery(query)
       }
