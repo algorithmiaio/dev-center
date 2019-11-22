@@ -9,7 +9,6 @@
     </div>
 
     <div class="syn-aside">
-
       <div class="syn-aside-main">
         <div class="syn-break syn-mb-0"></div>
 
@@ -30,17 +29,21 @@
             </div>
           </li>
         </ul>
-        <p v-if="!results.length">No results</p>
+
+        <div v-if="!results.length" class="syn-row syn-text-center syn-mv-64">
+          <div class="syn-col">
+            <h4 class="syn-mb-8">No Results</h4>
+          </div>
+        </div>
       </div>
 
       <div class="syn-aside-side">
-
         <div class="syn-card">
           <div class="syn-media-object">
             <div class="syn-user-image syn-user-image-56 syn-media-object-image">
               <help-icon />
             </div>
-            <div class="syn-media-object-body">
+            <div>
               <h4>Need Help?</h4>
               <p class="syn-card-text syn-body-2">We're here to help with any questions or code.</p>
               <div class="syn-card-actions">
@@ -56,11 +59,9 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
