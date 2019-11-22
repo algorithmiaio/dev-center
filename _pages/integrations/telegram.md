@@ -15,4 +15,8 @@ image:
 
 By adding calls to Algorithmia's API in your Telegraf project, your Telegram bots can utilize a broad range of Machine Learning tools, right from within the chat: analyze your users' messages for sentiment, aytomatically direct them to the right FAQ via deep keyword analysis and document classification, or recognize and transform the images they send.
 
-<a href="https://github.com/telegraf/colorizer-bot/" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> CODE</a>
+<a href="https://github.com/telegraf/colorizer-bot/">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">code</i> CODE
+  </button>
+</a>

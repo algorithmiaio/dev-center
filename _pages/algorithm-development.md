@@ -11,6 +11,11 @@ menus:
     url: /developers/algorithm-development
     title: "Algorithm Development"
     weight: 7
+    identifier: algo_development
+  algo_development:
+    url: /developers/algorithm-development
+    title: Overview
+    weight: 1
 ---
 
 <p>Welcome to deploying your algorithms and models using Algorithmia's AI Layer. You can create algorithms using Java, Python, R, Rust, Scala, Ruby, and JavaScript by following along with one of our <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>.</p>

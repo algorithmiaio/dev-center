@@ -8,7 +8,12 @@ tags: [app-data-connectors]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/postgres.svg 
+    teaser: /language_logos/postgres.svg
+menus:
+  data:
+    url: /developers/data/postgres
+    title: "PostgreSQL"
+    weight: 12
 ---
 
 If your algorithm needs to read or write data from a PostgreSQL database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
@@ -28,7 +33,7 @@ Inside this folder, create a `.json` file containing your connection credentials
   "user":"someuser",
   "password":"somepass",
   "dbname":"somedb"
-} 
+}
 ```
 
 Then, inside your own algorithm, add a PostgreSQL library to your dependencies file (in this example, `psycopg2`), then load the credentials from the JSON file and use them to make your DB connection:

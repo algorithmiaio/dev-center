@@ -16,6 +16,11 @@ redirect_from:
   - /application-development/client-guides/rust/
   - /application-development/guides/rust/
   - /application-development/lang-guides/rust/examples/
+menus:
+  clients:
+    url: /developers/clients/rust
+    title: "Rust"
+    weight: 13
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Rust Client to call algorithms and manage your data

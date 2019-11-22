@@ -88,3 +88,15 @@ side-nav-menu[v-cloak] {
     @extend .closed-nav-item;
   }
 }
+
+#scrollspy-content {
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.syn-btn {
+  i {
+    vertical-align: sub;
+  }
+}

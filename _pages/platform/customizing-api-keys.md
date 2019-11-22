@@ -11,6 +11,11 @@ image:
 permalink: /platform/customizing-api-keys/
 redirect_from:
   - /basics/customizing-api-keys/
+menus:
+  platform:
+    url: /developers/platform/customizing-api-keys
+    title: "API Keys"
+    weight: 2
 ---
 
 To call algorithms and interact with the Data API, you'll use an API key for authenticatication.

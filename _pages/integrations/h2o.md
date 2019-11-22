@@ -11,8 +11,16 @@ image:
 
 Once you've trained your *H2O* models, deploy them to Algorithmia to get all the benefits of elastic, scalable, serverless machine learning hosting! Deploying your models is easy, and you don't need to worry about managing or maintaining servers.
 
-There are two ways to deploy H2O models on Algorithmia: 
+There are two ways to deploy H2O models on Algorithmia:
 
-<a href="https://github.com/algorithmiaio/sample-apps/tree/master/algo-dev-demo/h2o" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> 100% Java</a>
+<a href="https://github.com/algorithmiaio/sample-apps/tree/master/algo-dev-demo/h2o">
+  <button class="syn-btn contained theme-primary syn-mr-16">
+    <i class="material-icons">code</i> 100% Java
+  </button>
+</a>
 
-<a href="https://blog.algorithmia.com/using-h2o-ai-to-classify-domains-in-production/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> Jython</a>
+<a href="https://blog.algorithmia.com/using-h2o-ai-to-classify-domains-in-production/">
+  <button class="syn-btn contained theme-primary">
+    <i class="material-icons">library_books</i> Jython
+  </button>
+</a>

@@ -10,6 +10,11 @@ image:
 tags: ["text-analysis", "machine-learning", "computer-vision", "utilities"]
 redirect_from:
   - /guides/
+menus:
+  tutorials:
+    url: /developers/tutorials/recipes
+    title: "Recipes"
+    weight: 2
 ---
 
 {% assign recipes = site.pages | where: "categories", "recipes" | sort:"title" %}

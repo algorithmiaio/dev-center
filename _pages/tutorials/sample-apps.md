@@ -9,6 +9,11 @@ image:
     teaser: /icons/sample apps.svg
 redirect_from:
   - /samples/
+menus:
+  tutorials:
+    url: /developers/tutorials/sample-apps
+    title: "Sample Apps"
+    weight: 3
 ---
 
 

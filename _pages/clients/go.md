@@ -11,6 +11,11 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-go
 redirect_from:
   - /application-development/client-guides/go/
+menus:
+  clients:
+    url: /developers/clients/go
+    title: "Go"
+    weight: 5
 ---
 
 This guide provides a walk-through of how to use the Algorithmia Go client to call algorithms and manage your data

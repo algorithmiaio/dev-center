@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { scrollspy } from 'uiv'
 import CodeSample from './components/CodeSample'
 import SideNavMenu from './components/SideNavMenu'
 import Toast from './components/Toast'
@@ -14,6 +15,8 @@ Vue.component('sideNavMenu', SideNavMenu)
 Vue.component('toast', Toast)
 Vue.component('searchInput', SearchInput)
 Vue.component('searchResults', SearchResults)
+
+Vue.directive('scrollspy', scrollspy)
 
 const app = new Vue({
   el: '#vue-app',

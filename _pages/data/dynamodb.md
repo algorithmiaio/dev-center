@@ -8,7 +8,12 @@ tags: [app-data-connectors]
 show_related: true
 author: steph_kim, jon_peck
 image:
-    teaser: /language_logos/dynamo_db_image.png 
+    teaser: /language_logos/dynamo_db_image.png
+menus:
+  data:
+    url: /developers/data/dynamodb
+    title: "DynamoDB"
+    weight: 4
 ---
 
 Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/sdk-for-python/) package and securely storing their access credentials in a data collection.
@@ -45,14 +50,14 @@ AWS_REGION_NAME = creds["AWS Generic"]["region-name"]
 
 # Init dynamodb
 dynamodb = boto3.resource("dynamodb", region_name=AWS_REGION_NAME, aws_access_key_id=AWS_ID, aws_secret_access_key=AWS_SECRET)
-        
+
 def decimal_default(obj):
     # Handles decimal values only
     # TODO: test and add as necessary casting for other dynamodb data types
     if isinstance(obj, decimal.Decimal):
         return int(obj)
     raise TypeError
- 
+
 def apply(input):
     try:
         # Pass in table name
@@ -66,6 +71,6 @@ def apply(input):
     except Exception as e:
         print("ERROR in table lookup", e)
 
-``` 
+```
 
 

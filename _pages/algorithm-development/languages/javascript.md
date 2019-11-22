@@ -8,6 +8,11 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/js.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/javascript
+    title: "JavaScript"
+    weight: 3
 ---
 
 Before you get started learning about Scala algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
@@ -50,7 +55,7 @@ Go ahead and remove the boilerplate code below that's inside the apply() functio
 
 Now that you have created your algorithm, you can add dependencies.  The algorithm we are about to create does not have any dependencies other than `algorithmia` (which is added by default), but it is important to know how to do this - so for now we'll add `lodash` just as an example.
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="fa fa-external-link"></i></a>.  You don't need to create the package.json file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
+Algorithmia supports adding 3rd party dependencies via the <a href="https://www.npmjs.com/" target="_blank">NPM Javascript package manager <i class="material-icons">open_in_new</i></a>.  You don't need to create the package.json file manually.  Instead, on the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_javascript.png" alt="JavaScript Dependency File" class="syn-image-responsive">
 
@@ -235,7 +240,7 @@ For more information on error handling see the <a href="{{site.baseurl}}/algorit
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="material-icons">open_in_new</i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
@@ -270,5 +275,5 @@ For more resources:
 * <a href="{{site.baseurl}}/clients/node">Algorithmia Client NodeJS Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
-* <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="fa fa-external-link"></i></a>
+* <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="material-icons">open_in_new</i></a>
 

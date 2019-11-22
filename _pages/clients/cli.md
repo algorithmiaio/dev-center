@@ -10,6 +10,11 @@ image:
 redirect_from:
   - /application-development/client-guides/cli/
   - /application-development/guides/cli/
+menus:
+  clients:
+    url: /developers/clients/cli
+    title: "CLI"
+    weight: 3
 ---
 
 The Algorithmia CLI is a cross-platform tool for interfacing with algorithms and the Algorithmia Data API.

@@ -13,6 +13,11 @@ redirect_from:
   - /algorithm-development/guides/javascript-guide/
   - /application-development/client-guides/javascript/
   - /application-development/guides/javascript/
+menus:
+  clients:
+    url: /developers/clients/javascript
+    title: "Javascript"
+    weight: 7
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/HF04Ge-3XdE" %}

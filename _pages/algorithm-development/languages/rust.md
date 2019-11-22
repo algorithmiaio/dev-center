@@ -8,6 +8,11 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/rust.svg
+menus:
+  languages:
+    url: /developers/algorithm-development/languages/rust
+    title: "Rust"
+    weight: 7
 ---
 
 Before you get started learning about Rust algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
@@ -231,7 +236,7 @@ For more information on error handling see the <a href="{{site.baseurl}}/algorit
 
 ## Algorithm Checklist
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://blog.algorithmia.com/advanced-algorithm-design/">Advanced Algorithm Development <i class="material-icons">open_in_new</i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
