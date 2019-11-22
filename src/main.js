@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import CodeSample from './components/CodeSample'
+import ImageContainer from './components/ImageContainer'
 import SideNavMenu from './components/SideNavMenu'
 import Toast from './components/Toast'
 import { getCurrentUser } from './api/user'
 import { setupPage } from './utils/setupPage'
 
 Vue.component('codeSample', CodeSample)
+Vue.component('imageContainer', ImageContainer)
 Vue.component('sideNavMenu', SideNavMenu)
 Vue.component('toast', Toast)
 
