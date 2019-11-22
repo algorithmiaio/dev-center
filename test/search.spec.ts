@@ -3,7 +3,7 @@ import * as Vuex from 'vuex'
 import { expect } from 'chai'
 import 'mocha'
 import { search, filter } from '../src/store/search'
-import { searchIndex } from '../src/utils/lunr'
+import { searchIndex } from '../src/utilities/lunr'
 import nock from 'nock'
 import sinon from 'sinon'
 

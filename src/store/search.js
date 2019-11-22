@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import clone from 'clone'
-import { debounce } from '../utils/debounce'
-import { searchIndex } from '../utils/lunr'
+import { debounce } from '../utilities/debounce'
+import { searchIndex } from '../utilities/lunr'
 
 export const filter = {
   NONE: { name: 'All results', value: 'NONE' },

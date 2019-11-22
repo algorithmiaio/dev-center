@@ -5,7 +5,7 @@ import Toast from './components/Toast'
 import SearchResults from './components/SearchResults'
 import SearchInput from './components/SearchInput'
 import { getCurrentUser } from './api/user'
-import { setupPage } from './utils/setupPage'
+import { setupPage } from './utilities/setupPage'
 import store from './store/index'
 import { mapGetters } from 'vuex'
 
