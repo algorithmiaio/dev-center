@@ -13,6 +13,6 @@ module.exports = async () => {
   }
 
   nock(/.+/)
-    .get(/.+/)
+    .get('/developers/js/search.json')
     .reply(200, index)
 }

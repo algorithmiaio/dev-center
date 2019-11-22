@@ -21,7 +21,7 @@ const index = {
 }
 
 nock(/.+/)
-  .get(/.+/)
+  .get('/developers/js/search.json')
   .reply(200, index)
 
 const store: any = new Vuex.Store({
