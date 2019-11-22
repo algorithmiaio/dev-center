@@ -6,7 +6,9 @@
       </div>
     </div>
     <modal v-model="modalOpen" no-padding hide-close-btn>
-      <slot></slot>
+      <div @click="modalOpen = false">
+        <slot></slot>
+      </div>
     </modal>
   </div>
 </template>
