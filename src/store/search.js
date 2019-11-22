@@ -25,9 +25,7 @@ export const search = {
       state.query = payload.query
     },
     SET_RESULTS: (state, payload) => {
-      // console.log('NEW RESULTS: ', JSON.stringify(payload.results, null, 2))
       Vue.set(state, 'results', payload.results)
-      // state.results = payload.results
     }
   },
   actions: {
@@ -44,9 +42,6 @@ export const search = {
       const { query, filter, areSearchResultsShown } = getters
       if (!areSearchResultsShown) return
 
-      console.log('SEARCHING FOR: ', query)
-      console.log('FILTER: ', filter.value)
-
       commit(
         'SET_RESULTS',
         { results: searchIndex.search(query, filter.value) }
@@ -57,6 +52,6 @@ export const search = {
     query: state => state.query,
     filter: state => state.filter,
     results: state => clone(state.results),
-    areSearchResultsShown: (state, getters) => getters.query.length >= 3
+    areSearchResultsShown: (state, getters) => getters.query.length >= 1
   }
 }
