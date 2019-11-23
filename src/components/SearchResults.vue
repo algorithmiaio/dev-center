@@ -17,7 +17,7 @@
             <div class="syn-media-object">
               <div class="syn-media-object-body">
                 <div class="syn-flex align-center syn-mb-8">
-                  <code-icon v-if="result.is_api_result" class="syn-text-secondary syn-mr-4" />
+                  <code-icon v-if="result.is_api_result" class="syn-text-secondary syn-mr-4" height="16px" width="16px" />
                   <doc-icon v-else class="syn-text-secondary syn-mr-4" />
                   <span class="syn-overline syn-text-secondary">{{result.is_api_result ? 'API DOCS' : 'DOCUMENTATION'}}</span>
                 </div>
