@@ -24,7 +24,7 @@
                 <h3 class="header-inline">
                   <a :href="result.url">{{result.title}}</a>
                 </h3>
-                <p class="syn-body-2 syn-text-secondary">{{result.excerpt}}</p>
+                <p class="syn-body-2 syn-text-secondary syn-mb-0">{{result.excerpt}}</p>
               </div>
             </div>
           </li>
