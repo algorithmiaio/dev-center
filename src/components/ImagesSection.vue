@@ -1,6 +1,8 @@
 <template>
-  <div class="syn-bg-gray syn-flex images-section">
-    <slot></slot>
+  <div class="images-section">
+    <div class="syn-bg-gray syn-flex">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

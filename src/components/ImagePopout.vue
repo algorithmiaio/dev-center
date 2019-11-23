@@ -20,7 +20,7 @@
 import Modal from '../../synapse/components/vue/Modal.vue'
 
 export default {
-  name: 'ImageContainer',
+  name: 'ImpagePopout',
   props: {
     caption: {
       type: String,
