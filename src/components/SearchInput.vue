@@ -27,22 +27,30 @@ export default {
   components: { SearchIcon },
   name: 'SearchInput',
   mounted() {
-    this.setInputFromUrl()
     this.focusInputIfSearchResultsShown()
+    this.setInputFromUrl()
+    // Lunr isn't consistently ready on page load. It can appear to be
+    // initialized but still return no results when results exist.
+    // This ensures that results appear if they exist in the search index.
+    setTimeout(() => {
+      this.setInputFromUrl()
+    }, 1000)
   },
   computed: {
     ...mapGetters(['query', 'areSearchResultsShown']),
     formAction() {
       const isLocalDev = location.hostname === 'localhost'
       return `/developers${isLocalDev ? '/' : ''}`
+    },
+    searchTerm() {
+      return new URL(window.location).searchParams.get('q');
     }
   },
   methods: {
     ...mapActions(['setQuery']),
     setInputFromUrl() {
-      const query = new URL(window.location).searchParams.get('q');
-      if (query) {
-        this.setQuery(query)
+      if (this.searchTerm) {
+        this.setQuery(this.searchTerm)
       }
     },
     focusInputIfSearchResultsShown() {
