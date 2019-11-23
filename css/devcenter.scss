@@ -100,3 +100,9 @@ side-nav-menu[v-cloak] {
     vertical-align: sub;
   }
 }
+
+.images-section {
+  .image-container:not(:last-child) {
+    margin-right: $space-16;
+  }
+}

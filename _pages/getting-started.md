@@ -19,9 +19,14 @@ We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Sc
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
 
-<image-container caption="Algorithm Marketplace">
-  <img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
-</image-container>
+<images-section>
+  <image-popout caption="Algorithm Marketplace">
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
+  </image-popout>
+  <image-popout caption="Algorithm Marketplace">
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 

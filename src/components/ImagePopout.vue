@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="syn-bg-gray syn-flex direction-column align-center">
-      <div @click="modalOpen = true" ref="image" class="syn-ma-16 syn-image-shadowed">
+  <div class="image-container">
+    <div class="syn-flex direction-column align-center syn-mv-16">
+      <div @click="modalOpen = true" ref="image" class="syn-image-shadowed">
         <slot></slot>
       </div>
-      <div v-if="caption" class="syn-overline syn-text-center syn-mh-16 syn-mb-16">
+      <div v-if="caption" class="syn-overline syn-text-center syn-mt-16">
         {{caption}}
       </div>
     </div>
