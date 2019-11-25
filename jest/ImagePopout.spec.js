@@ -5,7 +5,7 @@ describe('ImagePopout', () => {
   test('should fill slot in container and modal with image provided', () => {
     const wrapper = mount(ImagePopout, {
       slots: {
-        default: `<img src="/test/image.jpg">`
+        default: `<img>`
       }
     })
     expect(wrapper.html()).toMatchSnapshot()
