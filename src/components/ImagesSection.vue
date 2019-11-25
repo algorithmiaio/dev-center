@@ -7,7 +7,9 @@
 </template>
 
 <script>
-
+// This component provides the formatting needed to have mutiple images in one
+// gray-background section. ImagePopout.vue handles the caption and popout for an
+// individual image
 export default {
   name: 'ImagesSection',
 }

@@ -17,6 +17,8 @@
 </template>
 
 <script>
+// This component handles the caption and popout for an individual image.
+// ImagesSection handles the gray bg and formatting multiple images in a row.
 import Modal from '../../synapse/components/vue/Modal.vue'
 
 export default {
