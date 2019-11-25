@@ -288,9 +288,10 @@ For an image with a caption, include the `caption` property on the `image-popout
 </images-section>
 ```
 
-For multiple images in the same row, wrap each in its own `image popout` component within the `image-section`:
+For multiple images in the same row, wrap each in its own `image popout` component within the `images-section`:
+
 ```html
-<images-section>
+<images-section v-cloak>
   <image-popout>
     <img src="/test/image-one.png">
   </image-popout>
@@ -299,6 +300,8 @@ For multiple images in the same row, wrap each in its own `image popout` compone
   </image-popout>
 </images-section>
 ```
+
+**Note:** For `images-section`s with multiple images, be sure to add `v-cloak` to the opening `images-section` tag to prevent a [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content) while Vue is initializing.
 
 ## Contributing
 
