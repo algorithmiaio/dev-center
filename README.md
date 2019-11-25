@@ -214,7 +214,7 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 ## Custom Components
 
-We have a couple different custom components for formatting the Dev Center:
+We have a few different custom components for formatting the Dev Center:
 
 ### Asides
 
@@ -264,6 +264,40 @@ If you don't want to use the `highlight` language name for display, or you need 
     {% highlight javascript %}<!-- Node version of code -->{% endhighlight %}
   </div>
 </code-sample>
+```
+
+### Images
+
+We have two Vue components that work together to format an image (or multiple images) that displays in a modal when clicked. For a single image, include the following in your page:
+
+```html
+<images-section>
+  <image-popout>
+    <img src="/test/image.png">
+  </image-popout>
+</images-section>
+```
+
+For an image with a caption, include the `caption` property on the `image-popout`:
+
+```html
+<images-section>
+  <image-popout caption="Optional Image Caption">
+    <img src="/test/image.png">
+  </image-popout>
+</images-section>
+```
+
+For multiple images in the same row, wrap each in its own `image popout` component within the `image-section`:
+```html
+<images-section>
+  <image-popout>
+    <img src="/test/image-one.png">
+  </image-popout>
+  <image-popout caption="Image with Caption">
+    <img src="/test/image-two.png">
+  </image-popout>
+</images-section>
 ```
 
 ## Contributing
