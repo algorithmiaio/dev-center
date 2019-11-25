@@ -8,7 +8,7 @@
         {{caption}}
       </div>
     </div>
-    <modal v-model="modalOpen" no-padding hide-close-btn large>
+    <modal v-model="modalOpen" no-padding hide-close-btn large align-center card-view-sm>
       <div @click="modalOpen = false">
         <slot></slot>
       </div>
