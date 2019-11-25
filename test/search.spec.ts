@@ -117,15 +117,15 @@ describe('Vuex: Search Store', () => {
       expect(store.getters.results).to.deep.equal(arrayReference)
     })
 
-    describe('areSearchResultsShown', () => {
+    describe('showSearchResults', () => {
       it('should return true if query exists', () => {
         store.state.search.query = 'something'
-        expect(store.getters.areSearchResultsShown).to.deep.equal(true)
+        expect(store.getters.showSearchResults).to.deep.equal(true)
       })
 
       it('should return false if no query exists', () => {
         store.state.search.query = ''
-        expect(store.getters.areSearchResultsShown).to.deep.equal(false)
+        expect(store.getters.showSearchResults).to.deep.equal(false)
       })
     })
   })

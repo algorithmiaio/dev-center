@@ -8,7 +8,6 @@ import SearchInput from './components/SearchInput'
 import { getCurrentUser } from './api/user'
 import { setupPage } from './utilities/setupPage'
 import store from './store/index'
-import { mapGetters } from 'vuex'
 
 Vue.component('codeSample', CodeSample)
 Vue.component('sideNavMenu', SideNavMenu)
@@ -23,9 +22,6 @@ const app = new Vue({
   store,
   data: {
     user: null
-  },
-  computed: {
-    ...mapGetters(['areSearchResultsShown'])
   },
   async mounted() {
     try {

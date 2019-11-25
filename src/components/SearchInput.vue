@@ -37,7 +37,7 @@ export default {
     }, 1000)
   },
   computed: {
-    ...mapGetters(['query', 'areSearchResultsShown']),
+    ...mapGetters(['query', 'showSearchResults']),
     formAction() {
       const isLocalDev = location.hostname === 'localhost'
       return `/developers${isLocalDev ? '/' : ''}`
@@ -54,7 +54,7 @@ export default {
       }
     },
     focusInputIfSearchResultsShown() {
-      if (this.areSearchResultsShown) {
+      if (this.showSearchResults) {
         this.$refs.input.focus()
       }
     },

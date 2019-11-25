@@ -47,6 +47,6 @@ export const search = {
     query: state => state.query,
     filter: state => state.filter,
     results: state => clone(state.results),
-    areSearchResultsShown: (state, getters) => getters.query.length >= 1
+    showSearchResults: (state, getters) => getters.query.length >= 1
   }
 }
