@@ -101,8 +101,10 @@ side-nav-menu[v-cloak] {
   }
 }
 
-.images-section {
-  .image-container {
+.images-section,
+images-section[v-cloak] {
+  .image-container,
+  image-container {
     margin-right: $space-16;
 
     &:first-child {

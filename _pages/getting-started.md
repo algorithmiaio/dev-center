@@ -19,7 +19,7 @@ We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Sc
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
 
-<images-section>
+<images-section v-cloak>
   <image-popout caption="Algorithm Marketplace">
     <img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
   </image-popout>
