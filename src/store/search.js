@@ -6,7 +6,7 @@ import { searchIndex } from '../utilities/lunr'
 export const filter = {
   NONE: { name: 'All results', value: 'NONE' },
   API_DOCS: { name: 'API Docs', value: 'API_DOCS' },
-  DEV_CENTER: { name: 'Documentation', value: 'DEV_CENTER' },
+  DEV_CENTER: { name: 'Developer Docs', value: 'DEV_CENTER' },
 }
 
 export const search = {
