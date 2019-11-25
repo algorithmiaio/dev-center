@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImagesSection should fill slot with content provided 1`] = `
+<div class="images-section">
+  <div class="syn-bg-gray syn-flex">
+    <div class="image-popout-stub"></div>
+  </div>
+</div>
+`;
