@@ -22,7 +22,7 @@ export const user = {
     setPreferredLanguage({ commit }, language) {
       commit('SET_PREFERRED_LANGUAGE', { language })
     },
-    setAppNav: ({ commit }, isAppNavCollapsed) => {
+    setIsAppNavCollapsed: ({ commit }, isAppNavCollapsed) => {
       commit('SET_APP_NAV', { isAppNavCollapsed })
 
       if (isClient()) {
@@ -32,10 +32,9 @@ export const user = {
           { path: '/', daysUntilExpire: 365 }
         )
       }
-
     },
     toggleAppNav: ({ getters, dispatch }) => {
-      dispatch('setAppNav', !getters.isAppNavCollapsed)
+      dispatch('setIsAppNavCollapsed', !getters.isAppNavCollapsed)
     },
   },
   getters: {

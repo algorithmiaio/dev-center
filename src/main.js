@@ -31,7 +31,7 @@ const app = new Vue({
     ...mapGetters(['showSearchResults', 'isAppNavCollapsed'])
   },
   methods: {
-    ...mapActions(['setPreferredLanguage', 'setAppNav', 'toggleAppNav']),
+    ...mapActions(['setPreferredLanguage', 'setIsAppNavCollapsed', 'toggleAppNav']),
     toggleSideMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen
       this.toggleAppNav()
@@ -47,7 +47,7 @@ const app = new Vue({
       this.setPreferredLanguage(
         readCookie(Cookie.preferredLanguage) || ''
       )
-      this.setAppNav(
+      this.setIsAppNavCollapsed(
         readCookie(Cookie.leftNavCollapsed) === 'true'
       )
     }

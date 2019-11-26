@@ -66,8 +66,8 @@ describe('Vuex: Search Store', () => {
       ])
     })
 
-    it('should commit correct mutations for setAppNav', () => {
-      user.actions.setAppNav(context, true)
+    it('should commit correct mutations for setIsAppNavCollapsed', () => {
+      user.actions.setIsAppNavCollapsed(context, true)
       expect(commitSpy.args).to.deep.equal([
         ['SET_APP_NAV', { isAppNavCollapsed: true }],
       ])
