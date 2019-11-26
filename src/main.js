@@ -30,7 +30,7 @@ const app = new Vue({
     ...mapGetters(['showSearchResults'])
   },
   methods: {
-    ...mapActions(['setPreferredLanguage']),
+    ...mapActions(['setPreferredLanguage', 'setLeftNav']),
     async loadUser() {
       try {
         this.user = await getCurrentUser()
@@ -38,15 +38,18 @@ const app = new Vue({
         console.error(err.message)
       }
     },
-    initStateFromCookies() {
+    setStateFromCookies() {
       this.setPreferredLanguage(
         readCookie(Cookie.preferredLanguage) || ''
+      )
+      this.setAppNav(
+        readCookie(Cookie.leftNavCollapsed === 'true')
       )
     }
   },
   mounted() {
     this.loadUser()
-    this.initStateFromCookies()
+    this.setStateFromCookies()
     setupPage(this.user)
   }
 })
