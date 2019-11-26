@@ -88,6 +88,8 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
+<div class="syn-body-1" markdown="1">
+
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
@@ -98,6 +100,8 @@ To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clien
     2. click on your algorithm
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"
+
+</div>
 
 If you're using Python, you must [set an environment variable](https://www.schrodinger.com/kb/1842): `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
 {: .notice-info}
