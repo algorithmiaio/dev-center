@@ -19,6 +19,8 @@ Before you get started learning about Python algorithm development, make sure yo
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -27,6 +29,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -384,8 +388,12 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/python">Algorithmia Client Python Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="material-icons">open_in_new</i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="material-icons">open_in_new</i></a>
+
+</div>

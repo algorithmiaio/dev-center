@@ -19,6 +19,8 @@ Before you get started learning about R algorithm development, make sure you go 
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Saving and Loading R Models](#saving-and-loading-r-models)
@@ -28,6 +30,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -63,8 +67,12 @@ Then follow the instructions for how to work with data using the Data Api in the
 
 Here are a couple of demos to show you how to load your hosted .rds file inside your algorithm:
 
+<div class="syn-body-1" markdown="1">
+
 * [Arima Time Series Forecasting Model](https://algorithmia.com/algorithms/demo/rdemo)
 * [Naive Bayes Iris Classication Model](https://algorithmia.com/algorithms/demo/irisrdemo)
+
+</div>
 
 ## Managing Dependencies
 
@@ -425,7 +433,11 @@ In this guide we covered how to create an algorithm, work with different types o
 
 ## Additional Resources
 
+<div class="syn-body-1" markdown="1">
+
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
 * [Algorithmia R client documentation]({{site.baseurl}}/clients/r)
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?r)
+
+</div>

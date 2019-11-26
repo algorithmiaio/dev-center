@@ -19,6 +19,8 @@ Before you get started learning about Scala algorithm development, make sure you
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -27,6 +29,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -272,8 +276,11 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/node">Algorithmia Client NodeJS Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?nodejs)
 * <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank">Node.js 6.5 Docs <i class="material-icons">open_in_new</i></a>
 
+</div>

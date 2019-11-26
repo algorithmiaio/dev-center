@@ -19,6 +19,8 @@ Before you get started learning about Rust algorithm development, make sure you 
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -27,6 +29,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -268,9 +272,13 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/rust">Algorithmia Client Rust Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?rust)
 * <a href="https://www.rust-lang.org/documentation.html" target="_blank">Rust 1.5 Docs</a>
 * <a href="https://doc.rust-lang.org/std/" target="_blank">Rust standard library</a>
 * <a href="https://crates.io/" target="_blank">Crates.io</a>
+
+</div>
