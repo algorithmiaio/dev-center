@@ -15,12 +15,26 @@ menus:
   <div class="syn-col syn-col-md-12">
     {% include breadcrumbs.html %}
     <h1 id="page-title">{{ page.title }}</h1>
-    <p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
-    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
-    </p>
-    <p class="lead">Below you'll find everything you need to get started:</p>
   </div>
 </div>
+{% include aside-start.html %}
+<p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
+<p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
+</p>
+<p class="lead">Below you'll find everything you need to get started:</p>
+{% include aside-middle.html %}
+  <a href="{{site.baseurl}}/getting-started" class="syn-card actionable syn-link-no-decoration">
+    <div class="syn-media-object">
+      <div class="syn-media-object-body">
+        <h5 class="syn-mb-8">Getting Started</h5>
+        <div class="syn-body-2 syn-mb-0">Get up to speed with the platform.</div>
+      </div>
+      <div class="syn-media-object-actions">
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    </div>
+  </a>
+{% include aside-end.html %}
 
 <div class="syn-row syn-mb-64">
 <!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
