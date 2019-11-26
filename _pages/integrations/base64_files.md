@@ -19,9 +19,9 @@ Some algorithms in our [directory](/algorithms) already accept base64-encoded fi
 
 In Python, simply change your `apply(input)` method to add the line:
 
-```python
+{% highlight python %}
 bytes = base64.decodestring(bytearray(input,'utf8'))
-```
+{% endhighlight %}
 
 This reads the input as base64, and turns it into a byte-array representing the file. Inspect the [source code of pdf64_to_text](https://algorithmia.com/algorithms/jpeck/pdf64_to_text/source) to see this in action.
 
@@ -29,9 +29,9 @@ This reads the input as base64, and turns it into a byte-array representing the 
 
 To send a file directly to a base64-capable Algorithm, you must first encode it as base64 locally. This can be done inline to a cURL command as follows:
 
-```bash
+{% highlight bash %}
 cat minimal.pdf | base64 | curl --data @- -X POST -H 'Content-Type: text/plain' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/jpeck/pdf64_to_text/0.1.0?timeout=300
-```
+{% endhighlight %}
 
 To test this out, download [minimal.pdf]({{site.baseurl}}/images/language_logos/minimal.pdf) and run the line above on a linux or OSX machine, or replace **minimal.pdf** in the codesample with any PDF file you have locally. If you're on Windows, you'll need to install [base64.exe](https://www.proxoft.com/base64.aspx) and [curl](https://curl.haxx.se/windows/) since these functions are not built-in.
 
@@ -39,7 +39,7 @@ To test this out, download [minimal.pdf]({{site.baseurl}}/images/language_logos/
 
 You can easily connect a standalone HTML form to a base64-capable Algorithm by using a small piece of vanilla Javascript to convert the selected file to base64:
 
-```html
+{% highlight html %}
 <form>
   <input type="file" id="file" onchange="loadfile()">
   <pre id="results"></pre>
@@ -73,7 +73,7 @@ function callalgorithm() {
 }
 
 </script>
-```
+{% endhighlight %}
 
 If you're logged in right now, try uploading [minimal.pdf]({{site.baseurl}}/images/language_logos/minimal.pdf) to see this in action:
 
