@@ -24,13 +24,18 @@ const app = new Vue({
   el: '#vue-app',
   store,
   data: {
-    user: null
+    user: null,
+    isMobileMenuOpen: false
   },
   computed: {
-    ...mapGetters(['showSearchResults'])
+    ...mapGetters(['showSearchResults', 'isAppNavCollapsed'])
   },
   methods: {
-    ...mapActions(['setPreferredLanguage', 'setLeftNav']),
+    ...mapActions(['setPreferredLanguage', 'setAppNav', 'toggleAppNav']),
+    toggleSideMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen
+      this.toggleAppNav()
+    },
     async loadUser() {
       try {
         this.user = await getCurrentUser()
@@ -43,7 +48,7 @@ const app = new Vue({
         readCookie(Cookie.preferredLanguage) || ''
       )
       this.setAppNav(
-        readCookie(Cookie.leftNavCollapsed === 'true')
+        readCookie(Cookie.leftNavCollapsed) === 'true'
       )
     }
   },
