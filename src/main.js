@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import { scrollspy } from 'uiv'
 import CodeSample from './components/CodeSample'
 import SideNavMenu from './components/SideNavMenu'
@@ -22,6 +23,9 @@ const app = new Vue({
   store,
   data: {
     user: null
+  },
+  computed: {
+    ...mapGetters(['showSearchResults'])
   },
   async mounted() {
     try {
