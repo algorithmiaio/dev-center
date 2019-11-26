@@ -21,12 +21,16 @@ The Algorithmia CLI is a cross-platform tool for interfacing with algorithms and
 
 This guide will cover:
 
+<div class="syn-body-1" markdown="1">
+
 * [Installation](#installing-the-algorithmia-cli)
 * [Authentication](#configure-authentication)
 * [Usage](#usage)
 * [Command Options](#options)
 * [The Data API](#the-algorithmia-data-api)
 * [Using Multiple Profiles](#using-multiple-profiles)
+
+</div>
 
 Check out the tool in use in this short demo video (click to watch on YouTube):
 [![Example CLI Usage](https://j.gifs.com/v1egak.gif)](https://www.youtube.com/watch?v=mAJagjRl_qk)
