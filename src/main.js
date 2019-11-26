@@ -8,6 +8,9 @@ import SearchInput from './components/SearchInput'
 import { getCurrentUser } from './api/user'
 import { setupPage } from './utilities/setupPage'
 import store from './store/index'
+import { readCookie } from './utilities/cookie'
+import { Cookie } from './enums/Cookie'
+import { mapActions } from 'vuex'
 
 Vue.component('codeSample', CodeSample)
 Vue.component('sideNavMenu', SideNavMenu)
@@ -23,13 +26,24 @@ const app = new Vue({
   data: {
     user: null
   },
-  async mounted() {
-    try {
-      this.user = await getCurrentUser()
-    } catch (err) {
-      console.error(err.message)
+  methods: {
+    ...mapActions(['setPreferredLanguage']),
+    async loadUser() {
+      try {
+        this.user = await getCurrentUser()
+      } catch (err) {
+        console.error(err.message)
+      }
+    },
+    initStateFromCookies() {
+      this.setPreferredLanguage(
+        readCookie(Cookie.preferredLanguage) || ''
+      )
     }
-
+  },
+  mounted() {
+    this.loadUser()
+    this.initStateFromCookies()
     setupPage(this.user)
   }
 })
