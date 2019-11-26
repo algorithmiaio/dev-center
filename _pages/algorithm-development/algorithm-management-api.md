@@ -94,11 +94,14 @@ algo.publish(
 
 Your Algorithm is now published and runnable. If you wish, you make also take advantage of several other management functions:
 
+<div class="syn-body-1" markdown="1">
+
 * [Update an existing Algorithm](https://docs.algorithmia.com/?python#optional-update-an-algorithm)
 * [Force a recompile of your Algorithm](https://docs.algorithmia.com/?python#optional-recompile-your-algorithm)
 * [Get info, such as last published version number](https://docs.algorithmia.com/?python#get-info-about-an-an-algorithm)
 * [List all versions of your Algorithm & corresponding info](https://docs.algorithmia.com/?python#list-versions-of-an-algorithm)
 
+</div>
 
 ### ALTERNATIVE: Creating and Publishing an Algorithm via the API, using the OpenAPI Specification
 
