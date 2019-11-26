@@ -83,12 +83,17 @@ Organization data collections have the same permissions as user data collections
 Enterprise customers now have the ability to tailor the UI of their AI Layer instances to their corporate brands.
 
 What can now be customized:
+
+<div class="syn-body-1" markdown="1">
+
 * Brand Color
 * Logo
 * Favicon
 * Navigation Title (Title that appears in browser tab)
 * Header Title (Title that appears beneath logo)
 * Title Of Sidenav Buttons
+
+</div>
 
 ----
 
@@ -145,10 +150,14 @@ We’re happy to say that the last two steps in an automated pipeline are no lon
 
 The additional APIs that have been added in this release are:
 
+<div class="syn-body-1" markdown="1">
+
 * **Create** algorithm
 * **Get** algorithm information
 * **Update** algorithm
 * **Publish** algorithm
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_algorithm_actions.png" alt="Release Notes algorithmia management APIs" class="syn-image-responsive">
 
@@ -190,8 +199,12 @@ Additionally, since it’s a single data API for the algorithm developer, access
 
 The two data connectors that are included in this release are:
 
+<div class="syn-body-1" markdown="1">
+
 * [Azure Blob storage]({{site.baseurl}}/data/azureblob)
 * [Google Cloud storage]({{site.baseurl}}/data/googlecloudstorage)
+
+</div>
 
 To find out more information about the Data API available in each Algorithmia instance, including
 the [Hosted Data Service,]({{site.baseurl}}/data/hosted) you can visit the [overview topic]({{site.baseurl}}/data) in the Developer Center.
@@ -203,6 +216,8 @@ Customers have been adopting and transitioning to .NET Core and have been asking
 
 Supporting .NET Standard 2.0 provides support for the following frameworks:
 
+<div class="syn-body-1" markdown="1">
+
 * .NET Core
 * ASP.NET Core
 * .NET Framework (>4.6.1)
@@ -212,6 +227,8 @@ Supporting .NET Standard 2.0 provides support for the following frameworks:
 * Xamarin.Android
 * Universal Windows Platform Apps
 * Unity
+
+</div>
 
 All of the Algorithmia Clients are open-sourced on GitHub. You can follow the .NET Client on the [GitHub website.](https://github.com/algorithmiaio/algorithmia-c-sharp)
 
