@@ -10,7 +10,7 @@ import { setupPage } from './utilities/setupPage'
 import store from './store/index'
 import { readCookie } from './utilities/cookie'
 import { Cookie } from './enums/Cookie'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 Vue.component('codeSample', CodeSample)
 Vue.component('sideNavMenu', SideNavMenu)
@@ -25,6 +25,9 @@ const app = new Vue({
   store,
   data: {
     user: null
+  },
+  computed: {
+    ...mapGetters(['showSearchResults'])
   },
   methods: {
     ...mapActions(['setPreferredLanguage']),
