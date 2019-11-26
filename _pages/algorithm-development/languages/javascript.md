@@ -61,12 +61,12 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://www.
 
 Add dependencies by including the package name and version inside the `dependencies` section.  To add `lodash` version 4.17.4, edit that section as follows:
 
-```
+{% highlight json %}
 "dependencies": {
 	"algorithmia": "0.3.x",
  	"lodash": "4.17.4"
  }
- ```
+{% endhighlight %}
 
 Now click "Save dependencies" to close the modal window.
 

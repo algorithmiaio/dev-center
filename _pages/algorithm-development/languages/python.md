@@ -348,7 +348,8 @@ Importing your secondary files contains some ceavats when
 executing your algorithm on Algorithmia, in particular the import paths you use locally may vary from ours.
 
 This means that if your project looks like this:
-```
+
+{% highlight text %}
 /
  requirements.txt
  algorithmia.conf
@@ -360,22 +361,22 @@ This means that if your project looks like this:
                   __init__.py
                   special_stuff.py
 
-```
+{% endhighlight %}
 with main_file being your main python module, your import code might look something like this:
-```python
+{% highlight python %}
 import Algorithmia
 import os
 from secondary_file import auxillary_func, some_other_func
 from sub_module.special_stuff import special_stuff
-```
+{% endhighlight %}
 This will work fine for Python 2.  However, for Python 3, you need to use the [dot-prefix notation](https://docs.python.org/3/reference/import.html#submodules) for local files:
 
-```python
+{% highlight python %}
 import Algorithmia
 import os
 from .secondary_file import auxillary_func, some_other_func
 from .sub_module.special_stuff import special_stuff
-```
+{% endhighlight %}
 
 
 ## Conclusion and Resources
