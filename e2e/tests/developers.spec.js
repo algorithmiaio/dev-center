@@ -25,10 +25,10 @@ describe("Developer Center", () => {
     it("should redirect to model-deployment url", () => {
       modelGuidesPage.open()
       browser.waitUntil(() =>
-        isEquivalent(browser.getUrl() || "", modelGuidesPage.redirectPath)
+        (browser.getUrl() || '').includes(modelGuidesPage.redirectPath)
       )
       assert.equal(
-        isEquivalent(browser.getUrl() || "", modelGuidesPage.redirectPath),
+        (browser.getUrl() || '').includes(modelGuidesPage.redirectPath),
         true
       )
     })
