@@ -112,6 +112,7 @@ There are several options for specifying the type and source of input data. The 
 | :------------             | :--------------- |
 | -d, \--data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
 | -D, \--data-file <file>    | Same as --data, but the input data is read from a file |
+{:class="syn-table fixed-layout col-ratio-1-3"}
 
 </div>
 

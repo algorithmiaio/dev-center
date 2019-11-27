@@ -100,3 +100,9 @@ side-nav-menu[v-cloak] {
     vertical-align: sub;
   }
 }
+
+.syn-table.col-ratio-1-3 {
+  th:first-child {
+    width: 25%;
+  }
+}
