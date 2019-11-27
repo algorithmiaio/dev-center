@@ -101,6 +101,18 @@ side-nav-menu[v-cloak] {
   }
 }
 
+.images-section,
+images-section[v-cloak] {
+  .image-container,
+  image-container {
+    margin-right: $space-16;
+
+    &:first-child {
+      margin-left: $space-16
+    }
+  }
+}
+
 .syn-table.col-ratio-1-3 {
   th:first-child {
     width: 25%;

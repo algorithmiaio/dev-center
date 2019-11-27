@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImagePopout should close modal when modal image is clicked 1`] = `
+<div class="image-container">
+  <div class="syn-flex direction-column align-center syn-mv-16">
+    <div class="syn-image-shadowed"><img></div>
+    <!---->
+  </div>
+  <div class="syn-modal" align-center="">
+    <div class="syn-modal-card no-padding large card-view-sm">
+      <!---->
+      <div><img></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ImagePopout should display caption if provided 1`] = `
+<div class="image-container">
+  <div class="syn-flex direction-column align-center syn-mv-16">
+    <div class="syn-image-shadowed"><img></div>
+    <div class="syn-overline syn-text-center syn-mt-16">
+      Image Caption
+    </div>
+  </div>
+  <div class="syn-modal" align-center="">
+    <div class="syn-modal-card no-padding large card-view-sm">
+      <!---->
+      <div><img></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ImagePopout should fill slot in container and modal with image provided 1`] = `
+<div class="image-container">
+  <div class="syn-flex direction-column align-center syn-mv-16">
+    <div class="syn-image-shadowed"><img></div>
+    <!---->
+  </div>
+  <div class="syn-modal" align-center="">
+    <div class="syn-modal-card no-padding large card-view-sm">
+      <!---->
+      <div><img></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ImagePopout should open modal when image is clicked 1`] = `
+<div class="image-container">
+  <div class="syn-flex direction-column align-center syn-mv-16">
+    <div class="syn-image-shadowed"><img></div>
+    <!---->
+  </div>
+  <div class="syn-modal open" align-center="">
+    <div class="syn-modal-card no-padding large card-view-sm">
+      <!---->
+      <div><img></div>
+    </div>
+  </div>
+</div>
+`;
