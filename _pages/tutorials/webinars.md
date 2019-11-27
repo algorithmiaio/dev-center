@@ -5,8 +5,6 @@ excerpt: "Join Algorithmia for a Webinar on Using ML in your Applications or Dep
 categories: tutorials
 show_related: true
 author: jon_peck
-image:
-  teaser: /icons/hexicon_desktop_purple.svg
 menus:
   tutorials:
     url: /developers/tutorials/webinars
