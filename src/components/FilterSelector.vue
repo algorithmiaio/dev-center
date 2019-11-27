@@ -1,6 +1,6 @@
 <template>
   <div class="syn-flex align-center wrap-md">
-    <dropdown>
+    <dropdown data-e2e="search-filter">
       <template #default="{open}">
         <div class="syn-btn-group">
           <button
@@ -24,6 +24,7 @@
               role="button"
               class="syn-body-2"
               tabindex="0"
+              :data-e2e="'search-filter-' + filter.value"
               @click.prevent="setFilter(filter)"
             >
               {{ filter.name }}

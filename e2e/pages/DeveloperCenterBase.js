@@ -2,11 +2,15 @@ const Page = require('./BasePage')
 
 class DevelopersCenterPageBase extends Page {
   get header() {
-    return $('h2')
+    return $('#page-title')
   }
 
   get searchInput() {
-    return $('#search-query')
+    return $('[data-e2e="search-input"]')
+  }
+
+  get hamburgerMenu() {
+    return $('[data-e2e="nav-hamburger"]')
   }
 
   get firstSearchResult() {
@@ -29,8 +33,33 @@ class DevelopersCenterPageBase extends Page {
     return $('#page-title')
   }
 
+  get isSideNavOpen() {
+    return this.searchInput.isDisplayed()
+  }
+
+  get devCenterMenuSection() {
+    return $('a[href="/developers"][title="Developer Docs"]')
+  }
+
+  get apiDocsMenuSection() {
+    return $('a[href="/developers/api"][title="API Docs"]')
+  }
+
+  get apiDocsSubMenu() {
+    return $('a[href="/developers/api"][title="API Docs"] + div > [data-e2e="nav-submenu"]')
+  }
+
+  get apiDocsHomeLink() {
+    return this.apiDocsSubMenu.$('a[href="/developers/api"]')
+  }
+
   open() {
     return super.open('/developers')
+  }
+
+  openSideNav() {
+    this.hamburgerMenu.click()
+    browser.waitUntil(() => this.searchInput.isDisplayed())
   }
 
   searchFor(query) {

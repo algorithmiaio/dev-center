@@ -28,10 +28,6 @@ class GettingStartedPage extends DeveloperCenterPage {
   open() {
     return browser.url('/developers/getting-started/')
   }
-
-  searchFor(query) {
-    this.searchInput.setValue(query)
-  }
 }
 
 module.exports = new GettingStartedPage()

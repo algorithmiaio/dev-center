@@ -5,6 +5,7 @@
     {% if include.menu_level == 0 %}syn-overflow-hidden
     {% else %}syn-width-full syn-overflow-hidden-x syn-scrollable-y{% endif %}">
   <ul slot-scope="{ toggle, openSection }"
+    data-e2e="nav-submenu"
     class="syn-flex direction-column flex-item-grow
       {% if include.menu_level == 0 %}syn-overflow-hidden
       {% else %}syn-width-full syn-overflow-hidden-x syn-scrollable-y{% endif %}">
