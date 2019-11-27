@@ -55,16 +55,23 @@ class Example {
 
 By default, Algorithmia uses Google's [GSON](https://code.google.com/p/google-gson/) library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your `apply()` method.
 
+<div markdown="1">
+
 GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This example shows a function that takes two parameters, a Map from Strings to Strings (dict) and another String (key), and returns another String.
 
 Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the [Gson User Guide](https://sites.google.com/site/gson/gson-user-guide) for reference.
 
-<aside class="notice">
-  Note: Binary data is passed using <code>byte[]</code>
-</aside>
+<div markdown="1">
+
+Note: Binary data is passed using <code>byte[]</code>
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Custom JSON parsing
 If you want more control over parsing, then use a single apply method accepting a <code>String</code> and give it the <code>@AcceptsJson</code> annotation (from the <code>com.algorithmia.algo</code> package).
@@ -106,9 +113,12 @@ class Example {
 }
 {% endhighlight %}
 
-<aside class="notice">
+<div markdown="1">
+
 If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
-</aside>
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Advanced Serialization Techniques
 Not every algorithm is stateless, and sometimes you need to preserve state in the data API. Ensuring that your algorithm state can be downloaded and deserialized quickly and efficiently is critical for ensuring that your algorithm executes in a reasonable time frame.

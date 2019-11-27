@@ -48,8 +48,12 @@ If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
+<div markdown="1">
+
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
@@ -69,8 +73,12 @@ Add dependencies by adding the package name to the `Gemfile`.  For example, to m
 
 Now click "Save dependencies" to close the modal window.
 
+<div markdown="1">
+
 Note that you will still need to include a require statement to your algorithm file.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 For example, to include `phony`, add the following to your .rb file:
 
@@ -135,15 +143,23 @@ Note that this returns well-formatted JSON which will be easy for the user to co
 
 You'll get a similar result by passing in just `[8,6,7,5,3,0,9]`, but giving it a bare string or an Object without a "value" property will return an error message.
 
+<div markdown="1">
+
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Working with Data Stored on Algorithmia
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
+<div markdown="1">
+
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?ruby#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?ruby#files).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).

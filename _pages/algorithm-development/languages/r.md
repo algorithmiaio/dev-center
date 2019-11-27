@@ -49,8 +49,12 @@ If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm
 
 The main thing to note about the algorithm is that it's wrapped in the algorithm() function.
 
+<div markdown="1">
+
 The algorithm() function defines the input point of the algorithm. We use the algorithm() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Go ahead and remove the boilerplate code below that's inside the algorithm() function because we'll be writing a different algorithm in this tutorial:
 
@@ -113,8 +117,12 @@ And finally, if you’re having issues with version conflicts, for instance pack
 
 The last format will take longer to load the dependencies than the other formats, so it's best to use it as a last resort.
 
+<div markdown="1">
+
 Note, that if you do add dependencies, you will still need to import those packages via library() to your algorithm file as you would do for any R script.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 For example, to make use of e1071, you would include the line:
 
@@ -135,13 +143,18 @@ The Algorithmia dependency is already installed for your convenience and relies 
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
+<div markdown="1">
+
 Note: if you see an error similar to:
+{: .syn-alert.theme-primary}
 {% highlight bash %}
 Error: Failed to start algorithm - Loading required package: methods
 Error: package or namespace load failed...
 {% endhighlight %}
 You'll need to try and add different versions of certain R packages.
-{: .notice-info}
+{: .syn-alert.theme-primary.syn-mt-16}
+
+</div>
 
 If you're using *tidyverse*, add the following lines to your dependencies:
 {% highlight bash %}
@@ -186,8 +199,12 @@ It will output a JSON formatted object which the user will consume with an API c
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “demo” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be demo/TokenizeText/0.1.1
 
+<div markdown="1">
+
 Note that Algorithmia uses `rjson` to automatically (de)serialize input and output for you. If you are used to using `jsonlite` or another JSON package, certain datastructures (especially matrices and dataframes) will be structured differently in the I/O. We recommend reviewing [this excellent guide](https://rstudio-pubs-static.s3.amazonaws.com/31702_9c22e3d1a0c44968a4a1f9656f1800ab.html) which explains the differences.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 ### Working with Basic Data Structures
 
@@ -243,8 +260,12 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
+<div markdown="1">
+
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?r#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?r#files).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted).
@@ -295,8 +316,12 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 {"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
 {% endhighlight %}
 
+<div markdown="1">
+
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Working with JSON Data
 
