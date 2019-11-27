@@ -15,7 +15,7 @@ menus:
     weight: 2
 ---
 
-<div>
+<div class="syn-mt-16">
   {% assign post_title = "Local Development" %}
   {% assign post_subtitle = "Emulating the Algorithmia execution environment." %}
   <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development"
