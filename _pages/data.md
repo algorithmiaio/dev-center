@@ -32,16 +32,18 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
 
 ### Data Portal Guides
 {% assign data_connector_tags = "app-data-connectors" | split:"|" %}
-<div class="row data-connectors">
+<div class="syn-row">
   {% assign sorted_pages = site.pages | sort:"nav_index" %}
   {% for post in sorted_pages %}
     {% if data_connector_tags == post.tags %}
-      <div class="col-xs-4 col-sm-4 col-md-3">
-        <a  href="{{ post.url | relative_url }}" class="lang-tile">
+      <div class="syn-col syn-col-sm-4 syn-col-md-3 syn-mb-32">
+        <a  href="{{ post.url | relative_url }}" class="syn-card outlined actionable syn-link-no-decoration full-height">
           {% if post.image.teaser %}
-            <img  src="{{site.cdnurl}}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="lang-icon">
+            <div class="syn-user-image syn-user-image-56 contained syn-mh-auto syn-mb-8 full-image">
+              <img  src="{{site.cdnurl}}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image" class="syn-image-responsive grow">
+            </div>
           {% endif %}
-          {{post.title}}
+          <div class="syn-h6 syn-text-center syn-mb-0">{{ post.title }}</div>
         </a>
       </div>
     {% endif %}
