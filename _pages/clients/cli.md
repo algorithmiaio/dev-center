@@ -21,12 +21,16 @@ The Algorithmia CLI is a cross-platform tool for interfacing with algorithms and
 
 This guide will cover:
 
+<div class="syn-body-1" markdown="1">
+
 * [Installation](#installing-the-algorithmia-cli)
 * [Authentication](#configure-authentication)
 * [Usage](#usage)
 * [Command Options](#options)
 * [The Data API](#the-algorithmia-data-api)
 * [Using Multiple Profiles](#using-multiple-profiles)
+
+</div>
 
 Check out the tool in use in this short demo video (click to watch on YouTube):
 [![Example CLI Usage](https://j.gifs.com/v1egak.gif)](https://www.youtube.com/watch?v=mAJagjRl_qk)
@@ -106,10 +110,15 @@ Run `algo run --help` to see more command options or view the following [Options
 #### Input Data Options
 There are several options for specifying the type and source of input data. The Algorithmia CLI supports JSON, text, and binary data, as well as an option to auto-detect the data type.
 
+<div class="syn-table-container" markdown="1">
+
 | Option Flag               | Description |
 | :------------             | :--------------- |
 | -d, \--data <data>         | If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary |
 | -D, \--data-file <file>    | Same as --data, but the input data is read from a file |
+{:class="syn-table fixed-layout col-ratio-1-3"}
+
+</div>
 
 You may also explictly specify the input type as text (`-t`/`-T`), json (`-j`/`-J`), or binary (`-b`/`-B`) instead of using the auto-detection (`-d`/`-D`).
 
@@ -121,6 +130,8 @@ The algorithm result is printed to STDOUT by default. Additional notices may be 
 $ algo run kenny/factor -d 17 --output results.txt
 {% endhighlight %}
 
+<div class="syn-table-container" markdown="1">
+
 | Option Flag     | Description |
 | :------------   |:--------------- |
 | \--debug         | Print algorithm's STDOUT (author-only) |
@@ -129,11 +140,17 @@ $ algo run kenny/factor -d 17 --output results.txt
 | -s, \--silence   | Suppress any output not explicitly requested (except result) |
 | -o, \--output <file> |  Print result to a file |
 
+</div>
+
 #### Other Options
+
+<div class="syn-table-container" markdown="1">
 
 | Option Flag     | Description |
 | :------------   |:--------------- |
 | \--timeout <seconds> | Sets algorithm timeout
+
+</div>
 
 #### Examples:
 
@@ -151,6 +168,8 @@ Use the Algorithmia CLI to interact with the Algorithmia Data API. You can use t
 
 **Data commands include:**
 
+<div class="syn-table-container" markdown="1">
+
 | Command   | Description |
 | :------------   |:--------------- |
 | ls |  List contents of a data directory |
@@ -159,6 +178,8 @@ Use the Algorithmia CLI to interact with the Algorithmia Data API. You can use t
 | rm | Remove a file from a data directory |
 | cp | Copy file(s) to or from a data directory |
 | cat | Concatenate & print file(s) in a directory |
+
+</div>
 
 ### Examples of the Algorithmia Data API usage:
 

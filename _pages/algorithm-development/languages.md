@@ -26,9 +26,11 @@ If you have algorithm code you'd like to host on the Algorithmia platform in a d
 ### Currently Supported Languages
 
 {% assign lang_tags = "algo-guide-lang" | split:"|" %}
-<div class="syn-row">
-  {% assign sorted_langs = site.pages | where: "categories", "languages" | sort:"title" %}
-  {% for post in sorted_langs %}
-    {% include post-grid.html %}
-  {% endfor %}
+<div>
+  <div class="syn-row">
+    {% assign sorted_langs = site.pages | where: "categories", "languages" | sort:"title" %}
+    {% for post in sorted_langs %}
+      {% include post-grid.html %}
+    {% endfor %}
+  </div>
 </div>

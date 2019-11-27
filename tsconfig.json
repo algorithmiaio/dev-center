@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "strict": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/typings"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.js",
+    "./src/**/*.vue"
+  ],
+  "files" : [
+    "./src/typings/vue-shims.d.ts",
+    "./src/typings/highlightjs.d.ts",
+    "./src/typings/uiv.d.ts",
+    "./src/typings/vue-meta.d.ts",
+    "./src/typings/vue-clipboards.d.ts",
+    "./src/typings/webpack.d.ts"
+  ]
+}

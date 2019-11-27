@@ -5,8 +5,6 @@ title:  "Recipes"
 categories: tutorials
 show_related: false
 excerpt: "All the recipes"
-image:
-  teaser: /icons/recipes.svg
 tags: ["text-analysis", "machine-learning", "computer-vision", "utilities"]
 redirect_from:
   - /guides/

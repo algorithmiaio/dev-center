@@ -26,18 +26,18 @@ Create a folder within your [Data Portal]({{site.baseurl}}/data) and set its rea
 
 Inside this folder, create a `.json` file containing your connection credentials. Backblaze uses ["key_id" and "application_key"](https://www.backblaze.com/blog/b2-application-keys), so the contents of the file will look like:
 
-```
+{% highlight json %}
 {
   "key_id": "000af74d6bf3db30000000001",
   "application_key": "K000c1ab70e8f7c67cf9d59128e3a3c"
 }
-```
+{% endhighlight %}
 
 ### Step 2: load your credentials from within your algorithm
 
 Once the credentials have been stored in a safe place (for example a file called "credentials.json" inside a Private folder called "BackblazeCredentials"), I'll need to load them from within my algorithm:
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
@@ -50,13 +50,13 @@ def apply(input):
         assert {'key_id','application_key'}.issubset(creds)
     except:
         raise AlgorithmException('Please configure your credentials')
-```
+{% endhighlight %}
 
 ### Step 3: import dependencies and write code to manipulate your files
 
 [b2blaze](https://pypi.org/project/b2blaze/) is a module which allows for the uploading and downloading of files to/from a Backblaze bucket, so we'll add `b2blaze` to our Dependencies within our algorithm, then add a bit of code to upload a file:
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 from b2blaze import B2
@@ -83,7 +83,7 @@ def apply(input):
     contents = open(tempfile,'rb')
     new_file = bucket.files.upload(contents,remotefile)
     return new_file.url
-```
+{% endhighlight %}
 
 This example grabs the file "somecollection/somefile.png" from our [Hosted Data]({{site.baseurl}}/data/hosted), and uploads it to the bucket "some_bucket_name" as "remotefolder/remotefile.png".  We could use other functions of the b2blaze library to perform other operations instead, such as downloading a file from Backblaze and examining its contents, or creating and deleting folders or even entire buckets.
 

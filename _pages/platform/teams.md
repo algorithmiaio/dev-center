@@ -35,10 +35,14 @@ The profile overview provides a rich source of information about an organization
 
 
 #### Things to know about Organizations:
+
+<div class="syn-body-1" markdown="1">
+
 * Publishing algorithms under an organization requires approval from the organization owner before they are made available to other users in the marketplace.
 * All earnings from algorithms owned by an organization are rolled up into the organization's account.
 * You must be invited into an organization by the organization owner.
 
+</div>
 
 #### Creating an Organization:
 
@@ -48,6 +52,8 @@ To create your new organization simply go to your profile page and click "+Creat
 
 At this time you will be asked to fill out some information regarding your organization:
 
+<div class="syn-body-1" markdown="1">
+
 * *Organization Account Name:*
 This will determine the URL where your organization will be showcased. It is required that this be all lowercase letters, no spaces and no special characters.
 * *Organization Full Name:* This is the organization's full name.
@@ -56,6 +62,7 @@ This will determine the URL where your organization will be showcased. It is req
 * *Url:* Your organization's website. This property is optional.
 * *Logo:* You may optionally add an image to brand your organization.
 
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization_form.png" alt="Organization info" class="syn-image-responsive">
 

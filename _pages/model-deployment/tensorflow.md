@@ -26,6 +26,9 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 {: .notice-info}
 
 ## Table of Contents
+
+<div class="syn-body-1" markdown="1">
+
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
@@ -37,6 +40,7 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
   * [GPU memory tricks](#gpu-memory-tricks)
 * [Publish your Algorithm](#publish-your-algorithm)
 
+</div>
 
 ## Prerequisites
 Before you get started deploying your pre-trained model on Algorithmia, there are a few things you'll want to do first:
@@ -51,7 +55,7 @@ There are a few ways to save models in different versions of Tensorflow, but bel
 Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
 {: .notice-warning}
 
-```python
+{% highlight python %}
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import shutil
@@ -134,9 +138,7 @@ def save_model(train_step, init, x, y_, save_directory, y):
             x: mnist.test.images, y_: mnist.test.labels})
         print("accuracy before serialization: {}".format(accuracy))
         builder.save()
-
-
-```
+{% endhighlight %}
 
 In the above code, the Manual Builder API is used to save your graph using a MetaGraph. That way all of the graph and its variables, assets, and signatures will be saved as a protocol buffer. Note that the signature is the set of inputs and outputs from your graph.
 
@@ -238,7 +240,7 @@ If you want to follow along, you can add the <a href="http://yann.lecun.com/exdb
 
 You will also need the file in the <a href="https://algorithmia.com/algorithms/demo/TensorflowDemoGPU">Tensorflow Demo GPU</a> called loadmnistdata.py shown here to deal with unpacking the mnist files:
 
-```python
+{% highlight python %}
 """
 Functions to handle MNIST data extraction and loading
 
@@ -300,10 +302,10 @@ def load_mnist(image_data, label_data, img):
     labels = extract_labels(label_data, img)
     # return np.hstack((data, labels))
     return {"images": data, "labels": labels}
-```
+{% endhighlight %}
 Now that you have that code saved in a separate file, let's get on with the meat of the algorithm that you'll replace the boilerplate code with in your main algorithm file:
 
-```python
+{% highlight python %}
 '''
 MNIST prediction from pre-trained model
 Tutorial created based on:
@@ -414,7 +416,7 @@ def apply(input):
     inference = predict(data)
     tf_version = tf.__version__
     return "MNIST Predictions: {0}, TF version: {1}".format(inference, tf_version)
-```
+{% endhighlight %}
 
 Now when you run this code, the expected input is:
 
@@ -429,7 +431,7 @@ MNIST Predictions: {'accuracy': 0.88910013, 'prediction': array([7, 2, 1, ..., 4
 
 Let's take a look at another example that we've implemented ourselves, the tensor names entirely depend on your graph, so replace our variables and types with yours as necessary.
 
-```python
+{% highlight python %}
 import Algorithmia
 import tensorflow as tf
 from tensorflow.contrib import predictor
@@ -495,7 +497,7 @@ def apply(input):
     predictions['scores'] = predictions['scores'].tolist()
     predictions['classes'] = predictions['classes'].tolist()
     return predictions
-```
+{% endhighlight %}
 
 As you can see, most of the processing is similar, but we use a different endpoint to actually create the graph.
 
@@ -507,13 +509,13 @@ gpu memory.
 By defining a configuration with a max memory fraction you can ensure algorithm stability.
 Also, uncomment `allow_growth` if you aren't sure how much memory your algorithm needs, tensorflow will grow it's gpu memory allocation as necessary.
 
-```python
+{% highlight python %}
 def generate_gpu_config(memory_fraction):
     config = tf.ConfigProto()
     # config.gpu_options.allow_growth = True
     config.gpu_options.per_process_gpu_memory_fraction = memory_fraction
     return config
-```
+{% endhighlight %}
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:

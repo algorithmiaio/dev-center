@@ -19,6 +19,8 @@ Before you get started learning about Java algorithm development, make sure you 
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -27,6 +29,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -392,7 +396,11 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * [Algorithmia Java client documentation]({{site.baseurl}}/clients/java)
 * [Algorithmia Java Client Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?java#error-handling)
 * [Java 8 JDK API](http://docs.oracle.com/javase/8/docs/api/)
+
+</div>

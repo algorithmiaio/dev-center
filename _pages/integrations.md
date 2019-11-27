@@ -12,10 +12,11 @@ menus:
     weight: 5
 ---
 
-<div class="syn-row">
-{% assign sorted_tiles = site.pages | where: "categories", "integrations" | sort:"title" %}
-{% for post in sorted_tiles %}
-  {% include post-grid-with-excerpt.html %}
-{% endfor %}
+<div>
+  <div class="syn-row">
+  {% assign sorted_tiles = site.pages | where: "categories", "integrations" | sort:"title" %}
+  {% for post in sorted_tiles %}
+    {% include post-grid-with-excerpt.html %}
+  {% endfor %}
+  </div>
 </div>
-

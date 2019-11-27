@@ -5,8 +5,6 @@ excerpt: "Make your first API call with this quick start guide."
 tags: [app-dev-getting-started]
 show_related: true
 author: steph_kim
-image:
-  teaser: /icons/hexicon_desktop_purple.svg
 redirect_from:
   - /basics/getting-started/
 ---

@@ -21,6 +21,9 @@ This guide is designed as an introduction to deploying a Keras model and publish
 If you're using Tensorflow as the backend, check out the <a href="{{site.baseurl}}/model-deployment/tensorflow">Tensorflow docs</a> as well since those have specific information about deploying your model on GPU's.
 
 ## Table of Contents
+
+<div class="syn-body-1" markdown="1">
+
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
@@ -29,6 +32,8 @@ If you're using Tensorflow as the backend, check out the <a href="{{site.baseurl
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
 * [Publish your Algorithm](#publish-your-algorithm)
+
+</div>
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
