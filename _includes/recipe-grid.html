@@ -1,30 +1,36 @@
-<div class="row" id="recipes">
-  <div class="col-md-12 mt-16">
-    {% for post in recipes %}
-      <div class="recipe-card pv-16 mb-16">
-        <div class="recipe-card-body mb-16">
-          {% if post.thumbnail %}
-            <div class="recipe-card-image">
+<div>
+  {% for post in recipes %}
+    <div class="syn-card outlined syn-mb-32">
+      <div class="syn-media-object">
+        {% if post.thumbnail %}
+          <div class="syn-media-object-image">
+            <div class="syn-user-image syn-user-image-56">
               {% if post.thumbnail contains '://' %}
-                <div style="background-image: url({{post.thumbnail}});"></div>
+                <img src="{{post.thumbnail}}" title="{{ post.title }}">
               {% else %}
-                <div style="background-image: url({{post.thumbnail | relative_url }});"></div>
+                <img src="{{post.thumbnail | relative_url }}" title="{{ post.title }}">
               {% endif %}
             </div>
-          {% endif %}
-          <div class="recipe-card-info">
-            <h4 class="m-B-n mb-4">{{ post.title }}</h4>
-            <p class="mb-8">{{ post.excerpt }}</p>
+          </div>
+        {% endif %}
+        <div class="syn-media-object-body">
+          <h4 class="syn-mb-8">{{ post.title }}</h4>
+          <div class="syn-body-2 syn-text-secondary syn-mb-8">{{ post.excerpt }}</div>
+          <div>
             {% for tag in post.tags %}
-              <span class="tag text-secondary pr-8">{{ tag | replace: '-', ' ' | capitalize }}</span>
+              <a href="/tags/{{tag}}" class="syn-tag">{{ tag | replace: '-', ' ' | capitalize }}</a>
             {% endfor %}
           </div>
-        </div>
-        <div>
-          <a href="{{ post.blog }}" class="recipe-link">GUIDE</a>
-          <a href="{{ post.repository }}" class="recipe-link">CODE</a>
+          <div class="syn-mt-16">
+            <a href="{{ post.blog }}" target="_blank" rel="nofollow noopener noreferrer">
+              <button class="syn-btn text theme-primary syn-mr-16">Guide</button>
+            </a>
+            <a href="{{ post.repository }}" target="_blank" rel="nofollow noopener noreferrer">
+              <button class="syn-btn text theme-primary">Code</button>
+            </a>
+          </div>
         </div>
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
 </div>
