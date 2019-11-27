@@ -40,8 +40,12 @@ __bold__
 #### Tiny header
 </pre>
 
+<div markdown="1">
+
 We recommend avoiding `H1` level headers (single `#`) as it may negatively impact discoverability (i.e. SEO) of your algorithm.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Lists
 
@@ -61,8 +65,12 @@ We recommend avoiding `H1` level headers (single `#`) as it may negatively impac
 [Text to display](http://www.example.com)
 </pre>
 
+<div markdown="1">
+
 Bare URLs will also be automatically converted to links.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Quotes
 
@@ -138,6 +146,10 @@ You can also explicitly specify language for code-fenced blocks:
 ```
 </pre>
 
+<div markdown="1">
+
 If you want to disable code-highlighting, use `text` as the explicitly specified language.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
