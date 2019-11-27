@@ -15,14 +15,24 @@ menus:
     weight: 2
 ---
 
-<div class="row lang-tile-container">
-  {% assign post_title = "Local Development: emulating the Algorithmia execution environment" %}
-  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-    <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-      <div style="min-height:60%"><img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development.png" alt="icon" itemprop="image"></div>
-      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
-    </a>
-  </div>
+<div>
+  {% assign post_title = "Local Development" %}
+  {% assign post_subtitle = "Emulating the Algorithmia execution environment." %}
+  <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-user-image syn-user-image-96 full-image">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development.png" alt="icon" itemprop="image">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
   {% assign post_title = "Inspecting Algorithms: determining the live list of packages / dependencies" %}
   <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
     <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/list-packages" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
