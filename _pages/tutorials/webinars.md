@@ -22,7 +22,7 @@ Whether you're looking to supercharge your application with readily-usable Machi
 
 Algorithmia's AI Layer and Marketplace make it easy to get Machine Learning up and running in your app. Our Webinar will show you how.
 
-<a href="https://register.gotowebinar.com/rt/6993672803865799683">
+<a href="https://register.gotowebinar.com/rt/6993672803865799683" target="_blank" rel="nofollow noopener noreferrer">
   <button class="syn-btn contained theme-primary">Register Now</button>
 </a>
 
@@ -31,6 +31,6 @@ Algorithmia's AI Layer and Marketplace make it easy to get Machine Learning up a
 
 Most Machine Learning doesn't make it past Powerpoint. We'll show you how our AI Layer can push your models into production and free up your team to focus on what matters.
 
-<a href="https://register.gotowebinar.com/rt/897829706382697987">
+<a href="https://register.gotowebinar.com/rt/897829706382697987" target="_blank" rel="nofollow noopener noreferrer">
   <button class="syn-btn contained theme-primary">Register Now</button>
 </a>
