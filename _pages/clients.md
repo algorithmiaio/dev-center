@@ -56,10 +56,11 @@ Also, after checking out the Getting Started Guide above, go through a more thor
 </div>
 {% include aside-end.html %}
 
-<div class="syn-row syn-mt-32">
-{% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
-{% for post in sorted_clients %}
-  {% include post-grid.html %}
-{% endfor %}
+<div>
+  <div class="syn-row syn-mt-32">
+  {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
+  {% for post in sorted_clients %}
+    {% include post-grid.html %}
+  {% endfor %}
+  </div>
 </div>
-
