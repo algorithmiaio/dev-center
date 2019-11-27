@@ -20,19 +20,19 @@ Algorithms can easily access databases hosted by Snowflake Computing using the [
 
 Begin by creating a [collection]({{site.url}}/data/hosted) named "SnowflakeCredentials", and uploading a file "credentials.json" with the following structure (see their docs to find your [Account Name](https://docs.snowflake.net/manuals/user-guide/connecting.html)):
 
-```json
+{% highlight json %}
 {
   "user": "[YOUR_SNOWFLAKE_USERNAME]",
   "password": "[YOUR_SNOWFLAKE_PASSWORD]",
   "account": "[YOUR_SNOWFLAKE_ACCOUNT]"
 }
-```
+{% endhighlight %}
 
 Next, create a Python Algorithm. Click "Dependencies" in the Web IDE (or edit your requirements.txt file) and add the dependency `snowflake-connector-python`.
 
 Now paste the following code in as your Algorithm:
 
-```python
+{% highlight python %}
 import Algorithmia
 import snowflake.connector
 
@@ -55,6 +55,6 @@ def apply(input):
     finally:
         cs.close()
         ctx.close()
-```
+{% endhighlight %}
 
 Build and test this Algorithm. Assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.

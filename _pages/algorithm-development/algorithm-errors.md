@@ -141,7 +141,7 @@ Even though we have to conform to the predefined list of error codes, we can sti
 
 **Algorithm A:**
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
@@ -153,17 +153,17 @@ def apply(input):
     else:
         raise AlgorithmException("Type of media is not supported!", "UnsupportedError")
 
-```
+{% endhighlight %}
 
 **Algorithm A Sample input:**
 
-```
+{% highlight python %}
 {"type": "audio"}
-```
+{% endhighlight %}
 
 **Algorithm A Sample Output:**
 
-```
+{% highlight python %}
 Error: 'Type of media is not supported!'
 Traceback (most recent call last):
   File "/opt/algorithm/bin/pipe.py", line 45, in get_response
@@ -173,7 +173,7 @@ Traceback (most recent call last):
   File "/opt/algorithm/src/BE_test1.py", line 10, in apply
     raise AlgorithmException("Type of media is not supported!", "UnsupportedError")
 AlgorithmException: 'Type of media is not supported!'
-```
+{% endhighlight %}
 
 #### Example 2: Propagating a valid error from algorithm to algorithm
 
@@ -181,7 +181,7 @@ Here is an example when we raise a valid error in one Python algorithm, and catc
 
 **Algorithm A:**
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
@@ -193,11 +193,11 @@ def apply(input):
     else:
         raise AlgorithmException("Type of media is not supported!", "UnsupportedError")
 
-```
+{% endhighlight %}
 
 **Algorithm B:**
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
@@ -211,19 +211,19 @@ def apply(input):
         if e.error_type == "UnsupportedError":
             return("Looks like our call is unsupported")
 
-```
+{% endhighlight %}
 
 **Algorithm B Sample Input:**
 
-```
+{% highlight json %}
 {"type": "audio"}
-```
+{% endhighlight %}
 
 **Algorithm B Sample Output:**
 
-```
+{% highlight json %}
 "Looks like our call is unsupported"
-```
+{% endhighlight %}
 
 #### Example 3: Propagating an invalid error from algorithm to algorithm
 
@@ -231,18 +231,18 @@ When we pass an invalid error code from one algorithm to the other, it automatic
 
 **Algorithm A:**
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
 def apply(input):
     raise AlgorithmException("This is an invalid error code!", "BlablaException")
 
-```
+{% endhighlight %}
 
 **Algorithm B:**
 
-```
+{% highlight python %}
 import Algorithmia
 from Algorithmia.errors import AlgorithmException
 
@@ -257,16 +257,16 @@ def apply(input):
             return("Our invalid error code was passed through.")
         elif e.error_type == "AlgorithmException":
             return("Out invalid error code was changed to the default.")
-```
+{% endhighlight %}
 
 **Algorithm B Sample Input:**
 
-```
+{% highlight json %}
 "Some string."
-```
+{% endhighlight %}
 
 **Algorithm B Sample Output:**
 
-```
+{% highlight json %}
 "Out invalid error code was changed to the default."
-```
+{% endhighlight %}

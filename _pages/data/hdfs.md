@@ -20,12 +20,12 @@ If your algorithm needs to read or write data from your hadoop cluster, you can 
 
 You'll need to enable webhdfs in your hdfs config file [hdfs-site.xml](https://hadoop.apache.org/docs/r3.1.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml):
 
-```
+{% highlight xml %}
 <property>
     <name>dfs.webhdfs.enabled</name>
     <value>true</value>
 </property>
-```
+{% endhighlight %}
 
 Here we'll show how to access a file stored on a hadoop single node cluster using webhdfs via the Python requests library.
 
@@ -33,7 +33,7 @@ Hdfs requests library from a Python algorithm. While there are other webhdfs lib
 
 Here is an example using the Python library "requests" to submit a HTTP GET request using webhdfs:
 
-```
+{% highlight python %}
 import Algorithmia
 import requests
 
@@ -42,33 +42,32 @@ r = requests.get("<HOST>:<PORT>/webhdfs/v1/user/<PATH>", params=payload, allow_r
 
 def apply(input):
     return r.text
-
-```
+{% endhighlight %}
 
 We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
 
 Instead, create a folder within your [Data Portal]({{site.baseurl}}/data) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the data regardless of who calls it, but does not give them direct access to your hadoop cluster).
 
 Inside this folder, create a `.json` file containing your connection credentials:
-```
+{% highlight json %}
 {
   "host":"hostname.example.com",
   "username":"algorithmiauser",
   "namenodeaddress":"192.0.2.0:9000"
   "port": "9864"
 }
-```
+{% endhighlight %}
 
 And then you can simply use the data api to load the credentials file into your algorithm:
-```
+{% highlight python %}
 creds = client.file('data://.my/SomePrivateFolder/hdfs_credentials.json').getJson()
-```
+{% endhighlight %}
 
 Which will return your credentials so you can inject them into your payload.
 
 So it would look like (note that this is not a runnable example):
 
-```
+{% highlight python %}
 import Algorithmia
 import requests
 
@@ -82,8 +81,7 @@ r = requests.get(query_string, params=payload, allow_redirects=True)
 # For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
 def apply(input):
     return r.text
-
-```
+{% endhighlight %}
 
 Which would return the contents of the text file:
 

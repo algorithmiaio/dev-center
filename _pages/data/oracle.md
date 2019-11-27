@@ -30,17 +30,17 @@ We do not recommend storing your database credentials directly inside your algo,
 Instead, create a folder within your [Data Portal]({{site.baseurl}}/data) and set its read access to "Private to your algorithms" (this allows your algorithm to utilize the database regardless of who calls it, but does not give them direct access to your DB).
 
 Inside this folder, create a `.json` file containing your connection credentials:
-```
+{% highlight json %}
 {
   "dsn":"fakeserver.net",
   "user":"someuser",
   "password":"somepass"
 }
-```
+{% endhighlight %}
 
 Then, inside your own algorithm, add an Oracle library to your dependencies file (in this example, `cx_Oracle`), then load the credentials from the JSON file and use them to make your DB connection:
 
-```
+{% highlight python %}
 import Algorithmia
 import cx_Oracle
 
@@ -65,8 +65,7 @@ def apply(input):
     for row in rows:
       result.append(row)
     return result
-
-```
+{% endhighlight %}
 
 ### Option 2: Use our helper algorithms to store per-user credentials automatically, and to run queries
 
@@ -78,7 +77,7 @@ Then, access the data in your DB via the <a href="{{site.url}}/algorithms/util/O
 
 Here's an example of using a preconfigured connection inside one of your own algorithms:
 
-```
+{% highlight python %}
 import Algorithmia
 
 client = Algorithmia.client()
@@ -87,4 +86,4 @@ def apply(input):
     query = "SELECT name, address FROM employees"
     results = client.algo('util/OracleDB').pipe(query).result
     # now use results (a list of lists) in any way you like
-```
+{% endhighlight %}

@@ -86,10 +86,10 @@ Now is the time to set your dependencies that your model relies on.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/XGBoost_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
 
-```
+{% highlight python %}
 numpy
 xgboost
-```
+{% endhighlight %}
 
 ## Load your Model
 
