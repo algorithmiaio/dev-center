@@ -30,6 +30,11 @@
     "vue:dev": "cross-env NODE_ENV=development webpack",
     "vue:watch": "cross-env NODE_ENV=development webpack --watch"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test && npm run jest"
+    }
+  },
   "devDependencies": {
     "@types/chai": "^4.2.5",
     "@types/jest": "^24.0.23",
@@ -46,10 +51,12 @@
     "@wdio/sync": "^5.14.4",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
     "jest-serializer-vue": "^2.0.2",
     "mocha": "^6.2.0",
