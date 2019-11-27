@@ -47,10 +47,11 @@ And if you're looking to call the API in Spark Streaming, H2O, and more check ou
 
 Also, after checking out the Getting Started Guide above, go through a more thorough tutorial in your preferred language. The guides below will take you step-by-step showing you how to work with data, call algorithms and get the response:
 
-<div class="syn-row syn-mt-32">
-{% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
-{% for post in sorted_clients %}
-  {% include post-grid.html %}
-{% endfor %}
+<div>
+  <div class="syn-row syn-mt-32">
+  {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
+  {% for post in sorted_clients %}
+    {% include post-grid.html %}
+  {% endfor %}
+  </div>
 </div>
-
