@@ -101,6 +101,12 @@ side-nav-menu[v-cloak] {
   }
 }
 
+.syn-table.col-ratio-1-3 {
+  th:first-child {
+    width: 25%;
+  }
+}
+
 // Pulling these styles over from the old dev center styles,
 // because this is a very effective responsive youtube iframe setup
 .video-responsive {
