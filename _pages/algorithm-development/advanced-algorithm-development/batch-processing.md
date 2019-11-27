@@ -11,7 +11,12 @@ image:
     teaser: /post_images/batch-processing/batch_processing.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing_wide.png" class="syn-image-responsive">
+
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing_wide.png" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Many Machine Learning models are initially coded to accept a single input and return a single prediction. In batch processing (aka batch prediction), we wish to send a large volume of inputs -- possibly millions. Then, the model should score each input and aggregate the results into a file, datastore, or queue.
 
