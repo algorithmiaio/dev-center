@@ -21,11 +21,15 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 {: .notice-info}
 
 ## Table of Contents
+
+<div class="syn-body-1" markdown="1">
+
 * [Create your Algorithm](#create-your-algorithm)
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
 * [Publish your Algorithm](#publish-your-algorithm)
 
+</div>
 
 ## Create your Algorithm
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.

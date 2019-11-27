@@ -18,6 +18,9 @@ Welcome to deploying your <a href="https://mxnet.incubator.apache.org/">MXNet</a
 This guide is designed as an introduction to deploying a MXNet model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 ## Table of Contents
+
+<div class="syn-body-1" markdown="1">
+
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
@@ -26,6 +29,8 @@ This guide is designed as an introduction to deploying a MXNet model and publish
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
 * [Publish your Algorithm](#publish-your-algorithm)
+
+</div>
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:

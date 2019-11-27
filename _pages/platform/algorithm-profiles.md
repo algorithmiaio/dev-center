@@ -81,9 +81,13 @@ You can also experiment with your own data as long as it's in a format the algor
 
 The algorithm README documentation should help answer:
 
+<div class="syn-body-1" markdown="1">
+
 * What the algorithm does
 * Expected input for that algorithm
 * The expected output from that algorithm
+
+</div>
 
 Many algorithms also use this space to link to papers or other sites that more fully explain the technical implementation of the algorithm.
 
@@ -128,12 +132,16 @@ Builds are started when you push local commits to Algorithmia, or by using the "
 
 The following information is shown for each build:
 
+<div class="syn-body-1" markdown="1">
+
 * The commit SHA
 * The build's start time
 * The build's end time (or a spinner if still in progress)
 * The build's duration, if complete
 * The build's status
 * The version published from the build, if there is one
+
+</div>
 
 If your latest build is successful and unpublished, you will see a "Publish" option in the version column. Clicking on this will start the publish flow for that build, with the same steps described [here]({{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo#publish-your-algorithm).
 

@@ -11,16 +11,20 @@ image:
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
 
-This is only available for Enterprise installations of Algorithmia. 
+This is only available for Enterprise installations of Algorithmia.
 
 ## 1. Obtain a template file and account info from Algorithmia
 
 Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you will need during CloudFormation setup:
 
+<div class="syn-body-1" markdown="1">
+
 * the CloudFormation template file, `client-aws-cloudformation-template.yaml`
 * AlgorithmiaAccountNumber
 * QueueName
 * QueueDLQName
+
+</div>
 
 ## 2. Set AWS user permissions
 
@@ -76,7 +80,7 @@ The next page allows you to review your options. Scroll to the bottom and click 
 
 Finally, click **Create stack**.
 
-The next page will indicate that the stack creation is in progress. 
+The next page will indicate that the stack creation is in progress.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_9.png">
 

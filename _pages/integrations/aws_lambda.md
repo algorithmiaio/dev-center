@@ -32,15 +32,21 @@ Algorithmia provides a built-in AWS Lambda Node.js blueprint, making it easy to 
 
 For example, you could combine several algorithms from Algorithmia to:
 
+<div class="syn-body-1" markdown="1">
+
 * Automatically generate smart thumbnails (using face detection to ensure every thumbnail is perfectly cropped)
 * Take advantage of Algorithmia’s speech-to-text algorithm to transcribe videos uploaded to S3 on the fly
 * You could even leverage a predictive model every time DynamoDB updates.
+
+</div>
 
 Algorithmia and Lambda make it easy to rapidly build and deploy serverless solutions in minutes.
 
 ### Setup your Lambda function
 
 #### Getting started
+
+<div class="syn-body-1" markdown="1">
 
 * Navigate to the [AWS Lambda console](https://console.aws.amazon.com/lambda/home)
 * Select `Create function`
@@ -55,6 +61,8 @@ Algorithmia and Lambda make it easy to rapidly build and deploy serverless solut
 * for higher security, configure your KMS Encrypted Key as shown below, and set `const kmsEncryptedApiKey` in your code
 * for a simpler but less secure config, you can embed your API Key directly into your code by assigning a value to `let apiKey`
 * save and test your code
+
+</div>
 
 ### Authentication
 

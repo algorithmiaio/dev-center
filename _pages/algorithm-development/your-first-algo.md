@@ -28,11 +28,15 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Create your First Algorithm](#create-your-first-algorithm)
 * [Editing Your Algorithm Locally via GIT and CLI](#editing-your-algorithm-locally-via-git-and-cli)
 * [Editing Your Algorithm via the Web IDE](#editing-your-algorithm-via-the-web-ide)
 * [Publish Your Algorithm](#publish-your-algorithm)
 * [Deleting Algorithms](#delete-your-algorithm)
+
+</div>
 
 ## Create your First Algorithm
 
@@ -84,6 +88,8 @@ The preferred way to edit and test your Algorithm's code is to install the CLI o
 
 To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
+<div class="syn-body-1" markdown="1">
+
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
 3. Use your preferred editor to modify the code
@@ -94,6 +100,8 @@ To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clien
     2. click on your algorithm
     3. click "Edit Source"
     4. click "Compile", then "[Publish](#publish-algorithm)"
+
+</div>
 
 If you're using Python, you must [set an environment variable](https://www.schrodinger.com/kb/1842): `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
 {: .notice-info}
@@ -119,12 +127,17 @@ The **Discussion** tab shows the comments and questions from users so you can ke
 Under the **Manage** tab you can see how to clone your algorithm, see what items are checked off in the Algorithm Checklist, delete your algorithm and edit various settings of your algorithm even after you've created it.
 
 Features you can edit are:
+
+<div class="syn-body-1" markdown="1">
+
 * Visibility (Open or closed source)
 * Environment (CPU or GPU)
 * Properties (Licensing - note that if you choose any license other than the Algorithmia Platform License, you'll need to have the visibility set to “Open Source”).
 * Permissions:
 	* Managing internet accesibility from your algorithm
 	* Calling other algorithms from your algorithm
+
+</div>
 
 If you have published your algorithm and want to only make changes to the settings on the "Manage" tab, then you will still need to hit "Build" before republishing to see your new changes. Then you can hit "Publish" after your algorithm builds and go through the normal publishing workflow.
 {: .notice-info}

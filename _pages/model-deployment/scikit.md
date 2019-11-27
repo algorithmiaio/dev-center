@@ -24,6 +24,9 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 {: .notice-info}
 
 ## Table of Contents
+
+<div class="syn-body-1" markdown="1">
+
 * [Prerequisites](#prerequisites)
   * [Save your Pre-Trained Model](#save-your-pre-trained-model)
   * [Create a Data Collection](#create-a-data-collection)
@@ -32,6 +35,8 @@ Note: this guide uses the web UI to create and deploy your Algorithm. If you pre
 * [Set your Dependencies](#set-your-dependencies)
 * [Load your Model](#load-your-model)
 * [Publish your Algorithm](#publish-your-algorithm)
+
+</div>
 
 ## Prerequisites
 Before you get started hosting your model on Algorithmia there are a few things you'll want to do first:
