@@ -48,11 +48,13 @@ In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted">Hos
 
 First, you'll want to create a data collection to host your pre-trained model.
 
+<div class="syn-body-1" markdown="1">
+
 - Log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
-
 - Click on **“Add Collection”** under the “My Collections” section.
-
 - After you create your collection you can set the read and write access on your data collection.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -63,11 +65,14 @@ Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri"
 ### Host Your Model File
 Next, upload your model files to your newly created data collection.
 
-- Load model by clicking box **“Drop files here to upload”**
+<div class="syn-body-1" markdown="1">
 
+- Load model by clicking box **“Drop files here to upload”**
 - Note the path to your files:
     - data://username/collections_name/file_name.prototxt.txt,
     - data://username/collections_name/file_name.caffemodel
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -89,12 +94,15 @@ Now is the time to set your dependencies that your model relies on.
 
 Here are some Caffe wheels for different versions as well as CPU and GPU wheels:
 
+<div class="syn-body-1" markdown="1">
+
 -   **Caffe 0.1 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_cpu-py2-none-any.whl
 -   **Caffe 0.1 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-0.1.0_gpu-py2-none-any.whl
 -   **Caffe 1.05 (CPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_cpu-py2-none-any.whl
 -   **Caffe 1.05 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-01.05.16_b86b0aea60a_gpu-py2-none-any.whl
 -   **Caffe build tag 99466 (GPU)**: https://s3.amazonaws.com/algorithmia-wheels/caffe-27.11.17_99466_gpu-py2-none-any.whl
 
+</div>
 
 Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 

@@ -151,11 +151,13 @@ In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted">Hos
 
 First, you'll want to create a data collection to host your graph and variables.
 
+<div class="syn-body-1" markdown="1">
+
 - Log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
-
 - Click on **“Add Collection”** under the “My Collections” section.
-
 - After you create your collection you can set the read and write access on your data collection.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -166,9 +168,12 @@ Note, that you can also use the <a href="https://docs.algorithmia.com/#data-uri"
 ### Host Your Model File
 Next, upload your Tensorflow variables and graph to your newly created data collection. They should be in a .zip file or .gzip, although note our examples show using zip format so you'll need to change the code in your main model file in the function `extract_model()` to extract your gzip accordingly or simply save your model as a .zip file.
 
-- Load model by clicking box **“Drop files here to upload”**
+<div class="syn-body-1" markdown="1">
 
+- Load model by clicking box **“Drop files here to upload”**
 - Note the path to your data collection and the zip folder: data://user_name/collections_name/model.zip
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -192,7 +197,11 @@ Go ahead and remove the boilerplate code below that's inside the `apply()` funct
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
+<div class="syn-body-1" markdown="1">
+
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="syn-image-responsive">
 
@@ -202,10 +211,13 @@ If you plan on using tensorflow with GPU support, make sure to use the
 
 <div class='notice-warning'>
 We've recently added tensorflow 1.3.0 support, however it uses custom wheels which we've built. Please replace your <code>tensorflow-gpu==1.2.0</code> line with:
-<ul>
-<li> python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl </li>
-<li> python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl </li>
-</ul>
+<div class="syn-body-1">
+  <ul>
+    <li> python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl </li>
+    <li> python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl </li>
+  </ul>
+</div>
+
 If you run into any issues with these wheels, please get in touch with us using intercom.
 
 Note that with the Python 2 wheel you also must add your protobuf version to the dependency. For example:

@@ -30,11 +30,13 @@ After your CNTK model is trained you should save the model graph with the idioma
 
 Here you'll want to create a data collection to host your model.
 
+<div class="syn-body-1" markdown="1">
+
 - To use the Data API, log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
-
 - Click on **“Add Collection”** under the “My Collections” section on your data collections page.
-
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -42,9 +44,12 @@ Here you'll want to create a data collection to host your model.
 
 After your collection is created, you're going to want to upload your saved graph file to your newly created Data Collection.
 
-- Load model by clicking box **“Drop files here to upload”**
+<div class="syn-body-1" markdown="1">
 
+- Load model by clicking box **“Drop files here to upload”**
 - Note the path to your files: `data://username/collections_name/cntk.model`
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -52,8 +57,12 @@ After your collection is created, you're going to want to upload your saved grap
 
 Creating your algorithm is easy!
 
+<div class="syn-body-1" markdown="1">
+
 - To add an algorithm, simply click **“Add Algorithm”** from the user profile icon.
 - Name your algorithm, select the language, choose permissions and make the code either open or closed source.
+
+</div>
 
 **Note**: There is also a checkbox for 'Standard Execution Environment' or 'Advanced GPU'. For deep learning models you will want to check 'Advanced GPU'.
 
@@ -66,7 +75,11 @@ Creating your algorithm is easy!
 
 Now is the time to set the depenencies your model relies on.
 
+<div class="syn-body-1" markdown="1">
+
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/cntk_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
 

@@ -43,11 +43,13 @@ In this guide we'll use Algorithmia's <a href="{{site.baseurl}}/data/hosted">Hos
 
 First, you'll want to create a data collection to host your graph and variables.
 
+<div class="syn-body-1" markdown="1">
+
 - Log into your Algorithmia account and create a data collection via the <a href="{{site.baseurl}}/data/hosted">Data Collections</a> page.
-
 - Click on **“Add Collection”** under the “My Collections” section.
-
 - After you create your collection you can set the read and write access on your data collection.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
 
@@ -147,7 +149,11 @@ Go ahead and remove the boilerplate code below that's inside the `apply()` funct
 
 Now is the time to set the dependencies your model relies on.
 
+<div class="syn-body-1" markdown="1">
+
 - Click on the **"Dependencies"** button at the top right of the UI and add `opencv-python==3.4.1.15` under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
+
+</div>
 
 ## Load your model
 Here is where you load and run your model which will be called by the apply() function.
