@@ -49,7 +49,11 @@ Make sure to describe what the algorithm does. It is better to use clear and sim
 
 The algorithm description is front-and-center on the algorithm profile page. Use the description to write a clear explanation of what the algorithm does, what kind of input it takes, and what kind of output the user can expect. Be sure to highlight the various ways your algorithm can be used so that users get a thorough understanding of what types of problems the algorithm solves.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/description.png" alt="Algorithm description" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/description.png" alt="Algorithm description" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 #### Describe the inputs & expected output
 
@@ -57,7 +61,11 @@ Be sure to quickly describe the input needed to call the algorithm and the types
 
 It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for [Sentiment Analysis](https://algorithmia.com/blog/introduction-sentiment-analysis), the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/io.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/io.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 #### Configure error handling
 
@@ -67,7 +75,11 @@ To make your algorithm easy to use, it's key to implement informative error hand
 
 If your algorithm is based off an academic paper or external library, you should also include a link to this documentation to give the users a chance to read more. Giving credit to the original source that your algorithm is based on is a best practice and allows curious users to take a deeper dive into the internal workings of the algorithm. Plus it's good karma!
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/credits.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/credits.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Give It a Tagline:
 
@@ -77,7 +89,11 @@ The tagline is a succinct way to describe your algorithm. The tagline will appea
 
 Determine sentiment from text
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/search.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/search.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Add Tags:
 
@@ -102,7 +118,11 @@ Sample input is one of the most important parts of your algorithm profile. Users
 
 `4`
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/sample_input.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/sample_input.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 A common gotcha for setting and updating the sample input is that you must publish your algorithm before you can save the sample input. If you are unable to save your sample input, double check that the algorithm has been published before continuing.
 {: .notice-warning }
@@ -111,7 +131,11 @@ A common gotcha for setting and updating the sample input is that you must publi
 
 If you are publishing a new version of your algorithm, you can update the pricing of each call. This will be displayed next to your algorithm's name on the overview page. Remember, you can set the royalty price even if your code is open source!
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/cost.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/cost.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Check Permissions & Source Code Visibility:
 
@@ -122,4 +146,8 @@ If you are publishing a new version of your algorithm, you can update the pricin
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/permissions.png" alt="inputs and outputs" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/permissions.png" alt="inputs and outputs" class="syn-image-responsive">
+  </image-popout>
+</images-section>
