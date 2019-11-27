@@ -123,14 +123,25 @@ app.get('/developers/userCustomizations.js', (req, res) => {
 const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath)
 const isFile = reqPath => /\.\w+$/.test(reqPath)
 app.get('*', (req, res, next) => {
+  const qs = querystring.stringify(req.query)
+  let newPath = req.path
+
   if (hasTrailingSlash(req.path) && isProduction) {
-    res.redirect(req.path.replace(/\/$/, ''))
+    newPath = req.path.replace(/\/$/, '')
   } else if (
     !hasTrailingSlash(req.path) &&
     !isFile(req.path) &&
     !isProduction
   ) {
-    res.redirect(`${req.path}/`)
+    newPath = `${req.path}/`
+  }
+
+  if (newPath !== req.path) {
+    res.redirect(
+      qs
+        ? `${newPath}?${qs}`
+        : newPath
+    )
   } else {
     next()
   }
