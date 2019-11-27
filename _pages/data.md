@@ -37,7 +37,7 @@ If you have any questions about Algorithmia please <a href="mailto:support@algor
     {% assign sorted_pages = site.pages | sort:"nav_index" %}
     {% for post in sorted_pages %}
       {% if data_connector_tags == post.tags %}
-        <div class="syn-col syn-col-sm-4 syn-col-md-3 syn-mb-32">
+        <div class="syn-col syn-col-sm-6 syn-col-md-4 syn-mb-32">
           <a  href="{{ post.url | relative_url }}" class="syn-card outlined actionable syn-link-no-decoration full-height">
             {% if post.image.teaser %}
               <div class="syn-user-image syn-user-image-56 contained syn-mh-auto syn-mb-8 full-image">
