@@ -52,8 +52,8 @@ const app = new Vue({
       )
     }
   },
-  mounted() {
-    this.loadUser()
+  async mounted() {
+    await this.loadUser()
     this.setStateFromCookies()
     setupPage(this.user)
   }
