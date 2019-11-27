@@ -21,25 +21,38 @@ Looking to add Machine Learning to your Slack App? Algorithmia provides over 500
 Algorithmia gives immense power to your Slack users and bots, thanks to its wide variety of tools and AI available via simple API calls. By invoking a Slash Command (`/commandname parameters`) in Slack, users can trigger an abstract API to respond either immediately or via a delayed callback.
 
 Here are just a few examples of how Slack users could utilize simple Slash Commands backed by Algorithmia:
+
+<div class="syn-body-1" markdown="1">
+
 * get a quick [summary of all social shares for a URL](https://algorithmia.com/algorithms/web/ShareCounts)
 * automatically [extract keywords from a document](https://algorithmia.com/algorithms/nlp/AutoTag) or [webpage](https://algorithmia.com/algorithms/tags/AutoTagURL)
 * get immediate [topic summaries from wikipedia](https://algorithmia.com/algorithms/web/WikipediaParser)
 * [colorize](https://algorithmia.com/algorithms/deeplearning/ColorfulImageColorization) or [stylize](https://algorithmia.com/algorithms/deeplearning/DeepFilter) images
 
+</div>
+
 By adding just a little bit of glue code to pipeline one API into another, even more complex tasks are possible. For example, one could:
+
+<div class="syn-body-1" markdown="1">
+
 * [connect to Dropbox]({{site.baseurl}}/data) and [extract text from PDFs](https://algorithmia.com/algorithms/ANaimi/PDFToText)
 * locate documents containing [phrases similar to their search query](https://algorithmia.com/algorithms/PetiteProgrammer/TextSimilarity)
 * crawl, scrape, analyze an [entire website](https://blog.algorithmia.com/web-scraping-crawling-python/)
 
+</div>
 
 ## Algorithmia + Slack Bot Users
 
 Slack Bots take things a bit further, giving the user a chatbot-like context in which they can interact more naturally. In addition, Slack Bots can monitor channels/conversations to which they've been invited, allowing you to keep an eye out for important keywords, heightened emotional interactions, or images you need to log/analyze. By adding the power of Algorithmia to your Slack Bot, you could:
 
+<div class="syn-body-1" markdown="1">
+
 * create a long-term context for the user's interactions, allowing them to [train a facial recognition tool](https://blog.algorithmia.com/train-a-face-recognition-model-to-recognize-celebrities/) or a [document classifier](https://blog.algorithmia.com/acquiring-data-for-document-classification/)
 * detect positive and negative sentiment in users' messages, taking note of good experiences and offering to help with others, just as you would in any [AI-driven chatbot](https://blog.algorithmia.com/building-an-emotionally-aware-chatbot/)
 * ensure that images exchanged are [safe for work](https://algorithmia.com/algorithms/sfw/NudityDetectioni2v)
 * observe the frequency of certain actions or keywords, to [generate predictions and identify outliers](https://algorithmia.com/algorithms/TimeSeries/)
+
+</div>
 
 ## Sample code: use a Slack Slash Command to get a quick summary of any website
 

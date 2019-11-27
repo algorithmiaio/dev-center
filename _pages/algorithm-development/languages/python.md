@@ -19,6 +19,8 @@ Before you get started learning about Python algorithm development, make sure yo
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -28,14 +30,20 @@ Table of Contents
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
 
+</div>
+
 ## Available Libraries
 
 Algorithmia makes a number of libraries available to make algorithm development easier.  We support four Python versions, with more to come:
+
+<div class="syn-body-1" markdown="1">
 
 1. <a href="https://docs.python.org/2/">Python 2.7.13 language and standard library</a>, for both CPU and GPU algorithms
 2. <a href="https://docs.python.org/3/">Python 3.5.3 language and standard library</a>, CPU and GPU
 3. Python 3.6.8, CPU and GPU, plus a preinstalled TensorFlow 1.12 option (found under the `Python 3.x - Beta` Language selection)
 4. Python 3.7.1, CPU and GPU (found under the `Python 3.x - Beta` Language selection)
+
+</div>
 
 We'll continue to add variants as needed, and broaden GPU support.
 
@@ -385,8 +393,12 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/python">Algorithmia Client Python Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="material-icons">open_in_new</i></a>
 * <a href="https://docs.python.org/3/">Python 3 Docs <i class="material-icons">open_in_new</i></a>
+
+</div>

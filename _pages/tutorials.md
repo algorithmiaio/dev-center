@@ -18,17 +18,18 @@ menus:
 
 Here you will find sample apps and recipes (which are a little bit different).
 
-<div class="row overview-container">
+<div>
 {% assign pages = site.pages | where: "categories", "tutorials" %}
 {% for post in pages %}
-  <div class="col-xs-12 overview-brief">
-  	<div class="col-md-2 overview-icon">
-    	<a href="{{ post.url | relative_url}}"><img src="{{site.cdnurl}}{{ post.image.teaser | prepend:'/images' | relative_url }}" alt="" itemprop="image"></a>
-  	</div>
-  	<div class="col-xs-10">
-   		<h3><a href="{{ post.url | relative_url}}">{{ post.title | downcase }}</a></h3>
-    	<p class="lg">{{post.excerpt}}</p>
+  <a href="{{ post.url | relative_url}}" class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <h3>{{post.title}}</h3>
+    <div class="syn-body-1 syn-text-secondary syn-mb-32">
+      {{post.excerpt}}
     </div>
-  </div>
+    <div class="syn-h6 syn-mb-4 syn-text-blue syn-flex align-center">
+      View {{post.title}}
+      <i class="material-icons syn-ml-8">arrow_forward</i>
+    </div>
+  </a>
 {% endfor %}
 </div>

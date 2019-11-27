@@ -28,10 +28,13 @@ To create a new data connection first navigate to <a href="{{site.baseurl}}/data
 
 Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
 
+<div class="syn-body-1" markdown="1">
+
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
 3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", and __just the protocol and domain__ (e.g. `https://mystore.blob.core.windows.net`) from "URL" -> "Storage URL"
 
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="syn-image-responsive">
 

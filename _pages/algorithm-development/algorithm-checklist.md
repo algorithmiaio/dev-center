@@ -23,6 +23,8 @@ To get the most out of your algorithm profile and boost its visibility, follow t
 
 ## The Checklist
 
+<div class="syn-body-1" markdown="1">
+
 * Write a Full Description
   * What does the algorithm do?
   * Describe the inputs & expected outputs
@@ -33,6 +35,7 @@ To get the most out of your algorithm profile and boost its visibility, follow t
 * Update Pricing
 * Check Permissions & Source Code Visibility
 
+</div>
 
 ### Write a Full Description
 
@@ -112,7 +115,11 @@ If you are publishing a new version of your algorithm, you can update the pricin
 
 ### Check Permissions & Source Code Visibility:
 
+<div class="syn-body-1" markdown="1">
+
 * Permissions: Any special permissions that this algorithm requires.
 * Source Availability: The license and source visibility of an algorithm.
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/permissions.png" alt="inputs and outputs" class="syn-image-responsive">

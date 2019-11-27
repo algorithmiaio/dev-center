@@ -19,7 +19,8 @@ It is possible to trigger Algorithmia from Alexa and Alexa-enabled devices by cr
 
 ## Creating the Lambda Function
 
-First, we need to create a Lambda Function which will handle the Alexa requests.  This sample asks the user to provide a website (URL), sends it to the [ShareCounts]({{site.url}}/algorithms/web/ShareCounts) algorithm, and speaks the number of Facebook and LinkedIn shares for that site.  But any other algorithm could be easily called with only small tweaks to the inputs and outputs.  
+First, we need to create a Lambda Function which will handle the Alexa requests.  This sample asks the user to provide a website (URL), sends it to the [ShareCounts]({{site.url}}/algorithms/web/ShareCounts) algorithm, and speaks the number of Facebook and LinkedIn shares for that site.  But any other algorithm could be easily called with only small tweaks to the inputs and outputs.
+<div class="syn-body-1" markdown="1">
 
 1. Go to [The AWS Console](https://console.aws.amazon.com/console/) and ensure that you've selected the region "N Virginia" in the upper-right.
 2. Under "AWS services", search for (and click) "Lambda"
@@ -32,7 +33,9 @@ First, we need to create a Lambda Function which will handle the Alexa requests.
 9. In the pop-up window, keep the default values ("lambda_basic_execution"); click "Allow"
 10. Back in the main window, click "Next", then "Create Function"
 11. Once the function is created, an ARN should appear in the upper right. Copy the value starting with "arn:aws:lambda:"
-12. Proceed to "Creating the Alexa Skill" below 
+12. Proceed to "Creating the Alexa Skill" below
+
+</div>
 
 ### Lambda Function Code:
 
@@ -138,6 +141,8 @@ exports.handler = function(event, context, callback) {
 
 ## Creating the Alexa Skill
 
+<div class="syn-body-1" markdown="1">
+
 1. Go to [developer.amazon.com](https://developer.amazon.com/), sign in, and click the Alexa tab
 2. Select "Alexa Skills Kit", then "Add new skill"
 3. Pick a Name and Invocation, click "Save", "Next"
@@ -154,6 +159,8 @@ exports.handler = function(event, context, callback) {
 14. Under Endpoint, pick AWS Lambda ARN, North America, and paste the ARN from step 11 of "Creating the Lambda function"
 15. Click Next (no other permissions are required), then test the skill by typing "algorithmia.com" into the "Enter Utterance" box, then clicking "Ask"
 16. If your tests pass, you can now proceed to Publish
+
+</div>
 
 ## Additional information
 

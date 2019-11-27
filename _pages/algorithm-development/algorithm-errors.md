@@ -132,8 +132,12 @@ Make sure that your algorithmia client version is: `>1.1.2`
 
 The Python client returns a new AlgorithmException object that has the following attributes:
 
+<div class="syn-body-1" markdown="1">
+
 * `AlgorithmException.error_type`: This is the error code.
 * `AlgorithmException.message`: This is the custom error message for the error code.
+
+</div>
 
 #### Example 1: Raising an error code with a custom message
 
