@@ -24,19 +24,7 @@ menus:
     weight: 1
 ---
 
-
-<div class="syn-row mb-64">
-  <div class="syn-col syn-col-md-12">
-    <h3>Get Started</h3>
-    <div class="dev-card">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="syn-image-responsive get-started-img">
-      <div class="dev-card-text">
-        <p class="lead">Get up to speed with the Algorithmia marketplace</p>
-        <a href="{{site.baseurl}}/getting-started" class="btn btn-default btn-accent">Get Started Now</a>
-      </div>
-    </div>
-  </div>
-</div>
+{% include aside-start.html %}
 
 After you learn how to call algorithms, check out our <a href="{{site.baseurl}}/data">Data Connectors</a> that we support and learn how to work with data using our <a href="http://docs.algorithmia.com/">Data API</a>.
 
@@ -46,6 +34,27 @@ And if you're looking to call the API in Spark Streaming, H2O, and more check ou
 <a href="{{site.baseurl}}/integrations">Integrations</a>.
 
 Also, after checking out the Getting Started Guide above, go through a more thorough tutorial in your preferred language. The guides below will take you step-by-step showing you how to work with data, call algorithms and get the response:
+
+{% include aside-middle.html %}
+<div>
+  <a href="{{site.baseurl}}/getting-started" class="syn-card actionable syn-link-no-decoration">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-user-image syn-user-image-56">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/icons/rocket.svg" alt="Rocket icon">
+        </div>
+      </div>
+      <div class="syn-media-object-body">
+        <h5 class="syn-mb-8">Getting Started</h5>
+        <div class="syn-body-2 syn-mb-0">Get up to speed with the platform.</div>
+      </div>
+      <div class="syn-media-object-actions">
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    </div>
+  </a>
+</div>
+{% include aside-end.html %}
 
 <div class="syn-row syn-mt-32">
 {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
