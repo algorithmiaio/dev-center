@@ -63,5 +63,9 @@ When you start writing a new algorithm in Python, you'll find the following in y
 
 Because Python is not a typed language, we are more limited in the parsing we can do. As a result, the input for a Python algorithm is *always* a single argument. This single input represents the JSON exactly as it comes out of the `json.loads()` method; as such JSON lists become Python lists, JSON objects become Python dictionaries, and so on.
 
+<div markdown="1">
+
 Overloaded apply functions are not allowed in Python.
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>

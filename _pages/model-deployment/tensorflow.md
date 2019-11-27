@@ -60,8 +60,12 @@ After training your Tensorflow model, you'll need to save it, along with its ass
 
 There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
 
+<div markdown="1">
+
 Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 {% highlight python %}
 from tensorflow.examples.tutorials.mnist import input_data
@@ -236,8 +240,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 

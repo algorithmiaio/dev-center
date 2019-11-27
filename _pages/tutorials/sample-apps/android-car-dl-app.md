@@ -105,8 +105,12 @@ In "strings.xml", replace the demo API key with your API key, which can be found
 </resources>
 {% endhighlight %}
 
+<div markdown="1">
+
 Make sure you've replaced `YOUR_API_KEY` with the API key under your account so that the Algorithmia client can authenticate!
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 Next create a folder called "xml" under your "res" folder so the file provider can find your image. Then add a file called "file_provider_paths.xml" and copy and paste the following:
 
@@ -435,8 +439,12 @@ In the [doInBackground](https://developer.android.com/reference/android/os/Async
 
 We then create a DataDirectory object that references a directory in your [data collection](/data/hosted). If you haven't used Data sources check out our [Android Client Guide]({{site.baseurl}}/clients/android).
 
+<div markdown="1">
+
 Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [Data Sources]({{site.baseurl}}/data).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file.
 

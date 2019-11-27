@@ -46,8 +46,12 @@ We'll make our first call with the demo algorithm ["Hello"](/algorithms/demo/Hel
   {% highlight bash %}curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/{% endhighlight %}
 </code-sample>
 
+<div markdown="1">
+
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 

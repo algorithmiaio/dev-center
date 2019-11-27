@@ -63,8 +63,12 @@ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0
 
 If you need to load a trained model from spaCy, check out this <a href="https://algorithmia.com/algorithms/demo/spacydemo">example in Spacy</a>, which shows loading a trained model. Particulary check out the dependency file and the top few lines of code to see how to load it. You'll load a trained spaCy model the same way.
 
+<div markdown="1">
+
 If you are using a library that depends on SpaCy creating symlink between `en_core_web_md` and `en`, please find an alternative as we don't support creating that symlink manually.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
@@ -75,8 +79,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 

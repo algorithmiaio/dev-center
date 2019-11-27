@@ -155,8 +155,12 @@ if (!destination.exists()) {
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 This method will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 

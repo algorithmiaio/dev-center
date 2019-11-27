@@ -137,8 +137,12 @@ if client.file(text_file).exists().unwrap() == false{
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 

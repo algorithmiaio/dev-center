@@ -117,8 +117,12 @@ You can also edit your algorithm's settings, including source code visibility, l
 
 At the bottom of the Settings page is the option to delete the algorithm, if it does not have a public version.
 
+<div markdown="1">
+
 Use with care: deleted algorithms are gone forever.
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/delete_algo.png" alt="Algorithm Deletion" class="syn-image-responsive">
 
