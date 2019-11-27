@@ -11,72 +11,77 @@ menus:
 ---
 
 <div class="syn-article">
-<div class="syn-row">
-  <div class="syn-col syn-col-md-12">
-    {% include breadcrumbs.html %}
-    <h1 id="page-title">{{ page.title }}</h1>
-    <p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
-    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
-    </p>
-    <p class="lead">Below you'll find everything you need to get started:</p>
-  </div>
+<div>
+  {% include breadcrumbs.html %}
+  <h1 id="page-title">{{ page.title }}</h1>
 </div>
-
-<div class="syn-row syn-mb-64">
-<!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
-  <div class="syn-col syn-col-md-5">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="syn-image-responsive">
-  </div>
-  <div class="syn-col syn-col-md-7">
-    <p class="lead">Deploy your machine and deep learning models and leave the devops to us:</p>
-    <a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised">Deploy Models</a>
-  </div>
-</div>
-
-
-<div class="syn-row syn-mb-64">
-  <!--For larger screens-->
-  <div class="syn-col syn-col-md-5 syn-hidden-sm">
-    <p class="lead">Learn how to call algorithms in the language of your choice via our API's:</p>
-    <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
-  </div>
-  <div class="syn-col syn-col-md-7">
-    <div class="syn-code-block">
-<pre><code>import Algorithmia
-input = "YOUR_USERNAME"
-client = Algorithmia.client("YOUR_API_KEY")
-algo = client.algo("demo/Hello/")
-print(algo.pipe(input))</code></pre>
+{% include aside-start.html %}
+<p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
+<p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
+</p>
+<p class="lead">Below you'll find everything you need to get started:</p>
+{% include aside-middle.html %}
+  <a href="{{site.baseurl}}/getting-started" class="syn-card actionable syn-link-no-decoration">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-user-image syn-user-image-56">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/icons/rocket.svg" alt="Rocket icon">
+        </div>
+      </div>
+      <div class="syn-media-object-body">
+        <h5 class="syn-mb-8">Getting Started</h5>
+        <div class="syn-body-2 syn-mb-0">Get up to speed with the platform.</div>
+      </div>
+      <div class="syn-media-object-actions">
+        <i class="material-icons">arrow_forward</i>
+      </div>
     </div>
-  </div>
-  <!--For smaller screens-->
-  <div class="syn-col syn-col-sm-12 syn-visible-sm">
-    <p class="lead">Learn how to call algorithms in the language of your choice via our API's:</p>
-    <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
-  </div>
-</div>
+  </a>
+{% include aside-end.html %}
 
-<div class="syn-row syn-mb-64">
-  <div class="syn-col syn-col-md-5">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/sample_apps.jpg" alt="Contribute" class="syn-image-responsive">
-  </div>
-  <div class="syn-col syn-col-md-7">
-    <p class="lead">Contribute to the marketplace by adding your own algorithms:</p>
-    <a href="{{ site.baseurl }}/algorithm-development" class="btn btn-primary btn-raised">Create Algorithms</a>
-  </div>
-</div>
+<div>
+  <a href="{{ site.baseurl }}/model-deployment" class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <h3>Deploy</h3>
+    <div class="syn-body-1 syn-text-secondary syn-mb-32">
+      Deploy your machine and deep learning models and leave the devops to us.
+    </div>
+    <div class="syn-h6 syn-mb-4 syn-text-blue syn-flex align-center">
+      Deploy Your Model
+      <i class="material-icons syn-ml-8">arrow_forward</i>
+    </div>
+  </a>
 
-<div class="syn-row syn-mb-64">
-  <div class="syn-col syn-col-md-5">
-    <p class="lead syn-hidden-sm">Connect to Dropbox, Amazon S3, or Algorithmia's Hosted Data:</p>
-    <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised hidden-xs hidden-sm">Data Source Guides</a>
-  </div>
-  <div class="syn-col syn-col-md-7">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/test_smallest_data_icons.jpg" alt="Sample Apps" class="syn-image-responsive">
-  </div>
-  <div class="syn-col syn-col-sm-12 syn-visible-sm">
-    <p class="lead">Connect to your Data</p>
-    <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised">Data Source Guides</a>
-  </div>
+  <a href="{{ site.baseurl }}/clients" class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <h3>Client Guides</h3>
+    <div class="syn-body-1 syn-text-secondary syn-mb-32">
+      Learn how to call algorithms in the language of your choice via our API's.
+    </div>
+    <div class="syn-h6 syn-mb-4 syn-text-blue syn-flex align-center">
+      View the Client Guides
+      <i class="material-icons syn-ml-8">arrow_forward</i>
+    </div>
+  </a>
+
+  <a href="{{ site.baseurl }}/algorithm-development" class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <h3>Contribute</h3>
+    <div class="syn-body-1 syn-text-secondary syn-mb-32">
+      Contribute to the marketplace by adding your own algorithms.
+    </div>
+    <div class="syn-h6 syn-mb-4 syn-text-blue syn-flex align-center">
+      Adding Your Algorithms
+      <i class="material-icons syn-ml-8">arrow_forward</i>
+    </div>
+  </a>
+
+  <a href="{{ site.baseurl }}/data" class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <h3>Connect Data</h3>
+    <div class="syn-body-1 syn-text-secondary syn-mb-32">
+      Connect to Dropbox, Amazon S3, or Algorithmia's Hosted Data.
+    </div>
+    <div class="syn-h6 syn-mb-4 syn-text-blue syn-flex align-center">
+        Data Source Guides
+      <i class="material-icons syn-ml-8">arrow_forward</i>
+    </div>
+  </a>
 </div>
 </div>
