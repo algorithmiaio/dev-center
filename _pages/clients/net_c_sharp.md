@@ -19,7 +19,7 @@ We now have an early version of a native .NET client for calling algorithms and 
 
 The Algorithmia .NET client supports .NET Standard 2.0 which means it can be used within apps targeting:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - .NET Core
 - ASP.NET Core

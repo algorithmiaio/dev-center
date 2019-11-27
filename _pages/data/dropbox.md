@@ -48,7 +48,7 @@ If you would like to change the unique label that was automatically provided whe
 ### Setting Path Restrictions for Dropbox Folder and File Access
 The default path restrictions are set to allow access to all paths in your Dropbox account, however you may want to restrict your application's access to specific folders or files:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - Access to a single file: 'Algorithmia/test_data.csv'
 - Access to everything in a specific folder: 'Algorithmia/*'
@@ -78,7 +78,7 @@ In the example below, 'archimedes' is the default Dropbox data source's unique l
 ## Accessing your Data
 Accessing your Dropbox data via the <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia Data API</a> is easy. Whether you're writing your application in Rust, Ruby, Python, Scala, Java or JavaScript simply import your data with a couple lines of code. With your Dropbox data connection now configured you can read and write data to and from it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - client = Algorithmia.client('YOUR_API_KEY')
 - client.file('dropbox://my_restricted_path/my_file.csv').getFile().name
@@ -120,7 +120,7 @@ algo.pipeJson({'inputFile':'dropbox://Algorithmia/test_data.csv'})
 
 Once a data source connection has been created and configured, all of the Algorithmia client code for interacting with the Data API for file or directory creation, deletion and listing will function identically with a data source route and a data API route except for:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - We do not support generic ACLs for data sources and the only way to update permissions for a data source is through the data portal where you created your data source connection.
 
@@ -128,7 +128,7 @@ Once a data source connection has been created and configured, all of the Algori
 
 If you're implementing a new client or using cURL it is preferred to use the following URL structure:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - '/v1/connector/protocol+label/path':
     - ' /v1/connector/Dropbox+archimedes/Algorithmia/foo.txt'
@@ -138,7 +138,7 @@ If you're implementing a new client or using cURL it is preferred to use the fol
 ## Algorithm support
 We have tested to ensure that data source paths function in all of our Algorithmia clients, however:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - Python support was added in version 1.0.4
 - NodeJS support was added in version 0.3.5

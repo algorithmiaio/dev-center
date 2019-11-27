@@ -33,7 +33,7 @@ Want to use a general purpose image classifier for a narrow task? Evaluations li
 
 **Note:** Things you should have before we begin:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - A working knowledge of [algorithm development on Algorithmia]({{site.url}}{{site.baseurl}}/algorithm-development).
 - A type of algorithm you want to evaluate (image classification, character recognition, etc).
@@ -46,7 +46,7 @@ Got all that? Great! Lets dive in.
 
 ## Step 1: Create an Evaluator Algorithm.
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - An evaluator algorithm is a special type of algorithm that compares similar algorithms based on some kind of criteria.
     - Example criteria:
@@ -73,7 +73,7 @@ Got all that? Great! Lets dive in.
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="syn-image-responsive">
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - If you can't find your evaluator, make sure its:
     - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
@@ -85,7 +85,7 @@ Got all that? Great! Lets dive in.
 ### Step 3.2: Add your Evaluable Algorithms
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="syn-image-responsive">
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 -  If you can't find your Evaluable Algorithm, make sure its:
     - A [published algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo/#publish-your-algorithm)
@@ -97,7 +97,7 @@ Got all that? Great! Lets dive in.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="syn-image-responsive">
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - Things to keep in mind about your evaluator algorithm's input:
     - it must be a json object
@@ -110,7 +110,7 @@ Got all that? Great! Lets dive in.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/run_your_evaluation.png" alt="Run your Evaluation" class="syn-image-responsive">
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - Once your input is ready, you can click the big "run evaluation" button at the top
 - Once your evaluation is executing, you can click the "results" tab and check the results.

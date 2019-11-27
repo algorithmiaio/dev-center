@@ -54,7 +54,7 @@ User collections like we created above allow you to set the read and write permi
 
 Session, Temporary, and Permanent Collections all have system-defined permissions:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 -	Session Collections have read/write access only from within the same session.
 -	Temporary and Permanent algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
@@ -90,7 +90,7 @@ User collections are the most common collection type that you will use which we 
 
 The format for user collections when using Data URI within Algorithmia:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://:username/:collection'
 - 'data://:username/:collection/:filename'
@@ -101,7 +101,7 @@ The format for user collections when using Data URI within Algorithmia:
 
 If you are operating on your own directories or files you can use the '.my' pseudonym and the user name will be assumed from the authorization provided.
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.my/:collection'
 - 'data://.my/:collection/:filename'
@@ -114,7 +114,7 @@ If you are operating on your own directories or files you can use the '.my' pseu
 
 The format for session collections when using Data URI within Algorithmia:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.session/:filename'
 
@@ -130,7 +130,7 @@ Session collections allow data to be used across multiple algorithms within the 
 
 Access temporary collections with this URI format from inside of Algorithmia or using a client:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.algo/:author/:algoname/temp/:filename'
 
@@ -144,7 +144,7 @@ The temporary algorithm collections are particularly useful for algorithms that 
 
 Simplified URI format:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.algo/temp/:filename'
 
@@ -158,7 +158,7 @@ Temporary algorithm collections are ideal for storing data on a short term basis
 
 Access permanent collections with this URI format from inside of Algorithmia or using a client:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.algo/:author/:algoname/perm/:filename'
 
@@ -170,7 +170,7 @@ If you need to access a collection from a specific algorithm, you can use the pe
 
 Simplified URI format:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - 'data://.algo/perm/:filename'
 
@@ -184,7 +184,7 @@ This guide showed how to create a data collection, discussed collection types an
 
 For more information:
 
-<div markdown="1">
+<div class="syn-body-1" markdown="1">
 
 - [Algorithmia Data API](http://docs.algorithmia.com/#data-api-specification)
 - [ACL's](https://en.wikipedia.org/wiki/Access_control_list)
