@@ -35,6 +35,12 @@ describe('Vuex: Search Store', () => {
       store.commit('SET_PREFERRED_LANGUAGE', { language: 'german' })
       expect(store.state.user.preferences.language).to.equal('german')
     })
+
+    it('should set the correct state for SET_APP_NAV', () => {
+      store.state.user.preferences.isAppNavCollapsed = false
+      store.commit('SET_APP_NAV', { isAppNavCollapsed: true })
+      expect(store.state.user.preferences.isAppNavCollapsed).to.equal(true)
+    })
   })
 
   describe('actions', () => {
@@ -59,12 +65,24 @@ describe('Vuex: Search Store', () => {
         ['SET_PREFERRED_LANGUAGE', { language: 'italian' }],
       ])
     })
+
+    it('should commit correct mutations for setIsAppNavCollapsed', () => {
+      user.actions.setIsAppNavCollapsed(context, true)
+      expect(commitSpy.args).to.deep.equal([
+        ['SET_APP_NAV', { isAppNavCollapsed: true }],
+      ])
+    })
   })
 
   describe('getters', () => {
     it('should return the correct state for preferredLanguage', () => {
       store.state.user.preferences.language = 'portuguese'
       expect(store.getters.preferredLanguage).to.equal('portuguese')
+    })
+
+    it('should return the correct state for isAppNavCollapsed', () => {
+      store.state.user.preferences.isAppNavCollapsed = true
+      expect(store.getters.isAppNavCollapsed).to.equal(true)
     })
   })
 })
