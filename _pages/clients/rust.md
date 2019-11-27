@@ -107,9 +107,13 @@ When we created the data collection in the previous code snippet, we set it to t
 
 In order to change your data collection permissions you can go to [Hosted Data](/data/hosted) and click on the collection you just created called **"nlp_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
 
+<div markdown="1">
+
 -   My Algorithms (called by any user)
 -   Private (accessed only by me)
 -   Public (available to anyone)
+
+</div>
 
 For more information about data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 
