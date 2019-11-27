@@ -15,8 +15,12 @@ Welcome to deploying your <a href="http://dmg.org/pmml/v4-3/GeneralStructure.htm
 
 Whether you have an older model exported to PMML structure, or have just trained a model using Spark ML which exports to PMML, you can easily deploy your model on Algorithmia.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 

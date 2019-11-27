@@ -31,8 +31,12 @@ For a given user and algorithm name, API calls are made to the following URL:
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
+<div markdown="1">
+
 If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles) guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Making your first API call
 

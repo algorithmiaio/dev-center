@@ -16,8 +16,12 @@ image:
 
 Welcome to deploying your <a href="http://deeplearning.net/software/theano/">Theano</a> model on Algorithmia! This guide is designed as an introduction to deploying a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 

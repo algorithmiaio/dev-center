@@ -36,8 +36,12 @@ This key will show up in the code snippets on an algorithm profile page when you
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/default-key.png" alt="API keys home" class="syn-image-responsive">
 
+<div markdown="1">
+
 If you delete your `default-key`, it will no longer show up in the code snippets on the algorithm profile pages. Simply create a new key and name it `default-key` to have it appear again.
-{: .notice-info }
+{: .syn-alert.theme-primary }
+
+</div>
 
 ## Adding a new API key
 
@@ -101,5 +105,9 @@ By selecting "Read Only", you've set your API key permissions to access data via
 
 When you select "Read & Write", the API key will allow both read and write access to your data. For many algorithms, the results can be written to your data storage through the Data API and the API key, so both will need write permissions.
 
+<div markdown="1">
+
 If you are trying to run an algorithm that writes to your data storage but are getting an authentication error, make sure that the API key you are using to authenticate has all the necessary permissions you need.
-{: .notice-info }
+{: .syn-alert.theme-primary }
+
+</div>

@@ -17,8 +17,12 @@ Welcome to deploying your <a href="https://allennlp.org/">AllenNLP</a> model on 
 
 This guide is designed as an introduction to deploying a AllenNLP model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -102,8 +106,12 @@ torch==1.0.0 # if you change this, the algorithm will take longer to run and com
 allennlp>=0.8,<0.9
 {% endhighlight %}
 
+<div markdown="1">
+
 The dependency file is the equivalent to a requirements.txt file which pulls the dependencies listed from PyPi.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.

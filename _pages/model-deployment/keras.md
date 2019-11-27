@@ -43,8 +43,12 @@ You'll want to do the training and saving of your model on your local machine, o
 
 After training your Keras model, you'll want to save it using `model.save(filepath)` so you can upload it to Algorithmia.
 
+<div markdown="1">
+
 Note that when developing a model with Keras, they recommend you to [save the model](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) as an `.h5` file so do not use pickle or cPickle to save your model, but use the built in `model.save()` instead.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.

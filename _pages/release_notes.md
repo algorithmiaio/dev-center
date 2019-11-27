@@ -104,8 +104,13 @@ For questions and requests, please contact Algorithmia at support@algorithmia.co
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="syn-image-responsive">
 
 {% if site.enterprise %}
+
+<div markdown="1">
+
 **Enterprise Users:** Check with your administrator to verify which version of Algorithmia you are running.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 {% endif %}
 
 

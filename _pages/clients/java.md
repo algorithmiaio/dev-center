@@ -43,8 +43,12 @@ To get started, the Algorithmia Java Client can be added as a library through Ma
 </dependency>
 {% endhighlight %}
 
+<div markdown="1">
+
 Using version range [,1.1.0) is recommended as it implies using the latest backward-compatible bugfixes.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Authentication
 
@@ -106,8 +110,12 @@ try {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
+<div markdown="1">
+
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Work with Directory Permissions
 
@@ -226,8 +234,12 @@ For more methods on how to get a file using the Data API from a data collection 
 
 Finally we are ready to call an algorithm. In this guide we'll use the natural language processing algorithm called [Summarizer](https://algorithmia.com/algorithms/nlp/Summarizer). This algorithm results in a string that is the summary of the text content you pass in as the algorithm's input.
 
+<div markdown="1">
+
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This example shows the summary of the text file which we downloaded from our data collection and set as the variable called `input` in the previous code sample.
 

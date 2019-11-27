@@ -45,8 +45,12 @@ Now before we get started coding, we need to set up the rest of our project.
 
 Follow the steps below to make sure you have the dependencies, permissions, and your API key set as needed.
 
+<div markdown="1">
+
 Note that if you forked the repo, you will have everything you need except for you'll need to add your API key.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 **Step One: Dependencies**
 
@@ -179,8 +183,12 @@ Now, in the file "res/layout/activity_car_results.xml" add:
 </RelativeLayout>
 {% endhighlight %}
 
+<div markdown="1">
+
 Note that if you don't have those files already under `res/layout` please add them.
-{: .notice-info }
+{:  }
+
+</div>
 
 Finally if you don't have it already, create a file under the drawable folder called "button_colors.xml" and place this in the file:
 
@@ -196,8 +204,12 @@ Finally if you don't have it already, create a file under the drawable folder ca
 
 First, go to "MainActivity.java" and paste in the code below if you haven't forked the project from GitHub. We'll go through it chunk by chunk so you understand what's happening.
 
+<div markdown="1">
+
 Note, that if you haven't forked the project, you can copy and paste the imports from the repo as we skip them for the sake of brevity in the example below.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 
 {% highlight java %}
@@ -410,8 +422,12 @@ Moving through the code, if you check inside the try/catch, you'll notice that w
 
 Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data]({{site.baseurl}}/data/hosted) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
 
+<div markdown="1">
+
 Note that you can also use [Dropbox or Amazon S3 to host your data]({{site.baseurl}}/data).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Finally, our last method is "onClickRun" where we set our TextView and use an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html) to call our algorithm.
 

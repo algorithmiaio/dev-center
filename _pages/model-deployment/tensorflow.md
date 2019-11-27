@@ -19,11 +19,19 @@ Welcome to deploying your pre-trained <a href="https://www.tensorflow.org/">Tens
 
 For tensorflow-gpu 1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
 
+<div markdown="1">
+
 Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
+
+<div markdown="1">
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -176,8 +184,12 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
+<div markdown="1">
+
 Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
