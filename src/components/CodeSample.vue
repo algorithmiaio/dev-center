@@ -88,7 +88,7 @@ export default {
       setCookieValue(
         Cookie.preferredLanguage,
         newLanguage,
-        { daysUntilExpire: 365 }
+        { path: '/', daysUntilExpire: 365 }
       )
     },
     setLanguage(newLanguage) {

@@ -26,11 +26,11 @@ menus:
 <div class="row mb-64">
   <div class="col-md-12">
     <h3>Get Started</h3>
-    <div class="dev-card">
-      <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="syn-image-responsive get-started-img">
-      <div class="dev-card-text">
-        <p class="lead">Learn how to create and publish your algorithms</p>
-        <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo" class="btn btn-default btn-accent">Get Started Now</a>
+    <div class="syn-card no-padding outlined">
+      <img src="{{site.cdnurl}}{{site.baseurl}}/images/get_started.png" alt="Get Started" class="syn-card-banner-image syn-mb-24">
+      <h5 class="syn-mb-8 syn-mh-16">Learn how to create and publish your algorithms</h5>
+      <div class="syn-card-text syn-body-2 syn-mh-16">
+        <a href="{{site.baseurl}}/algorithm-development/your-first-algo" class="syn-btn text theme-primary">Get Started Now</a>
       </div>
     </div>
   </div>
