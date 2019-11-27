@@ -53,13 +53,13 @@
 
 <body>
   <div class="syn-page syn-page-drawer-navigation js-only-initial-hide" id="vue-app">
-    <header class="syn-page-header syn-header-brand">
+    <header class="syn-page-header syn-header-brand" :class="{ 'nav-open': isMobileMenuOpen, 'nav-collapsed': isAppNavCollapsed }">
       <div class="syn-page-header-content">
-        <button onclick="['nav-open', 'nav-collapsed'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))" class="syn-btn text icon rounded grow theme-light no-shadow" data-v-3352aef0="" data-v-19ae9fc3="">
+        <button @click="toggleSideMenu" class="syn-btn text icon rounded grow theme-light no-shadow">
           <i class="material-icons icon-size-24">menu</i>
         </button>
       </div>
-      <div class="syn-page-header-nav syn-flex direction-column syn-overflow-hidden" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
+      <div class="syn-page-header-nav syn-flex direction-column syn-overflow-hidden" @click="toggleSideMenu">
         <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16 flex-item-no-shrink">
           <a href="/">
             {% if site.isLocalDev or site.enterprise %}
@@ -85,7 +85,7 @@
           {% include nav-menu.html menu_id="main" menu_level=0 %}
         </nav>
       </div>
-      <div class="syn-page-header-nav-backdrop" onclick="document.querySelector('.syn-page-header').classList.toggle('nav-open')"></div>
+      <div class="syn-page-header-nav-backdrop" @click="toggleSideMenu"></div>
     </header>
     <main class="syn-page-main" id="scrollspy-content">
       <div class="syn-container syn-mt-32 syn-mb-48">
