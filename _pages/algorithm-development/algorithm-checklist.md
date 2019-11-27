@@ -104,8 +104,12 @@ Sample input is one of the most important parts of your algorithm profile. Users
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/sample_input.png" alt="inputs and outputs" class="syn-image-responsive">
 
+<div markdown="1">
+
 A common gotcha for setting and updating the sample input is that you must publish your algorithm before you can save the sample input. If you are unable to save your sample input, double check that the algorithm has been published before continuing.
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 ### Update Pricing:
 

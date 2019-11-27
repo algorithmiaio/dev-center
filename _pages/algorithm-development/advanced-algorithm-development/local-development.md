@@ -25,9 +25,13 @@ Also be sure to keep your dependencies identical, down to the minor (or even the
 
 To help you identify the exact language and dependency versions, we've put together [code you can run inside your Algorithm to examine the environment and installed packages](list-packages/) -- and even to [help set up your virtual environment](list-packages/#creating-a-local-python-virtualenv-to-emulate-the-algorithms-environment).
 
+<div markdown="1">
+
 Dependencies guides: [Python]({{site.baseurl}}/algorithm-development/languages/python/#managing-dependencies),
 [R]({{site.baseurl}}/algorithm-development/languages/r/#managing-dependencies)
-{: .notice-info}
+{: .syn-alert.theme-primary }
+
+</div>
 
 ## Running your Algorithm locally
 
