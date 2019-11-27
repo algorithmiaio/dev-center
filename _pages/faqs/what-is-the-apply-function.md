@@ -41,8 +41,12 @@ Java supports multiple overloaded apply methods as well as supports multiple inp
 
 In the case of overloaded apply methods, we iterate over each apply method one by one to see if the JSON matches the expected input. If it can be de-serialized into the input for a given apply method, we then execute that apply method.
 
+<div markdown="1">
+
 Caution! This *can* lead to ambiguity when the JSON matches multiple apply methods, for example, a number which can be coerced to match an apply method that takes a string.
-{: .notice-danger }
+{: .syn-alert.theme-danger }
+
+</div>
 
 Java supports multiple input arguments, so that when running an algorithm with a JSON list input, the algorithm will then split the input into respective arguments. With the example JSON input of `["foo", "bar"]`, the input would be mapped into first and second arguments to an apply method with a signature of `apply(String a, String b)`, such that `a = "foo"` and `b = "bar"`.
 
