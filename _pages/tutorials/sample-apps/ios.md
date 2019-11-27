@@ -170,5 +170,9 @@ Browse through [Algorithmia's microservice catalog](/algorithms) to see what oth
 
 ### Further Reading:
 
+<div class="syn-body-1" markdown="1">
+
 * [The Algorithmia Swift Client]({{site.baseurl}}/clients/swift)
 * <a href="https://github.com/algorithmiaio/algorithmia-swift">[Algorithmia Swift Client Source Code](https://github.com/algorithmiaio/algorithmia-swift) <i class="material-icons">open_in_new</i>
+
+</div>

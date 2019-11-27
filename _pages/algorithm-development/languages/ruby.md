@@ -20,6 +20,8 @@ Before you get started learning about Ruby algorithm development, make sure you 
 
 Table of Contents
 
+<div class="syn-body-1" markdown="1">
+
 * [Available Libraries](#available-libraries)
 * [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
@@ -28,6 +30,8 @@ Table of Contents
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
+
+</div>
 
 ## Available Libraries
 
@@ -250,7 +254,11 @@ In this guide we covered how to create an algorithm, work with different types o
 
 For more resources:
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/ruby">Algorithmia Client Ruby Docs</a>
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?ruby)
 * <a href="http://ruby-doc.org/core-2.2.0/">Ruby 2.2 Docs</a>
+
+</div>

@@ -35,7 +35,7 @@ Apache spark is a map-reduce system, which automatically knows how to pull the d
 
 If you are already using a Message Queue such as Amazon SQS to process batch data, it can be pointed at your Algorithm to score each piece of data. However, since most message Queues do not listen for a response, you'll want to ensure that the Algorithm's response payload is captured in a datastore or log. The best way to do this is to alter the Algorithm's code to always send results to a storage target (or optionally do so if a flag is provided in the input payload). If the Algorithm cannot be altered, you can instead add a wrapper Algorithm to capture the output, and call this wrapper from your Message Queue; for example, if we wished to call nlp/SentimentAnalysis/1.0.5 and capture the results in a file, we would write a wrapper Algorithm as follows:
 
-```python
+{% highlight python %}
 # this code would be its own Algorithm such as SentimentAnalysisLogged
 import Algorithmia
 
@@ -46,7 +46,7 @@ def apply(input):
     results = algo.pipe(input_single)
     # then write "results" to a logfile or datastore
     return results
-```
+{% endhighlight %}
 <a href="{{site.baseurl}}/integrations/event_listeners">
   <button class="syn-btn contained theme-primary">
     <i class="material-icons">settings</i> CONFIGURE AMAZON SQS
@@ -56,7 +56,7 @@ def apply(input):
 
 If you are not using Spark or a Message Queue, you can write a simple wrapper to serially call an Algorithm for each prediction in your batch, e.g.:
 
-```python
+{% highlight python %}
 # this code runs from a desktop or separate server
 client = Algorithmia.client("YOUR_API_KEY")
 algo = client.algo('nlp/SentimentAnalysis/1.0.5')
@@ -65,11 +65,11 @@ results = []
 for single in batch:
     results.append(algo.pipe(single).result)
 # then write "results" to a logfile or datastore
-```
+{% endhighlight %}
 
 When run from a separate server, this can incur significant overhead, because each `algo.pipe()` call is a separate REST API call over the network. To abate this, a better approach can be to create a wrapper Algorithm which does the same thing:
 
-```python
+{% highlight python %}
 # this code would be its own Algorithm such as SentimentAnalysisBatch, and expects a list as input
 client = Algorithmia.client()
 algo = client.algo('nlp/SentimentAnalysis/1.0.5')
@@ -80,7 +80,7 @@ def apply(input):
         results.append(algo.pipe(single).result)
     # optional: write "results" to a logfile or datastore
     return results
-```
+{% endhighlight %}
 
 Then, your external server can make a single call to the batch wrapper Algorithm, passing all inputs in a single network call, thus reducing the impact of network overhead on overall throughput.
 
@@ -88,14 +88,14 @@ If possible, it is even better to alter the original Algorithm so that it can ac
 
 For example, if the original Algorithm contained:
 
-```python
+{% highlight python %}
 def apply(input):
     return someCalculation(input)
-```
+{% endhighlight %}
 
 Then it could be easily altered to check for an `input` of type list:
 
-```python
+{% highlight python %}
 def apply(input):
     if isinstance(input, list):
         results = []
@@ -104,7 +104,7 @@ def apply(input):
         return results
     else:
         return someCalculation(input)
-```
+{% endhighlight %}
 
 Whether using a wrapper function or altering the original Algorithm, remember that the maximum runtime for an Algorithm is 50 minutes, and you must specify this longer timeout in the call to the Algorithm via the [timeout parameter](https://algorithmia.com/developers/api/#query-parameters). If 50 minutes will not be sufficient for the entire batch to complete, break the batch up into smaller chunks, and call each chunk serially from a loop on your external server.
 

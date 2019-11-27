@@ -36,24 +36,24 @@ When running in the server environment, Algorithms begin at the `apply()` method
 Developing locally, you'll need a similar way to trigger the `apply()` method. The simplest solution is often to just to add a bit of code to the end of our Algorithm which accepts JSON input and calls `apply()`:
 
 
- ```python
+{% highlight python %}
 import json
 
 if __name__ == '__main__':
     input = '{"foo":"bar"}'
     print(apply(json.loads(input)))
- ```
+{% endhighlight %}
 
  Now, we can test our Algorithm locally by simply changing the value of `input` and running the script. This extra code won't affect how it runs on Algorithmia in any way, so you can leave it in when you commit your code.
 
  Similarly, in R we would add a wrapper function to do the same thing:
 
- ```R
+{% highlight r %}
  import(rjson)
 
  algorithm_local <- function(json) {
      algorithm(fromJSON(json))
  }
- ```
+{% endhighlight %}
 
 Now we can test locally by making a call to `algorithm_local` with any JSON input we like, such as `algorithm_local('{"foo": "bar"}')`. Again, this won't change how your Algorithm runs on Algorithmia, so you can safely leave this code in place when you commit it.

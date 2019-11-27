@@ -149,5 +149,9 @@ Some older algorithms use our deprecated Java client. If it has an import from t
 
 #### Additional Resources
 
+<div class="syn-body-1" markdown="1">
+
 * <a href="{{site.baseurl}}/clients/java">Algorithmia Client Java Docs <i class="material-icons">open_in_new</i></a>
 * <a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a>
+
+</div>

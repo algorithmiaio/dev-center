@@ -20,7 +20,7 @@ Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/s
 
 Begin by creating a [collection]({{site.url}}/data/hosted) named "DynamoDBCredentials", and uploading a file "credentials.json" with the following structure (don't forget to set [your id, secret, and region](https://console.aws.amazon.com/iam/home?#/security_credentials)):
 
-```json
+{% highlight text %}
 {
   AWS Generic: {
     key-id: "YOUR_AWS_ID",
@@ -28,13 +28,13 @@ Begin by creating a [collection]({{site.url}}/data/hosted) named "DynamoDBCreden
     region-name: "us-east-1"
   }
 }
-```
+{% endhighlight %}
 
 Next, you can test it by calling our sample algorithm, [DynamoDB]({{site.url}}/algorithms/util/DynamoDB), which allows you to scan a table in your DynamoDB database. Give it the name of any table in your DB, and it will return a list of all the items present.
 
 Copy the [source code]({{site.url}}/algorithms/util/DynamoDB/source) of that algorithm, and use it as a template to access DynamoDB from within your own algorithm:
 
-```python
+{% highlight python %}
 import Algorithmia
 import boto3
 import json
@@ -71,6 +71,6 @@ def apply(input):
     except Exception as e:
         print("ERROR in table lookup", e)
 
-```
+{% endhighlight %}
 
 
