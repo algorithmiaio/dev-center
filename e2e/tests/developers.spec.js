@@ -7,6 +7,10 @@ const apiDocsPage = require("../pages/apiDocs")
 const searchPage = require("../pages/search")
 const dataPage = require("../pages/data")
 const { E2E_BASE_URL, IS_RUNNING_E2E_LOCALLY } = require("../config")
+const auth = require('../utilities/auth')
+const { platformUser } = require('../utilities/platform')
+
+const { username } = platformUser
 
 describe("Developer Center", () => {
   describe("Deployment redirect", () => {
@@ -189,20 +193,30 @@ describe("Developer Center", () => {
     })
 
     describe('logged in', () => {
-      it('should replace all cases of YOUR_USERNAME within code snippets', () => {
-
+      before(function() {
+        // If running locally, we won't have the ability to log in.
+        // This is only possible in test and prod envs.
+        if (IS_RUNNING_E2E_LOCALLY) {
+          this.skip()
+        } else {
+          auth.signIn()
+        }
       })
 
-      it('should replace all cases of YOUR_API_KEY within code snippets', () => {
-
+      it('should replace credentials within code snippets', () => {
+        gettingStartedPage.open()
+        gettingStartedPage.secondCodeExampleCodePane.scrollIntoView({ block: "center" })
+        const codeText = gettingStartedPage.secondCodeExampleCodePane.getText()
+        assert.equal(codeText.includes(username), true)
+        assert.equal(codeText.includes("YOUR_USERNAME"), false)
       })
 
       it('should not replace YOUR_USERNAME in text outside of code snippets', () => {
-
-      })
-
-      it('should not replace YOUR_API_KEY in text outside of code snippets', () => {
-
+        gettingStartedPage.open()
+        gettingStartedPage.notice.scrollIntoView({ block: "center" })
+        const text = gettingStartedPage.notice.getText()
+        assert(text.includes("YOUR_USERNAME"))
+        assert(!text.includes(username))
       })
     })
   })
