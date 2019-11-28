@@ -31,7 +31,11 @@ First things first, let's create a new app in Android Studio.
 
 Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Then name it "MainActivity". This activity will hold the code that we'll write to access the camera and save the picture. Then we'll use File Provider to pass the URI to the next activity which we'll create now.
 

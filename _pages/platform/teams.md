@@ -31,8 +31,11 @@ If you are looking to share algorithms privately or publish algorithms on behalf
 
 The profile overview provides a rich source of information about an organization. In the overview, you can find the name of an organization, its members, and a listing of its algorithms. If you are the owner of the organization you will also be able to add and delete members as well as edit basic information regarding the organization.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_profile.png" alt="Organizations profile" class="syn-image-responsive">
-
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_profile.png" alt="Organizations profile" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 #### Things to know about Organizations:
 
@@ -48,7 +51,11 @@ The profile overview provides a rich source of information about an organization
 
 To create your new organization simply go to your profile page and click "+Create Organization"
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization.png" alt="create organization" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization.png" alt="create organization" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 At this time you will be asked to fill out some information regarding your organization:
 
@@ -64,11 +71,19 @@ This will determine the URL where your organization will be showcased. It is req
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization_form.png" alt="Organization info" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization_form.png" alt="Organization info" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Once your organization has been created you can edit all the provided information as well as add a logo and a Terms of Use document.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/edit_organization.png" alt="Organization info" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/edit_organization.png" alt="Organization info" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 **Note**: The Terms of Use are organization specific. When users accept an invite to your organization they will be accepting the Terms of Use uploaded. Algorithmia records the date when the terms where accepted. These terms are completely independent of the Algorthmia Terms of Use.
 
@@ -79,11 +94,19 @@ You can invite users to your organization either by using their Algorithmia user
 
 To invite a user simply click 'Invite User':
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user.png" alt="Inviting Users" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user.png" alt="Inviting Users" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 After clicking 'Invite User' a form will appear and you can enter the users name or email address:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user_form.png" alt="Inviting Users" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user_form.png" alt="Inviting Users" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 As an organization owner, you may view any pending invitations by clicking on the "Invitations" tab
 
@@ -93,15 +116,27 @@ If you invite a user that already has an account, then you must invite them usin
 #### Approving Algorithms:
 Once members of your organization have created an algorithm and submitted it for approval, a purple indicator with the version to be published will show on your organization profile under algorithms.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 **Note:** Every new version of the algorithm to be published will require independent approval.
 
 At this time you will be able to set the royalty (if any) for that algorithm and finalize publishing to Algorithmia's marketplace.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 #### Check Earnings:
 To view your organization's earnings and a break down of all algorithms that are called, simply access "View Earnings" on your organization's profile.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="syn-image-responsive">
+  </image-popout>
+</images-section>
