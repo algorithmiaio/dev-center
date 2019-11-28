@@ -8,7 +8,7 @@ const searchPage = require("../pages/search")
 const dataPage = require("../pages/data")
 const { E2E_BASE_URL, IS_RUNNING_E2E_LOCALLY } = require("../config")
 const auth = require('../utilities/auth')
-const { platformUser } = require('../utilities/platform')
+const { platformUser, isMac } = require('../utilities/platform')
 
 const { username } = platformUser
 
@@ -52,6 +52,9 @@ describe("Developer Center", () => {
 
     it('should update search results when search input is updated', () => {
       searchPage.open('curl')
+      if (!isMac) {
+        page.hamburgerMenu.click()
+      }
       browser.waitUntil(() => searchPage.searchResults.isDisplayed())
       const initialResults = searchPage.searchResults.getText()
       browser.pause(1000)
@@ -84,6 +87,13 @@ describe("Developer Center", () => {
   })
 
   describe('Side Nav', () => {
+    // Webdriver & Windows don't play nicely despite real browsers working fine.
+    before(function() {
+      if (!isMac) {
+        this.skip()
+      }
+    })
+
     it('should be expanded by default', () => {
       page.open()
       assert(page.isSideNavOpen)
