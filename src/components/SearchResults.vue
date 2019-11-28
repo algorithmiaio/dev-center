@@ -1,6 +1,6 @@
 <template>
   <div class="syn-article">
-    <h1>
+    <h1 id="page-title">
       Search results for "{{query}}"
     </h1>
     <div class="syn-flex align-center syn-mb-8">
@@ -12,7 +12,7 @@
       <div class="syn-aside-main">
         <div class="syn-break syn-mb-0"></div>
 
-        <ul v-if="results.length" class="syn-list">
+        <ul v-if="results.length" class="syn-list" data-e2e="search-results">
           <li v-for="result in results" :key="result.id">
             <div class="syn-media-object">
               <div class="syn-media-object-body">
@@ -30,7 +30,7 @@
           </li>
         </ul>
 
-        <div v-if="!results.length" class="syn-row syn-text-center syn-mv-64">
+        <div v-if="!results.length" class="syn-row syn-text-center syn-mv-64" data-e2e="search-no-results-msg">
           <div class="syn-col">
             <h4 class="syn-mb-8">No Results</h4>
           </div>

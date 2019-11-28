@@ -179,7 +179,7 @@ const defaultConfig = {
     // Ensure each browser uses the same viewport size before running tests.
     // Safari and Chrome like to open at different sizes which causes some
     // issues as media queries kick in.
-    browser.setWindowSize(1024, 768)
+    browser.setWindowSize(1250, 768)
   }
 }
 

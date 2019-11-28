@@ -25,12 +25,12 @@ class GettingStartedPage extends DeveloperCenterPage {
     return this.languageSelector.$('option[value="java"]')
   }
 
-  open() {
-    return browser.url('/developers/getting-started/')
+  get notice() {
+    return $('.syn-code-block:nth-of-type(2) + p')
   }
 
-  searchFor(query) {
-    this.searchInput.setValue(query)
+  open() {
+    return browser.url('/developers/getting-started/')
   }
 }
 
