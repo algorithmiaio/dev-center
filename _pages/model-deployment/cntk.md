@@ -36,7 +36,11 @@ Here you'll want to create a data collection to host your model.
 
 - After you create your collection you can set the read and write access on your data collection. For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Upload your Model into a Collection
 
@@ -46,7 +50,11 @@ After your collection is created, you're going to want to upload your saved grap
 
 - Note the path to your files: `data://username/collections_name/cntk.model`
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Create your Algorithm
 
@@ -59,7 +67,11 @@ Creating your algorithm is easy!
 
 **Note**: Make sure that your version of python is the same between your development environment and the algorithm. There may be version conflicts otherwise.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/create_new_alg_dl_python3.png" alt="Create your algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 
 ### set your dependencies
@@ -68,7 +80,11 @@ Now is the time to set the depenencies your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/cntk_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/cntk_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 
 ### Load your Model
@@ -174,7 +190,11 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
