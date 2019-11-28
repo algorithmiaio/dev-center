@@ -54,7 +54,11 @@ The algorithm() function defines the input point of the algorithm. We use the al
 
 Go ahead and remove the boilerplate code below that's inside the algorithm() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Saving and Loading R Models
 When you have an R model that has been serialized as an .rds file, you can deploy it easily on Algorithmia. All you need to do is save your model:
@@ -82,7 +86,11 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://cran
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_r.png" alt="Set your dependencies" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 As you can see in the dependency file above, there are four different ways you can load packages in R.
 If you want the latest version from CRAN, than you simply type in the dependency name (this example uses the package e1071):
@@ -362,7 +370,11 @@ algorithm <- function(input){
 
 This should return a split up list of strings:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 
@@ -410,7 +422,11 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 
