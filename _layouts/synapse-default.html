@@ -104,7 +104,9 @@
     <script src="{{ site.baseurl }}/js/sentry.5.7.1.min.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
     <script src="{{ site.baseurl }}/js/sentry.init.js" type="text/javascript" crossorigin="anonymous" charset="utf-8"></script>
   {% endunless %}
-  <script src="{{site.baseurl}}/js/vue-build.js" type="text/javascript" charset="utf-8"></script>
+  {% for script in site.webpack_scripts %}
+    <script src="{{ site.baseurl }}/dist/{{script}}" type="text/javascript" charset="utf-8"></script>
+  {% endfor %}
   <script src="{{ site.baseurl }}/js/core.cat.js"></script>
   <script src="{{ site.baseurl }}/js/stageCustomization.js" type="text/javascript" charset="utf-8"></script>
   <script src="{{ site.baseurl }}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
