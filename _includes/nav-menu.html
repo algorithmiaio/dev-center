@@ -34,6 +34,8 @@
           title="{{ section.title }}"
           {% if section.children %}
             @click.prevent.stop="toggle('{{ section.identifier }}')"
+          {% else %}
+            @click.stop
           {% endif %}
           id="{{ section.identifier }}-link">
           <div class="{% if section.icon %}syn-flex align-center{% endif %}
