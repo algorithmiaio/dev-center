@@ -66,9 +66,12 @@ User collections like we created above allow you to set the read and write permi
 
 Session, Temporary, and Permanent Collections all have system-defined permissions:
 
--	Session Collections have read/write access only from within the same session.
+<div class="syn-body-1" markdown="1">
 
+-	Session Collections have read/write access only from within the same session.
 -	Temporary and Permanent algorithm collections have read/write access from internal calls and this data collection type is guaranteed to exist for every algorithm.
+
+</div>
 
 **Note:** Data in your temporary and user collections can be downloaded to be saved locally.
 
@@ -99,15 +102,23 @@ User collections are the most common collection type that you will use which we 
 
 The format for user collections when using Data URI within Algorithmia:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://:username/:collection'
 - 'data://:username/:collection/:filename'
+
+</div>
 
 ### The `.my` pseudonym:
 
 If you are operating on your own directories or files you can use the '.my' pseudonym and the user name will be assumed from the authorization provided.
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.my/:collection'
 - 'data://.my/:collection/:filename'
+
+</div>
 
 **NOTE:** If you are authoring an algorithm, avoid using the '.my' pseudonym in the source code. When the algorithm is executed, '.my' will be interpreted as the user name of the user who called the algorithm, rather than the author's user name.
 
@@ -115,7 +126,11 @@ If you are operating on your own directories or files you can use the '.my' pseu
 
 The format for session collections when using Data URI within Algorithmia:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.session/:filename'
+
+</div>
 
 Session collections exist for each Algorithm Session and is only accessible to algorithms within that session.
 
@@ -127,7 +142,11 @@ Session collections allow data to be used across multiple algorithms within the 
 
 Access temporary collections with this URI format from inside of Algorithmia or using a client:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.algo/:author/:algoname/temp/:filename'
+
+</div>
 
 Temporary algorithm collections give you a space to store data on a temporary basis. You will find the temporary collections under a `temp` directory inside of an algorithm collection, and files placed into it are accessible only to the user who ran the algorithm. For example, a user can have an algorithm that produces a file inside of a temporary collection.
 
@@ -137,7 +156,11 @@ The temporary algorithm collections are particularly useful for algorithms that 
 
 Simplified URI format:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.algo/temp/:filename'
+
+</div>
 
 If you are using the Data URI from inside Algorithmia, you can also use a simplified form of the URI. This simplified version will infer the algorithm when it is being called so that you don't have to specify the author and algorithm name.
 
@@ -147,7 +170,11 @@ Temporary algorithm collections are ideal for storing data on a short term basis
 
 Access permanent collections with this URI format from inside of Algorithmia or using a client:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.algo/:author/:algoname/perm/:filename'
+
+</div>
 
 If you need to access a collection from a specific algorithm, you can use the permanent collection. This allows users to generate output that is saved permanently as a result of running the algorithm, and is only accessible by that user. Unlike the Temporary Algorithm Collections, the data stored in the permanent collection is not cleared after one day.
 
@@ -155,7 +182,11 @@ If you need to access a collection from a specific algorithm, you can use the pe
 
 Simplified URI format:
 
+<div class="syn-body-1" markdown="1">
+
 - 'data://.algo/perm/:filename'
+
+</div>
 
 If you are using the Data URI from inside Algorithmia, you can also use a simplified form of the URI. This simplified version will infer the algorithm when it is being called so that you don't have to specify the author and algorithm name.
 
@@ -165,9 +196,11 @@ This guide showed how to create a data collection, discussed collection types an
 
 For more information:
 
+<div class="syn-body-1" markdown="1">
+
 - [Algorithmia Data API](http://docs.algorithmia.com/#data-api-specification)
 - [ACL's](https://en.wikipedia.org/wiki/Access_control_list)
 
-
+</div>
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!

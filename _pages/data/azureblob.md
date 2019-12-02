@@ -54,8 +54,12 @@ Select **'Azure Blob'** and a form will open to configure a connection. Here you
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Azure, it is recommended that you provide access that:
 
+<div class="syn-body-1" markdown="1">
+
 - Can only list, get, and put objects to Azure (i.e. cannot perform other operations on your account)
 - Can only access the paths in Azure that you want Algorithmia to access
+
+</div>
 
 ### Setting Labels For Data Connections
 You will need to provide a unique label for your data connector, editable in the **"Label"** field.
@@ -67,8 +71,12 @@ We require these unique labels because you may want to add multiple connections 
 ### Setting Path Restrictions for Azure Folder and File Access
 The default path restrictions are set to allow access to all paths in your Azure account, however you may want to restrict your algorithm's access to specific folders or files:
 
+<div class="syn-body-1" markdown="1">
+
 - Access to a single file: 'team.jpg'
 - Access to everything in a specific subfolder: 'somefolder/*'
+
+</div>
 
 **NOTE:** 'somefolder*' might match more than you’d like, so if you want to match a directory exactly end with a '/'.
 
@@ -88,8 +96,12 @@ The default access for your data source is set to read only, but you can change 
 ## Accessing your Data
 Accessing your data via the <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia Data API</a> is easy. Whether you're writing your algorithm in Rust, Ruby, Python, Scala, Java or JavaScript simply import your data with a couple lines of code. With your data connection now configured you can read and write data to and from it via <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> by specifying the protocol and label as your path to your data:
 
+<div class="syn-body-1" markdown="1">
+
 - client = Algorithmia.client('YOUR_API_KEY')
 - client.file('azureblob+unique_label://my_file.csv').getFile().name
+
+</div>
 
 For example, to retrieve and print a file's contents in Python:
 
@@ -130,18 +142,31 @@ algo.pipeJson({'inputFile':'azureblob+hawking://test_data.csv'})
 
 Once a data source connection has been created and configured, all of the Algorithmia client code for interacting with the Data API for file or directory creation, deletion and listing will function identically with a data source route and a data API route except for:
 
+<div class="syn-body-1" markdown="1">
+
 - We do not support generic ACLs for data sources and the only way to update permissions for a data source is through the data portal where you created your data source connection.
 
+</div>
+
 If you're implementing a new client or using cURL it is preferred to use the following URL structure:
+
+<div class="syn-body-1" markdown="1">
 
 - '/v1/connector/protocol+unique_label/path':
     - '/v1/connector/azureblob+unique_label/foo.txt'
 
+</div>
+
 ## Algorithm support
 We have tested to ensure that data source paths function in all of our Algorithmia clients, however:
 
+<div class="syn-body-1" markdown="1">
+
 - Python support was added in version 1.0.4
 - NodeJS support was added in version 0.3.5
+
+</div>
+
 This means that algorithms in Python or JavaScript which were last compiled prior to 5/27/2016 might not have the most recent versions of these dependencies, and we can’t guarantee this new functionality will work on algorithms older than that. A simple recompilation of the algorithm will enable support without any code changes needed.
 
 If you have any questions about Algorithmia please <a href="mailto:support@algorithmia.com">get in touch</a>!

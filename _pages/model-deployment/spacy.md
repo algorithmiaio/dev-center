@@ -55,7 +55,11 @@ Go ahead and remove the boilerplate code below that's inside the `apply()` funct
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
+<div class="syn-body-1" markdown="1">
+
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
+
+</div>
 
 <images-section>
   <image-popout>

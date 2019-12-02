@@ -18,6 +18,9 @@ menus:
 We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).
 
 The Algorithmia .NET client supports .NET Standard 2.0 which means it can be used within apps targeting:
+
+<div class="syn-body-1" markdown="1">
+
 - .NET Core
 - ASP.NET Core
 - .NET Framework (> 4.6.1)
@@ -27,6 +30,8 @@ The Algorithmia .NET client supports .NET Standard 2.0 which means it can be use
 - Xamarin.Android
 - Universal Windows Platform Apps
 - Unity
+
+</div>
 
 You can find out more about .NET Standard and the versions of related frameworks that are supported here: [.NET Standard - .NET Implementation Support](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) and [Learn more about .NET Framework vs .NET Core](https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server).
 
