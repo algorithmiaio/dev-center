@@ -26,7 +26,7 @@ class GettingStartedPage extends DeveloperCenterPage {
   }
 
   get notice() {
-    return $('.syn-code-block:nth-of-type(2) + p')
+    return $('.syn-code-block:nth-of-type(4) + div > p')
   }
 
   open() {
