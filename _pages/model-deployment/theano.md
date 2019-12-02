@@ -16,8 +16,12 @@ image:
 
 Welcome to deploying your <a href="http://deeplearning.net/software/theano/">Theano</a> model on Algorithmia! This guide is designed as an introduction to deploying a theano model and publishing an algorithm even if you’ve never used Algorithmia before.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -121,8 +125,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 

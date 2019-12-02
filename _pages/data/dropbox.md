@@ -121,8 +121,12 @@ dropbox_data()
 
 {% endhighlight %}
 
+<div markdown="1">
+
 The above examples work when accessing data from a local script or app code. If you're writing an algorithm and accessing a data source from inside the algorithm, create the client without an API Key parameter: `client = Algorithmia.client()`
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 If you're calling an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data sources:
 

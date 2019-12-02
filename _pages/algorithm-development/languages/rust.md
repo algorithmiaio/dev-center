@@ -47,8 +47,12 @@ If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
+<div markdown="1">
+
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
@@ -126,15 +130,23 @@ Note that this returns well-formatted JSON which will be easy for the user to co
 
 To change the exact structure of the JSON which you wish to *accept*, simply change the struct `Input`.  The derive macro will do its best to automatically convert incoming JSON into a compatible struct.  For specialized cases such as accepting raw binary input (such as encoded files), see  the [algo_entrypoint](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) documentation.
 
+<div markdown="1">
+
 Algorithmia's Rust compiler is highly optimized, so builds can take several minutes (this will get faster as caching improves in future versions of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="{{site.baseurl}}/algorithm-development/git" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Working with Data Stored on Algorithmia
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
+<div markdown="1">
+
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?rust#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?rust#files).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted) (create a collection, drop the file into the "Drop files here" area which appears at the bottom of the page).
@@ -241,8 +253,12 @@ caused by: No such file or directory (os error 2)
 
 In addition, `error-chain` provides a `bail!` macro which you can use to return a custom error message at any time.
 
+<div markdown="1">
+
 As with most Rust code, you should avoid panicking in your algorithm. API callers will not have access to the panic backtrace, and panicking will impact the latency of back-to-back requests from the same user.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 

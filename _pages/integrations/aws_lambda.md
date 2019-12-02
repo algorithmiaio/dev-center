@@ -20,8 +20,12 @@ menus:
     weight: 16
 ---
 
+<div markdown="1">
+
 This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,
 making it easy to build applications that respond quickly to new information.

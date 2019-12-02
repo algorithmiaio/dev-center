@@ -141,8 +141,12 @@ You can also edit your algorithm's settings, including source code visibility, l
 
 At the bottom of the Settings page is the option to delete the algorithm, if it does not have a public version.
 
+<div markdown="1">
+
 Use with care: deleted algorithms are gone forever.
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 <images-section>
   <image-popout>

@@ -110,8 +110,12 @@ After clicking 'Invite User' a form will appear and you can enter the users name
 
 As an organization owner, you may view any pending invitations by clicking on the "Invitations" tab
 
+<div markdown="1">
+
 If you invite a user that already has an account, then you must invite them using their username, not their email.
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 #### Approving Algorithms:
 Once members of your organization have created an algorithm and submitted it for approval, a purple indicator with the version to be published will show on your organization profile under algorithms.

@@ -19,11 +19,19 @@ Welcome to deploying your pre-trained <a href="https://www.tensorflow.org/">Tens
 
 For tensorflow-gpu 1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
 
+<div markdown="1">
+
 Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
+
+<div markdown="1">
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -52,8 +60,12 @@ After training your Tensorflow model, you'll need to save it, along with its ass
 
 There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
 
+<div markdown="1">
+
 Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 {% highlight python %}
 from tensorflow.examples.tutorials.mnist import input_data
@@ -184,8 +196,12 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
+<div markdown="1">
+
 Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
@@ -240,8 +256,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 

@@ -43,8 +43,12 @@ You'll want to do the training and saving of your model on your local machine, o
 
 After training your Keras model, you'll want to save it using `model.save(filepath)` so you can upload it to Algorithmia.
 
+<div markdown="1">
+
 Note that when developing a model with Keras, they recommend you to [save the model](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) as an `.h5` file so do not use pickle or cPickle to save your model, but use the built in `model.save()` instead.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Create a Data Collection
 Host your data where you want and serve it to your model with Algorithmia's <a href="http://docs.algorithmia.com/">Data API</a>.
@@ -129,8 +133,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 

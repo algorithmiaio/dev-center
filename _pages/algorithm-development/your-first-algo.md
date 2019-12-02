@@ -23,8 +23,12 @@ One of the great things about Algorithmia is that the platform allows you to put
 
 This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see the [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Table of Contents
 
@@ -85,8 +89,12 @@ As an incentive to promote community contributions, open source algorithms that 
 
 **Pipelining:** This permission sets whether an algorithm can call other Algorithmia-hosted algorithms. Our example will need this enabled.
 
+<div markdown="1">
+
 You can find out more about algorithm permissions in the [Algorithm Permissions Section]({{site.baseurl}}/basics/permissions).  Also, consider whether your algorithm would benefit from using a Graphics Processing Unit to accelerate certain kinds of computation, such as image processing and deep learning. When "Advanced GPU" is selected, the algorithm will run on servers with GPU hardware, with specific drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Now hit the "Create" button on the bottom lower right of the form and you'll see this modal:
 
@@ -119,8 +127,12 @@ To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clien
 
 </div>
 
+<div markdown="1">
+
 If you're using Python, you must [set an environment variable](https://www.schrodinger.com/kb/1842): `LANGUAGE_VERSION=python2` or `LANGUAGE_VERSION=python3` before using `runlocal`
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 For more tips and tricks on local development, see our guide: [setting up your local environment for Algorithm development]({{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development).
 
@@ -159,8 +171,12 @@ Features you can edit are:
 
 </div>
 
+<div markdown="1">
+
 If you have published your algorithm and want to only make changes to the settings on the "Manage" tab, then you will still need to hit "Build" before republishing to see your new changes. Then you can hit "Publish" after your algorithm builds and go through the normal publishing workflow.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Finally click on the **Source** tab which will display the UI for creating your algorithm if you prefer it over the CLI.
 
@@ -172,8 +188,12 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 To run this algorithm first hit the "Build" button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you'll see a confirmation that it has compiled and the version number of that commit.  Until you have Published your algorithm, the version number will be a hash such as `4be0e18fba270e4aaa7cff20555268903f69a11b` - only you will be able to call this version.  After you've Published an algorithm, it will be given a `major.minor.revision` number as described in the [Versioning Documentation]({{site.baseurl}}/basics/versioning).
 
+<div markdown="1">
+
 Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 <images-section>
   <image-popout>
