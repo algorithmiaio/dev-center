@@ -14,7 +14,7 @@ module Jekyll
       doc = Nokogiri::HTML(content)
       doc.css('h2').each do |heading|
         html << "<li class=\"sub-nav-item syn-overflow-hidden allow-wrap\">
-          <a class=\"sub-nav-link flex-item-no-shrink syn-flex justify-space-between align-center syn-text-secondary\" href=\"\##{heading["id"]}\">
+          <a @click.stop class=\"sub-nav-link flex-item-no-shrink syn-flex justify-space-between align-center syn-text-secondary\" href=\"\##{heading["id"]}\">
             <div class=\"sub-nav-text syn-ml-#{context['toc_indent']}\">#{heading.text}</div>
           </a>
         </li>"

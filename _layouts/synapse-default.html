@@ -61,7 +61,7 @@
       </div>
       <div class="syn-page-header-nav syn-flex direction-column syn-overflow-hidden" @click="toggleSideMenu">
         <div class="syn-mt-24 syn-ml-16 syn-mb-24 syn-mr-16 flex-item-no-shrink">
-          <a href="/">
+          <a @click.stop href="/">
             {% if site.isLocalDev or site.enterprise %}
             <img
               src="{{ site.baseurl }}/images/algo-purple.svg"
