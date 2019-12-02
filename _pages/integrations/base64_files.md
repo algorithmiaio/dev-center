@@ -74,37 +74,3 @@ function callalgorithm() {
 
 </script>
 {% endhighlight %}
-
-If you're logged in right now, try uploading [minimal.pdf]({{site.baseurl}}/images/language_logos/minimal.pdf) to see this in action:
-
-<form>
-  <input type="file" id="file" onchange="loadfile()">
-  <pre id="results"></pre>
-</form>
-
-<script>
-
-// set up file reader
-var reader = new FileReader();
-reader.onload = callalgorithm
-
-// get file from file selector and convert to base64
-function loadfile() {
-  var file = document.querySelector('#file').files[0];
-  reader.readAsDataURL(file);
-}
-
-// get converted file and send to Algorithm
-function callalgorithm() {
-  input = reader.result.substr(reader.result.indexOf(',')+1);
-  document.querySelector("#results").innerText = "Loading...";
-  Algorithmia.client("YOUR_API_KEY")
-  .algo("jpeck/pdf64_to_text/0.1.0?timeout=300")
-  .pipe(input)
-  .then(function(response) {
-    var output = response.error? response.error.message:response.result
-    document.querySelector("#results").innerText = output;
-  });
-}
-
-</script>
