@@ -24,11 +24,19 @@ All data sources have a protocol and a label that you will use to reference your
 ## Configure a New Data Connection to your Google Cloud Storage
 To create a new data connection first navigate to <a href="{{site.baseurl}}/data">Algorithmia's Data Portal</a> where you'll notice there is a drop down that says 'New Data Source' where you'll see the options:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Select **'Google Cloud Storage'** and a form will open to configure a connection. Here you will need to enter your Google Cloud Storage credentials, obtained from the [Service Accounts panel](https://console.cloud.google.com/iam-admin/serviceaccounts) of the Google Cloud Console. Copy your private_key_id, private_key, and client_email from the JSON credentials file generated when you select "create key" in your service account.  For more information, see the <a href="https://cloud.google.com/iam/docs/understanding-service-accounts#managing_service_account_keys ">Google Cloud Storage Docs</a>.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/google_cloud_connector.png" alt="Create a data connector in modal" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/google_cloud_connector.png" alt="Create a data connector in modal" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Google Cloud Storage, it is recommended that you provide access that:
 
@@ -52,7 +60,11 @@ The default path restrictions are set to allow access to all paths in your Googl
 
 Here we are setting our path restrictions to everything in the Google Cloud Storage 'Algorithmia':
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/google_cloud_restricted_paths.png" alt="Add path restrictions" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/google_cloud_restricted_paths.png" alt="Add path restrictions" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Setting Read and Write Access
 The default access for your data source is set to read only, but you can change this to read *and* write access by checking the **'Write Access'** box.
@@ -85,8 +97,12 @@ google_cloud_data()
 
 {% endhighlight %}
 
+<div markdown="1">
+
 The above examples work when accessing data from a local script or app code. If you're writing an algorithm and accessing a data source from inside the algorithm, create the client without an API Key parameter: `client = Algorithmia.client()`
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 If you're calling an algorithm that takes a file or directory as input from the Data API, you can also provide it a file or directory from one of your data sources:
 

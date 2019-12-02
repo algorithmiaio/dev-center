@@ -69,8 +69,12 @@ In `strings.xml`, replace the demo API key with your API key, which can be found
 </resources>
 {% endhighlight %}
 
+<div markdown="1">
+
 Make sure you've replaced `YOUR_API_KEY` with the API key under your account so that the Algorithmia client can authenticate!
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 ## Adding views to the app
 

@@ -10,8 +10,11 @@ author: jon_peck
 image:
     teaser: /post_images/list_packages/dependencies.png
 ---
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies_wide.png" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies_wide.png" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 With Algorithmia, specifying dependencies is easy: you don't need to create a dockerfile or build any local images. Instead, you just specify your dependencies via the Web IDE or by including a file such as `requirements.txt` in your Algorithm's repo. The dependency tree is automatically resolved on Algorithmia's servers.
 

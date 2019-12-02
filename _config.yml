@@ -89,6 +89,7 @@ exclude:
     "shippable.yml",
     "_tmp",
     "vendor",
+    "e2e/",
     "src/",
     "jest/",
     "server/"

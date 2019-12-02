@@ -59,8 +59,12 @@ Now, you can find any algorithm in the [directory](/algorithms) and call it.  In
  var textResult = response.result.ToString();
 {% endhighlight %}
 
+<div markdown="1">
+
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Limits
 
@@ -90,8 +94,12 @@ if (!nlp_directory.exists()) {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
+<div markdown="1">
+
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.url}}/data/hosted).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Work with Directory Permissions
 
@@ -147,8 +155,12 @@ if (!destination.exists()) {
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 This method will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 

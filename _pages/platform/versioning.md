@@ -49,8 +49,12 @@ All algorithms are versioned the Algorithmia clients support specifying a versio
 
 Specifying the version as `<major>.<minor>.<revision>` (e.g. `util/echo/0.2.1`) ensures that your API call always calls exactly that version.
 
+<div markdown="1">
+
 It is recommend that application devlopers use a fully-specified version when calling an algorithm from a production service. This ensures that your application is not affected by changes in pricing, permissions, or functionality.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Semver-compatible version
 

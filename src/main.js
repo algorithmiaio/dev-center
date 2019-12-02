@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import { scrollspy } from 'uiv'
 import CodeSample from './components/CodeSample'
+import ImagePopout from './components/ImagePopout'
+import ImagesSection from './components/ImagesSection'
 import SideNavMenu from './components/SideNavMenu'
 import Toast from './components/Toast'
 import SearchResults from './components/SearchResults'
@@ -13,6 +15,8 @@ import { Cookie } from './enums/Cookie'
 import { mapActions, mapGetters } from 'vuex'
 
 Vue.component('codeSample', CodeSample)
+Vue.component('imagePopout', ImagePopout)
+Vue.component('imagesSection', ImagesSection)
 Vue.component('sideNavMenu', SideNavMenu)
 Vue.component('toast', Toast)
 Vue.component('searchInput', SearchInput)
@@ -52,8 +56,8 @@ const app = new Vue({
       )
     }
   },
-  mounted() {
-    this.loadUser()
+  async mounted() {
+    await this.loadUser()
     this.setStateFromCookies()
     setupPage(this.user)
   }

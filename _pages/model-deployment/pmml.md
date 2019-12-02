@@ -15,8 +15,12 @@ Welcome to deploying your <a href="http://dmg.org/pmml/v4-3/GeneralStructure.htm
 
 Whether you have an older model exported to PMML structure, or have just trained a model using Spark ML which exports to PMML, you can easily deploy your model on Algorithmia.
 
+<div markdown="1">
+
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -54,7 +58,11 @@ First, you'll want to create a data collection to host any data associated with 
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -67,7 +75,11 @@ Next, upload your serialized model to your newly created data collection.
 
 - Note the path to your data collection and the zip folder: data://user_name/collections_name/model.zip
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/pmml_data_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/pmml_data_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Create your Algorithm
 
@@ -81,14 +93,22 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/scala_console.png" alt="Algorithm console Scala" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/scala_console.png" alt="Algorithm console Scala" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/scala_pmml_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/scala_pmml_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Load your Model
 
@@ -100,8 +120,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 
@@ -188,7 +212,11 @@ Last is publishing your algorithm. The best part of hosting your model on Algori
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

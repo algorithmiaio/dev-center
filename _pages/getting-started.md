@@ -5,8 +5,6 @@ excerpt: "Make your first API call with this quick start guide."
 tags: [app-dev-getting-started]
 show_related: true
 author: steph_kim
-image:
-  teaser: /icons/hexicon_desktop_purple.svg
 redirect_from:
   - /basics/getting-started/
 ---
@@ -19,7 +17,11 @@ We'll show an example in cURL, Python, Java, Rust, R, Node, Ruby, JavaScript, Sc
 
 To get started, find an algorithm you'd like to call. You can do this by using the search bar or browsing the marketplace by tags & categories:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
+<images-section v-cloak>
+  <image-popout caption="Algorithm Marketplace">
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/face_detection.png" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Each algorithm has an owner and an algorithm name; you'll need both to format your request. This information is listed under the algorithm name on the description page as well as in the format of the algorithm's URL.
 
@@ -31,8 +33,12 @@ For a given user and algorithm name, API calls are made to the following URL:
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
+<div markdown="1">
+
 If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles) guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Making your first API call
 
@@ -42,8 +48,12 @@ We'll make our first call with the demo algorithm ["Hello"](/algorithms/demo/Hel
   {% highlight bash %}curl -X POST -d '"YOUR_USERNAME"' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/demo/Hello/{% endhighlight %}
 </code-sample>
 
+<div markdown="1">
+
 If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can also use one of the clients to make your call. See below for examples or visit one of the [Client Guides]({{site.baseurl}}/clients) for details on how to call algorithms and work with data in your language of choice.
 

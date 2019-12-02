@@ -58,12 +58,20 @@ If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
+<div markdown="1">
+
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 
 ## Managing Dependencies
@@ -72,14 +80,22 @@ Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 If you have any dependencies you can add them by typing in the package name to the `requirements.txt` file.
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
+<div markdown="1">
+
 If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 For example, to make use of numpy, you would include the line:
 
@@ -91,9 +107,13 @@ in the dependencies file and the line
 
 in the main file.
 
+<div markdown="1">
+
 If you're using Python 3, the syntax has changed for imports. You'll need to use:
 `from .somefile import *` instead of in Python 2 where it's `from file import *`.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 ## I/O for your Algorithms
 
@@ -165,8 +185,12 @@ You should see the minimum and maximum of the numbers in the list returned in th
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
+<div markdown="1">
+
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?python#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?python#files).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted).
@@ -223,8 +247,12 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 {"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
 {% endhighlight %}
 
+<div markdown="1">
+
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Writing files for the user to consume
 
@@ -292,7 +320,11 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This returns a list of words:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
 

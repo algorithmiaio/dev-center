@@ -15,36 +15,124 @@ menus:
     weight: 2
 ---
 
-<div class="row lang-tile-container">
-  {% assign post_title = "Local Development: emulating the Algorithmia execution environment" %}
-  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-    <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-      <div style="min-height:60%"><img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development.png" alt="icon" itemprop="image"></div>
-      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
-    </a>
-  </div>
-  {% assign post_title = "Inspecting Algorithms: determining the live list of packages / dependencies" %}
-  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-    <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/list-packages" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-      <div style="min-height:60%"><img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies.png" alt="icon" itemprop="image"></div>
-      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
-    </a>
-  </div>
-  {% assign post_title = "Multithreading: call many Algorithms in parallel" %}
-  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-    <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-      <div style="min-height:60%"><img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" alt="icon" itemprop="image"></div>
-      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
-    </a>
-  </div>
-  {% assign post_title = "Batch Processing: efficiently run predictions on large data volumes" %}
-  <div class="col-xs-6 col-sm-6 col-md-4" style="text-decoration: none!important;">
-    <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/batch-processing" title="{{ post_title }}" class="post-teaser lang-tile lang-tile-large" style="text-decoration: none!important;">
-      <div style="min-height:60%"><img class="larger_icon" src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing.png" alt="icon" itemprop="image"></div>
-      <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
-    </a>
-  </div>
-  {% socialcard https://blog.algorithmia.com/advanced-grammar-and-natural-language-processing-with-syntaxnet/ %}
-  {% socialcard https://blog.algorithmia.com/deep-dive-into-object-detection-with-open-images-using-tensorflow/ %}
-  {% socialcard https://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/ %}
+<div class="syn-mt-16">
+  {% assign post_title = "Local Development" %}
+  {% assign post_subtitle = "Emulating the Algorithmia execution environment." %}
+  <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/local-development"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Inspecting Algorithms" %}
+  {% assign post_subtitle = "Determining the live list of packages / dependencies." %}
+  <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/list-packages"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/list_packages/dependencies.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Multithreading" %}
+  {% assign post_subtitle = "Call many Algorithms in parallel." %}
+  <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/multithreading"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Batch Processing" %}
+  {% assign post_subtitle = "Efficiently run predictions on large data volumes." %}
+  <a href="{{site.baseurl}}/algorithm-development/advanced-algorithm-development/batch-processing"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Syntaxnet" %}
+  {% assign post_subtitle = "Advanced grammar and natural language processing" %}
+  <a href="https://blog.algorithmia.com/advanced-grammar-and-natural-language-processing-with-syntaxnet/"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.baseurl}}/images/post_images/syntaxnet/syntaxnet.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Tensorflow" %}
+  {% assign post_subtitle = "Deep dive into object detection with Open Images" %}
+  <a href="https://blog.algorithmia.com/deep-dive-into-object-detection-with-open-images-using-tensorflow/"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.baseurl}}/images/post_images/tensorflow/open-images.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
+  {% assign post_title = "Parallelized Video Processing" %}
+  {% assign post_subtitle = "Connecting several algorithms in a video processing pipeline" %}
+  <a href="https://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/"
+    title="{{ post_title }}: {{ post_subtitle }}"
+    class="syn-card outlined actionable syn-link-no-decoration syn-mb-32">
+    <div class="syn-media-object">
+      <div class="syn-media-object-image">
+        <div class="syn-width-capped-160">
+          <img src="{{site.baseurl}}/images/post_images/video_processing/parallel-video-processing.png" alt="icon" itemprop="image" class="syn-image-responsive">
+        </div>
+      </div>
+      <div class="syn-media-object-body syn-flex direction-column justify-center">
+        <h4 itemprop="name" class="syn-mb-8">{{ post_title }}</h4>
+        <div class="syn-body-2 syn-text-secondary syn-mb-0">{{ post_subtitle }}</div>
+      </div>
+    </div>
+  </a>
 </div>

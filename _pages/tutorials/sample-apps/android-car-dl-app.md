@@ -31,7 +31,11 @@ First things first, let's create a new app in Android Studio.
 
 Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Then name it "MainActivity". This activity will hold the code that we'll write to access the camera and save the picture. Then we'll use File Provider to pass the URI to the next activity which we'll create now.
 
@@ -45,8 +49,12 @@ Now before we get started coding, we need to set up the rest of our project.
 
 Follow the steps below to make sure you have the dependencies, permissions, and your API key set as needed.
 
+<div markdown="1">
+
 Note that if you forked the repo, you will have everything you need except for you'll need to add your API key.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 **Step One: Dependencies**
 
@@ -101,8 +109,12 @@ In "strings.xml", replace the demo API key with your API key, which can be found
 </resources>
 {% endhighlight %}
 
+<div markdown="1">
+
 Make sure you've replaced `YOUR_API_KEY` with the API key under your account so that the Algorithmia client can authenticate!
-{: .notice-warning }
+{: .syn-alert.theme-warning }
+
+</div>
 
 Next create a folder called "xml" under your "res" folder so the file provider can find your image. Then add a file called "file_provider_paths.xml" and copy and paste the following:
 
@@ -179,8 +191,12 @@ Now, in the file "res/layout/activity_car_results.xml" add:
 </RelativeLayout>
 {% endhighlight %}
 
+<div markdown="1">
+
 Note that if you don't have those files already under `res/layout` please add them.
-{: .notice-info }
+{:  }
+
+</div>
 
 Finally if you don't have it already, create a file under the drawable folder called "button_colors.xml" and place this in the file:
 
@@ -196,8 +212,12 @@ Finally if you don't have it already, create a file under the drawable folder ca
 
 First, go to "MainActivity.java" and paste in the code below if you haven't forked the project from GitHub. We'll go through it chunk by chunk so you understand what's happening.
 
+<div markdown="1">
+
 Note, that if you haven't forked the project, you can copy and paste the imports from the repo as we skip them for the sake of brevity in the example below.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 
 {% highlight java %}
@@ -410,8 +430,12 @@ Moving through the code, if you check inside the try/catch, you'll notice that w
 
 Next we need to transform the bitmap image into a byteArray. Then, because our algorithm takes only URL's we'll be using [Algorithmia's hosted data]({{site.baseurl}}/data/hosted) to upload our image to Algorithmia to get the URL to pass into the Car Make and Model algorithm.
 
+<div markdown="1">
+
 Note that you can also use [Dropbox or Amazon S3 to host your data]({{site.baseurl}}/data).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Finally, our last method is "onClickRun" where we set our TextView and use an [AsyncTask](http://developer.android.com/training/basics/network-ops/connecting.html) to call our algorithm.
 
@@ -419,8 +443,12 @@ In the [doInBackground](https://developer.android.com/reference/android/os/Async
 
 We then create a DataDirectory object that references a directory in your [data collection](/data/hosted). If you haven't used Data sources check out our [Android Client Guide]({{site.baseurl}}/clients/android).
 
+<div markdown="1">
+
 Remember to replace "YOUR_DATA_COLLECTION" in `DataDirectory imageDir = client.dir("data://.my/YOUR_DATA_COLLECTION");` with your own data collection name from one of our [Data Sources]({{site.baseurl}}/data).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Now we upload our byteArray to our data collection in a file called "myImage.jpg" and then immediately download the file path. Then we call the algorithm and use the "pipe()" method to pass in our data URL to the Car Make and Model algorithm. The reason why we do this is because algorithms don't accept data uploaded from just any data source like a local file.
 

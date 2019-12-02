@@ -45,8 +45,12 @@ Below the account overview, you'll see a chart of your balance over time, then m
 
 The usage section displays the date, the algorithms you've called, and the stats on your usage.
 
+<div markdown="1">
+
 The number of calls is the full number of the times that you've called the algorithm, but you'll see that sometimes the Billed Calls column displays a lower value. This is because we don't bill API calls that result in an error.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 The next column is the Billed Time in seconds, which is the time it took for the algorithm to run on the platform. We use this compute time and the royalty on the algorithm to calculate the Cost in Credits, which you'll find in the right column.
 
