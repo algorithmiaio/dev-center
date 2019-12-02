@@ -50,7 +50,7 @@ COPY . .
 RUN bundle install
 
 COPY --from=style-builder /app/dist ./synapse/dist
-COPY --from=vue-builder /app/js/vue-build.js ./js
+COPY --from=vue-builder /app/dist ./dist
 
 RUN ./build.sh
 
