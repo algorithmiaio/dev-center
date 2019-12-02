@@ -9,10 +9,14 @@ import SearchResults from './components/SearchResults'
 import SearchInput from './components/SearchInput'
 import { getCurrentUser } from './api/user'
 import { setupPage } from './utilities/setupPage'
+import { redirectApiDocsHash  } from './utilities/redirectApiDocsHash'
 import store from './store/index'
 import { readCookie } from './utilities/cookie'
 import { Cookie } from './enums/Cookie'
 import { mapActions, mapGetters } from 'vuex'
+
+// Redirect legacy API docs routes to new routes if hash is present
+redirectApiDocsHash()
 
 Vue.component('codeSample', CodeSample)
 Vue.component('imagePopout', ImagePopout)

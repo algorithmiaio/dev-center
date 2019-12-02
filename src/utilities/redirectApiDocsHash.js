@@ -1,4 +1,4 @@
-;(function redirectApiDocsHash() {
+export function redirectApiDocsHash() {
   function getRedirectRoute(hash) {
     switch(hash) {
       case '#introduction': return '/developers/api'
@@ -47,4 +47,4 @@
     && getRedirectRoute(window.location.hash)) {
     window.location.assign(getRedirectRoute(window.location.hash))
   }
-})()
+}
