@@ -10,7 +10,7 @@ layout: default
 	</div><!-- /.page-image -->
 </div><!-- /.page-feature -->
 {% endif %}
-<h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
+<h1 id="page-title">{% include title-icon.html %}{{ page.title }}{% include page-edit.html %}</h1>
 {% if page.excerpt %}<h2>{{ page.excerpt }}</h2>{% endif %}
 <div class="archive-wrap">
 	{{ content }}
