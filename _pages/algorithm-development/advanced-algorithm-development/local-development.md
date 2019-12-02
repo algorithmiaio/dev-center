@@ -11,7 +11,11 @@ image:
     teaser: /post_images/local_development/local_development.png
 ---
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Why develop locally?
 

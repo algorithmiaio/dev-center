@@ -49,7 +49,11 @@ First, you'll want to create a data collection to host your graph and variables.
 
 - After you create your collection you can set the read and write access on your data collection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -139,7 +143,11 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 **Note**: Make sure that your version of python is the same between your development environment and the algorithm. There may be version conflicts otherwise.
 
@@ -291,7 +299,11 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

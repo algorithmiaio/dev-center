@@ -1,6 +1,6 @@
 <template>
   <div class="images-section">
-    <div class="syn-bg-gray syn-flex">
+    <div class="syn-bg-gray syn-flex justify-center align-center">
       <slot></slot>
     </div>
   </div>
