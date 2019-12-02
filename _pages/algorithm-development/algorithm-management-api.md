@@ -21,7 +21,11 @@ For the full specification, see the [Python API for Algorithm Management](https:
 
 Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use Simple API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Forward: Python Notebook or CI/CD (via Jenkins or GitHub Actions) for Publishing Algorithms
 

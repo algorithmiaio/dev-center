@@ -19,11 +19,19 @@ Welcome to deploying your pre-trained <a href="https://www.tensorflow.org/">Tens
 
 For tensorflow-gpu 1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
 
+<div markdown="1">
+
 Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
+
+<div markdown="1">
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ## Table of Contents
 
@@ -52,8 +60,12 @@ After training your Tensorflow model, you'll need to save it, along with its ass
 
 There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
 
+<div markdown="1">
+
 Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 {% highlight python %}
 from tensorflow.examples.tutorials.mnist import input_data
@@ -159,7 +171,11 @@ First, you'll want to create a data collection to host your graph and variables.
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -175,14 +191,22 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_data_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Create your Algorithm
 
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
+<div markdown="1">
+
 Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
 
@@ -192,7 +216,11 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -203,7 +231,11 @@ Now is the time to set your dependencies that your model relies on.
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 If you plan on using tensorflow with GPU support, make sure to use the
 <code>tensorflow-gpu</code> python package instead of the <code>tensorflow</code> one, with the version number
@@ -236,8 +268,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 
@@ -534,7 +570,11 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

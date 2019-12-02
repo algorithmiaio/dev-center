@@ -61,8 +61,12 @@ This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/dat
 ### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
 
+<div markdown="1">
+
 If you want to check out how to build a simple Android app from start to finish using Algorithmia check out this [Android Sample App](https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 #### Android Threads
 
@@ -136,8 +140,12 @@ if (nlp_directory.exists() == false) {
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
+<div markdown="1">
+
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Work with Directory Permissions
 
@@ -201,8 +209,12 @@ import com.algorithmia.data.DataFile;
 nlp_directory.putFile(new File(local_file));
 {% endhighlight %}
 
+<div markdown="1">
+
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
@@ -252,8 +264,12 @@ For more methods on how to get a file using the Data API from a data collection 
 
 Finally we are ready to call an algorithm. In this guide we'll use the natural language processing algorithm called [Summarizer](https://algorithmia.com/algorithms/nlp/Summarizer). This algorithm results in a string that is the summary of the text content you pass in as the algorithm's input.
 
+<div markdown="1">
+
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This example shows the summary of the text file which we downloaded from our data collection and set as the variable called `input` in the previous code sample.
 

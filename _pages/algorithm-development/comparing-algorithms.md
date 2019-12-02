@@ -66,12 +66,21 @@ Got all that? Great! Lets dive in.
 
 ##### Go to the [Algorithmia Evaluations Wizard]({{site.url}}/evaluations) and click "Create Evaluation"
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/create_evaluation.png" alt="Create Evaluation" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/create_evaluation.png" alt="Create Evaluation" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Step 3: Set up your Evaluation
 
 ### Step 3.1: Add your evaluator algorithm at the bottom, click "Choose Existing".
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="syn-image-responsive">
+
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/choose_existing_evaluation.png" alt="Choose Existing Evaluation" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 <div class="syn-body-1" markdown="1">
 
@@ -83,7 +92,12 @@ Got all that? Great! Lets dive in.
 </div>
 
 ### Step 3.2: Add your Evaluable Algorithms
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="syn-image-responsive">
+
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/add_evaluable_algos.png" alt="Add Evaluable Algorithms" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 <div class="syn-body-1" markdown="1">
 
@@ -95,7 +109,11 @@ Got all that? Great! Lets dive in.
 
 ### Step 3.3: Provide an input to your evaluator algorithm
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/provide_an_input.png" alt="Provide an Input" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 <div class="syn-body-1" markdown="1">
 
@@ -108,7 +126,11 @@ Got all that? Great! Lets dive in.
 
 ## Step 4: Run your Evaluation
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/run_your_evaluation.png" alt="Run your Evaluation" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/comparing_algorithms/run_your_evaluation.png" alt="Run your Evaluation" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 <div class="syn-body-1" markdown="1">
 

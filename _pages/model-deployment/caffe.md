@@ -56,7 +56,11 @@ First, you'll want to create a data collection to host your pre-trained model.
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/add_collection.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 For more information check out: <a href="{{site.baseurl}}/data/hosted">Data Collection Types</a>.
 
@@ -74,7 +78,11 @@ Next, upload your model files to your newly created data collection.
 
 </div>
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_update_collections.png" alt="Create a data collection" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Create your Algorithm
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
@@ -87,7 +95,11 @@ The apply() function defines the input point of the algorithm. We use the apply(
 
 Go ahead and remove the boilerplate code below that's inside the `apply()` function on line 6, but leave the `apply()` function intact:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/deep_learning_algorithm_console.png" alt="Algorithm console Python" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ### Set your Dependencies
 Now is the time to set your dependencies that your model relies on.
@@ -106,10 +118,18 @@ Here are some Caffe wheels for different versions as well as CPU and GPU wheels:
 
 Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
-{: .notice-warning}
+<div markdown="1">
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+Please note that you will need to use the **protobuf==3.0.0b2.post1** package to be able to run a caffe algorithm.
+{: .syn-alert.theme-warning}
+
+</div>
+
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/caffe_dependencies.png" alt="Set your dependencies" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
@@ -120,8 +140,12 @@ This is because when a model is first loaded it can take time to load depending 
 
 Then, with all subsequent calls only the apply() function gets called which will be much faster since your model is already loaded.
 
+<div markdown="1">
+
 If you are authoring an algorithm, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 Note that you always want to create valid JSON input and output in your algorithm. For examples see the [Algorithm Development Guides]({{site.url}}{{site.baseurl}}/algorithm-development/languages/python/#io-for-your-algorithms).
 
@@ -184,7 +208,11 @@ Last is publishing your algorithm. The best part of deploying your model on Algo
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

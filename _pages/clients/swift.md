@@ -92,8 +92,12 @@ nlp_directory.exists() { exists, error in
 
 A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
 
+<div markdown="1">
+
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Work with Directory Permissions
 
@@ -144,8 +148,12 @@ nlp_directory.file(name: text_file).exists() { exists, error in
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
 
@@ -194,8 +202,12 @@ For more methods on how to get a file using the Data API from a data collection 
 
 Finally we are ready to call an algorithm. In this guide we'll use the natural language processing algorithm called [Summarizer](https://algorithmia.com/algorithms/nlp/Summarizer). This algorithm results in a string that is the summary of the text content you pass in as the algorithm's input.
 
+<div markdown="1">
+
 A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This example shows the summary of the text file which we downloaded from our data collection and set as the variable called `input` in the previous code sample.
 
@@ -239,8 +251,12 @@ nlp_directory.file(name: text_file).exists() { exists, error in
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 When you pass in strings as input to an algorithm it expects JSON syntax so it would be double quotes rather than single quotes.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This guide used the the first chapter of [Jack London's Burning Daylight](https://en.wikisource.org/wiki/Burning_Daylight) and the Summarizer algorithm outputs:
 

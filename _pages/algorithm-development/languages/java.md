@@ -48,12 +48,20 @@ If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm
 
 The main thing to note about the algorithm is that it's wrapped in the apply() function.
 
+<div markdown="1">
+
 The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Managing Dependencies
 
@@ -62,7 +70,11 @@ Algorithmia supports adding 3rd party dependencies via Maven packages. Specifica
 
 On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/java_dependencies.png" alt="Java Dependency File" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/java_dependencies.png" alt="Java Dependency File" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 If you have any dependencies you can add them by typing in the package name to the dependency file in the following form:
 
@@ -78,8 +90,12 @@ in the dependencies file and add the line
 
 in the main file.
 
+<div markdown="1">
+
 The Algorithmia dependency is already installed for your convenience. For more information about Algorithmia's Maven package visit [Java Client Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client)
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
@@ -139,8 +155,12 @@ You should see the value from the key returned in the console:
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
+<div markdown="1">
+
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?java#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?java#files).
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 #### Prerequisites
 If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted).
@@ -203,8 +223,12 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 {"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
 {% endhighlight %}
 
+<div markdown="1">
+
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Automatic JSON parsing
 
@@ -265,8 +289,12 @@ public class JavaTest {
 }
 {% endhighlight %}
 
+<div markdown="1">
+
 If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
-{: .notice-info}
+{: .syn-alert.theme-primary}
+
+</div>
 
 ### Writing files for the user to consume
 
@@ -341,7 +369,11 @@ Go ahead and try the above code sample in the Algorithmia code editor and then t
 
 This returns a Map of an ArrayList of words:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, maps, arrays and bytearray (binary byte sequence such as an image file) can be handled as you would any Java data structure within your algorithm.
 
@@ -349,8 +381,12 @@ As you can see from these examples, fields that are passed into your algorithm b
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
+<div markdown="1">
+
 Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
-{: .notice-warning}
+{: .syn-alert.theme-warning}
+
+</div>
 
 ## Error Handling
 
@@ -374,7 +410,11 @@ Once you've developed your algorithm, you can publish it and make it available f
 
 On the upper right hand side of the algorithm page you'll see a purple button "Publish" which will bring up a modal:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 In this modal, you'll see a Changes tab, a Sample I/O tab, and one called Versioning.
 

@@ -5,6 +5,7 @@
         ref="input"
         :value="query"
         @input="setQuery($event.target.value)"
+        data-e2e="search-input"
         type="text"
         id="search-query"
         class="syn-form-control syn-input-icon-group-input"
