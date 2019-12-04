@@ -126,8 +126,8 @@ describe("Developer Center", () => {
       page.open()
       page.hamburgerMenu.click()
       browser.refresh()
-      browser.waitUntil(() => page.isSideNavOpen)
-      assert(page.isSideNavOpen)
+      browser.waitUntil(() => !page.isSideNavOpen)
+      assert(!page.isSideNavOpen)
     })
   })
 
