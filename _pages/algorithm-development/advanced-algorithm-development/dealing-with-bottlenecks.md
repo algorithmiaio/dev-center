@@ -11,10 +11,10 @@ image:
     teaser:  /post_images/batch-processing/batch_processing.png
 ---
 
-# Algorithm Parallelism and Threading Tutorial
+# Removing algorithm performance bottlenecks in algorithm development
 
 This tutorial is primarily targetted at an advanced audience looking for solutions to improve runtime performance of already existing algorithms by removing bottlenecks.
- If you'd like to find the introductory tutorials please check [this page](https://algorithmia.com/developers/algorithm-development/advanced-algorithm-development) first.
+ If you'd like to find the introductory tutorials please check {{site.baseurl}}/algorithm-development/advanced-algorithm-development first.
 
 
 So at this point you've probably got some experience making algorithms, 
