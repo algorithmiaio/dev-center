@@ -13,26 +13,26 @@ image:
 
 # Removing algorithm performance bottlenecks in algorithm development
 
-This tutorial is primarily targetted at an advanced audience looking for solutions to improve runtime performance of already existing algorithms by removing bottlenecks.
+This tutorial is primarily targeted at an advanced audience looking for solutions to improve runtime performance of already existing algorithms by removing bottlenecks.
  If you'd like to find the introductory tutorials please check {{site.baseurl}}/algorithm-development/advanced-algorithm-development first.
 
 
 So at this point you've probably got some experience making algorithms, 
-however; as you explore deeper into what algorithmia has to offer it's possible that you may have hit one or more performance bottlenecks that can effect performance.
+however as you explore deeper into what Algorithmia has to offer it's possible that you may have hit one or more performance bottlenecks that can affect performance.
 
 In this tutorial we'll talk about `bandwidth` and `compute` bottlenecks, and how we can overcome those issues with more advanced techniques.
 
 ## Example code
-If you just want to see example code, and work through these ideas yourself; here are some gists:
-original algorithm: https://gist.github.com/zeryx/9b5ffb814e8629b6a9eb3b4c41dbee72
-async example: https://gist.github.com/zeryx/88aad1f558cc23e438876091d2c626c3
-recursion example: https://gist.github.com/zeryx/5068fc21fb5385d3428c49879910aca3
-orchestration example: https://gist.github.com/zeryx/bccffe585ed677a0f32a57b97e1d997e
+If you just want to see example code, and work through these ideas yourself here are some gists:
+- [original algorithm](https://gist.github.com/zeryx/9b5ffb814e8629b6a9eb3b4c41dbee72)
+- [async example](https://gist.github.com/zeryx/88aad1f558cc23e438876091d2c626c3)
+- [recursion example](https://gist.github.com/zeryx/5068fc21fb5385d3428c49879910aca3)
+- [orchestration example](https://gist.github.com/zeryx/bccffe585ed677a0f32a57b97e1d997e)
 
 
 
 # Basic Algorithm
-Below is an example image classifier using tensorflow, it returns a list of classes based off of imagenet. We'll be modifying this example as we continue with this tutorial.
+Below is an example image classifier using Tensorflow, it returns a list of classes based off of [ImageNet](http://www.image-net.org/). We'll be modifying this example as we continue with this tutorial.
 
 [example algorithm here](https://algorithmia.com/algorithms/zeryx/basic_image_algorithm)
 
@@ -88,15 +88,15 @@ def apply(input):
 ```
 
 This is works perfectly for situations where you just want to get image support to an algorithm that needs to do serial processing and then do some monolithic processing using a gpu or other resources to get a final result, one image at a time.
-However, if you're dealing with a production system, you're most likely going to be using more than 1 downstream algorithm; and you'll also want to improve performance as much as possible, especially in batch. In that case, you're in luck! This tutorial will go over the different mechanisms you can use both inside of your algorithm, and outside to get the results you're looking for.
+However, if you're dealing with a production system, you're most likely going to be using more than 1 downstream algorithm and you'll also want to improve performance as much as possible, especially in batch. In that case, you're in luck! This tutorial will go over the different mechanisms you can use both inside of your algorithm, and outside to get the results you're looking for.
 
 # Bandwidth Bottlenecks
 
 ## Async and Futures
 Your algorithm above works great, but now you need to improve performance and enable batch processing. 
-Your algorithm executes code very quickly (Which is great!) but the http reqeuests to actually download images or some other web resource take a variable amount of time, and are eating up a huge chunk of the total compute time.
-Well we're in luck; having multiple threads open trying to access http/https resources don't consume precious cpu clock cycles due to the [DMA](https://en.wikipedia.org/wiki/Direct_memory_access) controllers built into all modern CPUs.
-This is when using an `async` function may be of value (and Futures). This structure allows you to make a series of requests in parallel, and just wait for them all to finish; while not stealing resources from the image classification subroutine.
+Your algorithm executes code very quickly (which is great!) but the http requests to actually download images or some other web resource take a variable amount of time, and are eating up a huge chunk of the total compute time.
+Well we're in luck having multiple threads open trying to access http/https resources don't consume precious cpu clock cycles due to the [DMA](https://en.wikipedia.org/wiki/Direct_memory_access) controllers built into all modern CPUs.
+This is when using an `async` function may be of value (and Futures). This structure allows you to make a series of requests in parallel, and just wait for them all to finish while not stealing resources from the image classification subroutine.
 
 [example algorithm here](https://algorithmia.com/algorithms/zeryx/async_image_algorithm)
 ```
@@ -237,7 +237,7 @@ def apply(input):
 
 The pros for this approach is that it allows you to run algorithms in batch without modification, along with making it easy to read and understand what's going on.
 
-The problem however, is that unless this orchestrator has some necessary work it needs to perform; it'll be sitting idle most of the time as it waits for work to complete.
+The problem however, is that unless this orchestrator has some necessary work it needs to perform it'll be sitting idle most of the time as it waits for work to complete.
  In most circumstances this is perfectly fine, however for some more advanced uses where ultra high response times are required. You may need something else.
 
 ## Algorithm Recursion
@@ -350,7 +350,7 @@ def apply(input):
 
 ```
 
-As you can imagine, you can mix/match those techniques as necessary to optimize your pipeline; the one additional recommendation we have is when you're building your own parallel pipelines, 
+As you can imagine, you can mix/match those techniques as necessary to optimize your pipeline the one additional recommendation we have is when you're building your own parallel pipelines, 
 to try and experiement with small # of parallelism first (1-2 threads) and ensure that works before scaling up.
 
 Other than that, if you have any questions or comments around any of these examples please feel free to reach out.
