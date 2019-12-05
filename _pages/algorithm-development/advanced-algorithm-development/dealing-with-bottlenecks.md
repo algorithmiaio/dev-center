@@ -14,7 +14,7 @@ image:
 # Removing algorithm performance bottlenecks in algorithm development
 
 This tutorial is primarily targeted at an advanced audience looking for solutions to improve runtime performance of already existing algorithms by removing bottlenecks.
- If you'd like to find the introductory tutorials please check {{site.baseurl}}/algorithm-development/advanced-algorithm-development first.
+ If you'd like to find the introductory tutorials please check [this page]({{site.baseurl}}/algorithm-development/advanced-algorithm-development) first.
 
 
 So at this point you've probably got some experience making algorithms, 
