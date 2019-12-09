@@ -24,12 +24,12 @@ Algorithmia's 19.08 release featured security updates for enterprise users. For 
 # Enterprise Release Notes 19.05 #
 
 ##### New this quarter: #####
-*Jupyter Notebook integration
-*Event-driven algorithm runs
-*Additional management APIs
-*Additional IPA package sets
-*Organization-hosted data
-*Enterprise UI customization
+* Jupyter Notebook integration
+* Event-driven algorithm runs
+* Additional management APIs
+* Additional IPA package sets
+* Organization-hosted data
+* Enterprise UI customization
 
 ### Jupyter Notebook Integration ###
 
@@ -123,12 +123,12 @@ Algorithmia is moving into the new year with a lot of great improvements to the 
 Projects for this release focused on providing greater flexibility and data connectivity options and enabling queuing for user calls. These updates are part of our dedication to continuously improve our platform for our users. We've made a number of changes under the hood that will provide tangible boosts to speed, flexibility, and supportability.
 
 ##### New this quarter: #####
-*Image per algorithm
-*Algorithm management APIs
-*Support for .NET Core and .NET Standard
-*Update algorithm settings
-*New data storage connectors
-*User work limits and queuing 
+* Image per algorithm
+* Algorithm management APIs
+* Support for .NET Core and .NET Standard
+* Update algorithm settings
+* New data storage connectors
+* User work limits and queuing 
 
 ### Image Per Algorithm ###
 
