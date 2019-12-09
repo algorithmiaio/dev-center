@@ -89,6 +89,7 @@ Now is the time to set your dependencies that your model relies on.
 ```
 numpy
 xgboost
+joblib
 ```
 
 ## Load your Model
