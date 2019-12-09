@@ -8,9 +8,28 @@ image:
     teaser: /icons/algo.svg
 ---
 
-# Algorithmia Enterprise Release Notes 19.05 #
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Updates_List.png" alt="1904 Release Notes Banner" class="screenshot">
+# Enterprise Release Notes 19.10 #
+
+Algorithmia's 19.10 release featured a platform performance update and bug fixes for specific enterprise users. For more information, contact your Customer Success Manager.
+
+-----
+
+# Enterprise Release Notes 19.08 #
+
+Algorithmia's 19.08 release featured security updates for enterprise users. For more information, contact your Customer Success Manager.
+
+-----
+
+# Enterprise Release Notes 19.05 #
+
+##### New this quarter: #####
+*Jupyter Notebook integration
+*Event-driven algorithm runs
+*Additional management APIs
+*Additional IPA package sets
+*Organization-hosted data
+*Enterprise UI customization
 
 ### Jupyter Notebook Integration ###
 
@@ -87,11 +106,11 @@ What can now be customized:
 
 ----
 
-For questions and requests, please contact Algorithmia at support@algorithmia.com.
+For questions and requests, please contact us at support@algorithmia.com.
 -----
 
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/release_notes_header_image.png" alt="Release Notes" class="screenshot">
+# Enterprise Release Notes 19.01 #
 
 {% if site.enterprise %}
 **Enterprise Users:** Check with your administrator to verify which version of Algorithmia you are running.
@@ -103,7 +122,13 @@ Algorithmia is moving into the new year with a lot of great improvements to the 
 
 Projects for this release focused on providing greater flexibility and data connectivity options and enabling queuing for user calls. These updates are part of our dedication to continuously improve our platform for our users. We've made a number of changes under the hood that will provide tangible boosts to speed, flexibility, and supportability.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_release_notes_update_list.png" alt="Release Notes Product Updates" class="screenshot">
+##### New this quarter: #####
+*Image per algorithm
+*Algorithm management APIs
+*Support for .NET Core and .NET Standard
+*Update algorithm settings
+*New data storage connectors
+*User work limits and queuing 
 
 ### Image Per Algorithm ###
 
@@ -232,5 +257,7 @@ Administrators now have the flexibility to manage an algorithm’s use of their 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_update_max_work_limits.png" alt="Release Notes max work limits" class="screenshot">
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/19.01_contact_us.png" alt="Release Notes contact us" class="screenshot">
+For questions and requests, please contact us at support@algorithmia.com.
+-----
+
 
