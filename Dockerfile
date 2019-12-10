@@ -1,6 +1,6 @@
 
 #
-# Build Synapse dist/ files
+# Stage 1: build Synapse dist/ files
 #
 FROM node:10.14 as style-builder
 
@@ -14,9 +14,26 @@ RUN npm ci
 RUN npm run build
 
 #
-# Builder stage
+# Stage 2: build API docs
 #
-FROM ubuntu:19.10 as builder
+FROM ruby:2.3 AS docs-builder
+
+RUN apt-get update && apt-get install -y nodejs \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /opt/builds
+COPY ./api-docs .
+
+# Install dependencies
+RUN bundle install
+
+# Build docs
+RUN rake build
+
+#
+# Stage 3: build dev center
+#
+FROM ubuntu:19.10 as dev-center-builder
 
 RUN apt-get update && \
   apt-get install -y \
@@ -30,25 +47,22 @@ COPY . .
 
 RUN bundle install
 
-#
-# Build Dev Center sites
-#
-
-# Copy Synapse dist/ files
 COPY --from=style-builder /app/dist ./synapse/dist
 
 RUN ./build.sh
 
 #
-# Final stage: use the build artifacts from builder stage
+# Final stage: use the build artifacts from previous stages
 #
 FROM node:10.14-slim
 
 WORKDIR /opt/src/app
 
-COPY --from=builder /opt/builds/sites ./sites
+COPY --from=dev-center-builder /opt/builds/sites ./sites
+COPY --from=docs-builder /opt/builds/build ./docs
 
 COPY server/index.js ./server/index.js
+COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
 COPY package.json package-lock.json ./
 

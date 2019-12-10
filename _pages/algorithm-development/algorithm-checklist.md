@@ -47,7 +47,7 @@ The algorithm description is front-and-center on the algorithm profile page. Use
 
 Be sure to quickly describe the input needed to call the algorithm and the types it accepts. For example, you can say that the algorithm takes a string of text or an integer. If an algorithm has optional input parameters, be sure to include those and descriptions of what each option does.
 
-It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for Sentiment Analysis, the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
+It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for [Sentiment Analysis](https://algorithmia.com/blog/introduction-sentiment-analysis), the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/io.png" alt="inputs and outputs" class="screenshot img-md">
 

@@ -21,6 +21,9 @@ baseurl: /developers
 # Is this an enterprise (non http://algorithmia.com) site?
 enterprise: false
 
+# Provide hook for templates to account for dev-specific cases
+isLocalDev: false
+
 # Set webserver where shared assets should be found (default = https://algorithmia.com)
 # webserver: http://localhost:9000
 
@@ -31,8 +34,8 @@ collections:
 
 # Jekyll configuration
 sass:
-    sass_dir: _sass
-    style: compressed
+  sass_dir: _sass
+  style: compressed
 kramdown:
   toc_levels: 1..2
 gems:
@@ -62,5 +65,27 @@ project_output_dir: /clients
 lunr_search:
   excludes: [atom.xml, index.html, sitemap.xml, 404.html]
 
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml", "_tmp", "vendor"]
-
+exclude:
+  [
+    "api-docs/",
+    "lib",
+    "config.rb",
+    ".sass-cache",
+    "Capfile",
+    "config",
+    "log",
+    "Rakefile",
+    "Rakefile.rb",
+    "tmp",
+    "*.sublime-project",
+    "*.sublime-workspace",
+    "Gemfile",
+    "Gemfile.lock",
+    "README.md",
+    "LICENSE",
+    "node_modules",
+    "package.json",
+    "shippable.yml",
+    "_tmp",
+    "vendor",
+  ]

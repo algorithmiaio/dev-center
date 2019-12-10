@@ -1,0 +1,6 @@
+# This file contains config values that will be necessary when the docs app
+# stands on its own two feet, without being rendered by the web client.
+# Once the migration is complete we can simply move these values into the normal
+# config.
+
+setCanonicalLink: true

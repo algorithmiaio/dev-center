@@ -1,21 +1,18 @@
 ---
 layout: article
-title:  "spaCy"
-excerpt: "Deploying your spaCy model to Algorithmia."
+title:  "ONNX Runtime"
+excerpt: "Deploying your ONNX model to Algorithmia."
 categories: model-guides
 tags: [algo-model-guide]
 show_related: true
 author: steph_kim
-permalink: /model-deployment/spacy/
-redirect_from:
-  - /algorithm-development/model-guides/spacy/
 image:
-    teaser: /language_logos/spacy.png
+    teaser: /language_logos/mlogo.png
 ---
 
-Welcome to deploying your <a href="https://spacy.io/">spaCy</a> model on Algorithmia!
+Welcome to deploying your <a href="https://github.com/onnx/tutorials#converting-to-onnx-format">ONNX</a> model via <a href="https://microsoft.github.io/onnxruntime/">ONNX Runtime</a> on Algorithmia!
 
-This guide is designed as an introduction to deploying a spaCy model and publishing an algorithm even if you’ve never used Algorithmia before.
+This guide is designed as an introduction to deploying an ONNX model and publishing an algorithm even if you’ve never used Algorithmia before.
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
 {: .notice-info}
@@ -45,18 +42,17 @@ Now is the time to set your dependencies that your model relies on.
 
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/spacy_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/onnx_dependencies.png" alt="Set your dependencies" class="screenshot img-md">
 
 For easy copy and paste:
 {% highlight python %}
-spacy
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+onnxruntime-gpu==1.0.0
+numpy
+pillow
 {% endhighlight %}
 
-If you need to load a trained model from spaCy, check out this <a href="https://algorithmia.com/algorithms/demo/spacydemo">example in Spacy</a>, which shows loading a trained model. Particulary check out the dependency file and the top few lines of code to see how to load it. You'll load a trained spaCy model the same way.
-
-If you are using a library that depends on SpaCy creating symlink between `en_core_web_md` and `en`, please find an alternative as we don't support creating that symlink manually.
-{: .notice-warning}
+The numpy and pillow libraries are for the following code example. Also note that you'll only need to add the -gpu suffix to your onnxruntime dependency if your algorithm requires a GPU environment.
+{: .notice-info}
 
 ## Load your Model
 Here is where you load and run your model which will be called by the apply() function.
@@ -74,45 +70,65 @@ Note that you always want to create valid JSON input and output in your algorith
 
 ### Example Hosted Model:
 
-Here is some code that has been adapted from the spaCy online books tutorial <a href="http://www.spaCy.org/book/ch06.html">Learning to Classify Text</a>
-
 {% highlight python %}
-"""
-Entity recognition demo from SpaCy docs
-https://spacy.io/#doc-spans-ents
-"""
-
 import Algorithmia
-import spacy
-from spacy.lang.en.examples import sentences
-import en_core_web_sm
-import sys
-
-# Load outside of the apply function so it only gets loaded once
-nlp = spacy.load('en_core_web_sm')
-
+import numpy as np
+import os
+from PIL import Image
+import onnxruntime
 
 # API calls will begin at the apply() method, with the request body passed as 'input'
-# For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
+# For more details, see algorithmia.com/developers/algorithm-development/languages
+
+SIMD_ALGO = "util/SmartImageDownloader/0.2.14"
+
+def load():
+    local_path = client.file("data://zeryx/collection/mobilenetv2-1.0.onnx").getFile().name
+    return onnxruntime.InferenceSession(local_path)
+
+client = Algorithmia.client()
+MODEL_SESSION = load()
+
+
+def preprocess(image_path):
+    image = Image.open(image_path)
+    image_data = np.array(image).transpose(2, 0, 1)
+    # convert the input data into the float32 input
+    img_data = image_data.astype('float32')
+    img_data = img_data.reshape(1, 3, 224, 224)
+
+    #normalize
+    mean_vec = np.array([0.485, 0.456, 0.406])
+    stddev_vec = np.array([0.229, 0.224, 0.225])
+    norm_img_data = np.zeros(img_data.shape).astype('float32')
+    for i in range(img_data.shape[0]):
+        norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
+    return norm_img_data
+
+def softmax(x):
+    x = x.reshape(-1)
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+def postprocess(result):
+    return softmax(np.array(result)).tolist()
+
+
+def get_image(url, shape):
+    output_url = client.algo(SIMD_ALGO).pipe({'image': str(url), "resize": shape}).result['savePath'][0]
+    temp_file = client.file(output_url).getFile().name
+    os.rename(temp_file, temp_file + '.' + output_url.split('.')[-1])
+    local_file = temp_file + '.' + output_url.split('.')[-1]
+    return local_file
+
 def apply(input):
-    # Find named entities, phrases and concepts
-    doc = nlp(input)
-    ents = [{"text": entity.text, "entity": entity.label_} for entity in doc.ents]
-    return "Entities {0}".format(ents)
-
+    image = get_image(input, {"height": 224, "width": 224})
+    image_data = preprocess(image)
+    raw_result = MODEL_SESSION.run([], {"data": image_data})
+    res = postprocess(raw_result)
+    return res
 
 {% endhighlight %}
-
-Now when you run this code, the expected input is:
-{% highlight python %}
-"When Sebastian Thrun started working on self-driving cars at Google in 2007, few people outside of the company took him seriously. I can tell you very senior CEOs of major American car companies would shake my hand and turn away because I wasn’t worth talking to, said Thrun, now the co-founder and CEO of online higher education startup Udacity, in an interview with Recode earlier this week."
-{% endhighlight %}
-
-With the expected output:
-{% highlight python %}
-[{'entity': 'PERSON', 'text': 'Sebastian Thrun'}, {'entity': 'ORG', 'text': 'Google'}, {'entity': 'DATE', 'text': '2007'}, {'entity': 'NORP', 'text': 'American'}, {'entity': 'PERSON', 'text': 'Thrun'}, {'entity': 'ORG', 'text': 'Recode'}, {'entity': 'DATE', 'text': 'earlier this week'}]
-{% endhighlight %}
-
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of deploying your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
@@ -127,11 +143,9 @@ If you don't recall from the <a href="{{site.baseurl}}/algorithm-development/alg
 
 ## Working Demo
 
-Here is a working example, pay special attention to the dependencies file to download an example Spacy model:
+Here's the <a href="https://algorithmia.com/algorithms/zeryx/onnx_test">working demo</a> for the above code example to see the expected input and output.
 
-<a href="https://algorithmia.com/algorithms/demo/spacydemo">Spacy Demo</a>
-
-That's it for hosting your <a href="http://www.spaCy.org/">spaCy</a> model on Algorithmia!
+That's it for hosting your <a href="https://github.com/onnx">ONNX</a> model using <a href="https://microsoft.github.io/onnxruntime/">ONNX Runtime</a> on Algorithmia!
 
 
 

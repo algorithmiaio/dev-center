@@ -14,7 +14,7 @@ layout: default
 
 	{% include breadcrumbs.html %}
 
-	<h1 id="page-title">{% include title-icon.html %}{{ page.title }}</h1>
+	<h1 id="page-title">{% include title-icon.html %}{{ page.title }}{% include page-edit.html %}</h1>
 	{% include page-meta.html %}
 
 	{% if page.repository %}

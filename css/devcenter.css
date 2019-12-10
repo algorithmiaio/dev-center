@@ -11,6 +11,7 @@ body,
 #wrapper,
 .dev-center-content-container {
   flex-grow: 1;
+  max-width: 100%;
 }
 #wrapper {
   margin-top: 2rem;
@@ -27,4 +28,10 @@ body,
 .show-auth-nav .show-auth,
 .show-unauth-nav .show-unauth {
   display: initial !important;
+}
+.edit-link {
+  padding-left: .25rem;
+  vertical-align: top;
+  font-size: .75rem;
+  color: rgba(0, 0, 0, .54)
 }

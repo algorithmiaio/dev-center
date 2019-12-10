@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "AWS Lambda"
-permalink: clients/lambda/
+permalink: clients/aws-lambda/
 excerpt: "Run Algorithmia code in response to events with AWS Lambda"
 excerpt-short: "Run Algorithmia code in response to events with AWS Lambda"
 categories: [clients, integrations]
@@ -12,11 +12,11 @@ image:
 redirect_from:
   - /application-development/client-guides/aws-lambda/
   - /application-development/guides/lambda/
-  - /clients/aws-lambda/
+  - /clients/lambda/
 ---
 
 This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).
-{: .notice-info}
+{: .notice-warning}
 
 AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,
 making it easy to build applications that respond quickly to new information.

@@ -12,6 +12,7 @@ image:
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
 
 This is only available for Enterprise installations of Algorithmia. 
+{: .notice-warning}
 
 ## 1. Obtain a template file and account info from Algorithmia
 

@@ -15,5 +15,10 @@ module.exports = {
       process.env.DISABLE_X_FRAME_OPTIONS,
       'true'
     ),
+    stage: {
+      cspEnabled: caseInsensitiveEquals(process.env.ENFORCE_CSP, 'true'),
+      devCenterUrl: 'http://localhost:4001',
+      prometheusToken: process.env.PROMETHEUS_TOKEN,
+    },
   },
 }

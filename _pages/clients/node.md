@@ -12,8 +12,8 @@ repository: https://github.com/algorithmiaio/algorithmia-nodejs
 redirect_from:
   - /application-development/client-guides/node/
   - /application-development/guides/node/
+  - /node/
 ---
-
 
 This guide provides a walk-through of how to use the official Algorithmia Node.js Client to call algorithms and manage data through the Algorithmia platform.
 
