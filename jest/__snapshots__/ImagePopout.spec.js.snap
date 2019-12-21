@@ -7,7 +7,7 @@ exports[`ImagePopout should close modal when modal image is clicked 1`] = `
     <!---->
   </div>
   <div class="syn-modal" align-center="">
-    <div class="syn-modal-card no-padding large card-view-sm">
+    <div class="syn-modal-card no-padding large card-view-sm fit-content">
       <!---->
       <div><img></div>
     </div>
@@ -24,7 +24,7 @@ exports[`ImagePopout should display caption if provided 1`] = `
     </div>
   </div>
   <div class="syn-modal" align-center="">
-    <div class="syn-modal-card no-padding large card-view-sm">
+    <div class="syn-modal-card no-padding large card-view-sm fit-content">
       <!---->
       <div><img></div>
     </div>
@@ -39,7 +39,7 @@ exports[`ImagePopout should fill slot in container and modal with image provided
     <!---->
   </div>
   <div class="syn-modal" align-center="">
-    <div class="syn-modal-card no-padding large card-view-sm">
+    <div class="syn-modal-card no-padding large card-view-sm fit-content">
       <!---->
       <div><img></div>
     </div>
@@ -54,7 +54,7 @@ exports[`ImagePopout should open modal when image is clicked 1`] = `
     <!---->
   </div>
   <div class="syn-modal open" align-center="">
-    <div class="syn-modal-card no-padding large card-view-sm">
+    <div class="syn-modal-card no-padding large card-view-sm fit-content">
       <!---->
       <div><img></div>
     </div>
