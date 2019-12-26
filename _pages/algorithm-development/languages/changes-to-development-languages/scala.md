@@ -82,17 +82,37 @@ So what's changed? Lets break it down:
 class Algorithm extends AbstractAlgorithm[String, String]{
 ```
 - The primary algorithm file is now called Algorithm.scala, and the primary class is also Algorithm, simplifying algorithm reading and understanding.
-- The class, like Java - now extends an [Abstract Class](https://github.com/algorithmiaio/algorithmia-scala/blob/master/src/main/java/com/algorithmia/development/AbstractAlgorithm.java) that contains virtual methods that may be implemented, one of those is the `apply` function.
+- The class, like Java - now extends an [Abstract Class](https://github.com/algorithmiaio/algorithmia-scala/blob/master/src/main/scala/com/algorithmia/handler/AbstractAlgorithm.scala) that contains virtual methods that may be implemented, one of those is the `apply` function.
 ```
+class Algorithm extends AbstractAlgorithm[String, String] {
+
+  var someVariable: Option[String] = None
+
+  override def apply(input: String): Try[String] = {
+    Success(s"hello $input: ${someVariable.getOrElse("Not Loaded")}")
+  }
+
+  override def load = Try{
+    someVariable = Some("loaded")
+    Success()
+  }
+}
 ```
-- The abstract class contains virtual methods, like `apply()`, which is mandatory - but also others such as `load()`. This new system provides more expressivity and extendability in the future.
+- The abstract class contains virtual methods, like `apply()`, which must be implemented - but also others such as `load()`. This new system provides more expressivity and extendability in the future.
 - They also abstract some order of operations and functionality in a way that maintains developer freedom, while still being able to see what's under the hood.
-- `load()` which is optional, can be used to set variables once when the algorithm container loads; this can be very useful when you need model files or tools from outside of your algorithm's source code.
+- `load()` can be defined by the author to set variables once when the algorithm container loads; this can be very useful when you need model files or tools from outside of your algorithm's source code.
 
 
-Besides the changes to the apply method and algorithm class, the actual execution logic itself is now designed to be implemented in the algorithm!
+Besides the changes to the apply method and algorithm class, the actual execution logic itself is now designed to be implemented in the algorithm, as a class object.
  This allows you to run your code and actually see how it will run within an Algorithmia runtime environment.
 ```
+
+object Algorithm {
+  val handler = Algorithmia.handler(new Algorithm)
+  def main(args: Array[String]): Unit = {
+    handler.serve()
+  }
+}
 ```
 For now, this execution code doesn't provide a debuggable interface; it explicitly runs code as it would if it was found inside of an algorithmia job container. 
 However in the future we'll be looking to improve this experience even further, and provide a mechanism to run an Algorithm locally to ensure you can get the optimal testing experience.
