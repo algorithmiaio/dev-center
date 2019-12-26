@@ -62,6 +62,9 @@ Algorithmia will only compile the head of the master branch on each push. Additi
 
 Attempts to rewrite the history of an algorithm's source repository will be rejected, as doing so could potentially break prior versions of the algorithm.
 
+Algorithmia does not currently support SSH as a means of cloning algorithm repositories
+{: .notice-info}
+
 #### Editing Your Algorithm Source in the Algorithmia Web App
 
 Algorithms which host their source within Algorithmia can be edited directly from our web app. As an algorithm owner, simply click on the "Source Code" tab within an algorithm page to get started.
@@ -88,7 +91,7 @@ By hosting your algorithm's source code on Github, you can take advantage of Git
 
 To connect your Algorithmia and Github accounts, simply select the Github instance you wish to use when creating your algorithm:
 
-**RYAN ADD IMAGE**
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for Github repository host" class="screenshot img-sm">
 
 If you haven't yet connected your Github account, you will be prompted to do so. By connecting your Github account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
 
@@ -100,11 +103,11 @@ You can customize two aspects of the Github repositories that are created for yo
 
 By default, all Github respositories are created under your personal Github account. However, you may optionally choose any Github organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
 
-**RYAN ADD IMAGE**
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
 You may also customize the name of the repository that is created. By default the name of your algorithm is used. 
 
-**RYAN ADD IMAGE**
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Github will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
