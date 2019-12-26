@@ -14,7 +14,6 @@ image:
 We've been making some big changes to the algorithm development experience
 to make development experiences stable and standard across languages. At Algorithmia, we feel that you shouldn't be forced to use a language that you're not comfortable with, to get the support that you need.
 
-
 That being said, lets explore how Java algorithms are implemented today, and how that experience will change.
 
 
