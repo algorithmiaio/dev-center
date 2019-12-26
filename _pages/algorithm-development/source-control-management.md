@@ -8,6 +8,10 @@ author: rmiller
 image:
   teaser: /icons/algo.svg
 permalink: /algorithm-development/source-code-management/
+redirect_from:
+  - /algorithm-development/algorithm-basics/git/
+  - /algorithm-development/git-support/
+  - /algorithm-development/git/
 ---
 When you create an algorithm, a [Git](https://git-scm.com/) repository is created to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on Github.
 
