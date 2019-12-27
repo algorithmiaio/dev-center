@@ -13,12 +13,12 @@ redirect_from:
   - /algorithm-development/git-support/
   - /algorithm-development/git/
 ---
-When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on Github.
+When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub.
 
-**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have Github enabled.
+**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
 {: .notice-info}
 
-If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by Github.
+If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
 
 ### Hosting Source Code On Algorithmia
 
@@ -77,31 +77,31 @@ Once you've entered the Web IDE, you have the ability to create, edit, and delet
 
 Once you're satisfied with your changes, click the "Build" button to test your changes in the terminal, or "Publish" to create a new version of your algorithm.
 
-### Hosting Algorithm Source Code on Github
+### Hosting Algorithm Source Code on GitHub
 
-By hosting your algorithm's source code on Github, you can take advantage of Github's rich set of developer features, such as pull requests and Github Actions, and also ensure that access to your source code is carefully mediated.
+By hosting your algorithm's source code on GitHub, you can take advantage of GitHub's rich set of developer features, such as pull requests and GitHub Actions, and also ensure that access to your source code is carefully mediated.
 
-**Important** For management and documentation purposes, we allow users without Github authorization to view a  repository's recent commit messages and README. If this disclosure is not acceptable, we recommend using Algorithmia to host your algorithm source code.
+**Important** For management and documentation purposes, we allow users without GitHub authorization to view a  repository's recent commit messages and README. If this disclosure is not acceptable, we recommend using Algorithmia to host your algorithm source code.
 {: .notice-info}
 
-**Web IDE Support** At this time we do not support editing source code in our web app for Github-hosted algorithms. 
+**Web IDE Support** At this time we do not support editing source code in our web app for GitHub-hosted algorithms. 
 {: .notice-info}
 
-#### Connecting Your Algorithmia & Github Accounts
+#### Connecting Your Algorithmia & GitHub Accounts
 
-To connect your Algorithmia and Github accounts, simply select the Github instance you wish to use when creating your algorithm:
+To connect your Algorithmia and GitHub accounts, simply select the GitHub instance you wish to use when creating your algorithm:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for Github repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
 
-If you haven't yet connected your Github account, you will be prompted to do so. By connecting your Github account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
+If you haven't yet connected your GitHub account, you will be prompted to do so. By connecting your GitHub account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
 
-#### Creating Algorithms with Github
+#### Creating Algorithms with GitHub
 
-Once you've connected your Github account to Algorithmia, you will be able to host algorithm source code in Github.
+Once you've connected your GitHub account to Algorithmia, you will be able to host algorithm source code in GitHub.
 
-You can customize two aspects of the Github repositories that are created for your algorithms: the repository's owner, and its name.
+You can customize two aspects of the GitHub repositories that are created for your algorithms: the repository's owner, and its name.
 
-By default, all Github respositories are created under your personal Github account. However, you may optionally choose any Github organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
+By default, all GitHub respositories are created under your personal GitHub account. However, you may optionally choose any GitHub organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -109,29 +109,29 @@ You may also customize the name of the repository that is created. By default th
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
-If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Github will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
+If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While GitHub will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
 When we create your repository, we associate the following with it:
 
-- **A Deploy Key**: [Github deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) allow read-only access to specific repositories, and are Github’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change.
+- **A Deploy Key**: [GitHub deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change.
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as a commit to its master branch, or when its name change.
 
-#### Managing Your Github Authorization
+#### Updating GitHub Hosted Algorithm
 
 If you want to review your Github authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Github authorizations, or to connect your account:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
-**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see Github listed within the above section until your administrator enables Github as a source host.
+**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see GitHub listed within the above section until your administrator enables GitHub as a source host.
 {: .notice-info}
 
-#### Troubleshooting Github-Hosted Algorithms
+#### Troubleshooting GitHub-Hosted Algorithms
 
-With the source for your algorithm hosted externally, there is a chance that our connection to Github could become disrupted. When this happens, it could be due to one of the following:
+With the source for your algorithm hosted externally, there is a chance that our connection to GitHub could become disrupted. When this happens, it could be due to one of the following:
 
 ##### Your Repository's Deploy Key Was Removed
 
-We depend on [deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) to pull source code from your algorithm for building. A deploy key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with Github.
+We depend on [deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) to pull source code from your algorithm for building. A deploy key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with GitHub.
 
 You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
 
@@ -145,10 +145,10 @@ With the deploy key in hand, simply follow [instructions outlined here](https://
 
 ##### Your Repository Was Deleted
 
-If your algorithm's Github repository was deleted, you may attempt to [restore the relevant repository](https://help.github.com/en/github/administering-a-repository/restoring-a-deleted-repository). It is essential that both the repository's deploy key and webhooks remain in place after restoration, otherwise we will not be able to pull your source code, or know when you make changes.
+If your algorithm's GitHub repository was deleted, you may attempt to [restore the relevant repository](https://help.github.com/en/github/administering-a-repository/restoring-a-deleted-repository). It is essential that both the repository's deploy key and webhooks remain in place after restoration, otherwise we will not be able to pull your source code, or know when you make changes.
 
 #### FAQ
 
-__I’m a member of a Github organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?__
+__I’m a member of a GitHub organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?__
 
-An administrator of your Github organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this Github documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
+An administrator of your GitHub organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this GitHub documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
