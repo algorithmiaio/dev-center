@@ -146,3 +146,9 @@ With the deploy key in hand, simply follow [instructions outlined here](https://
 ##### Your Repository Was Deleted
 
 If your algorithm's Github repository was deleted, you may attempt to [restore the relevant repository](https://help.github.com/en/github/administering-a-repository/restoring-a-deleted-repository). It is essential that both the repository's deploy key and webhooks remain in place after restoration, otherwise we will not be able to pull your source code, or know when you make changes.
+
+#### FAQ
+
+__I’m a member of a Github organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?__
+
+An administrator of your Github organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this Github documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
