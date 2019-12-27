@@ -19,9 +19,9 @@ That being said, lets explore how Java algorithms are implemented today, and how
 
 ## Existing Method
 
-Lets look at the primary algorithm class, in this case - it's called `hellojava.java`.
+Lets look at the primary algorithm class, in this case - it's called `hello.java`.
 ```
-package algorithmia.hellojava;
+package algorithmia.hello;
 
 import com.algorithmia.*;
 import com.algorithmia.algo.*;
@@ -29,7 +29,7 @@ import com.algorithmia.data.*;
 import com.google.gson.*;
 import java.util.*;
 
-public class hellojava {
+public class hello {
     public String apply(String s) throws Exception {
         return "Hello " + s;
     }
@@ -38,8 +38,9 @@ public class hellojava {
 ```
 
 Lets explore what's the old method did, and what's changing
-- The primary file was named after the algorithm, in this case `hellojava.java`, and the primary class was named the same.
-- The user implements a single method (potentially overloaded) in the primary class called `apply`.
+- The primary file was named after the algorithm, in this case `hello.java`, and the primary class was named the same.
+- We imported the Algorithmia client library, to have it available for API requests.
+- The algorithm author implements a single method (potentially overloaded) in the primary class called `apply`.
 - This function takes arbitrary types as inputs and outputs, but it is not possible to define mandatory fields, optionals etc.
 - The apply method was then read when an algorithm was compiled and run on Algorithmia, but was very challenging to be able to debug locally.
 
@@ -99,7 +100,8 @@ class Algorithm extends AbstractAlgorithm<Algorithm.ExampleInput, String>{
 
 ```
 
-So what's changed? Lets break it down:
+So what's changed? Lets break it down.
+
 ```
 class Algorithm extends AbstractAlgorithm<Algorithm.ExampleInput, String>{
 ```

@@ -37,7 +37,7 @@ class Hello {
 
 Lets explore what's the old method did, and what's changing
 - The primary file was named after the algorithm, in this case `hello.scala`, and the primary class was named the same.
-- The user implements a single method (potentially overloaded) in the primary class called `apply`.
+- The algorithm author implements a single method (potentially overloaded) in the primary class called `apply`.
 - This function takes arbitrary types as inputs and outputs, but it is not possible to define mandatory fields, optionals etc.
     - It used java for parsing and interoperating at the algorithm interface level, which limited types to what could be used with Java.
 - The apply method was then read when an algorithm was compiled and run on Algorithmia, but was very challenging to be able to debug locally.
