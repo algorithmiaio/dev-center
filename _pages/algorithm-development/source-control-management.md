@@ -15,8 +15,10 @@ redirect_from:
 ---
 When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub.
 
+{% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
 {: .notice-info}
+{% endif %}
 
 If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
 
@@ -24,7 +26,7 @@ If you're new to Git, we recommend [this tutorial series](https://try.github.io/
 
 Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your Algorithm, simply ensure you select "Algorithmia" within the source code configuration section:
 
-**RYAN ADD IMAGE HERE**
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_algorithmia_scm.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
 
 The "Source Visibility" setting determines whether the source code for your algorithm will be viewable by other Algorithmia users. Select "Restricted" if you only wish algorithm owners to have access to the algorithm's source.
 
@@ -36,7 +38,7 @@ When your algorithm is created, we'll generate a unique HTTPS URL you can use to
 git clone https://git.algorithmia.com/git/username/algoname.git
 {% endhighlight %}
 
-Replace the `username` and `algoname` values as appropriate. If you're working with an organization-owned algorithm, then `username` should be replaced with the username of the organization. 
+Replace the `username` and `algoname` values as appropriate. If you're working with an organization-owned algorithm, then `username` should be replaced with the name of the organization. 
 
 Provide your Algorithmia username and password when asked to authenticate.
 
@@ -81,9 +83,6 @@ Once you're satisfied with your changes, click the "Build" button to test your c
 
 By hosting your algorithm's source code on GitHub, you can take advantage of GitHub's rich set of developer features, such as pull requests and GitHub Actions, and also ensure that access to your source code is carefully mediated.
 
-**Important** For management and documentation purposes, we allow users without GitHub authorization to view a  repository's recent commit messages and README. If this disclosure is not acceptable, we recommend using Algorithmia to host your algorithm source code.
-{: .notice-info}
-
 **Web IDE Support** At this time we do not support editing source code in our web app for GitHub-hosted algorithms. 
 {: .notice-info}
 
@@ -113,12 +112,18 @@ If you decide to use an alternative name, we recommend that you use only letters
 
 When we create your repository, we associate the following with it:
 
-- **A Deploy Key**: [GitHub deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change.
-- **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as a commit to its master branch, or when its name change.
+- **A Deploy Key**: [GitHub deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use deploy keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating GitHub Hosted Algorithm
 
-If you want to review your Github authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Github authorizations, or to connect your account:
+Once you've created your algorithm, any commits to your GitHub repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
+
+You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
+
+#### Managing Your GitHub Authorization
+
+If you want to review your GitHub authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitHub authorizations, or to connect your account:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
@@ -152,3 +157,7 @@ If your algorithm's GitHub repository was deleted, you may attempt to [restore t
 __I’m a member of a GitHub organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?__
 
 An administrator of your GitHub organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this GitHub documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
+
+__I revoked access to the Algorithmia's Github OAuth application, and now none of the repositories I created can build!__
+
+When you revoke access to an OAuth app, Github automatically revokes both your token and any deploy keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-deploy-key-was-removed) on restoring deploy keys to a repository.
