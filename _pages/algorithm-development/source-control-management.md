@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Source Code Managment"
+title:  "Source Code Management"
 excerpt: "Controlling where the source code for your algorithm resides"
 categories: algorithm-development
 tags: [algo-dev]
