@@ -56,8 +56,3 @@ push:
   script:
     - docker load -i image/golduck.tar
     - docker push $IMAGE_TAG
-  only:
-    - /^(master|develop)$/
-  except:
-    - tags
-
