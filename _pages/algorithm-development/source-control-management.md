@@ -115,11 +115,15 @@ When we create your repository, we associate the following with it:
 - **A Deploy Key**: [GitHub deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/) allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use deploy keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
-#### Updating GitHub Hosted Algorithm
+#### Updating GitHub-Hosted Algorithms
 
 Once you've created your algorithm, any commits to your GitHub repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
 You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
+
+#### Deleting GitHub-Hosted Algorithms
+
+If you wish to delete an algorithm that hosts its source code in GitHub, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://help.github.com/en/github/administering-a-repository/deleting-a-repository).
 
 #### Managing Your GitHub Authorization
 
