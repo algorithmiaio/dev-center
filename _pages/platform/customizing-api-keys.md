@@ -38,7 +38,7 @@ If you delete your `default-key`, it will no longer show up in the code snippets
 
 Click the "Create New" button to the right of your username. Choose "API Key" where you'll see the following dialog box where you can name and configure your new API key:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/new-simple-key.png" alt="API keys dialog" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/new-api-key.png" alt="API keys dialog" class="screenshot img-sm">
 
 **Note:** If you want to create a Management API key which allows you to interact with algorithms via the CLI tool, check out the [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api).
 
