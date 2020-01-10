@@ -50,7 +50,7 @@ Provide your Algorithmia username and password when asked to authenticate.
 Once you've made changes, commit them to your repository's `master` branch 
 
 {% highlight bash %}
-git -A your_file_to_commit
+git add your_file_to_commit
 git commit -m "Message about commit changes"
 {% endhighlight %}
 
