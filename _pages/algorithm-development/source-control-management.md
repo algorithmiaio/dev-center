@@ -13,14 +13,27 @@ redirect_from:
   - /algorithm-development/git-support/
   - /algorithm-development/git/
 ---
-When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub.
+When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub. In this guide we'll discuss:
+
+- [Choosing a Repository Host](#choosing-a-repository-host)
+- [Hosting Source Code on Algorithmia](#hosting-source-code-on-algorithmia)
+- [Hosting Source Code on GitHub](#hosting-source-code-on-github)
 
 {% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
 {: .notice-info}
 {% endif %}
 
-If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
+### Choosing a Repository Host
+
+Before we dive into the repository hosts Algorithmia supports, let's discuss the various use cases that fit to each one.
+
+If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should use Algorithmia as your repository host. This is the simplest way to get started with the platform, but offers limitations when it comes to collaborating with your teammates.
+
+If you want to easily share source code with your colleages, and support best practices like code reviews, we recommend the GitHub repository host. This does mean that our web-based IDE won't be available for use, but will allow you to more flexibly manage access to your source code and integrate with existing GitHub workflows you may use.
+
+**Algorithm Migration** At this time migrating algorithms between repository hosts is not supported. In order to achieve this, you will need to create a new algorithm and manually move source code between the two algorithm repositories. 
+{: .notice-info}
 
 ### Hosting Source Code On Algorithmia
 
@@ -79,9 +92,11 @@ Once you've entered the Web IDE, you have the ability to create, edit, and delet
 
 Once you're satisfied with your changes, click the "Build" button to test your changes in the terminal, or "Publish" to create a new version of your algorithm.
 
-### Hosting Algorithm Source Code on GitHub
+### Hosting Source Code on GitHub
 
 By hosting your algorithm's source code on GitHub, you can take advantage of GitHub's rich set of developer features, such as pull requests and GitHub Actions, and also ensure that access to your source code is carefully mediated.
+
+If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
 
 **Web IDE Support** At this time we do not support editing source code in our web app for GitHub-hosted algorithms. 
 {: .notice-info}
@@ -134,7 +149,7 @@ If you want to review your GitHub authorization status, you can visit your user 
 {% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see GitHub listed within the above section until your administrator enables GitHub as a source host.
 {: .notice-info}
-{% endif % }
+{% endif %}
 
 #### Troubleshooting GitHub-Hosted Algorithms
 
