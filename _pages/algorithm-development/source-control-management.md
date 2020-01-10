@@ -131,8 +131,10 @@ If you want to review your GitHub authorization status, you can visit your user 
 
 <img src="/developers/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
+{% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see GitHub listed within the above section until your administrator enables GitHub as a source host.
 {: .notice-info}
+{% endif % }
 
 #### Troubleshooting GitHub-Hosted Algorithms
 
