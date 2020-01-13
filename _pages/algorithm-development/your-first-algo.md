@@ -45,7 +45,7 @@ Note: If you don't belong to an organization, skip this step and go to the next.
 
 If you belong to an organization then you'll have the option to set the owner of the algorithm. Go ahead and select which account or organization you want to own this algorithm.
 
-**Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the api. It should be something descriptive based on what the algorithm does.
+**Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the API. It should be something descriptive based on what the algorithm does.
 
 For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "TokenizeText", but go ahead and name your algorithm according to what your code does.
 
