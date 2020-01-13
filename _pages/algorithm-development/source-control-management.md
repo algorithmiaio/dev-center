@@ -39,7 +39,7 @@ If you want to easily share source code with your colleagues, and support best p
 
 Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your Algorithm, simply ensure you select "Algorithmia" within the source code configuration section:
 
-<img src="/developers/images/post_images/source_code_management/create_algorithm_algorithmia_scm.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/create_algorithm_algorithmia_scm.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
 
 The "Source Visibility" setting determines whether the source code for your algorithm will be viewable by other Algorithmia users. Select "Restricted" if you only wish algorithm owners to have access to the algorithm's source.
 
@@ -84,11 +84,11 @@ Algorithmia does not currently support SSH as a means of cloning algorithm repos
 
 Algorithms which host their source within Algorithmia can be edited directly from our web app. As an algorithm owner, simply click on the "Source Code" tab within an algorithm page to get started.
 
-<img src="/developers/images/post_images/source_code_management/algorithm_source_code_tab.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/algorithm_source_code_tab.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 Once you've entered the Web IDE, you have the ability to create, edit, and delete files for your algorithm.
 
-<img src="/developers/images/post_images/source_code_management/algorithm_web_ide.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/algorithm_web_ide.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 Once you're satisfied with your changes, click the "Build" button to test your changes in the terminal, or "Publish" to create a new version of your algorithm.
 
@@ -105,7 +105,7 @@ If you're new to Git, we recommend [this tutorial series](https://try.github.io/
 
 To connect your Algorithmia and GitHub accounts, simply select the GitHub instance you wish to use when creating your algorithm:
 
-<img src="/developers/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
 
 If you haven't yet connected your GitHub account, you will be prompted to do so. By connecting your GitHub account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
 
@@ -117,11 +117,11 @@ You can customize two aspects of the GitHub repositories that are created for yo
 
 By default, all GitHub respositories are created under your personal GitHub account. However, you may optionally choose any GitHub organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
 
-<img src="/developers/images/post_images/source_code_management/scm_create_github_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/scm_create_github_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
 You may also customize the name of the repository that is created. By default the name of your algorithm is used. 
 
-<img src="/developers/images/post_images/source_code_management/scm_create_github_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/scm_create_github_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While GitHub will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
@@ -144,7 +144,7 @@ If you wish to delete an algorithm that hosts its source code in GitHub, have no
 
 If you want to review your GitHub authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitHub authorizations, or to connect your account:
 
-<img src="/developers/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
 {% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see GitHub listed within the above section until your administrator enables GitHub as a source host.
@@ -161,11 +161,11 @@ We depend on [deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/
 
 You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
 
-<img src="/developers/images/post_images/source_code_management/algorithm_settings_select_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/algorithm_settings_select_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 You will then be presented with a modal, from which you can copy the public key.
 
-<img src="/developers/images/post_images/source_code_management/algorithm_settings_view_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/developers/images/post_images/source_code_management/algorithm_settings_view_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 With the deploy key in hand, simply follow [instructions outlined here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to restore the public key to your repository.
 
