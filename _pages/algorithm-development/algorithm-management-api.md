@@ -14,7 +14,7 @@ Using the Algorithm Management APIs, you can create, publish, update, and inspec
 
 For the full specification, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/S1a1aoR6?version=latest#4809ce72-446d-40ef-b857-995e7b2949de) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
 
-Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use Simple API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
+Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
 
