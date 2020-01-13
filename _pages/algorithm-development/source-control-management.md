@@ -175,6 +175,14 @@ If your algorithm's GitHub repository was deleted, you may attempt to [restore t
 
 #### FAQ
 
+__I'd like to reuse an existing GitHub repository for my algorithm. Is this possible?__
+
+At this time we are only able to use new, purpose-created repositories for GitHub-backed algorithms, which Algorithmia itself creates and provisions.
+
+__Can I rename or move the GitHub repository that backs my algorithm?__
+
+Yes! Upon any change to your repository's name or owner we receive a webhook which we will use to update our system to point to the new repository address.
+
 __I’m a member of a GitHub organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?__
 
 An administrator of your GitHub organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this GitHub documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
