@@ -98,7 +98,7 @@ You can now clone your Algorithm (via Git) and install the CLI to edit/test loca
 
 The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
 
-To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/source-code-management#editing-your-algorithm-source-locally) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
@@ -192,7 +192,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 ### Editing Your Algorithm
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API.
-You can also <a href="{{site.baseurl}}/algorithm-development/git">use Git to push directly to Algorithmia</a> from your current workflow.
+You can also <a href="{{site.baseurl}}/algorithm-development/source-code-management#editing-your-algorithm-source-locally">use Git to push directly to Algorithmia</a> from your current workflow.
 
 ### Calling Other Algorithms
 
