@@ -29,7 +29,7 @@ This can be done manually in [Hosted Data]({{site.url}}/data), or via the [File 
 
 ##### 2. Change your Algorithm's code to use this new filename.
 
-Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [git repo]({{site.url}}{{site.baseurl}}/algorithm-development/git).
+Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [git repo]({{site.url}}{{site.baseurl}}/algorithm-development/source-code-management).
 
 ##### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
 

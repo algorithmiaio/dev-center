@@ -13,7 +13,6 @@ redirect_from:
   - /algorithm-development/algorithm-basics/your-first-algo/
   - /basics/your_first_algo/
 ---
-
 One of the great things about Algorithmia is that the platform allows you to put your own work online and make it available to other developers through the API. This guide will show you how with a walk-through of making and publishing a classic "Hello World" algorithm.
 
 This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
@@ -35,30 +34,52 @@ Let's start by creating an algorithm. First navigate to [Algorithmia](/) and cli
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
-When you click the "Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step by step below:
+When you click the "Algorithm" link, you'll see a form for creating your algorithm that we'll fill out step-by-step below:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot img-sm">
+### Algorithm Owner & Name
 
-**Algorithmia Account or Organization**
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_algo_details.png" alt="Configure your algorithm's owner and name" class="screenshot img-sm">
+
+**Owner (User or Organization)**
 Note: If you don't belong to an organization, skip this step and go to the next.
 
 If you belong to an organization then you'll have the option to set the owner of the algorithm. Go ahead and select which account or organization you want to own this algorithm.
 
-**Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the api. It should be something descriptive based on what the algorithm does.
+**Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the API. It should be something descriptive based on what the algorithm does.
 
 For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "TokenizeText", but go ahead and name your algorithm according to what your code does.
 
-**Language:** Next you'll pick the language of your choice. Here we'll be using the default of Python 3.
+### Source Code
+
+This section allows you to customize the visibility, licensing, and hosting for your algorithm's source code.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_source_code_internal.png" alt="Configure your algorithm's repository host" class="screenshot img-sm">
+
+{% if site.enterprise %}
+**Repository Host:** Pick where you want to host your algorithm's source code: either within the Algorithmia platform itself, or within a GitHub instance (if your cluster administrator has enabled this feature). For this tutorial we'll choose Algorithmia, but you can read more about creating algorithms with GitHub or GitHub Enterprise in our [Source Code Management](/developers/algorithm-development/source-code-management/) docs.
+{% else %}
+**Repository Host:** Pick where you want to host your algorithm's source code: either within the Algorithmia platform itself, or within GitHub. For this tutorial we'll choose Algorithmia, but you can read more about creating algorithms with GitHub in our [Source Code Management](/developers/algorithm-development/source-code-management/) docs.
+{% endif %}
+
+**Source code visibility:** We'd like to keep the source code for this algorithm private, so we'll select "Restricted" here.
+
+**License**: In the Settings section, you can select your algorithm's license, and customize its permissions if you need to. We're using the [Algorithmia Platform License](https://algorithmia.com/api_dev_terms).
+
+### Container
+
+This section allows you to tune the specific environment your algorithm will build and execute within.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_container.png" alt="Configure your algorithm's container settings" class="screenshot img-sm">
+
+**Language:** Pick the language of your choice. Here we'll be using the default of Python 3.
 
 **Instance type:** Here you can enable a GPU environment for you algorithm. Since we don't require that for this example, we'll leave the instance set to CPU.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_properties.png" alt="Create an algorithm" class="screenshot img-sm">
+### Algorithm Settings
 
-In the Settings section, you can select your algorithm's license, and customize its permissions if you need to. We're using the Algorithmia Platform License, and choosing custom permissions.
+This section allows you to adjust the specific permissions your algorithm has to access the internet or other algorithms.
 
-**Source Code:** Because we want to make this algorithm open source and available for everyone to view the source code, we'll choose "Unrestricted".
-
-As an incentive to promote community contributions, open source algorithms that are not charging a royalty on the Algorithmia Platform will earn 1% of the usage cost (0.01cr/sec of execution time).
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_settings.png" alt="Configure your algorithm's settings" class="screenshot img-sm">
 
 **Internet:** In this example we'll want access to the internet, so we'll leave this enabled.
 
@@ -77,7 +98,7 @@ You can now clone your Algorithm (via Git) and install the CLI to edit/test loca
 
 The preferred way to edit and test your Algorithm's code is to install the CLI on your local machine, clone your algorithm's repo via Git, and use your favorite editing tools to modify the code. This gives you the benefits of using a familiar development environment, plus an easy way to test your changes locally before committing changes back to the repo and publishing a new algorithm version.
 
-To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/git) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
+To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clients/cli) and [Git]({{site.baseurl}}/algorithm-development/source-code-management#editing-your-algorithm-source-locally) guides. If you're already familiar with the CLI and Git, the basic steps you need to take are:
 
 1. Install the CLI: `curl -sSLf https://algorithmia.com/install.sh | sh` (Windows instructions [here]({{site.baseurl}}/clients/cli/#installing-the-algorithmia-cli) )
 2. Clone your algorithm: `algo clone username/algoname`
@@ -171,7 +192,7 @@ If you are satisfied with your algorithm and settings, go ahead and hit publish.
 ### Editing Your Algorithm
 
 Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API.
-You can also <a href="{{site.baseurl}}/algorithm-development/git">use Git to push directly to Algorithmia</a> from your current workflow.
+You can also <a href="{{site.baseurl}}/algorithm-development/source-code-management#editing-your-algorithm-source-locally">use Git to push directly to Algorithmia</a> from your current workflow.
 
 ### Calling Other Algorithms
 
