@@ -30,7 +30,7 @@ Before we dive into the repository hosts Algorithmia supports, let's discuss the
 
 If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should use Algorithmia as your repository host. This is the simplest way to get started with the platform, but offers limitations when it comes to collaborating with your teammates.
 
-If you want to easily share source code with your colleages, and support best practices like code reviews, we recommend the GitHub repository host. This does mean that our web-based IDE won't be available for use, but will allow you to more flexibly manage access to your source code and integrate with existing GitHub workflows you may use.
+If you want to easily share source code with your colleagues, and support best practices like code reviews, we recommend the GitHub repository host. This does mean that our web-based IDE won't be available for use, but will allow you to more flexibly manage access to your source code and integrate with existing GitHub workflows you may use.
 
 **Algorithm Migration** At this time migrating algorithms between repository hosts is not supported. In order to achieve this, you will need to create a new algorithm and manually move source code between the two algorithm repositories. 
 {: .notice-info}
