@@ -33,7 +33,7 @@ For those using another CI/CD tool, or who simply wish to deploy from a simple p
 If you are running [Algorithmia Enterprise](/enterprise), remember to specify your API endpoint when creating the Python Client:
 
 {% highlight python %}
-client = Algorithmia.client('MANAGEMENT_API_KEY', 'https://mylocalendpoint')
+client = Algorithmia.client('API_KEY', 'https://mylocalendpoint')
 {% endhighlight %}
 
 {% endif %}
@@ -48,7 +48,7 @@ Next, we call the `.create()` method of that new Algorithm. The fields roughly c
 
 {% highlight python %}
 import Algorithmia
-client=Algorithmia.client('MANAGEMENT_API_KEY')
+client=Algorithmia.client('API_KEY')
 algo = client.algo('YOUR_USERNAME/Hello')
 algo.create(
     details = {
