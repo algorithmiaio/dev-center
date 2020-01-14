@@ -109,7 +109,7 @@ Note that this returns well-formatted JSON which will be easy for the user to co
 
 To change the exact structure of the JSON which you wish to *accept*, simply change the struct `Input`.  The derive macro will do its best to automatically convert incoming JSON into a compatible struct.  For specialized cases such as accepting raw binary input (such as encoded files), see  the [algo_entrypoint](https://docs.rs/algorithmia/2/algorithmia/macro.algo_entrypoint.html) documentation.
 
-Algorithmia's Rust compiler is highly optimized, so builds can take several minutes (this will get faster as caching improves in future versions of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="{{site.baseurl}}/algorithm-development/git" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
+Algorithmia's Rust compiler is highly optimized, so builds can take several minutes (this will get faster as caching improves in future versions of Rust).  For now, we highly recommend developing most of your code locally, then doing a final compile in the Algorithmia console.  To do so, simply <a href="{{site.baseurl}}/algorithm-development/source-code-management" target="_blank">clone your project</a>, <a href="https://www.rust-lang.org/install.html" target="_blank">install rust</a>, then run `cargo build` in your project directory.
 {: .notice-info}
 
 ## Working with Data Stored on Algorithmia

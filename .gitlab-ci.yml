@@ -26,6 +26,10 @@ build:
   before_script:
     - mkdir ~/.docker
     - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
+    # Prevent two images with the same tag from being deployed. The Webpack
+    # assets from each build will be different, resulting in 404s as different
+    # container versions handle requests meant for the other version.
+    - docker pull $IMAGE_TAG && echo "An image with this tag has already been pushed." && exit 1
     - docker pull $BUILDER_TAG || true
   script:
     - docker build
@@ -56,8 +60,3 @@ push:
   script:
     - docker load -i image/golduck.tar
     - docker push $IMAGE_TAG
-  only:
-    - /^(master|develop)$/
-  except:
-    - tags
-
