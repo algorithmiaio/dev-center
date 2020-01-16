@@ -26,6 +26,7 @@ Table of Contents
 * [Create your First Algorithm](#create-your-first-algorithm)
 * [Editing Your Algorithm Locally via GIT and CLI](#editing-your-algorithm-locally-via-git-and-cli)
 * [Editing Your Algorithm via the Web IDE](#editing-your-algorithm-via-the-web-ide)
+* [Working With Data](#working-with-data)
 * [Publish Your Algorithm](#publish-your-algorithm)
 * [Deleting Algorithms](#delete-your-algorithm)
 
@@ -144,6 +145,14 @@ Once you have finished editing and want to run the algorithm, click the green **
 Once your algorithm has successfully complied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
+
+## Working With Data
+Depending on your data source, you'll either want to use <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> to connect to your data within your algorithm, or write a wrapper to connect to your database. 
+
+To learn about the various data sources, make sure to visit <a href="{{site.baseurl}}/developers/data">Connecting Your Data</a>, or check out our reference guide on the available methods using <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
+
+Note: if you are authoring an algorithm and using the Data API, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
+{: .notice-warning}
 
 ## Publish your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
