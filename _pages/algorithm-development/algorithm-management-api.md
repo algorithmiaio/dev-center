@@ -1,7 +1,7 @@
 ---
 layout: article
-title:  "Management APIs"
-excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithm Management API"
+title:  "Algorithm Management"
+excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithmia API"
 categories: algorithm-development
 tags: [algo-dev]
 show_related: false
@@ -10,11 +10,11 @@ image:
   teaser: /icons/algo.svg
 ---
 
-Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.
+Using the Algorithmia API, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.
 
 For the full specification, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/S1a1aoR6?version=latest#4809ce72-446d-40ef-b857-995e7b2949de) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
 
-Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
+All algorithm management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials). Ensure that the key you are using has the Algorithm Access option “Full Access” selected:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
 

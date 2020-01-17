@@ -17,7 +17,7 @@ One of the great things about Algorithmia is that the platform allows you to put
 
 This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
-Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see the [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api).
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management-api).
 {: .notice-info}
 
 Table of Contents
