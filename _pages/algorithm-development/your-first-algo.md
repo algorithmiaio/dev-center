@@ -106,7 +106,7 @@ To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clien
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo run -D [JSON FILE]`
 5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: you can do so using [the Algo Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) or via the web IDE:
+6. Publish your changes: you can do so using [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management-api) or via the web IDE:
     1. visit [https://algorithmia.com/user](/user)
     2. click on your algorithm
     3. click "Edit Source"
