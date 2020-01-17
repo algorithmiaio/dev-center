@@ -83,7 +83,7 @@ nav:
         - 'Batch Processing: efficiently run predictions on large data volumes': algorithm-development/advanced-algorithm-development/batch-processing.md
       - algorithm-development/algorithm-checklist.md
       - algorithm-development/algorithm-errors.md
-      - algorithm-development/algorithm-management-api.md
+      - algorithm-development/algorithm-management.md
       - algorithm-development/ci-cd.md
       - algorithm-development/comparing-algorithms.md
       - algorithm-development/git.md

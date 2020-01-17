@@ -6,6 +6,8 @@ categories: algorithm-development
 tags: [algo-dev]
 show_related: false
 author: jon_peck
+redirect_from:
+  - /algorithm-development/algorithm-management-api/
 image:
   teaser: /icons/algo.svg
 ---

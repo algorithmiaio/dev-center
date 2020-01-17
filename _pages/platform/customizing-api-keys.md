@@ -40,7 +40,7 @@ Click the "Create New" button to the right of your username. Choose "API Key" wh
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/new-api-key.png" alt="API keys dialog" class="screenshot img-sm">
 
-**Note:** If you want to create an API key which allows you to interact with algorithms via the CLI tool, check out [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management-api).
+**Note:** If you want to create an API key which allows you to interact with algorithms via the CLI tool, check out [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management).
 
 ## Access options
 

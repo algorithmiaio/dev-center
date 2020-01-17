@@ -17,7 +17,7 @@ Welcome to deploying your <a href="https://spacy.io/">spaCy</a> model on Algorit
 
 This guide is designed as an introduction to deploying a spaCy model and publishing an algorithm even if you’ve never used Algorithmia before.
 
-Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management) after reading this guide.
 {: .notice-info}
 
 ## Table of Contents

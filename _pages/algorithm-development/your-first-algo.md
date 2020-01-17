@@ -17,7 +17,7 @@ One of the great things about Algorithmia is that the platform allows you to put
 
 This example shows how to create a Python algorithm. However, all the steps shown are the same in all languages. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
-Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management-api).
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, see [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management).
 {: .notice-info}
 
 Table of Contents
@@ -106,7 +106,7 @@ To learn more about this process, see Algorithmia's [CLI]({{site.baseurl}}/clien
 3. Use your preferred editor to modify the code
 4. Test your algorithm: `cd algoname; algo run -D [JSON FILE]`
 5. Commit your changes: `git commit -m [commit message]; git push origin master`
-6. Publish your changes: you can do so using [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management-api) or via the web IDE:
+6. Publish your changes: you can do so using [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management) or via the web IDE:
     1. visit [https://algorithmia.com/user](/user)
     2. click on your algorithm
     3. click "Edit Source"
