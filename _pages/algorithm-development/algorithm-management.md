@@ -16,9 +16,15 @@ Using the Algorithmia API, you can create, publish, update, and inspect individu
 
 For the full specification, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/S1a1aoR6?version=latest#4809ce72-446d-40ef-b857-995e7b2949de) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
 
-All algorithm management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials). Ensure that the key you are using has the Algorithm Access option “Full Access” selected:
+All algorithm management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials). Ensure that the key you are using has either:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
+* the Algorithm Access option 'Full Access' selected
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management/full-access.png" alt="Full Access Algorithm Management Option" class="screenshot">
+
+* the 'Restricted Access' option selected with the 'Allow this key to manage my algorithms' option checked
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management/restricted-access.png" alt="Restricted Access Algorithm Management Option" class="screenshot">
 
 ### Forward: Python Notebook or CI/CD (via Jenkins or GitHub Actions) for Publishing Algorithms
 
