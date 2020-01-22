@@ -40,8 +40,6 @@ Click the "Create New" button to the right of your username. Choose "API Key" wh
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/new-api-key.png" alt="API keys dialog" class="screenshot img-sm">
 
-**Note:** If you want to create an API key which allows you to interact with algorithms via the CLI tool, check out [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management).
-
 ## Access options
 
 Each API key can be customized to enable or restrict access depending on your needs. 
@@ -98,3 +96,7 @@ When you select "Read & Write", the API key will allow both read and write acces
 
 If you are trying to run an algorithm that writes to your data storage but are getting an authentication error, make sure that the API key you are using to authenticate has all the necessary permissions you need.
 {: .notice-info }
+
+### Algorithm Management
+
+You can also control whether or not an API key can manage algorithms you own on your behalf. This allows the API key to perform operations such as creating, compiling, and publishing algorithms without the need to use the Web IDE. For more information, see [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management).
