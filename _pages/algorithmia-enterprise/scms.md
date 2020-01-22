@@ -26,6 +26,7 @@ To view which SCMs have been configured for your Algorithmia instance, navigate 
 Creating and enabling a GitHub SCM will allow your users to host their algorithm source code in Github, and will keep any changes made to those repositories synced with the relevant algorithm. Both Github and GitHub Enterprise are supported.
 
 It is important to note that, at this time, you may not import existing Github repositories: all algorithms will be created with fresh repositories, the names and owners of which are configurable.
+{: .notice-info}
 
 When we create a repository for an algorithm, Algorithmia grants itself the following authorizations for the repository specifically:
 
