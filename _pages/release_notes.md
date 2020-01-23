@@ -157,9 +157,9 @@ This release includes the following package sets that can be used for newly crea
 
 We will enable Enterprise Admins to create custom package sets to help provide best practices and templates for their data science teams specific to their organization.
 
-### Algorithm Management APIs ###
+### Algorithm Management ###
 
-Building on the previous release, we are expanding the available set of **Management APIs** that developers and system administrators can use to interact with the Algorithmia platform through automation. The main scenarios we heard customers want to automate with these newly available APIs are to enable continuous integration and continuous delivery pipelines.
+Building on the previous release, we are expanding the available set of **APIs** that developers and system administrators can use to interact with the Algorithmia platform through automation. The main scenarios we heard customers want to automate with these newly available APIs are to enable continuous integration and continuous delivery pipelines.
 
 We’re happy to say that the last two steps in an automated pipeline are no longer exclusive to the Algorithmia UI.
 

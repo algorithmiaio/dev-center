@@ -1,22 +1,32 @@
 ---
 layout: article
-title:  "Management APIs"
-excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithm Management API"
+title:  "Algorithm Management"
+excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithmia API"
 categories: algorithm-development
 tags: [algo-dev]
 show_related: false
 author: jon_peck
+redirect_from:
+  - /algorithm-development/algorithm-management-api/
 image:
   teaser: /icons/algo.svg
 ---
 
-Using the Algorithm Management APIs, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.
+Using the Algorithmia API, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment -- without ever interacting with Algorithmia's web-based UI.
 
-For the full specification, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/S1a1aoR6?version=latest#4809ce72-446d-40ef-b857-995e7b2949de) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
+### Enabling Algorithm Management
 
-Note that there are two different types of API Keys, used with different endpoints.  All Algorithm Management APIs use API Keys, which can be created under the [credentials tab of your user profile]({{site.url}}/user#credentials).  Ensure that the Key you are using has the option "Allow this key to manage my algorithms" selected:
+Algorithm management can be enabled when an API key is created, or any time after initial creation, by logging into your account and visiting the [credentials tab of your user profile]({{site.url}}/user#credentials). Ensure that the key you are using has an 'Algorithm Access' value of either:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management-api/api-key-manage-my-algorithms.png" alt="Api Keys, Manage My Algorithms" class="screenshot">
+* **Full Access** - if you'd like to allow the key to call all public and private algorithms you have access to, in addition to managing algorithms you own.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management/full-access.png" alt="Full Access Algorithm Management Option" class="screenshot">
+
+* **Restricted Access** - if you'd like to fine-tune which algorithms can be called. (Just be sure to select the 'Allow this key to manage my algorithms' checkbox.)
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm-management/restricted-access.png" alt="Restricted Access Algorithm Management Option" class="screenshot">
+
+To see a full list of specific endpoints a key with this permission can call, see the [Python API for Algorithm Management](https://docs.algorithmia.com/?python#algorithm-management-api). For languages other than Python, an OpenAPI Specification is available via the [unofficial openapi docs](https://documenter.getpostman.com/view/6515899/S1a1aoR6?version=latest#4809ce72-446d-40ef-b857-995e7b2949de) or a [raw openapi spec (under /algorithms)](/v1/openapispec).
 
 ### Forward: Python Notebook or CI/CD (via Jenkins or GitHub Actions) for Publishing Algorithms
 

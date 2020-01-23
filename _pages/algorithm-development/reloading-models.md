@@ -33,7 +33,7 @@ Either edit your Algorithm in the Web IDE, or push the modified code to your Alg
 
 ##### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
 
-Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithm Management API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management-api).  
+Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithmia API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management).  
 
 
 ### Option 2: Updating your Model immediately, without changing Version Numbers

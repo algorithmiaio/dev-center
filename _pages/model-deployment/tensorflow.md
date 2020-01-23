@@ -22,7 +22,7 @@ For tensorflow-gpu 1.3.0 support please add one of the following wheels to your 
 Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
 {: .notice-info}
 
-Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management API]({{site.baseurl}}/algorithm-development/algorithm-management-api) after reading this guide.
+Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management) after reading this guide.
 {: .notice-info}
 
 ## Table of Contents
