@@ -99,4 +99,4 @@ If you are trying to run an algorithm that writes to your data storage but are g
 
 ### Algorithm Management
 
-You can also control whether or not an API key can manage algorithms you own on your behalf. This allows the API key to perform operations such as creating, compiling, and publishing algorithms without the need to use the Web IDE. For more information, see [algorithm management]({{site.baseurl}}/algorithm-development/algorithm-management).
+You can also control whether or not an API key can manage algorithms you own on your behalf. This allows the API key to perform operations such as creating, compiling, and publishing algorithms without the need to use the Web IDE. For more information, see [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management).
