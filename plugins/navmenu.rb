@@ -9,9 +9,13 @@ module Jekyll
       contents = super
       current_url = context['page']['url']
       @baseurl = context['site']['baseurl']
+      is_enterprise_documention = context['site']['enterprise']
 
       # For each nav item in toc.yaml
-      @@items ||= context['site']['data']['toc'].map do |item|
+      @@items ||= context['site']['data']['toc'].select{
+        |item| !(item["enterprise_only"] == true && !is_enterprise_documention)
+      }.map do |item|
+
         # Get a map of pages grouped by category
         pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
 
