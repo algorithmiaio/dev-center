@@ -19,7 +19,7 @@ In what follows, we’ll discuss how you can manage which SCMs are available to 
 
 To view which SCMs have been configured for your Algorithmia instance, navigate to the _Source Control Management_ admin page, which can be found under the “System Actions” section:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/browse_scms.png" alt="Set an SCM as default" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/browse_scms.png" alt="Browse SCMs" class="screenshot img-sm">
 
 ### Creating a GitHub SCM
 
@@ -54,7 +54,7 @@ With your Github OAuth application created, it’s time to return to your Algori
 
 If you’ve never created an SCM prior, you’ll only see a single SCM present once you navigate to the page: the “Algorithmia” SCM. Click “Add New” in the upper-right hand corner, and ensure “Github” is selected in the “Provider” field within the form that appears:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/configure_new_scm.png" alt="Set an SCM as default" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/configure_new_scm.png" alt="Configure a new SCM" class="screenshot img-sm">
 
 All fields are required, and using the following reference to determine the appropriate values for the GitHub instance you are attempting to configure:
 
@@ -82,7 +82,7 @@ Both Algorithmia and Github SCMs can be enabled and disabled to your liking, ens
 
 By default, all new SCMs are enabled for use in your cluster. You can easily change this by navigating to the admin source control management page, clicking on the SCM you wish to disable, and clicking “Disable”:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/enable_scm.png" alt="Set an SCM as default" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/enable_scm.png" alt="Enable an SCM" class="screenshot img-sm">
 
 This will not result in breakage or removal of any algorithms created with that SCM. Disabling an SCM solely prevents new algorithms from being created that leverage the particular SCM.
 
@@ -90,7 +90,7 @@ This will not result in breakage or removal of any algorithms created with that 
 
 If you wish to enable an SCM, simply navigate to the admin source control management page, select the SCM you wish to enable, and click “Enable”.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/disable_scm.png" alt="Set an SCM as default" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/disable_scm.png" alt="Disable an SCM" class="screenshot img-sm">
 
 The SCM will now be available for use by all users within your Algorithmia instance.
 
