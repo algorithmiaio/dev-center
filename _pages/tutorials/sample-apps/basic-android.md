@@ -30,7 +30,11 @@ First things first, let's create a new app in Android Studio.
 
 Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select "Empty Activity":
 
-![Add Blank Activity in Android Studio]({{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png)
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 Since our app is just a simple example app, we'll use put our code in `MainActivity.java`. But first, we need to do a little bit more set up.
 
@@ -221,7 +225,11 @@ on [GitHub](https://github.com/algorithmiaio/sample-apps/blob/master/android/bas
 
 When you run the app in the emulator, you'll see this:
 
-![Android App]({{site.cdnurl}}{{site.baseurl}}/images/post_images/android/emulator.png)
+<images-section>
+  <image-popout>
+    <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/android/emulator.png" alt="Android App" class="syn-image-responsive">
+  </image-popout>
+</images-section>
 
 ## Next Steps
 
