@@ -3,6 +3,15 @@
 body {
   min-height: 100vh;
 }
+
+/* Ensures the :target element doesn't render underneath the fixed position header. */
+:target::before {
+  content: "";
+  display: block;
+  height: 57px;
+  margin: -57px 0 0;
+}
+
 body,
 #wrapper {
   display: flex;
