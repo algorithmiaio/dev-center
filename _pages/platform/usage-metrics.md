@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Usage Mestrics"
+title:  "Usage Metrics"
 excerpt: "The Admin Panel's Usage Feature"
 categories: basics
 nav_index: 40
@@ -21,7 +21,7 @@ Usage metrics of the platform can be viewed from the admin panel under `Platform
 
 # All Usage
 
-This tab shows information grouped by the username/algorithm tuple. That is, it shows which users called which algorithms and the number of times they did so (along with hardware, computer time, and other metrics).
+This tab shows information grouped by the username/algorithm tuple. That is, it shows which users called which algorithms and the number of times they did so (along with hardware, compute time, and other metrics).
 
 When you click on a row in the all usage table, you will see the complete set of columns:
 - algorithm: algorithm display name
