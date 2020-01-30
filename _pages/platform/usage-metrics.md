@@ -14,12 +14,12 @@ redirect_from:
 ---
 
 
-### Platform Usage Metrics
+## Platform Usage Metrics
 
 Usage metrics of the platform can be viewed from the admin panel under `Platform Usage`. Given a customizable date range (which defaults to the past 7 days), users can view platform usage from three different perspectives: all usage, algorithms, and users. This is presented as a table in the UI, in which you can click on each row to get expanded information. The date range can be selected in preset intervals of the past seven, 14, or 30 days; or one of the past three months can be selected. You can also designate a more customized date range.
 
 
-# All Usage
+### All Usage
 
 This tab shows information grouped by the username/algorithm tuple. That is, it shows which users called which algorithms and the number of times they did so (along with hardware, compute time, and other metrics).
 
@@ -39,7 +39,8 @@ One caveat to the total compute time: each call is rounded **up** to the nearest
 Also note that if a call takes less than one second, the call’s duration will be rounded up to a full second. So calling Hello World 23 times would most likely result in a total duration of 23 seconds being displayed. The motivation for this is that in the algorithm marketplace we only charge by credits. One credit = one second, so if a user makes a call that lasts less than a second we still charge for the full second.
 
 
-# Algorithms
+
+### Algorithms
 
 This tab shows usage information grouped at the algorithm level. That is, it shows which algorithms were called and how many times (total across all users) they were called.
 
@@ -54,7 +55,8 @@ When you click on a row in the algorithms table, you will see this complete set 
 - hardware: whether the algorithm runs on a CPU or GPU instance
 
 
-# Users
+
+### Users
 
 This tab shows usage information grouped at the user level, so you can see how many total calls each user made (across all algorithms).
 
@@ -67,3 +69,4 @@ error duration: total number of seconds computed by calls that returned errors t
 
 
 If users would like to perform more advanced operations on the tables (like sorting, customized grouping and summing) there is an option to download the full tables as CSV files.
+
