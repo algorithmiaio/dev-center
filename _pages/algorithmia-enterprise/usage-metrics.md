@@ -1,11 +1,10 @@
 ---
 layout: article
-title:  "Usage Metrics"
+title:  "Advanced Usage Reporting"
 excerpt: "The Admin Panel's Usage Feature"
-categories: basics
-nav_index: 40
+categories: algorithmia-enterprise
 tags: [basics, alg-dev-getting-started, app-dev-getting-started]
-show_related: true
+show_related: false
 image:
     teaser: /icons/algo.svg
 permalink: /platform/usage/
