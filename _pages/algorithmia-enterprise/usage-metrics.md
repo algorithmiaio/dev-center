@@ -3,13 +3,9 @@ layout: article
 title:  "Advanced Usage Reporting"
 excerpt: "The Admin Panel's Usage Feature"
 categories: algorithmia-enterprise
-tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 show_related: false
 image:
     teaser: /icons/algo.svg
-permalink: /platform/usage/
-redirect_from:
-  - /basics/usage/
 ---
 
 
