@@ -1,0 +1,1 @@
+../plugins/generate_from_url.rb

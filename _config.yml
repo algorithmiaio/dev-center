@@ -59,6 +59,7 @@ category_dir: / # sets the root folder for where to output the category director
 author_dir: / # sets the root folder for where to output the author pages.
 emoji_dir: /images/emoji # For use with gemoji gem. See the plugin emoji.rb
 
+plugins_dir: _plugins-prod
 project_dir: _posts/clients
 project_output_dir: /clients
 

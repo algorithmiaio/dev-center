@@ -1,0 +1,1 @@
+../plugins/author_page_generator.rb
