@@ -56,17 +56,19 @@ When you click on a row in the algorithms table, you will see this complete set 
 
 
 
+
 ### Users
 
 This tab shows usage information grouped at the user level, so you can see how many total calls each user made (across all algorithms).
 
 When you click on a row in the users table, you will see this complete set of columns:
-caller: the username of the user this row represents
-total calls: total number of calls the user made summed up across all algorithms
-total duration: total number of seconds the user’s calls spent computing summed up across all algorithms
-total errors: total number of errors returned to the user summed up across all algorithms
-error duration: total number of seconds computed by calls that returned errors to the user
+- caller: the username of the user this row represents
+- total calls: total number of calls the user made summed up across all algorithms
+- total duration: total number of seconds the user’s calls spent computing summed up across all algorithms
+- total errors: total number of errors returned to the user summed up across all algorithms
+- error duration: total number of seconds computed by calls that returned errors to the user
 
 
 If users would like to perform more advanced operations on the tables (like sorting, customized grouping and summing) there is an option to download the full tables as CSV files.
+
 
