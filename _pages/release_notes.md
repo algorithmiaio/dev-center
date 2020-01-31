@@ -26,7 +26,7 @@ Algorithmia's 19.08 release featured security updates for enterprise users. For 
 ##### New this quarter: #####
 * Jupyter Notebook integration
 * Event-driven algorithm runs
-* Additional management APIs
+* Additional APIs
 * Additional IPA package sets
 * Organization-hosted data
 * Enterprise UI customization
@@ -46,7 +46,7 @@ Our updated APIs enable easier integrations like this and [Zapier]({{site.baseur
 
 Event listeners allow external services to trigger actions such as model runs within the AI Layer. The first of our supported event sources is **Amazon SQS**, with a [tutorial available]({{site.baseurl}}/integrations/event_listeners) in our Developer Center.
 
-### Additional Management APIs ###
+### Additional APIs ###
 New APIs allow you to create, recompile, and publish models directly from CI/CD pipelines, without using the Web API.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/1904_Release_Notes_Create_Algorithm.png" alt="Release Notes" class="screenshot">
@@ -124,7 +124,7 @@ Projects for this release focused on providing greater flexibility and data conn
 
 ##### New this quarter: #####
 * Image per algorithm
-* Algorithm management APIs
+* Algorithm APIs
 * Support for .NET Core and .NET Standard
 * Update algorithm settings
 * New data storage connectors
