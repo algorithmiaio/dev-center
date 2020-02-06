@@ -17,7 +17,7 @@ On Algorithmia you can develop in several different programming languages. Being
 
 There is a problem with this language agnostic approach though. Not all programming languages aren't designed in the same way. This is especially true for handling errors and exceptions.
 
-Let's give an example. Let's say you're calling a computer vision algorithm and you get an error. Normally there wouldn't be a standard way to understand what the error means. The author of that computer vision algorithm may put a descriptive error message, but that's not guaranteed for all cases. What is worse is that there's no easy way to parse an error message either. To parse it, you would need to know all possible error messages beforehand.
+Let's give an example. Let's say you're calling a <a href="https://algorithmia.com/blog/introduction-to-computer-vision" target="_blank">computer vision</a> algorithm and you get an error. Normally there wouldn't be a standard way to understand what the error means. The author of that computer vision algorithm may put a descriptive error message, but that's not guaranteed for all cases. What is worse is that there's no easy way to parse an error message either. To parse it, you would need to know all possible error messages beforehand.
 
 ### Algorithm Error Codes
 
