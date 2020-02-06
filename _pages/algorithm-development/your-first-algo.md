@@ -48,7 +48,7 @@ If you belong to an organization then you'll have the option to set the owner of
 
 **Algorithm Name:** This is the unique identifier for the algorithm, which will be used to call it via the API. It should be something descriptive based on what the algorithm does.
 
-For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in natural language processing. So, this example algorithm is called "TokenizeText", but go ahead and name your algorithm according to what your code does.
+For example this is the beginning portion of the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>  which show how to create an algorithm that splits text up into words, which is called tokenizing in <a href="https://algorithmia.com/blog/introduction-natural-language-processing-nlp" target="_blank">natural language processing</a>. So, this example algorithm is called "TokenizeText", but go ahead and name your algorithm according to what your code does.
 
 ### Source Code
 
