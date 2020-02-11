@@ -6,6 +6,7 @@ excerpt: "Basic Guides for Algorithm Developers"
 show_related: false
 redirect_from:
   - /algorithm-development/basic-guides/
+  - /algorithm-development/lang-guides
 ---
 
 <p>Welcome to deploying your algorithms and models using Algorithmia's AI Layer. You can create algorithms using Java, Python, R, Rust, Scala, Ruby, and JavaScript by following along with one of our <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a>.</p>
