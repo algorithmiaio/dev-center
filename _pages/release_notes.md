@@ -8,6 +8,127 @@ image:
     teaser: /icons/algo.svg
 ---
 
+# Q1 2020 Enterprise Release Notes #
+
+### Introduction ###
+2020 is going to be a big year at Algorithmia. We are working on features that empower our customers in tooling flexibility, connectivity, security, and ML management so they can focus on extracting value from ML. 
+
+Our first release of 2020 comprises a diverse feature set that increases the options our customers have for frictionless ML deployment and model auditing. Several of these features are iterations on previously released features because we want to continuously strive for more for our customers. 
+
+### Q1 Features ###
+* Source Code Management – GitHub Integration
+* Newest on-premises offering – VMWare
+* Platform Usage Reports
+
+### Source Code Management ###
+We are pleased to announce that we have expanded our source code management offering to include [GitHub,](https://test.algorithmia.com/developers/algorithm-development/source-code-management) adding to the benefits of a centralized code repository and increasing ML portability! By connecting your Algorithmia and GitHub accounts, you can store your source code on GitHub and deploy it directly to Algorithmia. It's that simple.
+
+Once enabled by your administrator, you will be able to select a GitHub (or GitHub Enterprise) instance when creating an algorithm, which will create a new GitHub repository for your algorithm.
+
+All updates to the repository's default branch will automatically precipitate new builds for your algorithm. By leveraging GitHub with Algorithmia, algorithm developers can leverage existing GitHub workflows they already have and access the entire suite of GitHub features, including [GitHub Actions,](https://github.com/features/actions) and still ensure that source code visibility is restricted to those with proper GitHub permissions. 
+ 
+#### Where to learn more ####
+Algorithmia administrators can learn more about integrating GitHub with Algorithmia [here.](https://algorithmia.com/developers/algorithmia-enterprise/scms) Once configured, users need simply select the GitHub repository host when creating an algorithm:
+
+Image 1
+
+This feature is available now in our 
+deployment and will ship to users during this release.
+
+
+### Newest on-premises offering: Algorithmia on VMWare ###
+Algorithmia's newest on-premises offering, VMWare, means multi-cloud ML deployment across public and private clouds is a reality. Algorithmia Enterprise for VMWare allows customers to run Algorithmia in their own VMWare infrastructure.
+
+Enterprise customers can benefit from serving and running models in their data centers for compliance, regulatory, IT policy, or security use cases where AE for AWS or Azure are not viable. Our VMWare edition of Algorithmia Enterprise is deployable on either existing or new VMWare compute and storage infrastructure. Customers bring their VMs, raw storage, and network connectivity, and we provide the rest.
+
+This feature is ideal for customers who want to use Algorithmia Enterprise in their own datacenter, especially if they are existing VMWare users.
+
+Talk to us about how AE for VMWare fits into your organization’s data center strategy!
+
+Algorithmia Enterprise for VMWare is available to all enterprise customers now.
+ 
+ 
+### Platform Usage Reports ###
+
+Given a customizable date range (which defaults to the past 7 days), users can now view platform usage from three different perspectives: all usage, algorithms, and users. 
+
+You asked and we delivered.
+
+We are now empowering our customers with increased model auditing tools. Usage Reports provide clear visibility into how the ML platform is used.
+
+Select a preset date range or input a custom date range to display all activities/usage of the platform, including:
+* model consumption
+* compute duration
+* caller information
+* hardware (CPU/GPU) use
+
+Reports are presented in the UI, and selecting a metric provides a detailed list of the model execution results. Administrators can also download the reports as a CSV file.
+
+Image 2
+
+#### All Usage ####
+This tab shows information grouped by the username/algorithm tuple. That is, it shows which users called which algorithms and the number of times they did so (along with hardware, computer time, and other metrics).
+
+Image 3
+
+When you click on a row in the all usage table, you will see the complete set of columns:
+* algorithm: algorithm display name
+* version: hash version of the exact algorithm called
+* caller: which user called the algorithm
+* owner: user who created and owns the algorithm
+* total calls: total number of calls the calling user made to this algorithm in the date range
+* total duration: total number of seconds the algorithm ran for caller in the date range
+* total errors: total number of failed calls to this algorithm the caller made in the date range
+* error duration: total number of seconds the algorithm ran for calls in which it returned an error (for this caller)
+* hardware: whether the algorithm runs on a CPU or GPU instance
+
+One caveat to the total compute time: each call is rounded up to the nearest second. For instance, if in the given date range, a user calls a certain algorithm twice, and the first call took 2.04 seconds and the second call took 2.08 seconds, the total time for those two calls is 4.12 seconds, which the table will round up and display as 5 seconds. 
+
+Also note that if a call takes less than one second, the call’s duration will be rounded up to a full second. So calling Hello World 23 times would most likely result in a total duration of 23 seconds being displayed. The motivation for this is that in the [public version of Algorithmia](https://algorithmia.com/algorithms) we only charge by credits. One credit = one second, so if a user makes a call that lasts less than a second we still charge for the full second.
+
+
+#### Algorithms ####
+This tab shows usage information grouped at the algorithm level. That is, it shows which algorithms were called and how many times (total across all users) they were called.
+
+Image 4
+
+When you click on a row in the algorithms table, you will see this complete set of columns:
+* algorithm: algorithm display name
+* version: hash version of the exact algorithm called
+* owner: user who created and owns the algorithm
+* total calls: total number of calls that users of the platform made to this algorithm
+* total duration: total number of seconds the algorithm ran summed up across all users
+* total errors: total number of errors this algorithm returned summed up across all users
+* error duration: total number of seconds the algorithm ran calls in which it returned an error (summed up across all users)
+* hardware: whether the algorithm runs on a CPU or GPU instance
+
+
+#### Users ####
+
+This tab shows usage information grouped at the user level, so you can see how many total calls each user made (across all algorithms).
+
+Image 5
+
+When you click on a row in the users table, you will see this complete set of columns:
+* caller: the username of the user this row represents
+* total calls: total number of calls the user made summed up across all algorithms
+* total duration: total number of seconds the user’s calls spent computing summed up across all algorithms
+* total errors: total number of errors returned to the user summed up across all algorithms
+* error duration: total number of seconds computed by calls that returned errors to the user
+
+Users wanting to perform more advanced operations on the tables (like sorting, customized grouping and summing) can download the full tables as CSV files.
+
+
+### Other quarterly update ###
+
+#### API Key Terminology ####
+There are two updates to API key terminology this release.
+
+First, we no longer refer to our standard API keys as “Simple API Keys.” They are now simply “API Keys.”
+
+Second, “Management API Keys” has been changed to “Admin API Keys.” This naming better fits the purpose for which these keys were designed, and is intended to minimize confusion for our enterprise administrators. 
+
+-----
 
 # Enterprise Release Notes 19.10 #
 
