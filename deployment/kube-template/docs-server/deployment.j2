@@ -47,12 +47,12 @@ spec:
         - name: NODE_ENV
           value: production
         - name: STAGE
-          value: {{stage}}
+          value: {{ stage }}
         - name: BASE_URL
-          value: {{domain}}
+          value: {{ domain_name }}
         - name: PROMETHEUS_TOKEN
-          value: {{secrets.prometheus_token}}
-        image: {{versions.docs}}
+          value: {{ prometheus_token }}
+        image: {{ docs_image }}
         imagePullPolicy: IfNotPresent
         resources:
           limits:
