@@ -30,7 +30,7 @@ All updates to the repository's default branch will automatically precipitate ne
 #### Where to learn more ####
 Algorithmia administrators can learn more about integrating GitHub with Algorithmia [here.](https://algorithmia.com/developers/algorithmia-enterprise/scms) Once configured, users need simply select the GitHub repository host when creating an algorithm:
 
-Image 1
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Source_Code_Manage.png" alt="Source code management" class="screenshot">
 
 This feature is available now in our 
 deployment and will ship to users during this release.
@@ -64,12 +64,12 @@ Select a preset date range or input a custom date range to display all activitie
 
 Reports are presented in the UI, and selecting a metric provides a detailed list of the model execution results. Administrators can also download the reports as a CSV file.
 
-Image 2
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Platform_Usage_Date range.png" alt="Platform usage date range" class="screenshot">
 
 #### All Usage ####
 This tab shows information grouped by the username/algorithm tuple. That is, it shows which users called which algorithms and the number of times they did so (along with hardware, computer time, and other metrics).
 
-Image 3
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Platform_Usage_All usage.png" alt="Platform usage all usage view" class="screenshot">
 
 When you click on a row in the all usage table, you will see the complete set of columns:
 * algorithm: algorithm display name
@@ -90,7 +90,7 @@ Also note that if a call takes less than one second, the call’s duration will 
 #### Algorithms ####
 This tab shows usage information grouped at the algorithm level. That is, it shows which algorithms were called and how many times (total across all users) they were called.
 
-Image 4
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Platform_Usage_Algos.png" alt="Platform usage algorithm view" class="screenshot">
 
 When you click on a row in the algorithms table, you will see this complete set of columns:
 * algorithm: algorithm display name
@@ -107,7 +107,7 @@ When you click on a row in the algorithms table, you will see this complete set 
 
 This tab shows usage information grouped at the user level, so you can see how many total calls each user made (across all algorithms).
 
-Image 5
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Platform_Usage_Users.png" alt="Platform users view" class="screenshot">
 
 When you click on a row in the users table, you will see this complete set of columns:
 * caller: the username of the user this row represents
