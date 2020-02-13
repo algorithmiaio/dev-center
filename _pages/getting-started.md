@@ -40,6 +40,9 @@ For a given user and algorithm name, API calls are made to the following URL:
 
 We recommend that you also append the algorithm version in your API call to ensure that the correct algorithm is called.
 
+To call a private version of an algorithm you own, you must use a fully specified semantic version or a version hash or you will get an error. For more information you can get details in the <a href="https://algorithmia.com/developers/api/#api-specification">API Docs</a>
+{: .notice-warning}
+
 If you want a complete guide on how to navigate an algorithm's description page including how to determine the price of calling an algorithm, check out our [Algorithm Profiles]({{site.baseurl}}/basics/algorithm-profiles) guide.
 {: .notice-info}
 

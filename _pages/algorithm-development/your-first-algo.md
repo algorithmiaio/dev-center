@@ -175,7 +175,13 @@ To learn about the various data sources, make sure to visit <a href="{{site.base
 Note: if you are authoring an algorithm and using the Data API, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
 
-## Publish your Algorithm
+## Calling Your Algorithm
+To call your algorithm during testing you can use the hash of that algorithm to call it locally using the language client of your choice. Or if you are testing it within the Algorithmia Web IDE you can use the console for running your algorithm during development. 
+
+To call a private version of an algorithm you own, you must use a fully specified semantic version or a version hash or you will get an error. For more information you can get details in the <a href="https://algorithmia.com/developers/api/#api-specification">API Docs</a>
+{: .notice-warning}
+
+## Publish Your Algorithm
 Last is publishing your algorithm. The best part of hosting your model on Algorithmia is that users can access it via an API that takes only a few lines of code to use! Here is what you can set when publishing your algorithm:
 
 On the upper right hand side of the algorithm page you'll see a purple button **Publish** which will start the publish flow:
