@@ -74,7 +74,7 @@ See [Using multiple profiles](#using-multiple-profiles) for instructions on how 
 
 {% if site.enterprise %}
 #### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
-If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL.
+If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL. Note that it must contain the `api` prefix, so if your domain is ` https://algorithmia.companyname.com ` then your API Endpoint should be `https://api.algorithmia.companyname.com`
 {% endif %}
 
 ## Usage
