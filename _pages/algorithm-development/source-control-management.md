@@ -136,6 +136,18 @@ Once you've created your algorithm, any commits to your GitHub repository's _def
 
 You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
 
+#### Publishing GitHub-Hosted Algorithms
+
+When you're ready to create a new version of your algorithm, visit that algorithm's page and select the __Builds__ tab. Find the Git hash of the build you'd like to use, and then click __Publish__ on the right side of the row.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/builds_page.png" alt="Algorithm build page" class="screenshot img-sm">
+
+This will open a publish modal that will let you publish your algorithm.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/publish_modal.png" alt="Publish algorithm modal" class="screenshot img-sm">
+
+If you don't see any builds listed, make sure that you're pushing commits to your repository's _default_ branch. Builds are only triggered for commits pushed to the default branch.
+
 #### Deleting GitHub-Hosted Algorithms
 
 If you wish to delete an algorithm that hosts its source code in GitHub, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://help.github.com/en/github/administering-a-repository/deleting-a-repository).
