@@ -138,7 +138,7 @@ You can view your algorithm's builds by heading to it's landing page and clickin
 
 #### Publishing GitHub-Hosted Algorithms
 
-When you're ready to create a new version of your algorithm, visit that algorithm's page and select the __Builds__ tab. Find the Git hash of the build you'd like to use, and then click __Publish__ on the right side of the row.
+When you're ready to create a new version of your algorithm, visit that algorithm's page and select the __Builds__ tab. Locate the build corresponding to specific commit SHA you wish to use, and then click __Publish__ on the right side of the row.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/builds_page.png" alt="Algorithm build page" class="screenshot img-sm">
 
@@ -147,6 +147,8 @@ This will open a publish modal that will let you publish your algorithm.
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/publish_modal.png" alt="Publish algorithm modal" class="screenshot img-sm">
 
 If you don't see any builds listed, make sure that you're pushing commits to your repository's _default_ branch. Builds are only triggered for commits pushed to the default branch.
+
+To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl}}/platform/algorithm-profiles#algorithm-builds).
 
 #### Deleting GitHub-Hosted Algorithms
 
