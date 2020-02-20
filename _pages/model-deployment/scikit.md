@@ -8,7 +8,7 @@ show_related: true
 author: steph_kim
 permalink: /model-deployment/scikit/
 redirect_from:
-  - /algorithm-development/guides/scikit-guide
+  - /algorithm-development/guides/scikit-guide/
   - /algorithm-development/guides/scikit/
   - /algorithm-development/model-guides/scikit/
 image:

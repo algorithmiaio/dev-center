@@ -8,7 +8,7 @@ show_related: true
 author: steph_kim
 permalink: /model-deployment/nltk/
 redirect_from:
-  - /algorithm-development/guides/nltk-guide
+  - /algorithm-development/guides/nltk-guide/
   - /algorithm-development/guides/nltk/
   - /algorithm-development/model-guides/nltk/
 image:

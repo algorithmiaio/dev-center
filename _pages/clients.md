@@ -12,6 +12,7 @@ redirect_from:
   - /algorithm-development/guides/
   - /application-development/client-guides/
   - /application-development/guides/
+  - /clients/cURL/
 ---
 
 
