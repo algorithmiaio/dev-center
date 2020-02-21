@@ -58,7 +58,7 @@ If I wanted to restrict this API key to the algorithm "sentiment_analysis". I'll
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/algo_restrictions_no_star.png" alt="caller origin" class="screenshot img-sm">
 
-By default, any key can call any algorithm on the platform. You can see in the below screenshot that under the Algorithm Access section, there is an entry `algo://*`, which is highlighted. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you've specified, be sure to remove this wildcard entry by clicking on the "X" icon.
+By default, any key can call any algorithm on the platform. You can see in the below screenshot that under the Algorithm Access section, there is an entry `algo://*`. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you've specified, be sure to remove this wildcard entry by clicking on the "X" icon. In cases where an entry is a subset of another entry, and therefore redundant, a warning will appear letting you know that it will have no effect. Here you can see that `algo://demos/sentiment_analysis` has no effect due to the precence of `algo://*`
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/algo_restrictions.png" alt="caller origin" class="screenshot img-sm">
 
