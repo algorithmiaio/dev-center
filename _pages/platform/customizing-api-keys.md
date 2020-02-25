@@ -48,17 +48,21 @@ Each API key can be customized to enable or restrict access depending on your ne
 
 ### Whitelist Algorithms
 
-One way you can restrict access is to whitelist specific algorithms that you want that API key to have access to.
+For security reasons, API keys can't call any algorithms on the platform by default. In order to create a key that can call algorithms, you'll have to explicitly add permissions by specifying the allowed owner name and algorithm name. Note that `algo://` is the prefix you'll need to use before the owner name and algorithm name. Below are a few examples:
 
-Note that `algo://` is the prefix you'll need to use before the owner name and algorithm name. 
+| ACL        | Key can call: |
+| :------------- | :------------- |
+|  `algo://*` | all algorithms user can access. |
+|  `algo://foo/*` | all algorithms by user `foo` user can access. |
+|  `algo://foo/bar/*`&nbsp;&nbsp; | only the `bar` algorithm by user `foo`. |
 
-Let's say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I'll name my key after the project, then add the algorithms it can call. 
+<br>
 
-If I wanted to restrict this API key to the algorithm "sentiment_analysis". I'll format the alias like this: `algo://` + the algorithm owner + the algorithm name. Thus sentiment_analysis would end ups as `algo://demos/sentiment_analysis` (where in this case the username is demos):
+In the below screenshot, only the `sentiment_analysis` algorithm by user `demos` can be invoked by this key:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/algo_restrictions_no_star.png" alt="caller origin" class="screenshot img-sm">
 
-By default, any key can call any algorithm on the platform. You can see in the below screenshot that under the Algorithm Access section, there is an entry `algo://*`, which is highlighted. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you've specified, be sure to remove this wildcard entry by clicking on the "X" icon.
+In cases where an entry is a subset of another entry, and therefore redundant, a warning will appear letting you know that it will have no effect. Here you can see that `algo://demos/sentiment_analysis` has no effect due to the addition of `algo://*`, which already permits access to all `demos` algorithms.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/algo_restrictions.png" alt="caller origin" class="screenshot img-sm">
 
