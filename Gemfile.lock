@@ -81,7 +81,7 @@ GEM
     mini_portile2 (2.4.0)
     multipart-post (2.0.0)
     nesty (1.0.2)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     octopress (3.0.11)
       jekyll (>= 2.0)
