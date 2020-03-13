@@ -14,7 +14,17 @@ redirect_from:
   - /basics/organization_profiles/
 ---
 
-If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. The following sections cover the basics of using teams and organizations on the Algorithmia platform, including how to create and invite users to an organization, how to approve published algorithms, and how to check your organization's earnings.
+If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. 
+
+#### Use Cases:
+* Shared API Keys within an "Organization" allows for increased security
+* Avoid individual user names tied to an algorithm
+* Separate and organize multiple teams or departments within a company using "Organizations" 
+* Increased governance over who has access to an algorithm by adding or deleting members of you team or org
+* Allow for multiple contributors to an algorithm
+* Share resources with members of an organization such as data when hosted in Algorithmia's data collections
+
+The following sections cover the basics of using teams and organizations on the Algorithmia platform, including how to create and invite users to an organization, how to approve published algorithms, and how to check your organization's earnings if you charge for user's calling your algorithms.
 
 
 #### The Profile Overview:
