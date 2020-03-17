@@ -25,12 +25,12 @@ Select **'Azure Blob'** and a form will open to configure a connection. Here you
 
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
-3. Copy the values from the resulting pane into the Algorithmia configuration page as follows: "Container" -> "Container Name", "Query String" -> "SAS Token", and __just the protocol and domain__ (e.g. `https://mystore.blob.core.windows.net`) from "URL" -> "Storage URL"
+3. Copy the URL value from the resulting pane into the Azure Storage URL input.
 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector_2.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Azure, it is recommended that you provide access that:
 
@@ -54,7 +54,7 @@ The default path restrictions are set to allow access to all paths in your Azure
 
 Here we are setting our path restrictions to everything in the subfolder 'Algorithmia', so I'd only be able to get files below azureblob://Algorithmia/* :
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_restricted_paths.png" alt="Add path restrictions" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_restricted_paths_2.png" alt="Add path restrictions" class="screenshot img-sm">
 
 ### Setting Read and Write Access
 The default access for your data source is set to read only, but you can change this to read *and* write access by checking the **'Write Access'** box.
