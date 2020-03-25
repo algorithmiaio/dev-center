@@ -175,17 +175,31 @@ We depend on [deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/
 
 You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key_2.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 You will then be presented with a modal, from which you can copy the public key.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_view_deploy_key.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_view_deploy_key_2.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 With the deploy key in hand, simply follow [instructions outlined here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to restore the public key to your repository.
 
 ##### Your Repository Was Deleted
 
 If your algorithm's GitHub repository was deleted, you may attempt to [restore the relevant repository](https://help.github.com/en/github/administering-a-repository/restoring-a-deleted-repository). It is essential that both the repository's deploy key and webhooks remain in place after restoration, otherwise we will not be able to pull your source code, or know when you make changes.
+
+##### Your Repository's Webhook Needs to be Restored
+
+We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within GitHub, first locate the webhook URL and secret. This can be found on your algorithm's settings page by clicking 'View Details' under 'GitHub Webhook'.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_webhook.png" alt="Algorithm Page WebHook Modal Button" class="screenshot img-sm">
+
+You will then be presented with a modal, from which you can copy the webhook URL and secret.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/webhook_modal.png" alt="Algorithm Page WebHook Modal" class="screenshot img-sm">
+
+Once you've found these values, visit your algorithm's repository on GitHub and click on the Settings tab. Click 'Webhooks' on the left side, and you'll be able to restore your webhook by entering the webhook URL and secret.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/github_webhooks.png" alt="GitHub Algorithm Webhook Settings" class="screenshot img-sm">
 
 #### FAQ
 
