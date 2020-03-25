@@ -25,7 +25,7 @@ Select **'Azure Blob'** and a form will open to configure a connection. Here you
 
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
-3. Copy the URL value from the resulting pane into the Azure Storage URL input.
+3. Copy the URL value from the resulting pane into the SAS URI input.
 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
