@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
   name: docs-server-access
-  namespace: {{kubernetes_namespace}}
+  namespace: {{ kubernetes_namespace }}
 spec:
   podSelector:
     matchLabels:

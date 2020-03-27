@@ -6,7 +6,7 @@ metadata:
   labels:
     app: docs-server
   name: docs-server-service
-  namespace: {{kubernetes_namespace}}
+  namespace: {{ kubernetes_namespace }}
 spec:
   ports:
     - name: docs-http

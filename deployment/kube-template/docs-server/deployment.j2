@@ -6,7 +6,7 @@ metadata:
   labels:
     app: docs-server
   name: docs-server
-  namespace: {{kubernetes_namespace}}
+  namespace: {{ kubernetes_namespace }}
 spec:
   replicas: 3
   minReadySeconds: 60  # Service refresh interval is 30s want to make sure nodes exist long enough to be propagated
@@ -51,8 +51,8 @@ spec:
         - name: BASE_URL
           value: {{ domain_name }}
         - name: PROMETHEUS_TOKEN
-          value: {{ prometheus_token }}
-        image: {{ docs_image }}
+          value: {{ secret_prometheus_token }}
+        image: {{ service_docs_image }}
         imagePullPolicy: IfNotPresent
         resources:
           limits:
