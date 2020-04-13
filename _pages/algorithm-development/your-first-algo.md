@@ -170,7 +170,7 @@ Once your algorithm has successfully complied, you can test it out by passing in
 ## Working With Data
 Depending on your data source, you'll either want to use <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a> to connect to your data within your algorithm, or write a wrapper to connect to your database. 
 
-To learn about the various data sources, make sure to visit <a href="{{site.baseurl}}/developers/data">Connecting Your Data</a>, or check out our reference guide on the available methods using <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
+To learn about the various data sources, make sure to visit <a href="{{site.baseurl}}/data">Connecting Your Data</a>, or check out our reference guide on the available methods using <a href="http://docs.algorithmia.com/#data-api-specification">Algorithmia's Data API</a>.
 
 Note: if you are authoring an algorithm and using the Data API, avoid using the ‘.my’ pseudonym in the source code. When the algorithm is executed, ‘.my’ will be interpreted as the user name of the user who called the algorithm, rather than the author’s user name.
 {: .notice-warning}
