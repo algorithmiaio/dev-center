@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y nodejs \
 WORKDIR /opt/builds
 COPY ./api-docs .
 
+RUN gem install bundler && gem update --system
+
 # Install dependencies
 RUN bundle install
 
