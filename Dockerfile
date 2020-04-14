@@ -30,7 +30,7 @@ RUN gem install bundler && gem update --system
 RUN bundle install
 
 # Build docs
-RUN rake build
+RUN bundle exec middleman build --clean
 
 #
 # Stage 3: build dev center
