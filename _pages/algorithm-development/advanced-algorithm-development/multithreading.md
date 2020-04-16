@@ -10,7 +10,7 @@ show_related: true
 author: jon_peck
 image:
     teaser: /post_images/multithreading/multithreading.png
-robots: noindex/nofollow
+robots: none
 ---
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading_wide.png" class="img-fill">

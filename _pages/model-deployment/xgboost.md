@@ -11,7 +11,7 @@ redirect_from:
   - /algorithm-development/model-guides/xgboost/
 image:
     teaser: /language_logos/xgboost.png
-robots: noindex/nofollow
+robots: none
 ---
 
 Welcome to deploying your <a href="http://xgboost.readthedocs.io/en/latest/">XGBoost</a> model on Algorithmia!

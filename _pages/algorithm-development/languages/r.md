@@ -8,7 +8,7 @@ show_related: true
 author: steph_kim
 image:
     teaser: /language_logos/r.svg
-robots: noindex/nofollow
+robots: none
 ---
 
 Before you get started learning about R algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.

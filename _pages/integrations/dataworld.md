@@ -7,7 +7,7 @@ tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/dataworld.svg
-robots: noindex/nofollow
+robots: none
 ---
 
 *Data.World* has an amazing marketplace of datasets available. It’s very easy to consume and publish new datasets via Algorithmia. The data.world team has published four helper utility algorithms that you can take advantage of in your own algorithms.  Since you can compose, chain, and pipe output to multiple algorithms together easily, you’ll have so many possibilities for processing datasets available from data.world.
