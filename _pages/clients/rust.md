@@ -19,7 +19,6 @@ redirect_from:
 robots: none
 ---
 
-
 This guide provides a walk-through of how to use the official Algorithmia Rust Client to call algorithms and manage your data
 through the Algorithmia platform.
 
