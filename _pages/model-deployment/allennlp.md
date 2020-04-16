@@ -11,6 +11,7 @@ redirect_from:
   - /algorithm-development/model-guides/allennlp/
 image:
     teaser: /language_logos/allennlp.png
+robots: noindex/nofollow
 ---
 
 Welcome to deploying your <a href="https://allennlp.org/">AllenNLP</a> model on Algorithmia!

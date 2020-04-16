@@ -16,7 +16,9 @@ redirect_from:
   - /application-development/client-guides/rust/
   - /application-development/guides/rust/
   - /application-development/lang-guides/rust/examples/
+robots: noindex/nofollow
 ---
+
 
 This guide provides a walk-through of how to use the official Algorithmia Rust Client to call algorithms and manage your data
 through the Algorithmia platform.

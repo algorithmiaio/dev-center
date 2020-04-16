@@ -11,6 +11,7 @@ image:
 permalink: /algorithm-development/markdown-syntax/
 redirect_from:
   - /algorithm-development/algorithm-basics/markdown-syntax/
+robots: noindex/nofollow
 ---
 
 When you are ready to write the documentation for your algorithm under the "Docs" tab on your algorithm's page, you can use markdown to make your documentation clear.

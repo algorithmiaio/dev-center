@@ -11,6 +11,7 @@ redirect_from:
   - /application-development/client-guides/cURL/
   - /application-development/client-guides/curl/
   - /application-development/guides/curl/
+robots: noindex/nofollow
 ---
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/VIxCEFFmpWQ" %}

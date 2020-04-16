@@ -8,6 +8,7 @@ tags: [clients]
 show_related: true
 image:
     teaser: /language_logos/c_sharp_net.svg
+robots: noindex/nofollow
 ---
 
 We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).

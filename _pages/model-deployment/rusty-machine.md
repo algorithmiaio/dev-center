@@ -11,6 +11,7 @@ redirect_from:
   - /algorithm-development/model-guides/rusty-machine/
 image:
     teaser: /language_logos/algo_icon.svg
+robots: noindex/nofollow
 ---
 
 Welcome to deploying your <a href="https://github.com/AtheMathmo/rusty-machine">Rusty Machine</a> model on Algorithmia!
