@@ -24,11 +24,19 @@ RUN apt-get update && apt-get install -y nodejs \
 WORKDIR /opt/builds
 COPY ./api-docs .
 
+RUN gem install bundler && gem update --system
+
 # Install dependencies
 RUN bundle install
 
+# Autoprefixer gem requires recent version of Node.
+RUN apt-get update -yq \
+    && apt-get install curl gnupg -yq \
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash \
+    && apt-get install nodejs -yq
+
 # Build docs
-RUN rake build
+RUN bundle exec middleman build --clean
 
 #
 # Stage 3: build dev center
