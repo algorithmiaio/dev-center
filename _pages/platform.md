@@ -7,6 +7,7 @@ redirect_from:
  - /basics/
  - /application-development/basic-guides/
  - /basics/algorithm_basics/
+robots: none
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}

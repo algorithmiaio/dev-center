@@ -7,6 +7,7 @@ tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/googlesheets.png
+robots: none
 ---
 
 [Google Sheets](http://sheets.google.com) is a collaborative, extensible online spreadsheet tool (similar to MS Excel).

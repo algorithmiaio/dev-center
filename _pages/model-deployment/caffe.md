@@ -11,6 +11,7 @@ redirect_from:
   - /algorithm-development/model-guides/caffe/
 image:
     teaser: /language_logos/caffe.png
+robots: none
 ---
 
 

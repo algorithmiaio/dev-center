@@ -9,6 +9,7 @@ show_related: true
 author: jon_peck
 image:
     teaser: /post_images/local_development/local_development.png
+robots: none
 ---
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="img-fill">

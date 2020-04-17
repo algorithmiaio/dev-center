@@ -13,6 +13,7 @@ redirect_from:
   - /application-development/client-guides/node/
   - /application-development/guides/node/
   - /node/
+robots: none
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Node.js Client to call algorithms and manage data through the Algorithmia platform.

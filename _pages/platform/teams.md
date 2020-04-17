@@ -12,6 +12,7 @@ permalink: /platform/organizations/
 redirect_from:
   - /teams/
   - /basics/organization_profiles/
+robots: none
 ---
 
 If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open source community, then our teams and organizations feature is what you are looking for. 

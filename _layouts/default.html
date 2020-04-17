@@ -20,6 +20,10 @@
     <link rel="shortcut icon" type="image/png" href="/v1/config/favicon">
     {% endif %}
 
+    {% if page.robots %}
+      <meta name="robots" content="{{ page.robots }}">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ site.cdnurl }}{{ site.baseurl }}/css/pygments-github.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/vendors.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/synapse/dist/scoped-synapse.css">
