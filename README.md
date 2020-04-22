@@ -48,6 +48,20 @@ If installation for nokogiri fails due to libxml2 support, install it via:
 ```
 gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
 ```
+If installation of therubyracer gem fails due to recent changes in Catalina, do the following:
+
+```
+gem install libv8 -v '3.16.14.19' -- --with-system-v8
+rvm autolibs disable
+brew unlink v8
+brew link v8@3.15 --force
+gem install therubyracer -v 'version'
+brew unlink v8@3.15
+brew link v8
+rvm autolibs enabled
+```
+
+More info [here](https://gist.github.com/fernandoaleman/868b64cd60ab2d51ab24e7bf384da1ca) if issues persist.
 
 ### Getting Set Up
 

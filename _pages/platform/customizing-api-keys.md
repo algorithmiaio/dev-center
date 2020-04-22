@@ -104,3 +104,22 @@ If you are trying to run an algorithm that writes to your data storage but are g
 ### Algorithm Management
 
 You can also control whether or not an API key can manage algorithms you own on your behalf. This allows the API key to perform operations such as creating, compiling, and publishing algorithms without the need to use the Web IDE. For more information, see [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management).
+
+## Admin API Keys
+
+If you are the administrator of an Algorithmia cluster, you may create admin API keys to interface with admin-only API endpoints, such as `/users` and `/organizations`. Endpoints which specifically require admin API keys are noted in our [API documentation](/developers/api).
+
+To create an admin key, simply select "Admin API Key" from the "Create New" menu in the upper right-hand corner of your dashboard:
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/create-admin-key.png" alt="Creating an admin API key" class="screenshot">
+
+Give your admin API key a name, then click "Create Admin Key":
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/describe-admin-key.png" alt="Name an admin API key" class="screenshot">
+
+Your new admin API key will be added to your list of API keys, and can be used to interact with admin-only API endpoints. Admin API keys are distinguished by the "Admin Key" badge adjacent to their label:
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/admin-key-in-list.png" alt="Admin API key in API key list" class="screenshot">
+
+Admin API keys may only interact with admin endpoints. Endpoints accessible to standard API keys may not be accessed by admin API keys.
+{: .notice-info}
