@@ -15,6 +15,7 @@ redirect_from:
   - /algorithm-development/guides/ruby-guide/
   - /application-development/client-guides/ruby/
   - /application-development/guides/ruby/
+  - /application-development/lang-guides/ruby/
 robots: none
 ---
 
