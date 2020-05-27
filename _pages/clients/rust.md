@@ -16,6 +16,7 @@ redirect_from:
   - /application-development/client-guides/rust/
   - /application-development/guides/rust/
   - /application-development/lang-guides/rust/examples/
+  - /application-development/lang-guides/rust/
 robots: none
 ---
 

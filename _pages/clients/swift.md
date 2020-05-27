@@ -10,6 +10,7 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-swift
 redirect_from:
   - /application-development/client-guides/swift/
+  - /lang/swift/
 robots: none
 ---
 

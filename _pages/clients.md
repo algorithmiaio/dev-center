@@ -13,6 +13,7 @@ redirect_from:
   - /application-development/client-guides/
   - /application-development/guides/
   - /clients/cURL/
+  - /application-development/lang-guides/
 ---
 
 

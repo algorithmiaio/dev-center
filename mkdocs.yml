@@ -40,7 +40,6 @@ nav:
       - data/hosted.md
       - data/mssqlserver.md
       - data/mysql.md
-      - data/oracle.md
       - data/otherfiles.md
       - data/postgres.md
       - data/s3.md

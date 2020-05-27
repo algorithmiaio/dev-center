@@ -13,6 +13,7 @@ redirect_from:
   - /application-development/client-guides/node/
   - /application-development/guides/node/
   - /node/
+  - /application-development/lang-guides/node/
 robots: none
 ---
 

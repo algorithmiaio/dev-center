@@ -14,6 +14,7 @@ redirect_from:
   - /algorithm-development/guides/scala-guide/
   - /application-development/client-guides/scala/
   - /application-development/guides/scala/
+  - /application-development/lang-guides/scala/
 robots: none
 ---
 
