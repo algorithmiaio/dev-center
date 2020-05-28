@@ -1,4 +1,4 @@
-image: docker:stable
+image: docker:19.03.8
 
 variables:
   DOCKER_HOST: tcp://docker:2375
@@ -21,7 +21,7 @@ stages:
 build:
   stage: build
   image:
-    name: docker:stable
+    name: docker:19.03.8
     entrypoint: [""]
   before_script:
     - mkdir ~/.docker
@@ -52,7 +52,7 @@ build:
 push:
   stage: push
   image:
-    name: docker:stable
+    name: docker:19.03.8
     entrypoint: [""]
   before_script:
     - mkdir ~/.docker
