@@ -9,7 +9,6 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/snowflake_computing.png 
-robots: none
 ---
 
 Algorithms can easily access databases hosted by Snowflake Computing using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/) .

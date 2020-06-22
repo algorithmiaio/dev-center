@@ -10,7 +10,6 @@ redirect_from:
   - /algorithm-development/model-guides/pytorch/
 image:
     teaser: /language_logos/pytorch.png
-robots: none
 ---
 
 Welcome to deploying your <a href="http://pytorch.org/">PyTorch</a> model on Algorithmia!

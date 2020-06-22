@@ -11,7 +11,6 @@ image:
 permalink: /platform/permissions/
 redirect_from:
   - /basics/permissions/
-robots: none
 ---
 
 

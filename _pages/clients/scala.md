@@ -15,7 +15,6 @@ redirect_from:
   - /application-development/client-guides/scala/
   - /application-development/guides/scala/
   - /application-development/lang-guides/scala/
-robots: none
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Scala Client to call algorithms and manage data through the Algorithmia platform.

@@ -6,7 +6,6 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 image:
     teaser: /icons/algo.svg
-robots: none
 ---
 
 # Q1 2020 Enterprise Release Notes #

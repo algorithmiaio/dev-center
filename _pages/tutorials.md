@@ -4,7 +4,6 @@ layout: article_page
 title:  "Tutorials"
 show_related: false
 excerpt: "Tutorials. Sample apps and recipes to help you learn whats going on."
-robots: none
 ---
 
 Here you will find sample apps and recipes (which are a little bit different).

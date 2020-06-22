@@ -9,7 +9,6 @@ show_related: true
 author: steph_kim, jon_peck
 image:
     teaser: /language_logos/dynamo_db_image.png 
-robots: none
 ---
 
 Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/sdk-for-python/) package and securely storing their access credentials in a data collection.
