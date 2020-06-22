@@ -9,7 +9,6 @@ show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/mssql.png 
-robots: none
 ---
 
 If your algorithm needs to read or write data from a MsSqlServer database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.

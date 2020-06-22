@@ -11,7 +11,6 @@ image:
 repository: https://github.com/algorithmiaio/algorithmia-android
 redirect_from:
   - /application-development/client-guides/android/
-robots: none
 ---
 
 This guide provides a walk-through of how to use the official Algorithmia Android Client to call algorithms and manage your data through the Algorithmia platform.

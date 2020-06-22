@@ -7,7 +7,6 @@ tags: [algo-model-guide, integrations]
 show_related: true
 image:
     teaser: /language_logos/h2o.svg
-robots: none
 ---
 
 Once you've trained your *H2O* models, deploy them to Algorithmia to get all the benefits of elastic, scalable, serverless machine learning hosting! Deploying your models is easy, and you don't need to worry about managing or maintaining servers.
