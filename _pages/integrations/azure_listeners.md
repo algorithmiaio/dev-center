@@ -7,7 +7,7 @@ tags: [integrations]
 show_related: true
 ---
 
-These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue
+These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. For more info about Azure Service Bus read https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
 
 This is only available for Enterprise installations of Algorithmia. 
 {: .notice-warning}
@@ -16,7 +16,7 @@ This is only available for Enterprise installations of Algorithmia.
 
 Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you will need during CloudFormation setup:
 
-* Azure Resource Manager template for Service Bus Namespace and Queue
+* Azure Resource Manager(ARM) template for Service Bus Namespace and Queue
 * Custom Role definition file - QueueReceiver
 * Algorithmia Azure Account
 
@@ -36,19 +36,21 @@ Create a new guest user account with Algorithmia’s account email.
 
 * Sign in to the Azure portal as an Azure AD administrator.
 * In the left pane, select Azure Active Directory.
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_20.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_33.png">
 * Select New guest user.
 * On the New user page, select Invite user and then add the guest user's information.
 * * Name. The first and last name of the guest user.
 * * Email address. Use the email obtained in step 1 
 * * Groups: You can add the guest user to one or more existing groups, or you can do it later.
 * * Directory role: Use the role you created in step 2 (QueueReceiver)
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_21.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_34.png">
 * * Select Invite to automatically send the invitation to the guest user. A notification appears in the upper right with the message Successfully invited user. The user account is now added to the directory as a guest account with the custom role.
 
 ## 4. Create Service Bus Namespace and Queue 
 
 * Import ARM template and create your Service Bus Namespace and Queue.
+Info about ARM templates: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview
+Info about Service Bus: https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal#:~:text=In%20the%20left%20navigation%20pane,if%20the%20name%20is%20available
 * Create a new Template, and load the contents of the ARM template file from step 1 into the ARM template tab. Save the template and click “Deploy Template”
 * Fill in the Namespace Name, Queue Name, and choose region appropriate for you. 
 
@@ -57,7 +59,7 @@ Note: If the deployment fails, chances are there is already a namespace created 
 ## 5. Test Event Listener
 
 * Create a new Python 3.X Algorithm.
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_22.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_35.png">
 
 * In web IDE replace source with the following:
 
@@ -68,12 +70,12 @@ def apply(input):
     Algorithmia.client().file("data://<username>/event_output_directory/" + input.get("filename")).put(input.get("data"))
 
 {% endhighlight %}
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_23.png">
-* Click Save, then Build, then Publish buttons. On the algorithm page cope the full “path” of the algorithm.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_36.png">
+* Click Save, then Build, then Publish buttons. On the algorithm page copy the full “path” of the algorithm.
 * Create Hosted Data directory “event_output_directory”
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_24.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_37.png">
 * Create event listener -> Azure, algorithm name, algorithm version
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_25.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_38.png">
 * To test event listener, create a new Python 3.x algorithm just like before, and replace source code with the following:
 
 {% highlight python %}
@@ -96,9 +98,9 @@ def apply(input):
 azure-common==1.1.25   
 azure-servicebus==0.50.2
 {% endhighlight %}
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_26.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_39.png">
 * Run the algorithm that would send messages
 * Check the event_output_directory, it should have a file with filename “test”
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_27.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_40.png">
 * Download the file, it should contain text “test-data”, your event listener is working now!
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_18.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_41.png">
