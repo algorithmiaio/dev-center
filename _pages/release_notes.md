@@ -14,7 +14,7 @@ image:
 
 ### Introduction ###
 
-We are pleased to present several new features and upgrades this quarter, most notably around security and governance of machine learning systems. This release schowcases advanced security options that enable customers to operate Algorithmia in restrictive environments, including AWS C2S, AWS GovCloud, VMware, authenticated proxies, customer-provided OS images, private Docker hubs, private dependency mirrors, and private certificate authorities. 
+We are pleased to present several new features and upgrades this quarter, most notably around security and governance of machine learning systems. This release showcases advanced security options that enable customers to operate Algorithmia in restrictive environments, including AWS C2S, AWS GovCloud, VMware, authenticated proxies, customer-provided OS images, private Docker hubs, private dependency mirrors, and private certificate authorities. 
 
 This new version of Algorithmia Enterprise also includes support for the latest AWS and Azure GPU hardware, user local debugging improvements, and integration to PyCharm. Algorithmia Enterprise now also supports the latest GPU hardware.
 
