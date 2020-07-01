@@ -1,3 +1,4 @@
+
 ---
 layout: article
 title:  "Release Notes"
@@ -8,7 +9,121 @@ image:
     teaser: /icons/algo.svg
 ---
 
-# Q1 2020 Enterprise Release Notes #
+# Q2 2020 Release Notes #
+
+
+### Introduction ###
+
+We are pleased to present several new features and upgrades this quarter, most notably around security and governance of machine learning systems. This release schowcases advanced security options that enable customers to operate Algorithmia in restrictive environments, including AWS C2S, AWS GovCloud, VMware, authenticated proxies, customer-provided OS images, private Docker hubs, private dependency mirrors, and private certificate authorities. 
+
+This new version of Algorithmia Enterprise also includes support for the latest AWS and Azure GPU hardware, user local debugging improvements, and integration to PyCharm. Algorithmia Enterprise now also supports the latest GPU hardware.
+
+Algorithmia now allows local debugging in the desktop tools developers use today. We want our users’ workflows to be seamless: they can write and run local tests for algorithms, pass local data files as input to algorithms, and integrate with development environments like PyCharm. Integrations like these allow developers to use flexible tooling and develop faster with fewer defects. 
+
+### Azure event listeners ###
+
+This feature enables event listeners on Azure clusters that listen to Azure Service Bus queues and is designed for enterprise customers using Azure who are looking to integrate Service Bus queue triggered execution capabilities into their ecosystem. Event listeners allow the user to trigger algorithm executions with payloads from messages in an Azure Service Bus queue.
+
+Enterprise customers will see the feature enabled with their quarterly update. All necessary configurations are documented in the Azure Listeners section in our dev center.
+
+The feature is in the main algorithm dashboard under tab event listeners, and listeners can be created from the “Create New” dropdown menu at top right. An event listener is created for a published version of the algorithm. The listener is listening to a specified queue and whenever a message is received from the queue, the listener executes the algorithm with the message payload as the input.
+
+### Algorithm environments ###
+
+We have improved the way algorithm runtime environments are built, tested, and provided to users, by creating a new system to deliver environments and languages that can be executed within an Algorithmia cluster; we’ve ensured that these environments can be executed in any enterprise cluster. 
+
+#### Using the feature ####
+
+##### For admins #####
+
+Algorithm Environments are maintained by Algorithmia, and can be imported into a given cluster through the admin panel. Cluster administrators can choose to import any environment available in the list to their cluster based on the needs of their users and security concerns for the operator. 
+
+Admins will see a new page for Algorithm Environments, which will allow them to import these new languages. 
+
+Once logged into Algorithmia, navigate to the Admin Panel and click on “Add Environment” to see the list of available environments; then click on the desired environment(s) to add, and then click “Add Environment” to equip it.
+
+By selecting and adding the environment, your users will be able to create algorithms using that installed environment. If you have not added the environment from the list, your users will not be able to view that environment or create an algorithm using that environment.
+
+The specified environment will now be available in the list of environments, and details can be viewed by clicking on a specific one.
+
+##### Non admins #####
+
+When making new algorithms, users will see language options that are now called Environments. 
+
+### Improved debugging of algorithms (local and UI) ###
+
+This feature improves users’ local debugging experience by updating error messages, enabling users to write and run local tests for cloned algorithms, and passing in local data files as input to the algorithms. Our new integration with PyCharm means users can also use an effective and familiar debugging tool for algorithm development.
+
+Enabling users to pass in their local data file into the Python Client will make it faster to test algorithms locally before production.
+
+#### Using the feature ####
+
+Set up a local development environment, including installing the Algorithmia Python Client in PyCharm. Full directions for integrating Algorithmia with PyCharm is in the Developer Center under Advanced Algorithm Development.
+
+Clone an algorithm from GitHub or Algorithmia in PyCharm, pass in the local file path when running it for testing, then write and run the unit test file.
+
+### Local hardware support ###
+
+With advances in machine learning, we need to provide our enterprise customers with the latest hardware to take advantage of their cutting-edge capabilities. We are proud to have an initiative that evaluates and supports the latest hardware to meet the demands and performance our customers have come to expect. We are excited to announce the next generation of hardware support with even more to come very soon.
+
+Below comprises the list of new instances:
+
+* AWS general purpose EC2 M5 instance designed for the most demanding workloads. M5’s provide a 14-percent better price/performance over the M4 instances on a per-core basis.
+* AWS EC2 P3 instances provide high-performance GPUs explicitly designed to accelerate machine learning, using up to one petaflop of performance per instance.
+* AWS EC2 G4 instances provide the most cost-effective AWS instance for deploying machine learning models in production. G4 instances utilize NVIDIA T4 GPUs and Cascade Lake CPUs optimized for machine learning inference to reduce latency.
+* Azure NCsv2-series virtual machines are a new addition to offered GPUs (NVIDIA Tesla P100), providing more than 2 times the current NC-series in computational performance.
+* Azure’s NCsv3-series virtual machines provide the next generation GPUs (NVIDIA Tesla V100) of the NCsv2-series GPUs (NVIDIA Tesla P100), with 1.5 times faster computational performance.
+* Azure’s NDs-series virtual machine is a new GPU addition, specially designed for AI and deep learning workloads with larger memory sizes (24gb) powered by NVIDIA Tesla P40 GPUs.
+
+### SSO enhancements ###
+
+Algorithmia supports several authentication options for Enterprise customers. Additional configuration options are now available for integration with Single Sign On solutions via OpenID Connect and LDAP.  
+
+Enterprise customers who integrate with a Single Sign On solution via OpenID Connect or LDAP can now also choose whether to restrict browsing of the platform only to authenticated users, and whether to disable local username/password authentication.
+
+### UNILOG ###
+
+Want to know what's going on in your cluster? Need access to raw information for debugging incidents? Is proactive alerting of errors to your cluster admins important? Ever wish as a cluster admin that you could hook into your existing tools for collecting and aggregating log data? Have you ever hoped you could see product usage and trends?
+
+UNILOG is an administration tool for easily accessing debug log information (or flowing into an external log collection system) for the Algorithmia platform and compute infrastructure. Not only will UNILOG give you a deeper understanding of what is happening in the Algorithmia platform, but it will also provide our on-call staff the ability to assist our enterprise customers in fine-tuning or resolving any issue that may arise. Another part of it is a saved query system that provides an automated way to execute queries on log data to generate metrics and alerts. UNILOG has a web-based user interface for viewing and searching debug log information for the Algorithmia platform. 
+
+Additionally, cluster administrators can configure their Algorithmia installation to send debug logs to the log collection tool of their choice (any with a syslog integration). 
+
+### Using the feature ###
+
+Cluster administrators can access the UNILOG interface from the left sidebar of the web user interface, under the “Admin” heading. Additionally, the Administrator Manual has instructions for connecting the Algorithmia platform to an external log collection system via syslog.
+
+Collecting debug log information is significantly faster and easier for cluster administrators, saving them much time and effort when debugging issues.
+
+### Entity model update ###
+
+We have taken a different approach to how we store and access algorithms. The Entity Model Update project provides UUID for algorithms, users, and hosted collections to decouple the algorithm from entity owners and entity names. Hosted data collections can now be assigned to the algorithm as default and accessed via `data://algo./default`. 
+
+Calling algorithms, performing builds, and other CRUD operations that were previously only available through a combination of owner/algorithm name will now be accessed by the algorithms UUID as well as the ability to assign algorithms to hosted collections by default. 
+
+
+### On Premises InfoSec Compliance ###
+
+For On-premises VMware enterprise customers, we have enhanced our offering to meet the increasing InfoSec expectations. Algorithmia Enterprise can now be installed using our own hardened CentOS or RHEL host images. Additionally, the installation can be performed from an environment that does not allow internet access enabling Algorithmia Enterprise to run in highly restricted on-premises environments. Learn more from your account representative.
+
+### Administrative updates ###
+
+We have several new monitoring dashboards for cluster databases, cluster services, and request access is added for administrators. These new dashboards allow cluster administrators to have clearer insight into how their clusters are functioning to help with resource management, cluster activity, capacity planning, and troubleshooting or debugging.
+
+#### Using the features	####
+
+The administrator Grafana panel now contains four new dashboards, Service Proxy, MySQL, Pyrometer, Web Server, and API Server, that show these new metrics.
+
+The new MySQL database dashboard allows cluster administrators to see detailed metrics about usage of the internal MySQL database that stores information for the Algorithmia cluster’s operations.
+
+The new Service Proxy dashboard allows cluster administrators to see detailed metrics about inbound requests to the cluster and their response times.
+
+The new Pyrometer, Web Server, and API Server dashboards allow cluster administrators to see detailed metrics about database resource usage, JVMs, and infrastructure.
+
+
+---
+
+# Q1 2020 Release Notes #
 
 ### Introduction ###
 2020 is going to be a big year at Algorithmia. We are working on features that empower our customers in tooling flexibility, connectivity, security, and ML management so they can focus on extracting value from ML. 
