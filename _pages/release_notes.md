@@ -58,7 +58,7 @@ Enabling users to pass in their local data file into the Python Client will make
 
 #### Using the feature ####
 
-Set up a local development environment, including installing the Algorithmia Python Client in PyCharm. Full directions for integrating Algorithmia with PyCharm is in the Developer Center under Advanced Algorithm Development.
+Set up a local development environment, including installing the Algorithmia Python Client in PyCharm. Full directions for integrating Algorithmia with PyCharm is in the Developer Center [under Advanced Algorithm Development.](/developers/algorithm-development/advanced-algorithm-development/pycharm)
 
 Clone an algorithm from GitHub or Algorithmia in PyCharm, pass in the local file path when running it for testing, then write and run the unit test file.
 
@@ -89,7 +89,7 @@ UNILOG is an administration tool for easily accessing debug log information (or 
 
 Additionally, cluster administrators can configure their Algorithmia installation to send debug logs to the log collection tool of their choice (any with a syslog integration). 
 
-### Using the feature ###
+#### Using the feature ####
 
 Cluster administrators can access the UNILOG interface from the left sidebar of the web user interface, under the “Admin” heading. Additionally, the Administrator Manual has instructions for connecting the Algorithmia platform to an external log collection system via syslog.
 
