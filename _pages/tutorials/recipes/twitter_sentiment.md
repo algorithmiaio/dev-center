@@ -8,6 +8,6 @@ author: Diego_oppenheimer
 excerpt: "Analyze, Label, and Sort Twitter Dara by their Perceived Sentiment"
 
 repository: https://gist.github.com/peckjon/755077b1de4450612745c1d398594b9d
-blog: https://blog.algorithmia.com/anaylze-tweets-topic-sentiment-analysis/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2017/01/analyze-tweets-algorithms-1.jpg
+blog: https://algorithmia.com/blog/anaylze-tweets-topic-sentiment-analysis/
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2017/01/analyze-tweets-algorithms-1.jpg
 ---

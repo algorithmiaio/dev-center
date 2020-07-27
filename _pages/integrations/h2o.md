@@ -15,4 +15,4 @@ There are two ways to deploy H2O models on Algorithmia:
 
 <a href="https://github.com/algorithmiaio/sample-apps/tree/master/algo-dev-demo/h2o" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> 100% Java</a>
 
-<a href="https://blog.algorithmia.com/using-h2o-ai-to-classify-domains-in-production/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> Jython</a>
+<a href="https://algorithmia.com/blog/using-h2o-ai-to-classify-domains-in-production/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> Jython</a>

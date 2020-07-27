@@ -15,5 +15,5 @@ Tableau allows the rapid development and deployment of visualizations, so you ca
 
 By integrating Algorithmia into Tableau, you can take these visualizations to another level, enhancing them with machine learning models developed in-house or provided by independent developers on the Algorithmia.com marketplace.
 
-<a href="https://blog.algorithmia.com/enrich-data-in-tableau-with-machine-learning-using-algorithmia/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ MORE</a>
+<a href="https://algorithmia.com/blog/enrich-data-in-tableau-with-machine-learning-using-algorithmia/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ MORE</a>
 <a href="https://github.com/algorithmiaio/integrations/tree/master/Tableau" class="btn btn-default btn-primary"><i class="fa fa-code-fork" aria-hidden="true"></i> USE</a>

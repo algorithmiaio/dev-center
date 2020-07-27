@@ -10,6 +10,6 @@ excerpt: "Learn how to use the StyleThief Microservice in a Single-Page Website"
 
 generate_from: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/style-thief/README.md
 repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/style-thief
-blog: https://blog.algorithmia.com/transfer-style-from-one-image-to-another-javascript/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2017/07/style_thief_website.png
+blog: https://algorithmia.com/blog/transfer-style-from-one-image-to-another-javascript/
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2017/07/style_thief_website.png
 ---

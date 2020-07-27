@@ -13,5 +13,5 @@ image:
 
 Thanks to Algorithmia, Dexter chatbots can now access world-class Machine Learning tools: analyze your users' messages for sentiment, aytomatically direct them to the right FAQ via deep keyword analysis and document classification, or recognize and transform the images they send.
 
-<a href="https://blog.algorithmia.com/building-an-emotionally-aware-chatbot/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ MORE</a>
+<a href="https://algorithmia.com/blog/building-an-emotionally-aware-chatbot/" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> READ MORE</a>
 <a href="https://github.com/algorithmiaio/integrations/tree/master/RunDexter/" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> CODE</a>

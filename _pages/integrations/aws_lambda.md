@@ -115,4 +115,4 @@ See the [NodeJS guide](../node) for an introduction to using the Algorithmia Nod
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
-See also the [AWS Lambda walk through on our blog](https://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps).
+See also the [AWS Lambda walk through on our blog](https://algorithmia.com/blog/post/133832621114/get-started-building-intelligent-serverless-apps).
