@@ -9,6 +9,6 @@ excerpt: "Use the 404 Scanner Microservice to Generate a Report of Broken Links 
 
 repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/404-Error-Scanner
 generate_from: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/404-Error-Scanner/readme.md
-blog: https://algorithmia.com/blog/broken-links-404-not-found-report/
+blog: https://algorithmia.com/blog/broken-links-404-not-found-report
 thumbnail: /images/monster-1.png
 ---

@@ -10,6 +10,6 @@ excerpt: "Sharpen images to help saliency detection perform even better"
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/saliency/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/saliency/
-blog: https://algorithmia.com/blog/improve-saliency-detection-accuracy/
+blog: https://algorithmia.com/blog/improve-saliency-detection-accuracy
 thumbnail: https://algorithmia.com/blog/wp-content/uploads/2017/01/saliency-detection-algorithm.jpg
 ---
