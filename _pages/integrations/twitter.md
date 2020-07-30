@@ -10,7 +10,7 @@ image:
     teaser: /language_logos/twitter.svg
 author: justin_gage
 repository: https://github.com/algorithmiaio/integrations/tree/master/Twitter/DataAccess
-blog: https:///how-to-get-all-different-types-of-twitter-data/
+blog: https://algorithmia.com/blog/how-to-get-all-different-types-of-twitter-data/
 thumbnail: /images/language_logos/twitter.svg
 ---
 
