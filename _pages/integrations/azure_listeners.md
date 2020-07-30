@@ -28,7 +28,7 @@ Using the Custom Role definition file you received in step 1, create the Custom 
 * Authenticate with Azure CLI
 * Run `$ az role definition create --role-definition GuestRole.json`
 
-More info on how to do this with Azure CLI can be found [here](https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli)
+More info on how to do this with Azure CLI can be found [here](https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli).
 It can be also done via PowerShell and REST API.
 
 
