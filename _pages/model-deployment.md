@@ -21,7 +21,7 @@ Pick any framework listed below for a customized guide, or start with our <a hre
 
 Also note that our [API]({{site.baseurl}}/algorithm-development/algorithm-management) can be used to deploy and redeploy your model via Python scripts, [Jupyter Notebook](https://github.com/algorithmiaio/model-deployment/), or [CI/CD such as Jenkins or GitHub Actions]({{site.baseurl}}/algorithm-development/ci-cd)).
 
-If you have any questions about Algorithmia or <a href="https://blog.algorithmia.com/how-we-hosted-our-model-as-a-microservice/">hosting your model</a> on the Algorithmia platform please <a href="mailto:support@algorithmia.com">get in touch</a>!
+If you have any questions about Algorithmia or <a href="https://algorithmia.com/blog/how-we-hosted-our-model-as-a-microservice">hosting your model</a> on the Algorithmia platform please <a href="mailto:support@algorithmia.com">get in touch</a>!
 
 ### Supported Machine and Deep Learning Frameworks
 {% assign model_tags = "algo-model-guide" | split:"|" %}

@@ -10,6 +10,6 @@ excerpt: "Locate and remove sections of a video which contain nudity"
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/video-nsfw/readme.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/video-nsfw/
-blog: https://blog.algorithmia.com/video-nudity-detection-microservice/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2017/05/hot-stone-massage.jpg
+blog: https://algorithmia.com/blog/video-nudity-detection-microservice
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2017/05/hot-stone-massage.jpg
 ---

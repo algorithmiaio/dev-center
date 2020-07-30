@@ -10,6 +10,6 @@ excerpt: "Get the sentiment of a website's contents from it's URL"
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/url_sentiment_analysis/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/url_sentiment_analysis/
-blog: https://blog.algorithmia.com/sentiment-analysis-pipeline-for-web-scraping/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2016/12/sentiment-analysis-pipeline.jpg
+blog: https://algorithmia.com/blog/sentiment-analysis-pipeline-for-web-scraping
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2016/12/sentiment-analysis-pipeline.jpg
 ---

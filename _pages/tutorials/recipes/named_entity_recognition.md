@@ -10,6 +10,6 @@ excerpt: "Find out who is talking about what on Twitter by getting the named ent
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/named_entity_recognition/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/named_entity_recognition/
-blog: https://blog.algorithmia.com/text-mining-tweets-named-entity-recognition/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2016/11/named-entity-twitter-tweets.jpg
+blog: https://algorithmia.com/blog/text-mining-tweets-named-entity-recognition
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2016/11/named-entity-twitter-tweets.jpg
 ---

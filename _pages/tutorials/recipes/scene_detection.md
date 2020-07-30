@@ -10,6 +10,6 @@ excerpt: "Extract metadata and statistics from videos using Scene Detection algo
 
 generate_from: https://raw.githubusercontent.com/algorithmiaio/sample-apps/master/recipes/scene_detection/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/scene_detection/
-blog: https://blog.algorithmia.com/video-editing-extracting-metadata-from-movie-scenes/
-thumbnail: https://blog.algorithmia.com/wp-content/uploads/2017/06/film-1668918_1280.jpg
+blog: https://algorithmia.com/blog/video-editing-extracting-metadata-from-movie-scenes
+thumbnail: https://algorithmia.com/blog/wp-content/uploads/2017/06/film-1668918_1280.jpg
 ---
