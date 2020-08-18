@@ -32,7 +32,7 @@ There are multiple ways to deploy your models on Algorithmia, depending on your 
   * [Publish your Algorithm](#publish-your-algorithm)
 * [Deploying From Within Jupyter Notebook](#deploying-from-within-jupyter-notebook)
   * [Creating an Algorithm](#creating-an-algorithm)
-  * [Pushing Algorithm Files to Git, Commiting and Pushing](#pushing-algorithm-files-to-git)
+  * [Pushing Algorithm Files to Git](#pushing-algorithm-files-to-git)
   * [Programmatically Uploading The Model to Algorithmia](#programmatically-uploading-the-model-to-algorithmia)
   * [Testing Deployed Algorithm](#testing-deployed-algorithm)
   * [Working Model](#working-model)
