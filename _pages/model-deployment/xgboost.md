@@ -184,7 +184,7 @@ So let's get started!
 
 ### Cloning the working repo
 
-If you'd like to follow along this tutorial and reproduce the steps of this notebook, you can clone the working repository at [XGBoost Jupyter Notebook Demo](https://github.com/aslisabanci/xgboost_demo). This repository contains:
+If you'd like to follow along this tutorial and reproduce the steps of this notebook, you can clone the example notebook under the repository at [XGBoost Jupyter Notebook Demo](https://github.com/algorithmiaio/model-deployment/tree/master/xgboost_notebook_to_algorithmia). This example contains:
 - The training data 
 - Python utility functions to help with our programmatic interactions with Algorithmia
 - The runnable Jupyter notebook
@@ -216,7 +216,7 @@ algo_utility = algorithmia_utils.AlgorithmiaUtils(api_key, username, algo_name, 
 #### Creating the algorithm and cloning its repo
 You would only need to do this step once, because you only need one algorithm and cloning it once on your local environment is enough.
 
-For these operations, we will use the utility functions defined on our imported [Algorithmia utility script](https://github.com/aslisabanci/xgboost_demo/blob/master/algorithmia_utils.py)
+For these operations, we will use the utility functions defined on our imported [Algorithmia utility script](https://github.com/algorithmiaio/model-deployment/blob/master/xgboost_notebook_to_algorithmia/algorithmia_utils.py)
 
 
 ```python
