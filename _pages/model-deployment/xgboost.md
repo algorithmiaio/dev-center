@@ -15,7 +15,7 @@ image:
 
 Welcome to deploying your <a href="http://xgboost.readthedocs.io/en/latest/">XGBoost</a> model on Algorithmia!
 
-There are multiple ways to deploy your models on Algorithmia, depending on your workflow. This guide first shows you how to use the web UI to create and deploy your Algorithm If you prefer a code-only approach to deployment, you can review the sample notebook tutorial at the end, to train and deploy a model to Algorithmia from scratch.
+There are multiple ways to deploy your models on Algorithmia, depending on your workflow. This guide first shows you how to use the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, you can review the sample notebook tutorial at the end, to train and deploy a model to Algorithmia from scratch.
 
 
 ## Table of Contents
@@ -149,8 +149,8 @@ def process_input(input):
             print("Could not create numpy array from data", e)
             sys.exit(0)
 
-#API calls will begin at the apply() method, with the request body passed as 'input'
-#For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
+# API calls will begin at the apply() method, with the request body passed as 'input'
+# For more details, see {{site.url}}{{site.baseurl}}/algorithm-development/languages
 def apply(input):
 	# Expects a csv file
     np_data = process_input(input)
@@ -184,32 +184,71 @@ If you'd like to follow along this tutorial and reproduce the steps, you can clo
 - Python utility functions to help with our programmatic interactions with Algorithmia
 - The runnable Jupyter notebook
 
-Before you get started, you'll also want to make sure that you have all the imported Python packages on your development environment.
+Before you get started, you'll also want to make sure that you have the [official Algorithmia Python Client](https://pypi.python.org/pypi/algorithmia/1.0.5) installed on your development environment:
+```
+pip install algorithmia
+```
+For more information on using the Python Client you can go to the [Algorithmia API docs](http://docs.algorithmia.com/?python#).
 
+For this example, we will also use some utility functions defined on our [Algorithmia utility script here](https://github.com/algorithmiaio/model-deployment/blob/master/xgboost_notebook_to_algorithmia/algorithmia_utils.py) This script encapsulates the related calls to Algorithmia, through its [Python API](https://algorithmia.com/developers/clients/python). 
 
-### Creating an Algorithm
-
-For these operations, we will use the utility functions defined on our imported [Algorithmia utility script](https://github.com/algorithmiaio/model-deployment/blob/master/xgboost_notebook_to_algorithmia/algorithmia_utils.py) This script encapsulates the related calls to Algorithmia, through its [Python API](https://algorithmia.com/developers/clients/python).
-
+You can import both of these packages as follows:
 
 ```python
 import Algorithmia
 import algorithmia_utils
 ```
 
-```python
-api_key = "YOUR_API_KEY"
+### Creating an Algorithm
+
+First start by providing your username and Algorithmia API key:
+
+If you aren't logged in, make sure to replace <code>YOUR&lowbar;USERNAME</code> with your name & <code>YOUR&lowbar;API&lowbar;KEY</code> with your API key.
+{: .notice-warning}
+
+{% raw %}
+<div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
+  <div class="code-toolbar ph-16 pv-8">
+    <div class="btn-group dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle gs-dropdown pa-0" data-toggle="dropdown">
+        <div class="lang-logo white-logo mr-4" ng-class="lang"></div>
+        <span ng-bind="languages[lang]" class="mr-4"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu gs-languages pv-4" role="menu">
+        <li ng-repeat="(language, displayName) in languages" class="mb-0">
+          <a class="caption" ng-click="setLang(language)">
+            <div class="lang-logo color-logo mr-4" ng-class="language"></div>
+            <span ng-bind="displayName"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-flat text-light-primary copy-btn" ng-click="copyCode(lang)">
+      <i class="fa fa-copy"></i>
+    </button>
+  </div>
+
+<!-- PYTHON -->
+  <div class="tab-pane code__pane gs-pane" id="python" ng-show="lang==='python'" ng-cloak><pre class="getting-started-code"><code class="demo-code-sample hljs python">username = <span class="hljs-string">"<span class="hover-info">YOUR_USERNAME<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>
+api_key = <span class="hljs-string">"<span class="hover-info">YOUR_API_KEY<div class="hover-content card pa-16" ng-bind-html="cardContent"></div></span>"</span>
+</code></pre><textarea id="python-copy-text" class="copy-text">
 username = "YOUR_USERNAME"
+api_key = "YOUR_API_KEY"</textarea></div>
+</div>
+{% endraw %}
+
+
+And continue with defining the name of the algorithm you want to create and your local path to clone the repository. An example definition would be:
+
+```python
 algo_name = "xgboost_basic_sentiment_analysis"
 local_dir = "../algorithmia_repo"
-
-algo_utility = algorithmia_utils.AlgorithmiaUtils(api_key, username, algo_name, local_dir)
 ```
 
-You would need to create your algorithm and clone its repo on your environment only once.
-
+Now you can use the utility functions to create the algorithm and clone it on your configured path:
 ```python
-# You would need to call these two functions only once
+algo_utility = algorithmia_utils.AlgorithmiaUtils(api_key, username, algo_name, local_dir)
 algo_utility.create_algorithm()
 algo_utility.clone_algorithm_repo()
 ```
