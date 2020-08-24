@@ -18,7 +18,7 @@ Algorithmia Teams is a distinct product from the public marketplace. They both r
   - CPU costs $0.0001/sec of usage.
   - GPU costs $0.0003/sec of usage.
 - **Advanced support** (Requires Pro subscription)
-  - For platform/admin issues: 24/7 email support with support level objective (SLO) that defines the response time by severity level. (Table below)
+  - For platform/admin issues: 24/7 email support with support level objective (SLO) that defines the response time by severity level.
   - For user and data science/model related questions: 5/12 email support with no SLO.
 
 NOTE: If you need your own cluster setup or need to accommodate a multi-team scenario with IT, operations, and/or cluster administration, please reach out to learn more about our enterprise offerings. info@algorithmia.com
@@ -28,17 +28,11 @@ NOTE: If you need your own cluster setup or need to accommodate a multi-team sce
 
 To create your team go to <a href="https://teams.algorithmia.com/signup" target="_blank" rel="noopener noreferrer">teams.algorithmia.com/signup</a>. You will first need to create your personal account. Once that’s done, you’ll name your team and select your plan. After that your team is ready to go! Invite members to your new team to start working right away.
 
-After the initial setup if you want to further customize your team profile like add an image, a website link, or edit some details, that can be done from your team's Settings page (admin only).
-
-
 ## Inviting People
 
-In order to collaborate on algorithms, all collaborators need to be a member of your team. You can invite people to your team during the team creation flow, or at any time from the **People** page. To invite someone to your team simply input their email address and they'll be sent a custom link for them to create an account and join your team. 
+In order to collaborate on algorithms, all collaborators need to be a member of your team. You can invite people to your team during the team creation flow, or at any time from the **People** page. To invite someone to your team simply input their email address and they'll be sent a custom link for them to create an account and join your team.
 
-If they already have an account they'll be able to sign-in to join.
-While the invitation is pending you will see it listed under the **Pending** tab where you have the option to resend or revoke the invitation.
-
-Once the invite is accepted, you will see the new member listed under the **Members** tab where you have the options to promote them to an administrator or remove them from the team.
+Once the invite is accepted, you will see the new member listed under the **Members** tab.
 
 All people joining a team will automatically be assigned an API key for them to use while developing algorithms.
 
@@ -48,13 +42,6 @@ NOTE: You must be invited to join a team by an administrator on the team. More a
 ## Algorithms
 
 Algorithms are the foundation for work on the Algorithmia platform. You can think of an algorithm as a maestro who coordinates all functionality and connections for your ML solution. You will find all of your team's algorithms on the Algorithms page, which is the default landing page after you log into the platform. Clicking on an algorithm will bring you to that algorithm's overview page, where you can code, view details, adjust settings, and more.
-
-### Utility algorithms
-
-From the **Algorithms** page you can also access *Utility Algorithms*. Utility algorithms are developed by Algorithmia's own ML experts for use in your ML pipelines. They offer functionality from basic operations to NLP, deep learning, and time series. Utility Algorithms are automatically included for use by every team so you can focus on your own custom trained models and not the supporting functions.
-
-NOTE: You cannot edit the source code of utility algorithms. If you find a bug within a utility algorithm please reach out to support@algorithmia.com.
-{: .notice-info}
 
 ## Data
 
@@ -68,10 +55,6 @@ Hosted data is a free option to host your data provided by Algorithmia. With hos
 
 Algorithm data is a collection which provides you a space to store data on a temporary basis. Data in this temporary collection will be cleaned up after 24 hours. These collections are useful for testing algorithms that produce files as an output. For example, if you need to test an algorithm that generates a file, you can change the save location to use the algorithm's temporary data collection. This will allow you to see the output but not have to worry about cleanup.
 
-### External data
-
-You can connect to an external data source for use within your algorithms by using Algorithmia's external data connectors. External connectors must be set up and managed by a team administrator but any member of the team will have access to use the connector. As a team admin, you can create a new external connection from the **Data** page. You will need to input the appropriate connection information e.g. access keys to configure the connection. Once set up, you will be able to write data to and from your external data source within your algorithms source code.
-
 ## API Keys
 
 API keys are used for authentication across the platform. Every member is assigned their own API key upon joining a team. Which you'll need to call your team's algorithms and interact with your team's data. You can access your API keys from the **API Keys** page where you'll see all the keys you have access to. A team administrator has the ability to create and manage keys.
@@ -84,12 +67,6 @@ NOTE: Please remember to properly label your keys to inform other members of the
 
 The **People** page shows you all members of the team along with basic details and their status (member or administrator). As a team administrator this page will offer additional functionality allowing you to invite members, update a members status, or remove a member.
 
-## Usage (Admin only)
-
-The **Usage** page allows you to view your remaining usage balance, purchase usage, and set up the auto-reload functionality, which will automatically refill your usage balance when low to ensure uninterrupted platform usage.
-
-The usage page also shows your team's usage history. You can use the table to view all algorithms called within a specified time period and you can download the table for accounting and record keeping purposes.
-
 ## Team Administrators
 
 The creator of a team will automatically be assigned as a team administrator and can promote members to the administrator status if necessary.
@@ -98,11 +75,7 @@ A team administrator can perform management actions not available to team member
 
 ### Managing Billing
 
-Every team needs to have an up to date credit card attached to their account in order to purchase consumption. This information will be required during the team creation process and can be updated at any time by an administrator using the Billing Portal.
-
-The Teams platform uses Stripe as its payment infrastructure. This brings you maximum security as Stripe will manage all billing and payment information, your information is never stored on Algorithmia's platform.
-
-You can use Stripe to change or cancel your subscription, purchase platform usage, or update your billing information.
+If you need to cancel your subscription please contact us at support@algorithmia.com.
 
 ### Conclusion
 
