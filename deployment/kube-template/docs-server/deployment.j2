@@ -55,8 +55,12 @@ spec:
         image: {{ service_docs_image }}
         imagePullPolicy: IfNotPresent
         resources:
+          requests:
+            cpu: 250m
+            memory: 100Mi
           limits:
-            memory: 3G
+            cpu: 500m
+            memory: 500Mi
         readinessProbe:
           failureThreshold: 3
           httpGet:
