@@ -40,8 +40,11 @@
 - title: Learning & Training Center
   url:  /learningcenter/
 
-- title: Teams & Organizations
+- title: Teams
   url: /teams/
+
+- title: Organizations
+  url: /platform/organizations/
 
 - title: Algorithmia Enterprise
   url: /algorithmia-enterprise/
