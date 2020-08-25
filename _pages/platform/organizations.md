@@ -1,16 +1,15 @@
 ---
 layout: article
 title:  "Organizations"
-excerpt: "Understanding Teams and Organizations on Algorithmia"
+excerpt: "Understanding Organizations on Algorithmia"
 categories: basics
-nav_index: 20
+nav_index: 25
 tags: [basics]
 show_related: true
 image:
     teaser: /icons/algo.svg
 permalink: /platform/organizations/
 redirect_from:
-  - /teams/
   - /basics/organization_profiles/
 ---
 

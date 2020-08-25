@@ -8,7 +8,7 @@ nav:
       - platform/algorithm-profiles.md
       - platform/customizing-api-keys.md
       - platform/permissions.md
-      - platform/teams.md
+      - platform/organizations.md
       - platform/versioning.md
       - platform/your-profile.md
   - Client Guides:
@@ -122,7 +122,8 @@ nav:
         - model-deployment/weka.md
         - model-deployment/xgboost.md
   - learningcenter.md
-  - Teams & Organizations: platform/teams.md
+  - Teams: teams.md
+  - Organizations: platform/organizations.md
   - pricing.md
   - release_notes.md
   - faqs.md
