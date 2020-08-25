@@ -1,0 +1,13 @@
+<ul class="menu-item">
+  {% for link in site.data.navigation %}
+    {% if link.url contains 'http' %}
+      {% assign href = link.url %}
+      {% else %}
+      {% assign href = link.url | relative_url %}
+    {% endif %}
+
+    <li><a href="{{ href }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+      {{ link.title }}
+    </a></li>
+  {% endfor %}
+</ul>

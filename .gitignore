@@ -1,0 +1,15 @@
+_site
+sites
+_tmp
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+_asset_bundler_cache
+.sass-cache
+/vendor/path
+.bundle/
+.jekyll-metadata
+.idea/
+CLIPBOARD.txt

@@ -1,0 +1,23 @@
+
+diego_oppenheimer:
+  slug: diego_oppenheimer
+  name: Diego Opppenheimer
+  email: diego@algorithmia.com
+  bio: "CEO and Co-Founder of Algorithmia"
+  avatar: /authors/diegooppenheimer.jpeg
+  twitter: doppenhe
+
+steph_kim:
+  slug: steph_kim
+  name: Stephanie Kim
+  bio: Developer Advocate at Algorithmia, helping data scientists deploy their models into production.
+  email: developers@algorithmia.com
+  twitter: algorithmia
+
+jon_peck:
+  slug: jon_peck
+  name: Jon Peck
+  bio: "Developer Evangelist for Algorithmia, helping programmers make the most efficient and productive use of their abilities."
+  avatar: /authors/jonpeck.jpeg
+  email: developers@algorithmia.com
+  twitter: algorithmia

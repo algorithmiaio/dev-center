@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="56px" viewBox="0 0 60 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>dropbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dropbox" fill="#028BD3" fill-rule="nonzero">
+            <path d="M17.6886792,0 L0,11.3810127 L12.3113208,21.2164557 L30,10.256962 L17.6886792,0 Z M0,30.7708861 L17.6886792,42.2924051 L30,32.035443 L12.3113208,21.2164557 L0,30.7708861 Z M30,32.035443 L42.4528302,42.2924051 L60,30.9113924 L47.8301887,21.2164557 L30,32.035443 Z M60,11.3810127 L42.4528302,0 L30,10.256962 L47.8301887,21.2164557 L60,11.3810127 Z M30.1415094,34.2835443 L17.6886792,44.5405063 L12.4528302,41.0278481 L12.4528302,44.9620253 L30.1415094,55.5 L47.8301887,44.9620253 L47.8301887,41.0278481 L42.4528302,44.5405063 L30.1415094,34.2835443 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

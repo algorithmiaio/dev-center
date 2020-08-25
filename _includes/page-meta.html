@@ -1,0 +1,5 @@
+{% if page.date %}
+  <p class="updated-date">{{ site.data.messages.locales[site.locale].updated }}
+
+  <time datetime="{{ page.last_modified_at | date: "%Y-%m-%dT%H:%M:%SZ" }}" itemprop="dateModified">{{ page.last_modified_at | date: "%B %d, %Y" }}</time>
+{% endif %}

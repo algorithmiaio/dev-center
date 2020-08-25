@@ -1,0 +1,166 @@
+<footer role="contentinfo" id="site-footer" class="syn-styles-supported">
+  <div class="syn-container">
+    <div class="syn-row syn-mb-32">
+      <div class="syn-col syn-col-lg-2 syn-col-md-3">
+        <div class="syn-mb-8">
+          <a href="/">
+            {% if site.enterprise %}
+            <img
+              src="{{ '/images/logos/algo-black.svg' | relative_url }}"
+              alt="algorithmia logo"
+              class="img-responsive syn-width-capped-160"
+            />
+            {% else %}
+            <img
+            src="{{ '/images/logos/binary_tree.svg' | relative_url }}"
+              alt="Algorithmia Logo"
+            />
+            {% endif %}
+          </a>
+        </div>
+        <div
+          class="syn-caption syn-text-secondary syn-mb-0"
+        >
+          © 2019 Algorithmia Inc.
+        </div>
+
+        {% unless site.enterprise %}
+          <div class="syn-caption syn-mt-8 syn-mb-8">
+            <a href="/privacy" class="syn-text-secondary"
+              >Privacy</a
+            >
+            ⋅
+            <a href="/terms" class="syn-text-secondary"
+              >Terms</a
+            >
+          </div>
+          <div
+            class="syn-caption syn-mb-8 syn-mr-16 syn-flex justify-space-between syn-width-capped-160"
+          >
+            <a
+              href="https://github.com/algorithmiaio"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="syn-text-secondary syn-link-no-decoration syn-link-animated"
+            >
+              <img src="{{ '/images/icons/github.svg' | relative_url }}" />
+            </a>
+            <a
+              href="https://twitter.com/algorithmia"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="syn-text-secondary syn-link-no-decoration syn-link-animated"
+            >
+              <img src="{{ '/images/icons/twitter.svg' | relative_url }}" />
+            </a>
+            <a
+              href="https://www.facebook.com/algorithmia"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="syn-text-secondary syn-link-no-decoration syn-link-animated"
+            >
+              <img src="{{ '/images/icons/facebook.svg' | relative_url }}" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/algorithmia-inc"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="syn-text-secondary syn-link-no-decoration syn-link-animated"
+            >
+              <img src="{{ '/images/icons/linkedin.svg' | relative_url }}" />
+            </a>
+            <a
+              href="https://www.glassdoor.com/Overview/Working-at-Algorithmia-EI_IE2030295.11,22.htm"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="syn-text-secondary syn-link-no-decoration syn-link-animated"
+            >
+              <img src="{{ '/images/icons/glassdoor.svg' | relative_url }}" />
+            </a>
+          </div>
+        {% endunless %}
+      </div>
+
+      {% unless site.enterprise %}
+        <div class="syn-col syn-col-lg-2 syn-col-md-3">
+          <div class="syn-overline syn-mb-8">Company</div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/about" class="syn-text-secondary">About</a>
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/careers" class="syn-text-secondary">Careers</a
+            ><span class="syn-badge theme-secondary syn-ml-8"
+              >We're Hiring!</span
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="https://algorithmia.com/blog" class="syn-text-secondary"
+              >Blog</a
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/press" class="syn-text-secondary "
+              >Press</a
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/partners" class="syn-text-secondary"
+              >Partners</a
+            >
+          </div>
+        </div>
+
+        <div class="syn-col syn-col-lg-2 syn-col-md-3">
+          <div class="syn-overline syn-mb-8">Product</div>
+          <div class="syn-mb-8 syn-body-2">
+            <a
+              href="/pricing"
+              class="syn-text-secondary"
+              >Pricing</a
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/serverless-ai-layer" class="syn-text-secondary"
+              >Cloud AI Layer</a
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/enterprise" class="syn-text-secondary"
+              >Enterprise AI Layer</a
+            >
+          </div>
+          <div class="syn-body-2">
+            <a href="/algorithms" class="syn-text-secondary"
+              >Algorithms</a
+            >
+          </div>
+        </div>
+
+        <div class="syn-col syn-col-lg-2 syn-col-md-3">
+          <div class="syn-overline syn-mb-8">Resources</div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/getting-started" class="syn-text-secondary"
+              >Getting Started</a
+            >
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="{{ site.baseurl }}" class="syn-text-secondary">Docs</a>
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/learn" class="syn-text-secondary">Learn</a>
+          </div>
+          <div class="syn-mb-8 syn-body-2">
+            <a href="/research" class="syn-text-secondary"
+              >Research</a
+            >
+          </div>
+          <div class="syn-body-2">
+            <a href="/contact" class="syn-text-secondary"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+/* Temporary styles until we can switch all of devcenter to use synapse */
+
+body {
+  min-height: 100vh;
+}
+
+/* Ensures the :target element doesn't render underneath the fixed position header. */
+:target::before {
+  content: "";
+  display: block;
+  height: 57px;
+  margin: -57px 0 0;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#wrapper,
+.dev-center-content-container {
+  flex-grow: 1;
+  max-width: 100%;
+}
+#wrapper {
+  margin-top: 2rem;
+}
+.syn-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+.show-unauth,
+.show-auth {
+  display: none !important;
+}
+.show-auth-nav .show-auth,
+.show-unauth-nav .show-unauth {
+  display: initial !important;
+}
+.edit-link {
+  padding-left: .25rem;
+  vertical-align: top;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, .54)
+}
+
+

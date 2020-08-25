@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="http://schema.org/Article">
+
+	{% if page.image.feature %}
+	<div class="page-feature">
+		<div class="page-image">
+			{% if page.image.credit %}{% include image-credit.html %}{% endif %}
+		</div><!-- /.page-image -->
+	</div><!-- /.page-feature -->
+	{% endif %}
+
+	{% include breadcrumbs.html %}
+
+	<h1 id="page-title">{% include title-icon.html %}{{ page.title }}{% include page-edit.html %}</h1>
+
+	<div id="content" itemprop="articleBody">
+		{{ content }}
+	</div><!-- /.content -->
+
+</article>

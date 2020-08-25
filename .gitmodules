@@ -1,0 +1,6 @@
+[submodule "synapse"]
+	path = synapse
+	url = ../synapse.git
+[submodule "api-docs"]
+	path = api-docs
+	url = ../api-docs.git

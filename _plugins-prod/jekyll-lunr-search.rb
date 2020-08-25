@@ -1,0 +1,1 @@
+../plugins/jekyll-lunr-search.rb

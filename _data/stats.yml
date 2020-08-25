@@ -1,0 +1,7 @@
+marketplace:
+  total_num_users: "79,000"
+  total_num_algorithms: "6,700"
+
+platform:
+  max_num_algo_requests: "80"
+  max_num_parallel_algo_requests: "24"

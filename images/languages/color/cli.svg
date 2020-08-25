@@ -1,0 +1,7 @@
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle  fill="#222222" cx="20" cy="20" r="20"></circle>
+    <g transform="translate(6.000000, 10.000000)" stroke-width="2.4" stroke="#FFFFFF">
+        <polyline id="Path-3" points="0.703030303 0 10.0237252 9.51253249 0.7667528 18.960031" fill="none"></polyline>
+        <path d="M14.6297258,18.2 L28.6574685,18.2" id="Path-2"></path>
+    </g>
+</svg>

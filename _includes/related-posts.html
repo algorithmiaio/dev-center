@@ -1,0 +1,14 @@
+<h3>Related Posts:</h3>
+
+{% for tag in page.tags %}
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  {% assign new_tag = site.data.tags[tag] %}
+  <h4>{{ new_tag.name }}</h4>
+  <ul>
+  {% for post in site.posts %}
+    {% if post.tags contains tag and post.url != page.url %}
+      {% include post-list.html %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endfor %}

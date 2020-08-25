@@ -1,0 +1,38 @@
+# Specify tags here to customize text from slug
+
+# getting-started:
+#   name: Getting Started
+
+algo-dev:
+  name: Algorithm Development
+
+faq:
+  name: FAQs
+
+platform-faq:
+  name: Platform FAQs
+  
+algo-dev-faq:
+  name: Algorithm Development FAQs
+
+guides:
+  name: Guides
+
+sentiment-analysis:
+  name: Sentiment Analysis
+
+clients:
+  name: Clients
+
+sample-apps:
+  name: Sample Apps
+
+how-to:
+  name: How-to
+
+# These are for algo dev and app dev getting started sections
+app-dev-getting-started:
+  name: Getting Started
+
+alg-dev-getting-started:
+  name: Getting Started

@@ -1,0 +1,61 @@
+# Site navigation links
+
+- title: Home
+  url: /
+
+# - title: Getting Started
+#   url: /getting-started/
+
+- title: Platform
+  url: /platform/
+  nav_category: basics
+
+- title: Client Guides
+  url: /clients/
+  nav_category: clients
+
+- title: Connecting Your Data
+  url: /data/
+  nav_category: working-with-data
+
+- title: Integrations
+  url: /integrations/
+#  nav_category: integrations
+
+- title: Tutorials
+  url: /tutorials/
+  nav_category: tutorials
+
+- title: Algorithm Development
+  url: /algorithm-development/
+  nav_category: algorithm-development
+
+- title: Model Deployment
+  url: /model-deployment/
+  # nav_category: model-deployment
+
+- title: API Documentation
+  url: http://docs.algorithmia.com
+
+- title: Learning & Training Center
+  url:  /learningcenter/
+
+- title: Teams
+  url: /teams/
+
+- title: Organizations
+  url: /platform/organizations/
+
+- title: Algorithmia Enterprise
+  url: /algorithmia-enterprise/
+  nav_category: algorithmia-enterprise
+  enterprise_only: true
+
+- title: Pricing
+  url: /pricing/
+
+- title: Release Notes
+  url: /release_notes/
+
+- title: FAQ
+  url: /faqs/

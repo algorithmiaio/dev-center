@@ -1,0 +1,16 @@
+# Site navigation links
+
+- title: Algorithms
+  url: https://algorithmia.com/algorithms
+
+- title: Data
+  url: https://algorithmia.com/data
+
+- title: Docs
+  url: https://algorithmia.com/developers
+
+- title: Sign In
+  url: https://algorithmia.com/signin
+
+- title: Sign Up
+  url: https://algorithmia.com/signup

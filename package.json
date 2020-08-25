@@ -1,0 +1,50 @@
+{
+  "name": "algorithmia-dev-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Algorithmia Developer Resource Center",
+  "author": "Algorithmia <mia@algorithmia.com>",
+  "homepage": "https://algorithmia.com/",
+  "license": "The MIT License (MIT)",
+  "scripts": {
+    "apidocs:build": "cd api-docs && gem install bundler && bundle install && bundle exec middleman build --clean",
+    "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
+    "build": "npm run apidocs:build && npm run devcenter:build",
+    "devcenter:build": "./build.sh",
+    "devcenter:dev": "bundle exec jekyll serve --port 4001",
+    "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml --port 4001",
+    "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001",
+    "e2e": "./node_modules/.bin/wdio wdio.conf.js",
+    "e2e:cloud": "E2E_RUN_IN_CLOUD=true npm run e2e",
+    "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true npm run e2e:cloud",
+    "e2e:local": "E2E_BASE_URL=http://localhost:3000 npm run e2e",
+    "setup": "npm run apidocs:setup && npm run apidocs:build && npm run synapse:setup && gem install bundler && bundle install && npm install",
+    "server": "node ./server/index.js",
+    "server:dev": "NODE_ENV=development npm run server",
+    "server:prod": "NODE_ENV=production npm run server",
+    "start": "npm run server:prod",
+    "synapse:setup": "git submodule init && git submodule update && cd synapse && npm ci",
+    "test:server": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000"
+  },
+  "devDependencies": {
+    "@wdio/browserstack-service": "^5.13.2",
+    "@wdio/cli": "^5.15.0",
+    "@wdio/local-runner": "^5.15.0",
+    "@wdio/mocha-framework": "^5.15.0",
+    "@wdio/selenium-standalone-service": "^5.15.0",
+    "@wdio/spec-reporter": "^5.14.5",
+    "@wdio/sync": "^5.14.4",
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "cross-env": "^6.0.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "prom-client": "^11.5.3",
+    "request-stats": "^3.0.0"
+  }
+}

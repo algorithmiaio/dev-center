@@ -1,0 +1,1 @@
+../plugins/no_trailing_slash.rb
