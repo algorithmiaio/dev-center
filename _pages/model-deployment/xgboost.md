@@ -254,7 +254,7 @@ algo_utility.clone_algorithm_repo()
 ```
 
 ### Creating the Algorithm Script and Dependencies
-The folllowing code pieces programmatically creates the algorithm script that handles our requests, and the dependency file that is used when building the container for our algorithm on the Algorithmia environment.
+The following code programmatically creates the algorithm script that handles our requests, and the dependency file that is used when building the container for our algorithm on the Algorithmia environment.
 
 For this we will use the  `%%writefile` macro, but you can always use another editor to edit and save your files.
 
@@ -267,7 +267,8 @@ import numpy as np
 import pandas as pd
 import xgboost
 
-model_path = "data://asli/xgboost_demo/musicalreviews_xgb_model.pkl"
+# Do not forget to update this line with your username!
+model_path = "data://YOUR_USERNAME/xgboost_demo/musicalreviews_xgb_model.pkl"
 client = Algorithmia.client()
 model_file = client.file(model_path).getFile().name
 loaded_xgb = joblib.load(model_file)
@@ -310,18 +311,18 @@ The steps to train and validate an XGBoost model are omitted here but you can ch
 
 
 ### Programmatically Uploading the Model to Algorithmia
-Assuming that you have a saved model file after your training and validation steps, you can call the Algorithmia utility function to take your saved model from its local path and put it on a data container on Algorithmia.
+Assuming that you have a saved model file after your training and validation steps, you can call the Algorithmia utility function to take your saved model from its local path and put it on a data collection on Algorithmia.
 
 
 ```python
-algorithmia_data_path = "data://asli/xgboost_demo"
+algorithmia_data_path = "data://YOUR_USERNAME/xgboost_demo"
 algo_utility.upload_model_to_algorithmia(local_path, algorithmia_data_path, model_name)
 ```
 
 ### Testing Deployed Algorithm
 Now you are up and ready with a perfectly scalable algorithm on Algorithmia, waiting for its visitors!
 
-Below is an example call to [our sentiment analysis example algorithm](https://algorithmia.com/algorithms/asli/xgboost_basic_sentiment_analysis) algorithm, using our utility function to call its latest version.
+Below is an example call to [our sentiment analysis example algorithm](https://algorithmia.com/algorithms/asli/xgboost_basic_sentiment_analysis), using our utility function to call its latest version.
 
 
 ```python
@@ -337,4 +338,4 @@ print("Sentiment result: {}".format(algo_result.result["sentiment"]))
 
 ### Working Model
 
-You can check out the final working algorithm is in action at [Basic Sentiment Analysis with XGBoost](https://algorithmia.com/algorithms/asli/xgboost_basic_sentiment_analysis)
+You can check out the final working algorithm in action at [Basic Sentiment Analysis with XGBoost](https://algorithmia.com/algorithms/asli/xgboost_basic_sentiment_analysis)
