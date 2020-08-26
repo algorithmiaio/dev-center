@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    description: algorithmia docs webserver
+  labels:
+    app: docs-server
+  name: docs-server-service
+  namespace: {{ kubernetes_namespace }}
+spec:
+  ports:
+    - name: docs-http
+      port: 80
+      protocol: TCP
+      targetPort: 4000
+  selector:
+    app: docs-server
+  sessionAffinity: None
+  type: ClusterIP

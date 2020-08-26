@@ -76,5 +76,8 @@ COPY package.json package-lock.json ./
 
 RUN npm install --production
 
+# Add deployment artifacts to the image.
+ADD deploy /opt/algorithmia/service/deploy
+
 EXPOSE 3000
 ENTRYPOINT [ "node", "server/index.js" ]
