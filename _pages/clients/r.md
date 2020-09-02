@@ -160,6 +160,18 @@ Now you've seen how to upload a local data file, check if a file exists in a dat
 
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
+{% if site.enterprise %}
+## Publishing Insights
+
+Inference-related metrics (a feature of [Insights](../../algorithmia-enterprise/insights) can be reported via using the `report_insights` method of the Algorithmia client.
+
+{% highlight r %}
+# report Insights
+# TBD R sample code for this - https://algorithmia.atlassian.net/browse/INSIGHTS-31
+client$report_insights(...)
+{% endhighlight %}
+{% endif %}
+
 ## Call an Algorithm
 
 Finally we are ready to call an algorithm. In this guide we'll use the natural language processing algorithm called [Summarizer](https://algorithmia.com/algorithms/nlp/Summarizer). This algorithm results in a string that is the summary of the text content you pass in as the algorithm's input.
