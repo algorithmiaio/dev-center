@@ -174,10 +174,10 @@ For more methods on how to get a file using the Data API from a data collection 
 {% if site.enterprise %}
 ## Publishing Insights
 
-Inference-related metrics (a feature of [Insights](../../algorithmia-enterprise/insights) can be reported via using the `report_insights` method of the Algorithmia client.
+Inference-related metrics (a feature of [Insights](../../algorithmia-enterprise/insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
 {% highlight python %}
-# report Insights
+# Report Insights
 client.report_insights({"cats_in_image": 4, "dogs_in_image": 7})
 {% endhighlight %}
 
