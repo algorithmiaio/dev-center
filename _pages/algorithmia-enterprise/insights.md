@@ -12,7 +12,7 @@ Insights is an algorithm metrics pipeline providing you access to your algorithm
 
 With Insights you'll be able to opt-in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time and memory consumption as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
 
-Insights currently supports [Python 3.x](../../clients/python) and [R](../../clients/r) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
+Insights currently supports [Python 3.x](../clients/python) and [R](../clients/r) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
 
 ### Types of Insights metrics
 
@@ -44,13 +44,13 @@ Algorithmia [client libraries](../clients) are used to report inference-related 
 
 ### Enabling Insights for an algorithm version
 
-Enabling Insights for an algorithm version happens during [algorithm publishing](../../algorithm-development/your-first-algo/#publish-your-algorithm).
+Enabling Insights for an algorithm version happens during [algorithm publishing](../algorithm-development/your-first-algo/#publish-your-algorithm).
 
 When using the web UI publishing workflow, a toggle will appear to enable Insights for the specific algorithm version that you are publishing.
 
 **Screenshot pending UX completion - https://algorithmia.atlassian.net/browse/INSIGHTS-31**
 
-When using the HTTP API or client libraries to publish your algorithm, passing the key value pair `"insights_enabled":true` in the `settings` hash will enable Insights for your algorithm. For example, when using [cURL](../../clients/curl):
+When using the HTTP API or client libraries to publish your algorithm, passing the key value pair `"insights_enabled":true` in the `settings` hash will enable Insights for your algorithm. For example, when using [cURL](../clients/curl):
 
 {% highlight bash %}
 curl -H 'Authorization: Simple YOUR_API_KEY' https://<algorithmia-cluster-host>/v1/algorithms/<algorithm-owner>/<algorithm-name>/version --data-binary '{"settings":{"insights_enabled":true}}'
