@@ -223,6 +223,8 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue.
 
+When contributing please refer to the [Algorithmia manual of style](https://docs.google.com/document/d/1PPVfgMkX7-EVGLPMhN1E485CAXu9QfhSLKM0lZhnZdU/edit?usp=sharing) for grammar, punctuation, voice, and tone.
+
 ## Need Help? Found a bug?
 
 If you find a bug, can't follow the documentation, or have a question -- please [submit an issue!](https://github.com/algorithmiaio/dev-center/issues)
