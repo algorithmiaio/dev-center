@@ -28,7 +28,7 @@ Insights metrics fall into two categories:
 
 The first step in allowing Insights to be collected and reported for algorithms is to have the Algorithmia Platform Administrator connect your cluster to a Kafka broker that your organization operates to receive metrics created by the Algorithmia platform.
 
-Navigate to the _Algorithmia Insights_ administration page, which can be found under the _System Actions_ section.
+Navigate to the "Algorithmia Insights" administration page, which can be found under the "System Actions" section.
 
 **Screenshot and list of credentials needed TBD pending UX completion - https://algorithmia.atlassian.net/browse/INSIGHTS-31**
 
