@@ -172,12 +172,12 @@ Now you've seen how to upload a local data file, check if a file exists in a dat
 For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
 
 {% if site.enterprise %}
-## Publishing Insights
+## Publishing Algorithmia Insights
 
-Inference-related metrics (a feature of [Insights](../../algorithmia-enterprise/insights)) can be reported via using the `report_insights` method of the Algorithmia client.
+Inference-related metrics (a feature of [Algorithmia Insights](../../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
 {% highlight python %}
-# Report Insights
+# Report Algorithmia Insights
 client.report_insights({"cats_in_image": 4, "dogs_in_image": 7})
 {% endhighlight %}
 
