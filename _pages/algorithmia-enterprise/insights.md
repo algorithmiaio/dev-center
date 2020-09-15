@@ -10,7 +10,7 @@ image:
 
 Algorithmia Insights is an algorithm metrics pipeline providing you access to your algorithm metrics payload for each algorithm session so you can measure, monitor, and manage your algorithms in production.
 
-With Algorithmia Insights you'll be able to opt-in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time and memory consumption as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
+With Algorithmia Insights you'll be able to opt-in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
 
 Algorithmia Insights currently supports [Python 3.x](../clients/python) and [R](../clients/r) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
 
@@ -20,7 +20,7 @@ Algorithmia Insights metrics fall into two categories:
 * Operational metrics
 * Inference-related metrics
 
-**Operational metrics** include (but are not limited to) execution time, memory consumption, request ID, algorithm owner, algorithm name, algorithm version, timestamp, etc. When Algorithmia Insights are turned on for a particular algorithm version, these are automatically collected and reported without any additional action necessary on the part of the algorithm author or manager.
+**Operational metrics** include (but are not limited to) execution time, request ID, algorithm owner, algorithm name, algorithm version, timestamp, etc. When Algorithmia Insights are turned on for a particular algorithm version, these are automatically collected and reported without any additional action necessary on the part of the algorithm author or manager.
 
 **Inference-related metrics** are defined by the algorithm author in algorithm code. Each metric is defined by a title, like `cute_cats_detected`, and a numeric value, like `24`. Multiple inference-related metrics can be reported at one time, and the set of metrics reported does not need to be the same from one algorithm execution to another.
 
