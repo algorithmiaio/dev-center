@@ -26,14 +26,38 @@ Algorithmia Insights metrics fall into two categories:
 
 ## One-time administrator setup
 
-The first step in allowing Algorithmia Insights to be collected and reported for algorithms is to have the Algorithmia Platform Administrator connect your cluster to a Kafka broker that your organization operates to receive metrics created by the Algorithmia platform.
+The first step in allowing Algorithmia Insights to be collected and reported for algorithms is to have the Algorithmia Platform Administrator connect your cluster to a Kafka broker / cluster to which metrics will be sent.
 
-Navigate to the "Algorithmia Insights" administration page, which can be found under the "System Actions" section.
+The Algorithmia platform supports two Kafka connection configurations:
 
-**Screenshot and list of credentials needed TBD pending UX completion - https://algorithmia.atlassian.net/browse/INSIGHTS-31**
+* [SCRAM](https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism) (Salted Challenge Response Authentication Mechanism) over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Provides encrypted communications, authentication credential database breach protection, [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attack protection, and internationalization support. Please see the [Kafka SCRAM setup guide](https://kafka.apache.org/documentation/#security_sasl_scram) for configuring a Kafka broker / cluster to support this configuration.
+* Unencrypted / plaintext. Provides all of the features of Algorithmia Insights for use without encryption or authentication safeguards; allows for testing / prototyping as well as use in networks with existing robust protection against attacks.
 
-From here, enter the information about your Kafka broker. This includes a URL and credentials necessary to connect. The Algorithmia platform supports [SCRAM](https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism) for authentication; please see the [Kafka SCRAM setup guide](https://kafka.apache.org/documentation/#security_sasl_scram) for creating credentials that the Algorithmia platform will use to connect.
+The first step to configuring your cluster for Algorithmia Insights is to navigate to the "Algorithmia Insights" administration page, which can be found under the "System Actions" section.
 
+From here, enter the information about your Kafka broker. The following information is needed for any connection type:
+
+* **Kafka URL**: a list of comma-separated [Kafka bootstrap servers](https://kafka.apache.org/documentation/#bootstrap.servers) used to establish the initial connection to the Kafka cluster. Algorithmia will make use of all servers irrespective of which servers are specified here for bootstrapping - this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form `host1:port1,host2:port2,...` Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).
+* **Topic Name**: the name of the [Kafka topic](https://kafka.apache.org/documentation/#intro_concepts_and_terms) to which Algorithmia Insights will be published
+
+For each execution of algorithms for which Algorithmia Insights is turned on, the Algorithmia Platform will perform multiple data send attempts to the Kafka broker / cluster over the course of four minutes. If, after that time, the data cannot be sent to the Kafka broker / cluster for _any_ reason (Kafka server offline, failed authenticated, network disconnections, etc), the data for that specific execution will be permanently lost.
+
+### Unencrypted / plaintext
+
+Unencrypted, plaintext connections do not require any additional configuration information.
+
+![](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-unencrypted-plaintext.png)
+
+### SCRAM / TLS
+
+Encrypted, SCRAM-authenticated connections also require:
+
+* **Username** - the username used to authenticate to the Kafka cluster
+* **Password** - the password used to authenticate to the Kafka cluster
+* **CA Certificate** - the Certificate Authority certificate used to sign the TLS certificates that the Kafka servers use for communication.
+
+![](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-sasl-scram.png)
+ 
 ## Using Algorithmia Insights in an algorithm
 
 Each algorithm in your Algorithmia cluster has independent settings for whether to collect and report Algorithmia Insights. Additionally, each published version of your algorithm can have Algorithmia Insights turned on or off.
@@ -42,13 +66,28 @@ Each algorithm in your Algorithmia cluster has independent settings for whether 
 
 Algorithmia [client libraries](../clients) are used to report inference-related metrics that you create inside of your algorithm code. Please see the "Publishing Algorithmia Insights" section of the appropriate [client library guide](../clients) for the language that you're using.
 
+#### Restrictions
+
+You can report up to 25 metrics in your code. The Algorithmia Platform will report additional metrics which do not count towards these 25.
+
+Additionally, the total size of your metrics data (keys and values) must not exceed 25 kilobytes.
+
+Finally, there are several reserved metric names that must not be used by client code, as they will conflict with automatically-created metrics for each algorithm execution:
+
+* `request_id`
+* `timestamp`
+* `execution_time_ms`
+* `algorithm_owner`
+* `algorithm_name`
+* `algorithm_version`
+
 ### Enabling Algorithmia Insights for an algorithm version
 
 Enabling Algorithmia Insights for an algorithm version happens during [algorithm publishing](../algorithm-development/your-first-algo/#publish-your-algorithm).
 
 When using the web UI publishing workflow, a toggle will appear to enable Algorithmia Insights for the specific algorithm version that you are publishing.
 
-**Screenshot pending UX completion - https://algorithmia.atlassian.net/browse/INSIGHTS-31**
+![](/developers/images/algorithmia-enterprise/insights/web-ui-publish.png)
 
 When using the HTTP API or client libraries to publish your algorithm, passing the key value pair `"insights_enabled":true` in the `settings` hash will enable Algorithmia Insights for your algorithm. For example, when using [cURL](../clients/curl):
 
@@ -62,4 +101,4 @@ Once you've published your algorithm with Algorithmia Insights enabled, all exec
 
 The "Versions" tab of the algorithm page shows which published versions of that algorithm have Algorithmia Insights enabled:
 
-**Screenshot pending UX completion - https://algorithmia.atlassian.net/browse/INSIGHTS-31**
+![](/developers/images/algorithmia-enterprise/insights/web-ui-versions.png)
