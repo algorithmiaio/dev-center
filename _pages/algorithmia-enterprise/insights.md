@@ -46,7 +46,7 @@ For each execution of algorithms for which Algorithmia Insights is turned on, th
 
 Unencrypted, plaintext connections do not require any additional configuration information.
 
-![](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-unencrypted-plaintext.png)
+![Image of Kafka connection UI for unencrypted, plaintext connections](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-unencrypted-plaintext.png)
 
 ### SCRAM / TLS
 
@@ -56,7 +56,7 @@ Encrypted, SCRAM-authenticated connections also require:
 * **Password** - the password used to authenticate to the Kafka cluster
 * **CA Certificate** - the Certificate Authority certificate used to sign the TLS certificates that the Kafka servers use for communication.
 
-![](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-sasl-scram.png)
+![Image of Kafka connection UI for encrypted, SCRAM connections](/developers/images/algorithmia-enterprise/insights/web-ui-kafka-connection-sasl-scram.png)
  
 ## Using Algorithmia Insights in an algorithm
 
@@ -87,7 +87,7 @@ Enabling Algorithmia Insights for an algorithm version happens during [algorithm
 
 When using the web UI publishing workflow, a toggle will appear to enable Algorithmia Insights for the specific algorithm version that you are publishing.
 
-![](/developers/images/algorithmia-enterprise/insights/web-ui-publish.png)
+![Image of algorithm publish UI with Algorithmia Insights checkbox](/developers/images/algorithmia-enterprise/insights/web-ui-publish.png)
 
 When using the HTTP API or client libraries to publish your algorithm, passing the key value pair `"insights_enabled":true` in the `settings` hash will enable Algorithmia Insights for your algorithm. For example, when using [cURL](../clients/curl):
 
@@ -101,4 +101,4 @@ Once you've published your algorithm with Algorithmia Insights enabled, all exec
 
 The "Versions" tab of the algorithm page shows which published versions of that algorithm have Algorithmia Insights enabled:
 
-![](/developers/images/algorithmia-enterprise/insights/web-ui-versions.png)
+![Image of algorithm versions page with Algorithmia Insights flag highlighted](/developers/images/algorithmia-enterprise/insights/web-ui-versions.png)
