@@ -12,7 +12,7 @@ Algorithmia Insights is an algorithm metrics pipeline providing you access to yo
 
 With Algorithmia Insights you'll be able to opt-in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
 
-Algorithmia Insights currently supports [Python 3.x](../clients/python#publishing-algorithmia-insights) and [R](../clients/r#publishing-algorithmia-insights) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
+Algorithmia Insights currently supports [Python 3.x](../clients/python#publishing-algorithmia-insights), [R](../clients/r#publishing-algorithmia-insights), and [Java](../clients/java#publishing-algorithmia-insights) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
 
 ### Types of Algorithmia Insights metrics
 

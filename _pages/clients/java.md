@@ -261,6 +261,21 @@ This guide used the the first chapter of [Jack London's Burning Daylight](https:
 
 If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](https://algorithmia.com/blog/introduction-natural-language-processing-nlp).
 
+{% if site.enterprise %}
+## Publishing Algorithmia Insights
+
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `reportInsights` method of the Algorithmia client.
+
+{% highlight java %}
+// Report Algorithmia Insights
+client.reportInsights(new HashMap<String,Object>() { {
+    put("cats_in_image", 4);
+    put("dogs_in_image", true);
+} });
+{% endhighlight %}
+
+{% endif %}
+
 ## Limits
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
