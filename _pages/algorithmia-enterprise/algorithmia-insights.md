@@ -40,6 +40,8 @@ From here, enter the information about your Kafka broker. The following informat
 * **Kafka URL**: a list of comma-separated [Kafka bootstrap servers](https://kafka.apache.org/documentation/#bootstrap.servers) used to establish the initial connection to the Kafka cluster. Algorithmia will make use of all servers irrespective of which servers are specified here for bootstrapping - this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form `host1:port1,host2:port2,...` Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).
 * **Topic Name**: the name of the [Kafka topic](https://kafka.apache.org/documentation/#intro_concepts_and_terms) to which Algorithmia Insights will be published
 
+It is the Algorithmia Platform Administrator's responsibility to ensure that Kafka traffic (which operates over TCP) routes successfully from the Algorithmia Platform to all of the Kafka bootstrap servers in the **Kafka URL** list (on their specified ports) *and* to all of the Kafka cluster members reported by those bootstrap servers (on their specified ports).
+
 For each execution of algorithms for which Algorithmia Insights is turned on, the Algorithmia Platform will perform multiple data send attempts to the Kafka broker / cluster over the course of four minutes. If, after that time, the data cannot be sent to the Kafka broker / cluster for _any_ reason (Kafka server offline, failed authenticated, network disconnections, etc), the data for that specific execution will be permanently lost.
 
 ### Unencrypted / plaintext
@@ -76,7 +78,7 @@ Finally, there are several reserved metric names that must not be used by client
 
 * `request_id`
 * `timestamp`
-* `execution_time_ms`
+* `duration_milliseconds`
 * `algorithm_owner`
 * `algorithm_name`
 * `algorithm_version`
