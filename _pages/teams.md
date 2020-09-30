@@ -51,10 +51,6 @@ The **Data** page displays all data owned by your team. This includes hosted dat
 
 Hosted data is a free option to host your data provided by Algorithmia. With hosted data you can create collections and add files to be used within your algorithm. All files within a collection have a unique path you can use directly within your algorithm's code. Hosted data is the recommended location to store model files.
 
-### Algorithm data
-
-Algorithm data is a collection which provides you a space to store data on a temporary basis. Data in this temporary collection will be cleaned up after 24 hours. These collections are useful for testing algorithms that produce files as an output. For example, if you need to test an algorithm that generates a file, you can change the save location to use the algorithm's temporary data collection. This will allow you to see the output but not have to worry about cleanup.
-
 ## API Keys
 
 API keys are used for authentication across the platform. Every member is assigned their own API key upon joining a team. Which you'll need to call your team's algorithms and interact with your team's data. You can access your API keys from the **API Keys** page where you'll see all the keys you have access to. A team administrator has the ability to create and manage keys.
