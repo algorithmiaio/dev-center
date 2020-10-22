@@ -52,6 +52,12 @@ function monitorServer(server, stats) {
   // Allow stats to be passed for easier testing
   stats = stats || requestStats(server)
 
+  // Ensure that metrics that look for 500 status codes return an initial count
+  // of 0. Without setting this explicitly when the server is started,
+  // 'undefined' is returned instead, causing the Grafana chart to display
+  // 'No data' instead of a series of 0 values.
+  responseCounter.labels('GET', '500').inc(0)
+
   stats.on('complete', ({ req, res, time: ms }) => {
     inboundByteCounter.labels(req.method).inc(req.bytes)
     outboundByteCounter.labels(req.method).inc(res.bytes)
