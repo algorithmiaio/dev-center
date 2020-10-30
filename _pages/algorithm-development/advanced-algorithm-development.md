@@ -46,7 +46,4 @@ image:
       <p itemprop="name" class="lg text-primary">{{ post_title }}</p>
     </a>
   </div>
-  {% socialcard https://algorithmia.com/blog/advanced-grammar-and-natural-language-processing-with-syntaxnet %}
-  {% socialcard https://algorithmia.com/blog/deep-dive-into-object-detection-with-open-images-using-tensorflow %}
-  {% socialcard https://algorithmia.com/blog/deep-dive-into-parallelized-video-processing %}
 </div>

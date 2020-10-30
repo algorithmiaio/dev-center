@@ -8,8 +8,54 @@ image:
     teaser: /icons/algo.svg
 ---
 
-# Q2 2020 Release Notes #
+# Q3 2020 Release Notes #
 
+## Introduction ##
+
+This is an exciting release for Algorithmia Enterprise as we continue to deliver new and significant capabilities for our customers. Notably, this release focuses on advanced model governance and operational management with Algorithmia Insights. Additionally, customers can reach even higher scale, performance, and infrastructure efficiency with our new autoscaler and scheduler technology.
+
+## Algorithmia Insights ##
+
+Algorithmia Insights is a flexible integration solution for ML model performance monitoring. It provides access to algorithm inference and operational metrics, making it easy to integrate into any monitoring, reporting, and alerting tool.
+
+Algorithmia Insights allows customers to emit a rich metrics payload from every prediction, including model operational metrics (execution time, timestamp, request ID) and customized model inference metrics such as data inputs and prediction outputs. Customers can then integrate those metrics via Kafka into nearly any external logging, monitoring, or data visualization system.
+
+### Enabling Algorithmia Insights ###
+
+Algorithmia Insights is available to Enterprise customers for deployments scheduled after the feature release date of October 30 and will be included in Enterprise subscriptions.
+
+To enable Algorithmia Insights, your cluster administrator can follow the [administrator docs](/developers/algorithmia-enterprise/algorithmia-insights) to learn how to configure the connection to Kafka. After your cluster administrator has connected to Kafka, algorithm creators can enable Algorithmia Insights with a click of a checkbox when publishing their algorithm. It’s that easy to then view all the algorithm metrics that have been enabled in monitoring and alerting tools such as DataDog, InfluxDB, New Relic, Grafana, Kibana, and more.
+
+### Monitoring, alerting, and taking action based on Algorithmia Insights ###
+
+Many organizations today don’t have the ability to monitor model performance, and those that do use a patchwork of disparate tools and manual processes for monitoring and reporting on ML model performance in production often without critical data required to satisfy stakeholder requirements. Algorithmia Insights enables you to:
+
+* Identify and correct model drift, data skews, and negative feedback loops
+* Quickly detect underperforming models and mitigate model decay
+* Identify and alert when models need to be retrained
+* Comply with internal and external audits and regulations
+* Reduce risk of model failure
+
+With Algorithmia Insights, you can use the monitoring and alerting tools of your choice, with no vendor lock-in. You have control over the data you choose to emit, and the system you connect to. You can access your metrics via Kafka and connect it to a real-time monitoring or alerting tool, or check out [Kafka Connect](https://docs.confluent.io/3.0.1/connect/intro.html#:~:text=Kafka%20Connect%20is%20a%20tool,into%20and%20out%20of%20Kafka.) to learn how to export your metrics offline to do analysis later. 
+
+## New autoscaler and scheduler ##
+
+What has set us apart from other ML platforms in the market today is our ability to manage algorithm execution at scale. With this release, we have taken scaling to a whole new level by providing more robust worker management and algorithm execution pipelining, resulting in dramatically higher throughput and efficient worker utilization. Along with these performance and operational improvements comes new administrator pages, Grafana dashboards, and alerts. 
+
+Administrators will now be able to:
+
+* View workloads to optimize performance
+* View execution details in the new Algorithm Execution admin page
+* Filter and sort workers
+* View GPU memory usage for an algorithm
+* Utilize new alerts to ensure thresholds are being enforced
+* Configure GPU limits
+
+This release will provide more insight into algorithm execution as well as the controls to fine-tune the platform to meet performance needs. This will result in higher throughputs with existing hardware, as well as decreases in cold start latency.
+
+---
+
+## Q2 2020 Release Notes ##
 
 ### Introduction ###
 
@@ -122,7 +168,7 @@ The new Pyrometer, Web Server, and API Server dashboards allow cluster administr
 
 ---
 
-# Q1 2020 Release Notes #
+## Q1 2020 Release Notes ##
 
 ### Introduction ###
 2020 is going to be a big year at Algorithmia. We are working on features that empower our customers in tooling flexibility, connectivity, security, and ML management so they can focus on extracting value from ML. 
@@ -135,14 +181,14 @@ Our first release of 2020 comprises a diverse feature set that increases the opt
 * Platform Usage Reports
 
 ### Source Code Management ###
-We are pleased to announce that we have expanded our source code management offering to include [GitHub,](https://test.algorithmia.com/developers/algorithm-development/source-code-management) adding to the benefits of a centralized code repository and increasing ML portability! By connecting your Algorithmia and GitHub accounts, you can store your source code on GitHub and deploy it directly to Algorithmia. It's that simple.
+We are pleased to announce that we have expanded our source code management offering to include [GitHub,](/developers/algorithm-development/source-code-management) adding to the benefits of a centralized code repository and increasing ML portability! By connecting your Algorithmia and GitHub accounts, you can store your source code on GitHub and deploy it directly to Algorithmia. It's that simple.
 
 Once enabled by your administrator, you will be able to select a GitHub (or GitHub Enterprise) instance when creating an algorithm, which will create a new GitHub repository for your algorithm.
 
 All updates to the repository's default branch will automatically precipitate new builds for your algorithm. By leveraging GitHub with Algorithmia, algorithm developers can leverage existing GitHub workflows they already have and access the entire suite of GitHub features, including [GitHub Actions,](https://github.com/features/actions) and still ensure that source code visibility is restricted to those with proper GitHub permissions. 
  
 #### Where to learn more ####
-Algorithmia administrators can learn more about integrating GitHub with Algorithmia [here.](https://algorithmia.com/developers/algorithmia-enterprise/scms) Once configured, users need simply select the GitHub repository host when creating an algorithm:
+Algorithmia administrators can learn more about integrating GitHub with Algorithmia [here.](/developers/algorithmia-enterprise/scms) Once configured, users need simply select the GitHub repository host when creating an algorithm:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Source_Code_Manage.png" alt="Source code management" class="screenshot">
 
@@ -244,19 +290,19 @@ Second, “Management API Keys” has been changed to “Admin API Keys.” This
 
 -----
 
-# Enterprise Release Notes 19.10 #
+## Enterprise Release Notes 19.10 ##
 
 Algorithmia's 19.10 release featured a platform performance update and bug fixes for specific enterprise users. For more information, contact your Customer Success Manager.
 
 -----
 
-# Enterprise Release Notes 19.08 #
+## Enterprise Release Notes 19.08 ##
 
 Algorithmia's 19.08 release featured security updates for enterprise users. For more information, contact your Customer Success Manager.
 
 -----
 
-# Enterprise Release Notes 19.05 #
+## Enterprise Release Notes 19.05 ##
 
 ##### New this quarter: #####
 * Jupyter Notebook integration
@@ -345,7 +391,7 @@ For questions and requests, please contact us at support@algorithmia.com.
 -----
 
 
-# Enterprise Release Notes 19.01 #
+## Enterprise Release Notes 19.01 ##
 
 {% if site.enterprise %}
 **Enterprise Users:** Check with your administrator to verify which version of Algorithmia you are running.
