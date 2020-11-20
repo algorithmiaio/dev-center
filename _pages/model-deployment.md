@@ -31,3 +31,5 @@ If you have any questions about Algorithmia or <a href="https://algorithmia.com/
 		{% include post-grid.html %}
   {% endfor %}
 </div>
+
+To see the dependencies included in each enviornment see: [Environment matrix]({{ site.baseurl }}/model-deployment/environments/).
