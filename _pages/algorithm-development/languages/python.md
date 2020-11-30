@@ -25,19 +25,13 @@ Table of Contents
 
 ## Available Libraries
 
-Algorithmia makes a number of libraries available to make algorithm development easier.  We support four Python versions, with more to come:
+Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
-1. <a href="https://docs.python.org/2/">Python 2.7.13 language and standard library</a>, for both CPU and GPU algorithms
-2. <a href="https://docs.python.org/3/">Python 3.5.3 language and standard library</a>, CPU and GPU
-3. Python 3.6.8, CPU and GPU, plus a preinstalled TensorFlow 1.12 option (found under the `Python 3.x - Beta` Language selection)
-4. Python 3.7.1, CPU and GPU (found under the `Python 3.x - Beta` Language selection)
-
-We'll continue to add variants as needed, and broaden GPU support.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_python.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
 You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
-Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
-via the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a>.
+Also, algorithms can call other algorithms and manage data on the Algorithmia platform. You can learn more about calling algorithms in the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client Guide</a>.
 
 ## Write your First Algorithm
 
