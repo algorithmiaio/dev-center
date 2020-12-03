@@ -27,7 +27,7 @@ The code in this guide can be run directly in a Python interpreter or used in yo
 
 ## Set Up the Client
 
-The official client is available on [PyPi](https://pypi.python.org/pypi/algorithmia/), and can be installed with pip:
+The official client is available on [PyPI](https://pypi.python.org/pypi/algorithmia/) and can be installed with pip:
 
 {% highlight python %}
 pip3 install algorithmia
@@ -71,20 +71,20 @@ In order to call an Algorithm from Python, we need to first create an algorithm 
 algo = client.algo('demo/Hello') 
 {% endhighlight %}
 
-Then, we can use the `.pipe()` method to call the algorithm. We'll provide out input as the argument to the function, and then print the output using the `result` attribute:
+Then, we can use the `.pipe()` method to call the algorithm. We'll provide our input as the argument to the function, and then print the output using the `result` attribute:
 
 {% highlight python %}
 response = algo.pipe("Mr. Bond")
 print(reponse.result)
 {% endhighlight %}
 
-Which should print the phrase, `Hello Mr. Bond`
+Which should print the phrase, `Hello Mr. Bond`.
 
 ### JSON and Python
 
-The Python client provides some ease of use abstractions for working with algorithms with JSON inputs and outputs. When passing a Python array or dict into the `.pipe()` function, the library will automatically serialize it to JSON. Algorithms will return a JSON type and the `result` field of the response will contain an array or dict, as appropriate.
+The Python client provides some ease-of-use abstractions for working with algorithms with JSON inputs and outputs. When passing a Python array or dict into the `.pipe()` function, the library will automatically serialize it to JSON. Algorithms will return a JSON type and the `result` field of the response will contain an array or dict, as appropriate.
 
-Let's look at an example using JSON and the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics which are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll call this algorithm using a list of strings, following the format in the algorithm documentation:
+Let's look at an example using JSON and the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll call this algorithm using a list of strings, following the format in the algorithm documentation:
 
 {% highlight python %}
 algoJSON = client.algo('nlp/LDA/1.0.0')
@@ -98,13 +98,13 @@ response = algoJSON.pipe(input)
 print(reponse.result)
 {% endhighlight %}
 
-The output will be `[{'picking': 2}, {'apple': 1}, {'apples': 1, 'ready': 1}, {'season': 1}]`, which is the list of relavent words and the number of occurrances.
+The output will be `[{'picking': 2}, {'apple': 1}, {'apples': 1, 'ready': 1}, {'season': 1}]`, which is the list of relevant words and the number of occurrences.
 
 You might have noticed that in this example we included a version number when instantiating the algorithm. Pinning your code to a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
 
 ### Request Options
 
-The client exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response. In the following example, we set the timeout to 60 seconds and disabling `stdout` in the response:
+The client exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response. In the following example, we set the timeout to 60 seconds and disable `stdout` in the response:
 
 {% highlight python %}
 algo.set_options(timeout=60, stdout=False)
@@ -114,7 +114,7 @@ You can find more details in [API Docs](/developers/api/?python) > [Invoke an Al
 
 ### Error Handling
 
-To be able to better develop across languages, Algorithmia has created a set of standardized errors that can be returned by either the platform or by the algorithm being run. In Python, API errors and Algorithm exceptions will result in calls to pipe throwing an `AlgoException`:
+To be able to better develop across languages, Algorithmia has created a set of standardized errors that can be returned by either the platform or by the algorithm being run. In Python, API errors and Algorithm exceptions will result in calls to `.pipe()` throwing an `AlgoException`:
 
 {% highlight python %}
 client.algo('util/whoopsWrongAlgo').pipe('Hello, world!')
@@ -144,7 +144,7 @@ from Algorithmia.acl import ReadAcl, AclType
 # Instantiate a DataDirectory object, set your data URI and call create
 img_directory = client.dir("data://YOUR_USERNAME/img_directory")
 # Create your data collection if it does not exist
-if img_directory.exists() is False:
+if not img_directory.exists():
     img_directory.create()
 # Change permissions on your data collection to public
 img_directory.update_permissions(ReadAcl.public)
@@ -166,12 +166,12 @@ img_file = "data://.my/img_directory/friends.jpg"
 Then upload your local file to the data collection using the `.putFile()` method:
 
 {% highlight python %}
-if client.file(img_file).exists() is False:
+if not client.file(img_file).exists():
     # Upload local file
     client.file(img_file).putFile("/your_local_path_to_file/friends.jpg")
 {% endhighlight %}
 
-This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
+This method call will replace a file if it already exists at the specified location. If you wish to avoid replacing a file, check if the file exists before using this method.
 {: .notice-warning}
 
 Confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
@@ -180,7 +180,7 @@ You can also upload your data through the UI on Algorithmia's [Hosted Data Sourc
 
 ### Call the Algorithm
 
-Once the file has been uploaded, you are ready to call the algorithm. Create the algorithm object, then pass the required inputs. An image URI (which is stored in `img_file` in the code above), a URI for the image output, and the size of the pixels to be used, to `algo.pipe()`:
+Once the file has been uploaded, you are ready to call the algorithm. Create the algorithm object, then pass the required inputs—an image URI (which is stored in `img_file` in the code above) and a URI for the image output—to `algo.pipe()`:
 
 {% highlight python %}
 # Create the algorithm object
@@ -208,15 +208,15 @@ Algorithms can create and store data in folders named with the algorithm name in
 The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slighly to download the file by adding the algorithm name and author:
 
 {% highlight python %}
-output_uri = response.result['images'][0]['output']
+output_uri = response.result['images'][0]['url']
 download_uri = output_uri[:13] + `dlib/FaceDetection` + output_uri[13:]
 {% endhighlight %}
 
-Verify that the file that you want to download exists, and try downloading it to a new local file:
+Verify that the file that you want to download exists, and try downloading it to a new local file location:
 
 {% highlight python %}
 # Download the file
-if client.file(download_uri).exists() is True:
+if client.file(download_uri).exists():
     local_file = client.file(download_uri).getFile()
 {% endhighlight %}
 
@@ -226,13 +226,13 @@ Alternately, if you just need the binary content of the file to be stored in a v
 
 {% highlight python %}
 # Download contents of file as a string
-if client.file(download_uri).exists() is True:
+if client.file(download_uri).exists():
     image_data = client.file(download_uri).getBytes()
 {% endhighlight %}
 
 This will get the image as binary data, saving it to the variable `image_data`, which might be useful when writing algorithms that are part of an image processing pipeline. For more image-manipulation tutorials, see the [Computer Vision Recipes]({{site.baseurl}}/tutorials/recipes/#computer-vision). 
 
-If the file was text (an image, etc), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file using the Data API from a data collection go to the [API Specification](/developers/api/#get-a-file-or-directory).
+If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
 {% if site.enterprise %}
 ## Publishing Algorithmia Insights
