@@ -75,7 +75,7 @@ Then, we can use the `.pipe()` method to call the algorithm. We'll provide our i
 
 {% highlight python %}
 response = algo.pipe("Mr. Bond")
-print(reponse.result)
+print(response.result)
 {% endhighlight %}
 
 Which should print the phrase, `Hello Mr. Bond`.
@@ -95,7 +95,7 @@ input = {
     ]
 }
 response = algoJSON.pipe(input)
-print(reponse.result)
+print(response.result)
 {% endhighlight %}
 
 The output will be `[{'picking': 2}, {'apple': 1}, {'apples': 1, 'ready': 1}, {'season': 1}]`, which is the list of relevant words and the number of occurrences.
