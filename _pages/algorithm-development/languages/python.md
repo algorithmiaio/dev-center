@@ -25,19 +25,13 @@ Table of Contents
 
 ## Available Libraries
 
-Algorithmia makes a number of libraries available to make algorithm development easier.  We support four Python versions, with more to come:
+Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
-1. <a href="https://docs.python.org/2/">Python 2.7.13 language and standard library</a>, for both CPU and GPU algorithms
-2. <a href="https://docs.python.org/3/">Python 3.5.3 language and standard library</a>, CPU and GPU
-3. Python 3.6.8, CPU and GPU, plus a preinstalled TensorFlow 1.12 option (found under the `Python 3.x - Beta` Language selection)
-4. Python 3.7.1, CPU and GPU (found under the `Python 3.x - Beta` Language selection)
-
-We'll continue to add variants as needed, and broaden GPU support.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_python.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
 You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
 
-Also, algorithms can call other algorithms and manage data on the Algorithmia platform. To find out more
-via the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a>.
+Also, algorithms can call other algorithms and manage data on the Algorithmia platform. You can learn more about calling algorithms in the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client Guide</a>.
 
 ## Write your First Algorithm
 
@@ -212,6 +206,12 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
+
+### Working with directories
+
+While running, algorithms have access to a temporary filesystem located at `/tmp`, the contents of which do not persist across calls to the algorithm. While the Data API allows you to get the contents of the files you want to work with as JSON, a string, or raw bytes, in some cases you might need your algorithm to read and write files locally. This can be useful as a temporary location to store files downloaded from Hosted Data, such as raw data for processing or models to be loaded into your algorithms. It can also be used to write new files before uploading them via the Data API.
+
+For reference, [this gist](https://gist.github.com/StephanieKim/56af1aeb6dcd895e2c914bad8c35876c) provides an example of iterating over data in a directory, processing it, and writing new data to a file, while [this template for ALBERT and Tensorflow](https://algorithmia.com/algorithms/asli/albert_template/source) provides an example of using the `/tmp` directory to load a model.
 
 ### Writing files for the user to consume
 
