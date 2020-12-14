@@ -216,7 +216,6 @@ Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-en
 
 {% highlight scala %}
 # Report Algorithmia Insights
-// rep
 client.report_insights("""{"cats_in_image": 4, "dogs_in_image": 7}""")
 {% endhighlight %}
 
