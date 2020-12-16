@@ -30,11 +30,11 @@ For example, you could combine several algorithms from Algorithmia to:
 
 * Automatically generate smart thumbnails (using face detection to ensure every thumbnail is perfectly cropped)
 * Take advantage of Algorithmia’s speech-to-text algorithm to transcribe videos uploaded to S3 on the fly
-* You could even leverage a predictive model every time DynamoDB updates.
+* Leverage a predictive model every time DynamoDB updates
 
 Algorithmia and Lambda make it easy to rapidly build and deploy serverless solutions in minutes.
 
-### Setup your Lambda function
+### Set up your Lambda function
 
 #### Getting started
 
@@ -43,14 +43,14 @@ Algorithmia and Lambda make it easy to rapidly build and deploy serverless solut
 * Pick "Blueprints"
 <!-- "Browse serverless app repository" -->
 * Type `Algorithmia` into the filter
-* set an Application Name and Topic, and click "Deploy"
-* wait for AWS to deploy, then click "algorithmia" under the Resources section
-* click "Add Trigger" and configure as needed for your workflow
-* click on the Lambda icon next to "serverless-algorithmia-YourFunctionName" at the top
-* edit the code, setting `const algorithm` under `processEvent`, modifying `const inputData` to handle the triggering event's datastructure (the template assumes an S3 event), and modifying the output (in `client.algo(algorithm).pipe(inputData).then((output) =>` as needed for your workflow.
-* for higher security, configure your KMS Encrypted Key as shown below, and set `const kmsEncryptedApiKey` in your code
-* for a simpler but less secure config, you can embed your API Key directly into your code by assigning a value to `let apiKey`
-* save and test your code
+* Set an Application Name and Topic, and click "Deploy"
+* Wait for AWS to deploy, then click "algorithmia" under the Resources section
+* Click "Add Trigger" and configure as needed for your workflow
+* Click on the Lambda icon next to "serverless-algorithmia-YourFunctionName" at the top
+* Edit the code, setting `const algorithm` under `processEvent`, modifying `const inputData` to handle the triggering event's datastructure (the template assumes an S3 event), and modifying the output (in `client.algo(algorithm).pipe(inputData).then((output) =>` as needed for your workflow.
+* For a simple but less secure config, you can embed your API Key directly into your code by assigning a value to `let apiKey`
+* For higher security, configure your KMS Encrypted Key as shown below, and set `const kmsEncryptedApiKey` in your code
+* Save and test your code
 
 ### Authentication
 
