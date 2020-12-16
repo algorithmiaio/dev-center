@@ -234,17 +234,14 @@ This will get the image as binary data, saving it to the variable `image_data`, 
 
 If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
-{% if site.enterprise %}
 ## Publishing Algorithmia Insights
+**This feature is available to Enterprise users only:**
 
 Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
-
 {% highlight python %}
 # Report Algorithmia Insights
 client.report_insights({"faces_in_image": 4})
 {% endhighlight %}
-
-{% endif %}
 
 ## Additional Functionality
 
