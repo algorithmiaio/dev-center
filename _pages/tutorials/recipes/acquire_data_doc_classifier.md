@@ -7,6 +7,7 @@ tags: [machine-learning, text-analysis]
 show_related: false
 author: jon_peck
 excerpt: "Train the Document Classifier on data scraped from the web"
+sitemap: false
 
 generate_from: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/document-classification/readme.md
 repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/document-classification
