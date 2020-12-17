@@ -7,6 +7,7 @@ tags: [computer-vision]
 show_related: false
 author: jon_peck
 excerpt: "Automatically Identify Objects, Sequence Times, and Integrate with Timeline.js"
+sitemap: false
 
 generate_from: https://github.com/algorithmiaio/sample-apps/blob/master/JavaScript/video-metadata/README.md
 repository: https://github.com/algorithmiaio/sample-apps/blob/master/JavaScript/video-metadata

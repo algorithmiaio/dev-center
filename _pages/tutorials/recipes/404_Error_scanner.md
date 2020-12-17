@@ -6,6 +6,7 @@ categories: recipes
 tags: [utilities, text-analysis]
 show_related: false
 excerpt: "Use the 404 Scanner Microservice to Generate a Report of Broken Links via Mailgun"
+sitemap: false
 
 repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/404-Error-Scanner
 generate_from: https://github.com/algorithmiaio/sample-apps/blob/master/recipes/404-Error-Scanner/readme.md
