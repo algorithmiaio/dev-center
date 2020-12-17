@@ -7,6 +7,7 @@ tags: [computer-vision]
 show_related: false
 author: jon_peck
 excerpt: "Learn how to use the StyleThief Microservice in a Single-Page Website"
+sitemap: false
 
 generate_from: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/style-thief/README.md
 repository: https://github.com/algorithmiaio/sample-apps/tree/master/recipes/style-thief
