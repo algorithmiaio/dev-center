@@ -16,7 +16,7 @@ RUN npm run build
 #
 # Stage 2: build API docs
 #
-FROM ruby:2.3 AS docs-builder
+FROM ruby:2.7.2 AS docs-builder
 
 RUN apt-get update && apt-get install -y nodejs \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
