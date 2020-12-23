@@ -10,7 +10,7 @@ image:
 
 Algorithmia Insights is an algorithm metrics pipeline providing you access to your algorithm metrics payload for each algorithm session so you can measure, monitor, and manage your algorithms in production.
 
-With Algorithmia Insights you'll be able to opt-in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
+With Algorithmia Insights you'll be able to opt in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.
 
 Algorithmia Insights currently supports [Python 3.x](../clients/python#publishing-algorithmia-insights), [R](../clients/r#publishing-algorithmia-insights), and [Java](../clients/java#publishing-algorithmia-insights) algorithms and [Apache Kafka](https://kafka.apache.org/) as a destination for metrics.
 
@@ -20,7 +20,7 @@ Algorithmia Insights metrics fall into two categories:
 * Operational metrics
 * Inference-related metrics
 
-**Operational metrics** include (but are not limited to) execution time, request ID, algorithm owner, algorithm name, algorithm version, timestamp, etc. When Algorithmia Insights are turned on for a particular algorithm version, these are automatically collected and reported without any additional action necessary on the part of the algorithm author or manager.
+**Operational metrics** include (but are not limited to) execution time, request ID, algorithm owner, algorithm name, algorithm version, timestamp, etc. When Algorithmia Insights is turned on for a particular algorithm version, these are automatically collected and reported without any additional action necessary on the part of the algorithm author or manager.
 
 **Inference-related metrics** are defined by the algorithm author in algorithm code. Each metric is defined by a title, like `cute_cats_detected`, and a numeric value, like `24`. Multiple inference-related metrics can be reported at one time, and the set of metrics reported does not need to be the same from one algorithm execution to another.
 
@@ -37,8 +37,8 @@ The first step to configuring your cluster for Algorithmia Insights is to naviga
 
 From here, enter the information about your Kafka broker. The following information is needed for any connection type:
 
-* **Kafka URL**: a list of comma-separated [Kafka bootstrap servers](https://kafka.apache.org/documentation/#bootstrap.servers) used to establish the initial connection to the Kafka cluster. Algorithmia will make use of all servers irrespective of which servers are specified here for bootstrapping - this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form `host1:port1,host2:port2,...` Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).
-* **Topic Name**: the name of the [Kafka topic](https://kafka.apache.org/documentation/#intro_concepts_and_terms) to which Algorithmia Insights will be published
+* **Kafka URL** - a list of comma-separated [Kafka bootstrap servers](https://kafka.apache.org/documentation/#bootstrap.servers) used to establish the initial connection to the Kafka cluster. Algorithmia will make use of all servers irrespective of which servers are specified here for bootstrapping—this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form `host1:port1,host2:port2,...` Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).
+* **Topic Name** - the name of the [Kafka topic](https://kafka.apache.org/documentation/#intro_concepts_and_terms) to which Algorithmia Insights will be published.
 
 It is the Algorithmia Platform Administrator's responsibility to ensure that Kafka traffic (which operates over TCP) routes successfully from the Algorithmia Platform to all of the Kafka bootstrap servers in the **Kafka URL** list (on their specified ports) *and* to all of the Kafka cluster members reported by those bootstrap servers (on their specified ports).
 
@@ -56,7 +56,7 @@ Encrypted, SCRAM-authenticated connections also require:
 
 * **Username** - the username used to authenticate to the Kafka cluster
 * **Password** - the password used to authenticate to the Kafka cluster
-* **CA Certificate** - the Certificate Authority certificate used to sign the TLS certificates that the Kafka servers use for communication.
+* **CA Certificate** - the Certificate Authority certificate used to sign the TLS certificates that the Kafka servers use for communication
 
 ![Image of Kafka connection UI for encrypted, SCRAM connections](/developers/images/algorithmia-enterprise/algorithmia-insights/web-ui-kafka-connection-sasl-scram.png)
  
@@ -70,11 +70,11 @@ Algorithmia [client libraries](../clients) are used to report inference-related 
 
 #### Restrictions
 
-You can report up to 25 metrics in your code. The Algorithmia Platform will report additional metrics which do not count towards these 25.
+You can report up to 25 metrics in your code. The Algorithmia Platform will report additional metrics that do not count towards these 25.
 
 Additionally, the total size of your metrics data (keys and values) must not exceed 25 kilobytes.
 
-Finally, there are several reserved metric names that must not be used by client code, as they will conflict with automatically-created metrics for each algorithm execution:
+Finally, there are several reserved metric names that must not be used by client code, as they will conflict with automatically created metrics for each algorithm execution:
 
 * `request_id`
 * `timestamp`
