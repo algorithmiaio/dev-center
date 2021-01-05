@@ -62,7 +62,7 @@ If your algorithm is based off an academic paper or external library, you should
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/credits.png" alt="inputs and outputs" class="screenshot img-md">
 
-### Give It a Tagline:
+### Give It a Tagline
 
 The tagline is a succinct way to describe your algorithm. The tagline will appear under the title of the algorithm in marketplace search results, so it's important to add a tagline.
 
@@ -72,7 +72,7 @@ Determine sentiment from text
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/search.png" alt="inputs and outputs" class="screenshot img-md">
 
-### Add Tags:
+### Add Tags
 
 Tags are an important part of your algorithm profile page. These tags help make sure that your algorithm is discoverable when the user is searching through categories of algorithms.
 
@@ -83,13 +83,13 @@ sentiment analysis
 stanford corenlp
 text analysis
 
-### Include Sample Input:
+### Include Sample Input
 
 Sample input is one of the most important parts of your algorithm profile. Users will look at your sample input and output to see if the algorithm can be applied to their data and what they can expect, so be sure to add sample input. It is editable at any time and the latest publicly callable version of the algorithm will be used to generate the sample output on the algorithm description page.
 
 > Ex. Sample input for Sentiment Analysis:
 
-"Algorithmia loves you!"
+`"Algorithmia loves you!"`
 
 > Ex. Sample output for Sentiment Analysis:
 
@@ -100,13 +100,13 @@ Sample input is one of the most important parts of your algorithm profile. Users
 A common gotcha for setting and updating the sample input is that you must publish your algorithm before you can save the sample input. If you are unable to save your sample input, double check that the algorithm has been published before continuing.
 {: .notice-warning }
 
-### Update Pricing:
+### Update Pricing
 
 If you are publishing a new version of your algorithm, you can update the pricing of each call. This will be displayed next to your algorithm's name on the overview page. Remember, you can set the royalty price even if your code is open source!
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/cost.png" alt="inputs and outputs" class="screenshot img-md">
 
-### Check Permissions & Source Code Visibility:
+### Check Permissions & Source Code Visibility
 
 * Permissions: Any special permissions that this algorithm requires.
 * Source Availability: The license and source visibility of an algorithm.
