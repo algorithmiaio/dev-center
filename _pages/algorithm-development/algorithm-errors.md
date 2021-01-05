@@ -13,15 +13,15 @@ redirect_from:
   - /algorithm-development/algorithm-basics/algorithm-errors/
 ---
 
-On Algorithmia you can develop in several different programming languages at once. This flexibility enables you to leverage the best libraries and functions for your use case, even if they are written in different languages. For example, you can call a NodeJS library from inside of a Python algorithm; all you have to do is to write a wrapper algorithm for that library.
+On Algorithmia you can develop in several different programming languages. This flexibility enables you to leverage your capabilities in the language(s) that you are most comfortable using, while also leveraging whichever libraries and functions best meet the needs of your specific use case. For example, you can call a NodeJS library from inside of a Python algorithm; all you have to do is to write a wrapper algorithm for that library.
 
-There is a problem with this language-agnostic approah, though. Not all programming languages are designed in the same way, and this is especially true with regard to error and exception handling.
+There is a problem with this language-agnostic approach, though: not all programming languages are designed in the same way. This is especially true with regard to error and exception handling. Errors are often cryptic and there isn't a standard way to understand what they actually mean.
 
-As an example, let's say you're calling a <a href="https://algorithmia.com/blog/introduction-to-computer-vision" target="_blank">computer vision</a> algorithm and you get an error. Normally there wouldn't be a standard way to understand what the error means. The author of that computer vision algorithm may put a descriptive error message, but that's not guaranteed for all cases. What's worse is that there's no easy way to understand an error message; you would need to know all possible error messages beforehand.
+As an example, let's say you are calling a <a href="https://algorithmia.com/blog/introduction-to-computer-vision" target="_blank">computer vision</a> algorithm from a Java library and you get an error. If you are lucky, the author of that algorithm will have included a descriptive error message. However, depending on the message, you still might need to have a relatively strong grasp on Java programming, the Java compiler, and/or Java error types in order to understand what the error actually means, let alone to determine how to fix the issue in your code.
 
 ### Algorithm Error Codes
 
-To be able to better develop algorithms across languages, we decided to create a predefined list of errors. These error codes were created to reflect the types of algorithms that are most commonly published on the Algorithmia platform.
+To be able to better support algorithm development and use across languages, we decided to create a predefined, standardized list of error types. This list is reflective of the types of algorithms that are most commonly published on the Algorithmia platform.
 
 
  <style>
@@ -54,12 +54,12 @@ To be able to better develop algorithms across languages, we decided to create a
   <tr>
     <td>OutOfMemoryError</td>
     <td>Out of Memory</td> 
-    <td>Algorithm can't access any/additional RAM memory.</td>
+    <td>Algorithm cannot access any/additional RAM memory.</td>
   </tr>
   <tr>
     <td>OutOfGpuMemoryError</td>
     <td>Out of GPU Memory</td> 
-    <td>Algorithm can't access any/additional GPU memory.</td>
+    <td>Algorithm cannot access any/additional GPU memory.</td>
   </tr>
   <tr>
     <td>LanguageError</td>
