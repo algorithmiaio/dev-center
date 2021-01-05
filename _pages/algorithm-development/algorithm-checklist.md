@@ -21,6 +21,7 @@ To get the most out of your algorithm profile and boost its visibility, follow t
 * Write a Full Description
   * What does the algorithm do?
   * Describe the inputs & expected outputs
+  * Configure error handling
   * Link to any papers or external documentation
 * Give It a Tagline
 * Add Tags
@@ -31,7 +32,7 @@ To get the most out of your algorithm profile and boost its visibility, follow t
 
 ### Write a Full Description
 
-On the profile page for your algorithm, the first thing an Algorithmia user will see if the description. It's important that this section be clear and helpful!
+On the profile page for your algorithm, the first thing an Algorithmia user will see is the description. It's important that this section be clear and helpful!
 
 You'll want to make sure that someone who doesn't have any previous knowledge of the algorithm will be able to understand what it does and when you might want to use the algorithm.
 
@@ -43,9 +44,9 @@ The algorithm description is front-and-center on the algorithm profile page. Use
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_checklist/description.png" alt="Algorithm description" class="screenshot img-md">
 
-#### Describe the inputs & expected output
+#### Describe the inputs & expected outputs
 
-Be sure to quickly describe the input needed to call the algorithm and the types it accepts. For example, you can say that the algorithm takes a string of text or an integer. If an algorithm has optional input parameters, be sure to include those and descriptions of what each option does.
+Be sure to provide a brief description of the input needed to call the algorithm and the types it accepts. For example, you can say that the algorithm takes a string of text or an integer. If an algorithm has optional input parameters, be sure to include those and descriptions of what each option does.
 
 It is also helpful to explain what the output of the algorithm should be. If your algorithm returns an output that corresponds to a value system, be sure to explain what it means. For example, in the algorithm for [Sentiment Analysis](https://algorithmia.com/blog/introduction-sentiment-analysis), the user gets an output of a number between 0 and 4. The algorithm description describes what these numbers mean; in this case, the sentiment rating of very negative, negative, neutral, positive, and very positive.
 
