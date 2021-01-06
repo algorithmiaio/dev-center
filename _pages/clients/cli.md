@@ -23,33 +23,19 @@ This guide will cover:
 * [The Data API](#the-algorithmia-data-api)
 * [Using Multiple Profiles](#using-multiple-profiles)
 
-Check out the tool in use in this short demo video (click to watch on YouTube):
-[![Example CLI Usage](https://j.gifs.com/v1egak.gif)](https://www.youtube.com/watch?v=mAJagjRl_qk)
+<!-- wasnt sure if this was still relevant-->
+<!--Check out the tool in use in this short demo video (click to watch on YouTube):-->
+<!--[![Example CLI Usage](https://j.gifs.com/v1egak.gif)](https://www.youtube.com/watch?v=mAJagjRl_qk)-->
 
 ## Installing the Algorithmia CLI
 
-The latest releases & changelog can be found [here](https://github.com/algorithmiaio/algorithmia-cli/releases/latest).
+The latest releases & changelog can be found [here](https://pypi.org/project/algorithmia/).
 
-**Linux and OSX**
+The CLI can be installed from the python package manager pip
 
-Install is by running:
-
-{% highlight bash %}
-curl -sSLf https://algorithmia.com/install.sh | sh
+{% highlight text %}
+pip install algorithmia
 {% endhighlight %}
-
-On some linux variants, you may need to preinstall curl, file, and git via a command such as:
-
-{% highlight bash %}
-apt install curl file git
-{% endhighlight %}
-
-**Windows**
-
-Download and extract the [latest Windows x86_64 zip file](https://github.com/algorithmiaio/algorithmia-cli/releases/download/v1.0.1/algorithmia-v1.0.1-x86_64-pc-windows-msvc.zip). We recommend putting it within your `PATH`.
-
-If needed, you can also find both MSVC and GNU builds for x86 and x86_64 on the [release page](https://github.com/algorithmiaio/algorithmia-cli/releases/latest).
-
 
 **Installation note: Python environment variable**
 
@@ -86,13 +72,6 @@ $ algo run kenny/factor -d 19635
 [3,5,7,11,17]
 {% endhighlight %}
 
-Add the option `--response-body` to see the full JSON response:
-
-{% highlight text %}
-$ algo run kenny/factor -d 19635 --response-body
-{ "result": [3,5,7,11,17],
-  "metadata": { "content_type":"json", "duration":0.001427314} }
-{% endhighlight %}
 
 Run `algo run --help` to see more command options or view the following [Options](#options) section.
 
@@ -119,9 +98,6 @@ $ algo run kenny/factor -d 17 --output results.txt
 | Option Flag     | Description |
 | :------------   |:--------------- |
 | \--debug         | Print algorithm's STDOUT (author-only) |
-| \--response-body | Print HTTP response body (replaces result) |
-| \--response      | Print full HTTP response including headers (replaces result) |
-| -s, \--silence   | Suppress any output not explicitly requested (except result) |
 | -o, \--output <file> |  Print result to a file |
 
 #### Other Options
@@ -178,9 +154,11 @@ With the Algorithmia CLI, you can configure multiple custom profiles to use. To 
 
 {% highlight text %}
 $ algo auth --profile second_user
-Configuring authentication for 'second_user' profile
-Enter API Endpoint [https://api.algorithmia.com]: (press Enter)
-Enter API Key (prefixed with 'sim'):
+Configuring authentication for profile: 'second_user'
+Enter API Endpoint [https://api.algorithmia.com]:
+Enter API Key:
+(optional) enter path to custom CA certificate: 
+
 Profile is ready to use. Test with 'algo ls --profile second_user'
 {% endhighlight %}
 
