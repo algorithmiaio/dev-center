@@ -127,6 +127,7 @@ nav:
   - pricing.md
   - release_notes.md
   - faqs.md
+  - support.md
   - FAQs:
       - faqs/algorithmia-is-misbehaving.md
       - faqs/can-i-use-external-libraries.md
