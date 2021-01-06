@@ -14,10 +14,10 @@ Algorithmia provides distinct levels of support depending on your subscription. 
 
 A value-add feature of the Teams Pro subscription is access to our Technical Support team for any platform and administrative issues as well as user-, data science-, and model-related questions. 
 
-#### Algorithmia offers several options to contact support
+### Algorithmia offers several options to contact support
 * [Algorithmia Support Portal](https://support.algorithmia.com/) includes FAQs and commonly requested information. It is also the portal for you to reach out for platform and administrative support or user-, data science-, and model-related questions.
 * Send us an email support request to [support@algorithmia.com](mailto:support@algorithmia.com). Please use your corporate domain email addresses if emailing us directly.
-* If using the Algorithmia Teams or Enterprise user interface (UI), a Help widget is available on the lower right portion of the screen.
+* If using the Algorithmia Teams (with a Pro subscription) or Enterprise user interface (UI), a Help widget is available on the lower right portion of the screen.
 
 All support inbound and outbound communication is conducted via email.
 
@@ -54,8 +54,8 @@ Algorithmia Teams Basic tier offers a basic level of support. For any support re
 
 For documentation and guides for using the service our comprehensive online documentation repositories are an excellent source of information. These include,
 
-* The [Teams guide](https://algorithmia.com/developers/teams), which is a good starting place to familiarize with the basics 
-* Our [Developer Center](https://algorithmia.com/developers) provides a greater depth and includes information to deploy models, client guides, create algorithms, data source guides, and more
+* The [Teams guide](/developers/teams), which is a good starting place to familiarize with the basics 
+* Our [Developer Center](/developers) provides a greater depth and includes information to deploy models, client guides, create algorithms, data source guides, and more
 * For interruptions in service please visit [Algorithmia’s status page](https://status.algorithmia.com/) for more information.
 
 <div class="syn-styles-supported">
@@ -64,5 +64,5 @@ For documentation and guides for using the service our comprehensive online docu
 
 ## Algorithmia Public Marketplace
 
-Algorithmia’s public Marketplace is a free to use service and offers a community only support level. For documentation and guides for using the service please refer to the [developer center](https://algorithmia.com/developers).
+Algorithmia’s public Marketplace is a free to use service and offers a community only support level. For documentation and guides for using the service please refer to the [developer center](/developers).
 For interruptions in service please visit [Algorithmia’s status page](https://status.algorithmia.com/) for more information.
