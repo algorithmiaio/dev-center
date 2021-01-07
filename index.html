@@ -7,73 +7,60 @@ redirect_from:
   - /guides/sentiment-analysis/
 ---
 
-<div class="section">
-  <div class="col-md-12">
-    {% include breadcrumbs.html %}
-    <h1 id="page-title">{{ page.title }}</h1>
-    <p class="lead" id="welcome_title">Welcome to the Algorithmia Developer Center.</p>
-    <p class="lead">The Algorithmia platform allows you to deploy your machine and deep learning models at scale with our <a href="https://algorithmia.com/serverless-ai-layer">Serverless AI Layer</a>. For those wanting to deploy, iterate, and scale their models on their own stack or our managed cloud, we have an <a href="https://algorithmia.com/enterprise">Enterprise</a> offering available. And if you need a pre-trained model or utility function for your project, check out the over {{ site.data.stats.marketplace.total_num_algorithms }} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
-    </p>
-    <p class="lead">Below you'll find everything you need to get started:</p>
-  </div>
-</div>
 
-<div class="row mb-64">
-<!--   <div class="col-sm-12 hidden-md hidden-lg hidden-xl"><a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised hidden-xs hidden-sm">Deploy Models</a></div> -->
-  <div class="col-md-5">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/face_detection_desc.jpg" alt="Sample Apps" class="img-fill">
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-md-7">
-    <p class="lead">Deploy your machine and deep learning models and leave the devops to us:</p>
-    <a href="{{ site.baseurl }}/model-deployment" class="btn btn-primary btn-raised">Deploy Models</a>
-  </div>
-</div>
+<div class="syn-styles-supported">
+  <section>
+    <div class="col-md-12">
+      {% include breadcrumbs.html %}
+      <h1 class="syn-text-3xl" id="page-title">Getting Started</h1>
+      <p class="syn-header-2">Learn how to deploy models into production quickly, securely, and cost-effectively.</p>
+  <!--     <p class="syn-body-1">The Algorithmia platform allows you to operationalize and manage your machine learning lifecycle while working with existing workflows and team processes to ensure you are delivering business value from your AI initiatives.</p> -->
+      <p class="syn-body-1">Using Algorithmia's API's or 
+      user interface, you can turn your machine learning models or utility functions into production ready REST API endpoints in a few lines of code.</p>
+      <p>Algorithmia also offers advanced features making it easy to integrate into your current CI/CD pipelines, perform model monitoring, understand infrastructure needs through advanced reporting and more.</p>
+      <p>If you are new to Algorithmia, <a href="https://algorithmia.com/pricing" class="syn-link-no-decoration">learn more</a> about the right solution for you and your business.
+      </p>
+    </div>
+  </section>
+  <section>
+    <div class="col-md-12">
+      <h2 class="syn-text-2xl">Quickstart Guides</h2>
+      <p class="syn-body-1">Get started creating your first algorithm through the <a href="{{ site.baseurl }}/algorithm-development/your-first-algo">Algorithmia GUI</a> or the <a href="{{ site.baseurl }}/api/#create-an-algorithm">Algorithmia API.</a></p>
 
+      <p class="syn-body-1">Connect your algorithm to <a href="{{ site.baseurl }}/data">Data Sources</a> that host your serialized model file, or other data your algorithm relies on.</p>
 
-<div class="row mb-64">
-  <!--For larger screens-->
-  <div class="col-md-5 hidden-sm hidden-xs">
-    <p class="lead">Learn how to call algorithms in the language of your choice via our APIs:</p>
-    <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
-  </div>
-  <div class="col-md-7">
-  <pre class="code_snippet">
-  import Algorithmia
-  input = "YOUR_USERNAME"
-  client = Algorithmia.client("YOUR_API_KEY")
-  algo = client.algo("demo/Hello/")
-  print(algo.pipe(input))
-  </pre>
-  </div>
-  <!--For smaller screens-->
-  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-    <p class="lead">Learn how to call algorithms in the language of your choice via our APIs:</p>
-    <a href="{{ site.baseurl }}/clients" class="btn btn-primary btn-raised">Client Guides</a>
-  </div>
-</div>
+      <p class="syn-body-1">For details on language specific algorithm development, check out our <a href="{{ site.baseurl }}/algorithm-development/languages">Algorithm Development Guides</a> for dependency management, error handling, and managing data within your algorithm.
 
-<div class="row mb-64">
-  <div class="col-md-5">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/sample_apps.jpg" alt="Contribute" class="img-fill">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/icons/hexicon_box.svg" alt="icon" class="hexicon">
-  </div>
-  <div class="col-md-7">
-    <p class="lead">Contribute to the marketplace by adding your own algorithms:</p>
-    <a href="{{ site.baseurl }}/algorithm-development" class="btn btn-primary btn-raised">Create Algorithms</a>
-  </div>
-</div>
-
-<div class="row mb-64">
-  <div class="col-md-5">
-    <p class="lead hidden-xs hidden-sm">Connect to Dropbox, Amazon S3, or Algorithmia's Hosted Data:</p>
-    <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised hidden-xs hidden-sm">Data Source Guides</a>
-  </div>
-  <div class="col-md-7">
-    <img src="{{ site.cdnurl }}{{ site.baseurl }}/images/test_smallest_data_icons.jpg" alt="Sample Apps" class="img-fill">
-  </div>
-  <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-    <p class="lead">Connect to your Data</p>
-    <a href="{{ site.baseurl }}/data" class="btn btn-primary btn-raised">Data Source Guides</a>
-  </div>
+      <p class="syn-body-1">When you are ready to put your model into production, you can learn best practices around using popular <a href="{{ site.baseurl }}/model-deployment">machine learning frameworks</a> such as <a href="{{ site.baseurl }}/model-deployment/tensorflow">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/pytorch">PyTorch</a>, and more.</p>
+    </div>
+  </section>
+  <section>
+    <!--For larger screens-->
+    <div class="col-md-5 hidden-sm hidden-xs">
+      <p class="syn-body-1">Once you publish your model into production, learn how to call your versioned algorithm using our <a href="{{ site.baseurl }}/getting-started">QuickStart Guide</a> or find details for working with our <a href="{{ site.baseurl }}/clients">many SDK's</a>.</p>
+    </div>
+    <div class="col-md-7">
+    <pre class="code_snippet">
+    import Algorithmia
+    input = "YOUR_USERNAME"
+    client = Algorithmia.client("YOUR_API_KEY")
+    algo = client.algo("demo/Hello/")
+    print(algo.pipe(input))
+    </pre>
+    </div>
+    <!--For smaller screens-->
+    <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
+      <p class="syn-body-1">Check out our <a href="{{ site.baseurl }}/clients">Client Guides</a> to learn how to call algorithms in the language of your choice.</p>
+    </div>
+  </section>
+  <section>
+    <div class="col-md-12">
+      <h2 class="syn-text-2xl">Advanced Features And Integrations</h2>
+        <p class="syn-body-1">Enterprise <a href="{{ site.baseurl }}/algorithmia-enterprise/usage-metrics">Advanced Usage Reporting</a> for enhanced governance including Chargebacks and Showbacks.</p> 
+        <p class="syn-body-1">Enterprise model monitoring and alerting integrations using <a href="{{ site.baseurl }}/algorithmia-enterprise/algorithmia-insights">Algorithmia Insights</a></p> 
+        <p class="syn-body-1">Create event driven jobs using <a href="{{ site.baseurl }}/integrations/event_listeners"> AWS SQS</a> or <a href="{{ site.baseurl }}/integrations/azure_listeners">Azure Service Bus Queue</a> Algorithmia Event Listeners for Enterprise</p>
+        <p class="syn-body-1">Support for optimizing your algorithms using<a href="{{ site.baseurl }}/algorithm-development/advanced-algorithm-development/batch-processing"> batch jobs</p>
+        <p class="syn-body-1"><a href="{{ site.baseurl }}/algorithm-development/ci-cd">CI/CD pipeline</a> recipes using Jenkins or GitHub Actions</p>
+    </div>
+  </section>
 </div>

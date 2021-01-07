@@ -2,7 +2,7 @@
 ---
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: "Nunito Sans";
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
 }
@@ -1387,7 +1387,7 @@ html {
 }
 
 body {
-  font-family: Rubik, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(0, 0, 0, .87);
@@ -1404,13 +1404,13 @@ textarea {
 }
 
 a {
-  color: #5000be;
+  color: #1a73e8;
   text-decoration: none
 }
 
 a:focus,
 a:hover {
-  color: #5000be;
+  color: #1a73e8;
   text-decoration: underline
 }
 
@@ -1637,7 +1637,7 @@ mark {
 }
 
 .text-primary {
-  color: #5000be
+  color: #483366;
 }
 
 a.text-primary:focus,
@@ -3870,8 +3870,8 @@ fieldset[disabled] .btn-default:hover {
 
 .btn-primary {
   color: #fff;
-  background-color: #5000be;
-  border-color: #5000be
+  background-color: #483366;
+  border-color: #483366;
 }
 
 .btn-primary.focus,
@@ -3924,12 +3924,12 @@ fieldset[disabled] .btn-default:hover {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-  background-color: #5000be;
-  border-color: #5000be
+  background-color: #483366;
+  border-color: #483366;
 }
 
 .btn-primary .badge {
-  color: #5000be;
+  color: #483366;
   background-color: #fff
 }
 
@@ -4454,7 +4454,7 @@ fieldset[disabled] .btn-disabled:hover {
 }
 
 .btn-flat {
-  color: #5000be;
+  color: #483366;
   font-weight: 700
 }
 
@@ -4477,7 +4477,7 @@ fieldset[disabled] .btn-flat {
 
 .btn-flat:focus,
 .btn-flat:hover {
-  color: #5000be;
+  color: #483366;
   text-decoration: none;
   background-color: transparent
 }
@@ -4635,13 +4635,13 @@ tbody.collapse.in {
 .dropdown-menu>li>a:hover {
   text-decoration: none;
   color: #fff;
-  background-color: #5000be
+  background-color: #483366;
 }
 
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:focus,
 .dropdown-menu>.active>a:hover {
-  color: #5000be;
+  color: #483366;
   text-decoration: none;
   outline: 0;
   background-color: #fff
@@ -5161,7 +5161,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav .open>a:focus,
 .nav .open>a:hover {
   background-color: #fff;
-  border-color: #5000be
+  border-color: #483366;
 }
 
 .nav .nav-divider {
@@ -5198,9 +5198,9 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
-  color: #5000be;
+  color: #483366;
   background-color: #fff;
-  border: 1px solid #5000be;
+  border: 1px solid #483366;
   border-bottom-color: transparent;
   cursor: default
 }
@@ -5274,7 +5274,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-  color: #5000be;
+  color: #483366;
   background-color: #fff
 }
 
@@ -5780,14 +5780,14 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
-  color: #5000be;
+  color: #483366;
   background-color: transparent
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-  color: #5000be;
+  color: #483366;
   background-color: transparent
 }
 
@@ -5820,7 +5820,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
   background-color: #f5f5f5;
-  color: #5000be
+  color: #483366;
 }
 
 @media (max-width:991px) {
@@ -5830,14 +5830,14 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
   .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
   .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-    color: #5000be;
+    color: #483366;
     background-color: transparent
   }
 
   .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
   .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
   .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
-    color: #5000be;
+    color: #483366;
     background-color: transparent
   }
 
@@ -5854,7 +5854,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 .navbar-default .navbar-link:hover {
-  color: #5000be
+  color: #483366;
 }
 
 .navbar-default .btn-link {
@@ -5863,7 +5863,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-default .btn-link:focus,
 .navbar-default .btn-link:hover {
-  color: #5000be
+  color: #483366;
 }
 
 .navbar-default .btn-link[disabled]:focus,
@@ -6039,7 +6039,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
   padding: .5rem 1rem;
   line-height: 1.5;
   text-decoration: none;
-  color: #5000be;
+  color: #483366;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .12);
   margin-left: -1px
@@ -6063,9 +6063,9 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>li>span:focus,
 .pagination>li>span:hover {
   z-index: 2;
-  color: #5000be;
+  color: #483366;
   background-color: #fafafa;
-  border-color: #5000be
+  border-color: #483366;
 }
 
 .pagination>.active>a,
@@ -6076,8 +6076,8 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.active>span:hover {
   z-index: 3;
   color: #fff;
-  background-color: #5000be;
-  border-color: #5000be;
+  background-color: #483366;
+  border-color: #483366;
   cursor: default
 }
 
@@ -6215,7 +6215,7 @@ a.label:hover {
 }
 
 .label-primary {
-  background-color: #5000be
+  background-color: #483366;
 }
 
 .label-primary[href]:focus,
@@ -6278,7 +6278,7 @@ a.label:hover {
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
-  background-color: #5000be;
+  background-color: #483366;
   border-radius: 10px
 }
 
@@ -6306,7 +6306,7 @@ a.badge:hover {
 
 .list-group-item.active>.badge,
 .nav-pills>.active>a>.badge {
-  color: #5000be;
+  color: #483366;
   background-color: #fff
 }
 
@@ -6323,8 +6323,8 @@ a.badge:hover {
 }
 
 .jumbotron {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-bottom: 2rem;
   background-color: #fafafa
 }
@@ -6358,8 +6358,8 @@ a.badge:hover {
 
 @media screen and (min-width:768px) {
   .jumbotron {
-    padding-top: 3.2rem;
-    padding-bottom: 3.2rem
+    padding-top: 2rem;
+    padding-bottom: 2rem
   }
 
   .container-fluid .jumbotron,
@@ -6395,7 +6395,7 @@ a.badge:hover {
 a.thumbnail.active,
 a.thumbnail:focus,
 a.thumbnail:hover {
-  border-color: #5000be
+  border-color: #483366;
 }
 
 .thumbnail .caption {
@@ -6535,7 +6535,7 @@ a.thumbnail:hover {
   line-height: 1rem;
   color: #fff;
   text-align: center;
-  background-color: #5000be;
+  background-color: #483366;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   -webkit-transition: width .6s ease;
@@ -6719,7 +6719,7 @@ button.list-group-item {
 .list-group-item.active:focus,
 .list-group-item.active:hover {
   z-index: 2;
-  color: #5000be;
+  color: #483366;
   background-color: #fff;
   border-color: #fff
 }
@@ -7186,26 +7186,26 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-primary {
-  border-color: #5000be
+  border-color: #483366;
 }
 
 .panel-primary>.panel-heading {
   color: #fff;
-  background-color: #5000be;
-  border-color: #5000be
+  background-color: #483366;
+  border-color: #483366;
 }
 
 .panel-primary>.panel-heading+.panel-collapse>.panel-body {
-  border-top-color: #5000be
+  border-top-color: #483366;
 }
 
 .panel-primary>.panel-heading .badge {
-  color: #5000be;
+  color: #483366;
   background-color: #fff
 }
 
 .panel-primary>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #5000be
+  border-bottom-color: #483366;
 }
 
 .panel-success {
@@ -7516,7 +7516,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Rubik, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: normal;
@@ -7650,7 +7650,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Rubik, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: normal;
@@ -11542,34 +11542,35 @@ button.toast-close-button {
 }
 
 @font-face {
-  font-family: Rubik;
+  font-family: "Nunito Sans";
   font-weight: 300;
-  src: url({{site.baseurl}}/fonts/rubik/Rubik-Light.woff2) format("woff2"), url({{site.baseurl}}/fonts/rubik/Rubik-Light.woff) format("woff")
+  src: url({{site.baseurl}}/fonts/Nunito_Sans/NunitoSans-Light.ttf) format("tff")
 }
 
 @font-face {
-  font-family: Rubik;
+  font-family: "Nunito Sans";
   font-weight: 400;
-  src: url({{site.baseurl}}/fonts/rubik/Rubik-Regular.woff2) format("woff2"), url({{site.baseurl}}/fonts/rubik/Rubik-Regular.woff) format("woff")
+  src: url({{site.baseurl}}/fonts/Nunito_Sans/NunitoSans-Regular.ttf) format("tff")
 }
 
 @font-face {
-  font-family: Rubik;
+  font-family: "Nunito Sans";
   font-style: italic;
   font-weight: 400;
-  src: url({{site.baseurl}}/fonts/rubik/Rubik-Italic.woff2) format("woff2"), url({{site.baseurl}}/fonts/rubik/Rubik-Italic.woff) format("woff")
+  src: url({{site.baseurl}}/fonts/Nunito_Sans/NunitoSans-Italic.ttf) format("tff")
 }
 
 @font-face {
-  font-family: Rubik;
+  font-family: "Nunito Sans";
   font-weight: 500;
-  src: url({{site.baseurl}}/fonts/rubik/Rubik-Medium.woff2) format("woff2"), url({{site.baseurl}}/fonts/rubik/Rubik-Medium.woff) format("woff")
+ 
+  src: url({{site.baseurl}}/fonts/Nunito_Sans/NunitoSans-Medium.ttf) format("tff")
 }
 
 @font-face {
-  font-family: Rubik;
+  font-family: "Nunito Sans";
   font-weight: 700;
-  src: url({{site.baseurl}}/fonts/rubik/Rubik-Bold.woff2) format("woff2"), url({{site.baseurl}}/fonts/rubik/Rubik-Bold.woff) format("woff")
+  src: url({{site.baseurl}}/fonts/Nunito_Sans/NunitoSans-Bold.ttf) format("tff")
 }
 
 body,
@@ -11925,7 +11926,7 @@ a {
 
 .card-link.active .card {
   color: #fff;
-  background-color: #5000be
+  background-color: #483366;
 }
 
 .card-link.active .card p {
@@ -12096,7 +12097,7 @@ fieldset[disabled] .btn-flat:hover {
 }
 
 .btn-primary.btn-flat {
-  color: #5000be
+  color: #483366;
 }
 
 .btn-primary.btn-flat:hover {
@@ -12105,7 +12106,7 @@ fieldset[disabled] .btn-flat:hover {
 }
 
 .btn-primary.btn-flat:focus {
-  color: #5000be
+  color: #483366;
 }
 
 .btn-enterprise:hover {
@@ -12293,8 +12294,8 @@ fieldset[disabled] .btn-flat:hover {
   padding: .25rem .5rem;
   font-size: .75rem;
   line-height: 1.5;
-  color: #5000be;
-  border: 1px solid #5000be
+  color: #483366;
+  border: 1px solid #483366;
 }
 
 .btn-count button:first-child {
@@ -12556,7 +12557,7 @@ fieldset[disabled] .btn-flat:hover {
 
 .jumbotron {
   color: #fff;
-  background-color: #5000be;
+  background-color: #483366;
   margin-top: -2rem
 }
 
@@ -12575,7 +12576,7 @@ fieldset[disabled] .btn-flat:hover {
 .cta-banner,
 .cta-banner-enterprise {
   display: block;
-  background-color: #5000be;
+  background-color: #483366;
   color: #fff;
   padding: 4rem 2rem;
   text-align: center
@@ -12710,7 +12711,7 @@ label {
 
 .form-control:focus {
   background: #fff;
-  border-color: #5000be
+  border-color: #483366;
 }
 
 .form-label-hidden {
@@ -12981,7 +12982,7 @@ pre code {
 }
 
 .nav-tabs>li.active>a {
-  color: #5000be;
+  color: #483366;
   background-color: transparent
 }
 
@@ -12995,7 +12996,7 @@ pre code {
 .nav.nav-tabs>li>a:focus,
 .nav.nav-tabs>li>a:hover {
   background-color: transparent;
-  color: #5000be
+  color: #483366;
 }
 
 .nav.nav-tabs>li+li {
@@ -13006,9 +13007,9 @@ pre code {
 .nav.nav-tabs>li.active>a,
 .nav.nav-tabs>li.active>a:focus,
 .nav.nav-tabs>li.active>a:hover {
-  color: #5000be;
+  color: #483366;
   border: none;
-  border-bottom: .1875rem solid #5000be
+  border-bottom: .1875rem solid #483366;
 }
 
 .sidebar-nav {
@@ -13056,8 +13057,8 @@ pre code {
 }
 
 .sidebar-nav li.active a {
-  color: #5000be;
-  border-bottom: .125rem solid #5000be
+  color: #483366;
+  border-bottom: .125rem solid #483366;
 }
 
 .sidebar-nav li.sidebar-nav__label {
@@ -13143,8 +13144,8 @@ pre code {
   }
 
   .sidebar-nav li.active a {
-    color: #5000be;
-    border-left: .125rem solid #5000be;
+    color: #483366;
+    border-left: .125rem solid #483366;
     border-bottom: none
   }
 
@@ -13235,7 +13236,7 @@ th {
 }
 
 .bg-primary {
-  background-color: #5000be;
+  background-color: #483366;
   color: #fff
 }
 
@@ -13704,7 +13705,7 @@ hr {
 }
 
 .text-brand-primary {
-  color: #5000be
+  color: #483366;
 }
 
 .text-success {
@@ -13814,7 +13815,7 @@ hr {
 }
 
 .color--primary {
-  background-color: #5000be
+  background-color: #483366;
 }
 
 .color--primary-light {
@@ -14431,7 +14432,7 @@ div.debug pre {
   -ms-flex-pack: center;
   justify-content: center;
   min-width: 100%;
-  background-color: #5000be;
+  background-color: #483366;
   color: #fff;
   padding: 2rem
 }
@@ -15037,7 +15038,7 @@ a.usecase__link:hover .usecase__title h3 {
 }
 
 #content #recipes .recipe-card .recipe-card-body .recipe-card-info .tag i.machine-learning {
-  color: #5000be
+  color: #483366;
 }
 
 #content #recipes .recipe-card .recipe-card-body .recipe-card-info .tag i.utilities {
@@ -15120,7 +15121,7 @@ input#search-query {
 }
 
 #search-results h3 a {
-  color: #5000be
+  color: #483366;
 }
 
 #search-results h3 a:hover {
@@ -15159,8 +15160,8 @@ input#search-query {
 }
 
 .devcenter-nav .nav>.active>a {
-  color: #5000be;
-  border-left: .125rem solid #5000be
+  color: #483366;
+  border-left: .125rem solid #483366;
 }
 
 .devcenter-nav .nav>li>a:hover {
@@ -15492,7 +15493,7 @@ input#search-query {
 
 #content .gs-pane .getting-started-code code .hover-info .hover-content {
   display: none;
-  font-family: Rubik, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   font-size: .75rem;
   max-width: 12.5rem
 }
@@ -15503,7 +15504,7 @@ input#search-query {
 }
 
 #content .gs-pane .getting-started-code code .hover-info .hover-content a {
-  color: #5000be
+  color: #483366;
 }
 
 #content .gs-pane .getting-started-code code .hover-info .hover-content a.btn {
@@ -15799,7 +15800,7 @@ table.data-table th {
 }
 
 .subpage .navbar-public {
-  background-color: #5000be
+  background-color: #483366;
 }
 
 .tag-pills {
@@ -15827,7 +15828,7 @@ table.data-table th {
 h4 .active {
   display: inline-block;
   line-height: 1.5;
-  border-bottom: .1875rem solid #5000be;
+  border-bottom: .1875rem solid #483366;
   font-weight: 700;
   font-size: 1rem;
   padding: 0 0 1rem;
@@ -16215,11 +16216,11 @@ ul.detail-list li:hover {
 .social-widget {
   font-size: 14px;
   font-weight: 700;
-  color: #5000be
+  color: #483366;
 }
 
 .social-widget a {
-  color: #5000be
+  color: #483366;
 }
 
 .social-widget>span {
@@ -16397,7 +16398,7 @@ form textarea {
 
 .welcome-grid a i {
   font-size: 2rem;
-  color: #5000be
+  color: #483366;
 }
 
 .welcome-grid a img {
@@ -16442,7 +16443,7 @@ form textarea {
 .grid-nav a:hover {
   text-decoration: none;
   background-color: transparent;
-  border: .125rem solid #5000be
+  border: .125rem solid #483366;
 }
 
 .grid-nav:after {
@@ -16731,7 +16732,7 @@ form textarea {
 
 #model-demo .model-selection-title {
   padding-right: 2rem;
-  color: #5000be;
+  color: #483366;
   margin-bottom: 0
 }
 
