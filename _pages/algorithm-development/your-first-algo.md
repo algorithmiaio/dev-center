@@ -209,7 +209,7 @@ if 'url' in input:
   text = Algorithmia.algo('util/Html2Text/0.1.3').pipe(input['url']).result
 {% endhighlight %}
 
-This example shows an algorithm that checks the type of input passed in, and if it is a URL, calls the Html2Text algorithm to pull down code from the webpage. Compute associated with both the original algorithm call and the internal algorithm call is tracked and attributed to the original caller's user account.
+This example shows an algorithm that checks the type of input passed in, and if it is a URL, calls the Html2Text algorithm to pull down code from the webpage. Compute associated with both the original algorithm call and the internal algorithm call is tracked and attributed to the original caller's account.
 
 ## (Optional) Deleting your Algorithm
 
