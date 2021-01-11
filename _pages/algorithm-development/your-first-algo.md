@@ -161,7 +161,7 @@ Compiling your algorithm will also save your work. Note that the first time you 
 
 Once you have finished editing and want to run the algorithm, click the green **Build** button at the top-right corner of the editor. This will save your algorithm by committing your code to your personal git repository and will try to compile your code.
 
-Once your algorithm has successfully compilied, you can test it out by passing input though the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
+Once your algorithm has successfully compiled, you can test it out by passing input through the console at the bottom of the screen. For instance, after compiling this algorithm, you can test the "Hello World" code by typing in "World" in the console:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
