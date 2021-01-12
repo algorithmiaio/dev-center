@@ -69,7 +69,6 @@ nav:
       - integrations/zapier.md
   - tutorials.md
   - Tutorials:
-      - tutorials/recipes.md
       - tutorials/sample-apps.md
       - tutorials/webinars.md
   - Algorithm Development:

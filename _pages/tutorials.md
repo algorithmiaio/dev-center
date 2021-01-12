@@ -3,10 +3,10 @@ exclude_from_search: true
 layout: article_page
 title:  "Tutorials"
 show_related: false
-excerpt: "Tutorials. Sample apps and recipes to help you learn whats going on."
+excerpt: "Tutorials and sample apps"
 ---
 
-Here you will find sample apps and recipes (which are a little bit different).
+Tutorials to help you get the most out of Algorithmia.
 
 <div class="row overview-container">
 {% assign pages = site.pages | where: "categories", "tutorials" %}
