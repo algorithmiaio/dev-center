@@ -21,16 +21,20 @@ To create a new data connection first navigate to <a href="{{site.baseurl}}/data
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials; these are described in the <a href="https://docs.microsoft.com/en-us/azure/storage/">Azure Storage Docs</a>, but you can obtain them as follows:
+Select **'Azure Blob'** and a form will open to configure a connection. Here you will need to enter your Azure credentials for the Blob Container you will be using.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector_2.png" alt="Create a data connector in modal" class="screenshot img-sm">
+
+For programmatic access to Azure Storage Blobs you will need a service level [Shared Access Signature](https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature) for the Blob Container you wish to access. The Azure documentation includes detailed information about [creating a service SAS](https://docs.microsoft.com/en-us/rest/api/storageservices/create-service-sas), as well as [best practices when using SAS](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#best-practices-when-using-sas).
+{:.notice-info}
+
+In addition to generating an SAS with code, you can obtain an SAS URI for your Blob Container through the Azure Portal as follows:
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
 
 1. Go to [https://portal.azure.com](https://portal.azure.com) and navigate to Storage Accounts.  Click on the Storage account you want to manage, then "Storage Explorer".
 2. Under "Blob Containers", __right-click__ the container you want and pick "Get Shared Access Signature"; make sure "Read" permission is checked and hit the "Create" button.
 3. Copy the URL value from the resulting pane into the SAS URI input.
-
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_portal_storage_explorer.png" alt="Azure Portal storage explorer" class="screenshot img-sm">
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/azure_create_data_connector_2.png" alt="Create a data connector in modal" class="screenshot img-sm">
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Azure, it is recommended that you provide access that:
 

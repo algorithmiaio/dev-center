@@ -21,9 +21,14 @@ To create a new data connection first navigate to <a href="{{site.baseurl}}/data
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/create_data_connector.png" alt="Create a data connector" class="screenshot img-md">
 
-Select **'Google Cloud Storage'** and a form will open to configure a connection. Here you will need to enter your Google Cloud Storage credentials, obtained from the [Service Accounts panel](https://console.cloud.google.com/iam-admin/serviceaccounts) of the Google Cloud Console. Copy your private_key_id, private_key, and client_email from the JSON credentials file generated when you select "create key" in your service account.  For more information, see the <a href="https://cloud.google.com/iam/docs/understanding-service-accounts#managing_service_account_keys ">Google Cloud Storage Docs</a>.
+Select **'Google Cloud Storage'** and a form will open to configure a connection. Here you will need to enter your Google Cloud Storage credentials for the Service Account you will be using.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/data_connectors/google_cloud_connector.png" alt="Create a data connector in modal" class="screenshot img-sm">
+
+For programmatic access to Google Cloud Storage, you will need to create a [Service Account](https://cloud.google.com/iam/docs/service-accounts) and associated key. You can learn more in the Google Cloud documentation pages for [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts) and [Creating and managing service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). The documentation also includes information about [best practices for working with service accounts](https://cloud.google.com/iam/docs/understanding-service-accounts).
+{:.notice-info}
+
+You can copy your `private_key_id`, `private_key`, and `client_email` from the JSON credentials file generated when you select "create key" in your service account.
 
 **NOTE:** While an algorithm NEVER sees credentials used to access data in Google Cloud Storage, it is recommended that you provide access that:
 
