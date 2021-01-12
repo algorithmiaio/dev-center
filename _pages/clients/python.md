@@ -184,21 +184,27 @@ Once the file has been uploaded, you are ready to call the algorithm. Create the
 
 {% highlight python %}
 # Create the algorithm object
-algoCV = client.algo('dlib/FaceDetection')
-input = [
-    "data://.my/img_directory/friends.jpg",
-    "data://.algo/temp/people_detected.png"
-]
+algoCV = client.algo('dlib/FaceDetection/0.2.1')
+
+input = {
+    "images": [
+        {
+            "url": "data://.my/img_directory/friends.jpg",
+            "output": "data://.algo/temp/detected_faces.png"
+        }
+    ]
+}
+
 # Invoke algorithm with error handling
 try:
     # Get the summary result of your file's contents
-    response = algoCV.pipe(img_file)
+    response = algoCV.pipe(input)
 except Exception as error:
     # Algorithm error if, for example, the input is not correctly formatted
     print(error)
 {% endhighlight %}
 
-Once the algorithm has completed, `response.result` will contain information about the dimensions of the bounding boxes for any detected faces, the size of the image, and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
+Once the algorithm has completed, `response.result` will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
 
 Algorithms can create and store data in folders named with the algorithm name in the Algorithm Data collection. To access this folder from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm author and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/author/algoName/folder/fileName`.
 {: .notice-info}
@@ -208,8 +214,8 @@ Algorithms can create and store data in folders named with the algorithm name in
 The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slighly to download the file by adding the algorithm name and author:
 
 {% highlight python %}
-output_uri = response.result['images'][0]['url']
-download_uri = output_uri[:13] + `dlib/FaceDetection` + output_uri[13:]
+output_uri = response.result['images'][0]['output']
+download_uri = output_uri[:13] + 'dlib/FaceDetection/' + output_uri[13:]
 {% endhighlight %}
 
 Verify that the file that you want to download exists, and try downloading it to a new local file location:
