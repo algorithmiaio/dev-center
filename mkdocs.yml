@@ -83,7 +83,6 @@ nav:
       - algorithm-development/algorithm-errors.md
       - algorithm-development/algorithm-management.md
       - algorithm-development/ci-cd.md
-      - algorithm-development/comparing-algorithms.md
       - algorithm-development/git.md
       - Languages:
           - Overview: algorithm-development/languages.md
