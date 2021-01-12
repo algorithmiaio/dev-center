@@ -221,7 +221,7 @@ If you have ever published your Algorithm with "Public" selected, it cannot be d
 
 ## Wrapping Up
 
-Now that you've published your first simple algorithm on the platform, you are empowered to develop more complex and useful algorithms. You can write them from scratch, adopt and modify open-source algorithms, or even chain multiple pre-existing algorithms together to make a micro service that you can call with the Algorithmia API! Get inspired by checking out our <a href="{{site.baseurl}}/tutorials/recipes">Recipes</a>.
+Now that you've published your first simple algorithm on the platform, you are empowered to develop more complex and useful algorithms. You can write them from scratch, adopt and modify open-source algorithms, or even chain multiple pre-existing algorithms together to make a micro service that you can call with the Algorithmia API! 
 
 ## Next Steps
 
