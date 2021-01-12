@@ -51,6 +51,9 @@
   nav_category: algorithmia-enterprise
   enterprise_only: true
 
+- title: VMware
+  url: /vmware/
+
 - title: Pricing
   url: /pricing/
 

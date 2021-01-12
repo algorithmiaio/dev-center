@@ -45,7 +45,7 @@ Platform-wide SL1, SL2, or SL3 incidents will be reported and updated on the [Al
 </div>
 
 <div class="syn-styles-supported">
-    <p class="syn-mt-32"><a href="https://teams.algorithmia.com/signup" style="color: #5000be;" class="syn-font-weight-medium">Sign up for Teams <i class="fa fa-arrow-right syn-font-weight-regular syn-ml-16" aria-hidden="true"></i></a></p>
+    <p class="syn-mt-32"><a href="https://teams.algorithmia.com/signup" style="color: #483366;" class="syn-font-weight-medium">Sign up for Teams <i class="fa fa-arrow-right syn-font-weight-regular syn-ml-16" aria-hidden="true"></i></a></p>
 </div>
 
 ## Algorithmia Teams Basic tier
@@ -59,7 +59,7 @@ For documentation and guides for using the service our comprehensive online docu
 * For interruptions in service please visit [Algorithmia’s status page](https://status.algorithmia.com/) for more information.
 
 <div class="syn-styles-supported">
-    <p class="syn-mt-32"><a href="https://teams.algorithmia.com/signup"  style="color: #5000be;" class="syn-font-weight-medium">Sign up for Teams <i class="fa fa-arrow-right syn-font-weight-regular syn-ml-16" aria-hidden="true"></i></a></p>
+    <p class="syn-mt-32"><a href="https://teams.algorithmia.com/signup"  style="color: #483366;" class="syn-font-weight-medium">Sign up for Teams <i class="fa fa-arrow-right syn-font-weight-regular syn-ml-16" aria-hidden="true"></i></a></p>
 </div>
 
 ## Algorithmia Public Marketplace
