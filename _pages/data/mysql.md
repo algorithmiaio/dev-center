@@ -78,6 +78,6 @@ client = Algorithmia.client()
 
 def apply(input):
     query = "SELECT name, address FROM employees"
-    results = client.algo('util/MySql').pipe(query).result
+    results = client.algo('util/MySql/0.1.1').pipe(query).result
     # now use results (a list of lists) in any way you like
 ```

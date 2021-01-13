@@ -99,7 +99,7 @@ Now scroll down a bit and take a look at the three functions we use to createupl
         ]
 
         // Process with DeepFilter algorithm
-        self.client.algo(algoUri: "algo://deeplearning/DeepFilter").pipe(json: param, completion: { (response, error) in
+        self.client.algo(algoUri: "algo://deeplearning/DeepFilter/1.0.0").pipe(json: param, completion: { (response, error) in
             if let error = error {
                 print(error)
                 self.display(error: error)
@@ -149,7 +149,7 @@ Lastly, replace `"algo://deeplearning/DeepFilter"` with `"algo://deeplearning/Sa
         ]
 
         // Process with SalNet algorithm
-        self.client.algo(algoUri: "algo://deeplearning/SalNet").pipe(json: param, completion: { (response, error) in
+        self.client.algo(algoUri: "algo://deeplearning/SalNet/0.2.2").pipe(json: param, completion: { (response, error) in
             if let error = error {
                 print(error)
                 self.display(error: error)
