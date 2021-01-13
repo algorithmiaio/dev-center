@@ -48,8 +48,11 @@ apiKey = "YOUR_API_KEY"
 client = Algorithmia.client(apiKey)
 {% endhighlight %}
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight python %}
@@ -57,7 +60,6 @@ client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint")
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
-{% endif %}
 
 ## Calling an Algorithm
 
@@ -241,7 +243,9 @@ This will get the image as binary data, saving it to the variable `image_data`, 
 If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
 ## Publishing Algorithmia Insights
-**This feature is available to Enterprise users only:**
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
 
 Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 {% highlight python %}

@@ -8,6 +8,10 @@ author: rmiller
 image:
   teaser: /icons/algo.svg
 ---
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 Every algorithm on the Algorithmia platform stores its source code within a [Git](https://git-scm.com/) repository. As an Algorithmia administrator, you can configure where algorithm source code repositories reside. We currently support two repository hosts, which we term source control managers (or SCMs): 
 
 - __Algorithmia__: Users may choose to host their algorithm source within the Algorithmia platform itself. This is the default SCM for all new Algorithmia instances.

@@ -38,15 +38,16 @@ If you are using another CI/CD tool, or simply wish to deploy from a simple pure
 
 ### Step-by-step: Creating and Publishing an Algorithm via the API, using the Official Python Client (recommended)
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), remember to specify your API endpoint when creating the Python Client:
 
 {% highlight python %}
 client = Algorithmia.client("API_KEY", "https://mylocalendpoint")
 {% endhighlight %}
-
-{% endif %}
 
 #### 1. Create your algorithm
 
@@ -107,10 +108,12 @@ Your algorithm is now published and runnable. If you wish, you make also take ad
 
 ### ALTERNATIVE: Creating and Publishing an Algorithm Via the API, Using the OpenAPI Specification and Python Requests
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), you must specify a different API endpoint when using these APIs. Simply replace "https://api.algorithmia.com" with the base URL of your own installation.
-{% endif %}
 
 #### 1. Create your algorithm
 

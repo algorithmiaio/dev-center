@@ -8,6 +8,9 @@ image:
   teaser: /icons/algo.svg
 ---
 
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 Algorithmia Insights is an algorithm metrics pipeline providing you access to your algorithm metrics payload for each algorithm session so you can measure, monitor, and manage your algorithms in production.
 
 With Algorithmia Insights you'll be able to opt in to exporting your algorithm's operational metrics to external monitoring and alerting tools. This means you'll be able to monitor your algorithm's execution time as well as capture any model inference metrics you expose from your algorithm's output such as predictions or accuracy. Any metrics you opt to collect will be captured and exported in a payload and, with help from a Platform Administrator, can be connected to your external systems for monitoring and alerting.

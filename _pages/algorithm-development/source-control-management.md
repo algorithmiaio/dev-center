@@ -19,10 +19,8 @@ When you create an algorithm, a [Git](https://git-scm.com/) repository is initia
 - [Hosting Source Code on Algorithmia](#hosting-source-code-on-algorithmia)
 - [Hosting Source Code on GitHub](#hosting-source-code-on-github)
 
-{% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
 {: .notice-info}
-{% endif %}
 
 ### Choosing a Repository Host
 
@@ -55,10 +53,8 @@ Replace the `username` and `algoname` values as appropriate. If you're working w
 
 Provide your Algorithmia username and password when asked to authenticate.
 
-{% if site.enterprise %}
-**OIDC Users** If your Algorithmia instance is configured to use OIDC, you will not have a password. To obtain a password, navigate to your user settings page and click "Regenerate Account Password". By following the instructions, you will be provided a password you can use to authenticate with your Algorithmia-hosted Git repositories.
+**Enterprise Users:** If your Algorithmia instance is configured to use OIDC, you will not have a password. To obtain a password, navigate to your user settings page and click "Regenerate Account Password". By following the instructions, you will be provided a password you can use to authenticate with your Algorithmia-hosted Git repositories.
 {: .notice-info}
-{% endif %}
 
 Once you've made changes, commit them to your repository's `master` branch 
 
@@ -160,10 +156,8 @@ If you want to review your GitHub authorization status, you can visit your user 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
-{% if site.enterprise %}
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see GitHub listed within the above section until your administrator enables GitHub as a source host.
 {: .notice-info}
-{% endif %}
 
 #### Troubleshooting GitHub-Hosted Algorithms
 

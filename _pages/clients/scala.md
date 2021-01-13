@@ -49,8 +49,12 @@ val client = Algorithmia.client("YOUR_API_KEY")
 
 Now you’re ready to start working with Algorithmia in Scala.
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight scala %}
@@ -58,7 +62,6 @@ val client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint")
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
-{% endif %}
 
 ## Working with Data Using the Data API
 

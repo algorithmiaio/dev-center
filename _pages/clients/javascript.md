@@ -55,20 +55,22 @@ Here is an example of how to authenticate and call an algorithm in JavaScript:
 {% highlight javascript %}
 var input = 41;
 var client = Algorithmia.client("YOUR_API_KEY");
-client.algo("docs/JavaAddOne").pipe(input).then(function(output) {
+client.algo("docs/JavaAddOne/0.1.1").pipe(input).then(function(output) {
   if(output.error) return console.error("error: " + output.error);
   console.log(output.result);
 });
 {% endhighlight %}
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight javascript %}
 var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint/v1/web/algo");
 {% endhighlight %}
-{% endif %}
 
 ### Limits
 

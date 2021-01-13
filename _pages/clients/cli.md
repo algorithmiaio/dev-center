@@ -58,10 +58,12 @@ Profile is ready to use. Test with 'algo ls'
 
 See [Using multiple profiles](#using-multiple-profiles) for instructions on how to set authenticate and use more than one profile with the Algorithmia CLI tool.
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL. Note that it must contain the `api` prefix, so if your domain is ` https://algorithmia.companyname.com ` then your API Endpoint should be `https://api.algorithmia.companyname.com`
-{% endif %}
 
 ## Usage
 
