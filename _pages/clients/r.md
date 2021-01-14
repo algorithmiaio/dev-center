@@ -46,8 +46,11 @@ apiKey <- "YOUR_API_KEY"
 client <- getAlgorithmiaClient(apiKey)
 {% endhighlight %}
 
-{% if site.enterprise %}
-#### Enterprise Users Only: Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an On-Premises or Private Cloud Endpoint
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight r %}
@@ -55,7 +58,6 @@ client <- getAlgorithmiaClient("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
-{% endif %}
 
 ## Calling an Algorithm
 
@@ -251,8 +253,10 @@ This will get the file as a JSON object, saving it to the variable `processed_te
 
 If the file was an image or some other binary data type, you could instead use the function `.getRaw()` to retrieve the file's content as raw bytes. For more methods on how to get a file using the Data API from a data collection refer to the [API Specification](/developers/api/#get-a-file-or-directory).
 
-{% if site.enterprise %}
 ## Publishing Algorithmia Insights
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
 
 Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
@@ -260,8 +264,6 @@ Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-en
 # Report Algorithmia Insights
 client$report_insights(list(faces_in_image=4)})
 {% endhighlight %}
-
-{% endif %}
 
 ## Additional Functionality
 

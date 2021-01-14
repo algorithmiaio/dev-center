@@ -49,7 +49,6 @@
 - title: Algorithmia Enterprise
   url: /algorithmia-enterprise/
   nav_category: algorithmia-enterprise
-  enterprise_only: true
 
 - title: VMware
   url: /vmware/

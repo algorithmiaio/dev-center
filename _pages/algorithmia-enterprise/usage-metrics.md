@@ -8,6 +8,8 @@ image:
     teaser: /icons/algo.svg
 ---
 
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
 
 ## Platform Usage Metrics
 
