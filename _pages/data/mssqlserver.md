@@ -77,6 +77,6 @@ client = Algorithmia.client()
 
 def apply(input):
     query = "USE employees; SELECT name, address FROM employees"
-    results = client.algo('util/MsSqlServer').pipe(query).result
+    results = client.algo('util/MsSqlServer/0.1.0').pipe(query).result
     # now use results (a list of lists) in any way you like
 ```

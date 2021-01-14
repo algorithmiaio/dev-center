@@ -154,7 +154,7 @@ def apply(input):
     """
 
     client = Algorithmia.client()
-    imgDataPath = client.algo("util/SmartImageDownloader").pipe(input).result["savePath"][0]
+    imgDataPath = client.algo("util/SmartImageDownloader/0.2.20").pipe(input).result["savePath"][0]
     imgAbsPath = client.file(imgDataPath).getFile().name
 
     image = caffe.io.load_image(imgAbsPath, color=False)
