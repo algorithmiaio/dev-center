@@ -17,15 +17,15 @@ Begin by creating a [collection]({{site.url}}/data/hosted) named "SnowflakeCrede
 
 ```json
 {
-  "user": "[YOUR_SNOWFLAKE_USERNAME]",
-  "password": "[YOUR_SNOWFLAKE_PASSWORD]",
-  "account": "[YOUR_SNOWFLAKE_ACCOUNT]"
+  "user": "<YOUR_SNOWFLAKE_USERNAME>",
+  "password": "<YOUR_SNOWFLAKE_PASSWORD>",
+  "account": "<YOUR_SNOWFLAKE_ACCOUNT>"
 }
 ```
 
-Next, create a Python Algorithm. Click "Dependencies" in the Web IDE (or edit your requirements.txt file) and add the dependency `snowflake-connector-python`.
+Next, create a Python algorithm. Click "Dependencies" in the Web IDE (or edit your requirements.txt file) and add the dependency `snowflake-connector-python`.
 
-Now paste the following code in as your Algorithm:
+Now paste the following code in as your algorithm:
 
 ```python
 import Algorithmia
@@ -37,9 +37,9 @@ creds = client.file("data://.my/SnowflakeCredentials/credentials.json").getJson(
 
 def apply(input):
     ctx = snowflake.connector.connect(
-        user=creds.get('user'),
-        password=creds.get('password'),
-        account=creds.get('account')
+        user=creds.get("user"),
+        password=creds.get("password"),
+        account=creds.get("account")
         )
     cs = ctx.cursor()
     try:
@@ -52,4 +52,4 @@ def apply(input):
         ctx.close()
 ``` 
 
-Build and test this Algorithm. Assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.
+Build and test this algorithm. Assuming you have not deleted the SNOWFLAKE_SAMPLE_DATA database, it should return the first row. Otherwise, alter it to try pulling data from your own database.
