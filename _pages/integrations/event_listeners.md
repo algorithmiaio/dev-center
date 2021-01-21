@@ -11,7 +11,7 @@ image:
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
 
-This is only available for Enterprise installations of Algorithmia. 
+This is only available for Enterprise installations of Algorithmia.
 {: .notice-warning}
 
 ## SQS Event Listener workflow
@@ -21,7 +21,7 @@ This is only available for Enterprise installations of Algorithmia.
 This shows the interaction of SQS and Algorithmia. After consuming a message from SQS, the Algorithmia Event Listener will send it as an API call to Algorithmia. If API server returns a 200 OK then the message was queued for processing. If the API server returns 429 Too Many Requests, then the message is put back into the SQS queue with a 5 minute delay.
 
 To affect how much work the system will accept, you can tune either the maximum number of workers, or the user session limit. The SQS option for "Maximum Receives" determines how many times a message will loop through this system. Since each loop is 5 minutes, messages will queue on the SQS side for (5 minutes) * (Max Receives).
-The default Max Receives is 10 but can be increased up to 1000 to queue messages for longer. When Max Recevives limit is hit, the message is delivered to the SQS DLQ queue.
+As per the [AWS documentation](https://aws.amazon.com/blogs/aws/amazon-sqs-new-dead-letter-queue/#:~:text=Maximum%20Receives%20%E2%80%93%20The%20maximum%20number,to%20the%20Dead%20Letter%20Queue.), the default Max Receives is 10 but can be increased up to 1000 to queue messages for longer. When Max Receives limit is hit, the message is delivered to the SQS Dead Letter Queue.
 
 ## 1. Obtain a template file and account info from Algorithmia
 
@@ -86,7 +86,7 @@ The next page allows you to review your options. Scroll to the bottom and click 
 
 Finally, click **Create stack**.
 
-The next page will indicate that the stack creation is in progress. 
+The next page will indicate that the stack creation is in progress.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_9.png">
 
