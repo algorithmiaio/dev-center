@@ -256,7 +256,7 @@ In the case of an example credit scoring model, shown in this demo for <a href-"
 
 {% highlight python %}
 # Report Algorithmia Insights
-    client.report_insights({"risk_score": risk_score, "approved": approved})
+client.report_insights({"risk_score": risk_score, "approved": approved})
 {% endhighlight %}
 
 {% highlight python %}
