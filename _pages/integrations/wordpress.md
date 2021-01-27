@@ -2,8 +2,6 @@
 layout: article
 title: "WordPress"
 excerpt-short: "Add AI to your WordPress Plugins"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/wordpress.png

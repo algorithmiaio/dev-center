@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Event Listeners via Azure SB"
+title: "Azure SB Event Listeners"
 excerpt-short: "Set up an Event Listener to run an Algorithm with inputs from an Azure Service Bus Queue"
 categories: [integrations]
 tags: [integrations]
@@ -8,10 +8,10 @@ show_related: true
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 
-[Read More about Azure Service Bus] (https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues)
+[Read More about Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues)
 
 This is only available for Enterprise installations of Algorithmia. 
-{: .notice-warning}
+{: .notice-enterprise}
 
 ## 1. Obtain a template file and account info from Algorithmia
 
@@ -28,7 +28,7 @@ Using the Custom Role definition file you received in step 1, create the Custom 
 * Authenticate with Azure CLI
 * Run `$ az role definition create --role-definition GuestRole.json`
 
-More info on how to do this with Azure CLI can be found here: https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli
+For more info on how to do this with Azure CLI <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli" target="_blank">visit the Azure Docs</a>
 It can be also done via PowerShell and REST API.
 
 
@@ -50,8 +50,8 @@ Create a new guest user account with Algorithmia’s account email.
 ## 4. Create Service Bus Namespace and Queue 
 
 * Import ARM template and create your Service Bus Namespace and Queue.
-Info about ARM templates: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview
-Info about Service Bus: https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal#:~:text=In%20the%20left%20navigation%20pane,if%20the%20name%20is%20available
+<a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview" target="_blank">Info about ARM templates</a>
+<a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal#:~:text=In%20the%20left%20navigation%20pane,if%20the%20name%20is%20available" target="_blank">Info about Service Bus</a>
 * Create a new Template, and load the contents of the ARM template file from step 1 into the ARM template tab. Save the template and click “Deploy Template”.
 * Fill in the Namespace Name, Queue Name, and choose region appropriate for you. 
 

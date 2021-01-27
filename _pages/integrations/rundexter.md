@@ -2,8 +2,6 @@
 layout: article
 title: "Dexter"
 excerpt-short: "Add intelligence to your Dexter chatbots"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/rundexter.svg

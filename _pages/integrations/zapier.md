@@ -2,8 +2,6 @@
 layout: article
 title: "Zapier"
 excerpt-short: "Add Machine Learning to your Zapier workflows with Algorithmia"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/zapier.svg

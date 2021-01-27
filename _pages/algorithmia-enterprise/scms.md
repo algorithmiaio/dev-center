@@ -2,7 +2,7 @@
 layout: article
 title:  "SCMs"
 excerpt: "Configuring where users may store algorithm source code"
-categories: algorithmia-enterprise
+categories: [algorithmia-enterprise, integrations]
 show_related: false
 author: rmiller
 image:

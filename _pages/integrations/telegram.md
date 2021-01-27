@@ -2,8 +2,6 @@
 layout: article
 title: "Telegram (Bot API)"
 excerpt-short: "Algorithmia makes your Telegram messaging bot smarter"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/telegram.svg

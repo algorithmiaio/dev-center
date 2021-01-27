@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Event Listeners via Amazon SQS"
+title: "Amazon SQS Event Listeners"
 excerpt-short: "Set up an Event Listener to run an Algorithm with inputs from an Amazon SQS Queue"
 categories: [integrations]
 tags: [integrations]
@@ -12,7 +12,7 @@ image:
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
 
 This is only available for Enterprise installations of Algorithmia.
-{: .notice-warning}
+{: .notice-enterprise}
 
 ## SQS Event Listener workflow
 

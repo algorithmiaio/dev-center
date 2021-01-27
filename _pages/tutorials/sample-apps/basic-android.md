@@ -1,9 +1,9 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Basic Android Integration"
-categories: [sample-apps]
-tags: [sample-apps]
+title: "Basic Android"
+categories: integrations
+tags: [integrations]
 show_related: false
 excerpt: "A code walk-through of a simple Android app using Algorithmia."
 excerpt-short: "Build Android apps using Algorithmia."

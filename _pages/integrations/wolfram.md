@@ -3,8 +3,6 @@ layout: article
 title: "Wolfram"
 excerpt: "Enhance your Wolfram Language code with calls to Algorithmia"
 excerpt-short: "Enhance your Wolfram Language code with calls to Algorithmia"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/wolfram.png

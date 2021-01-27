@@ -2,8 +2,8 @@
 exclude_from_search: true
 layout: article
 title:  "iOS Integration"
-categories: [sample-apps]
-tags: [sample-apps]
+categories: integrations
+tags: [integrations]
 show_related: false
 author: jon_peck
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."

@@ -20,11 +20,7 @@
 
 - title: Integrations
   url: /integrations/
-#  nav_category: integrations
-
-- title: Tutorials
-  url: /tutorials/
-  nav_category: tutorials
+  nav_category: integrations
 
 - title: Algorithm Development
   url: /algorithm-development/
@@ -46,9 +42,9 @@
 - title: Organizations
   url: /platform/organizations/
 
-- title: Algorithmia Enterprise
-  url: /algorithmia-enterprise/
-  nav_category: algorithmia-enterprise
+# - title: Algorithmia Enterprise
+#   url: /algorithmia-enterprise/
+#   nav_category: algorithmia-enterprise
 
 - title: VMware
   url: /vmware/
