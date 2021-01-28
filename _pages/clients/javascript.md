@@ -88,7 +88,7 @@ input = {
         ]
 };
 
-var algoJSON = client.algo("nlp/LDA/1.0.0");
+const algoJSON = client.algo("nlp/LDA/1.0.0");
 algoJSON.pipe(input).then(function (output)
     {
         if(output.error) return console.error("error: " + output.error.message);
