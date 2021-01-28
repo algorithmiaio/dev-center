@@ -18,47 +18,26 @@ redirect_from:
 
 {% include video-responsive.html height="560" width="315" url="https://www.youtube.com/embed/HF04Ge-3XdE" %}
 
-We offer a vanilla JavaScript client for calling algorithms in the marketplace.
+The Algorithmia JavaScript client provides a native interface for calling algorithms using the Algorithmia API. 
 
-### Download
+This guide will cover setting up the client, calling an algorithm using direct user input, and calling an algorithm that uses JSON as input. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/).
 
-You can download our JavaScript client from:
+The code in this guide can be run from the JavaScript console in your browser or used in your own scripts.
 
-<a href="{{site.url}}/v1/clients/js/algorithmia-0.2.1.js" download="algorithmia-0.2.1.js">https://algorithmia.com/v1/clients/js/algorithmia-0.2.1.js</a>
+## Set Up the Client
 
-You can include the JavaScript file as a script tag:
+The JavaScript client can be downloaded from [https://algorithmia.com/v1/clients/js/algorithmia-0.2.1.js](https://algorithmia.com/v1/clients/js/algorithmia-0.2.1.js) and the JavaScript file can be included as a script tag:
 
 {% highlight html %}
 <script src="//algorithmia.com/v1/clients/js/algorithmia-0.2.1.js" type="text/javascript"></script>
 {% endhighlight %}
 
-#### Call an Algorithm
+To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to [Home](/user) > [API Keys](/user#credentials) to find your key, or read the [API keys documentation](/developers/platform/customizing-api-keys) for more information.
 
-Next, login to [Algorithmia](/) to get your [API key](/user#credentials):
-
-Now import the Algorithmia library and create the Algorithmia client:
+Once the client is included, you can instantiate the client object:
 
 {% highlight javascript %}
 var client = Algorithmia.client("YOUR_API_KEY");
-{% endhighlight %}
-
-After setting your API key, you can then use the `client` variable from the above line to call algorithms.
-
-The format for calling an algorithm is `client.algo()` with the algorithm name passed in. To pass input to the algorithm, use the `.pipe` method.
-
-{% highlight javascript %}
-client.algo("demo/Hello").pipe(input)
-{% endhighlight %}
-
-Here is an example of how to authenticate and call an algorithm in JavaScript:
-
-{% highlight javascript %}
-var input = 41;
-var client = Algorithmia.client("YOUR_API_KEY");
-client.algo("docs/JavaAddOne/0.1.1").pipe(input).then(function(output) {
-  if(output.error) return console.error("error: " + output.error);
-  console.log(output.result);
-});
 {% endhighlight %}
 
 #### Specifying an On-Premises or Private Cloud Endpoint
@@ -71,6 +50,81 @@ If you are running [Algorithmia Enterprise](/enterprise), you can specify the AP
 {% highlight javascript %}
 var client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint/v1/web/algo");
 {% endhighlight %}
+
+## Calling an Algorithm
+
+Algorithms take three basic types of input whether they are invoked directly through the API or by using a client library: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the input and output sections of an algorithm's documentation for specifics.
+
+The first algorithm we'll call is a demo version of the algorithm used in the Algorithm Development [Getting Started](/developers/algorithm-development/your-first-algo) guide, which is available at [demo/Hello](/algorithms/demo/Hello). Looking at the [algorithm's documentation](/algorithms/demo/Hello/docs), it takes a string as input and returns a string.
+
+In order to call an Algorithm from JavaScript, we need to first create an algorithm object. With the client already instantiated, we can run the following code to create an object:
+
+{% highlight javascript %}
+var algo = client.algo("demo/Hello");
+{% endhighlight %}
+
+Then, we can use the `.pipe()` method to call the algorithm, and provide our input as the argument to the function. The JavaScript client returns a promise, so we can use `.then()` to handle the result and any errors.
+
+{% highlight javascript %}
+algo.pipe("HAL 9000").then(function (output)
+    {
+        if(output.error) return console.error("error: " + output.error.message);
+        console.log(output.result);
+    });
+{% endhighlight %}
+
+Which should print the phrase `Hello HAL 9000` to the console.
+
+### JSON Inputs
+
+Let's look at an example using JSON and the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll call this algorithm using a JSON object as our input, following the format in the algorithm documentation:
+
+{% highlight javascript %}
+input = {
+    "docsList": 
+        [
+            "It's apple picking season",
+            "The apples are ready for picking"
+        ]
+};
+
+const algoJSON = client.algo("nlp/LDA/1.0.0");
+algoJSON.pipe(input).then(function (output)
+    {
+        if(output.error) return console.error("error: " + output.error.message);
+        console.log(output.result);
+    }
+);
+{% endhighlight %}
+
+The output will be a JSON object which includes an array of topics which include relevant words and the number of occurrences.
+
+{% highlight javascript %}
+[
+    {ready: 1},
+    {apple: 1, season: 1},
+    {picking: 2},
+    {apples: 1}
+]
+{% endhighlight %}
+
+You might have noticed that in this example we included a version number when instantiating the algorithm. Pinning your code to a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
+
+### Error Handling
+
+To be able to better develop across languages, Algorithmia has created a set of standardized errors that can be returned by either the platform or by the algorithm being run. In JavaScript, API errors and Algorithm exceptions will result in calls to `.pipe()` returning an error object in their output.
+
+{% highlight javascript %}
+client.algo("util/whoopsWrongAlgo").pipe("").then(function (output)
+    {
+        if(output.error) return console.error("error: " + output.error.message);
+        console.log(output.result);
+    }
+)
+//[Error] error: algorithm algo://util/whoopsWrongAlgo/ not found
+{% endhighlight %}
+
+You can read more about [Error Handling](/developers/algorithm-development/algorithm-errors) in the [Algorithm Development](/developers/algorithm-development) section of the dev center.
 
 ### Limits
 
