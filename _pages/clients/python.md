@@ -29,8 +29,9 @@ The code in this guide can be run directly in a Python interpreter or used in yo
 
 The official client is available on [PyPI](https://pypi.python.org/pypi/algorithmia/) and can be installed with pip:
 
-{% highlight python %}
-pip3 install algorithmia
+
+{% highlight bash %}
+$ pip3 install algorithmia
 {% endhighlight %}
 
 If you need to install the client from source, please see the additional installation instructions in the client [README](https://github.com/algorithmiaio/algorithmia-python#install-from-source).
@@ -244,13 +245,26 @@ If the file was text (an image, etc.), you could instead use the function `.getS
 
 ## Publishing Algorithmia Insights
 
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+This feature is available to [Algorithmia Enterprise](/enterprise) users only. 
 {: .notice-enterprise}
 
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client. 
+
+Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
+
+In the case of an example credit scoring model, shown in this demo for <a href-"https://www.youtube.com/watch?v=pdKwtp-_n2M ">Algorithmia Insights</a>, reported metrics include the algorithm predictions:
+
 {% highlight python %}
 # Report Algorithmia Insights
-client.report_insights({"faces_in_image": 4})
+client.report_insights({"risk_score": risk_score, "approved": approved})
+{% endhighlight %}
+
+{% highlight python %}
+# Sample model output that is pushed to Insights
+{
+  "approved": 1,
+  "risk_score": 0.08
+}
 {% endhighlight %}
 
 ## Additional Functionality
