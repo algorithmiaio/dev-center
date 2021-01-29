@@ -1,9 +1,9 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Using Algorithmia in your Shiny App"
-categories: [sample-apps]
-tags: [sample-apps]
+title: "Shiny App"
+categories: integrations
+tags: [integrations]
 show_related: false
 author: steph_kim
 excerpt: "Call Fourier Detrend algorithm in your Shiny app!"

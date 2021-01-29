@@ -2,8 +2,6 @@
 layout: article
 title: "Webhooks"
 excerpt-short: "Use an Algorithmia Algorithm as an Incoming Webhook Endpoint"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/webhook.svg

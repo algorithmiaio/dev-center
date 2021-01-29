@@ -3,8 +3,6 @@ layout: article
 title:  "Serverless.com"
 excerpt: "Integrate Algorithmia into your Serverless Framework app"
 excerpt-short: "Integrate Algorithmia into your Serverless Framework app"
-categories: [integrations]
-tags: [integrations]
 show_related: false
 image:
     teaser: /language_logos/serverless_com.png

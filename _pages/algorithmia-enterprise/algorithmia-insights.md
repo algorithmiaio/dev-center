@@ -2,7 +2,8 @@
 layout: article
 title:  "Algorithmia Insights"
 excerpt: "Sending algorithm metrics to a customer-operated metrics collection system"
-categories: algorithmia-enterprise
+categories: [integrations]
+tags: integrations
 show_related: false
 image:
   teaser: /icons/algo.svg

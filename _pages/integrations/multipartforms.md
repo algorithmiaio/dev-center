@@ -2,8 +2,6 @@
 layout: article
 title: "Multipart Forms"
 excerpt-short: "Use a web form to send a file to an Algorithm"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/files.svg

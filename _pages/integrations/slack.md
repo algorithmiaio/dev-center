@@ -3,8 +3,6 @@ layout: article
 title:  "Slack"
 excerpt: "Integrate Machine Learning directly into your Slack channels"
 excerpt-short: "Use Machine Learning directly from Slack"
-categories: [integrations]
-tags: [integrations, utilities, text-analysis]
 show_related: true
 image:
     teaser: /language_logos/slack.svg

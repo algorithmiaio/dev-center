@@ -1,9 +1,9 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Deep Learning with Android"
-categories: sample-apps
-tags: [sample-apps]
+title: "Android Deep Learning"
+categories: integrations
+tags: [integrations]
 show_related: false
 author: steph_kim
 excerpt: "Build an Android app that uses deep learning to find the make and model of a picture you take of a car!"

@@ -2,7 +2,7 @@
 layout: article
 title:  "Advanced Usage Reporting"
 excerpt: "The Admin Panel's Usage Feature"
-categories: algorithmia-enterprise
+categories: [algorithmia-enterprise, integrations]
 show_related: false
 image:
     teaser: /icons/algo.svg

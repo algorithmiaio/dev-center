@@ -2,8 +2,6 @@
 layout: article
 title: "Base64 File Encoding"
 excerpt-short: "Send a base64-encoded file to an Algorithm"
-categories: [integrations]
-tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/US_64.svg
