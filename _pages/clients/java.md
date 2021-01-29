@@ -17,19 +17,15 @@ redirect_from:
   - /application-development/lang-guides/java/
 ---
 
-This guide provides a walk-through of how to use the official Algorithmia Java Client to call algorithms and manage data through the Algorithmia platform.
+The Algorithmia Java client provides a native Java interface to the Algorithmia API, letting developers manage and call algorithms, work with data in object stores using Algorithmia Data Sources, and access other features of the Algorithmia platform.
 
-Here you will learn how to install the Algorithmia Java Client, work with the Data API by uploading and downloading files, create and update directories and permission types and last, you'll learn how to call an algorithm that summarizes text files.
+This guide will cover setting up the client, calling an algorithm using direct user input, calling an algorithm that accesses data through Algorithmia Data Sources, and using Algorithmia's Hosted Data service. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/). Reference documentation for the Java Client can be found in the [Algorithmia Client JavaDocs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client).
 
 To follow along you can create a new Java file in the IDE of your choice.
 
+## Set Up the Client
 
-
-## Getting Started with Algorithmia
-
-The Algorithmia Java Client is published to Maven central and additional reference documentation can be found in the [Algorithmia Client JavaDocs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client) and the [Algorithmia API docs](http://docs.algorithmia.com/?java#).
-
-To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
+The Algorithmia Java Client is published to Maven central. To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
 
 {% highlight java %}
 <dependency>
@@ -42,18 +38,14 @@ To get started, the Algorithmia Java Client can be added as a library through Ma
 Using version range [,1.1.0) is recommended as it implies using the latest backward-compatible bugfixes.
 {: .notice-info}
 
-## Authentication
+To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys documentation](/developers/platform/customizing-api-keys) for more information.
 
-Next, login to [Algorithmia](/) to get your [API key](/user#credentials):
-
-Now import the Algorithmia library and create the Algorithmia client:
+Once the client is installed, you can import it into your code and instantiate the client object:
 
 {% highlight java %}
 import com.algorithmia.*;
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 {% endhighlight %}
-
-Now you’re ready to start working with Algorithmia in Java.
 
 #### Specifying an On-Premises or Private Cloud Endpoint
 
@@ -68,207 +60,223 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY", "https://mylocalen
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
 
-## Working with Data Using the Data API
+## Calling an Algorithm
 
-For application developers, [Algorithmia's Data Portal](/data) offers three different ways to store your data, all available via the [Data API](http://docs.algorithmia.com/#data-api-specification).
+Algorithms take three basic types of input whether they are invoked directly through the API or by using a client library: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the input and output sections of an algorithm's documentation for specifics.
 
-This guide will show you how to work with the [Hosted Data]({{site.baseurl}}/data/hosted) option on the Algorithmia platform which is available to both algorithm and application developers.
+The first algorithm we'll call is a demo version of the algorithm used in the Algorithm Development [Getting Started](/developers/algorithm-development/your-first-algo) guide, which is available at [demo/Hello](/algorithms/demo/Hello). Looking at the [algorithm's documentation](/algorithms/demo/Hello/docs), it takes a string as input and returns a string.
 
-### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. This will be used throughout the guide.
-
-### Create a Data Collection
-
-This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
-
-Import the DataDirectory object to work with data collections:
+In order to call an Algorithm from Java, we need to first create an algorithm object. With the client already instantiated, we can run the following code to create an object:
 
 {% highlight java %}
-import com.algorithmia.data.DataDirectory;
+Algorithm algo = client.algo("demo/Hello");
 {% endhighlight %}
 
-Now create a data collection called nlp_directory:
+Then, we can use the `.pipe()` method to call the algorithm. We'll provide our input as the argument to the function, and then print the output using the `result` attribute and the `.asString()` method:
 
 {% highlight java %}
-// Instantiate a DataDirectory object, set your data URI and call create
-DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
-// Create your data collection if it does not exist
 try {
-    if (!nlp_directory.exists()) {
-        nlp_directory.create();
-    }
+    AlgoResponse result = algo.pipe("HAL 9000");
+    System.out.println(result.asString());
 } catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+} catch (AlgorithmException e) {
+    System.out.println("Algorithm Exception: " + e.getMessage());
     e.printStackTrace();
 }
 {% endhighlight %}
 
-A Data URI uniquely identifies files and directories and contains a protocol "data://" and path "YOUR_USERNAME/data_collection". For more information on the Data URI see the [Data API Specification](http://docs.algorithmia.com/#data-api-specification).
+Which should print the phrase, `Hello HAL 9000`.
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-{: .notice-info}
+### JSON and Java
 
-### Work with Directory Permissions
+The Java client provides some ease-of-use abstractions for working with algorithms with JSON inputs and outputs. Call an algorithm with JSON input by passing in a type that can be serialized to JSON, including most plain old java objects and collection types. If the algorithm output is JSON, call the `as` method on the response with a `TypeToken` containing the type that it should be deserialized into.
 
-When we created the data collection in the previous code snippet, the default setting is `DataAclType.MY_ALGOS` which is a permission type that allows other users on the platform to interact with your data through the algorithms you create if you decide to contribute to algorithm development. This means users can call your algorithm to perform an operation on your data stored in this collection, otherwise the algorithm you created would only work for you.
-
-To begin working with data directory permissions first add these imports:
+Let's look at an example using JSON and the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll first create a variable called `inputJson` with a HashMap. Add a single entry with a key of `docsList`, and the documents to be analyzed as an array of strings. We can then call the algorithm by passing `inputJson` to `pipe()`.
 
 {% highlight java %}
-import java.io.IOException;
-
-import com.algorithmia.APIException;
-import com.algorithmia.AlgorithmException;
-import com.algorithmia.data.DataAcl;
-import com.algorithmia.data.DataAclType;
-{% endhighlight %}
-
-Next check for the data collection's permission type and update those permissions to private:
-
-{% highlight java %}
-// Create the acl object and check if it's the .MY_ALGOS default setting
-DataAcl acl = nlp_directory.getPermissions();
-
-if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-    System.out.println("acl is the default permissions type MY_ALGOS");
-}
-
-// Update permissions to private
+Algorithm algoJson = client.algo("nlp/LDA/1.0.0");
+HashMap<String,String[]> inputJson = new HashMap<String,String[]>();
+inputJson.put("docsList", new String[]{"It's apple picking season", "The apples are ready for picking"});
 try {
-    nlp_directory.updatePermissions(DataAcl.PRIVATE);
-    if (acl.getReadPermissions() == DataAclType.PRIVATE) {
-        System.out.println("Directory updated to PRIVATE");
-    }
+    AlgoResponse result = algoJson.pipeJson(inputJson);
+    System.out.println(result.asJsonString());
 } catch (APIException e) {
-    e.printStackTrace();
-}
-{% endhighlight %}
-
-Notice that we changed our data collection to private, which means that only you will be able to read and write to your data collection.
-
-Note that read access that is set to the default `DataMyAlgorithms` allows any algorithm you call to have access to your data collection so most often, this is the setting you want when you are calling an algorithm and are an application developer.
-
-For more information on collection-based Access Control Lists (ACLs) and other data collection permissions go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-
-### Upload Data to your Data Collection
-
-So far you've created your data collection and checked and updated directory permissions. Now you're ready to upload the text file that you created at the beginning of the guide to your data collection using the Data API.
-
-First add the necessary dependencies:
-
-{% highlight java %}
-import java.io.File;
-import java.io.FileNotFoundException;
-{% endhighlight %}
-
-Then upload your local file to the data collection using the `.putFile()` method:
-
-{% highlight java %}
-try {
-    String local_file = "local_path_to_your_file/jack_london.txt";
-    nlp_directory.putFile(new File(local_file));
-} catch (FileNotFoundException e) {
-    e.printStackTrace();
-}
-{% endhighlight %}
-
-This endpoint will replace a file if it already exists. If you wish to avoid replacing a file, check if the file exists before using this endpoint.
-{: .notice-warning}
-
-You can confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
-
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
-
-### Downloading Data from a Data Collection
-
-Next check if the file that you just uploaded to data collections exists, and try downloading it to a (new) local file:
-
-{% highlight java %}
-// Download the file
-String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
-try {
-    if (client.file(text_file).exists()) {
-        File localfile = client.file(text_file).getFile();
-    } else {
-        System.out.println("Please check that your file exists");
-    }
-} catch (IOException e) {
-    e.printStackTrace();
-}
-{% endhighlight %}
-
-This copies the file from your data collection and saves it as a file on your local machine, storing the filename in the variable `localfile`.
-
-Alternately, if you just need the text content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
-
-{% highlight java %}
-// Download contents of file as a string
-String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
-try {
-    if (client.file(text_file).exists()) {
-        String input = client.file(text_file).getString();
-    } else {
-        System.out.println("Please check that your file exists");
-    }
-} catch (IOException e) {
-    e.printStackTrace();
-}
-{% endhighlight %}
-
-This will get your file as a string, saving it to the variable `input`.  If the file was binary (an image, etc), you could instead use the function `.getBytes()` to retrieve the file's content as a byte array.
-
-Now you've seen how to upload a local data file, check if a file exists in a data collection, and download the file contents.
-
-For more methods on how to get a file using the Data API from a data collection go to the [API Specification](http://docs.algorithmia.com/#getting-a-file).
-
-## Call an Algorithm
-
-Finally we are ready to call an algorithm. In this guide we'll use the natural language processing algorithm called [Summarizer](https://algorithmia.com/algorithms/nlp/Summarizer). This algorithm results in a string that is the summary of the text content you pass in as the algorithm's input.
-
-A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.
-{: .notice-info}
-
-This example shows the summary of the text file which we downloaded from our data collection and set as the variable called `input` in the previous code sample.
-
-Add this import to call algorithms:
-
-{% highlight java %}
-import com.algorithmia.algo.*;
-{% endhighlight %}
-
-Create the algorithm object and pass in the variable `input` into `algo.pipe()`:
-
-{% highlight java %}
-// Create the algorithm object using the Summarizer algorithm
-Algorithm algo = client.algo("nlp/Summarizer/0.1.3")
-// Pass in input required by algorithm adding to the code snippet in the last step
-try {
-    if (client.file(text_file).exists()) {
-        String input = client.file(text_file).getString();
-        Algorithm summarizer_algo = client.algo("nlp/Summarizer/0.1.3");
-        String result = summarizer_algo.pipe(input).asString();
-        System.out.println(result);
-    } else {
-        System.out.println("Please check that your file exists");
-    }
-} catch (IOException e) {
     e.printStackTrace();
 } catch (AlgorithmException e) {
     e.printStackTrace();
 }
 {% endhighlight %}
 
-This guide used the the first chapter of [Jack London's Burning Daylight](https://en.wikisource.org/wiki/Burning_Daylight) and the Summarizer algorithm outputs:
+The output will be a list of relevant topics and their number of occurrences, which will look something like: `[{"picking":1},{"apple":1,"ready":1},{"season":1},{"apples":1,"picking":1}]`.
 
-"It was a quiet night in the Shovel. The miners were in from Moseyed Creek and the other diggings to the west, the summer washing had been good, and the men's pouches were heavy with dust and nuggets. MacDonald grinned and nodded, and opened his mouth to speak, when the front door swung wide and a man appeared in the light."
+Alternatively, you may work with raw JSON input by calling `pipeJson()`, and raw JSON output by calling `asJsonString()` on the response. We'll use this approach later in this guide.
 
-If you are interested in learning more about working with unstructured text data check out our guide [Introduction to Natural Language Processing](https://algorithmia.com/blog/introduction-natural-language-processing-nlp).
+You might have noticed that in this example we included a version number when instantiating the algorithm. Pinning your code to a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
+
+### Request Options
+
+The client exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response. In the following example, we set the timeout to 60 seconds and disable `stdout` in the response:
+
+{% highlight java %}
+algo.setTimeout(60l, TimeUnit.SECONDS);
+algo.setStdout(false);
+{% endhighlight %}
+
+You can find more details in [API Docs](/developers/api/) > [Invoke an Algorithm](/developers/api/#invoke-an-algorithm).
+
+### Error Handling
+
+To be able to better develop across languages, Algorithmia has created a set of standardized errors that can be returned by either the platform or by the algorithm being run. In Java, API errors and Algorithm exceptions will result in calls to `pipe` throwing `APIException`:
+
+{% highlight java %}
+Algorithm algo = client.algo("util/whoopsWrongAlgo")
+try {
+    AlgoResponse result = algo.pipe("Hello, world!");
+    String output = result.asString();
+} catch (APIException ex) {
+    System.out.println("API Exception: " ex.getMessage());
+} catch (AlgorithmException ex) {
+    System.out.println("Algorithm Exception: " ex.getMessage());
+    System.out.println(ex.stacktrace);
+}
+{% endhighlight %}
+
+You can read more about [Error Handling](/developers/algorithm-development/algorithm-errors) in the [Algorithm Development](/developers/algorithm-development) section of the dev center.
+
+### Limits
+
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+
+## Working with Algorithmia Data Sources
+
+For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/#data).
+
+The Data API defines [connectors](/developers/api/#connectors) to a variety of storage providers, including Algorithmia [Hosted Data](/developers/data/hosted), Amazon S3, Google Cloud Storage, Azure Storage Blobs, and Dropbox. After creating a connection in Data Sources, you can use the API to create, update, and delete directories and files and manage permissions across providers by making use of [Data URIs](/developers/api/#data-uris) in your code.
+
+In this example, we'll upload an image to Algorithmia's [Hosted Data](/developers/data/hosted) storage provider, and use the [dlib/FaceDetection](https://algorithmia.com/algorithms/dlib/FaceDetection) algorithm to detect any faces in the image. The algorithm will create a new copy of the image with bounding boxes drawn around the detected faces, and then return a JSON object with details about the dimensions of the bounding boxes and a URI where you can download the resulting image.
+
+### Create a Data Collection
+
+The documentation for "Face Detection" says that it takes a URL or a Data URI of the image to be processed, and a Data URI where the algorithm can store the result. We'll create a directory to host the input image, then update its [permissions](/developers/api/#update-collection-acl) so that its publicly accessible:
+
+{% highlight java %}
+DataDirectory imgDirectory = client.dir("data://YOUR_USERNAME/img_directory");
+try {
+    if (imgDirectory.exists() == false) {
+        imgDirectory.create();
+        imgDirectory.updatePermissions(DataAcl.PUBLIC);
+    }
+} catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+}
+{% endhighlight %}
+
+Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
+{: .notice-info}
+
+### Upload Data to your Data Collection
+
+Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`. 
+
+Next, create a variable that holds the location where you would like to upload the image as a URI:
+
+{% highlight java %}
+String imgFile = "data://.my/img_directory/friends.jpg";
+{% endhighlight %}
+
+Then upload your local file to the data collection using the `.putFile()` method:
+
+{% highlight java %}
+try {
+    if (client.file(imgFile).exists() == false) {
+        imgDirectory.putFile(new File("/your_local_path_to_file/friends.jpg"));
+    }
+} catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+}
+{% endhighlight %}
+
+This method call will replace a file if it already exists at the specified location. If you wish to avoid replacing a file, check if the file exists before using this method.
+{: .notice-warning}
+
+Confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
+
+You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
+
+### Call the Algorithm
+
+Once the file has been uploaded, you are ready to call the algorithm. Create the algorithm object, then pass the required inputs—a JSON object, encoded as a string, with the image URI (which is stored in `img_file` in the code above) and a URI for the image output—to `.pipeJson()`.
+
+{% highlight java %}
+Algorithm algoCV = client.algo("dlib/FaceDetection/0.2.1");
+String input = "{ \"images\": [ { \"url\": \"data://.my/img_directory/friends.jpg\", \"output\": \"data://.algo/temp/detected_faces.png\" } ] }";
+try {
+    AlgoResponse result = algoCV.pipeJson(input);
+    System.out.println(result.asJsonString());
+} catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+} catch (AlgorithmException e) {
+    e.printStackTrace();
+}
+{% endhighlight %}
+
+Once the algorithm has completed, `result` will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline). We can print these by using the `asJsonString()` method on the `result` object.
+
+Algorithms can create and store data in folders named with the algorithm name in the Algorithm Data collection. To access this folder from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm author and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/author/algoName/folder/fileName`.
+{: .notice-info}
+
+### Download the resulting file
+
+The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slightly to download the file by adding the algorithm name and author. Create a new `DataDirectory` object using the path to the data collection where the algorithm has written it's output.
+
+{% highlight java %}
+DataDirectory algo_directory = client.dir("data://.algo/dlib/FaceDetection/temp/");
+{% endhighlight %}
+
+Verify that the file exists, and try downloading it to a new local file location:
+
+{% highlight java %}
+try {
+    if (algo_directory.file("detected_faces.png").exists()) {
+        File local_file = algo_directory.file("detected_faces.png").getFile();
+        System.out.println(local_file);
+    }
+} catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+{% endhighlight %}
+
+This copies the file from your data collection and saves it as a file on your local machine, with details about the file in the variable `local_file`.
+
+Alternately, if you just need the binary content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
+
+{% highlight java %}
+try {
+    if (algo_directory.file("detected_faces.png").exists()) {
+        byte[] image_data = algo_directory.file("detected_faces.png").getBytes();
+    }
+} catch (APIException e) {
+    System.out.println("API Exception: " + e.getMessage());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+{% endhighlight %}
+
+This will get the image as binary data, saving it to the variable `image_data`, which might be useful when writing algorithms that are part of an image processing pipeline.
+
+If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
 ## Publishing Algorithmia Insights
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 {: .notice-enterprise}
 
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `reportInsights` method of the Algorithmia client.
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
 {% highlight java %}
 // Report Algorithmia Insights
@@ -278,83 +286,10 @@ client.reportInsights(new HashMap<String,Object>() { {
 } });
 {% endhighlight %}
 
-## Limits
+## Additional Functionality
 
-Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+In addition to the functionality covered in this guide, the Java Client Library provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.
 
-## Conclusion
+## Next Steps
 
-This guide covered installing Algorithmia via a POM file, uploading and downloading data to and from a user created data collection, checking if a file exists using the Data API, calling an algorithm, and handling errors.
-
-For more information on the methods available using the Data API in Java check out the [Data API](http://docs.algorithmia.com/?java#data-api-specification) documentation or go to the [Java Client Docs](https://github.com/algorithmiaio/algorithmia-java) for examples of executing common tasks with Algorithmia. For all available methods and versions go to the [Algorithmia Java Language Docs](https://www.javadoc.io/doc/com.algorithmia/algorithmia-client).
-
-For convenience, here is the whole script available to run:
-
-{% highlight java %}
-package com.company;
-import com.algorithmia.*;
-import com.algorithmia.algo.*;
-import com.algorithmia.data.DataAcl;
-import com.algorithmia.data.DataAclType;
-import com.algorithmia.data.DataDirectory;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class Main {
-
-    public static void main(String[] args) throws APIException {
-	// write your code here
-        AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
-        // Set your Data URI
- 		DataDirectory nlp_directory = client.dir("data://YOUR_USERNAME/nlp_directory");
-        // Create your data collection if it does not exist
-        try {
-            if (!nlp_directory.exists()) {
-                nlp_directory.create();
-            }
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-        // Create the acl object and check if it's the .MY_ALGOS default setting
-        DataAcl acl = nlp_directory.getPermissions();
-
-        if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-            System.out.println("acl is the default permissions type MY_ALGOS");
-        }
-
-        // Update permissions to private
-        try {
-            nlp_directory.updatePermissions(DataAcl.PRIVATE);
-            if (acl.getReadPermissions() == DataAclType.MY_ALGOS) {
-                System.out.println("acl is the default permissions type MY_ALGOS");
-            }
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-
-        String local_file = "local_path_to_your_file/jack_london.txt"
-        try {
-            nlp_directory.putFile(new File(local_file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        String text_file = "data://YOUR_USERNAME/nlp_directory/jack_london.txt";
-        try {
-            if (client.file(text_file).exists()) {
-                String input = client.file(text_file).getString();
-                Algorithm summarizer_algo = client.algo("nlp/Summarizer/0.1.3");
-                String result = summarizer_algo.pipe(input).asString();
-                System.out.println(result);
-            } else {
-                System.out.println("Please check that your file exists");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (AlgorithmException e) {
-            e.printStackTrace();
-        }
-    }
-}
-{% endhighlight %}
+If you're a data scientist or developer who will be building and deploying new algorithms, you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo/) guide.
