@@ -2,7 +2,7 @@
 layout: article
 title:  "Google Cloud Storage"
 excerpt: "How to configure your Google Cloud Storage data source and access your data via the Algorithmia Data API."
-categories: working-with-data
+categories: data-api
 nav_index: 2
 tags: [app-data-connectors]
 show_related: true

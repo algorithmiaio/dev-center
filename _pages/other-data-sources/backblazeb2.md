@@ -1,19 +1,19 @@
 ---
 layout: article
-title:  "Other File Storage"
-excerpt: "Put and get files from other file storage systems"
-categories: working-with-data
+title:  "Backblaze B2"
+excerpt: "Put and get files from Backblaze B2"
+categories: other-data-sources
 nav_index: 4
-tags: [app-data-connectors]
+tags: [other-data-sources]
 show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/filefolder.svg 
+redirect_from:
+  - /data/otherfiles/
 ---
 
-If your algorithm needs to read or write data files from a data source for which there is no [Data Connector](../), you can connect directly to that provider from within your algorithm.
-
-Begin by finding an API or client library for that data source.  In this example, we'll use the Python module [b2blaze](https://pypi.org/project/b2blaze/) to demonstrate connecting to Backblaze file buckets.
+Algorithms can easily access files stored in Backblaze B2 by using the [b2blaze](https://pypi.org/project/b2blaze/) library for Python.
 
 ### Step 1: store your credentials in a secure location
 

@@ -2,13 +2,15 @@
 layout: article
 title:  "DynamoDB"
 excerpt: "How to call the DynamoDB algorithm to scan all items in a table in your DynamoDB"
-categories: working-with-data
+categories: other-data-sources
 nav_index: 4
-tags: [app-data-connectors]
+tags: [other-data-sources]
 show_related: true
 author: steph_kim, jon_peck
 image:
     teaser: /language_logos/dynamo_db_image.png 
+redirect_from:
+  - /data/dynamodb/
 ---
 
 Algorithms can easily access DynamoDB using the [boto3](https://aws.amazon.com/sdk-for-python/) package and securely storing their access credentials in a data collection.

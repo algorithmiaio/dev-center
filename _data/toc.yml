@@ -14,9 +14,17 @@
   url: /clients/
   nav_category: clients
 
-- title: Connecting Your Data
+- title: Data API
   url: /data/
-  nav_category: working-with-data
+  nav_category: data-api
+
+- title: SQL Database Patterns
+  url: /sql-patterns/
+  nav_category: sql-patterns
+
+- title: Other Data Sources
+  url: /other-data-sources/
+  nav_category: other-data-sources
 
 - title: Integrations
   url: /integrations/

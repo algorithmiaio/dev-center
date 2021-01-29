@@ -2,13 +2,15 @@
 layout: article
 title:  "MS SQL Server"
 excerpt: "Run queries against MS SQL Server databases"
-categories: working-with-data
+categories: sql-patterns
 nav_index: 4
-tags: [app-data-connectors]
+tags: [sql-patterns]
 show_related: true
 author: jon_peck
 image:
-    teaser: /language_logos/mssql.png 
+    teaser: /language_logos/mssql.png
+redirect_from:
+  - /data/mssqlserver/
 ---
 
 If your algorithm needs to read or write data from a MsSqlServer database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
