@@ -28,8 +28,7 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.6</a>
-is available for you to use in your algorithms.
+The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.6</a> is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a>.
 
