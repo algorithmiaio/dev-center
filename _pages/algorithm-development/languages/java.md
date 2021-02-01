@@ -30,8 +30,7 @@ Algorithmia makes a number of libraries available to make algorithm development 
 The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html">Java 11 language and standard library</a>
 is available for you to use in your algorithms.
 
-Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a>.
+Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a>.
 
 ## Write your First Algorithm
 
