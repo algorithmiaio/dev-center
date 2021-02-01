@@ -39,7 +39,7 @@ Once the client is installed, you can import it into your code and instantiate t
 
 {% highlight scala %}
 import com.algorithmia.{Algorithmia, AlgorithmiaClient}
-val client = Algorithmia.client("simHz3+QqlC96HCx2j+jc58d7tA1")
+val client = Algorithmia.client("YOUR_API_KEY")
 {% endhighlight %}
 
 #### Specifying an On-Premises or Private Cloud Endpoint
@@ -143,7 +143,7 @@ import com.algorithmia.data._
 We'll create a directory to host the input image, then update its [permissions](/developers/api/#update-collection-acl) so that its publicly accessible:
 
 {% highlight scala %}
-val imgDirectory = client.dir("data://noahcrowley/img_directory")
+val imgDirectory = client.dir("data://YOUR_USERNAME/img_directory")
 if (imgDirectory.exists == false) {
   imgDirectory.create()
   imgDirectory.updatePermissions(DataAcl(read = DataPublic))
