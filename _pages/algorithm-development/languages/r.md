@@ -28,11 +28,9 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.1</a>
-is available for you to use in your algorithms.
+The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.6</a> is available for you to use in your algorithms.
 
-Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
-via the <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a>.
+Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a>.
 
 ## Write your First Algorithm
 
@@ -288,6 +286,12 @@ When you are creating an algorithm be mindful of the data types you require from
 #### Working with JSON Data
 
 Note that we use the rjson package to parse JSON within your algorithm.
+
+### Working with directories
+
+While running, algorithms have access to a temporary filesystem located at `/tmp`, the contents of which do not persist across calls to the algorithm. While the Data API allows you to get the contents of the files you want to work with as JSON, a string, or raw bytes, in some cases you might need your algorithm to read and write files locally. This can be useful as a temporary location to store files downloaded from Hosted Data, such as raw data for processing or models to be loaded into your algorithms. It can also be used to write new files before uploading them via the Data API.
+
+For reference, [this gist](https://gist.github.com/StephanieKim/56af1aeb6dcd895e2c914bad8c35876c) provides an example of iterating over data in a directory, processing it, and writing new data to a file, while [this template for ALBERT and Tensorflow](https://algorithmia.com/algorithms/asli/albert_template/source) provides an example of using the `/tmp` directory to load a model.
 
 ### Writing files for the user to consume
 
