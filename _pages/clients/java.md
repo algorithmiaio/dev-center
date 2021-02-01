@@ -278,12 +278,24 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 
 Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
+Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
+
+In the case of an example credit scoring model, shown in this demo for [Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
+
 {% highlight java %}
-// Report Algorithmia Insights
+# Report Algorithmia Insights
 client.reportInsights(new HashMap<String,Object>() { {
-    put("cats_in_image", 4);
-    put("dogs_in_image", true);
+    put("risk_score", risk_score);
+    put("approved", approved);
 } });
+{% endhighlight %}
+
+{% highlight json %}
+# Sample model output that is pushed to Insights
+{
+  "approved": 1,
+  "risk_score": 0.08
+}
 {% endhighlight %}
 
 ## Additional Functionality
