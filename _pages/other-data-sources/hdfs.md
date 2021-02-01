@@ -2,13 +2,15 @@
 layout: article
 title:  "HDFS"
 excerpt: "Access your files stored in hdfs"
-categories: working-with-data
+categories: other-data-sources
 nav_index: 4
-tags: [app-data-connectors]
+tags: [other-data-sources]
 show_related: true
 author: steph_kim
 image:
     teaser: /language_logos/filefolder.svg
+redirect_from:
+  - /data/hdfs/
 ---
 
 If your algorithm needs to read or write data from your hadoop cluster, you can do so using [webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html).

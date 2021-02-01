@@ -2,13 +2,15 @@
 layout: article
 title:  "Snowflake Computing Databases"
 excerpt: "Accessing your Snowflake Computing Database within an Algorithm"
-categories: working-with-data
+categories: other-data-sources
 nav_index: 4
-tags: [app-data-connectors]
+tags: [other-data-sources]
 show_related: true
 author: jon_peck
 image:
     teaser: /language_logos/snowflake_computing.png 
+redirect_from:
+  - /data/snowflake/
 ---
 
 Algorithms can easily access databases hosted by Snowflake Computing using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/) .
