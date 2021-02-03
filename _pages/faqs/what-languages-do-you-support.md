@@ -2,7 +2,7 @@
 layout: faq
 title:  "What languages do you support?"
 categories: faqs
-tags: [platform-faq]
+tags: [algo-dev-faq]
 show_related: true
 image:
   teaser: /icons/fa-bolt.png
