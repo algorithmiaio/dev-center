@@ -154,10 +154,10 @@ The documentation for "Face Detection" says that it takes a URL or a Data URI of
 
 {% highlight rust %}
 let img_directory = client.dir("data://YOUR_USERNAME/img_directory");
-if img_directory.exists().unwrap() == false {
-    img_directory.create(DataAcl::from(ReadAcl::Public)).unwrap();
-} else {
+if img_directory.exists().unwrap() {
     println!("img_directory exists");
+} else {
+    img_directory.create(DataAcl::from(ReadAcl::Public)).unwrap();
 }
 {% endhighlight %}
 
@@ -183,10 +183,10 @@ let img_file = "data://.my/img_directory/friends.jpg";
 Then upload your local file to the data collection using the `put_file` method:
 
 {% highlight rust %}
-if client.file(img_file).exists().unwrap() == false {
-    img_directory.put_file("../data/friends.jpg").unwrap();
-} else {
+if client.file(img_file).exists().unwrap() {
     println!{"file exists"};
+} else {
+    img_directory.put_file("../data/friends.jpg").unwrap();
 }
 {% endhighlight %}
 
