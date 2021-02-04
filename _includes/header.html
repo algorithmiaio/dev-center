@@ -2,12 +2,12 @@
   <div class="utility-header syn-visible-lg">
     <div class="syn-pr-32 syn-pv-8 syn-flex flex-row justify-end">
       <div class="hide-if-signed-in">
-        <a href="https://teams.algorithmia.com/signin" data-e2e="header-signin-link" class="syn-link syn-font-weight-bold syn-text-secondary syn-text-sm">
+        <a href="/signin" class="syn-link syn-font-weight-bold syn-text-secondary syn-text-sm">
           Sign in
         </a>
       </div> 
       <div>
-        <a href="https://teams.algorithmia.com/contact" class="syn-link syn-font-weight-bold syn-text-secondary syn-text-sm syn-ml-24">
+        <a href="/contact" class="syn-link syn-font-weight-bold syn-text-secondary syn-text-sm syn-ml-24">
           Contact us
         </a>
       </div>
@@ -16,8 +16,8 @@
   <div onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))"></div>
   <div class="syn-page-header-content syn-flex justify-space-between">
     <div class="syn-flex align-center">
-      <a class="syn-flex" href="https://algorithmia.com">
-        <img class="syn-ml-8" src="https://algorithmia.com/v1/config/logo" style="max-height: '24px'; max-width: '100%';" />
+      <a class="syn-flex" href="/">
+        <img class="syn-ml-8" src="/v1/config/logo" style="max-height: '24px'; max-width: '100%';" />
       </a>
     </div>
     <button class="syn-btn icon text grow syn-hidden-lg" onclick="['nav-open'].forEach((a) => document.querySelector('.syn-page-header').classList.toggle(a))">
@@ -25,13 +25,13 @@
       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="close-button"><g stroke="currentColor" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round"><path d="M1.371 22.553L22.478 1.447M1.371 1.461l21.107 21.107"></path></g></svg>
     </button>
     <div class="syn-visible-lg">
-      <a href="https://algorithmia.com/mlops" class="syn-link-no-decoration">
+      <a href="/mlops" class="syn-link-no-decoration">
         <button class="syn-btn text">MLOps</button>
       </a> 
-      <a href="https://algorithmia.com/product" class="syn-link-no-decoration">
+      <a href="/product" class="syn-link-no-decoration">
         <button class="syn-btn text syn-ml-8">Product</button>
       </a>
-      <a href="https://algorithmia.com/pricing" class="syn-link-no-decoration">
+      <a href="/pricing" class="syn-link-no-decoration">
         <button class="syn-btn text syn-ml-8">Pricing</button>
       </a>
       <div class="syn-dropdown syn-ml-8">
@@ -42,68 +42,59 @@
           </svg>
         </button>
         <div class="open-break syn-bg-black syn-mt-8"></div>
-        <div class="syn-dropdown-list" onclick="this.parentNode.classList.toggle('open')">
-          <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
-                  <a href="https://algorithmia.com/blog" class="syn-ph-48 syn-pv-16">
-                    <div>
-                      <div class="syn-font-weight-bold">Blog</div>
-                      <div class="link-description">
-                        Special topics in machine learning
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
-                  <a href="https://algorithmia.com/resources" class="syn-ph-48 syn-pv-16">
-                    <div>
-                      <div class="syn-font-weight-bold">Resources</div>
-                      <div class="link-description">
-                        Case studies, videos, and reports
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
-                  <a href="https://algorithmia.com/developers" class="syn-ph-48 syn-pv-16">
-                    <div>
-                      <div class="syn-font-weight-bold">Docs</div>
-                      <div class="link-description">
-                        Platform technical documentation
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="syn-dropdown-list-item syn-body-2 syn-mb-0">
-                  <a href="https://algorithmia.com/events" class="syn-ph-48 syn-pv-16">
-                    <div>
-                      <div class="syn-font-weight-bold">Events</div>
-                      <div class="link-description">
-                        Webinars, talks, and trade shows
-                      </div>
-                    </div>
-                  </a>
-                </div>
-        </div>
+        <ul class="syn-dropdown-list" onclick="this.parentNode.classList.toggle('open')">
+          <li class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+            <a href="/blog" class="syn-ph-48 syn-pv-16 display-block">
+              <div class="syn-font-weight-bold">Blog</div>
+              <div class="link-description">
+                Special topics in machine learning
+              </div>
+            </a>
+          </li>
+          <li class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+            <a href="/resources" class="syn-ph-48 syn-pv-16 display-block">
+              <div class="syn-font-weight-bold">Resources</div>
+              <div class="link-description">
+                Case studies, videos, and reports
+              </div>
+            </a>
+          </li>
+          <li class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+            <a href="/developers" class="syn-ph-48 syn-pv-16 display-block">
+              <div class="syn-font-weight-bold">Docs</div>
+              <div class="link-description">
+                Platform technical documentation
+              </div>
+            </a>
+          </li>
+          <li class="syn-dropdown-list-item syn-body-2 syn-mb-0">
+            <a href="/events" class="syn-ph-48 syn-pv-16 display-block">
+              <div class="syn-font-weight-bold">Events</div>
+              <div class="link-description">
+                Webinars, talks, and trade shows
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
       <a
-          href="https://algorithmia.com/demo"
-          class="syn-btn text syn-ml-8 syn-link-no-decoration display-inline-flex"
-        >
-          Demo
-        </a>
-        <a href="https://teams.algorithmia.com/signup"
-          class="syn-btn outlined no-capitalize theme-primary syn-visible-lg syn-ml-8 syn-pv-8 syn-link-no-decoration display-inline hide-if-signed-in"
-          rel="noopener noreferrer">
-          Try now
-        </a>
+        href="/demo"
+        class="syn-btn text syn-ml-8 syn-link-no-decoration display-inline-flex">
+        Demo
+      </a>
+      <a href="/signup"
+        class="syn-btn outlined no-capitalize theme-primary syn-visible-lg syn-ml-8 syn-pv-8 syn-link-no-decoration display-inline hide-if-signed-in"
+        rel="noopener noreferrer">
+        Try now
+      </a>
     </div>
   </div>
   <div class="syn-page-header-nav mobile-nav-container syn-hidden-lg" >
     <nav class="syn-nav syn-pt-16">
       <ul class="mobile-nav syn-mb-16">
-        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="https://algorithmia.com/mlops">MLOps</a></li>
-        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="https://algorithmia.com/product">Product</a></li>
-        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="https://algorithmia.com/pricing">Pricing</a></li>
+        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="/mlops">MLOps</a></li>
+        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="/product">Product</a></li>
+        <li class="syn-list-item"><a class="syn-link syn-font-weight-bold syn-text-base syn-text-primary" href="/pricing">Pricing</a></li>
         <li class="accordion-button syn-list-item">
         
           <div class="syn-pv-8 syn-ph-16 syn-flex align-center syn-width-full justify-space-between syn-link syn-font-weight-bold" onclick="['accordion-open'].forEach((a) => document.querySelector('.accordion-button').classList.toggle(a))">
@@ -113,44 +104,36 @@
           
           <ul class="learn-accordion syn-ph-24 syn-width-full">
             <li class="syn-list-item">
-              <a href="https://algorithmia.com/blog" class="syn-link syn-font-weight-bold syn-text-primary">
-                <div>
-                  <div class="syn-font-weight-bold syn-text-sm">Blog</div>
-                  <div class="link-description syn-mt-8 syn-font-weight-regular">
-                      Special topics in machine learning
-                   </div>
+              <a href="/blog" class="syn-link syn-font-weight-bold syn-text-primary display-block">
+                <div class="syn-font-weight-bold syn-text-sm">Blog</div>
+                <div class="link-description syn-mt-8 syn-font-weight-regular">
+                  Special topics in machine learning
                 </div>
               </a>
             </li> 
             <li class="syn-list-item">
-              <a href="https://algorithmia.com/resources" class="syn-link syn-font-weight-bold syn-text-primary">
-                <div>
-                  <div class="syn-font-weight-bold syn-text-sm">
-                      Resources
-                    </div> 
-                  <div class="link-description syn-mt-8 syn-font-weight-regular">
-                      Case studies, videos, and reports
-                  </div>
+              <a href="/resources" class="syn-link syn-font-weight-bold syn-text-primary display-block">
+                <div class="syn-font-weight-bold syn-text-sm">
+                  Resources
+                </div> 
+                <div class="link-description syn-mt-8 syn-font-weight-regular">
+                    Case studies, videos, and reports
                 </div>
               </a>
             </li> 
             <li class="syn-list-item">
-              <a href="https://algorithmia.com/developers" class="syn-link syn-font-weight-bold syn-text-primary">
-                <div>
-                  <div class="syn-font-weight-bold syn-text-sm">Docs</div> 
-                  <div class="link-description syn-mt-8 syn-font-weight-regular">
-                      Platform technical documentation
-                    </div>
+              <a href="/developers" class="syn-link syn-font-weight-bold syn-text-primary display-block">
+                <div class="syn-font-weight-bold syn-text-sm">Docs</div> 
+                <div class="link-description syn-mt-8 syn-font-weight-regular">
+                  Platform technical documentation
                 </div>
               </a>
             </li> 
             <li class="syn-list-item">
-              <a href="https://events.algorithmia.com" rel="noopener noreferrer" class="syn-link syn-font-weight-bold syn-text-primary">
-                <div>
-                  <div class="syn-font-weight-bold syn-text-sm">Events</div> 
-                  <div class="link-description syn-mt-8 syn-font-weight-regular">
-                      Webinars, talks, and trade shows
-                  </div>
+              <a href="https://events.algorithmia.com" rel="noopener noreferrer" class="syn-link syn-font-weight-bold syn-text-primary display-block">
+                <div class="syn-font-weight-bold syn-text-sm">Events</div> 
+                <div class="link-description syn-mt-8 syn-font-weight-regular">
+                    Webinars, talks, and trade shows
                 </div>
               </a>
             </li>
@@ -158,21 +141,22 @@
         
         </li>
         <li class="syn-list-item hide-if-signed-in">
-          <a href="https://teams.algorithmia.com/signin" data-e2e="header-signin-link" class="syn-link syn-font-weight-bold syn-text-base syn-text-primary">
+          <a href="/signin" class="syn-link syn-font-weight-bold syn-text-base syn-text-primary">
            Sign In
           </a>
         </li>
       </ul>
       <div class="syn-mb-16 hide-if-signed-in">
-        <a href="https://teams.algorithmia.com/signup" class="syn-link display-block syn-mh-16 outlined">
+        <a href="/signup" class="syn-link display-block syn-mh-16 outlined">
           <div class="syn-btn no-capitalize theme-primary syn-width-full outlined">
             Try now
           </div>
         </a>
       </div>
       <div>
-        <a href="https://algorithmia.com/demo" class="syn-ph-16 display-block"><div class="syn-btn no-capitalize contained theme-primary syn-width-full">
-          See a demo
+        <a href="/demo" class="syn-ph-16 display-block">
+          <div class="syn-btn no-capitalize contained theme-primary syn-width-full">
+            See a demo
           </div>
         </a>
       </div>
