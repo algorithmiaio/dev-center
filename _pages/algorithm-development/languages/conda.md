@@ -14,7 +14,7 @@ Conda is a popular package management system for managing dependencies of multip
 Python being the most popular one, and is specially used by data scientist to install
 dependencies for data science projects given the easy of installation of usually complicated
 libraries to install, specially those who depend on system-level packages and compilers.
-For more info about conda look at their [official documentation](https://docs.conda.io/en/latest/).
+For more info about Conda look at their [official documentation](https://docs.conda.io/en/latest/).
 
 Algorithmia makes using conda environments easy by providing an Algorithmia environment
 with conda ready to be used and uses standard conda tooling such as the [`environment.yml` spec](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to define the dependencies of your algorithm.
@@ -48,4 +48,3 @@ Conda package manager.
 When using Conda and as a general best practice we recommend to install most packages
 from the same Conda repository and use as few packages from PyPI as possible as mixing those
 can generate some issues.
-
