@@ -26,7 +26,7 @@ Then select the Python version you want to use.
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_conda.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
 Algorithmia supports adding 3rd party dependencies coming including [main anaconda repository](https://repo.anaconda.com),
-[conda-forge](https://conda-forge.org), or any other valid conda repository.
+[conda-forge](https://conda-forge.org), or any other valid Conda repository.
 
 The format in which you specify these dependencies is the standard conda [environment.yml file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
