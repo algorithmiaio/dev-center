@@ -17,7 +17,7 @@ libraries to install, specially those who depend on system-level packages and co
 For more info about Conda look at their [official documentation](https://docs.conda.io/en/latest/).
 
 Algorithmia makes using conda environments easy by providing an Algorithmia environment
-with conda ready to be used and uses standard conda tooling such as the [`environment.yml` spec](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to define the dependencies of your algorithm.
+with Conda ready to be used and uses standard conda tooling such as the [`environment.yml` spec](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to define the dependencies of your algorithm.
 
 In order to use Conda to manage your dependencies you need to select it as a Language in the
 "Specify the environment section", you  can find "Conda" in the Dropdown.
