@@ -46,5 +46,8 @@
     "http-proxy-middleware": "^0.20.0",
     "prom-client": "^11.5.3",
     "request-stats": "^3.0.0"
+  },
+  "engines": {
+    "node": "14.15.4"
   }
 }

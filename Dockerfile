@@ -2,7 +2,7 @@
 #
 # Stage 1: build Synapse dist/ files
 #
-FROM node:10.14 as style-builder
+FROM node:14.15.4 as style-builder
 
 WORKDIR /app
 COPY ./synapse .
@@ -62,7 +62,7 @@ RUN ./build.sh
 #
 # Final stage: use the build artifacts from previous stages
 #
-FROM node:10.14-slim
+FROM node:14.15.4-slim
 
 WORKDIR /opt/src/app
 
