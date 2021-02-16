@@ -13,7 +13,7 @@ image:
 
 In this tutorial, learn how you can monitor your model performance metrics with Datadog using the new Insights feature of Algorithmia Enterprise.
 
-[Algorithmia Insights](https://algorithmia.com/blog/introducing-algorithmia-insights-datadog-integration) is a new feature of Algorithmia Enterprise and provides a metrics pipeline that can be used to instrument, measure, and monitor your machine learning models. Monitoring your model performance metrics can help with your organization’s overall [AI/ML governance efforts](https://algorithmia.com/blog/model-governance), and use cases include detecting [model drift](https://algorithmia.com/blog/model-drift-and-ensuring-a-healthy-machine-learning-lifecycle), data drift, and model bias.
+[Algorithmia Insights](https://algorithmia.com/blog/introducing-algorithmia-insights-datadog-integration) is a new feature of Algorithmia Enterprise that provides a metrics pipeline that can be used to instrument, measure, and monitor your machine learning models. Monitoring your model performance metrics can help with your organization’s overall [AI/ML governance efforts](https://algorithmia.com/blog/model-governance), and use cases include detecting [model drift](https://algorithmia.com/blog/model-drift-and-ensuring-a-healthy-machine-learning-lifecycle), data drift, and model bias.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/datadog/insights-datadog-cc-baseline-split.png" alt="Algorithmia insights page and Datadog dashboard side-by-side" class="screenshot">
 
@@ -25,7 +25,7 @@ The [Algorithmia-Datadog integration](https://docs.datadoghq.com/integrations/al
 
 ## How the Algorithmia-Datadog integration works
 
-When algorithms that have Insights enabled are queried, Algorithmia emits a metrics payload to a configured Kafka broker and topic. The [Algorithmia-Datadog integration](https://docs.datadoghq.com/integrations/algorithmia/) then transforms and forwards Insights data from Kafka to the [Datadog metrics API endpoint](https://docs.datadoghq.com/api/v1/metrics/). All of the data from Algorithmia Insights will show up in Datadog as metrics with the prefix `algorithmia`. This makes it easy to include model performance data from Algorithmia Insights in dashboards or monitors.
+When algorithms that have Insights enabled are run, Algorithmia emits a metrics payload to a configured Kafka broker and topic. The [Algorithmia-Datadog integration](https://docs.datadoghq.com/integrations/algorithmia/) then transforms and forwards Insights data from Kafka to the [Datadog metrics API endpoint](https://docs.datadoghq.com/api/v1/metrics/). All of the data from Algorithmia Insights will show up in Datadog as metrics with the prefix `algorithmia`. This makes it easy to include model performance data from Algorithmia Insights in dashboards or monitors.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/datadog/algorithmia-datadog-integration.png" alt="Flow chart of Datadog-Algorithmia integration for model performance metrics" class="screenshot">
 
@@ -38,7 +38,7 @@ When this integration is used, all of the operational metrics related to the alg
 The steps to install and configure this integration can be summarized as:
 1. Configure Algorithmia to send Insights to a Kafka broker and topic
 2. Install and run the [Algorithmia-Datadog integration](https://github.com/algorithmiaio/integrations/tree/master/Datadog) with your Kafka broker/topic and Datadog API key
-3. From Algorithmia, you can then instrument, publish, and query algorithms that have Insights enabled
+3. For any published algorithm on your cluster that has Insights enabled, once the algorithm's API is called, those metrics will be pushed to DataDog. 
 4. Verify that your metrics appear in Datadog as `algorithmia.<METRIC-NAME>`
 
 Once you’ve installed this integration in Datadog, you’ll have a default dashboard and monitor to help you get started with Insights and Datadog: 
@@ -71,7 +71,7 @@ In the **Graph your data** configuration section, select the metric that you wan
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/datadog/insights-datadog-graph.png" alt="Datadog graph your data view with metric selection" class="screenshot">
 
-Click on the **Save** button, then the data from Insights should show up in your new widget. You might need to query your model in Algorithmia to see data flowing into Datadog.
+Click on the **Save** button, then the data from Insights should show up in your new widget. You might need to call your algorithm on your Algorithmia cluster to see data flowing into Datadog.
 
 You can continue adding different widgets and customizing your dashboard to display different metrics from Insights:
 

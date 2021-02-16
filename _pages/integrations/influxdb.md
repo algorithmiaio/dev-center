@@ -42,7 +42,7 @@ When this integration is used, the operational metrics related to the algorithm 
 The steps to install and configure this integration can be summarized as:
 1. Configure Algorithmia to send Insights to a Kafka broker and topic
 2. Follow the steps documented in the [Algorithmia-InfluxDB integration](https://github.com/influxdata/community-templates/tree/master/algorithmia) to install the InfluxDB template and start Telegraf with your InfluxDB host/token/organization and your Kafka broker/topic
-3. From Algorithmia, you can then instrument, publish, and query algorithms that have Insights enabled
+3. For any published algorithm on your cluster that has Insights enabled, once the algorithm's API is called, those metrics will be pushed to DataDog. 
 4. Verify that your metrics appear in InfluxDB under the measurement input named algorithmia
 
 ## Example: Creating a dashboard with model performance metrics
