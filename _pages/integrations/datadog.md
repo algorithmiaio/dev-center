@@ -11,6 +11,9 @@ image:
     teaser: /language_logos/datadog.svg
 ---
 
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 In this tutorial, learn how you can monitor your model performance metrics with Datadog using the new Insights feature of Algorithmia Enterprise.
 
 [Algorithmia Insights](https://algorithmia.com/blog/introducing-algorithmia-insights-datadog-integration) is a new feature of Algorithmia Enterprise that provides a metrics pipeline that can be used to instrument, measure, and monitor your machine learning models. Monitoring your model performance metrics can help with your organization’s overall [AI/ML governance efforts](https://algorithmia.com/blog/model-governance), and use cases include detecting [model drift](https://algorithmia.com/blog/model-drift-and-ensuring-a-healthy-machine-learning-lifecycle), data drift, and model bias.
@@ -36,7 +39,7 @@ The metrics payload from Algorithmia Insights contains both operational and infe
 When this integration is used, all of the operational metrics related to the algorithm name, version, owner, request ID, and session ID will be included with each data point as [tags](https://docs.datadoghq.com/getting_started/tagging/using_tags/) in Datadog. These tags can then be used to filter and group model performance metrics in dashboards and monitors.
 
 The steps to install and configure this integration can be summarized as:
-1. Configure Algorithmia to send Insights to a Kafka broker and topic
+1. Configure Algorithmia to send [Insights](https://algorithmia.com/developers/algorithmia-enterprise/algorithmia-insights) to a Kafka broker and topic
 2. Install and run the [Algorithmia-Datadog integration](https://github.com/algorithmiaio/integrations/tree/master/Datadog) with your Kafka broker/topic and Datadog API key
 3. For any published algorithm on your cluster that has Insights enabled, once the algorithm's API is called, those metrics will be pushed to DataDog. 
 4. Verify that your metrics appear in Datadog as `algorithmia.<METRIC-NAME>`

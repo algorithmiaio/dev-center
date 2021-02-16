@@ -11,6 +11,9 @@ image:
     teaser: /language_logos/influxdata.svg
 ---
 
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
 In this tutorial, learn how you can monitor your model performance metrics with InfluxDB and Telegraf using the new Insights feature of Algorithmia Enterprise.
 
 [Algorithmia Insights](https://algorithmia.com/blog/introducing-algorithmia-insights-datadog-integration) is a new feature of Algorithmia Enterprise and provides a metrics pipeline that can be used to instrument, measure, and monitor your machine learning models. Monitoring your model performance metrics can help with your organization’s overall [AI/ML governance efforts](https://algorithmia.com/blog/model-governance), and use cases include detecting [model drift](https://algorithmia.com/blog/model-drift-and-ensuring-a-healthy-machine-learning-lifecycle), data drift, and model bias.
