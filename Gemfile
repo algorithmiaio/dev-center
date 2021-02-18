@@ -1,10 +1,9 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '3.8.5'
+gem 'jekyll', '4.2'
 gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
 gem 'jekyll-last-modified-at'
-gem 'octopress', '~> 3.0'
 gem 'redcarpet'
 gem 'rake'
 gem 'gemoji'
