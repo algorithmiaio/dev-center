@@ -13,10 +13,3 @@ gem 'nokogiri'
 gem 'git'
 gem 'metainspector'
 gem 'mini_magick'
-
-# Used for publishing
-group :deploy do
-  gem 's3'
-  gem 'mime-types'
-  gem 'parallel'
-end
