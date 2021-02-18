@@ -72,9 +72,9 @@ COPY --from=docs-builder /opt/builds/build ./docs
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
-RUN npm install --production
+RUN yarn --frozen-lockfile
 
 # Add deployment artifacts to the image.
 ADD deploy /opt/algorithmia/service/deploy
