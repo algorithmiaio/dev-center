@@ -36,14 +36,14 @@
     "@wdio/sync": "^5.14.4",
     "axios": "^0.21.1",
     "chai": "^4.2.0",
+    "http-proxy-middleware": "^0.20.0",
     "mocha": "^6.2.0",
     "shelljs": "^0.8.3"
   },
   "dependencies": {
     "bunyan": "^1.8.15",
-    "cross-env": "^6.0.0",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^0.20.0",
     "prom-client": "^11.5.3",
     "request-stats": "^3.0.0"
   },
