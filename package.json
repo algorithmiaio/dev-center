@@ -44,7 +44,7 @@
     "bunyan": "^1.8.15",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "prom-client": "^11.5.3",
+    "prom-client": "^13.1.0",
     "request-stats": "^3.0.0"
   },
   "engines": {
