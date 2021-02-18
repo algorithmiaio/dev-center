@@ -74,7 +74,7 @@ COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
 COPY package.json yarn.lock ./
 
-RUN yarn --frozen-lockfile
+RUN yarn --frozen-lockfile --production
 
 # Add deployment artifacts to the image.
 ADD deploy /opt/algorithmia/service/deploy
