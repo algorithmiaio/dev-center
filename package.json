@@ -40,7 +40,7 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "bunyan": "^1.8.12",
+    "bunyan": "^1.8.15",
     "cross-env": "^6.0.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
