@@ -47,7 +47,7 @@ RUN apt-get update && \
   apt-get install -y \
   openssl ruby ruby-dev git zlib1g-dev cmake build-essential g++ imagemagick
 
-RUN gem install bundler:1.16.2 && gem update --system
+RUN gem install bundler:2.1.4 && gem update --system
 
 WORKDIR /opt/builds
 

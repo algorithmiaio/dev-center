@@ -75,9 +75,6 @@ GEM
       fastimage (~> 2.1.7)
       nesty (~> 1.0.2)
       nokogiri (~> 1.11.0)
-    mime-types (3.3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.1104)
     mini_magick (4.9.3)
     mini_portile2 (2.5.0)
     multipart-post (2.1.1)
@@ -99,11 +96,9 @@ GEM
       jekyll (~> 3.0)
     octopress-hooks (2.6.2)
       jekyll (>= 2.0)
-    parallel (1.20.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     posix-spawn (0.3.15)
-    proxies (0.2.3)
     public_suffix (4.0.6)
     racc (1.5.2)
     rake (12.3.3)
@@ -115,9 +110,6 @@ GEM
     ref (2.0.0)
     rouge (3.26.0)
     ruby2_keywords (0.0.4)
-    s3 (0.3.28)
-      addressable
-      proxies
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -143,15 +135,12 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-sitemap
   metainspector
-  mime-types
   mini_magick
   nokogiri
   octopress (~> 3.0)
-  parallel
   rake
   redcarpet
-  s3
   therubyracer
 
 BUNDLED WITH
-   1.16.2
+   2.1.4
