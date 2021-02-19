@@ -14,3 +14,4 @@ _asset_bundler_cache
 .idea/
 CLIPBOARD.txt
 vendor/
+.jekyll-cache

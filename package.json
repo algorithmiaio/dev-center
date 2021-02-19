@@ -9,21 +9,21 @@
   "scripts": {
     "apidocs:build": "cd api-docs && gem install bundler && bundle install && bundle exec middleman build --clean",
     "apidocs:setup": "git submodule init && git submodule update && cd api-docs && rvm install 2.3.0 && gem install bundle && bundle install",
-    "build": "npm run apidocs:build && npm run devcenter:build",
+    "build": "yarn apidocs:build && yarn devcenter:build",
     "devcenter:build": "./build.sh",
     "devcenter:dev": "bundle exec jekyll serve --port 4001",
     "devcenter:enterprise": "bundle exec jekyll serve --config _config.yml,_config-dev.yml,_config-enterprise.yml --port 4001",
     "devcenter:public": "bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001",
     "e2e": "./node_modules/.bin/wdio wdio.conf.js",
-    "e2e:cloud": "E2E_RUN_IN_CLOUD=true npm run e2e",
-    "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true npm run e2e:cloud",
-    "e2e:local": "E2E_BASE_URL=http://localhost:3000 npm run e2e",
-    "setup": "npm run apidocs:setup && npm run apidocs:build && npm run synapse:setup && gem install bundler && bundle install && npm install",
+    "e2e:cloud": "E2E_RUN_IN_CLOUD=true yarn e2e",
+    "e2e:tunnel": "E2E_BASE_URL=http://localhost:3000 E2E_USE_TUNNEL=true yarn e2e:cloud",
+    "e2e:local": "E2E_BASE_URL=http://localhost:3000 yarn e2e",
+    "setup": "yarn apidocs:setup && yarn apidocs:build && yarn synapse:setup && gem install bundler && bundle install && yarn",
     "server": "node ./server/index.js",
-    "server:dev": "NODE_ENV=development npm run server",
-    "server:prod": "NODE_ENV=production npm run server",
-    "start": "npm run server:prod",
-    "synapse:setup": "git submodule init && git submodule update && cd synapse && npm ci",
+    "server:dev": "NODE_ENV=development yarn server",
+    "server:prod": "NODE_ENV=production yarn server",
+    "start": "yarn server:prod",
+    "synapse:setup": "git submodule init && git submodule update && cd synapse && yarn --frozen-lockfile",
     "test:server": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000"
   },
   "devDependencies": {
@@ -36,18 +36,19 @@
     "@wdio/sync": "^5.14.4",
     "axios": "^0.21.1",
     "chai": "^4.2.0",
+    "http-proxy-middleware": "^0.20.0",
     "mocha": "^6.2.0",
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "bunyan": "^1.8.12",
-    "cross-env": "^6.0.0",
+    "bunyan": "^1.8.15",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^0.20.0",
-    "prom-client": "^11.5.3",
+    "prom-client": "^13.1.0",
     "request-stats": "^3.0.0"
   },
   "engines": {
-    "node": "14.15.4"
+    "node": "14.15.4",
+    "yarn": ">=1.22.4"
   }
 }

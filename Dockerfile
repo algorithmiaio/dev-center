@@ -47,7 +47,7 @@ RUN apt-get update && \
   apt-get install -y \
   openssl ruby ruby-dev git zlib1g-dev cmake build-essential g++ imagemagick
 
-RUN gem install bundler:1.16.2 && gem update --system
+RUN gem install bundler:2.1.4 && gem update --system
 
 WORKDIR /opt/builds
 
@@ -72,9 +72,9 @@ COPY --from=docs-builder /opt/builds/build ./docs
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
-RUN npm install --production
+RUN yarn --frozen-lockfile --production
 
 # Add deployment artifacts to the image.
 ADD deploy /opt/algorithmia/service/deploy

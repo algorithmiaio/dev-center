@@ -9,7 +9,7 @@ const { monitor } = require('./prometheus')
 const log = Bunyan.createLogger({ name: 'dev-center-server' })
 const app = express()
 
-const metricsInterval = prometheus.collectDefaultMetrics()
+prometheus.collectDefaultMetrics();
 monitor.routes(app)
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -67,7 +67,7 @@ app.use('/ping', (req, res) => {
 
 // Prometheus
 
-app.get('/metrics', (req, res, next) => {
+app.get('/metrics', async (req, res, next) => {
   const auth = req.headers.authorization || ''
   const segments = auth.split(' ')
   const expectedToken = config.env.stage.prometheusToken
@@ -78,7 +78,7 @@ app.get('/metrics', (req, res, next) => {
   // empty bearer token.
   if (expectedToken && segments.length === 2 && segments[1] === expectedToken) {
     res.set('Content-Type', prometheus.register.contentType)
-    res.end(prometheus.register.metrics())
+    res.end(await prometheus.register.metrics())
   } else {
     next()
   }
@@ -187,7 +187,6 @@ function gracefulShutdown() {
     process.exit()
   })
 
-  clearInterval(metricsInterval)
   const gracePeriod = isProduction ? 10 : 1
 
   setTimeout(() => {
