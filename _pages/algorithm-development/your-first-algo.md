@@ -67,7 +67,7 @@ Click the "Create New Algorithm" button at the bottom of the form and you'll see
 
 ## Developing Your Algorithm In the Web IDE
 
-If you prefer to develop your algorithm in Algorithmia's built-in Web IDE, click the "Web IDE" button in the modal, or click the **Source Code** tab from your newly created algorithm's homepage if the modal is no longer shown.
+To access Algorithmia's built-in Web IDE, click the "Web IDE" button in the modal, or click the **Source Code** tab from your newly created algorithm's homepage if the modal is no longer shown.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/generic_algorithm_description.png" alt="Algorithm descrption page" class="screenshot img-md">
 
