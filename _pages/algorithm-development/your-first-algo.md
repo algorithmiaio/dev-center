@@ -108,11 +108,9 @@ If you're satisfied with your algorithm code, behavior, and settings, go ahead a
 
 Now that you've published your first simple algorithm on the platform, you're empowered to start developing much more complex and useful algorithms. You can write them from scratch, adopt and modify open-source algorithms, and even pipeline multiple algorithms together. Once published, your algorithms will become versioned API endpoints that you can consume from external applications with just a few lines of code!
 
-## Next Steps
-
 ### Language Guides
 
-Now that you have the basics, one potential next step would be to check out the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a> to learn how to write algorithms in whichever language you prefer; we support R, Python, Rust, Ruby, Java, Scala, and JavaScript.
+Now that you know the basics, you can check out the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a> to learn how to write algorithms in whichever language you prefer; we support R, Python, Rust, Ruby, Java, Scala, and JavaScript.
 
 ### Connecting to Data
 
