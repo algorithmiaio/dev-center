@@ -13,9 +13,7 @@ redirect_from:
   - /algorithm-development/algorithm-basics/your-first-algo/
   - /basics/your_first_algo/
 ---
-In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia. For a more detailed tutorial on algorithm development, see our [Training Center](https://training.algorithmia.com/path/enterprise-20-2-data-scientist/enterprise-20-2-developing-python-algorithms-in-the-web-ide).
-
-In this guide, we'll develop an algorithm in Python, but all of the steps shown here are the same in all programming languages supported on the platform. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
+In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia. We'll develop an algorithm in Python, but all of the steps shown here are the same in all programming languages supported on the platform. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
 Note: this guide uses Algorithmia's browser UI to create and deploy your Algorithm. If you prefer a code-only approach to development, see [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management).
 {: .notice-info}
