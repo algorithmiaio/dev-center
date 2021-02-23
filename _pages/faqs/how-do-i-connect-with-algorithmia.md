@@ -10,4 +10,4 @@ image:
 
 * Follow us on [Twitter](https://twitter.com/algorithmia)!
 * Check out the [Algorithmia blog](https://algorithmia.com/blog) to stay up-to-date with new features and resources for using Algorithmia.
-* Contact us via our [Support Page]().
+* Contact us via our [Support Page](https://algorithmia.com/developers/support).
