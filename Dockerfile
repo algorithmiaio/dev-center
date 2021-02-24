@@ -52,8 +52,7 @@ RUN apt-get update && \
   zlib1g-dev=1:1.2.11.dfsg-2ubuntu4 \
   cmake=3.18.4-1ubuntu3 \
   build-essential=12.8ubuntu3 \
-  g++=4:10.2.0-1ubuntu1 \
-  imagemagick=8:6.9.10.23+dfsg-2.1ubuntu16
+  g++=4:10.2.0-1ubuntu1
 
 RUN gem install bundler:2.1.4 && gem update --system
 
