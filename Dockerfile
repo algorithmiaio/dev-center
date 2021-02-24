@@ -50,9 +50,10 @@ RUN apt-get update && \
   ruby-dev=1:2.7+1 \
   git=1:2.30.0-1ubuntu1 \
   zlib1g-dev=1:1.2.11.dfsg-2ubuntu4 \
-  cmake=3.18.4-1ubuntu3 \
+  cmake=3.18.4-2ubuntu1 \
   build-essential=12.8ubuntu3 \
-  g++=4:10.2.0-1ubuntu1
+  g++=4:10.2.0-1ubuntu1 \
+  libffi-dev=3.4~20200819gead65ca871-0ubuntu3
 
 RUN gem install bundler:2.1.4 && gem update --system
 
