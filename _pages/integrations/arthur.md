@@ -75,3 +75,9 @@ def apply(input):
     prediction, inference_id = model_predict(pd.DataFrame([input]))
     return f"Logged inference {inference_id} with ArthurAI."
 ```
+
+Once you’ve connected your algorithm to Arthur's platform and published it, all executions of that specific version of your algorithm will send inference data to Arthur.
+
+In addition to Arthur, Algorithmia has other model monitoring and observability capabilities. If you're using Algorithmia Enterprise, you have access to an admin panel where you can view usage metrics at the cluster, user account, and algorithm level. See the [Platform Usage Reporting](/developers/algorithmia-enterprise/usage-metrics) page for more information. You can also opt in to Algorithmia Insights in your algorithms, enabling you to publish your inference data to a Kafka topic which you can then subscribe to from external observability platforms. See [Algorithmia Insights](/developers/algorithmia-enterprise/algorithmia-insights) for more information.
+
+If you're new to Algorithmia and would like to learn more about our product and model monitoring capabilities, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!
