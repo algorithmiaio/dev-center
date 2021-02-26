@@ -1,8 +1,8 @@
 ---
 layout: article
-title:  "Advanced Usage Reporting"
-excerpt: "The Admin Panel's Usage Feature"
-categories: [algorithmia-enterprise, integrations]
+title:  "Platform Usage Reporting"
+excerpt: "The Admin Panel's Platform Usage Feature"
+categories: [algorithmia-enterprise, basics]
 show_related: false
 image:
     teaser: /icons/algo.svg
@@ -36,7 +36,6 @@ One caveat to the total compute time: each call is rounded **up** to the nearest
 Also note that if a call takes less than one second, the call’s duration will be rounded up to a full second. So calling Hello World 23 times would most likely result in a total duration of 23 seconds being displayed. The motivation for this is that in the algorithm marketplace we only charge by credits. One credit = one second, so if a user makes a call that lasts less than a second we still charge for the full second.
 
 
-
 ### Algorithms
 
 This tab shows usage information grouped at the algorithm level. That is, it shows which algorithms were called and how many times (total across all users) they were called.
@@ -50,8 +49,6 @@ When you click on a row in the algorithms table, you will see this complete set 
 - total errors: total number of errors this algorithm returned summed up across all users
 - error duration: total number of seconds the algorithm ran calls in which it returned an error (summed up across all users)
 - hardware: whether the algorithm runs on a CPU or GPU instance
-
-
 
 
 ### Users
