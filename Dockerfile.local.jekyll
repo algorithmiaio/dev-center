@@ -1,0 +1,41 @@
+
+#
+# Stage 1: build Synapse
+#
+FROM node:14.15.4 as style-builder
+
+WORKDIR /synapse
+
+COPY ./synapse .
+
+RUN yarn --frozen-lockfile && yarn
+
+#
+# Stage 2: build dev center
+#
+FROM ubuntu:21.04
+
+# libv8-3.8.9.20
+# https://stackoverflow.com/questions/19673714/error-installing-libv8-error-failed-to-build-gem-native-extension
+RUN apt-get update && \
+  apt-get install -y \
+  openssl \
+  ruby \
+  python2.7 \
+  ruby-dev \
+  git \
+  zlib1g-dev \
+  cmake \
+  build-essential \
+  g++ \
+  libffi-dev
+
+RUN gem install bundler:2.1.4 && gem update --system
+
+COPY --from=style-builder /synapse/dist ./synapse/dist
+
+WORKDIR /jekyll
+VOLUME  /jekyll
+
+EXPOSE 4001
+ENTRYPOINT bundle install && bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001

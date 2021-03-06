@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  slate:
+    image: slatedocs/slate:v2.8.0
+    command: serve
+    volumes:
+      - ./api-docs/source:/srv/slate/source
+    ports:
+      - "4567:4567"
+  jekyll:
+    image: algorithmiahq/dev-center:local-dev-jekyll-server
+    command: "bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001"
+    volumes:
+      - .:/jekyll
+    ports:
+      - "4001:4001"
+  node:
+    image: algorithmiahq/dev-center:local-dev-node-server
+    ports:
+      - "4000:4000"
+    depends_on:
+      - jekyll
+      - slate

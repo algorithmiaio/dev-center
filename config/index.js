@@ -17,6 +17,7 @@ module.exports = {
     ),
     stage: {
       cspEnabled: caseInsensitiveEquals(process.env.ENFORCE_CSP, 'true'),
+      apiDocsUrl: 'http://localhost:4567',
       devCenterUrl: 'http://localhost:4001',
       prometheusToken: process.env.PROMETHEUS_TOKEN,
     },
