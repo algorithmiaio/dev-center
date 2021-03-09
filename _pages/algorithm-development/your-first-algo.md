@@ -13,7 +13,7 @@ redirect_from:
   - /algorithm-development/algorithm-basics/your-first-algo/
   - /basics/your_first_algo/
 ---
-In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia. For a more detailed tutorial on algorithm development, see our [Training Center](https://training.algorithmia.com/).
+In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia. For a more detailed walk-through of algorithm development, see the [Algorithmia Enterprise tutorial](https://training.algorithmia.com/path/enterprise-20-2-data-scientist/enterprise-20-2-developing-python-algorithms-in-the-web-ide) or the [Algorithmia Teams tutorial](https://training.algorithmia.com/path/teams-20-2-data-scientist/teams-20-2-developing-python-algorithms-in-the-web-ide) on our [Training Center](https://training.algorithmia.com).
 
 We'll develop an algorithm in Python, but all the steps shown here are the same in all programming languages supported on the platform. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
@@ -24,7 +24,6 @@ Table of Contents
 
 * [Creating Your First Algorithm](#creating-your-first-algorithm)
 * [Developing Your Algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
-* [Calling Your Algorithm](#calling-your-algorithm)
 * [Publishing Your Algorithm](#publishing-your-algorithm)
 * [Next Steps](#next-steps)
 
@@ -43,6 +42,9 @@ Select your account name as the algorithm owner, and provide a descriptive name 
 ### Source Code
 
 In this section, you can customize the visibility, licensing, and hosting of your algorithm's source code. For your algorithm, just leave the defaults so that the source code is hosted privately on our platform under the [Algorithmia Platform License](https://algorithmia.com/api_dev_terms). You can read more about creating algorithms with GitHub or GitHub Enterprise in our [Source Code Management](/developers/algorithm-development/source-code-management/) docs.
+
+Note: if you're on the Algorithmia Teams tier, these Source Code options won't be available. Your source code will always be hosted privately on our platform—only your team will be able to view it.
+{: .notice-info}
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_source_code_internal.png" alt="Configure your algorithm's repository host" class="screenshot img-sm">
 
@@ -81,7 +83,7 @@ At the bottom of the page in the test console you'll see a confirmation when you
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
 
-Note that the first time you run your algorithm it might take some time to return a value; subsequent runs will return much more quickly.
+Note: the first time you run your algorithm it might take some time to return a value; subsequent runs will return much more quickly.
 {: .notice-info}
 
 If you'd like, you can edit the source code, for example by changing it to return an "Hola" instead of a "Hello". Every time you want to re-test the algorithm, you'll need to click the green **Build** button and wait for the build confirmation message.
@@ -118,4 +120,4 @@ As you saw in this guide, you can create simple algorithms that don't read or wr
 
 As an integration-first platform, we encourage you to connect to whatever data source(s) you're already using. We also enable you to host data directly on our platform for lower-latency access, and we even have several native integrationss with cloud-hosted data platforms.
 
-See our <a href="http://docs.algorithmia.com/#data">Data API</a> docs and our <a href="{{site.baseurl}}/data">Developer Center</a> docs to get started connecting to data sources. For a deeper dive tutorial, you can also check out our [Training Center](https://training.algorithmia.com/path/enterprise-20-2-data-scientist/enterprise-20-2-using-data-sources).
+See our <a href="http://docs.algorithmia.com/#data">Data API</a> docs and our <a href="{{site.baseurl}}/data">Developer Center</a> docs to get started connecting to data sources, or take the [Algorithmia Enterprise tutorial](https://training.algorithmia.com/path/enterprise-20-2-data-scientist/enterprise-20-2-using-data-sources) or the [Algorithmia Teams tutorial](https://training.algorithmia.com/path/teams-20-2-data-scientist/teams-20-2-using-data-sources) on our [Training Center](https://training.algorithmia.com) for a deeper dive.

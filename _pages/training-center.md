@@ -35,7 +35,6 @@ We're constantly publishing new content in our Training Center to teach you abou
 * Using Data Sources
 
 ## Feedback
-
 If you have feedback on the Training Center, we'd love to hear about it! We're always trying to improve our content to make you successful on our platform. If there's a topic or platform feature that you'd love to see covered, or if something in the current material doesn't make sense or could be made clearer, please let us know at training@algorithmia.com.
 
 <a href="https://training.algorithmia.com" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> KEEP LEARNING</a>
