@@ -21,20 +21,20 @@ If you're an experienced algorithm developer and you'd like a more detailed expl
 We're constantly publishing new content in our Training Center to teach you about new features, so there's always something to learn. Our latest tutorials are listed here:
 
 ### Data Scientist Learning Path
-#### Algorithmia Enterprise v20.2
+#### Algorithmia [Enterprise](https://training.algorithmia.com/path/enterprise-20-2-data-scientist) v20.2
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
 * Using Data Sources
 * Using Organizations
 
-#### Algorithmia Teams
+#### Algorithmia [Teams](https://training.algorithmia.com/path/teams-20-2-data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
+* Using Data Sources
 
 ## Feedback
-
 If you have feedback on the Training Center, we'd love to hear about it! We're always trying to improve our content to make you successful on our platform. If there's a topic or platform feature that you'd love to see covered, or if something in the current material doesn't make sense or could be made clearer, please let us know at training@algorithmia.com.
 
 <a href="https://training.algorithmia.com" class="btn btn-default btn-primary"><i class="fa fa-book" aria-hidden="true"></i> KEEP LEARNING</a>
