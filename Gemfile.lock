@@ -80,7 +80,6 @@ GEM
       fastimage (~> 2.1.7)
       nesty (~> 1.0.2)
       nokogiri (~> 1.11.0)
-    mini_magick (4.11.0)
     mini_portile2 (2.5.0)
     multipart-post (2.1.1)
     nesty (1.0.2)
@@ -126,7 +125,6 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-sitemap
   metainspector
-  mini_magick
   nokogiri
   rake
   redcarpet
