@@ -45,17 +45,17 @@ FROM ubuntu:21.04 as dev-center-builder
 
 RUN apt-get update && \
   apt-get install -y \
-  openssl=1.1.1f-1ubuntu5 \
-  ruby=1:2.7+1 \
-  ruby-dev=1:2.7+1 \
-  git=1:2.30.0-1ubuntu1 \
-  zlib1g-dev=1:1.2.11.dfsg-2ubuntu5 \
-  cmake=3.18.4-2ubuntu1 \
-  build-essential=12.8ubuntu3 \
-  g++=4:10.2.0-1ubuntu1 \
-  libffi-dev=3.4~20200819gead65ca871-0ubuntu3
+  openssl \
+  ruby \
+  ruby-dev \
+  git \
+  zlib1g-dev \
+  cmake \
+  build-essential \
+  g++ \
+  libffi-dev
 
-RUN gem install bundler:2.1.4 && gem update --system
+RUN gem install bundler:2.1.4
 
 WORKDIR /opt/builds
 
