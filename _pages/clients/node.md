@@ -18,7 +18,7 @@ redirect_from:
 
 The Algorithmia Node.js client provides a native Node.js interface to the Algorithmia API, letting developers manage and call algorithms, work with data in object stores using Algorithmia Data Sources, and access other features of the Algorithmia platform.
 
-This guide will cover setting up the client, calling an algorithm using direct user input, calling an algorithm that accesses data through Algorithmia Data Sources, and using Algorithmia's Hosted Data service. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/).
+This guide will cover setting up the client, calling an algorithm using direct user input, calling an algorithm that accesses data through Algorithmia Data Sources, and using Algorithmia's Hosted Data service. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api).
 
 ## Set Up the Client
 
@@ -33,11 +33,11 @@ To use the client you'll need an API key, which Algorithmia uses for fine-graine
 Once the client is installed, you can import it into your code and instantiate the client object:
 
 {% highlight js %}
-var algorithmia = require('algorithmia');
+const algorithmia = require('algorithmia');
 
-var apiKey = "YOUR_API_KEY";
+const apiKey = "YOUR_API_KEY";
 
-var client = algorithmia.client(apiKey);
+const client = algorithmia.client(apiKey);
 {% endhighlight %}
 
 #### Specifying an On-Premises or Private Cloud Endpoint
@@ -48,10 +48,10 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 If you are running [Algorithmia Enterprise](/enterprise), you can specify the API endpoint when you create the client object:
 
 {% highlight js %}
-var client = algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
+const client = algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint");
 {% endhighlight %}
 
-Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
+Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com)
 
 ## Calling an Algorithm
 
@@ -73,12 +73,12 @@ This should print the phrase `Hello Mr. Bond` to the console.
 
 ### JSON and JavaScript
 
-The JavaScript client provides some ease-of-use abstractions for working with algorithms with JSON inputs and outputs. When passing a native JavaScript type such as a object or array into the `.pipe()` function, the library will automatically serialize it to JSON. Algorithms will return a JSON type and the `result` field of the response will contain an appropriate JavaScript type.
+The JavaScript client provides some ease-of-use abstractions for working with algorithms with JSON inputs and outputs. When passing a native JavaScript type such as an object or array into the `.pipe()` function, the library will automatically serialize it to JSON. Algorithms will return a JSON type and the `result` field of the response will contain an appropriate JavaScript type.
 
 Let's look at an example using JSON and the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll call this algorithm using a list of strings, following the format in the algorithm documentation:
 
 {% highlight js %}
-var jsonInput = {
+const jsonInput = {
     "docsList": [
         "It's apple picking season",
         "The apples are ready for picking"
@@ -105,7 +105,7 @@ The Algorithmia API exposes options that can configure algorithm requests. This 
 client.algo("demo/Hello?timeout=60&stdout=false");
 {% endhighlight %}
 
-You can find more details in [API Docs](/developers/api/) > [Invoke an Algorithm](/developers/api/#invoke-an-algorithm).
+You can find more details in [API Docs](/developers/api) > [Invoke an Algorithm](/developers/api/#invoke-an-algorithm).
 
 ### Error Handling
 
@@ -140,7 +140,7 @@ In this example, we'll upload an image to Algorithmia's [Hosted Data](/developer
 The documentation for "Face Detection" says that it takes a URL or a Data URI of the image to be processed, and a Data URI where the algorithm can store the result. Create a directory to host the input image:
 
 {% highlight js %}
-var img_directory = client.dir('data://YOUR_USERNAME/img_directory');
+const img_directory = client.dir('data://YOUR_USERNAME/img_directory');
 
 img_directory.exists(function(exists) {
     if (exists) {
@@ -169,7 +169,7 @@ Now we're ready to upload an image file for processing. For this example, we'll 
 Next, create a variable that holds the location where you would like to upload the image as a URI:
 
 {% highlight js %}
-var img_file = "data://.my/img_directory/friends.jpg";
+const img_file = "data://.my/img_directory/friends.jpg";
 {% endhighlight %}
 
 Then upload your local file to the data collection using the `.putFile()` method:
@@ -199,7 +199,7 @@ Once the file has been uploaded, you are ready to call the algorithm. Create the
 {% highlight js %}
 algoCV = client.algo('dlib/FaceDetection/0.2.1')
 
-var input = {
+const input = {
     "images": [
         {
             "url": "data://.my/img_directory/friends.jpg",
@@ -225,10 +225,10 @@ Algorithms can create and store data in folders named with the algorithm name in
 
 ### Download the resulting file
 
-The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slighly to download the file by adding the algorithm name and author:
+The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slightly to download the file by adding the algorithm name and author:
 
 {% highlight js %}
-var download_uri = "data://.algo/dlib/FaceDetection/temp/detected_faces.png";
+const download_uri = "data://.algo/dlib/FaceDetection/temp/detected_faces.png";
 {% endhighlight %}
 
 Verify that the file that you want to download exists, and try downloading the data and writing it to `data/detected_faces.png`:
@@ -259,4 +259,4 @@ In addition to the functionality covered in this guide, the Python Client Librar
 
 ## Next Steps
 
-If you're a data scientist or developer who will be building and deploying new algorithms, you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo/) guide.
+If you're a data scientist or developer who will be building and deploying new algorithms, you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo) guide.
