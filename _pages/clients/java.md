@@ -283,7 +283,7 @@ Depending on your algorithm, you might want to report on the algorithm payload f
 In the case of an example credit scoring model, shown in this demo for [Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
 
 {% highlight java %}
-# Report Algorithmia Insights
+// Report Algorithmia Insights
 client.reportInsights(new HashMap<String,Object>() { {
     put("risk_score", risk_score);
     put("approved", approved);
@@ -291,7 +291,7 @@ client.reportInsights(new HashMap<String,Object>() { {
 {% endhighlight %}
 
 {% highlight json %}
-# Sample model output that is pushed to Insights
+// Sample model output that is pushed to Insights
 {
   "approved": 1,
   "risk_score": 0.08
