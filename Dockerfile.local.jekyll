@@ -34,7 +34,7 @@ COPY --from=style-builder /synapse/dist ./synapse/dist
 WORKDIR /jekyll
 VOLUME  /jekyll
 
-
+# https://github.com/sass/sassc-ruby/issues/146
 RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install
 
