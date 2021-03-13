@@ -55,7 +55,7 @@ RUN apt-get update && \
   g++ \
   libffi-dev
 
-RUN gem install bundler:2.1.4
+RUN gem install bundler:2.2.14
 
 WORKDIR /opt/builds
 

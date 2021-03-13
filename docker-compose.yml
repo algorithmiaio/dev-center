@@ -7,18 +7,18 @@ services:
     volumes:
       - ./api-docs/source:/srv/slate/source
     ports:
-      - "4567:4567"
+      - "0.0.0.0:4567:4567"
   jekyll:
     image: algorithmiahq/dev-center:local-dev-jekyll-server
-    command: "bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001"
+    command: bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001 --host 0.0.0.0
     volumes:
       - .:/jekyll
     ports:
-      - "4001:4001"
+      - "0.0.0.0:4001:4001"
   node:
     image: algorithmiahq/dev-center:local-dev-node-server
     ports:
-      - "4000:4000"
+      - "0.0.0.0:4000:4000"
     depends_on:
       - jekyll
       - slate

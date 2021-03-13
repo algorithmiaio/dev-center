@@ -103,9 +103,10 @@ if (isProduction) {
   );
 } else {
   app.use(
+    "/developers/api/",
     require("http-proxy-middleware")({
       target: config.env.stage.apiDocsUrl,
-      changeOrigin: true
+      pathRewrite: {'^/developers/api/' : ''},
     })
   );
 }

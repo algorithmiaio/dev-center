@@ -1,18 +1,3 @@
-
-#
-# Stage 1: build Synapse
-#
-FROM node:14.15.4 as style-builder
-
-WORKDIR /synapse
-
-COPY ./synapse .
-
-RUN yarn --frozen-lockfile && yarn
-
-#
-# Stage 2: build dev center
-#
 FROM ubuntu:21.04
 
 RUN apt-get update && \
@@ -27,16 +12,11 @@ RUN apt-get update && \
   g++ \
   libffi-dev
 
-RUN gem install bundler:2.1.4
-
-COPY --from=style-builder /synapse/dist ./synapse/dist
+RUN gem install bundler:2.2.14
 
 WORKDIR /jekyll
 VOLUME  /jekyll
 
-# https://github.com/sass/sassc-ruby/issues/146
-RUN bundle config --local build.sassc --disable-march-tune-native
-RUN bundle install
-
 EXPOSE 4001
-ENTRYPOINT bundle exec jekyll serve --config _config.yml,_config-dev.yml --port 4001
+
+CMD ["bundle", "exec jekyll serve --config _config.yml,_config-dev.yml --port 4001 --host 0.0.0.0"]
