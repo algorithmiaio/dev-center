@@ -174,7 +174,7 @@ headers = {
 payload = {
     "settings": {
         "algorithm_callability": "<string>" #public, private
-    }
+    },
     "version_info": {
         "type": "<string>", #default, major, minor, revision
         "semantic_version": "<string>", #if blank, a minor version increment will be used
