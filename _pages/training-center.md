@@ -4,6 +4,9 @@ layout: article_page
 title:  "Training Center"
 show_related: false
 excerpt: "The Training Center provides guided tutorials for all aspects of development on Algorithmia."
+redirect_from:
+- /learningcenter/
+- /learning-center/
 ---
 
 <a href="https://training.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>
