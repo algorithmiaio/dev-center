@@ -31,14 +31,13 @@ redirect_from:
   </div>
 </div>
 
-After you learn how to call algorithms, check out our <a href="{{site.baseurl}}/data">Data Connectors</a> that we support and learn how to work with data using our <a href="http://docs.algorithmia.com/">Data API</a>.
+After you've [made your first API call](https://algorithmia.com/developers/getting-started), you can learn more about using the Algorithmia clients in the guides below. The clients can be used in your own applications to call algorithms, [access data]({{site.baseurl}}/data), or to manage the Algorithmia platform. The clients can also be used in the algorithms you write, letting you work with the [Data API](https://algorithmia.com/developers/api/#data) or call additional algorithms from your own code, letting you use utility functions and chain algorithms together. 
 
-For how to chain algorithms together to build useful pipelines or call our API from Android, iOS, or R Shiny check out our <a href="{{site.baseurl}}/tutorials">Tutorials</a>.
+For a complete description of the API's functionality, you can refer to the [API docs](https://algorithmia.com/developers/api).
 
-And if you're looking to call the API in Spark Streaming, H2O, and more check out
-<a href="{{site.baseurl}}/integrations">Integrations</a>.
+In addition to the client guides, you can visit our [integrations page](https://algorithmia.com/developers/integrations) for more details about integrating with other software and frameworks, such as building apps for [R Shiny]({{site.baseurl}}/tutorials/sample-apps/shiny-app), calling the API in [Spark Streaming](integrations/spark-streaming), working with [MLFlow](https://algorithmia.com/developers/clients/mlflow), visualizing data with [Tableau](https://algorithmia.com/developers/integrations/tableau), and making use of the [Algorithmia Insights](https://algorithmia.com/developers/algorithmia-enterprise/algorithmia-insights) metrics pipeline.
 
-Also, after checking out the Getting Started Guide above, go through a more thorough tutorial in your preferred language. The guides below will take you step-by-step showing you how to work with data, call algorithms and get the response:
+The guides below will take you through setting up and using the Algorithmia client libraries for our supported languages.
 
 <div class="row lang-tile-container">
 {% assign sorted_clients = site.pages | where: "categories", "clients" | sort:"title" %}
