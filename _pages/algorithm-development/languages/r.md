@@ -28,7 +28,7 @@ Table of Contents
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
-The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.6</a> is available for you to use in your algorithms, which you can find through the "Environment" drop-down when creating a new algorithm:
+The full <a href="https://www.r-project.org/about.html" rel="noopener noreferrer">R language and standard library version 3.3.6</a> is available for you to use in your algorithms, which you can find through the "Environment" drop-down when creating a new algorithm:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_r.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
