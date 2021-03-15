@@ -26,7 +26,6 @@ To get the most out of your algorithm profile and boost its visibility, follow t
 * Give It a Tagline
 * Add Tags
 * Include Sample Input
-* Update Pricing
 * Check Permissions & Source Code Visibility
 
 
