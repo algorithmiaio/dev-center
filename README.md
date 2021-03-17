@@ -29,6 +29,7 @@ sudo apt install ruby ruby-dev zlib1g-dev
 sudo apt-get install imagemagick
 ```
 
+
 ### Mac OSX (High Sierra) Notes:
 
 Install imagemagick:
@@ -60,6 +61,22 @@ brew unlink v8@3.15
 brew link v8
 rvm autolibs enabled
 ```
+
+### Mac OSX (Catlina) Notes:
+
+If installation of therubyracer/libv8 gem fails due the following:
+```
+brew install v8@3.15
+bundle config build.libv8 --with-system-v8
+bundle config build.therubyracer --with-v8-dir=$(brew --prefix v8@3.15)
+bundle install
+```
+
+### Openssl notes
+If installtion of ruby 2.7.x fails due to openssl issue do the following:
+1. `rvm reinstall 2.7.2 --with-openssl-dir=/usr/local/opt/openssl`
+
+If openssl is not installed you may have to do some researching for installing and linking openssl@1.1 via homebrew.
 
 More info [here](https://gist.github.com/fernandoaleman/868b64cd60ab2d51ab24e7bf384da1ca) if issues persist.
 
