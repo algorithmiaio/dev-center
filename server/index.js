@@ -116,14 +116,19 @@ if (isProduction) {
 // B) Request is for an API docs landing, which needs the slash to not break assets
 // If A or B is true, ensure trailing slash is there
 
-const hasTrailingSlash = reqPath => /.+\/$/.test(reqPath);
-const isApiDocs = reqPath => /^\/developers\/api\/?$/.test(reqPath);
+
+
 app.get("*", (req, res, next) => {
-  if (hasTrailingSlash(req.path) && !(!isProduction || isApiDocs(req.path))) {
+  const hasTrailingSlash = /.+\/$/.test(req.path);
+  const isApiDocs = /^\/developers\/api\/?$/.test(req.path);
+  const isAssetRequest = /\.\w+?$/.test(req.path);
+
+  if (hasTrailingSlash && !(!isProduction || isApiDocs)) {
     res.redirect(req.path.replace(/\/$/, ""));
   } else if (
-    !hasTrailingSlash(req.path) &&
-    (!isProduction || isApiDocs(req.path))
+    !hasTrailingSlash &&
+    !isAssetRequest &&
+    (!isProduction || isApiDocs)
   ) {
     res.redirect(`${req.path}/`);
   } else {
