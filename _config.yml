@@ -89,5 +89,4 @@ exclude:
     "shippable.yml",
     "_tmp",
     "vendor",
-    "synapse"
   ]

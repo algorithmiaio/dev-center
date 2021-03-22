@@ -1,20 +1,6 @@
 
 #
-# Stage 1: build Synapse dist/ files
-#
-FROM node:14.15.4 as style-builder
-
-WORKDIR /app
-COPY ./synapse .
-
-# Install dependencies
-RUN npm ci
-
-# Build files
-RUN npm run build
-
-#
-# Stage 2: build API docs
+# Stage 1: build API docs
 #
 FROM ruby:2.7.2 AS docs-builder
 
@@ -39,7 +25,7 @@ RUN apt-get update -yq \
 RUN bundle exec middleman build --clean
 
 #
-# Stage 3: build dev center
+# Stage 2: build dev center
 #
 FROM ubuntu:21.04 as dev-center-builder
 
@@ -62,8 +48,6 @@ WORKDIR /opt/builds
 COPY . .
 
 RUN bundle install
-
-COPY --from=style-builder /app/dist ./synapse/dist
 
 RUN ./build.sh
 
