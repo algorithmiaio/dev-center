@@ -115,21 +115,15 @@ if (isProduction) {
 // A) We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
 // B) Request is for an API docs landing, which needs the slash to not break assets
 // If A or B is true, ensure trailing slash is there
-
-
-
 app.get("*", (req, res, next) => {
   const hasTrailingSlash = /.+\/$/.test(req.path);
   const isApiDocs = /^\/developers\/api\/?$/.test(req.path);
   const isAssetRequest = /\.\w+?$/.test(req.path);
+  const needsTrailingSlash = (!isProduction || isApiDocs) && !isAssetRequest
 
-  if (hasTrailingSlash && !(!isProduction || isApiDocs)) {
+  if (hasTrailingSlash && !needsTrailingSlash) {
     res.redirect(req.path.replace(/\/$/, ""));
-  } else if (
-    !hasTrailingSlash &&
-    !isAssetRequest &&
-    (!isProduction || isApiDocs)
-  ) {
+  } else if (!hasTrailingSlash && !isAssetRequest) {
     res.redirect(`${req.path}/`);
   } else {
     next();
