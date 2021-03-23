@@ -13,7 +13,8 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
 2. Log into Docker using the `algojenkins` account. (Password in LastPass)
 3. (If you've used local dev before) `rm -rf vendor`
-4. `docker run -v $PWD:/jekyll algorithmiahq/dev-center:local-dev-jekyll-server bundle install`
+4. `git submodule init && git submodule udpate`
+5. `docker run -v $PWD:/jekyll algorithmiahq/dev-center:local-dev-jekyll-server bundle install`
 
 ### Normal Dev Workflow
 
