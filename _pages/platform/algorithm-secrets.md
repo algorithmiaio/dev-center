@@ -39,7 +39,7 @@ Secrets are managed on the algorithm settings page. Here you'll be able to creat
 
 ![Image of UI settings page for creating secrets](/developers/images/post_images/algorithm_secrets/settings_page.png)
 
-Start by clicking "New secret" to create an algorithm secret. Next, give your secret a name, description, key, and value. The key corresponds to the environment variable name and the value is the secret itself.
+Start by clicking "New secret" to create an algorithm secret. Next, give your secret a display name, description, environment variable name, and value.
 
 It can take up to one minute for new secrets to show up inside your algorithm. Similarly, when you update a secret, it can take one minute for that change to take effect.
 {: .notice-info}
