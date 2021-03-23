@@ -8,92 +8,17 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 
 ## Running locally
 
-### Prerequisites
+### Initial Setup
 
-You're going to need:
+1. Install [Docker](https://www.docker.com/products/docker-desktop)
+2. Log into Docker using the `algojenkins` account. (Password in LastPass)
+3. (If you've used local dev before) `rm -rf vendor`
+4. `docker run -v $PWD:/jekyll algorithmiahq/dev-center:local-dev-jekyll-server bundle install`
 
-- **Linux or OS X** — Windows may work, but is unsupported.
-- **Ruby, version 2.7.2 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
-- **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
-- **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+### Normal Dev Workflow
 
-#### Ubuntu 16.10 Notes:
-
-```bash
-sudo apt install ruby ruby-dev zlib1g-dev
-```
-
-### Ubuntu (Xenial) on Chromebook Notes:
-
-```sudo apt-get install g++
-sudo apt-get install imagemagick
-```
-
-### Mac OSX (High Sierra) Notes:
-
-Install imagemagick:
-
-```
-brew install imagemagick
-```
-
-Install via:
-
-```
-bundle install --path vendor/bundle
-```
-
-If installation for nokogiri fails due to libxml2 support, install it via:
-
-```
-gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
-```
-If installation of therubyracer gem fails due to recent changes in Catalina, do the following:
-
-```
-gem install libv8 -v '3.16.14.19' -- --with-system-v8
-rvm autolibs disable
-brew unlink v8
-brew link v8@3.15 --force
-gem install therubyracer -v 'version'
-brew unlink v8@3.15
-brew link v8
-rvm autolibs enabled
-```
-
-More info [here](https://gist.github.com/fernandoaleman/868b64cd60ab2d51ab24e7bf384da1ca) if issues persist.
-
-### Getting Set Up
-
-1.  Fork this repository on Github.
-2.  Clone _your forked repository_ with `git clone https://github.com/YOURUSERNAME/dev-center.git`
-3.  `cd dev-center`
-4.  Make sure you have [rvm](https://rvm.io/rvm/install) and [node](https://nodejs.org/en/) installed.
-5.  To set up submodules and install dependencies, run `npm run setup`.
-
-- **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
-- If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again. If `bundle` is not available, `gem install bundler`.
-
-6.  To start both the Node and Jekyll test servers with auto-regeneration, run `npm run devcenter:dev` and `npm run server:dev` in two separate terminal windows.
-7.  If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
-
-You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
-
-### Running the Jekyll Dev Server
-
-To run only the Jekyll server at <http://localhost:4001/developers/>, first follow steps 1-5 above, then
-
-**To Run Public Marketplace Version:**
-
-`npm run devcenter:public`
-
-**To Run Enterprise Version:**
-
-`npm run devcenter:enterprise`
-
-**Note:** Search functionality is intentionally disabled for local development, as rebuilding the search index on each file change is terribly slow. If you need to use the same plugins in development as are used in production, update `_config-dev.yml` so that the production plugins folder is used:
-
-```plugins_dir: _plugins-prod```
+1. `docker-compose up`
+2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api`
 
 ## Submodules
 
