@@ -123,7 +123,7 @@ app.get("*", (req, res, next) => {
 
   if (hasTrailingSlash && !needsTrailingSlash) {
     res.redirect(req.path.replace(/\/$/, ""));
-  } else if (!hasTrailingSlash && !isAssetRequest) {
+  } else if (!hasTrailingSlash && needsTrailingSlash) {
     res.redirect(`${req.path}/`);
   } else {
     next();
@@ -136,7 +136,7 @@ if (!isProduction) {
   app.use(
     require("http-proxy-middleware")({
       target: config.env.stage.devCenterUrl,
-      changeOrigin: true
+      changeOrigin: true,
     })
   );
 }
