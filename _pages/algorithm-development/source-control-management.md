@@ -132,7 +132,7 @@ When we create your repository, we associate the following with it:
 
 Once you've created your algorithm, any commits to your GitHub repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
-You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
+You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
 
 #### Publishing GitHub-Hosted Algorithms
 
@@ -229,7 +229,7 @@ If you're new to Git, we recommend [this tutorial series](https://try.github.io/
 
 To connect your Algorithmia and Bitbucket accounts, simply select the Bitbucket instance you wish to use when creating your algorithm:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for Bitbucket repository host" class="screenshot img-sm">
 
 If you haven't yet connected your Bitbucket account, you will be prompted to do so. By connecting your Bitbucket account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
 
@@ -251,14 +251,14 @@ If you decide to use an alternative name, we recommend that you use only letters
 
 When we create your repository, we associate the following with it:
 
-- **An Access Key**: Bitbucket deploy keys allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use deploy keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **An Access Key**: Bitbucket access keys allow read-only access to specific repositories, and are Bitbucket’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating Bitbucket-Hosted Algorithms
 
 Once you've created your algorithm, any commits to your Bitbucket repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
-You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
+You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
 
 #### Publishing Bitbucket-Hosted Algorithms
 
@@ -297,15 +297,15 @@ With the access key in hand, simply follow [instructions outlined here](https://
 
 ##### Your Repository Was Deleted
 
-If your algorithm's Bitbucket repository was deleted, Bitbucket does not have a mechanism for restoring. It is essential that both the repository's deploy key and webhooks remain in place, otherwise we will not be able to pull your source code, or know when you make changes.
+If your algorithm's Bitbucket repository was deleted, Bitbucket does not have a mechanism for restoring. It is essential that both the repository's access key and webhooks remain in place, otherwise we will not be able to pull your source code, or know when you make changes.
 
 ##### Your Repository's Webhook Needs to be Restored
 
-We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within Bitbucket, first locate the webhook URL and secret. This can be found on your algorithm's settings page by clicking 'View Details' under 'Bitbucket Webhook'.
+We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within Bitbucket, first locate the webhook URL. This can be found on your algorithm's settings page by clicking 'View Details' under 'Bitbucket Webhook'.
 
-You will then be presented with a modal, from which you can copy the webhook URL and secret.
+You will then be presented with a modal, from which you can copy the webhook URL.
 
-Once you've found these values, visit your algorithm's repository on Bitbucket and click on the Settings tab. Click 'Webhooks' on the left side, and you'll be able to restore your webhook by entering the webhook URL and secret.
+Once you've found this value, visit your algorithm's repository on Bitbucket and click on the Settings tab. Click 'Webhooks' on the left side, and you'll be able to restore your webhook by entering the webhook URL.
 
 #### FAQ
 
@@ -319,7 +319,7 @@ Yes! Upon any change to your repository's name or owner we receive a webhook whi
 
 __I revoked access to the Algorithmia's Bitbucket OAuth application, and now none of the repositories I created can build!__
 
-When you revoke access to an OAuth app, Bitbucket automatically revokes both your token and any deploy keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-access-key-was-removed) on restoring deploy keys to a repository.
+When you revoke access to an OAuth app, Bitbucket automatically revokes both your token and any access keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-access-key-was-removed) on restoring access keys to a repository.
 
 
 
@@ -359,14 +359,14 @@ If you decide to use an alternative name, we recommend that you use only letters
 
 When we create your repository, we associate the following with it:
 
-- **A Deploy Key**: GitLab deploy keys allow read-only access to specific repositories, and are GitHub’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use deploy keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **A Deploy Key**: GitLab deploy keys allow read-only access to specific repositories, and are GitLabs’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use deploy keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating GitLab-Hosted Algorithms
 
 Once you've created your algorithm, any commits to your GitLab repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
-You can view your algorithm's builds by heading to it's landing page and clicking the "Builds" tab if you are the algorithm's owner.
+You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
 
 #### Publishing GitLab-Hosted Algorithms
 
