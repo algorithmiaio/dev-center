@@ -69,13 +69,13 @@ More info [here](https://gist.github.com/fernandoaleman/868b64cd60ab2d51ab24e7bf
 2.  Clone _your forked repository_ with `git clone https://github.com/YOURUSERNAME/dev-center.git`
 3.  `cd dev-center`
 4.  Make sure you have [rvm](https://rvm.io/rvm/install) and [node](https://nodejs.org/en/) installed.
-5.  To set up submodules and install dependencies, run `npm run setup`.
+5.  To set up submodules and install dependencies, run `yarn setup`.
 
 - **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
 - If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again. If `bundle` is not available, `gem install bundler`.
 
-6.  To start both the Node and Jekyll test servers with auto-regeneration, run `npm run devcenter:dev` and `npm run server:dev` in two separate terminal windows.
-7.  If you don't need auto-regeneration, you can run `npm run start` to build static dev-center files and only start the Node server.
+6.  To start both the Node and Jekyll test servers with auto-regeneration, run `yarn devcenter:dev` and `yarn server:dev` in two separate terminal windows.
+7.  If you don't need auto-regeneration, you can run `yarn start` to build static dev-center files and only start the Node server.
 
 You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
 
@@ -85,11 +85,11 @@ To run only the Jekyll server at <http://localhost:4001/developers/>, first foll
 
 **To Run Public Marketplace Version:**
 
-`npm run devcenter:public`
+`yarn devcenter:public`
 
 **To Run Enterprise Version:**
 
-`npm run devcenter:enterprise`
+`yarn devcenter:enterprise`
 
 **Note:** Search functionality is intentionally disabled for local development, as rebuilding the search index on each file change is terribly slow. If you need to use the same plugins in development as are used in production, update `_config-dev.yml` so that the production plugins folder is used:
 
@@ -99,7 +99,7 @@ To run only the Jekyll server at <http://localhost:4001/developers/>, first foll
 
 The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) and [Synapse UX Toolkit](https://github.com/algorithmiaio/synapse) are included as submodules in this project. If you make updates to either of these repositories that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
 
-If updates are made to the [api-docs](https://github.com/algorithmiaio/api-docs), **you will need to run `npm run apidocs:build` in order to see the changes**.
+If updates are made to the [api-docs](https://github.com/algorithmiaio/api-docs), **you will need to run `yarn apidocs:build` in order to see the changes**.
 
 ## Making changes
 
