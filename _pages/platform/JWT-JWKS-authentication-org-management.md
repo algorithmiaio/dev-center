@@ -12,9 +12,9 @@ redirect_from:
 - /basics/jwt-authentication/
 ---
 
-JWT authentication allows a user to use JWT tokens which are validated against a JWKS URL in order to execute 
-operations on the platform. If configured permission tags can be extracted from the JWT token and can be used to 
-facilitate external management of organization membership and user security roles.
+JSON Web Tokens are an open, industry standard RFC 7519 method for representing proof of secure communication between two parties.
+
+JWT authentication allows a user to use JWT tokens which are validated against a JWKS URL in order to execute operations on the platform. If configured permission tags can be extracted from the JWT token and can be used to facilitate external management of organization membership and user security roles.
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users who have configured JWT/JWKS and organization management functionality only.
 {: .notice-enterprise}
@@ -57,8 +57,7 @@ Q9nOA' \
 
 ## Creating a non existing user
 
-If a valid JWT token is used and properly verified the configured username field will be matched to an existing users external_id. If no user with such an external_id exists one will be created, 
-the external_id and username of the user will match the value found in the token, if an email field is supplied under the configured key this will be filled in for the new user as well.
+If a valid JWT token is used and properly verified the configured username field will be matched to an existing users external_id. If no user with such an external_id exists one will be created, the external_id and username of the user will match the value found in the token, if an email field is supplied under the configured key this will be filled in for the new user as well.
 
 ![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
 

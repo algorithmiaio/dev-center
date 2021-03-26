@@ -12,8 +12,10 @@ redirect_from:
 - /basics/saml-authentication/
 ---
 
-SAML authentication allows a user to use SAML assertions in order to login to the platform. If configured permission tags can be extracted from the SAML assertion and can be used to 
-facilitate external management of organization membership and user security roles.
+Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP) to pass authorization credentials to service providers (SP).
+
+SAML authentication allows a user to use SAML assertions in order to login to the platform. If configured permission tags can be extracted from the SAML assertion and can be used to facilitate external management of organization membership and user security roles. 
+
 This feature is available to [Algorithmia Enterprise](/enterprise) users who have configured SAML and external organization management functionality only.
 {: .notice-enterprise}
 
@@ -26,7 +28,7 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 #### Logging in with SAML:
 
 
-To enact a SP based login please click on the sign in with SAML button on the login page, you will either be auto logged in or redirected to your identity provider(IDP) to confirm your credentials.
+To enact a Service Provider based login please click on the sign in with SAML button on the login page, you will either be auto logged in or redirected to your identity provider to confirm your credentials.
 
 
 ![SAML login button](/developers/images/post_images/saml/saml-login-button.png)
