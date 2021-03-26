@@ -9,7 +9,7 @@ image:
 teaser: /icons/algo.svg
 permalink: /platform/jwt-authentication/
 redirect_from:
-- /basics/jwt-authentication/
+-  /basics/jwt-authentication/
 ---
 
 JSON Web Tokens are an open, industry standard RFC 7519 method for representing proof of secure communication between two parties.
@@ -20,17 +20,16 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 {: .notice-enterprise}
 
 #### Use cases
-- Allowing user login through JWT
-- Using an external management platform for user permission(admin/sudo)
-- Using an external management platform for granting/revoking organization membership/administration privileges
-- Creating local users that represent validated users verified through JWT
+-  Allowing user login through JWT
+-  Using an external management platform for user permission(admin/sudo)
+-  Using an external management platform for granting/revoking organization membership/administration privileges
+-  Creating local users that represent validated users verified through JWT
 
-#### Making a call with JWT:
-
+#### Making a call with JWT
 
 JWT tokens are submitted using standard bearer tokens, an example curl command for executing an algorithm using JWT is as follows, JWT will work for any v1 endpoint:
 
-```
+```sh
 curl https://algorithmiaTestServerExample/v1/algo/myGroupName/myAlgorithmName/0.1.1 \
 
 -X POST \
@@ -51,9 +50,16 @@ Q9nOA' \
 -d '{"first_name":"Test", "last_name":"User"}'
 
 ```
+##JWT payload specifics
 
+-  RSA256 Encryption only
+-  JWKS should be verified by KID, legacy x5t is supported as well but not preferred.
+-  is no username claim is configured the subject claim will resolve to a users external_id.
+-  issuer "iss" and audience "aud" claims must match configurations for your installation.
+-  the expiration "exp" claim is honored by our system.
+-  email and gorup claims can be configured, any other claim will be ignored.
 
-
+![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
 
 ## Creating a non existing user
 
@@ -61,14 +67,12 @@ If a valid JWT token is used and properly verified the configured username field
 
 ![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
 
-
 ## Changing a users platform permissions
 
 If the permission tags found in a users token match those that have been configured for platform and cluster admin access then a user will be automatically upgraded to the given role.
 For instance if the below token is supplied, and the platform is configured to create admins based off of the "superAdmin" tag then a user will be made an admin.
 
 ![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
-
 
 ## Changing a users organization roles/membership: Adding organization management tags to organization objects
 
