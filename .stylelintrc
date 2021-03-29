@@ -3,12 +3,27 @@
   "rules": {
     "color-hex-case": null,
     "color-hex-length": null,
-    "indentation": "tab",
+    "indentation": 2,
     "max-nesting-depth": 3,
     "order/order": null,
     "order/properties-alphabetical-order": null,
-    "property-no-vendor-prefix": [true, {"ignoreProperties": ['text-size-adjust', 'box-shadow', 'box-sizing', 'interpolation-mode', 'appearance']}],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          'appearance'
+          'box-shadow',
+          'box-sizing',
+          'interpolation-mode',
+          'text-size-adjust',
+        ],
+      },
+    ],
+    "scss/dollar-variable-pattern": null,
     "selector-max-id": 2,
     "selector-no-qualifying-type": null,
   },
+  "ignoreFiles": [
+    "_sass/vendor/**/*.scss"
+  ],
 }
