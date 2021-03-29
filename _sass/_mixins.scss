@@ -1,3 +1,4 @@
+/* stylelint-disable length-zero-no-unit */
 // MIXINS
 // --------------------------------------------------
 
@@ -49,8 +50,8 @@
 @mixin font-size($size, $margin: yes, $line-height: $doc-line-height) {
 
   // generates the font-size in REMs with a PX fallback
-  font-size: 0 + $size;
-  font-size: 0 + $size / $doc-font-size;
+  font-size: 0px + $size;
+  font-size: 0rem + $size / $doc-font-size;
 
   // line-height functions
   ////////////////////////
@@ -82,13 +83,13 @@
 
   // if a specific bottom margin is required
   @else if $margin != yes and $margin != no {
-    margin-bottom: 0 + $margin;
-    margin-bottom: 0 + ($margin / $doc-font-size);
+    margin-bottom: 0px + $margin;
+    margin-bottom: 0rem + ($margin / $doc-font-size);
   }
 
   // if you're keeping the vertical rhythm with the margin
   @else {
-    margin-bottom: 0 + $doc-line-height;
-    margin-bottom: 0 + ($doc-line-height / $doc-font-size);
+    margin-bottom: 0px + $doc-line-height;
+    margin-bottom: 0rem + ($doc-line-height / $doc-font-size);
   }
 }
