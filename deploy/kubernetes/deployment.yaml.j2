@@ -74,5 +74,6 @@ spec:
       imagePullSecrets:
       - name: dockerhub
       restartPolicy: Always
-      securityContext: {}
+      securityContext:
+        runAsUser: 1001
       terminationGracePeriodSeconds: 30
