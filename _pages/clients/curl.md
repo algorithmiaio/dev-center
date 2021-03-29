@@ -87,7 +87,7 @@ You can read more about [Error Handling](/developers/algorithm-development/algor
 
 ### Limits
 
-Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a href="mailto:support@algorithmia.com?subject=Request to raise max algorithm request limit">can be raised</a> if needed).
 
 ## Working with Algorithmia Data Sources
 
