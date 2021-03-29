@@ -3,6 +3,7 @@
   "rules": {
     "color-hex-case": null,
     "color-hex-length": null,
+    "color-named": null,
     "indentation": 2,
     "max-nesting-depth": 3,
     "order/order": null,
@@ -11,11 +12,12 @@
       true,
       {
         "ignoreProperties": [
-          'appearance',
-          'box-shadow',
-          'box-sizing',
-          'interpolation-mode',
-          'text-size-adjust',
+          "appearance",
+          "box-shadow",
+          "box-sizing",
+          "interpolation-mode",
+          "text-size-adjust",
+          "transform",
         ],
       },
     ],
@@ -24,6 +26,8 @@
     "selector-no-qualifying-type": null,
   },
   "ignoreFiles": [
-    "_sass/vendor/**/*.scss"
+    "_sass/vendor/**/*.scss",
+    "css/pygments-github.css",
+    "css/vendors.css",
   ],
 }
