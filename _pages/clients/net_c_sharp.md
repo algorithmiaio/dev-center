@@ -61,6 +61,8 @@ A single algorithm may have different input and output types, or accept multiple
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+
 ### Create a Data Collection
 
 This section will show how to create a data collection which is essentially a folder of data files hosted on Algorithmia for free.
