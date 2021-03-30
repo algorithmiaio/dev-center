@@ -105,3 +105,5 @@ azure-servicebus==0.50.2
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_40.png">
 * Download the file, it should contain text “test-data”, your event listener is working now!
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_41.png">
+
+If you're new to Algorithmia and would like to learn more about our product and using event listeners with Azure Service Bus Queue, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!
