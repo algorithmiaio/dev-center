@@ -31,7 +31,7 @@ Storing sensitive data on Algorithmia might not be suitable for an organization 
 
 Algorithmia Enterprise allows platform admins to connect Algorithmia to external vaulting systems where secrets are managed and maintained by a DevOps team. This helps Data Science teams access secrets in accordance to an organization's security and compliance standards.
 
-Please [contact us](/developers/faqs/how-do-i-connect-with-algorithmia) to share your use case and learn more!
+If you're new to Algorithmia and would like to learn more about our product and using external secret stores, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!
 
 ## Managing algorithm secrets
 

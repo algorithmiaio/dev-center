@@ -51,3 +51,5 @@ If a user shared a tag that is held in “External Admin Group” then they will
 
 If the permission tags found in a users SAML assertion match those that have been configured for a given organization then a user will be automatically added to the organization with the given role.
 For instance if an assertion with the tag "memberTag1" included in the configured attributes value array, and the organization is configured to add members based off of the "memberTag1" tag then a user will be made a member.
+
+If you're new to Algorithmia and would like to learn more about our product and using SAML for authorization, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!

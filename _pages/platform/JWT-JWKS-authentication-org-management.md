@@ -89,4 +89,4 @@ For instance if the below token is supplied, and the organization is configured 
 
 ![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
 
-
+If you're new to Algorithmia and would like to learn more about our product and using JWT for authentication, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!

@@ -108,3 +108,5 @@ Once you've published your algorithm with Algorithmia Insights enabled, all exec
 The "Versions" tab of the algorithm page shows which published versions of that algorithm have Algorithmia Insights enabled:
 
 ![Image of algorithm versions page with Algorithmia Insights flag highlighted](/developers/images/algorithmia-enterprise/algorithmia-insights/web-ui-versions.png)
+
+If you're new to Algorithmia and would like to learn more about our product and the Algorithmia Insights metrics pipeline, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!

@@ -201,3 +201,5 @@ Open the Algorithmia Data API page for the directory to be written to in your al
 Note that the directory contains a file with the filename specified in the payload and that the contents of the file include the data from the payload.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_32.png">
+
+If you're new to Algorithmia and would like to learn more about our product and using event listeners with Amazon SQS, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!
