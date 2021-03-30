@@ -130,6 +130,8 @@ You can read more about [Error Handling](/developers/algorithm-development/algor
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+
 ### Note: Working with Files
 
 Because of security concerns, the JavaScript client does not implement the [Data API](http://docs.algorithmia.com/#data-api-specification) which other clients use to move files into and out of [Data Sources]({{site.baseurl}}/data). This can be a problem if you call an algorithm which writes its output to a file (instead of returning it directly).  However, there are workarounds:
