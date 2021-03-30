@@ -3,37 +3,37 @@
    ========================================================================== */
 
 #masthead {
-	margin-bottom: 40px;
-	padding: $gutter / 2.5;
-	background-color: $black-nav;
+  margin-bottom: 40px;
+  padding: $gutter / 2.5;
+  background-color: $black-nav;
   border-bottom: 1px solid $black;
   position: relative;
-	z-index: 5;
-	@include transform(translate(0,0));
-	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2),0 2px 2px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  @include transform(translate(0,0));
+  @include transition(500ms cubic-bezier(0.645, 0.045, 0.355, 1));
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 
-	&.slide {
-		@include transform(translate(-1600px,0));
-	}
+  &.slide {
+    @include transform(translate(-1600px,0));
+  }
+
   .nav-image {
     display: inline-block;
     height: 18px;
   }
-
 }
 
 .site-title {
-	padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
-	height: $masthead-height;
-	text-decoration: none;
-	color: $white;
-	font-family: $alt-font;
-	font-weight: 700;
-	@include font-size(20,no);
-	line-height: .5 * $masthead-height; // half the height to center vertically
-	text-transform: uppercase;
+  padding: (0.25 * $masthead-height) 0; // fourth the height to center vertically
+  height: $masthead-height;
+  text-decoration: none;
+  color: $white;
+  font-family: $alt-font;
+  font-weight: 700;
+  @include font-size(20,no);
+  line-height: 0.5 * $masthead-height; // half the height to center vertically
+  text-transform: uppercase;
 }
 
 
@@ -42,24 +42,26 @@
    ========================================================================== */
 
 .menu {
-	li {
+  li {
     list-style: none;
-		float: left;
-		&:last-child a {
-			@include media($medium) {
-				margin-right: 0; // remove spacing from last menu link
-			}
-		}
-		a {
-			// line hover effect
-			position: relative;
-			display: block;
-			margin-right: $gutter;
-			padding: (.25 * $masthead-height) 0 (.25 * $masthead-height) ;
-			height: $masthead-height;
-			font-family: $font-family-sans-serif;
-		}
-	}
+    float: left;
+
+    &:last-child a {
+      @include media($medium) {
+        margin-right: 0; // remove spacing from last menu link
+      }
+    }
+
+    a {
+      // line hover effect
+      position: relative;
+      display: block;
+      margin-right: $gutter;
+      padding: (0.25 * $masthead-height) 0 (0.25 * $masthead-height);
+      height: $masthead-height;
+      font-family: $font-family-sans-serif;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -69,37 +71,38 @@
 /* Top menu navigation */
 
 .top-menu {
-	display: none;
-	position: relative;
+  display: none;
+  position: relative;
 
-	@include media($medium) {
-		@include span-columns(7);
-	}
+  @include media($medium) {
+    @include span-columns(7);
+  }
 
-	@include media($large) {
-		@include span-columns(7);
-	}
+  @include media($large) {
+    @include span-columns(7);
+  }
 
-	ul {
-		position: absolute;
-		right: 0;
-	}
+  ul {
+    position: absolute;
+    right: 0;
+  }
 
-	.home,
-	.sub-menu-item {
-		display: none;
-	}
-	li {
-		a {
-			@include font-size(12,no);
-			line-height: .5 * $masthead-height; // half the height to center vertically
-			color: $gray-medium;
+  .home,
+  .sub-menu-item {
+    display: none;
+  }
+
+  li {
+    a {
+      @include font-size(12,no);
+      line-height: 0.5 * $masthead-height; // half the height to center vertically
+      color: $gray-medium;
 
       &:hover {
         color: $white;
       }
-		}
-	}
+    }
+  }
 }
 
 
@@ -113,7 +116,7 @@
   color: $white;
   margin-top: 4em;
   padding: 0 25px;
-	line-height: $footer-height;
+  line-height: $footer-height;
 }
 
 // wrapper  for sticky footer
@@ -122,36 +125,35 @@
 }
 
 .bottom-menu {
+  ul {
+    text-align: center;
+  }
 
-	ul {
-		text-align: center;
-	}
-
-	a {
-		line-height: 36px;
-		font-family: $font-family-sans-serif;
-		color: $gray-medium;
-		display: inline-block;
+  a {
+    line-height: 36px;
+    font-family: $font-family-sans-serif;
+    color: $gray-medium;
+    display: inline-block;
 
     &:hover {
       color: $white;
     }
-   }
-
-  li {
-		margin: 0 25px 0 0;
   }
 
-	li:last-child a {
-		@include media($medium) {
-			margin-right: 0; // remove spacing from last menu link
-		}
-	}
+  li {
+    margin: 0 25px 0 0;
+  }
 
-	@include media($medium) {
-		li {
-			float: left;
-			display: block;
-		}
-	}
+  li:last-child a {
+    @include media($medium) {
+      margin-right: 0; // remove spacing from last menu link
+    }
+  }
+
+  @include media($medium) {
+    li {
+      float: left;
+      display: block;
+    }
+  }
 }

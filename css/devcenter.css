@@ -6,7 +6,7 @@ body {
 
 /* Ensures the :target element doesn't render underneath the fixed position header. */
 :target::before {
-  content: "";
+  content: '';
   display: block;
   height: 57px;
   margin: -57px 0 0;
@@ -17,32 +17,38 @@ body,
   display: flex;
   flex-direction: column;
 }
+
 #wrapper,
 .dev-center-content-container {
   flex-grow: 1;
   max-width: 100%;
 }
+
 #wrapper {
   margin-top: 2rem;
 }
+
 .syn-header-wrapper {
   position: sticky;
   top: 0;
   z-index: 500;
 }
+
 .show-unauth,
 .show-auth {
   display: none !important;
 }
+
 .show-auth-nav .show-auth,
 .show-unauth-nav .show-unauth {
   display: initial !important;
 }
+
 .edit-link {
-  padding-left: .25rem;
+  padding-left: 0.25rem;
   vertical-align: top;
   font-size: 1.1rem;
-  color: rgba(0, 0, 0, .54)
+  color: rgba(0, 0, 0, 0.54);
 }
 
 /* For Enterprise-only notice */
@@ -52,15 +58,15 @@ body,
   margin-bottom: 1rem;
   line-height: 2;
   background-color: #fafafa;
-  border: .0625rem solid #b0b0b0;
+  border: 0.0625rem solid #b0b0b0;
 }
 
-#content .notice-enterprise:before {
-  content: "Enterprise";
-  margin-right: .5rem;
+#content .notice-enterprise::before {
+  content: 'Enterprise';
+  margin-right: 0.5rem;
   background-color: #e56967;
   color: #ffffff;
-  padding: .5rem;
+  padding: 0.5rem;
   text-transform: uppercase;
   font-size: 80%;
 }
@@ -76,7 +82,7 @@ body,
   left: 0;
   overflow: auto;
   position: absolute;
-  top: 100%; 
+  top: 100%;
   transform: translateX(0);
   -webkit-transform: translateY(-100vh);
   transform: translateY(-100vh);
@@ -105,15 +111,15 @@ header.syn-page-header.nav-open .syn-page-header-nav.mobile-nav-container {
 }
 
 .syn-page-header-content {
- background-color: white;
+  background-color: white;
 }
 
 .syn-styles-supported .display-inline {
- display: inline !important; 
+  display: inline !important;
 }
 
 .syn-styles-supported .display-block {
- display: block !important;
+  display: block !important;
 }
 
 .syn-styles-supported .display-inline-flex {
@@ -132,15 +138,15 @@ header.syn-page-header.nav-open .syn-page-header-nav.mobile-nav-container {
 }
 
 .accordion-caret {
-  transition: 0.4s; 
+  transition: 0.4s;
 }
 
 .link-description {
- text-transform: none; 
+  text-transform: none;
 }
 
 .accordion-button.accordion-open .accordion-caret {
-  transform: rotate(180deg);  
+  transform: rotate(180deg);
 }
 
 .syn-page-header.nav-open .open-button {
@@ -160,5 +166,5 @@ header.syn-page-header.nav-open .syn-page-header-nav.mobile-nav-container {
 }
 
 .utility-header {
- border-bottom: 1px solid #eef0f2; 
+  border-bottom: 1px solid #eef0f2;
 }
