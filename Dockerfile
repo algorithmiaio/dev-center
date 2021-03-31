@@ -87,5 +87,10 @@ RUN yarn --frozen-lockfile --production
 # Add deployment artifacts to the image.
 ADD deploy /opt/algorithmia/service/deploy
 
+# Add algo user with appropriate UID
+RUN adduser --uid 1001 algo
+
+USER algo
+
 EXPOSE 3000
 ENTRYPOINT [ "node", "server/index.js" ]
