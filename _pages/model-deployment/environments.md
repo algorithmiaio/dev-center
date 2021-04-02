@@ -2,12 +2,14 @@
 layout: article
 title:  "Algorithm Environments"
 excerpt: "Matrix of supported algorithm runtime environments"
-categories: model-guides
+categories: algorithm-development
 tags: [algo-model-guide]
 show_related: true
-permalink: /model-deployment/environments/
+permalink: /algorithm-development/environments/
 redirect_from:
 - /model-deployment/matrix/
+- /model-deployment/environments
+- /environments
 ---
 
 ## Overview
