@@ -33,7 +33,7 @@ However, we recommend not doing this, and instead choosing the appropriate prede
 
 The algorithm runtime environment you select should match up as closely as possible with your code dependencies, in order to provide the most streamlined development experience and the best algorithm performance. With the base environment selected, you can then add any other required dependencies in whichever way is standard for your language.
 
-The matrix below lists the algorithm environments that are currently available on every Algorithmia installation.
+The matrix below lists the algorithm environments that are currently available on every Algorithmia installation. To create an algorithm with a predefined environment through the API, see [Using a Predefined Language Environment](https://training.algorithmia.com/enterprise-20-2-developing-python-algorithms-in-a-local-ide/698050#predefined-environment).
 
 <div class="syn-styles-supported">
   <div class="syn-table-container scrollable-x" markdown="1">
