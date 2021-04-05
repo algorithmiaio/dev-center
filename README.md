@@ -16,7 +16,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 
 ### Normal Dev Workflow
 
-1. `docker-compose up`
+1. `yarn dev`
 2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api`
 
 ### Building images for docker-compose
