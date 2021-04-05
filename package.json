@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "docker-compose up",
     "init": "rm -rf vendor && git submodule init && git submodule update && docker run -v $PWD:/jekyll algorithmiahq/dev-center:local-dev-jekyll-server bundle install",
-    "test": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000"
+    "test": "concurrently \"yarn dev\" \"sleep 1m yarn test:run\"",
+    "test:run": "cross-env NODE_ENV=production ./node_modules/.bin/mocha ./server/index.spec.js --timeout=10000"
   },
   "devDependencies": {
     "axios": "^0.21.1",
