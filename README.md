@@ -13,7 +13,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
 2. Log into Docker using the `algojenkins` account. (Password in LastPass)
 3. (If you've used local dev before) `rm -rf vendor`
-4. `git submodule init && git submodule udpate`
+4. `git submodule init && git submodule update`
 5. `docker run -v $PWD:/jekyll algorithmiahq/dev-center:local-dev-jekyll-server bundle install`
 
 ### Normal Dev Workflow
@@ -21,11 +21,23 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 1. `docker-compose up`
 2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api`
 
+### Building images for docker-compose
+
+If changes are made to `package.json`, `Gemfile`, or any server-related code (`server/*`, `_config-*.yml`), you'll probably want to update the docker image that docker-compose uses for local dev.
+
+```bash
+docker build --no-cache -t algorithmiahq/dev-center:local-dev-node-server -f local.node.Dockerfile .
+docker push algorithmiahq/dev-center:local-dev-node-server
+```
+
+```bash
+docker build --no-cache -t algorithmiahq/dev-center:local-dev-jekyll-server -f local.jekyll.Dockerfile .
+docker push algorithmiahq/dev-center:local-dev-jekyll-server
+```
+
 ## Submodules
 
-The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) are included as submodules in this project. If you make updates in this repository that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
-
-If updates are made to the [api-docs](https://github.com/algorithmiaio/api-docs), **you will need to run `yarn apidocs:build` in order to see the changes**.
+The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) are included as a submodule of this project. If you make updates in this repository that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
 
 ## Making changes
 
