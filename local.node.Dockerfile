@@ -9,4 +9,4 @@ COPY server ./server
 
 EXPOSE 3000
 
-ENTRYPOINT [ "yarn", "server:dev" ]
+ENTRYPOINT [ "node", "./server/index.js" ]
