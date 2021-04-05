@@ -34,7 +34,7 @@ An Algorithm Development Kit is a package that contains all of the necessary com
 
 ## Algorithm Project Structure
 
-Algorithm development begins with your project's `src/Algorithmia.py` file, where you'll import the Algorithmia ADK and implement the required functions. Each algorithm must contain an `apply()` function, which defines the input point of the algorithm. We use the `apply()` function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users. When an algorithm is invoked via an API request, the body of the request is passed as `input` to our `apply()` function.
+Algorithm development begins with your project's `src/Algorithm.py` file, where you'll import the Algorithmia ADK and implement the required functions. Each algorithm must contain an `apply()` function, which defines the input point of the algorithm. We use the `apply()` function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users. When an algorithm is invoked via an API request, the body of the request is passed as `input` to our `apply()` function.
 
 Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc. 
 
@@ -44,7 +44,7 @@ Let's look at an example to clarify some of these concepts.
 
 ## Hello World
 
-Below you'll find a `src/Algorithmia.py` file which prints "Hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
+Below you'll find a `src/Algorithm.py` file which prints "Hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
 
 {% highlight python %}
 from Algorithmia import ADK
@@ -83,7 +83,7 @@ In our load function we've created a `globals` object and added a key called `pa
 
 ## Available Libraries
 
-In addition to your own code in `src/Algorithmia.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
+In addition to your own code in `src/Algorithm.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_python.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
@@ -158,13 +158,14 @@ Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred 
 
 In this example we'll provide a Data URI for the file as the input to our algorithm. We can then make use of the Algorithmia Python Client to retrieve the contents of the file, split that text into sentences, and then split the sentences into words.
 
-First, make sure to add an import for the Python client into your algorithm and instantiate the client:
+First, make sure to add an import for the Python client into your algorithm and instantiate the client within the `load()` function:
 
 {% highlight python %}
 import Algorithmia
 
-# Note that you don't pass in your API key when creating an algorithm
-client = Algorithmia.client()
+def load():
+    # Note that you don't pass in your API key when creating an algorithm
+    client = Algorithmia.client()
 {% endhighlight %}
 
 Next, we'll parse the `input` as part of our `apply()` function, checking for the `user_file` field and then getting the contents of the file and parsing them:
@@ -244,14 +245,16 @@ Additionally, if you are creating an algorithm that relies on calling another al
 {% highlight python %}
 import Algorithmia
 
-client = Algorithmia.client()
-# An algorithm that takes a URL
-algo = client.algo("util/Url2Text/0.1.4")
+def apply(input):
+    try:
+        print(algo.pipe(input).result)
+    except Exception as error:
+        print(error)
 
-try:
-    print(algo.pipe(input).result)
-except Exception as error:
-    print(error)
+def load():
+    client = Algorithmia.client()
+    # An algorithm that takes a URL
+    algo = client.algo("util/Url2Text/0.1.4")
 {% endhighlight %}
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
@@ -267,7 +270,7 @@ This means that if your project looks like this:
  algorithmia.conf
  src /
       __init__.py
-      Algorithmia.py
+      Algorithm.py
       secondary_file.py
       sub_module /
                   __init__.py
