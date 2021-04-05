@@ -12,7 +12,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
 2. Log into Docker using the `algojenkins` account. (Password in LastPass)
-3. `yarn init`
+3. `yarn setup`
 
 ### Normal Dev Workflow
 
