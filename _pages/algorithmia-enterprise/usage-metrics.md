@@ -66,3 +66,4 @@ When you click on a row in the users table, you will see this complete set of co
 If users would like to perform more advanced operations on the tables (like sorting, customized grouping and summing) there is an option to download the full tables as CSV files.
 
 
+If you're new to Algorithmia and would like to learn more about our product and its usage tracking capabilities, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!

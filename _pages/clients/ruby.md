@@ -131,6 +131,8 @@ You can read more about [Error Handling](/developers/algorithm-development/algor
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+
 ## Working with Algorithmia Data Sources
 
 For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/#data).
@@ -156,7 +158,7 @@ end
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 {: .notice-info}
 
-We'll also need to update the directory's [permissions](/developers/api/#update-collection-acl) so that it's publicly accessible. In order to change your data collection permissions you can go to [Hosted Data](/data/hosted) and click on the collection you just created called **"nlp_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
+We'll also need to update the directory's [permissions](/developers/api/#update-collection-acl) so that it's publicly accessible. In order to change your data collection permissions you can go to [Hosted Data](/data/hosted) and click on the collection you just created called **"img_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
 
 -   My Algorithms (called by any user)
 -   Private (accessed only by me)

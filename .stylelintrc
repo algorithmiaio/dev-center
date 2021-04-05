@@ -1,0 +1,33 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "color-hex-case": null,
+    "color-hex-length": null,
+    "color-named": null,
+    "indentation": 2,
+    "max-nesting-depth": 3,
+    "order/order": null,
+    "order/properties-alphabetical-order": null,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "appearance",
+          "box-shadow",
+          "box-sizing",
+          "interpolation-mode",
+          "text-size-adjust",
+          "transform",
+        ],
+      },
+    ],
+    "scss/dollar-variable-pattern": null,
+    "selector-max-id": 2,
+    "selector-no-qualifying-type": null,
+  },
+  "ignoreFiles": [
+    "_sass/vendor/**/*.scss",
+    "css/pygments-github.css",
+    "css/vendors.css",
+  ],
+}

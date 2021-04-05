@@ -36,7 +36,7 @@ $ pip3 install algorithmia
 
 If you need to install the client from source, please see the additional installation instructions in the client [README](https://github.com/algorithmiaio/algorithmia-python#install-from-source).
 
-To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys](/developers/platform/customizing-api-keys) documentation for more information.
+To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys documentation](/developers/platform/customizing-api-keys) for more information.
 
 Once the client is installed, you can import it into your code and instantiate the client object:
 
@@ -130,6 +130,8 @@ You can read more about [Error Handling](/developers/algorithm-development/algor
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/?python#data).
+
 ## Working with Algorithmia Data Sources
 
 For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/?python#data).
@@ -214,11 +216,10 @@ Algorithms can create and store data in folders named with the algorithm name in
 
 ### Download the resulting file
 
-The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slighly to download the file by adding the algorithm name and author:
+The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slightly to download the file by adding the algorithm name and author:
 
 {% highlight python %}
-output_uri = response.result['images'][0]['output']
-download_uri = output_uri[:13] + 'dlib/FaceDetection/' + output_uri[13:]
+download_uri = "data://.algo/dlib/FaceDetection/temp/detected_faces.png"
 {% endhighlight %}
 
 Verify that the file that you want to download exists, and try downloading it to a new local file location:
@@ -234,7 +235,7 @@ This copies the file from your data collection and saves it as a file on your lo
 Alternately, if you just need the binary content of the file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight python %}
-# Download contents of file as a string
+# Download contents of file as bytes
 if client.file(download_uri).exists():
     image_data = client.file(download_uri).getBytes()
 {% endhighlight %}

@@ -4,6 +4,9 @@ layout: article_page
 title:  "Training Center"
 show_related: false
 excerpt: "The Training Center provides guided tutorials for all aspects of development on Algorithmia."
+redirect_from:
+- /learningcenter/
+- /learning-center/
 ---
 
 <a href="https://training.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>
@@ -20,15 +23,14 @@ If you're an experienced algorithm developer and you'd like a more detailed expl
 
 We're constantly publishing new content in our Training Center to teach you about new features, so there's always something to learn. Our latest tutorials are listed here:
 
-### Data Scientist Learning Path
-#### Algorithmia [Enterprise](https://training.algorithmia.com/path/enterprise-20-2-data-scientist) v20.2
+#### [Algorithmia Enterprise - Data Scientist Courses](https://training.algorithmia.com/page/enterprise-20-2-data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
 * Using Data Sources
 * Using Organizations
 
-#### Algorithmia [Teams](https://training.algorithmia.com/path/teams-20-2-data-scientist)
+#### [Algorithmia Teams - Data Scientist Courses](https://training.algorithmia.com/page/teams-20-2-data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE

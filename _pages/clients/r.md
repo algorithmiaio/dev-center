@@ -33,7 +33,7 @@ install.packages("algorithmia")
 
 You can find the [source code for the client on GitHub](https://github.com/algorithmiaio/algorithmia-r).
 
-To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys](/developers/platform/customizing-api-keys) documentation for more information.
+To use the client you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys documentation](/developers/platform/customizing-api-keys) for more information.
 
 Once the client is installed, you can import it into your code and instantiate the client object:
 
@@ -158,6 +158,8 @@ You can read more about error handling in the [Developer Center](https://algorit
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+
 ## Working with Algorithmia Data Sources
 
 For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/#data).
@@ -242,7 +244,7 @@ This copies the file from your data collection and saves it as a file on your lo
 Alternately, if you just need the JSON content of the processed file to be stored in a variable, you can retrieve the remote file's content without saving the actual file:
 
 {% highlight r %}
-# Download contents of file as a string
+# Download contents of file as JSON
 if client$file(response$result)$exists()) {
     processed_text <- client$file(download_uri).getJson()
 }

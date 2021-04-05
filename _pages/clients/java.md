@@ -148,6 +148,8 @@ You can read more about [Error Handling](/developers/algorithm-development/algor
 
 Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
 
+Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+
 ## Working with Algorithmia Data Sources
 
 For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/#data).
@@ -283,7 +285,7 @@ Depending on your algorithm, you might want to report on the algorithm payload f
 In the case of an example credit scoring model, shown in this demo for [Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
 
 {% highlight java %}
-# Report Algorithmia Insights
+// Report Algorithmia Insights
 client.reportInsights(new HashMap<String,Object>() { {
     put("risk_score", risk_score);
     put("approved", approved);
@@ -291,7 +293,7 @@ client.reportInsights(new HashMap<String,Object>() { {
 {% endhighlight %}
 
 {% highlight json %}
-# Sample model output that is pushed to Insights
+// Sample model output that is pushed to Insights
 {
   "approved": 1,
   "risk_score": 0.08
