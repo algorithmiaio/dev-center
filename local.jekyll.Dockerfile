@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+# Prevent below apt-get line from requiring user interaction
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
   apt-get install -y \
   openssl \
