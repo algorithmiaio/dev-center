@@ -41,7 +41,7 @@ RUN bundle exec middleman build --clean
 #
 # Stage 3: build dev center
 #
-FROM ubuntu:21.04 as dev-center-builder
+FROM ubuntu:20.10 as dev-center-builder
 
 RUN apt-get update && \
   apt-get install -y \
