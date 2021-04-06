@@ -2,6 +2,7 @@ FROM ubuntu:20.04
 
 # Prevent below apt-get line from requiring user interaction
 ARG DEBIAN_FRONTEND=noninteractive
+# hadolint ignore=DL3008
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
   openssl \
