@@ -65,6 +65,7 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     libv8 (3.16.14.19)
+    libv8 (3.16.14.19-x86_64-linux)
     liquid (4.0.3)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -83,6 +84,8 @@ GEM
     mini_portile2 (2.5.0)
     multipart-post (2.1.1)
     nesty (1.0.2)
+    nokogiri (1.11.1-x86_64-linux)
+      racc (~> 1.4)
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -116,6 +119,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux-musl
 
 DEPENDENCIES
   gemoji
@@ -131,4 +135,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   2.1.4
+   2.2.14

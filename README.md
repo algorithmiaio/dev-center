@@ -1,5 +1,3 @@
-[![Run Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge?branch=master)](https://app.shippable.com/projects/56a12f721895ca447472408e)
-
 # Algorithmia Developer Center
 
 Welcome to the repository for Algorithmia's Developer Center. Here you will find guides, tutorials, sample apps, as well as some documentation on getting started with the API and basic set up.
@@ -8,98 +6,34 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 
 ## Running locally
 
-### Prerequisites
+### Initial Setup
 
-You're going to need:
+1. Install [Docker](https://www.docker.com/products/docker-desktop)
+2. Log into Docker using the `algojenkins` account. (Password in LastPass)
+3. `yarn setup`
 
-- **Linux or OS X** — Windows may work, but is unsupported.
-- **Ruby, version 2.7.2 or newer** - Avoid `sudo gem install` at all costs - see [rvm.io](https://rvm.io).
-- **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
-- **Homebrew** - If you're using a Mac, install [homebrew](https://brew.sh/) to help with the installation of imagemagick.
+### Normal Dev Workflow
 
-#### Ubuntu 16.10 Notes:
+1. `yarn dev`
+2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api/`
+
+### Building images for docker-compose
+
+If changes are made to `package.json`, `Gemfile`, or any server-related code (`server/*`, `_config-*.yml`), you'll probably want to update the docker image that docker-compose uses for local dev.
 
 ```bash
-sudo apt install ruby ruby-dev zlib1g-dev
+docker build --no-cache -t algorithmiahq/dev-center:local-dev-node-server -f local.node.Dockerfile .
+docker push algorithmiahq/dev-center:local-dev-node-server
 ```
 
-### Ubuntu (Xenial) on Chromebook Notes:
-
-```sudo apt-get install g++
-sudo apt-get install imagemagick
+```bash
+docker build --no-cache -t algorithmiahq/dev-center:local-dev-jekyll-server -f local.jekyll.Dockerfile .
+docker push algorithmiahq/dev-center:local-dev-jekyll-server
 ```
-
-### Mac OSX (High Sierra) Notes:
-
-Install imagemagick:
-
-```
-brew install imagemagick
-```
-
-Install via:
-
-```
-bundle install --path vendor/bundle
-```
-
-If installation for nokogiri fails due to libxml2 support, install it via:
-
-```
-gem install --install-dir vendor/bundle/ruby/<ruby_version_numbwe> nokogiri -v "<failing_nokogiri_version_number>" -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX<os_version_number>.sdk/usr/include/libxml2 --use-system-libraries
-```
-If installation of therubyracer gem fails due to recent changes in Catalina, do the following:
-
-```
-gem install libv8 -v '3.16.14.19' -- --with-system-v8
-rvm autolibs disable
-brew unlink v8
-brew link v8@3.15 --force
-gem install therubyracer -v 'version'
-brew unlink v8@3.15
-brew link v8
-rvm autolibs enabled
-```
-
-More info [here](https://gist.github.com/fernandoaleman/868b64cd60ab2d51ab24e7bf384da1ca) if issues persist.
-
-### Getting Set Up
-
-1.  Fork this repository on Github.
-2.  Clone _your forked repository_ with `git clone https://github.com/YOURUSERNAME/dev-center.git`
-3.  `cd dev-center`
-4.  Make sure you have [rvm](https://rvm.io/rvm/install) and [node](https://nodejs.org/en/) installed.
-5.  To set up submodules and install dependencies, run `yarn setup`.
-
-- **Do bear in mind that you will need to able to communicate with [GitHub via SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh) for this to function as expected.**
-- If you are having trouble with some of the gems, try running `bundle update`, then run `bundle install` again. If `bundle` is not available, `gem install bundler`.
-
-6.  To start both the Node and Jekyll test servers with auto-regeneration, run `yarn devcenter:dev` and `yarn server:dev` in two separate terminal windows.
-7.  If you don't need auto-regeneration, you can run `yarn start` to build static dev-center files and only start the Node server.
-
-You can now see the developer center at <http://localhost:4000/developers/>. The API docs are located at <http://localhost:4000/developers/api/>.
-
-### Running the Jekyll Dev Server
-
-To run only the Jekyll server at <http://localhost:4001/developers/>, first follow steps 1-5 above, then
-
-**To Run Public Marketplace Version:**
-
-`yarn devcenter:public`
-
-**To Run Enterprise Version:**
-
-`yarn devcenter:enterprise`
-
-**Note:** Search functionality is intentionally disabled for local development, as rebuilding the search index on each file change is terribly slow. If you need to use the same plugins in development as are used in production, update `_config-dev.yml` so that the production plugins folder is used:
-
-```plugins_dir: _plugins-prod```
 
 ## Submodules
 
-The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) and [Synapse UX Toolkit](https://github.com/algorithmiaio/synapse) are included as submodules in this project. If you make updates to either of these repositories that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
-
-If updates are made to the [api-docs](https://github.com/algorithmiaio/api-docs), **you will need to run `yarn apidocs:build` in order to see the changes**.
+The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) are included as a submodule of this project. If you make updates in this repository that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
 
 ## Making changes
 
@@ -137,13 +71,23 @@ Use `excerpt` to set the text that appears in under the article title in the col
 
 In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post.
 
+### Changing styles
+
+#### Synapse Changes
+
+[Synapse](https://github.com/algorithmiaio/synapse) is added to this project through a pre-built CSS file that lives in `css`. If any new Synapse changes are required, build a new Synapse file (see the Synapse repository for steps on how to do this), and then increment the query parameter in `_layouts/default.html` so that browsers fetch the latest version.
+
+#### Dev Center Changes
+
+Update the appropriate file within the `css` directory.
+
 ### When mentioning statistics and numbers
 
 When you're mentioning the number of algorithms in the marketplace, or the maximum number of algorithms you can call, to be consistent across the whole developer center, please use variables instead.
 
 For example, if you want to mention the number of algorithms we have in an article, use the following:
 
-```
+```text
 And if you need a pre-trained model or utility function for your project, check out the over {{site.data.stats.marketplace.total_num_algorithms}} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
 ```
 
@@ -165,37 +109,37 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 ## Environment Variables
 
-#### `ENFORCE_CSP` | Boolean
+### `ENFORCE_CSP` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, enforces a content security policy for the application.
 
-#### `DISABLE_HSTS` | Boolean
+### `DISABLE_HSTS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `Strict-Transport-Security` header on server responses.
 
-#### `DISABLE_X_CONTENT_TYPE_OPTIONS` | Boolean
+### `DISABLE_X_CONTENT_TYPE_OPTIONS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-Content-Type-Options` header on server responses.
 
-#### `DISABLE_X_FRAME_OPTIONS` | Boolean
+### `DISABLE_X_FRAME_OPTIONS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-Frame-Options` header on server responses.
 
-#### `DISABLE_X_XSS_PROTECTION` | Boolean
+### `DISABLE_X_XSS_PROTECTION` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-XSS-Protection` header on server responses.
 
-#### `PROMETHEUS_TOKEN` | Boolean
+### `PROMETHEUS_TOKEN` | Boolean
 
 **Default**: `undefined`
 

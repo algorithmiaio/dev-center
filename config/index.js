@@ -17,7 +17,8 @@ module.exports = {
     ),
     stage: {
       cspEnabled: caseInsensitiveEquals(process.env.ENFORCE_CSP, 'true'),
-      devCenterUrl: 'http://localhost:4001',
+      apiDocsUrl: 'http://slate:4567',
+      devCenterUrl: 'http://jekyll:4001',
       prometheusToken: process.env.PROMETHEUS_TOKEN,
     },
   },
