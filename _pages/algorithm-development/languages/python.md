@@ -268,7 +268,7 @@ For more information on error handling see the <a href="{{site.baseurl}}/algorit
 
 ## Algorithms with multiple files
 
-Putting everything in one source file sometimes doesn't make sense and makes code more difficult to maintain, so in many cases you'll want to break your code into multiple source files. The Algorithmia platform supports using multiple source files, but you'll need to be aware that the import paths you use locally may differ from ours.
+Putting everything in one source file sometimes doesn't make sense and makes code more difficult to maintain, so in many cases you'll want to break your code into multiple source files. For example, you might have several utility functions related to establishing a connection with an external database and then reading and writing data using that connection. To keep your code modular, you might define this functionality in a separate file that you then import into your main algorithm file where the functions are actually called. The Algorithmia platform supports using multiple source files, but you'll need to be aware that the import paths you use locally may differ from ours.
 
 This means that if your project looks like this:
 ```
