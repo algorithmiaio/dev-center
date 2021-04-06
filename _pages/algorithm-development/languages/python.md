@@ -36,7 +36,7 @@ An Algorithm Development Kit is a package that contains all of the necessary com
 
 Algorithm development begins with your project's `src/Algorithm.py` file, where you'll import the Algorithmia ADK and implement the required functions. Each algorithm must contain an `apply()` function, which defines the input point of the algorithm. We use the `apply()` function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users. When an algorithm is invoked via an API request, the body of the request is passed as `input` to our `apply()` function.
 
-Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc. 
+Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc.
 
 Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia platform. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging by alleviating the need to execute your code on the Algorithmia platform. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
 
@@ -63,7 +63,9 @@ When executed on the Algorithmia platform and providing the string "HAL 9000" as
 
 ## Loaded State
 
-Developing with the ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations. Using `load()`, we can load state into memory prior to a function's execution and then pass that data to `apply()` by adding an additional `globals` parameter in the `apply()` function. 
+When an algorithm is called, our platform checks whether there's already a running instance that's ready to handle the request, or whether a new one needs to be created. Spinning up a new algorithm instance involves overhead, and this can be substantial for algorithms with extensive code dependencies, or algorithms that need to load a significant amount of data into memory. Developing with an ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations, rather than performing these operations each time the algorithm is invoked.
+
+Using `load()`, we can load state into memory prior to a function's execution, and then access that data each time the algorithm is executed and the `apply()` method is called. We do this by returning a `globals` object in our `load()` function and passing that object as an additional parameter to the `apply()` function. 
 
 Let's add a `load()` function to the Hello World example we just created:
 
@@ -83,6 +85,8 @@ algorithm.init("Algorithmia")
 {% endhighlight %}
 
 In our load function we've created a `globals` object and added a key called `payloads` with a string value `Loading has been completed.`; we then return the `globals` object, which will be passed as input to the algorithm's `apply()` function, where we use that value as part of the algorithm's output. Executing the algorithm locally will result in `hello Algorithmia Loading has been completed.` being printed to `stdout`.
+
+If a failure occurs while executing the `load()` function, the platform will raise a `loadingError`.
 
 ## Available Libraries
 
