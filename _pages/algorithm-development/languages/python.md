@@ -30,7 +30,7 @@ Table of Contents
 
 ## What is an Algorithm Development Kit (ADK)?
 
-An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To simplify development, an ADK exposes some optional functions, along with an `apply` function that acts as the explicit entry point into your algorithm. Along with those basics, an ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
+An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To simplify development, an ADK exposes some optional functions, along with an `apply()` function that acts as the explicit entry point into your algorithm. Along with those basics, an ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
 
 ## Algorithm Project Structure
 
@@ -47,7 +47,7 @@ Let's look at an example to clarify some of these concepts.
 
 ## Hello World
 
-Below you'll find a `src/Algorithm.py` file which prints "hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
+Below you'll find a `src/Algorithm.py` file which prints "hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply()` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
 
 {% highlight python %}
 from Algorithmia import ADK
