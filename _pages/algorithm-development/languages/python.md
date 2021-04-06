@@ -30,7 +30,7 @@ Table of Contents
 
 ## What is an Algorithm Development Kit (ADK)?
 
-An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To keep things simple, an ADK exposes some optional functions, along with an `apply` function that acts as the explicit entry point into your algorithm. Along with those basics, the ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
+An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To simplify development, an ADK exposes some optional functions, along with an `apply` function that acts as the explicit entry point into your algorithm. Along with those basics, an ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
 
 ## Algorithm Project Structure
 
@@ -38,13 +38,13 @@ Algorithm development begins with your project's `src/Algorithm.py` file, where 
 
 Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc. 
 
-Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia container. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
+Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia platform. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
 
 Let's look at an example to clarify some of these concepts.
 
 ## Hello World
 
-Below you'll find a `src/Algorithm.py` file which prints "Hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
+Below you'll find a `src/Algorithm.py` file which prints "hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
 
 {% highlight python %}
 from Algorithmia import ADK
@@ -56,11 +56,11 @@ algorithm = ADK(apply)
 algorithm.init("Algorithmia")
 {% endhighlight %}
 
-When executed in an Algorithmia container and providing the string "HAL 9000" as an input, this algorithm will output "Hello HAL 9000". If executed locally, the algorithm will print `Hello Algorithmia` to `stdout` instead.
+When executed on the Algorithmia platform and providing the string "HAL 9000" as an input, this algorithm will output "hello HAL 9000". If executed locally, the algorithm will print `hello Algorithmia` to `stdout` instead.
 
 ## Loaded State
 
-Developing with the ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations. Using `load()`, we can load state into memory prior to a function's execution and then pass that data to `apply()` by adding an additional `globals` parameter in the `apply` function. 
+Developing with the ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations. Using `load()`, we can load state into memory prior to a function's execution and then pass that data to `apply()` by adding an additional `globals` parameter in the `apply()` function. 
 
 Let's add a `load()` function to the Hello World example we just created:
 
@@ -79,21 +79,21 @@ algorithm = ADK(apply, load)
 algorithm.init("Algorithmia")
 {% endhighlight %}
 
-In our load function we've created a `globals` object and added a key called `payloads` with a string value `Loading has been completed.`; we then return the globals object, which will be passed as input to the algorithm's `apply` function, where we use that value as part of the algorithm's output. Executing the algorithm locally will result in `Hello Algorithmia Loading has been completed.` being printed to `stdout`.
+In our load function we've created a `globals` object and added a key called `payloads` with a string value `Loading has been completed.`; we then return the `globals` object, which will be passed as input to the algorithm's `apply()` function, where we use that value as part of the algorithm's output. Executing the algorithm locally will result in `hello Algorithmia Loading has been completed.` being printed to `stdout`.
 
 ## Available Libraries
 
-In addition to your own code in `src/Algorithm.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
+In addition to your own code in `src/Algorithm.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of predefined environments can be found on the [Environment Matrix](/developers/algorithm-development/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_python.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
-You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
+In addition to the libraries and ML frameworks that we make available in our predefined environments, you can utilize any other open-source packages, including <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, NumPy, and many others by adding them as a dependency in your algorithm.
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. You can learn more about calling algorithms in the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client Guide</a>.
 
 ## Managing Dependencies
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a `requirements.txt` file. Add any dependencies you have by typing the package name into the `requirements.txt` file. If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
+Algorithmia supports adding third-party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file, where you can add the names of any dependencies you have. If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
 
 For example, to make use of numpy, you would include the line:
 
@@ -151,7 +151,7 @@ If we were to run this code as part of our algorithm, we should see the minimum 
 
 ### Working with Data Stored on Algorithmia
 
-This next code snippet shows how to create an algorithm that works with a data file stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
+This next code snippet shows how to create an algorithm that works with a data file stored in a [Hosted Data Collection]({{site.baseurl}}/data/hosted) on Algorithmia.
 
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?python#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?python#files).
 {: .notice-warning}
@@ -190,7 +190,7 @@ def apply(input):
       raise AlgorithmError("Please provide a valid input")
 {% endhighlight %}
 
-If you use this code in your own algorithm, you can test it by passing in a file that you've hosted in [Data Collections](/data/hosted). The code above with return both the original text and the list of each sentence split up into words.
+If you use this code in your own algorithm, you can test it by passing in a file that you've uploaded to a [Data Collection](/data/hosted). The code above will return both the original text and the list of each sentence split up into words.
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
@@ -261,7 +261,7 @@ For more information on error handling see the <a href="{{site.baseurl}}/algorit
 
 ## Algorithms with multiple files
 
-Putting everything in one source file sometimes doesn't make sense and makes code more difficult to maintain, so in many cases you'll want to break your code into multiple source files. The Algorithmia platform provides for using multiple source files, but you'll need to be aware that the import paths you use locally may differ from ours.
+Putting everything in one source file sometimes doesn't make sense and makes code more difficult to maintain, so in many cases you'll want to break your code into multiple source files. The Algorithmia platform supports using multiple source files, but you'll need to be aware that the import paths you use locally may differ from ours.
 
 This means that if your project looks like this:
 ```
@@ -301,11 +301,11 @@ from .sub_module.special_stuff import special_stuff
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
-Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
+These resources provide important information on best practices, including how to write a good algorithm description and how to add links to external documentation.
 
 ## Publish Algorithm
 
-Once you've developed your algorithm, you can publish it and make it available for others to use.
+Once you've developed your algorithm, you can publish it, which makes it available for others to use.
 
 To learn how to publish your algorithm you can refer to the Algorithm Development [Getting Started Guide]({{[site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
 
