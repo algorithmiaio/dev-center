@@ -41,8 +41,10 @@ RUN bundle exec middleman build --clean
 #
 # Stage 3: build dev center
 #
-FROM ubuntu:21.04 as dev-center-builder
+FROM ubuntu:20.04 as dev-center-builder
 
+# Prevent below apt-get line from requiring user interaction
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
   apt-get install -y \
   openssl \
