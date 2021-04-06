@@ -1,5 +1,3 @@
-[![Run Status](https://api.shippable.com/projects/56a12f721895ca447472408e/badge?branch=master)](https://app.shippable.com/projects/56a12f721895ca447472408e)
-
 # Algorithmia Developer Center
 
 Welcome to the repository for Algorithmia's Developer Center. Here you will find guides, tutorials, sample apps, as well as some documentation on getting started with the API and basic set up.
@@ -17,7 +15,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 ### Normal Dev Workflow
 
 1. `yarn dev`
-2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api`
+2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api/`
 
 ### Building images for docker-compose
 
@@ -73,13 +71,23 @@ Use `excerpt` to set the text that appears in under the article title in the col
 
 In the case of `author`, the default author can be found in `_config.yml`. The default author is Algorithmia. If you need to add yourself as an author, please fill out your author data in `_data/authors.yml`. Then, set the author field in your front-matter in the post.
 
+### Changing styles
+
+#### Synapse Changes
+
+[Synapse](https://github.com/algorithmiaio/synapse) is added to this project through a pre-built CSS file that lives in `css`. If any new Synapse changes are required, build a new Synapse file (see the Synapse repository for steps on how to do this), and then increment the query parameter in `_layouts/default.html` so that browsers fetch the latest version.
+
+#### Dev Center Changes
+
+Update the appropriate file within the `css` directory.
+
 ### When mentioning statistics and numbers
 
 When you're mentioning the number of algorithms in the marketplace, or the maximum number of algorithms you can call, to be consistent across the whole developer center, please use variables instead.
 
 For example, if you want to mention the number of algorithms we have in an article, use the following:
 
-```
+```text
 And if you need a pre-trained model or utility function for your project, check out the over {{site.data.stats.marketplace.total_num_algorithms}} algorithms and microservices that have been deployed on Algorithmia's <a href="https://algorithmia.com/algorithms">AI Marketplace</a>.
 ```
 
@@ -101,37 +109,37 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 ## Environment Variables
 
-#### `ENFORCE_CSP` | Boolean
+### `ENFORCE_CSP` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, enforces a content security policy for the application.
 
-#### `DISABLE_HSTS` | Boolean
+### `DISABLE_HSTS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `Strict-Transport-Security` header on server responses.
 
-#### `DISABLE_X_CONTENT_TYPE_OPTIONS` | Boolean
+### `DISABLE_X_CONTENT_TYPE_OPTIONS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-Content-Type-Options` header on server responses.
 
-#### `DISABLE_X_FRAME_OPTIONS` | Boolean
+### `DISABLE_X_FRAME_OPTIONS` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-Frame-Options` header on server responses.
 
-#### `DISABLE_X_XSS_PROTECTION` | Boolean
+### `DISABLE_X_XSS_PROTECTION` | Boolean
 
 **Default**: `false`
 
 **Description**: If set to `true`, disables the `X-XSS-Protection` header on server responses.
 
-#### `PROMETHEUS_TOKEN` | Boolean
+### `PROMETHEUS_TOKEN` | Boolean
 
 **Default**: `undefined`
 
