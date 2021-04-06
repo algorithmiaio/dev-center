@@ -38,7 +38,10 @@ Algorithm development begins with your project's `src/Algorithm.py` file, where 
 
 Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc. 
 
-Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia platform. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
+Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia platform. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging by alleviating the need to execute your code on the Algorithmia platform. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
+
+If youre a PyCharm user, you can refer to [this guide](https://algorithmia.com/developers/algorithm-development/advanced-algorithm-development/pycharm) to set up your IDE.
+{: .notice-info}
 
 Let's look at an example to clarify some of these concepts.
 
@@ -56,7 +59,7 @@ algorithm = ADK(apply)
 algorithm.init("Algorithmia")
 {% endhighlight %}
 
-When executed on the Algorithmia platform and providing the string "HAL 9000" as an input, this algorithm will output "hello HAL 9000". If executed locally, the algorithm will print `hello Algorithmia` to `stdout` instead.
+When executed on the Algorithmia platform and providing the string "HAL 9000" as an input, this algorithm will output "hello HAL 9000". If executed locally, such as during development or debugging, the algorithm will print `hello Algorithmia` to `stdout` instead.
 
 ## Loaded State
 
