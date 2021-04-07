@@ -9,12 +9,16 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 ### Initial Setup
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
-2. Log into Docker using the `algojenkins` account. (Password in LastPass)
+2. Log into Docker using the `algojenkins` account. (Email `devops+jenkins@algorithmia.com`, password in LastPass)
 3. `yarn setup`
+  - If you're on MacOS and don't have `yarn` yet, [you can install it globally](https://classic.yarnpkg.com/en/docs/install#mac-stable)
+  - Then, if `yarn setup` returns "The engine "node" is incompatible with this module..." error, you can first `brew install nvm` and then `nvm install 14.15.4`
+  - Once that’s installed you may need to run one final `nvm use` command to ensure node uses the latest version
+  
 
 ### Normal Dev Workflow
 
-1. `yarn dev`
+1. `yarn devcenter:dev`
 2. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api/`
 
 ### Building images for docker-compose
