@@ -58,6 +58,7 @@ Q9nOA' \
 -  issuer "iss" and audience "aud" claims must match configurations for your installation.
 -  the expiration "exp" claim is honored by our system.
 -  email and gorup claims can be configured, any other claim will be ignored.
+-  if permission tags are configured on a system under a given claim for JWT and that claim is are not contained in your JWT payload then an error will be thrown, please note the claim will accept a single string, or array of strings for a single or multiple permission tags respectively, an empty array will remove all permissions.
 
 ![Example payload of a JWT](/developers/images/post_images/jwt-sync/jwt_payload.png)
 
