@@ -24,6 +24,7 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 -  Using an external management platform for user permission(admin/sudo)
 -  Using an external management platform for granting/revoking organization membership/administration privileges
 -  Creating local users that represent validated users verified through SAML
+-  If the system is configured to accept these tags for SAML login and an attribute with the configured name is not included in your assertion an error will be thrown, if an empty array is provided for this attribute then all permissions will be removed.
 
 #### Logging in with SAML
 
