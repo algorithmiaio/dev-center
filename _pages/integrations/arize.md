@@ -116,7 +116,7 @@ def get_shap_values(model, X_data, ExplainerType=shap.Explainer, show_graph=Fals
 shap_values = get_shap_values(clf, X, show_graph=True)
 {% endhighlight %}
 
-![IMAGE OF SHAP OUTPUT](link to image)
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/arize/shap_values.png" alt="Shap values plot in Jupyter notebook" class="screenshot">
 
 The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above. {:.notice-info}
 
