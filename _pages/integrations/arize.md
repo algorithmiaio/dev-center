@@ -75,18 +75,21 @@ joblib.dump(clf, model_file_path)
 ## Uploading your trained model to Algorithmia
 Use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training envronemnt. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
 
-You'll also need to set the `COLLECTION_OWNER` string to the name of the user or org account that owns the collection to which you'll be uploading your model and from which your algorithm will then load that model. See our [Hosted Data](/developers/data/hosted) docs for information about using hosted data collections.
+You'll need to replace the `COLLECTION_OWNER` string with the name of the user or org account that owns the collection to which you'll be uploading your model and from which your algorithm will then load that model on the Algorithmia side, and the `COLLECTION_NAME` string with the name of that collection. The Algorithmia API key you're using must have write access to this data collection. See our [Hosted Data](/developers/data/hosted) docs for information about how to use hosted data collections.
 
 Finally, this code assumes that you've set the `ALGORITHMIA_API_KEY` environment variable to the value of your Algorithmia API key:
 
 {% highlight python %}
+# Define where model and sample data will live.
 CLUSTER_DOMAIN = "CLUSTER_DOMAIN"
 COLLECTION_OWNER = "COLLECTION_OWNER"
+COLLECTION_NAME = "COLLECTION_NAME"
+
 ALGORITHMIA_API_KEY = os.getenv("ALGORITHMIA_API_KEY")
 
 # Create a hosted data collection if it doesn't already exist.
 client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
-collection_uri = "data://"+COLLECTION_OWNER+"/arize_demo"
+collection_uri = "data://"+COLLECTION_OWNER+"/"+COLLECTION_NAME
 collection = client.dir(collection_uri)
 if not collection.exists():
     collection.create()
@@ -96,7 +99,7 @@ client.file(collection_uri+"/"+model_file).putFile(model_file_path)
 {% endhighlight %}
 
 ## Generating explainability values using SHAP
-SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any ML model. For in-depth details on how to use the shap library, visit [SHAP Core Explainers](https://shap-lrjball.readthedocs.io/en/docs_update/generated/shap.Explainer.html#shap-explainer). The code below creates a visual to verify that SHAP values are being properly generated for explainability:
+SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any ML model. For in-depth details on how to use the shap library, visit [SHAP Core Explainers](https://shap-lrjball.readthedocs.io/en/docs_update/generated/shap.Explainer.html#shap-explainer). The code below creates a visual to verify that SHAP values are being properly generated for explainability (to generate the plot, you'll need to install `matplotlib`):
 
 {% highlight python %}
 import shap
@@ -134,7 +137,7 @@ shap==0.39.0
 ## Deploying your model on Algorithmia
 Set the environment variables `ARIZE_API_KEY` and `ARIZE_ORG_KEY` with your Arize keys; these keys; these secrets are accessible through the [Arize Settings page](https://app.arize.com/admin).
 
-Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key, and replace the `COLLECTION_OWNER` string with the account name that owns the account where you stored the model. The Algorithmia API key you're using must have access to this data collection.
+Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key. Replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the the account name and collection name where the model is stored. The Algorithmia API key you're using must have access to this data collection.
 
 The algorithm establishes a connection with Arize using the Arize `Client`, and then uses the `Client`'s `log_bulk_predictions()` and `log_bulk_shap_values()` methods to send Arize the predictions and SHAP values for monitoring:
 
@@ -149,23 +152,23 @@ import joblib
 import pandas as pd
 import shap
 
+# Define where model and sample data live.
+COLLECTION_OWNER = "COLLECTION_OWNER"
+COLLECTION_NAME = "COLLECTION_NAME"
 
-# Load keys from environment variables.
+# Load keys from environment variables and instantiate clients.
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
 ARIZE_ORG_KEY = os.getenv("ARIZE_ORG_KEY')
 ALGORITHMIA_API_KEY = os.getenv("ALGORITHMIA_API_KEY")
 
-# Define account name that owns the collection where model and sample data live.
-COLLECTION_OWNER = "COLLECTION_OWNER"
-
-# Define path to model. These are the same paths defined in the Notebook above.
-collection_uri = "data://"+COLLECTION_OWNER+"/arize_demo"
-model_file = "Algorithmia_Tutorial_Model.joblib"
-model_file_path = collection_uri+"/"+model_file
-
-# Instantiate Arize and Algorithmia clients
 arize_client = Client(organization_key=ARIZE_ORG_KEY, api_key=ARIZE_API_KEY)
 algo_client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
+
+
+# Define path to model. These are the same paths defined in the Notebook above.
+collection_uri = "data://"+COLLECTION_OWNER+"/"+COLLECTION_NAME
+model_file = "Algorithmia_Tutorial_Model.joblib"
+model_file_path = collection_uri+"/"+model_file
 
 def load_model(data_uri):
     model_path = algo_client.file(data_uri).getFile().name
@@ -201,7 +204,7 @@ def apply(input):
         shap_values=shap_values
     )
 
-    # Return prediction for and the prediction id for each
+    # Return prediction data.
     res = pd.DataFrame(y_pred)
     res.index = ids
     res.index.rename("pred_id", inplace=True)
