@@ -177,7 +177,7 @@ clf = load_model(model_file_path)
 def apply(input):
     # Generate new predictions in production.
     X_data = pd.read_json(input)
-    y_pred = model.predict(X_data)
+    y_pred = clf.predict(X_data)
 
     shap_values = shap.Explainer(clf, X_data).shap_values(X_data)
     shap_values = pd.DataFrame(shap_values, columns=X_data.columns)
