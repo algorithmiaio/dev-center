@@ -137,7 +137,7 @@ shap==0.39.0
 ## Deploying your model on Algorithmia
 Set the environment variables `ARIZE_API_KEY` and `ARIZE_ORG_KEY` with your Arize keys; these keys; these secrets are accessible through the [Arize Settings page](https://app.arize.com/admin).
 
-Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key. Replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the the account name and collection name where the model is stored. The Algorithmia API key you're using must have access to this data collection.
+Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key if you're running the algorithm from outside of the Algorithmia Web IDE; this API key will data-read permissions. You must also replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the account name and collection name where the model is stored. 
 
 The algorithm establishes a connection with Arize using the Arize `Client`, and then uses the `Client`'s `log_bulk_predictions()` and `log_bulk_shap_values()` methods to send Arize the predictions and SHAP values for monitoring:
 
