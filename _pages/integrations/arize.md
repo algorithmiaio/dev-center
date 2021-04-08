@@ -169,7 +169,7 @@ algo_client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
 
 def load_model(data_uri):
     model_path = algo_client.file(data_uri).getFile().name
-    model = joblib.load(model_path))
+    model = joblib.load(model_path)
     return model
 
 clf = load_model(model_file_path)
