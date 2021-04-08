@@ -10,57 +10,97 @@ image:
     teaser: /language_logos/python.svg
 ---
 
-Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
+Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more. In this guide we'll cover algorithm development for Python in more depth, including making use of Algorithmia's [Algorithm Development Kit for Python](https://github.com/algorithmiaio/algorithmia-adk-python).
 
 Table of Contents
 
+* [What is an Algorithm Development Kit (ADK)?](#what-is-an-algorithm-development-kit-adk)
+* [Algorithm Project Structure](#adk-project-structure)
+* [Hello World](#hello-world)
+* [Loaded State](#loaded-state)
 * [Available Libraries](#available-libraries)
-* [Write your First Algorithm](#write-your-first-algorithm)
 * [Managing Dependencies](#managing-dependencies)
 * [I/O for your Algorithms](#io-for-your-algorithms)
+* [Calling Other Algorithms](#calling-other-algorithms)
 * [Error Handling](#error-handling)
+* [Algorithms with Multiple Files](#algorithms-with-multiple-files)
 * [Algorithm Checklist](#algorithm-checklist)
 * [Publish Algorithm](#publish-algorithm)
 * [Conclusion and Resources](#conclusion-and-resources)
 
+## What is an Algorithm Development Kit (ADK)?
+
+An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To simplify development, an ADK exposes some optional functions, along with an `apply()` function that acts as the explicit entry point into your algorithm. Along with those basics, an ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
+
+## Algorithm Project Structure
+
+Algorithm development begins with your project's `src/Algorithm.py` file, where you'll import the Algorithmia ADK and implement the required functions. Each algorithm must contain an `apply()` function, which defines the input point of the algorithm. We use the `apply()` function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users. When an algorithm is invoked via an API request, the body of the request is passed as `input` to our `apply()` function.
+
+Optionally, an algorithm can also have a `load()` function, where you can prepare your algorithm for runtime operations, such as model loading, configuration, etc.
+
+Algorithms must also contain a call to the handler function with your `apply()` and optional `load()` function as inputs. This will convert the project into an executable, rather than a library, which interacts with the `langserver` service on Algorithmia while also being debuggable via `stdin`/`stdout` when executed outside of the Algorithmia platform. An `init()` function starts the algorithm and allows you to provide an input for use when the algorithm is executed locally, bypassing `stdin` parsing and simplifying debugging by alleviating the need to execute your code on the Algorithmia platform. You can also step through your algorithm in your IDE of choice by executing your `src/Algorithm.py` script.
+
+If youre a PyCharm user, you can refer to [this guide](https://algorithmia.com/developers/algorithm-development/advanced-algorithm-development/pycharm) to set up your IDE.
+{: .notice-info}
+
+Let's look at an example to clarify some of these concepts.
+
+## Hello World
+
+Below you'll find a `src/Algorithm.py` file which prints "hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply()` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
+
+{% highlight python %}
+from Algorithmia import ADK
+
+def apply(input):
+    return "hello {}".format(str(input))
+
+algorithm = ADK(apply)
+algorithm.init("Algorithmia")
+{% endhighlight %}
+
+When executed on the Algorithmia platform and providing the string "HAL 9000" as an input, this algorithm will output "hello HAL 9000". If executed locally, such as during development or debugging, the algorithm will print `hello Algorithmia` to `stdout` instead.
+
+## Loaded State
+
+When an algorithm is called, our platform checks whether there's already a running instance that's ready to handle the request, or whether a new one needs to be created. Spinning up a new algorithm instance involves overhead, and this can be substantial for algorithms with extensive code dependencies, or algorithms that need to load a significant amount of data into memory. Developing with an ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations, rather than performing these operations each time the algorithm is invoked.
+
+Using `load()`, we can load state into memory prior to a function's execution, and then access that data each time the algorithm is executed and the `apply()` method is called. We do this by returning a `globals` object in our `load()` function and passing that object as an additional parameter to the `apply()` function. 
+
+Let's add a `load()` function to the Hello World example we just created:
+
+{% highlight python %}
+from Algorithmia import ADK
+
+def apply(input, globals):
+    return "hello {} {}".format(str(input), str(globals['payload']))
+
+def load():
+    globals = {}
+    globals['payload'] = "Loading has been completed."
+    return globals
+
+algorithm = ADK(apply, load)
+algorithm.init("Algorithmia")
+{% endhighlight %}
+
+In our load function we've created a `globals` object and added a key called `payloads` with a string value `Loading has been completed.`; we then return the `globals` object, which will be passed as input to the algorithm's `apply()` function, where we use that value as part of the algorithm's output. Executing the algorithm locally will result in `hello Algorithmia Loading has been completed.` being printed to `stdout`.
+
+If a failure occurs while executing the `load()` function, the platform will raise a `loadingError`.
+
 ## Available Libraries
 
-Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of supported environments can be found on the [Enviornment Matrix](/developers/model-deployment/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
+In addition to your own code in `src/Algorithm.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of predefined environments can be found on the [Environment Matrix](/developers/algorithm-development/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/env_dropdown_python.png" alt="Algorithm creation modal, Environment drop-down" class="screenshot">
 
-You can utilize common Python libraries such as <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, Numpy and many others by adding them as a dependency in your algorithm.
+In addition to the libraries and ML frameworks that we make available in our predefined environments, you can utilize any other open-source packages, including <a href ="{{site.baseurl}}/model-deployment/scikit/">Scikit-learn</a>, <a href ="{{site.baseurl}}/model-deployment/tensorflow/">Tensorflow</a>, NumPy, and many others by adding them as a dependency in your algorithm.
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. You can learn more about calling algorithms in the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client Guide</a>.
 
-## Write your First Algorithm
-
-If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
-
-The main thing to note about the algorithm is that it's wrapped in the apply() function.
-
-The apply() function defines the input point of the algorithm. We use the apply() function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users.
-{: .notice-info}
-
-Go ahead and remove the boilerplate code below that's inside the apply() function because we'll be writing a different algorithm in this tutorial:
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot">
-
-
 ## Managing Dependencies
 
-Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file.
-
-On the algorithm editor page there is a button on the top right that says "Dependencies". Click that button and you'll see a modal window:
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/dependencies_python.png" alt="Python Dependency File" class="screenshot img-md">
-
-If you have any dependencies you can add them by typing in the package name to the `requirements.txt` file.
-
-This guide won't depend on any external dependencies so you can close the dependencies window.
-
-If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
-{: .notice-info}
+Algorithmia supports adding third-party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file, where you can add the names of any dependencies you have. If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
 
 For example, to make use of numpy, you would include the line:
 
@@ -78,37 +118,19 @@ If you're using Python 3, the syntax has changed for imports. You'll need to use
 
 ## I/O for your Algorithms
 
-Now let's get started on the hands-on portion of the guide:
-
-The first algorithm that we'll create will take a JSON formatted object passed as input by the user which is deserialized into a Python dictionary before the algorithm is called.
-
-It will output a JSON formatted object which the user will consume with an API call to the algorithm path.
-
-This path is based on your Algorithmia user name and the name of your algorithm, so if you are “AdaDeveloper” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be AdaDeveloper/TokenizeText/0.1.1
+Algorithm input is standardized across the Algorithmia platform. Algorithms take three basic types of input: strings, JSON, and binary data. You will need to parse the algorithm's `input` as part of your `apply()` or `load()` functions.
 
 ### Working with Basic Data Structures
 
-Below is a code sample showing how to create an algorithm working with basic user input.
-
-You'll also see some error handling within the algorithm, but we recommend that you take a look at our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a> for more information.
+Below is a code sample showing how to work with basic user input in the `apply()` function. You'll also see some error handling, which we'll cover in more detail in the [Error Handling](#error-handling) section of this guide. Our input to this function is as follows:
 
 {% highlight python %}
-import Algorithmia
+{"numbers": [1, 4, 2, 6, 3]}
+{% endhighlight %}
 
-# Note that you don't pass in your API key when creating an algorithm
-client = Algorithmia.client()
+First, we'll check that the key `numbers` exists in the input and that it contains a list of numbers. We can then get the values, process them, and return a result.
 
-
-class AlgorithmError(Exception):
-    """Define error handling class."""
-
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return repr(self.value).replace("\\n", "\n")
-
-
+{% highlight python %}
 def apply(input):
     """Finds the minimum and maximum numbers in a list."""
 
@@ -126,49 +148,36 @@ def apply(input):
         # Raise helpful error message
         raise AlgorithmError(
             "Please provide a valid input that includes an array of numbers in the field 'numbers'")
-
 {% endhighlight %}
 
-Go ahead and type or paste the code sample above in the Algorithmia code editor after removing the "Hello World" code.
+If we were to run this code as part of our algorithm, we should see the minimum and maximum of the numbers in the list returned in the console:
 
-Now compile the new code sample and when that's done test the code in the console by passing in the input and hitting enter on your keyboard:
-
-{% highlight python %}
-{"numbers": [1, 4, 2, 6, 3]}
-{% endhighlight %}
-
-You should see the minimum and maximum of the numbers in the list returned in the console:
 {% highlight python %}
 {"max_num":6, "min_num":1}
 {% endhighlight %}
 
 ### Working with Data Stored on Algorithmia
 
-This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
+This next code snippet shows how to create an algorithm that works with a data file stored in a [Hosted Data Collection]({{site.baseurl}}/data/hosted) on Algorithmia.
 
 Files stored in [Hosted Data]({{site.baseurl}}/data/hosted) must be transferred into the algorithm before use, via the [getFile](https://algorithmia.com/developers/api/?python#files) method. Alternately, their contents can be transferred using [getString, getJson, or getBytes](https://algorithmia.com/developers/api/?python#files).
 {: .notice-warning}
 
-#### Prerequisites
-If you wish to follow along working through the example yourself, create a text file that contains any unstructured text such as a chapter from a public domain book or article. We used a chapter from [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight) which you can copy and paste into a text file. Or copy and paste it from here: <a href="{{site.baseurl}}/data_assets/burning_daylight.txt">Chapter One Burning Daylight, by Jack London</a>. Then you will can upload it into one of your [Data Collections](/data/hosted).
+In this example we'll provide a Data URI for the file as the input to our algorithm. We can then make use of the Algorithmia Python Client to retrieve the contents of the file, split that text into sentences, and then split the sentences into words.
 
-This example shows how to create an algorithm that takes a user's file which is stored in a data collection on the Algorithmia platform. It then splits up the text into sentences and then splits those sentences up into words:
+First, make sure to add an import for the Python client into your algorithm and instantiate the client within the `load()` function:
 
 {% highlight python %}
 import Algorithmia
 
-# Note that you don't pass in your API key when creating an algorithm
-client = Algorithmia.client()
+def load():
+    # Note that you don't pass in your API key when creating an algorithm
+    client = Algorithmia.client()
+{% endhighlight %}
 
-class AlgorithmError(Exception):
-  """Define error handling class."""
+Next, we'll parse the `input` as part of our `apply()` function, checking for the `user_file` field and then getting the contents of the file and parsing them:
 
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return repr(self.value).replace("\\n", "\n")
-
+{% highlight python %}
 def apply(input):
     """Take a user file holding text content and returns text split into words."""
 
@@ -188,21 +197,7 @@ def apply(input):
       raise AlgorithmError("Please provide a valid input")
 {% endhighlight %}
 
-After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file that you've hosted in [Data Collections](/data/hosted).
-
-Following the example below replace the path to your data collection with your user name (it will appear already if you are logged in), data collection name, and data file name which you can find under "My Collections" in [Data Collections](/data/hosted):
-
-{% highlight python %}
-{"user_file": "data://YOUR_USERNAME/data_collection_dir/data_file.txt"}
-{% endhighlight %}
-
-The code above with return both the original text and the list of each sentence split up into words.
-
-This guide uses a chapter from the public domain book [Burning Daylight, by Jack London](https://en.wikisource.org/wiki/Burning_Daylight), but for brevity we'll only show the first sentence in "text" and "words":
-
-{% highlight python %}
-{"text": "It was a quiet night in the Shovel.", "words": [['It', 'was', 'a', 'quiet', 'night', 'in', 'the', 'Shovel']]}
-{% endhighlight %}
+If you use this code in your own algorithm, you can test it by passing in a file that you've uploaded to a [Data Collection](/data/hosted). The code above will return both the original text and the list of each sentence split up into words.
 
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
@@ -225,69 +220,15 @@ save_some_output_to(tempfile)
 client.file(file_uri).putFile(tempfile)
 {% endhighlight %}
 
-### Calling Other Algorithms and Managing Data
+## Calling Other Algorithms
 
-To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
+To call other algorithms from your algorithm you can use the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a>, which is automatically available to any algorithm you create on the Algorithmia platform. For more information on calling algorithms, you can refer to the [Python Client Guide](https://algorithmia.com/developers/clients/python#calling-an-algorithm).
 
 You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
-Here is an example of creating an algorithm that relies on data from another algorithm:
-
-{% highlight python %}
-import Algorithmia
-
-# Note that you don't pass in your API key when creating an algorithm
-client = Algorithmia.client()
-
-
-class AlgorithmError(Exception):
-    """Define error handling class."""
-
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return repr(self.value).replace("\\n", "\n")
-
-
-def scrape_web(input):
-    """Call algorithm that returns main text content from a URL."""
-
-    algo = client.algo("util/Url2Text/0.1.4")
-    if "URL" in input and input["URL"].startswith("http://") or input["URL"].startswith("https://"):
-        response = algo.pipe(input["URL"]).result
-        return response
-    else:
-        # Raise helpful error message
-        raise AlgorithmError("Please provide a valid URL")
-
-def apply(input):
-    """Take user input of URL and return text split up as words."""
-
-    text = scrape_web(input)
-    # Split text into lists of sentences
-    sentences = text.split(".")
-    # Split up each sentence into words.
-    words = [item.split(" ") for item in sentences if len(item) > 0]
-    return words
-{% endhighlight %}
-
-Go ahead and try the above code sample in the Algorithmia code editor and then type the input into the console:
-{% highlight python %}
-{"URL": "http://github.com"}
-{% endhighlight %}
-
-This returns a list of words:
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console" class="screenshot">
-
-As you can see from these examples, fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.
-
-For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
-
 ## Error Handling
 
-In the above code examples we showed how to create an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:
+In the above code examples we made use of an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:
 
 {% highlight python %}
 class AlgorithmError(Exception):
@@ -306,41 +247,28 @@ And then raise the error with a helpful error message:
 raise AlgorithmError("Please provide a valid URL")
 {% endhighlight %}
 
-If you are creating an algorithm that relies on calling another algorithm you may use Algorithmia error messages for catching errors thrown by that algorithm:
+Additionally, if you are creating an algorithm that relies on calling another algorithm you may use Algorithmia error messages for catching errors thrown by that algorithm:
 
 {% highlight python %}
 import Algorithmia
 
-client = Algorithmia.client()
-# An algorithm that takes a URL
-algo = client.algo("util/Url2Text/0.1.4")
+def apply(input):
+    try:
+        print(algo.pipe(input).result)
+    except Exception as error:
+        print(error)
 
-try:
-  	print(algo.pipe(input).result)
-except Exception as error:
-    print(error)
+def load():
+    client = Algorithmia.client()
+    # An algorithm that takes a URL
+    algo = client.algo("util/Url2Text/0.1.4")
 {% endhighlight %}
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
-## Algorithm Checklist
+## Algorithms with multiple files
 
-Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
-
-Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
-
-## Publish Algorithm
-
-Once you've developed your algorithm, you can publish it and make it available for others to use.
-
-To learn how to publish your algorithm: <a href="{{site.baseurl}}/algorithm-development/your-first-algo">creating and publishing your algorithm</a>
-
-## Caveats
-#### Algorithms with multiple files
-Putting everything in one source file sometimes doesn't make sense and makes stuff hard to maintain, many times you'll want to break your code into multiple source files.
-
-Importing your secondary files contains some ceavats when
-executing your algorithm on Algorithmia, in particular the import paths you use locally may vary from ours.
+Putting everything in one source file sometimes doesn't make sense and makes code more difficult to maintain, so in many cases you'll want to break your code into multiple source files. For example, you might have several utility functions related to establishing a connection with an external database and then reading and writing data using that connection. To keep your code modular, you might define this functionality in a separate file that you then import into your main algorithm file where the functions are actually called. The Algorithmia platform supports using multiple source files, but you'll need to be aware that the import paths you use locally may differ from ours.
 
 This means that if your project looks like this:
 ```
@@ -349,15 +277,18 @@ This means that if your project looks like this:
  algorithmia.conf
  src /
       __init__.py
-      main_file.py
+      Algorithm.py
       secondary_file.py
       sub_module /
                   __init__.py
                   special_stuff.py
 
 ```
-with main_file being your main python module, your import code might look something like this:
+
+Your import code might look something like this:
+
 ```python
+from Algorithmia import ADK
 import Algorithmia
 import os
 from secondary_file import auxillary_func, some_other_func
@@ -366,20 +297,33 @@ from sub_module.special_stuff import special_stuff
 This will work fine for Python 2.  However, for Python 3, you need to use the [dot-prefix notation](https://docs.python.org/3/reference/import.html#submodules) for local files:
 
 ```python
+from Algorithmia import ADK
 import Algorithmia
 import os
 from .secondary_file import auxillary_func, some_other_func
 from .sub_module.special_stuff import special_stuff
 ```
 
+## Algorithm Checklist
+
+Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
+
+These resources provide important information on best practices, including how to write a good algorithm description and how to add links to external documentation.
+
+## Publish Algorithm
+
+Once you've developed your algorithm, you can publish it, which makes it available for others to use.
+
+To learn how to publish your algorithm you can refer to the Algorithm Development [Getting Started Guide]({{[site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
 
 ## Conclusion and Resources
 
-In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
+In this guide we covered the basics of the ADK, how to create an algorithm and work with different types of data, and learned how to publish an algorithm. You can find [complete examples](https://github.com/algorithmiaio/algorithmia-adk-python#example-workflows) in the Algorithmia Python ADK repository on GitHub, inlcuding a [Pytorch based image classification example](https://github.com/algorithmiaio/algorithmia-adk-python#pytorch-based-image-classification).
 
-For more resources:
+You might also find the following resources useful when developing your own algorithms:
 
 * <a href="{{site.baseurl}}/clients/python">Algorithmia Client Python Docs</a>
+* [Algorithmia ADK Repository on GitHub](https://github.com/algorithmiaio/algorithmia-adk-python)
 * [Hosted Data Source]({{site.baseurl}}/data)
 * [Algorithmia API Docs](http://docs.algorithmia.com/?python)
 * <a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a>
