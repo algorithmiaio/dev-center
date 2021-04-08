@@ -155,6 +155,7 @@ import shap
 # Define where model and sample data live.
 COLLECTION_OWNER = "COLLECTION_OWNER"
 COLLECTION_NAME = "COLLECTION_NAME"
+MODEL_NAME = "Algorithmia_Tutorial_Model.joblib"
 
 # Load keys from environment variables and instantiate clients.
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
@@ -165,17 +166,16 @@ arize_client = Client(organization_key=ARIZE_ORG_KEY, api_key=ARIZE_API_KEY)
 algo_client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
 
 
-# Define path to model. These are the same paths defined in the Notebook above.
-collection_uri = "data://"+COLLECTION_OWNER+"/"+COLLECTION_NAME
-model_file = "Algorithmia_Tutorial_Model.joblib"
-model_file_path = collection_uri+"/"+model_file
-
 def load_model(data_uri):
+    """Load sklearn model from data collection and return model object."""
     model_path = algo_client.file(data_uri).getFile().name
     model = joblib.load(model_path)
     return model
 
+# Load model.
+model_file_path = "data://"+COLLECTION_OWNER+"/"+COLLECTION_NAME+"/"+MODEL_NAME 
 clf = load_model(model_file_path)
+
 
 def apply(input):
     # Generate new predictions in production.
