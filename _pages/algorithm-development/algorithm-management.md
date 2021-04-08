@@ -16,7 +16,7 @@ Using the Algorithmia API, you can create, publish, update, and inspect individu
 
 ### Enabling Algorithm Management
 
-Algorithm management can be enabled when an API key is created, or any time after initial creation, by logging into your account and visiting the [credentials tab of your user profile]({{site.url}}/user#credentials). Ensure that the key you are using has an "Algorithm Access" value of either:
+Algorithm management can be enabled when an API key is created, or by editing the configuration of an existing key. To create or edit an API key, navigate to your user homepage within the Algorithmia browser UI and click the "API Keys" tab. A new API key can be created through the "Create New" button. To edit an existing key, click the three vertical dots to the right of the key and select "Edit key". In the modal, ensure that the key has an "Algorithm Access" value of either:
 
 * **Full Access** - if you'd like to allow the key to call all public and private algorithms you have access to, in addition to managing algorithms you own
 
