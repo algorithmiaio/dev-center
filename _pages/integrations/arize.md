@@ -152,6 +152,7 @@ import joblib
 import pandas as pd
 import shap
 
+
 # Define where model and sample data live.
 COLLECTION_OWNER = "COLLECTION_OWNER"
 COLLECTION_NAME = "COLLECTION_NAME"
@@ -178,8 +179,9 @@ clf = load_model(model_file_path)
 
 
 def apply(input):
-    # Generate new predictions in production.
+    # Read JSON input to pd.DataFrame.
     X_data = pd.read_json(input)
+    # Generate new predictions in production.
     y_pred = clf.predict(X_data)
 
     shap_values = shap.Explainer(clf, X_data).shap_values(X_data)
@@ -211,7 +213,38 @@ def apply(input):
     return res.to_json()
 {% endhighlight %}
 
-Once you’ve incorporated these Arize logging methods and published your algorithm, all executions of that specific version of your algorithm will send data to Arize.
+The following code is intended to be executed back in the same external environment (Jupyter notebook or external training platform) that you used above to train your algorithm, once you've built the algorithm on Algorithmia. {:.notice-info}
+
+Once you've built your algorithm, you can call it using its version hash to test it out; this will be a value like `f35025657bdc37eb0d6ffeed62b0539ee21c8b4e`. If you build your algorithm in the browser IDE, this hash is displayed in the test console output upon successful build completion, but it's also available in the "Builds" tab on the algorithm's homepage. You can also publish the algorithm, in which case you'll be able to call the algorithm using a semantic version such as `1.0.0`.
+
+In the code below, substitute the appropriate strings for `ALGO_OWNER` (the user or org account under which the algorithm was created), `ALGO_NAME` (the name of the algorithm), and `ALGO_VERSION` (the version hash or semantic version described above). As in the code above when you originally uploaded your model to Algorithmia, the `CLUSTER_DOMAIN` variable should be deleted if you aren't using an Enterprise cluster.
+
+{% highlight python %}
+import Algorithmia
+
+# Define variables to uniquely identify algorithm.
+ALGO_OWNER = "ALGO_OWNER"
+ALGO_NAME = "ALGO_NAME"
+ALGO_VERSION = "ALGO_VERSION"
+
+# Build algorithm identifier and instantiate client.
+ALGO_IDENTIFIER = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
+client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
+algo = client.algo(ALGO_IDENTIFIER)
+
+# Optionally set timeout parameters for testing purposes.
+algo.set_options(timeout=60)
+
+# Create demo data, serialize to JSON, and pipe into algorithm.
+_, X_test_2, _, y_test_2 = train_test_split(X, y, test_size=0.02)
+input = X_test.to_json()
+result_json = algo.pipe(input).result
+
+# Just like input, output is JSON object, so convert back into pd.DataFrame.
+result = pd.read_json(result_json)
+{% endhighlight %}
+
+Once you’ve incorporated these Arize logging methods and published your algorithm, every execution of your algorithm will send data to Arize.
 
 In addition to this integration with Arize, we integrate with other platforms, including training platforms and other monitoring and observability platforms; see our [Integrations](/developers/integrations) page for information.
 
