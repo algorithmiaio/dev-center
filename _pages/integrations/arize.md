@@ -140,7 +140,7 @@ The algorithm establishes a connection with Arize using the Arize `Client`, and 
 
 {% highlight python %}
 import os
-uuid
+import uuid
 
 import Algorithmia
 from arize.api import Client
