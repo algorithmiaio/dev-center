@@ -35,6 +35,7 @@ Train your model, generate some predictions, and then serialize the trained mode
 
 {% highlight python %}
 import os
+import time
 
 import Algorithmia
 import joblib
@@ -66,14 +67,14 @@ model_dir = "models/"
 if not os.path.exists(model_dir):
     os.mkdir(model_dir)
 
-# Serialize the model.
-model_file = "Algorithmia_Tutorial_Model.joblib"
+# Serialize the model, adding a unique timestamp for versioning.
+model_file = "Algorithmia_Tutorial_Model_{}.joblib".format(round(time.time()))
 model_file_path = model_dir+model_file
 joblib.dump(clf, model_file_path)
 {% endhighlight %}
 
 ## Uploading your trained model to Algorithmia
-Use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training envronemnt. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
+Use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training environment. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
 
 You'll need to replace the `COLLECTION_OWNER` string with the name of the user or org account that owns the collection to which you'll be uploading your model and from which your algorithm will then load that model on the Algorithmia side, and the `COLLECTION_NAME` string with the name of that collection. The Algorithmia API key you're using must have write access to this data collection. See our [Hosted Data](/developers/data/hosted) docs for information about how to use hosted data collections.
 
@@ -156,7 +157,10 @@ import shap
 # Define where model and sample data live.
 COLLECTION_OWNER = "COLLECTION_OWNER"
 COLLECTION_NAME = "COLLECTION_NAME"
-MODEL_NAME = "Algorithmia_Tutorial_Model.joblib"
+
+# Specify the exact model version your algorithm will be calling.
+# The timestamp (`1617923983`) will be different for your model. 
+MODEL_NAME = "Algorithmia_Tutorial_Model_1617923983.joblib"
 
 # Load keys from environment variables and instantiate clients.
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
