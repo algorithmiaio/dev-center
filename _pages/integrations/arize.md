@@ -76,7 +76,7 @@ joblib.dump(clf, model_file_path)
 ## Uploading your trained model to Algorithmia
 Use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training environment. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
 
-You'll need to replace the `COLLECTION_OWNER` string with the name of the user or org account that owns the collection to which you'll be uploading your model and from which your algorithm will then load that model on the Algorithmia side, and the `COLLECTION_NAME` string with the name of that collection. The Algorithmia API key you're using must have write access to this data collection. See our [Hosted Data](/developers/data/hosted) docs for information about how to use hosted data collections.
+You'll need to replace the `COLLECTION_OWNER` string with the name of the user or org account that owns the data collection. You'll upload your model to that data collection and in your algorithm source code you'll replace the `COLLECTION_NAME` string with the name of that data collection. The Algorithmia API key you're using must have write access to this data collection. See our [Hosted Data](/developers/data/hosted) docs for information about how to use hosted data collections.
 
 Finally, this code assumes that you've set the `ALGORITHMIA_API_KEY` environment variable to the value of your Algorithmia API key:
 
@@ -138,7 +138,7 @@ shap==0.39.0
 ## Deploying your model on Algorithmia
 Set the environment variables `ARIZE_API_KEY` and `ARIZE_ORG_KEY` with your Arize keys; these keys; these secrets are accessible through the [Arize Settings page](https://app.arize.com/admin).
 
-Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key if you're running the algorithm from outside of the Algorithmia Web IDE; this API key will data-read permissions. You must also replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the account name and collection name where the model is stored. 
+Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key if you're running the algorithm from outside of the Algorithmia Web IDE; this API key only needs to have read access. You must also replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the account name and collection name where the model is stored. 
 
 The algorithm establishes a connection with Arize using the Arize `Client`, and then uses the `Client`'s `log_bulk_predictions()` and `log_bulk_shap_values()` methods to send Arize the predictions and SHAP values for monitoring:
 
@@ -219,7 +219,7 @@ def apply(input):
 
 The following code is intended to be executed back in the same external environment (Jupyter notebook or external training platform) that you used above to train your algorithm, once you've built the algorithm on Algorithmia. {:.notice-info}
 
-Once you've built your algorithm, you can call it using its version hash to test it out; this will be a value like `f35025657bdc37eb0d6ffeed62b0539ee21c8b4e`. If you build your algorithm in the browser IDE, this hash is displayed in the test console output upon successful build completion, but it's also available in the "Builds" tab on the algorithm's homepage. You can also publish the algorithm, in which case you'll be able to call the algorithm using a semantic version such as `1.0.0`.
+Once you've built your algorithm, you can call it using its version hash to test it out; this will be a value like `f35025657bdc37eb0d6ffeed62b0539ee21c8b4e`. If you build your algorithm in the Algorithmia Web IDE, this hash is displayed in the test console output upon successful build completion, but it's also available in the "Builds" tab on the algorithm's homepage. You can also publish the algorithm, in which case you'll be able to call the algorithm using a semantic version such as `1.0.0`.
 
 In the code below, substitute the appropriate strings for `ALGO_OWNER` (the user or org account under which the algorithm was created), `ALGO_NAME` (the name of the algorithm), and `ALGO_VERSION` (the version hash or semantic version described above). As in the code above when you originally uploaded your model to Algorithmia, the `CLUSTER_DOMAIN` variable should be deleted if you aren't using an Enterprise cluster.
 
@@ -232,9 +232,9 @@ ALGO_NAME = "ALGO_NAME"
 ALGO_VERSION = "ALGO_VERSION"
 
 # Build algorithm identifier and instantiate client.
-ALGO_IDENTIFIER = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
+ALGO_ID = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
 client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
-algo = client.algo(ALGO_IDENTIFIER)
+algo = client.algo(ALGO_ID)
 
 # Optionally set timeout parameters for testing purposes.
 algo.set_options(timeout=60)
