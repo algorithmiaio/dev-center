@@ -30,6 +30,10 @@ We're constantly publishing new content in our Training Center to teach you abou
 * Using Data Sources
 * Using Organizations
 
+#### [Algorithmia Enterprise - Cluster Admin Courses](https://training.algorithmia.com/page/enterprise-20-2-admin)
+* Exploring the Admin Panel
+* Managing Advanced Workflows
+
 #### [Algorithmia Teams - Data Scientist Courses](https://training.algorithmia.com/page/teams-20-2-data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
