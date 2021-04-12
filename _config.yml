@@ -32,13 +32,15 @@ collections:
     output: true
     permalink: /:path/
 
-# Jekyll configuration
 sass:
   sass_dir: _sass
   style: compressed
+
 kramdown:
   toc_levels: 1..2
-gems:
+
+# Jekyll configuration
+plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-last-modified-at
