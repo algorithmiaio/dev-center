@@ -27,7 +27,7 @@ First, you must instantiate a `client` object to handle the request. Note that i
 
 In this example, the trained model `credit_model.pkl` is saved in a [hosted data collection](/developers/data/hosted) on Algorithmia, but it could be loaded from a [data source](/developers/data) outside of Algorithmia as well. In this example, the `COLLECTION_OWNER` string must match the account name (i.e., username) associated with the API key calling the algorithm, and the `COLLECTION_NAME` string must match the name of the hosted data collection.
 
-```
+{% highlight python %}
 import Algorithmia
 import joblib
 import pandas as pd
@@ -42,11 +42,11 @@ sk_model = joblib.load(model_path)
 def apply(input):
     predicted_probs = sk_model.predict_proba(pd.DataFrame([input]))[0]
     return f"Model prediction: {predicted_probs}."
-```
+{% endhighlight %}
 
 To add Arthur's monitoring capabilities, import Arthur's Python library and establish a connection with the platform through the `ArthurAI` class. Then, decorate the target function with `@log_inferences` to log the inference data automatically with Arthur:
 
-```
+{% highlight python %}
 import Algorithmia
 import joblib
 import pandas as pd
@@ -74,7 +74,7 @@ def model_predict(input_vec):
 def apply(input):
     prediction, inference_id = model_predict(pd.DataFrame([input]))
     return f"Logged inference {inference_id} with ArthurAI."
-```
+{% endhighlight %}
 
 Once you’ve connected your algorithm to Arthur's platform and published it, all executions of that specific version of your algorithm will send inference data to Arthur.
 
