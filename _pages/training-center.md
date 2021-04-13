@@ -23,14 +23,14 @@ If you're an experienced algorithm developer and you'd like a more detailed expl
 
 We're constantly publishing new content in our Training Center to teach you about new features, so there's always something to learn. Our latest tutorials are listed here:
 
-#### [Algorithmia Enterprise - Data Scientist Courses](https://training.algorithmia.com/page/enterprise-20-2-data-scientist)
+#### [Algorithmia Enterprise - Data Scientist Courses](https://training.algorithmia.com/page/data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
 * Using Data Sources
 * Using Organizations
 
-#### [Algorithmia Enterprise - Cluster Admin Courses](https://training.algorithmia.com/page/enterprise-20-2-admin)
+#### [Algorithmia Enterprise - Cluster Admin Courses](https://training.algorithmia.com/page/admin)
 * Exploring the Admin Panel
 * Managing Advanced Workflows
 
