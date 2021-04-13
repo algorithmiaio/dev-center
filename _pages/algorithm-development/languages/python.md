@@ -314,7 +314,7 @@ These resources provide important information on best practices, including how t
 
 Once you've developed your algorithm, you can publish it, which makes it available for others to use.
 
-To learn how to publish your algorithm you can refer to the Algorithm Development [Getting Started Guide]({{[site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
+To learn how to publish your algorithm you can refer to the Algorithm Development [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
 
 ## Conclusion and Resources
 
