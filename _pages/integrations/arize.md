@@ -13,7 +13,8 @@ image:
 
 In this guide, we'll show you how to integrate Arize with Algorithmia so you can bring their real-time monitoring capabilities to your algorithms. To make use of this integration, you'll need to have an [Arize account](https://arize.com/request-access/) configured.
 
-The following code is intended to be executed in a Jupyter notebook or on a training platform external to Algorithmia. {:.notice-info}
+The following code is intended to be executed in a Jupyter notebook or on a training platform external to Algorithmia.
+{:.notice-info}
 
 ## Training and saving your model
 To demonstrate the end-to-end workflow, you'll first walk through training a simple scikit-learn model, and then you'll see how to deploy that model on Algorithia and send metrics to Arize from within your algorithm.
@@ -122,7 +123,8 @@ shap_values = get_shap_values(clf, X, show_graph=True)
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/arize/shap_values.png" alt="Shap values plot in Jupyter notebook" class="screenshot">
 
-The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above. {:.notice-info}
+The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above.
+{:.notice-info}
 
 ## Setting up your Algorithmia environment
 To begin, on Algorithmia you'll need to [create an algorithm](/developers/algorithm-development/your-first-algo) using an environment with Python 3.6 or later. In your algorithm's `requirements.txt` file, add the Arize Python library to add the monitoring capabilities provided by Arize, as well as the `shap` library and the standard ML dependencies `joblib` and `pandas`:
@@ -217,7 +219,8 @@ def apply(input):
     return res.to_json()
 {% endhighlight %}
 
-The following code is intended to be executed back in the same external environment (Jupyter notebook or external training platform) that you used above to train your algorithm, once you've built the algorithm on Algorithmia. {:.notice-info}
+The following code is intended to be executed back in the same external environment (Jupyter notebook or external training platform) that you used above to train your algorithm, once you've built the algorithm on Algorithmia.
+{:.notice-info}
 
 Once you've built your algorithm, you can call it using its version hash to test it out; this will be a value like `f35025657bdc37eb0d6ffeed62b0539ee21c8b4e`. If you build your algorithm in the Algorithmia Web IDE, this hash is displayed in the test console output upon successful build completion, but it's also available in the "Builds" tab on the algorithm's homepage. You can also publish the algorithm, in which case you'll be able to call the algorithm using a semantic version such as `1.0.0`.
 
@@ -232,9 +235,9 @@ ALGO_NAME = "ALGO_NAME"
 ALGO_VERSION = "ALGO_VERSION"
 
 # Build algorithm identifier and instantiate client.
-ALGO_ID = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
+ALGO_ENDPOINT = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
 client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
-algo = client.algo(ALGO_ID)
+algo = client.algo(ALGO_ENDPOINT)
 
 # Optionally set timeout parameters for testing purposes.
 algo.set_options(timeout=60)
