@@ -17,8 +17,7 @@ The following video walkthrough demonstrates deploying a [scikit-learn model](/d
 
 <iframe title="SageMaker Integration" width="840" height="473" src="https://www.youtube.com/embed/jfU4KPyNC2w?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-To learn more about model deployment on Algorithmia, see our [Deployment Guides](/developers/model-deployment)]. Also, see our documentation on [Connecting Your Data](/developers/data) for more information on how to connect your algorithms to your data and model files.
+To learn more about model deployment on Algorithmia, see our [Deployment Guides](/developers/model-deployment). Also, see our documentation on [Connecting Your Data](/developers/data) for more information on how to connect your algorithms to your data and model files.
 
 If you're new to Algorithmia and would like to learn more about our product and capabilities, please [contact our sales team](https://info.algorithmia.com/contact-sales). We'd love to hear from you!
-
 
