@@ -15,7 +15,7 @@ If you're using SageMaker Notebooks to train your models, you can deploy your co
 
 The following video walkthrough demonstrates deploying a [scikit-learn model](/developers/model-deployment/scikit) trained in SageMaker.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfU4KPyNC2w" title="Deploy SageMaker models on Algorithmia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="SageMaker Integration" width="840" height="473" src="https://www.youtube.com/embed/jfU4KPyNC2w?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 To learn more about model deployment on Algorithmia, see our [Deployment Guides](/developers/model-deployment)]. Also, see our documentation on [Connecting Your Data](/developers/data) for more information on how to connect your algorithms to your data and model files.
 
