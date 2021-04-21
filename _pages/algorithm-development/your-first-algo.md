@@ -118,6 +118,6 @@ Now that you know the basics, you can check out the <a href="{{site.baseurl}}/al
 
 As you saw in this guide, you can create simple algorithms that don't read or write any data to disk. However, most algorithms you develop will need to be able to interact with some sort of data source.
 
-As an integration-first platform, we encourage you to connect to whatever data source(s) you're already using. We also enable you to host data directly on our platform for lower-latency access, and we even have several native integrationss with cloud-hosted data platforms.
+As an integration-first platform, we encourage you to connect to whatever data source(s) you're already using. We also enable you to host data directly on our platform for lower-latency access, and we even have several native integrations with cloud-hosted data platforms.
 
 See our <a href="http://docs.algorithmia.com/#data">Data API</a> docs and our <a href="{{site.baseurl}}/data">Developer Center</a> docs to get started connecting to data sources, or take the [Algorithmia Enterprise tutorial](https://training.algorithmia.com/using-data-sources) or the [Algorithmia Teams tutorial](https://training.algorithmia.com/path/teams-20-2-data-scientist/teams-20-2-using-data-sources) on our [Training Center](https://training.algorithmia.com) for a deeper dive.
