@@ -38,7 +38,7 @@ The matrix below lists the algorithm environments that are currently available o
 <div class="syn-styles-supported">
   <div class="syn-table-container scrollable-x" markdown="1">
 
-{:.syn-table.condensed}{}
+{:.syn-table.condensed}
 |Environment|Language|Framework|Pinned Dependencies|CUDA/cuDNN|Base Image|
 |---|---|---|---|---|---|
 |python37|Python 3.7|--|--|--|algorithmiahq/ubuntu:18.04|
