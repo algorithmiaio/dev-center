@@ -15,12 +15,7 @@ image:
 
 Welcome to deploying your pre-trained <a href="https://www.tensorflow.org/">Tensorflow</a> model on Algorithmia!
 
-**Currently we support tensorflow-gpu up to version 1.3.0, future versions such as the latest 1.7.0 will not function properly due to gpu limitations.**
-
-For tensorflow-gpu 1.3.0 support please add one of the following wheels to your dependencies file in replacement of `tensorflow-gpu==1.3.0`: [python2](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl) / [python3](https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl). We apologize for the inconvenience. If you run into any issues please <a onclick="Intercom('show')">let us know</a>.
-
-Update: Tensorflow 1.12 is now available in beta. Select `Python 3.x - Beta`, then `Python 3.6` or `Python 3.6 + GPU` as the "language" when creating your Algorithm, and add `tensorflow-gpu==1.12.0` to your dependencies
-{: .notice-info}
+**Currently we support tensorflow-gpu up to version 2.4.**
 
 Note: this guide uses the web UI to create and deploy your Algorithm. If you prefer a code-only approach to deployment, review [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management) after reading this guide.
 {: .notice-info}
@@ -46,7 +41,7 @@ You'll want to do the training and saving of your model on your local machine, o
 
 After training your Tensorflow model, you'll need to save it, along with its assets and variables.
 
-There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions - from Tensorflow 1.2 to the current version.
+There are a few ways to save models in different versions of Tensorflow, but below, we'll use the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">SavedModel</a> method that works with multiple versions.
 
 Because of how Tensorflow doesn't save the entire graph architecture when using saver.save & saver.restore (which require the same Tensorflow global context to be used), you'll need to use <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model/Builder">tf.saved_model.Builder</a> to save your TF model.
 {: .notice-warning}
@@ -174,7 +169,7 @@ Next, upload your Tensorflow variables and graph to your newly created data coll
 
 Hopefully you've already followed along with the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> for algorithm development. If not, you might want to check it out in order to understand the various permission types, how to enable a GPU environment, and use the CLI.
 
-Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPU's check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
+Note, that for this guide we are showing a model meant to run on a GPU enabled environment. To run the same model on CPUs check out this code sample: <a href="https://algorithmia.com/algorithms/demo/tensorflowmnistcpu">Tensorflow MNIST CPU Demo</a>
 {: .notice-info}
 
 Once you've gone through the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice that when you've created your algorithm, there is boilerplate code in the editor that returns "Hello" and whatever you input to the console.
@@ -193,24 +188,6 @@ Now is the time to set your dependencies that your model relies on.
 - Click on the **"Dependencies"** button at the top right of the UI and list your packages under the required ones already listed and click **"Save Dependencies"** on the bottom right corner.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/model_hosting/tensorflow_dependencies_gpu.png" alt="Set your dependencies" class="screenshot img-md">
-
-If you plan on using tensorflow with GPU support, make sure to use the
-<code>tensorflow-gpu</code> python package instead of the <code>tensorflow</code> one, with the version number
-<code>1.2.0</code> as shown in the dependency file in the above screenshot.
-
-<div class='notice-warning'>
-We've recently added tensorflow 1.3.0 support, however it uses custom wheels which we've built. Please replace your <code>tensorflow-gpu==1.2.0</code> line with:
-<ul>
-<li> python 2 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp27-cp27mu-linux_x86_64.whl </li>
-<li> python 3 - https://s3.amazonaws.com/algorithmia-wheels/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl </li>
-</ul>
-If you run into any issues with these wheels, please get in touch with us using intercom.
-
-Note that with the Python 2 wheel you also must add your protobuf version to the dependency. For example:
-<code>protobuf==3.0.0b2.post1</code>
-</div>
-
-If you are creating an algorithm that is utilizing CPU's instead, then go ahead and either add the Tensorflow version like this `tensorflow==1.7.0` or simply `tensorflow` to your dependency file to get the latest version.
 
 ## Load your Model
 
@@ -418,14 +395,14 @@ def apply(input):
 
 Now when you run this code, the expected input is:
 
-{% highlight python %}
+```python
 {"mnist_images": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-images-idx3-ubyte.gz", "mnist_labels": "data://YOUR_USERNAME/YOUR_DATA_COLLECTION/t10k-labels-idx1-ubyte.gz"}
-{% endhighlight %}
+```
 
 With the expected output:
-{% highlight python %}
+```python
 MNIST Predictions: {'accuracy': 0.88910013, 'prediction': array([7, 2, 1, ..., 4, 8, 6])}, TF version: 1.2.0
-{% endhighlight %}
+```
 
 Let's take a look at another example that we've implemented ourselves, the tensor names entirely depend on your graph, so replace our variables and types with yours as necessary.
 
