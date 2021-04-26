@@ -49,8 +49,6 @@ AWS_REGION_NAME = creds["AWS Generic"]["region-name"]
 dynamodb = boto3.resource("dynamodb", region_name=AWS_REGION_NAME, aws_access_key_id=AWS_ID, aws_secret_access_key=AWS_SECRET)
         
 def decimal_default(obj):
-    # Handles decimal values only
-    # TODO: test and add as necessary casting for other dynamodb data types
     if isinstance(obj, decimal.Decimal):
         return int(obj)
     raise TypeError
