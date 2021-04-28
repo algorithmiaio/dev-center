@@ -166,7 +166,7 @@ MODEL_NAME = "Algorithmia_Tutorial_Model_1617923983.joblib"
 
 # Load keys from environment variables and instantiate clients.
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
-ARIZE_ORG_KEY = os.getenv("ARIZE_ORG_KEY')
+ARIZE_ORG_KEY = os.getenv("ARIZE_ORG_KEY")
 ALGORITHMIA_API_KEY = os.getenv("ALGORITHMIA_API_KEY")
 
 arize_client = Client(organization_key=ARIZE_ORG_KEY, api_key=ARIZE_API_KEY)
