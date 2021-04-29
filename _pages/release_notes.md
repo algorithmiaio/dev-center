@@ -8,6 +8,30 @@ image:
     teaser: /icons/algo.svg
 ---
 
+# Security Enhancements Release Notes #
+
+## Introduction ##
+
+Our latest release includes a variety of new features that primarily focus on improving the governance and security of machine learning operations (MLOps) in a wide range of enterprise environments. These features further bolster our commitment to providing enterprise-grade security and governance across all data, models, and infrastructure. With the new features, enterprise customers will also get expanded capabilities to help them monitor and optimize the performance of their ML models in production. These new features are available to all Algorithmia Enterprise customers.
+
+## Enhanced security features ##
+
+We’re proud to share that we’ve expanded our security features to provide even greater protection for your business.
+
+### Secret store for external resources ###
+
+We’ve created a vault-based secret store, enabling you to create and manage credentials in a central location for access to data sources and web services. This will allow you to provide access to resources without the need to expose credentials or share them amongst the users that require access to sensitive information. Additionally, integrations with third-party vault tools to integrate with your internal vault implementation are being added.
+
+### SSO upgrades ###
+
+We now offer support for single sign-on (SSO) and Security Assertion Markup Language (SAML), allowing for a user’s login credentials to provide them access to multiple resources. This makes it possible for identity providers to securely pass authenticated identities and their attributes to service providers. 
+
+We’ve also added Active Directory (AD) group synchronization to enable a centralized location for administering a user’s permissions and providing access to shared resources. This simplifies identity and access management, allowing for synchronization of organization membership, and granting of permission to resources on the cluster, based solely on the tags present in a user’s SAML assertion.
+
+Lastly, new JSON Web Tokens (JWT) now provide verification through JSON Web Key Sets (JWKS) to support transmitting data between parties as a JSON object. This will provide users with the ability to authenticate via single sign-on, and then use a JWT to make authenticated requests to resources on the cluster.
+
+---
+
 # Q3 2020 Release Notes #
 
 ## Introduction ##
