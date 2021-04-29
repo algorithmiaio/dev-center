@@ -131,7 +131,7 @@ To begin, on Algorithmia you'll need to [create an algorithm](/developers/algori
 
 {% highlight python %}
 algorithmia>=1.0.0,<2.0
-arize>=2.1.1
+arize>=2.1.6
 joblib==1.0.1
 pandas<2.0,>=0.25.3
 shap==0.39.0
@@ -195,20 +195,14 @@ def apply(input):
 
     ids = pd.Series([str(uuid.uuid4()) for _ in range(len(X_data))])
 
-    # Log the prediction data to Arize.
-    log_responses = arize_client.log_bulk_predictions(
+    # Log prediction data to Arize, passing prediction IDs to match with actuals.
+    log_responses = arize_client.bulk_log(
         model_id="Algorithmia_Tutorial_Model",
         model_version="1.0",
         model_type=ModelTypes.BINARY,
         features=X_data,
         prediction_ids=ids,
-        prediction_labels=pd.Series(y_pred))
-
-    # Log the SHAP data to Arize.
-    shap_responses = arize_client.log_bulk_shap_values(
-        model_id="Algorithmia_Tutorial_Model",
-        # Pass in the same prediction IDs to match predictions and actuals.
-        prediction_ids=ids,
+        prediction_labels=pd.Series(y_pred),
         shap_values=shap_values
     )
 
