@@ -151,7 +151,7 @@ This Jekyll site uses several plugins to help generate content and make the site
 
 ## Contributing
 
-First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue. Please follow the [screenshot guidelines](https://algorithmia.atlassian.net/wiki/spaces/CUSTOMERS/pages/1087799391/Proposal+Reorganizing+Restructuring+Updating+Docs#Screenshots) when including screenshots.
+First, fork the repository and follow the instructions above to get set up. Make sure all your changes work locally. When you are ready, make a pull request to this repo and we will review the changes. Be sure to describe the changes, attach screenshots of any cosmetic changes, and if applicable, link to the open issue. Please follow the [screenshot guidelines](https://algorithmia.atlassian.net/wiki/spaces/CUSTOMERS/pages/1634861478/CFD+Style+Guide#Screenshots) when including screenshots.
 
 When contributing please refer to the [Algorithmia manual of style](https://docs.google.com/document/d/1PPVfgMkX7-EVGLPMhN1E485CAXu9QfhSLKM0lZhnZdU/edit?usp=sharing) for grammar, punctuation, voice, and tone.
 
