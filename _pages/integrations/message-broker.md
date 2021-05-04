@@ -19,11 +19,11 @@ Cluster administrators can set up connections to configured message brokers on e
 
 Open the Algorithmia Web user interface and log in with an admin account.
 
-Under the Admin menu, click on the "Queue Manager" menu item (under the "System Actions" category) to see a list of configured broker connections.
+Under the Admin menu, click on the "Broker Manager" menu item (under the "System Actions" category) to see a list of configured broker connections.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/broker-connection-list.png" alt="A broker connection list">
 
-To create a new broker connection, click on the "Connect queue" button. This will bring up a form where the admin will fill in the proper configuration options. When filled in, click on the "Connect to Broker" button to make the connection. When successful, the admin will see the new connection in the list of configured brokers. 
+To create a new broker connection, click on the "Connect Broker" button. This will bring up a form where the admin will fill in the proper configuration options. When filled in, click on the "Connect to Kafka Broker" button to make the connection. When successful, the admin will see the new connection in the list of configured brokers. 
 
 Currently, the only broker type supported is Kafka.
 {: .notice-info}
@@ -58,8 +58,11 @@ Click on the Algorithms menu item and select an existing algorithm that has been
 
 Clicking on the "Disable" button will present a confirmation dialog. Once confirmed, the queue will no longer process the algorithm data.
 
-Clicking on the "Enable" or "Edit button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the "Enable" or "Save" button to allow the queue to process algorithm data. 
+Clicking on the "Enable" or "Edit button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the "Enable Listener" or "Save Changes" button to allow the queue to process algorithm data. 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-enable.png" alt="Algorithm queue enable">
 
+Clicking on the "Enable Dead Letter Queue" checkbox 
+will allow you to select a Dead Letter Queue topic for an algorithm. Once a Dead Letter Queue topic name has been selected, click the "Enable Listener" or "Save Changes" button to allow faulty messages to be sent to the selected Dead Letter Queue topic name.
 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-enable-dlq.png" alt="Algorithm queue enable a Dead Letter Queue topic">
