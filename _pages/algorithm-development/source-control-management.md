@@ -15,14 +15,16 @@ redirect_from:
 ---
 When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub. In this guide we'll discuss:
 
-Oauth Based Hosting
+- [Choosing a Repository Host](#choosing-a-repository-host)
+
+OAuth Based SCM Host
 - [Choosing a Repository Host](#choosing-a-repository-host)
 - [Hosting Source Code on Algorithmia](#hosting-source-code-on-algorithmia)
 - [Hosting Source Code on GitHub](#hosting-source-code-on-github)
 - [Hosting Source Code on Bitbucket Cloud](#hosting-source-code-on-bitbucket-cloud)
 - [Hosting Source Code on GitLab](#hosting-source-code-on-gitlab)
 
-Non Oauth Based Hosting
+Non OAuth Based SCM Host
 - [Hosting Source Code on Bitbucket Server](#hosting-source-code-on-bitbucket-server)
 
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
@@ -435,7 +437,7 @@ When you revoke access to an OAuth app, GitLab automatically revokes both your t
 
 
 ### Hosting Source Code on Bitbucket Server
-**No Oauth Support** Bitbucket Server does not support oauth, so a token based flow is implemented to connect Bitbucket Server-hosted algorithms. 
+**No Oauth Support** Bitbucket Server does not support OAuth, so a token based flow is implemented to connect Bitbucket Server-hosted algorithms. 
 {: .notice-info}
 
 By hosting your algorithm's source code on Bitbucket Server, you can take advantage of Bitbucket Server's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
