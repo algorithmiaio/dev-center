@@ -16,10 +16,16 @@ redirect_from:
 When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia currently supports hosting that repository in one of two places: within the Algorithmia platform itself, or on GitHub. In this guide we'll discuss:
 
 - [Choosing a Repository Host](#choosing-a-repository-host)
+
+OAuth Based SCM Host
+- [Choosing a Repository Host](#choosing-a-repository-host)
 - [Hosting Source Code on Algorithmia](#hosting-source-code-on-algorithmia)
 - [Hosting Source Code on GitHub](#hosting-source-code-on-github)
-- [Hosting Source Code on Bitbucket](#hosting-source-code-on-bitbucket)
+- [Hosting Source Code on Bitbucket Cloud](#hosting-source-code-on-bitbucket-cloud)
 - [Hosting Source Code on GitLab](#hosting-source-code-on-gitlab)
+
+Non OAuth Based SCM Host
+- [Hosting Source Code on Bitbucket Server](#hosting-source-code-on-bitbucket-server)
 
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. Please consult your instance administrator to have GitHub enabled.
 {: .notice-info}
@@ -216,30 +222,30 @@ __I revoked access to the Algorithmia's Github OAuth application, and now none o
 When you revoke access to an OAuth app, Github automatically revokes both your token and any deploy keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-deploy-key-was-removed) on restoring deploy keys to a repository.
 
 
-### Hosting Source Code on Bitbucket
+### Hosting Source Code on Bitbucket Cloud
 
-By hosting your algorithm's source code on Bitbucket, you can take advantage of Bitbucket's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
+By hosting your algorithm's source code on Bitbucket Cloud, you can take advantage of Bitbucket Cloud's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
 
 If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we do not support editing source code in our web app for Bitbucket-hosted algorithms. 
+**Web IDE Support** At this time we do not support editing source code in our web app for Bitbucket Cloud-hosted algorithms. 
 {: .notice-info}
 
-#### Connecting Your Algorithmia & Bitbucket Accounts
+#### Connecting Your Algorithmia & Bitbucket Cloud Accounts
 
-To connect your Algorithmia and Bitbucket accounts, simply select the Bitbucket instance you wish to use when creating your algorithm:
+To connect your Algorithmia and Bitbucket Cloud accounts, simply select the Bitbucket Cloud instance you wish to use when creating your algorithm:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for Bitbucket repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for Bitbucket Cloud repository host" class="screenshot img-sm">
 
-If you haven't yet connected your Bitbucket account, you will be prompted to do so. By connecting your Bitbucket account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
+If you haven't yet connected your Bitbucket Cloud account, you will be prompted to do so. By connecting your Bitbucket Cloud account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
 
-#### Creating Algorithms with Bitbucket
+#### Creating Algorithms with Bitbucket Cloud
 
-Once you've connected your Bitbucket account to Algorithmia, you will be able to host algorithm source code in Bitbucket.
+Once you've connected your Bitbucket Cloud account to Algorithmia, you will be able to host algorithm source code in Bitbucket Cloud.
 
-You can customize two aspects of the Bitbucket repositories that are created for your algorithms: the repository's owner, and its name.
+You can customize two aspects of the Bitbucket Cloud repositories that are created for your algorithms: the repository's owner, and its name.
 
-By default, all Bitbucket respositories are created under your personal Bitbucket account. However, you may optionally choose any Bitbucket organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
+By default, all Bitbucket Cloud respositories are created under your personal Bitbucket Cloud account. However, you may optionally choose any Bitbucket Cloud organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -247,20 +253,20 @@ You may also customize the name of the repository that is created. By default th
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
-If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
+If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Cloud will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
 When we create your repository, we associate the following with it:
 
-- **An Access Key**: Bitbucket access keys allow read-only access to specific repositories, and are Bitbucket’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **An Access Key**: Bitbucket Cloud access keys allow read-only access to specific repositories, and are Bitbucket Cloud’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
-#### Updating Bitbucket-Hosted Algorithms
+#### Updating Bitbucket Cloud-Hosted Algorithms
 
-Once you've created your algorithm, any commits to your Bitbucket repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
+Once you've created your algorithm, any commits to your Bitbucket Cloud repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
 You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
 
-#### Publishing Bitbucket-Hosted Algorithms
+#### Publishing Bitbucket Cloud-Hosted Algorithms
 
 When you're ready to create a new version of your algorithm, visit that algorithm's page and select the __Builds__ tab. Locate the build corresponding to specific commit SHA you wish to use, and then click __Publish__ on the right side of the row.
 
@@ -270,24 +276,24 @@ If you don't see any builds listed, make sure that you're pushing commits to you
 
 To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl}}/platform/algorithm-profiles#algorithm-builds).
 
-#### Deleting Bitbucket-Hosted Algorithms
+#### Deleting Bitbucket Cloud-Hosted Algorithms
 
-If you wish to delete an algorithm that hosts its source code in Bitbucket, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://support.atlassian.com/bitbucket-cloud/docs/delete-a-repository/).
+If you wish to delete an algorithm that hosts its source code in Bitbucket Cloud, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://support.atlassian.com/bitbucket-cloud/docs/delete-a-repository/).
 
-#### Managing Your Bitbucket Authorization
+#### Managing Your Bitbucket Cloud Authorization
 
-If you want to review your Bitbucket authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket authorizations, or to connect your account:
+If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account:
 
-**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see Bitbucket listed within the above section until your administrator enables Bitbucket as a source host.
+**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see Bitbucket Cloud listed within the above section until your administrator enables Bitbucket Cloud as a source host.
 {: .notice-info}
 
-#### Troubleshooting Bitbucket-Hosted Algorithms
+#### Troubleshooting Bitbucket Cloud-Hosted Algorithms
 
-With the source for your algorithm hosted externally, there is a chance that our connection to Bitbucket could become disrupted. When this happens, it could be due to one of the following:
+With the source for your algorithm hosted externally, there is a chance that our connection to Bitbucket Cloud could become disrupted. When this happens, it could be due to one of the following:
 
 ##### Your Repository's Access Key Was Removed
 
-We depend on access keys to pull source code from your algorithm for building. A access key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with Bitbucket.
+We depend on access keys to pull source code from your algorithm for building. An access key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with Bitbucket Cloud.
 
 You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
 
@@ -297,29 +303,29 @@ With the access key in hand, simply follow [instructions outlined here](https://
 
 ##### Your Repository Was Deleted
 
-If your algorithm's Bitbucket repository was deleted, Bitbucket does not have a mechanism for restoring. It is essential that both the repository's access key and webhooks remain in place, otherwise we will not be able to pull your source code, or know when you make changes.
+If your algorithm's Bitbucket Cloud repository was deleted, Bitbucket Cloud does not have a mechanism for restoring. It is essential that both the repository's access key and webhooks remain in place, otherwise we will not be able to pull your source code, or know when you make changes.
 
 ##### Your Repository's Webhook Needs to be Restored
 
-We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within Bitbucket, first locate the webhook URL. This can be found on your algorithm's settings page by clicking 'View Details' under 'Bitbucket Webhook'.
+We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within Bitbucket Cloud, first locate the webhook URL. This can be found on your algorithm's settings page by clicking 'View Details' under 'Bitbucket Cloud Webhook'.
 
 You will then be presented with a modal, from which you can copy the webhook URL.
 
-Once you've found this value, visit your algorithm's repository on Bitbucket and click on the Settings tab. Click 'Webhooks' on the left side, and you'll be able to restore your webhook by entering the webhook URL.
+Once you've found this value, visit your algorithm's repository on Bitbucket Cloud and click on the Settings tab. Click 'Webhooks' on the left side, and you'll be able to restore your webhook by entering the webhook URL.
 
 #### FAQ
 
-__I'd like to reuse an existing Bitbucket repository for my algorithm. Is this possible?__
+__I'd like to reuse an existing Bitbucket Cloud repository for my algorithm. Is this possible?__
 
-At this time we are only able to use new, purpose-created repositories for Bitbucket-backed algorithms, which Algorithmia itself creates and provisions.
+At this time we are only able to use new, purpose-created repositories for Bitbucket Cloud-backed algorithms, which Algorithmia itself creates and provisions.
 
-__Can I rename or move the Bitbucket repository that backs my algorithm?__
+__Can I rename or move the Bitbucket Cloud repository that backs my algorithm?__
 
 Yes! Upon any change to your repository's name or owner we receive a webhook which we will use to update our system to point to the new repository address.
 
-__I revoked access to the Algorithmia's Bitbucket OAuth application, and now none of the repositories I created can build!__
+__I revoked access to the Algorithmia's Bitbucket Cloud OAuth application, and now none of the repositories I created can build!__
 
-When you revoke access to an OAuth app, Bitbucket automatically revokes both your token and any access keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-access-key-was-removed) on restoring access keys to a repository.
+When you revoke access to an OAuth app, Bitbucket Cloud automatically revokes both your token and any access keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-access-key-was-removed) on restoring access keys to a repository.
 
 
 
@@ -428,3 +434,62 @@ Yes! Upon any change to your repository's name or owner we receive a webhook whi
 __I revoked access to the Algorithmia's GitLab OAuth application, and now none of the repositories I created can build!__
 
 When you revoke access to an OAuth app, GitLab automatically revokes both your token and any deploy keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-deploy-key-was-removed) on restoring deploy keys to a repository.
+
+
+### Hosting Source Code on Bitbucket Server
+**No Oauth Support** Bitbucket Server does not support OAuth, so a token based flow is implemented to connect Bitbucket Server-hosted algorithms. 
+{: .notice-info}
+
+By hosting your algorithm's source code on Bitbucket Server, you can take advantage of Bitbucket Server's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
+
+If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
+
+**Web IDE Support** At this time we do not support editing source code in our web app for Bitbucket Server-hosted algorithms. 
+{: .notice-info}
+
+
+#### Creating Algorithms with Bitbucket Server
+
+To host your algorithm on Bitbucket Server, simply select the Bitbucket Server instance you wish to use when creating your algorithm.
+
+Once you've selected your Bitbucket Server instance, you will be able to host algorithm source code in Bitbucket Server.
+
+You can customize two aspects of the Bitbucket Server repositories that are created for your algorithms: the repository's owner, and its name.
+
+By default, all Bitbucket Server respositories are the project configured by your administrator. These proojects are listed in the "Repository Owner" dropdown:
+
+You may also customize the name of the repository that is created. By default the name of your algorithm is used. 
+
+If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Server will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
+
+When we create your repository, we associate the following with it:
+
+- **A Personal Access Token**: Bitbucket Server personal access tokens allow appropriate access to specific repositories, and are Bitbucket Server’s prescribed means by which external services can fetch code for building and deploying. These tokens are tied to individual permissions, and as such will not allow Algorithmia to continue building an algorithm if the permissions of the Personal Access Token changes. We also use the Personal Access Token to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
+
+#### Updating Bitbucket Server-Hosted Algorithms
+
+Once you've created your algorithm, any commits to your Bitbucket Server repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
+
+You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
+
+#### Publishing Bitbucket Server-Hosted Algorithms
+
+When you're ready to create a new version of your algorithm, visit that algorithm's page and select the __Builds__ tab. Locate the build corresponding to specific commit SHA you wish to use, and then click __Publish__ on the right side of the row.
+
+This will open a publish modal that will let you publish your algorithm.
+
+If you don't see any builds listed, make sure that you're pushing commits to your repository's _default_ branch. Builds are only triggered for commits pushed to the default branch.
+
+To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl}}/platform/algorithm-profiles#algorithm-builds).
+
+#### Deleting Bitbucket Server-Hosted Algorithms
+
+If you wish to delete an algorithm that hosts its source code in Bitbucket Server, have no fear: the repository will be left unharmed. 
+
+#### Managing Your Bitbucket Server Authorization
+
+If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Server authorizations
+
+**Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see Bitbucket Server listed within the above section until your administrator enables Bitbucket Server as a source host.
+{: .notice-info}
