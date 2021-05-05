@@ -237,15 +237,15 @@ To connect your Algorithmia and Bitbucket Cloud accounts, simply select the Bitb
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for Bitbucket Cloud repository host" class="screenshot img-sm">
 
-If you haven't yet connected your Bitbucket Cloud account, you will be prompted to do so. By connecting your Bitbucket Cloud account, you will give us access to create repositories on your behalf, which will house your algorithm's source code.
+If you haven't yet connected your Bitbucket Cloud account, you'll be prompted to do so. Your Bitbucket Cloud account will house your algorithms' source code, and by connecting it, you'll give us access to create repositories on your behalf.
 
 #### Creating Algorithms with Bitbucket Cloud
 
 Once you've connected your Bitbucket Cloud account to Algorithmia, you will be able to host algorithm source code in Bitbucket Cloud.
 
-You can customize two aspects of the Bitbucket Cloud repositories that are created for your algorithms: the repository's owner, and its name.
+You can customize two aspects of any Bitbucket Cloud repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Cloud respositories are created under your personal Bitbucket Cloud account. However, you may optionally choose any Bitbucket Cloud organizations that you are a member of. These organizations are listed in the "Repository Owner" dropdown:
+By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member. These organizations are listed in the "Repository Owner" dropdown:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -437,14 +437,14 @@ When you revoke access to an OAuth app, GitLab automatically revokes both your t
 
 
 ### Hosting Source Code on Bitbucket Server
-**No Oauth Support** Bitbucket Server does not support OAuth, so a token based flow is implemented to connect Bitbucket Server-hosted algorithms. 
+**No Oauth Support** Bitbucket Server does not support OAuth, so a token-based flow is implemented to connect Bitbucket Server-hosted algorithms. 
 {: .notice-info}
 
 By hosting your algorithm's source code on Bitbucket Server, you can take advantage of Bitbucket Server's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
 
 If you're new to Git, we recommend [this tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we do not support editing source code in our web app for Bitbucket Server-hosted algorithms. 
+**Web IDE Support** At this time we do not support editing source code in our Web IDE for Bitbucket Server-hosted algorithms. 
 {: .notice-info}
 
 
@@ -454,24 +454,22 @@ To host your algorithm on Bitbucket Server, simply select the Bitbucket Server i
 
 Once you've selected your Bitbucket Server instance, you will be able to host algorithm source code in Bitbucket Server.
 
-You can customize two aspects of the Bitbucket Server repositories that are created for your algorithms: the repository's owner, and its name.
+You can customize two aspects of any Bitbucket Server repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Server respositories are the project configured by your administrator. These proojects are listed in the "Repository Owner" dropdown:
+By default, all Bitbucket Server repositories are the project configured by your administrator. These projects are listed in the "Repository Owner" dropdown:
 
-You may also customize the name of the repository that is created. By default the name of your algorithm is used. 
-
-If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Server will accept characters outside this range, they will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
+If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Server will accept characters outside this range, it will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
 When we create your repository, we associate the following with it:
 
-- **A Personal Access Token**: Bitbucket Server personal access tokens allow appropriate access to specific repositories, and are Bitbucket Server’s prescribed means by which external services can fetch code for building and deploying. These tokens are tied to individual permissions, and as such will not allow Algorithmia to continue building an algorithm if the permissions of the Personal Access Token changes. We also use the Personal Access Token to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **A Personal Access Token**: Bitbucket Server personal access tokens allow appropriate access to specific repositories, and are Bitbucket Server’s prescribed means by which external services can fetch code for building and deploying. These tokens are tied to individual permissions, and as such will not allow Algorithmia to continue building an algorithm if the permissions of the personal access token changes. We also use the personal access token to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating Bitbucket Server-Hosted Algorithms
 
 Once you've created your algorithm, any commits to your Bitbucket Server repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be your `master` branch, but you can change this at any time in your repository's settings.
 
-You can view your algorithm's builds by heading to its landing page and clicking the "Builds" tab if you are the algorithm's owner.
+You can view your algorithm's builds by heading to its homepage and clicking the __Builds__ tab if you are the algorithm's owner.
 
 #### Publishing Bitbucket Server-Hosted Algorithms
 
@@ -489,7 +487,7 @@ If you wish to delete an algorithm that hosts its source code in Bitbucket Serve
 
 #### Managing Your Bitbucket Server Authorization
 
-If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Server authorizations
+If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Server authorizations.
 
 **Enterprise Users:** By default, new Algorithmia instances can only store source code internally within the Algorithmia platform. As such, you may not see Bitbucket Server listed within the above section until your administrator enables Bitbucket Server as a source host.
 {: .notice-info}

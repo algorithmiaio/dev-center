@@ -25,7 +25,7 @@ To view which SCMs have been configured for your Algorithmia instance, navigate 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/admin_scms/browse_scms.png" alt="Browse SCMs" class="screenshot img-sm">
 
-### Creating a SCM
+### Creating an SCM
 
 Creating and enabling a GitHub SCM will allow your users to host their algorithm source code in Github, and will keep any changes made to those repositories synced with the relevant algorithm. Both Github and GitHub Enterprise are supported.
 
@@ -42,7 +42,7 @@ These permissions are distinct from those of the creating user–this ensures th
 
 #### Create an OAuth App (Github, Gitlab, Bitbucket Cloud)
 
-The first step in configuring an OAuth based SCM is creating an OAuth application. An OAuth application allows individual users to authorize Algorithmia to act on their behalf. We securely store any authorization obtained, and only use it when necessary (such as when creating a new Github repository for an algorithm).
+The first step in configuring an OAuth-based SCM is creating an OAuth application. An OAuth application allows individual users to authorize Algorithmia to act on their behalf. We securely store any authorization obtained, and only use it when necessary (such as when creating a new Github repository for an algorithm).
 
 Please follow [these instructions](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/) to set up an OAuth application. When prompted to supply the “Authorization Callback URL”, simply provide the URL to your Algorithmia instance. For example, if your instance is accessible at `https://algorithmia.example.com`, that is the value you would enter in that field.
 
@@ -54,14 +54,14 @@ Once your OAuth application has been created, take down the following informatio
 
 #### Create Bitbucket Server Based Token
 
-The first step in configuring a Bitbucket Server based token is creating a Personal Access Token. A Personal Access Token is used to authorize Algorithmia to act on their behalf. We securely store any authorization obtained, and only use it when necessary (such as when creating a new Github repository for an algorithm).
+The first step in configuring a Bitbucket Server-based token is creating a personal access token. A personal access token is used to authorize Algorithmia to act on their behalf. We securely store any authorization obtained, and only use it when necessary (such as when creating a new Github repository for an algorithm).
 
 Next obtain the Project Token for the project that will be used for the new Bitbucket Server SCM you are creating.
 
 
 #### Create an SCM
 
-With your Github OAuth application or Bitbucket Server Tokens created, it’s time to return to your Algorithmia instance.
+With your Github OAuth application or Bitbucket Server tokens created, it’s time to return to your Algorithmia instance.
 
 If you’ve never created an SCM prior, you’ll only see a single SCM present once you navigate to the page: the “Algorithmia” SCM. Click “Add New” in the upper-right hand corner, and ensure “Github” is selected in the “Provider” field within the form that appears:
 
@@ -79,9 +79,9 @@ __OAuth Client ID__: This is the value of the “Client ID” you received durin
 
 __OAuth Client Secret__: This is the value of the “Client Secret” you received during the “Create an OAuth App” step. 
 
-In order to create a Bitbucket Server SCM, you must create a Personal Access Token in your Bitbucket Server instance and provide the Project Key of the project where you'd like repositories created. These fields replace the OAuth Client ID and OAuth Client Secret fields in the creation form when Bitbucket Server SCM is chosen from the dropdown:
+In order to create a Bitbucket Server SCM, you must create a personal access token in your Bitbucket Server instance and provide the project key of the project where you'd like repositories created. These fields replace the OAuth Client ID and OAuth Client Secret fields in the creation form when Bitbucket Server SCM is chosen from the drop-down:
 
-__Personal Access Token__: The token used by Algorithmia to create a repository for algorithms create a webhook for receiving repository events.
+__Personal Access Token__: The token used by Algorithmia to create a repository for algorithms to create a webhook for receiving repository events.
 
 __Project Key__: The project key of the project where you'd like repositories created.
 
