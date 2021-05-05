@@ -456,7 +456,7 @@ Once you've selected your Bitbucket Server instance, you will be able to host al
 
 You can customize two aspects of any Bitbucket Server repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Server repositories are the project configured by your administrator. These projects are listed in the "Repository Owner" dropdown:
+By default, all Bitbucket Server repositories are the project configured by your administrator. These projects are listed in the "Repository Owner" drop-down:
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Server will accept characters outside this range, it will replace any unsupported characters with an underscore, resulting in an undesirable repository name.
 
