@@ -8,3 +8,9 @@ cdnurl: http://localhost:4000
 isLocalDev: true
 
 plugins_dir: _plugins-dev
+
+# This is a subset of the plugins configured in _config.yml
+# Removing some plugins speeds up local dev
+plugins:
+  - jekyll-redirect-from
+  - jekyll-last-modified-at
