@@ -8,6 +8,27 @@ image:
     teaser: /icons/algo.svg
 ---
 
+# GitLab, Bitbucket Cloud, and Bitbucket Server Source Control Management Integrations Release Notes #
+
+We’ve added three new source control management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
+
+Once your cluster administrator configures a connection to an SCM provider, you can immediately create algorithms backed by a Git repository on that provider.
+
+With the implementation of GitLab, Bitbucket Cloud, and Bitbucket Server SCM integrations, users can now easily connect their hosted repositories to their Algorithmia accounts, which provides a seamless workflow from development to production. Customers that use these third-party SCM providers can leverage engineering best practices such as code reviews and dependency audits to ensure consistencies between development and production code, and CI/CD workflows to increase automation and testing of MLOps pipelines.
+
+# Algorithmia Event Flows with Kafka Release Notes #
+
+We’ve just released a new way to create event-driven algorithm workflows using Apache Kafka, a cloud-agnostic open-source message broker. Now your team’s data scientists and application developers can easily enable Kafka event-driven jobs in a user-friendly workflow while providing your cluster administrators with more granular control over who has access to connect to your Kafka broker. Among other things, Algorithmia Event Flows enable automation of workflows from model monitoring to retraining, enabling you to optimize the performance of your models in production. If you don’t already use Kafka, contact us to learn more about your options for getting started.
+
+To enable event-driven workflows using Kafka, a cluster administrator must first configure a connection to a Kafka broker—this can be any externally hosted Kafka cluster. Once that step is completed, any member of an organization can create dynamic event-driven algorithm workflows. For instance, if you have a pipeline that requires data pre-processing, you can use Algorithmia Event Flows to run a data transformation algorithm on new data as it streams into your Kafka topic. That same algorithm can then publish the processed data to a completely different Kafka topic. Further down the pipeline, you can set up another algorithm to subscribe to that second topic, and it will ingest the cleaned data as its payload.
+
+Application developers and data scientists can now easily enable Kafka event-driven algorithm workflows to create rich data and inference pipelines. Using our streamlined user interface, they can view the available event workflows that their Algorithmia cluster administrator has configured for their organization-owned algorithms. 
+
+Information security teams can be confident that the credentials used to connect to their Kafka brokers are only used by their Algorithmia cluster administrators, and that no other user can connect to or configure that broker. 
+
+Cluster administrators will also have a rich user interface to view the available organization-owned algorithms that are on the cluster and restrict the ability of specific algorithms to subscribe or publish data to a Kafka Topic to enhance the ability to control and audit data and machine learning pipelines.
+
+
 # Security Enhancements Release Notes #
 
 ## Introduction ##
