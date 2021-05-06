@@ -24,4 +24,4 @@ VOLUME  /jekyll
 
 EXPOSE 4001
 
-CMD ["bundle", "exec jekyll serve --config _config.yml,_config-dev.yml --port 4001 --host 0.0.0.0"]
+CMD ["bundle", "exec jekyll serve --config _config.yml,_config-dev.yml --port 4001 --host 0.0.0.0 --incremental --verbose"]
