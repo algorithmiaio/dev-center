@@ -39,13 +39,13 @@ client = Algorithmia.client()
 creds = client.file("data://ALGORITHMIA_ACCOUNT_NAME/SnowflakeCredentials/credentials.json").getJson()
 
 def apply(input):
-    ctx = snowflake.connector.connect(
+    con = snowflake.connector.connect(
         user=creds.get("user"),
         password=creds.get("password"),
         account=creds.get("account"),
         application=creds.get("application")
         )
-    cs = ctx.cursor()
+    cs = con.cursor()
     try:
         cs.execute("USE SNOWFLAKE_SAMPLE_DATA")
         cs.execute("SELECT * FROM TPCDS_SF100TCL.CALL_CENTER")
