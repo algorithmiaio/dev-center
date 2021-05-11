@@ -316,7 +316,7 @@ println!(response)</textarea>
 <span class="hljs-keyword">val</span> algo = client.algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
 <span class="hljs-type">System</span>.out.println(result.asString)</code></pre>
-<textarea class="copy-text" id="scala-copy-text">import com.algorithmia.*
+<textarea class="copy-text" id="scala-copy-text">import com.algorithmia.\*
 import com.algorithmia.algo.\_
 
 val input = "Your Name"
@@ -362,33 +362,6 @@ var client = new Client("API_KEY");
 var algo = client.algo(client, "algo://ALGO_OWNER/ALGO_NAME");
 var response = algo.pipe&lt;string&gt;(input);
 System.Console.WriteLine(response.result.ToString());</textarea>
-
-  </div>
-
-  <!-- GO -->
-  <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='go'" ng-cloak>
-  <pre class="getting-started-code"><code class="demo-code-sample hljs go"><span class="hljs-keyword">import</span> (
-  algorithmia <span class="hljs-string">"github.com/algorithmiaio/algorithmia-go"</span>
-)
-
-input := <span class="hljs-string">"Your Name"</span>
-
-<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API_KEY"</span>, <span class="hljs-string">""</span>)
-algo, * := client.Algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
-resp, * := algo.Pipe(input)
-response := resp.(\algorithmia.AlgoResponse)
-fmt.Println(response.Result)</code></pre>
-<textarea class="copy-text" id="go-copy-text">import (
-algorithmia "github.com/algorithmiaio/algorithmia-go"
-)
-
-input := "Your Name"
-
-var client = algorithmia.NewClient("API_KEY", "")
-algo, * := client.Algo("algo://ALGO_OWNER/ALGO_NAME")
-resp, * := algo.Pipe(input)
-response := resp.(\algorithmia.AlgoResponse)
-fmt.Println(response.Result)</textarea>
 
   </div>
 
