@@ -121,7 +121,8 @@ Once you've published your algorithm, you can call it via our API in just a few 
   <div class="tab-pane code__pane gs-pane" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs bash">POST https://api.algorithmia.com/v1/algo/ALGO_OWNER/ALGO_NAME</code></pre>
 
-  <textarea id="api-copy-text" class="copy-text curl">POST https://api.algorithmia.com/v1/algo/ALGO_OWNER/ALGO_NAME</textarea>
+<textarea id="api-copy-text" class="copy-text curl">POST https://api.algorithmia.com/v1/algo/ALGO_OWNER/ALGO_NAME</textarea>
+
   </div>
 </div>
 
@@ -149,6 +150,7 @@ The algorithm you published above takes a string as input and returns a greeting
 You can also call your algorithm using any of our supported language clients, for example from within an app. To view the code for your language of choice, toggle the drop-down language option in the box below. Further language-specific guidance is available in our [Client Guides]({{site.baseurl}}/clients).
 
 {% raw %}
+
 <div ng-controller="GettingStartedControl" ng-init="setCardContent('YOUR_USERNAME')" class="gs-code-container">
   <div class="code-toolbar ph-16 pv-8">
     <div class="btn-group dropdown">
@@ -180,12 +182,13 @@ client = Algorithmia.client(<span class="hljs-string">"API_KEY"</span>)
 algo = client.algo(<span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</span>)
 <span class="hljs-keyword">print</span>(algo.pipe(input))</code></pre>
 
-  <textarea id="python-copy-text" class="copy-text">import Algorithmia
+<textarea id="python-copy-text" class="copy-text">import Algorithmia
 
 input = "Your Name"
 client = Algorithmia.client("API_KEY")
 algo = client.algo("ALGO_OWNER/ALGO_NAME")
 print(algo.pipe(input).result)</textarea>
+
   </div>
 
   <!-- JAVA -->
@@ -199,14 +202,15 @@ Algorithm algo = client.algo(<span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</s
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asString());</code></pre>
 
-  <textarea class="copy-text" id="java-copy-text">import com.algorithmia.*;
-import com.algorithmia.algo.*;
+<textarea class="copy-text" id="java-copy-text">import com.algorithmia._;
+import com.algorithmia.algo._;
 
 String input = "Your Name"
 AlgorithmiaClient client = Algorithmia.client("API_KEY");
 Algorithm algo = client.algo("ALGO_OWNER/ALGO_NAME");
 AlgoResponse result = algo.pipe(input);
 System.out.println(result.asString());</textarea>
+
   </div>
 
   <!-- R LANG -->
@@ -218,13 +222,14 @@ client &lt;- getAlgorithmiaClient(<span class="hljs-string">"API_KEY"</span>)
 algo &lt;- client$algo(<span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</span>)
 result &lt;- algo$pipe(input)$result
 print(result)</code></pre>
-  <textarea class="copy-text" id="rlang-copy-text">library(algorithmia)
+<textarea class="copy-text" id="rlang-copy-text">library(algorithmia)
 
 input <- "Your Name"
 client <- getAlgorithmiaClient("API_KEY")
 algo <- client$algo("ALGO_OWNER/ALGO_NAME")
 result <- algo$pipe(input)$result
 print(result)</textarea>
+
   </div>
 
   <!-- JAVASCRIPT -->
@@ -272,13 +277,14 @@ client = Algorithmia.client(<span class="hljs-string">"API_KEY"</span>)
 algo = client.algo(<span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</span>)
 response = algo.pipe(input).result
 puts response</code></pre>
-  <textarea class="copy-text" id="ruby-copy-text">require 'algorithmia'
+<textarea class="copy-text" id="ruby-copy-text">require 'algorithmia'
 
 input = "Your Name"
 client = Algorithmia.client("API_KEY")
 algo = client.algo("ALGO_OWNER/ALGO_NAME")
 response = algo.pipe(input).result
 puts response</textarea>
+
   </div>
 
   <!-- RUST -->
@@ -290,13 +296,14 @@ puts response</textarea>
 <span class="hljs-keyword">let</span> algo = client.algo(<span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</span>);
 <span class="hljs-keyword">let</span> response = algo.pipe(input);
 <span class="hljs-built_in">println!</span>(response)</code></pre>
-  <textarea class="copy-text" id="rust-copy-text">use algorithmia::*;
+<textarea class="copy-text" id="rust-copy-text">use algorithmia::\*;
 
 let input = "Your Name";
 let client = Algorithmia::client("API_KEY");
 let algo = client.algo("ALGO_OWNER/ALGO_NAME");
 let response = algo.pipe(input);
 println!(response)</textarea>
+
   </div>
 
   <!-- SCALA -->
@@ -305,18 +312,19 @@ println!(response)</textarea>
 <span class="hljs-keyword">import</span> com.algorithmia.algo._
 
 <span class="hljs-keyword">val</span> input = <span class="hljs-string">"Your Name"</span>
-<span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"API_KEY"</span>)
+<span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"API*KEY"</span>)
 <span class="hljs-keyword">val</span> algo = client.algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
 <span class="hljs-type">System</span>.out.println(result.asString)</code></pre>
-  <textarea class="copy-text" id="scala-copy-text">import com.algorithmia._
-import com.algorithmia.algo._
+<textarea class="copy-text" id="scala-copy-text">import com.algorithmia.*
+import com.algorithmia.algo.\_
 
 val input = "Your Name"
 val client = Algorithmia.client("API_KEY")
 val algo = client.algo("algo://ALGO_OWNER/ALGO_NAME")
 val result = algo.pipeJson(input)
 System.out.println(result.asJsonString)</textarea>
+
   </div>
 
   <!-- SWIFT -->
@@ -326,15 +334,16 @@ System.out.println(result.asJsonString)</textarea>
 <span class="hljs-keyword">let</span> input = <span class="hljs-string">"Your Name"</span>;
 <span class="hljs-keyword">let</span> client = <span class="hljs-type">Algorithmia</span>.client(simpleKey: <span class="hljs-string">"API_KEY"</span>)
 <span class="hljs-keyword">let</span> algo = client.algo(algoUri: <span class="hljs-string">"ALGO_OWNER/ALGO_NAME"</span>) { response, error <span class="hljs-keyword">in</span>
-  <span class="hljs-built_in">print</span>(response)
+<span class="hljs-built_in">print</span>(response)
 }</code></pre>
-  <textarea class="copy-text" id="swift-copy-text">import Algorithmia
+<textarea class="copy-text" id="swift-copy-text">import Algorithmia
 
 let input = "Your Name";
 let client = Algorithmia.client(simpleKey: "API_KEY")
 let algo = client.algo(algoUri: "ALGO_OWNER/ALGO_NAME") { response, error in
-  print(response)
+print(response)
 }</textarea>
+
   </div>
 
   <!-- CSHARP -->
@@ -346,13 +355,14 @@ let algo = client.algo(algoUri: "ALGO_OWNER/ALGO_NAME") { response, error in
 <span class="hljs-keyword">var</span> algo = client.algo(client, <span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>);
 <span class="hljs-keyword">var</span> response = algo.pipe&lt;<span class="hljs-keyword">string</span>&gt;(input);
 System.Console.WriteLine(response.result.ToString());</code></pre>
-  <textarea class="copy-text" id="c-sharp-copy-text">using Algorithmia;
+<textarea class="copy-text" id="c-sharp-copy-text">using Algorithmia;
 
 var input = "Your Name";
 var client = new Client("API_KEY");
 var algo = client.algo(client, "algo://ALGO_OWNER/ALGO_NAME");
 var response = algo.pipe&lt;string&gt;(input);
 System.Console.WriteLine(response.result.ToString());</textarea>
+
   </div>
 
   <!-- GO -->
@@ -363,22 +373,23 @@ System.Console.WriteLine(response.result.ToString());</textarea>
 
 input := <span class="hljs-string">"Your Name"</span>
 
-<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API_KEY"</span>, <span class="hljs-string">""</span>)
-algo, _ := client.Algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
-resp, _ := algo.Pipe(input)
-response := resp.(*algorithmia.AlgoResponse)
+<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API*KEY"</span>, <span class="hljs-string">""</span>)
+algo, * := client.Algo(<span class="hljs-string">"algo://ALGO*OWNER/ALGO_NAME"</span>)
+resp, * := algo.Pipe(input)
+response := resp.(\*algorithmia.AlgoResponse)
 fmt.Println(response.Result)</code></pre>
-  <textarea class="copy-text" id="go-copy-text">import (
-  algorithmia "github.com/algorithmiaio/algorithmia-go"
+<textarea class="copy-text" id="go-copy-text">import (
+algorithmia "github.com/algorithmiaio/algorithmia-go"
 )
 
 input := "Your Name"
 
-var client = algorithmia.NewClient("API_KEY", "")
-algo, _ := client.Algo("algo://ALGO_OWNER/ALGO_NAME")
-resp, _ := algo.Pipe(input)
-response := resp.(*algorithmia.AlgoResponse)
+var client = algorithmia.NewClient("API*KEY", "")
+algo, * := client.Algo("algo://ALGO*OWNER/ALGO_NAME")
+resp, * := algo.Pipe(input)
+response := resp.(\*algorithmia.AlgoResponse)
 fmt.Println(response.Result)</textarea>
+
   </div>
 
   <!-- PERL -->
@@ -394,11 +405,11 @@ $req-&gt;content($post_data);
 <span class="hljs-keyword">my</span> $ua = LWP::UserAgent-&gt;new;
 <span class="hljs-keyword">my</span> $resp = $ua-&gt;request($req);
 <span class="hljs-keyword">if</span> ($resp-&gt;is_success) {
-    <span class="hljs-keyword">print</span> $resp-&gt;decoded_content;
+<span class="hljs-keyword">print</span> $resp-&gt;decoded_content;
 } <span class="hljs-keyword">else</span> {
-    <span class="hljs-keyword">print</span> <span class="hljs-string">'POST error: '</span>, $resp-&gt;code, <span class="hljs-string">': '</span>, $resp-&gt;message;
+<span class="hljs-keyword">print</span> <span class="hljs-string">'POST error: '</span>, $resp-&gt;code, <span class="hljs-string">': '</span>, $resp-&gt;message;
 }</code></pre>
-  <textarea class="copy-text" id="perl-copy-text">use LWP::UserAgent;
+<textarea class="copy-text" id="perl-copy-text">use LWP::UserAgent;
 
 my $input = 'Your Name';
 my $api_key = 'API_KEY';
@@ -409,10 +420,11 @@ $req->content($post_data);
 my $ua = LWP::UserAgent->new;
 my $resp = $ua->request($req);
 if ($resp->is_success) {
-    print $resp->decoded_content;
+print $resp->decoded_content;
 } else {
-    print 'POST error: ', $resp->code, ': ', $resp->message;
+print 'POST error: ', $resp->code, ': ', $resp->message;
 }</textarea>
+
   </div>
 
   <!-- PHP -->
@@ -468,7 +480,6 @@ $ch = curl_init();
   </div>
 </div>
 {% endraw %}
-
 
 ## Next steps
 
