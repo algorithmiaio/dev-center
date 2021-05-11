@@ -49,7 +49,7 @@ If you want to easily share source code with your colleagues and to use best pra
 
 Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your Algorithm, simply select "Algorithmia" within the source code configuration section.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_algorithmia_scm.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_algorithmia_internal.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
 
 The "Source Visibility" setting determines whether the source code for your algorithm will be viewable from other accounts on the cluster. Select "Restricted" if you'd only like algorithm owners to have access to the algorithm's source code.
 
@@ -111,7 +111,7 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 
 To connect your Algorithmia and GitHub accounts, simply select the GitHub instance you wish to use when creating your algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
 
 If you haven't yet connected your GitHub account, you'll be prompted to do so. Your GitHub account will house your algorithms' source code, and by connecting it, you'll give us access to create repositories on your behalf.
 
@@ -121,13 +121,13 @@ Once you've connected your GitHub account to Algorithmia, you'll be able to sele
 
 You can customize two aspects of any GitHub repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all GitHub repositories are created under your personal GitHub account. However, you may optionally choose to host your code under any GitHub organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
+By default, all GitHub repositories are created under your personal GitHub account. However, you may optionally choose to host your code under any GitHub organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_repo_owner.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
 You may also customize the name of the repository that's created. By default, it'll be the name of your algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_github_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_repo_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While GitHub will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
 
@@ -412,6 +412,7 @@ With the deploy key in hand, simply follow [instructions outlined here](https://
 If your algorithm's GitLab repository was deleted, GitLab does not have a mechanism for restoring easily without backups. It is essential that both the repository's deploy key and webhooks remain in place, otherwise we will not be able to pull your source code, or know when you make changes.
 
 ##### Your repository's webhook needs to be restored
+
 We depend on webhooks to notify us of changes to your algorithm's repository. To restore your webhook within GitLab, first locate the webhook URL and secret. This can be found under the "Settings" tab on your algorithm's homepage in Algorithmia. Just click "View Details" under "GitLab Webhook".
 
 You'll then be presented with a modal, from which you can copy the webhook URL and secret.
