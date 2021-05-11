@@ -179,7 +179,7 @@ We depend on [deploy keys](https://github.blog/2015-06-16-read-only-deploy-keys/
 
 You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key_2.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key_3.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
 You'll then be presented with a modal, from which you can copy the public key.
 
@@ -195,7 +195,7 @@ If your algorithm's GitHub repository was deleted, you may attempt to [restore t
 
 We depend on webhooks to notify us when changes have occurred to your algorithm's repository. To restore your webhook within GitHub, first locate the webhook URL and secret. This can be found under "Settings" on your algorithm's homepage in Algorithmia. Just click "View Details" under "GitHub Webhook".
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_webhook.png" alt="Algorithm Page WebHook Modal Button" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_webhook_2.png" alt="Algorithm Page WebHook Modal Button" class="screenshot img-sm">
 
 You'll then be presented with a modal, from which you can copy the webhook URL and secret.
 
@@ -236,7 +236,7 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 
 To connect your Algorithmia and Bitbucket Cloud accounts, simply select the Bitbucket Cloud instance you wish to use when creating your algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized.png" alt="Authorization prompt for Bitbucket Cloud repository host" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized_2.png" alt="Authorization prompt for Bitbucket Cloud repository host" class="screenshot img-sm">
 
 If you haven't yet connected your Bitbucket Cloud account, you'll be prompted to do so. Your Bitbucket Cloud account will house your algorithms' source code, and by connecting it, you'll give us access to create repositories on your behalf.
 
@@ -248,11 +248,11 @@ You can customize two aspects of any Bitbucket Cloud repository that's created f
 
 By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org_2.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
 You may also customize the name of the repository that's created. By default, it'll be the name of your algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_name_2.png" alt="Customizing your repository name" class="screenshot img-sm">
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Cloud will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
 
@@ -353,11 +353,11 @@ You can customize two aspects of the GitLab repositories that are created for yo
 
 By default, all GitLab respositories are created under your personal GitLab account. However, you may optionally choose any GitLab organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_org_2.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
 You may also customize the name of the repository that's created. By default, it'll be the name of your algorithm.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_name.png" alt="Customizing your repository name" class="screenshot img-sm">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_name_2.png" alt="Customizing your repository name" class="screenshot img-sm">
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While GitLab will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
 
