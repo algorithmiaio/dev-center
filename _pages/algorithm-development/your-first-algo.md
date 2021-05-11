@@ -135,8 +135,7 @@ The algorithm you published above takes a string as input and returns a greeting
   </div>
 
   <div class="tab-pane code__pane gs-pane" ng-cloak>
-  <pre class="getting-started-code">
-  <code class="demo-code-sample hljs bash">curl -X POST https://api.algorithmia.com/v1/algo/ALGO_OWNER/ALGO_NAME \
+  <pre class="getting-started-code"><code class="demo-code-sample hljs bash">curl -X POST https://api.algorithmia.com/v1/algo/ALGO_OWNER/ALGO_NAME \
        -H <span class="hljs-string">'Content-Type: application/json'</span> \
        -H <span class="hljs-string">'Authorization: Simple API_KEY'</span> \
        -d <span class="hljs-string">'"Your Name"'</span></code></pre>
