@@ -246,7 +246,7 @@ Once you've connected your Bitbucket Cloud account to Algorithmia, you'll be abl
 
 You can customize two aspects of any Bitbucket Cloud repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" dropdown:
+By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -351,7 +351,7 @@ Once you've connected your GitLab account to Algorithmia, you'll be able to host
 
 You can customize two aspects of the GitLab repositories that are created for your algorithms: the repository's owner, and its name.
 
-By default, all GitLab respositories are created under your personal GitLab account. However, you may optionally choose any GitLab organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" dropdown:
+By default, all GitLab respositories are created under your personal GitLab account. However, you may optionally choose any GitLab organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_org.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
