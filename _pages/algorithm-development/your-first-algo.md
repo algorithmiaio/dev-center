@@ -21,26 +21,26 @@ We'll develop an algorithm in Python, but all the steps shown here are the same 
 Note: this guide uses Algorithmia's browser UI to create and deploy your algorithm. If you prefer a code-only approach to development, see [Algorithm Management]({{site.baseurl}}/algorithm-development/algorithm-management).
 {: .notice-info}
 
-Table of Contents
+Table of contents
 
-- [Creating Your First Algorithm](#creating-your-first-algorithm)
-- [Developing Your Algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
-- [Publishing Your Algorithm](#publishing-your-algorithm)
-- [Next Steps](#next-steps)
+- [Creating your first algorithm](#creating-your-first-algorithm)
+- [Developing your algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
+- [Publishing your algorithm](#publishing-your-algorithm)
+- [Next steps](#next-steps)
 
-## Creating Your First Algorithm
+## Creating your first algorithm
 
 To get started, navigate to [Algorithmia](/), click the "Create New" button in the upper-right corner, and select the "Algorithm" option. This will navigate you to a modal, which you'll fill out step-by-step below.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/add_algorithm.png" alt="Add algorithm navigation" class="screenshot img-sm">
 
-### Algorithm Owner & Name
+### Owner and name
 
 Select your account name as the algorithm owner, and provide a descriptive name for your algorithm. For example, in <a href="https://algorithmia.com/blog/introduction-natural-language-processing-nlp" target="_blank">natural language processing</a>, the process of splitting up text into discreet words is called tokenizing, so an algorithm that performs this function could be called "TokenizeText". Your algorithm's name will serve as its unique identifier on the platform, and it will be used to call your algorithm via the API.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create_algorithm_algo_details.png" alt="Configure your algorithm's owner and name" class="screenshot img-sm">
 
-### Source Code
+### Source code
 
 In this section, you can customize the visibility, licensing, and hosting of your algorithm's source code. For your algorithm, just leave the defaults so that the source code is hosted privately on our platform under the [Algorithmia Platform License](https://algorithmia.com/api_dev_terms). You can read more about creating algorithms with GitHub or GitHub Enterprise in our [Source Code Management](/developers/algorithm-development/source-code-management/) docs.
 
@@ -68,7 +68,7 @@ Click the "Create New Algorithm" button at the bottom of the form and you'll see
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/create-algo-cli.png" alt="cli info modal" class="screenshot img-md">
 
-## Developing Your Algorithm In the Web IDE
+## Developing your algorithm in the Web IDE
 
 To access Algorithmia's built-in Web IDE, click the "Web IDE" button in the modal, or click the **Source Code** tab from your newly created algorithm's homepage if the modal is no longer shown.
 
@@ -91,7 +91,7 @@ If you'd like, you can edit the source code, for example by changing it to retur
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/compile_test_algorithm_python.png" alt="Run basic algorithm in console Python" class="screenshot">
 
-## Publishing Your Algorithm
+## Publishing your algorithm
 
 The best part of developing on Algorithmia is that you and other users can call your algorithms via an API that takes only a few lines of code to use! To enable this, you must first start the publishing flow by clicking the purple "Publish" button at the upper-right corner of the source code editor.
 
@@ -107,7 +107,7 @@ In the **Configure Settings** step you can select whether your algorithm will be
 
 If you're satisfied with your algorithm code, behavior, and settings, go ahead and hit "Publish". Congratulations, you’re an algorithm developer!
 
-## Calling Your Algorithm
+## Calling your algorithm
 
 Once you've published your algorithm, you can call it via our API in just a few lines of code. Let's first see what this looks like using cURL from the command line. To call your algorithm you'll send a `POST` request to the following API endpoint, where `ALGO_NAME` is the name of the algorithm you just created, and `ALGO_OWNER` is your account name.
 
@@ -470,15 +470,15 @@ $ch = curl_init();
 {% endraw %}
 
 
-## Next Steps
+## Next steps
 
 Now that you've published your first simple algorithm on the platform, you're empowered to start developing much more complex and useful algorithms. You can write them from scratch, adopt and modify open-source algorithms, and even pipeline multiple algorithms together. Once published, your algorithms will become versioned API endpoints that you can consume from external applications with just a few lines of code!
 
-### Language Guides
+### Language guides
 
 Now that you know the basics, you can check out the <a href="{{site.baseurl}}/algorithm-development/languages">Language Guides</a> to learn how to write algorithms in whichever language you prefer; we support R, Python, Rust, Ruby, Java, Scala, and JavaScript.
 
-### Connecting to Data
+### Connecting to data
 
 As you saw in this guide, you can create simple algorithms that don't read or write any data to disk. However, most algorithms you develop will need to be able to interact with some sort of data source.
 
