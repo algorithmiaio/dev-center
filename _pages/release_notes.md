@@ -28,6 +28,7 @@ Information security teams can be confident that the credentials used to connect
 
 Cluster administrators will also have a rich user interface to view the available organization-owned algorithms that are on the cluster and restrict the ability of specific algorithms to subscribe or publish data to a Kafka Topic to enhance the ability to control and audit data and machine learning pipelines.
 
+---
 
 # Security Enhancements Release Notes #
 
