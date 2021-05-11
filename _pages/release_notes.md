@@ -8,7 +8,7 @@ image:
     teaser: /icons/algo.svg
 ---
 
-# GitLab, Bitbucket Cloud, and Bitbucket Server Source Control Management Integrations Release Notes #
+## GitLab, Bitbucket Cloud, and Bitbucket Server Source Control Management Integrations Release Notes ##
 
 We’ve added three new source control management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
 
@@ -16,7 +16,9 @@ Once your cluster administrator configures a connection to an SCM provider, you 
 
 With the implementation of GitLab, Bitbucket Cloud, and Bitbucket Server SCM integrations, users can now easily connect their hosted repositories to their Algorithmia accounts, which provides a seamless workflow from development to production. Customers that use these third-party SCM providers can leverage engineering best practices such as code reviews and dependency audits to ensure consistencies between development and production code, and CI/CD workflows to increase automation and testing of MLOps pipelines.
 
-# Algorithmia Event Flows with Kafka Release Notes #
+---
+
+## Algorithmia Event Flows with Kafka Release Notes ##
 
 We’ve just released a new way to create event-driven algorithm workflows using Apache Kafka, a cloud-agnostic open-source message broker. Now your team’s data scientists and application developers can easily enable Kafka event-driven jobs in a user-friendly workflow while providing your cluster administrators with more granular control over who has access to connect to your Kafka broker. Among other things, Algorithmia Event Flows enable automation of workflows from model monitoring to retraining, enabling you to optimize the performance of your models in production. If you don’t already use Kafka, contact us to learn more about your options for getting started.
 
@@ -30,21 +32,21 @@ Cluster administrators will also have a rich user interface to view the availabl
 
 ---
 
-# Security Enhancements Release Notes #
+## Security Enhancements Release Notes ##
 
-## Introduction ##
+### Introduction ###
 
 Our latest release includes a variety of new features that primarily focus on improving the governance and security of machine learning operations (MLOps) in a wide range of enterprise environments. These features further bolster our commitment to providing enterprise-grade security and governance across all data, models, and infrastructure. With the new features, enterprise customers will also get expanded capabilities to help them monitor and optimize the performance of their ML models in production. These new features are available to all Algorithmia Enterprise customers.
 
-## Enhanced security features ##
+### Enhanced security features ###
 
 We’re proud to share that we’ve expanded our security features to provide even greater protection for your business.
 
-### Secret store for external resources ###
+#### Secret store for external resources ####
 
 We’ve created a vault-based secret store, enabling you to create and manage credentials in a central location for access to data sources and web services. This will allow you to provide access to resources without the need to expose credentials or share them amongst the users that require access to sensitive information. Additionally, integrations with third-party vault tools to integrate with your internal vault implementation are being added.
 
-### SSO upgrades ###
+#### SSO upgrades ####
 
 We now offer support for single sign-on (SSO) and Security Assertion Markup Language (SAML), allowing for a user’s login credentials to provide them access to multiple resources. This makes it possible for identity providers to securely pass authenticated identities and their attributes to service providers. 
 
@@ -54,25 +56,25 @@ Lastly, new JSON Web Tokens (JWT) now provide verification through JSON Web Key 
 
 ---
 
-# Q3 2020 Release Notes #
+## Q3 2020 Release Notes ##
 
-## Introduction ##
+### Introduction ###
 
 This is an exciting release for Algorithmia Enterprise as we continue to deliver new and significant capabilities for our customers. Notably, this release focuses on advanced model governance and operational management with Algorithmia Insights. Additionally, customers can reach even higher scale, performance, and infrastructure efficiency with our new autoscaler and scheduler technology.
 
-## Algorithmia Insights ##
+### Algorithmia Insights ###
 
 Algorithmia Insights is a flexible integration solution for ML model performance monitoring. It provides access to algorithm inference and operational metrics, making it easy to integrate into any monitoring, reporting, and alerting tool.
 
 Algorithmia Insights allows customers to emit a rich metrics payload from every prediction, including model operational metrics (execution time, timestamp, request ID) and customized model inference metrics such as data inputs and prediction outputs. Customers can then integrate those metrics via Kafka into nearly any external logging, monitoring, or data visualization system.
 
-### Enabling Algorithmia Insights ###
+#### Enabling Algorithmia Insights ####
 
 Algorithmia Insights is available to Enterprise customers for deployments scheduled after the feature release date of October 30 and will be included in Enterprise subscriptions.
 
 To enable Algorithmia Insights, your cluster administrator can follow the [administrator docs](/developers/algorithmia-enterprise/algorithmia-insights) to learn how to configure the connection to Kafka. After your cluster administrator has connected to Kafka, algorithm creators can enable Algorithmia Insights with a click of a checkbox when publishing their algorithm. It’s that easy to then view all the algorithm metrics that have been enabled in monitoring and alerting tools such as DataDog, InfluxDB, New Relic, Grafana, Kibana, and more.
 
-### Monitoring, alerting, and taking action based on Algorithmia Insights ###
+#### Monitoring, alerting, and taking action based on Algorithmia Insights ####
 
 Many organizations today don’t have the ability to monitor model performance, and those that do use a patchwork of disparate tools and manual processes for monitoring and reporting on ML model performance in production often without critical data required to satisfy stakeholder requirements. Algorithmia Insights enables you to:
 
@@ -84,7 +86,7 @@ Many organizations today don’t have the ability to monitor model performance, 
 
 With Algorithmia Insights, you can use the monitoring and alerting tools of your choice, with no vendor lock-in. You have control over the data you choose to emit, and the system you connect to. You can access your metrics via Kafka and connect it to a real-time monitoring or alerting tool, or check out [Kafka Connect](https://docs.confluent.io/3.0.1/connect/intro.html#:~:text=Kafka%20Connect%20is%20a%20tool,into%20and%20out%20of%20Kafka.) to learn how to export your metrics offline to do analysis later. 
 
-## New autoscaler and scheduler ##
+### New autoscaler and scheduler ###
 
 What has set us apart from other ML platforms in the market today is our ability to manage algorithm execution at scale. With this release, we have taken scaling to a whole new level by providing more robust worker management and algorithm execution pipelining, resulting in dramatically higher throughput and efficient worker utilization. Along with these performance and operational improvements comes new administrator pages, Grafana dashboards, and alerts. 
 
