@@ -312,7 +312,7 @@ println!(response)</textarea>
 <span class="hljs-keyword">import</span> com.algorithmia.algo._
 
 <span class="hljs-keyword">val</span> input = <span class="hljs-string">"Your Name"</span>
-<span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"API*KEY"</span>)
+<span class="hljs-keyword">val</span> client = <span class="hljs-type">Algorithmia</span>.client(<span class="hljs-string">"API_KEY"</span>)
 <span class="hljs-keyword">val</span> algo = client.algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
 <span class="hljs-keyword">val</span> result = algo.pipeJson(input)
 <span class="hljs-type">System</span>.out.println(result.asString)</code></pre>
@@ -373,10 +373,10 @@ System.Console.WriteLine(response.result.ToString());</textarea>
 
 input := <span class="hljs-string">"Your Name"</span>
 
-<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API*KEY"</span>, <span class="hljs-string">""</span>)
-algo, * := client.Algo(<span class="hljs-string">"algo://ALGO*OWNER/ALGO_NAME"</span>)
+<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API_KEY"</span>, <span class="hljs-string">""</span>)
+algo, * := client.Algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
 resp, * := algo.Pipe(input)
-response := resp.(\*algorithmia.AlgoResponse)
+response := resp.(\algorithmia.AlgoResponse)
 fmt.Println(response.Result)</code></pre>
 <textarea class="copy-text" id="go-copy-text">import (
 algorithmia "github.com/algorithmiaio/algorithmia-go"
@@ -384,10 +384,10 @@ algorithmia "github.com/algorithmiaio/algorithmia-go"
 
 input := "Your Name"
 
-var client = algorithmia.NewClient("API*KEY", "")
-algo, * := client.Algo("algo://ALGO*OWNER/ALGO_NAME")
+var client = algorithmia.NewClient("API_KEY", "")
+algo, * := client.Algo("algo://ALGO_OWNER/ALGO_NAME")
 resp, * := algo.Pipe(input)
-response := resp.(\*algorithmia.AlgoResponse)
+response := resp.(\algorithmia.AlgoResponse)
 fmt.Println(response.Result)</textarea>
 
   </div>
