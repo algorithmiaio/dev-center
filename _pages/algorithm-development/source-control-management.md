@@ -38,20 +38,20 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 
 Before we dive into the repository hosts Algorithmia supports, let's discuss the various use cases that best fit each type.
 
-If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in Web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should choose Algorithmia as your repository host. This is the simplest way to get started with the platform, but presents limitations when it comes to using collaboration tools outside the platform.
+If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in Web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should choose Algorithmia as your repository host. This is the simplest way to get started with the platform, but presents limitations when it comes to using external collaboration tools.
 
 If you want to easily share source code with your colleagues and to use best practices like code reviews, we recommend an external repository host. This does mean that our browser-based Web IDE won't be available for use, but the configuration will allow you to more flexibly manage access to your source code and integrate with any existing SCM workflows you may use.
 
-**Algorithm Migration** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by a different SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
+**Algorithm Migration** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by the target SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
 {: .notice-info}
 
 ### Hosting source code on Algorithmia
 
-Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your Algorithm, simply select "Algorithmia" within the source code configuration section.
+Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your algorithm, simply select "Algorithmia" as the "repository host" within the source code configuration section.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_algorithmia_internal.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
 
-The "Source Visibility" setting determines whether the source code for your algorithm will be viewable from other accounts on the cluster. Select "Restricted" if you'd only like algorithm owners to have access to the algorithm's source code.
+The "source visibility" setting determines whether the source code for your algorithm will be viewable from other accounts on the cluster. Select "restricted" if you'd only like algorithm owners to have access to the algorithm's source code.
 
 #### Editing source code locally
 
@@ -61,7 +61,7 @@ When your algorithm is created, our platform generates a unique HTTPS URL you ca
 git clone https://git.CLUSTER_DOMAIN/git/ALGO_OWNER/ALGO_NAME.git
 {% endhighlight %}
 
-Replace the `ALGO_OWNER` and `ALGO_NAME` values with the owner and name of the algorithm, respectively. For non-enterprise customers, `CLUSTER_DOMAIN` will be `algorithmia.com`; enterprise customers must replace this value with their cluster-specific domain name string.
+For your algorithm, you'll replace the `ALGO_OWNER` and `ALGO_NAME` values with the name of your account and the name of the algorithm, respectively. For non-enterprise customers, `CLUSTER_DOMAIN` will be `algorithmia.com`; enterprise customers must replace this value with their cluster-specific domain name string.
 
 If you've never cloned algorithm code before, you'll be asked to provide your Algorithmia account name and password to authenticate to the platform.
 
@@ -83,20 +83,20 @@ git push origin master
 
 Note that attempts to rewrite the history of an algorithm's source code repository will be rejected, as doing so could potentially break prior versions of the algorithm.
 
-Algorithmia does not currently support SSH as a means of cloning algorithm repositories.
+**SSH Support** Algorithmia doesn't currently support SSH as a means of cloning algorithm repositories.
 {: .notice-info}
 
 #### Editing source code in the Algorithmia Web IDE
 
-Algorithms whose source code is hosted within Algorithmia can be edited directly from our Web IDE. To access the Web IDE for algorithms you own or have access to through membership in the algorithm-owning organization, click on the "Source Code" tab on an algorithm's homepage.
+Algorithms whose source code is hosted within Algorithmia can be edited directly through our Web IDE. To access the Web IDE for algorithms you own or have access to through membership in the algorithm-owning organization, click on the "Source Code" tab on an algorithm's homepage.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_source_code_tab.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-Once you've entered the Web IDE, you have the ability to create, modify, and delete algorithm files.
+In the Web IDE, you can create, modify, and delete algorithm files.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_web_ide.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-Once you're satisfied with your changes, click the "Build" button, optionally test your changes in the terminal, and then click "Publish" to create a new version of the algorithm.
+Once you're satisfied with your changes, click the "Build" button, optionally test your changes in the test console at the bottom, and click "Publish" to create a new version of the algorithm.
 
 ### Hosting source code on GitHub
 
