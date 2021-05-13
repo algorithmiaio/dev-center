@@ -177,7 +177,7 @@ You can obtain the public key for your repository by navigating to your algorith
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key_3.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-You'll then be presented with a modal, from which you can copy the public key.
+You'll be presented with a modal, from which you can copy the public key.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_view_deploy_key_2.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
@@ -253,7 +253,7 @@ If you decide to use an alternative name, we recommend that you use only letters
 
 When we create your repository, we associate the following with it:
 
-- **An Access Key**: Bitbucket Cloud access keys allow read-only access to specific repositories, and are Bitbucket Cloud’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **An access key**: Bitbucket Cloud access keys allow read-only access to specific repositories, and are Bitbucket Cloud’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating Bitbucket Cloud-hosted algorithms
@@ -278,7 +278,7 @@ If you wish to delete an algorithm that hosts its source code on Bitbucket Cloud
 
 #### Managing your Bitbucket Cloud authorization
 
-If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account:
+If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account.
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see Bitbucket Cloud listed within the above section until your administrator enables Bitbucket Cloud as a source host.
 {: .notice-info}
@@ -291,9 +291,7 @@ With the source for your algorithm hosted externally, there is a chance that our
 
 We depend on access keys to pull source code from your algorithm for building. An access key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with Bitbucket Cloud.
 
-You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
-
-You'll then be presented with a modal, from which you can copy the public key.
+You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key". You'll then be presented with a modal, from which you can copy the public key.
 
 With the access key in hand, simply follow [instructions outlined here](https://support.atlassian.com/bitbucket-cloud/docs/add-access-keys/) to restore the public key to your repository.
 
@@ -382,7 +380,7 @@ If you wish to delete an algorithm that hosts its source code on GitLab, have no
 
 #### Managing your GitLab authorization
 
-If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitLab authorizations, or to connect your account:
+If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitLab authorizations, or to connect your account.
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see GitLab listed within the above section until your administrator enables GitLab as a source host.
 {: .notice-info}
@@ -395,9 +393,7 @@ With the source for your algorithm hosted externally, there is a chance that our
 
 We depend on deploy keys to pull source code from your algorithm for building. A deploy key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with GitLab.
 
-You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
-
-You'll then be presented with a modal, from which you can copy the public key.
+You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key". You'll be presented with a modal, from which you can copy the public key.
 
 With the deploy key in hand, simply follow [instructions outlined here](https://docs.gitlab.com/ee/user/project/deploy_keys/#deploy-keys) to restore the public key to your repository.
 
