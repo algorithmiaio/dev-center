@@ -14,7 +14,7 @@ redirect_from:
   - /algorithm-development/git/
 ---
 
-When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia supports hosting that repository within the Algorithmia platform itself or using one of a number of external source control management (SCM) platforms, listed below. In this guide, we'll walk through the following:
+When you create an algorithm, a [Git](https://git-scm.com/) repository is initialized to store its source code. Algorithmia supports hosting that repository within the Algorithmia platform itself or using one of a number of external source code management (SCM) providers, listed below. In this guide, we'll walk through the following:
 
 - [Choosing a repository host](#choosing-a-repository-host)
 
@@ -38,20 +38,20 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 
 Before we dive into the repository hosts Algorithmia supports, let's discuss the various use cases that best fit each type.
 
-If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in Web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should choose Algorithmia as your repository host. This is the simplest way to get started with the platform, but presents limitations when it comes to using collaboration tools outside the platform.
+If you're just getting started with Algorithmia, or you want to leverage Algorithmia's [built-in Web IDE](#editing-your-algorithm-source-in-the-algorithmia-web-app), you should choose Algorithmia as your repository host. This is the simplest way to get started with the platform, but presents limitations when it comes to using external collaboration tools.
 
 If you want to easily share source code with your colleagues and to use best practices like code reviews, we recommend an external repository host. This does mean that our browser-based Web IDE won't be available for use, but the configuration will allow you to more flexibly manage access to your source code and integrate with any existing SCM workflows you may use.
 
-**Algorithm Migration** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by a different SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
+**Algorithm Migration** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by the target SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
 {: .notice-info}
 
 ### Hosting source code on Algorithmia
 
-Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your Algorithm, simply select "Algorithmia" within the source code configuration section.
+Hosting your algorithm's source code within the Algorithmia platform is simple, and no special configuration is required. When creating your algorithm, simply select "Algorithmia" as the "repository host" within the source code configuration section.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_algorithmia_internal.png" alt="Creating an algorithm with the Algorithmia repository host" class="screenshot img-sm">
 
-The "Source Visibility" setting determines whether the source code for your algorithm will be viewable from other accounts on the cluster. Select "Restricted" if you'd only like algorithm owners to have access to the algorithm's source code.
+The "source visibility" setting determines whether the source code for your algorithm will be viewable from other accounts on the cluster. Select "restricted" if you'd only like algorithm owners to have access to the algorithm's source code.
 
 #### Editing source code locally
 
@@ -61,7 +61,7 @@ When your algorithm is created, our platform generates a unique HTTPS URL you ca
 git clone https://git.CLUSTER_DOMAIN/git/ALGO_OWNER/ALGO_NAME.git
 {% endhighlight %}
 
-Replace the `ALGO_OWNER` and `ALGO_NAME` values with the owner and name of the algorithm, respectively. For non-enterprise customers, `CLUSTER_DOMAIN` will be `algorithmia.com`; enterprise customers must replace this value with their cluster-specific domain name string.
+For your algorithm, you'll replace the `ALGO_OWNER` and `ALGO_NAME` values with the name of your account and the name of the algorithm, respectively. For non-enterprise customers, `CLUSTER_DOMAIN` will be `algorithmia.com`; enterprise customers must replace this value with their cluster-specific domain name string.
 
 If you've never cloned algorithm code before, you'll be asked to provide your Algorithmia account name and password to authenticate to the platform.
 
@@ -83,45 +83,44 @@ git push origin master
 
 Note that attempts to rewrite the history of an algorithm's source code repository will be rejected, as doing so could potentially break prior versions of the algorithm.
 
-Algorithmia does not currently support SSH as a means of cloning algorithm repositories.
+**SSH Support** Algorithmia doesn't currently support SSH as a means of cloning algorithm repositories.
 {: .notice-info}
 
 #### Editing source code in the Algorithmia Web IDE
 
-Algorithms whose source code is hosted within Algorithmia can be edited directly from our Web IDE. To access the Web IDE for algorithms you own or have access to through membership in the algorithm-owning organization, click on the "Source Code" tab on an algorithm's homepage.
+Algorithms whose source code is hosted within Algorithmia can be edited directly through our Web IDE. To access the Web IDE for algorithms you own or have access to through membership in the algorithm-owning organization, click on the "Source Code" tab on an algorithm's homepage.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_source_code_tab.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-Once you've entered the Web IDE, you have the ability to create, modify, and delete algorithm files.
+In the Web IDE, you can create, modify, and delete algorithm files.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_web_ide.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-Once you're satisfied with your changes, click the "Build" button, optionally test your changes in the terminal, and then click "Publish" to create a new version of the algorithm.
+Once you're satisfied with your changes, click the "Build" button, optionally test your changes in the test console at the bottom, and click "Publish" to create a new version of the algorithm.
 
 ### Hosting source code on GitHub
 
-By hosting your algorithm's source code on GitHub, you can take advantage of GitHub's rich set of developer features, such as pull requests and GitHub Actions, and also ensure that access to your source code is carefully mediated.
+By hosting your algorithm's source code on GitHub, you can take advantage of GitHub's rich set of developer features, such as pull requests and GitHub Actions, and also ensure that access to your source code is carefully mediated. We support both GitHub and GitHub Enterprise; we use the term "GitHub" to refer to both products, as the configuration and usage is the same.
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
 
 **Web IDE Support** At this time we don't support editing source code in our Web IDE for GitHub-hosted algorithms.
 {: .notice-info}
 
-#### Connecting your Algorithmia and GitHub accounts
-
-To connect your Algorithmia and GitHub accounts, simply select the GitHub instance you wish to use when creating your algorithm.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
-
-If you haven't yet connected your GitHub account, you'll be prompted to do so. Your GitHub account will house your algorithms' source code, and by connecting it, you'll give us access to create repositories on your behalf.
+**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see GitHub listed as a repository host for new algorithms until your cluster administrator [configures a GitHub connection](https://training.algorithmia.com/managing-advanced-workflows/807370).
+{: .notice-info}
 
 #### Creating GitHub-hosted algorithms
 
-Once you've connected your GitHub account to Algorithmia, you'll be able to select GitHub as the repository host when you create a new algorithm.
+To create an algorithm with its source code hosted on GitHub, simply select a GitHub SCM connection for "repository host" in the modal.
+
+The first time you create a GitHub-hosted algorithm, you'll be prompted to connect your GitHub account. Click "Authorize" and follow the instructions in the pop-op window to give Algorithmia permission to create and manage Git repositories on your behalf. Once you've connected your GitHub account to Algorithmia, you'll be able to select any available GitHub connection to host your source code repository when you create a new algorithm.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_unauthorized.png" alt="Authorization prompt for GitHub repository host" class="screenshot img-sm">
 
 You can customize two aspects of any GitHub repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all GitHub repositories are created under your personal GitHub account. However, you may optionally choose to host your code under any GitHub organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down.
+By default, all GitHub repositories are created under your personal GitHub account. However, you may optionally choose to host your code under any GitHub organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "repository owner" drop-down.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_repo_owner.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -129,7 +128,7 @@ You may also customize the name of the repository that's created. By default, it
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/create_algorithm_github_repo_name.png" alt="Customizing your repository name" class="screenshot img-sm">
 
-If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While GitHub will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
+If you decide to use an alternative name, we recommend you use only letters, numbers, hyphens, and/or underscores. While GitHub will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
 
 When we create your repository, we associate the following with it:
 
@@ -138,7 +137,7 @@ When we create your repository, we associate the following with it:
 
 #### Updating GitHub-hosted algorithms
 
-Once you've created your algorithm, any commits to your GitHub repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be the `main` branch, but you can change this at any time in GitHub. In your repository, click "Settings" and then "Branches" on the left side.
+Once you've created your algorithm, any commits to your GitHub repository's _default_ branch will result in a build on Algorithmia. At creation, your repository's default branch will be the `main` branch, but you can change this at any time within GitHub. In your repository, click "Settings" and then "Branches" on the left side.
 
 For algorithms you own and for those owned by organizations of which you're a member, you can view builds on the algorithm homepage under the "Builds" tab.
 
@@ -166,9 +165,6 @@ If you want to review your GitHub authorization status, you can visit your user 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
-**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see GitHub listed as a repository host for new algorithms until your cluster administrator configures the connection.
-{: .notice-info}
-
 #### Troubleshooting GitHub-hosted algorithms
 
 When your algorithm's source code is hosted externally, there's a chance that the connection with GitHub may be disrupted. The following are some scenarios under which the algorithm source code won't be available, to help you troubleshoot.
@@ -181,7 +177,7 @@ You can obtain the public key for your repository by navigating to your algorith
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_select_deploy_key_3.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
-You'll then be presented with a modal, from which you can copy the public key.
+You'll be presented with a modal, from which you can copy the public key.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/algorithm_settings_view_deploy_key_2.png" alt="Algorithm Page Source Code Tab" class="screenshot img-sm">
 
@@ -232,21 +228,20 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 **Web IDE Support** At this time we don't support editing source code in our Web IDE for BitBucket Cloud-hosted algorithms.
 {: .notice-info}
 
-#### Connecting your Algorithmia and Bitbucket Cloud accounts
+**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see Bitbucket Cloud listed as a repository host for new algorithms until your cluster administrator [configures a Bitbucket Cloud connection](https://training.algorithmia.com/managing-advanced-workflows/807382).
+{: .notice-info}
 
-To connect your Algorithmia and Bitbucket Cloud accounts, simply select the Bitbucket Cloud instance you wish to use when creating your algorithm.
+#### Creating Bitbucket Cloud-hosted algorithms
+
+To create an algorithm with its source code hosted on Bitbucket Cloud, simply select a Bitbucket Cloud SCM connection for "repository host" in the modal.
+
+The first time you create a Bitbucket Cloud-hosted algorithm, you'll be prompted to connect your Bitbucket Cloud account. Click "Authorize" and follow the instructions in the pop-op window to give Algorithmia permission to create and manage Git repositories on your behalf. Once you've connected your Bitbucket Cloud account to Algorithmia, you'll be able to select any available Bitbucket Cloud connection to host your source code repository when you create a new algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_unauthorized_2.png" alt="Authorization prompt for Bitbucket Cloud repository host" class="screenshot img-sm">
 
-If you haven't yet connected your Bitbucket Cloud account, you'll be prompted to do so. Your Bitbucket Cloud account will house your algorithms' source code, and by connecting it, you'll give us access to create repositories on your behalf.
-
-#### Creating algorithms with Bitbucket Cloud
-
-Once you've connected your Bitbucket Cloud account to Algorithmia, you'll be able to host algorithm source code in Bitbucket Cloud.
-
 You can customize two aspects of any Bitbucket Cloud repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
+By default, all Bitbucket Cloud repositories are created under your personal Bitbucket Cloud account. However, you may optionally choose to create repositories under any Bitbucket Cloud organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "repository owner" drop-down:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_bitbucket_algorithm_org_2.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -258,7 +253,7 @@ If you decide to use an alternative name, we recommend that you use only letters
 
 When we create your repository, we associate the following with it:
 
-- **An Access Key**: Bitbucket Cloud access keys allow read-only access to specific repositories, and are Bitbucket Cloud’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **An access key**: Bitbucket Cloud access keys allow read-only access to specific repositories, and are Bitbucket Cloud’s prescribed means by which external services can fetch code for building and deploying. These keys are not tied to individual permissions, and as such will allow Algorithmia to continue building an algorithm even if the permissions of the creating user change. We also use access keys to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating Bitbucket Cloud-hosted algorithms
@@ -279,11 +274,11 @@ To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl
 
 #### Deleting Bitbucket Cloud-hosted algorithms
 
-If you wish to delete an algorithm that hosts its source code in Bitbucket Cloud, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://support.atlassian.com/bitbucket-cloud/docs/delete-a-repository/).
+If you wish to delete an algorithm that hosts its source code on Bitbucket Cloud, have no fear—the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://support.atlassian.com/bitbucket-cloud/docs/delete-a-repository/).
 
 #### Managing your Bitbucket Cloud authorization
 
-If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account:
+If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account.
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see Bitbucket Cloud listed within the above section until your administrator enables Bitbucket Cloud as a source host.
 {: .notice-info}
@@ -296,9 +291,7 @@ With the source for your algorithm hosted externally, there is a chance that our
 
 We depend on access keys to pull source code from your algorithm for building. An access key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with Bitbucket Cloud.
 
-You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
-
-You'll then be presented with a modal, from which you can copy the public key.
+You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key". You'll then be presented with a modal, from which you can copy the public key.
 
 With the access key in hand, simply follow [instructions outlined here](https://support.atlassian.com/bitbucket-cloud/docs/add-access-keys/) to restore the public key to your repository.
 
@@ -328,7 +321,7 @@ Yes! Upon any change to your repository's name or owner we receive a webhook whi
 
 When you revoke access to an OAuth app, Bitbucket Cloud automatically revokes both your token and any access keys you may have created via the OAuth app. To fix your algorithms, simply [follow the instructions above](#your-repositorys-access-key-was-removed) on restoring access keys to a repository.
 
-### Hosting source code on gitLab
+### Hosting source code on GitLab
 
 By hosting your algorithm's source code on GitLab, you can take advantage of GitLab's rich set of developer features, such as pull requests and GitLab CI/CD, and also ensure that access to your source code is carefully mediated.
 
@@ -337,21 +330,20 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 **Web IDE Support** At this time we don't support editing source code in our Web IDE for GitLab-hosted algorithms.
 {: .notice-info}
 
-#### Connecting your Algorithmia and GitLab accounts
+**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see GitLab listed as a repository host for new algorithms until your cluster administrator [configures a GitLab connection](https://training.algorithmia.com/managing-advanced-workflows/807381).
+{: .notice-info}
 
-To connect your Algorithmia and GitLab accounts, simply select the GitLab instance you wish to use when creating your algorithm:
+#### Creating GitLab-hosted algorithms
+
+To create an algorithm with its source code hosted on GitLab, simply select a GitLab SCM connection for "repository host" in the modal.
+
+The first time you create a GitLab-hosted algorithm, you'll be prompted to connect your GitLab account. Click "Authorize" and follow the instructions in the pop-op window to give Algorithmia permission to create and manage Git repositories on your behalf. Once you've connected your GitLab account to Algorithmia, you'll be able to select any available GitLab connection to host your source code repository when you create a new algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_unauthorized.png" alt="Authorization prompt for GitLab repository host" class="screenshot img-sm">
 
-If you haven't yet connected your GitLab account, you'll be prompted to do so. By connecting your GitLab account, you'll give us access to create repositories on your behalf, which will house your algorithm's source code.
-
-#### Creating algorithms with GitLab
-
-Once you've connected your GitLab account to Algorithmia, you'll be able to host algorithm source code in GitLab.
-
 You can customize two aspects of the GitLab repositories that are created for your algorithms: the repository's owner, and its name.
 
-By default, all GitLab respositories are created under your personal GitLab account. However, you may optionally choose any GitLab organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "Repository Owner" drop-down:
+By default, all GitLab respositories are created under your personal GitLab account. However, you may optionally choose any GitLab organizations of which you're a member, as long as they've been configured by your cluster administrator. The available organizations are listed in the "repository owner" drop-down:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_create_gitlab_algorithm_org_2.png" alt="Customizing your repository owner" class="screenshot img-sm">
 
@@ -384,11 +376,11 @@ To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl
 
 #### Deleting GitLab-hosted algorithms
 
-If you wish to delete an algorithm that hosts its source code in GitLab, have no fear: the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://docs.gitlab.com/ee/user/project/settings/#delete-a-project).
+If you wish to delete an algorithm that hosts its source code on GitLab, have no fear—the repository will be left unharmed. If you do wish to destroy your algorithm's source code, you can follow [these instructions](https://docs.gitlab.com/ee/user/project/settings/#delete-a-project).
 
 #### Managing your GitLab authorization
 
-If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitLab authorizations, or to connect your account:
+If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitLab authorizations, or to connect your account.
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see GitLab listed within the above section until your administrator enables GitLab as a source host.
 {: .notice-info}
@@ -401,9 +393,7 @@ With the source for your algorithm hosted externally, there is a chance that our
 
 We depend on deploy keys to pull source code from your algorithm for building. A deploy key is simply an SSH keypair with read-only access to a specific repository. Algorithmia securely stores the private key while the public key is shared with GitLab.
 
-You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key":
-
-You'll then be presented with a modal, from which you can copy the public key.
+You can obtain the public key for your repository by navigating to your algorithm's settings page and clicking "View Key". You'll be presented with a modal, from which you can copy the public key.
 
 With the deploy key in hand, simply follow [instructions outlined here](https://docs.gitlab.com/ee/user/project/deploy_keys/#deploy-keys) to restore the public key to your repository.
 
@@ -435,9 +425,6 @@ When you revoke access to an OAuth app, GitLab automatically revokes both your t
 
 ### Hosting source code on Bitbucket Server
 
-**No Oauth Support** Bitbucket Server does not support OAuth, so a token-based flow is implemented to connect Bitbucket Server-hosted algorithms.
-{: .notice-info}
-
 By hosting your algorithm's source code on Bitbucket Server, you can take advantage of Bitbucket Server's rich set of developer features, such as pull requests, and also ensure that access to your source code is carefully mediated.
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
@@ -445,21 +432,26 @@ If you haven't used Git before, we recommend [this Git tutorial series](https://
 **Web IDE Support** At this time we don't support editing source code in our Web IDE for BitBucket Server-hosted algorithms.
 {: .notice-info}
 
-#### Creating algorithms with Bitbucket Server
+**No Oauth Support** Bitbucket Server does not support OAuth, so a token-based flow is implemented to connect Bitbucket Server-hosted algorithms.
+{: .notice-info}
 
-To host your algorithm on Bitbucket Server, simply select the Bitbucket Server instance you wish to use when creating your algorithm.
+**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see Bitbucket Server listed as a repository host for new algorithms until your administrator [configures a Bitbucket Server connection](https://training.algorithmia.com/managing-advanced-workflows/805805).
+{: .notice-info}
 
-Once you've selected your Bitbucket Server instance, you'll be able to host algorithm source code in Bitbucket Server.
+
+#### Creating Bitbucket Server-hosted algorithms
+
+To create an algorithm with its source code hosted on Bitbucket Server, simply select a Bitbucket Server SCM connection for "repository host" in the modal.
 
 You can customize two aspects of any Bitbucket Server repository that's created for an algorithm: the repository's owner, and its name.
 
-By default, all Bitbucket Server repositories are under a project configured by your cluster administrator. These projects are listed in the "Repository Owner" drop-down:
+By default, all Bitbucket Server repositories are under a project configured by your cluster administrator. These projects are listed in the "repository owner" drop-down.
 
 If you decide to use an alternative name, we recommend that you use only letters, numbers, hyphens, and/or underscores. While Bitbucket Server will accept characters outside this range, it will replace any unsupported characters with an underscore, potentially resulting in an undesired repository name.
 
 When we create your repository, we associate the following with it:
 
-- **A Personal Access Token**: Bitbucket Server personal access tokens allow appropriate access to specific repositories, and are Bitbucket Server’s prescribed means by which external services can fetch code for building and deploying. These tokens are tied to individual permissions, and as such will not allow Algorithmia to continue building an algorithm if the permissions of the personal access token changes. We also use the personal access token to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
+- **A personal access token**: Bitbucket Server personal access tokens allow appropriate access to specific repositories, and are Bitbucket Server’s prescribed means by which external services can fetch code for building and deploying. These tokens are tied to individual permissions, and as such will not allow Algorithmia to continue building an algorithm if the permissions of the personal access token changes. We also use the personal access token to obtain your repository's commit log (to display changes when publishing versions) and README.md (for use as algorithm documentation).
 - **Webhooks**: We set up webhooks to receive notifications about changes to your repo, such as when there's a change to its default branch.
 
 #### Updating Bitbucket Server-hosted algorithms
@@ -480,11 +472,8 @@ To learn more about algorithm builds, [click here]({{site.cdnurl}}{{site.baseurl
 
 #### Deleting Bitbucket Server-hosted algorithms
 
-If you wish to delete an algorithm that hosts its source code in Bitbucket Server, have no fear: the repository will be left unharmed.
+If you wish to delete an algorithm whose source code is hosted on Bitbucket Server, have no fear—the repository will be left unharmed.
 
 #### Managing your Bitbucket Server authorization
 
 If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Server authorizations.
-
-**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see Bitbucket Server listed within the above section until your administrator enables Bitbucket Server as a source host.
-{: .notice-info}
