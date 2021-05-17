@@ -27,7 +27,7 @@ Under the Admin menu, click on the "Broker Manager" menu item (under the "System
 
 To create a new broker connection, click on the "Connect Broker" button. This will bring up a form where the admin will fill in the proper configuration options. When filled in, click on the "Connect to Kafka Broker" button to make the connection. When successful, the admin will see the new connection in the list of configured brokers. 
 
-Currently, the only broker type supported is Kafka.
+In addition to Kafka, algorithmia supports Amazon SQS and Azure SB brokers.
 {: .notice-info}
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/broker-connection-create.png" alt="Creating a broker connection">
