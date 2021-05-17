@@ -7,6 +7,8 @@ tags: [integrations]
 show_related: true
 image:
     teaser: /language_logos/amazon_sqs.png
+redirect_from:
+- /integrations/event_listeners
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon SQS Queue
