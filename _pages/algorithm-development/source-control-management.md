@@ -161,7 +161,7 @@ If you wish to delete an algorithm whose source code is hosted on GitHub, have n
 
 #### Managing your GitHub authorization
 
-If you want to review your GitHub authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitHub authorizations, or to connect your account.
+If you want to review your GitHub authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior GitHub authorizations, or to connect your account.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
@@ -213,7 +213,7 @@ Yes! Upon any change to your repository's name or owner we receive a webhook whi
 
 **I’m a member of a GitHub organization, but I don’t see that organization listed as a possible owner when creating an algorithm. What’s wrong?**
 
-On the Algorithmia side, a cluster administrator must first [create a configuration](https://training.algorithmia.com/exploring-the-admin-panel/687291) to the GitHub account. If this has been done and the issue persists, an administrator of your GitHub organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this GitHub documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
+On the Algorithmia side, a cluster administrator must first [create a configuration](https://training.algorithmia.com/managing-advanced-workflows/807370) to the GitHub account. If this has been done and the issue persists, an administrator of your GitHub organization likely needs to approve the OAuth application that’s being used to authorize Algorithmia users. You can request approval by following the instructions in [this GitHub documentation](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/requesting-organization-approval-for-oauth-apps#:~:targetText=Click%20the%20Authorized%20OAuth%20Apps,click%20Request%20approval%20from%20owners.).
 
 **I revoked access to the Algorithmia's Github OAuth application, and now none of the repositories I created can build!**
 
@@ -377,10 +377,7 @@ If you wish to delete an algorithm that hosts its source code on GitLab, have no
 
 #### Managing your GitLab authorization
 
-If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior GitLab authorizations, or to connect your account.
-
-**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you may not see GitLab listed within the above section until your administrator enables GitLab as a source host.
-{: .notice-info}
+If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior GitLab authorizations, or to connect your account.
 
 #### Troubleshooting GitLab-hosted algorithms
 
@@ -472,4 +469,4 @@ If you wish to delete an algorithm whose source code is hosted on Bitbucket Serv
 
 #### Managing your Bitbucket Server authorization
 
-If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Control Management" section to view any prior Bitbucket Server authorizations.
+If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior Bitbucket Server authorizations.
