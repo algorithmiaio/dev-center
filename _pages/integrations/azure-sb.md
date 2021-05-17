@@ -5,6 +5,8 @@ excerpt-short: "Set up an Event Listener to run an Algorithm with inputs from an
 categories: [integrations]
 tags: [integrations]
 show_related: true
+redirect_from:
+- 
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 
