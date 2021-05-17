@@ -43,7 +43,7 @@ If you're just getting started with Algorithmia, or you want to leverage Algorit
 
 If you want to easily share source code with your colleagues and to use best practices like code reviews, we recommend an external repository host. This does mean that our browser-based Web IDE won't be available for use, but the configuration will allow you to more flexibly manage access to your source code and integrate with any existing SCM workflows you may use.
 
-**Algorithm Migration** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by the target SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
+**Algorithm Migration:** At this time, Algorithmia does not have built-in support for migrating algorithms between repository hosts. However, to achieve the same end result, you can create a new algorithm with its code hosted by the target SCM provider and then [migrate your algorithm source code](https://training.algorithmia.com/managing-advanced-workflows/768868) from the original algorithm to the new one.
 {: .notice-info}
 
 ### Hosting source code on Algorithmia
@@ -84,7 +84,7 @@ git push origin master
 
 Note that attempts to rewrite the history of an algorithm's source code repository will be rejected, as doing so could potentially break prior versions of the algorithm.
 
-**SSH Support** Algorithmia doesn't currently support SSH as a means of cloning algorithm repositories.
+**SSH Support:** Algorithmia doesn't currently support SSH as a means of cloning algorithm repositories.
 {: .notice-info}
 
 #### Editing source code in the Algorithmia Web IDE
@@ -105,7 +105,7 @@ By hosting your algorithm's source code on GitHub, you can take advantage of Git
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we don't support editing source code in our Web IDE for GitHub-hosted algorithms.
+**Web IDE Support:** At this time we don't support editing source code in our Web IDE for GitHub-hosted algorithms.
 {: .notice-info}
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see GitHub listed as a repository host for new algorithms until your cluster administrator [creates a GitHub configuration](https://training.algorithmia.com/managing-advanced-workflows/807370).
@@ -226,7 +226,7 @@ By hosting your algorithm's source code on Bitbucket Cloud, you can take advanta
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we don't support editing source code in our Web IDE for BitBucket Cloud-hosted algorithms.
+**Web IDE Support:** At this time we don't support editing source code in our Web IDE for BitBucket Cloud-hosted algorithms.
 {: .notice-info}
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see Bitbucket Cloud listed as a repository host for new algorithms until your cluster administrator [creates a Bitbucket Cloud configuration](https://training.algorithmia.com/managing-advanced-workflows/807382).
@@ -325,7 +325,7 @@ By hosting your algorithm's source code on GitLab, you can take advantage of Git
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we don't support editing source code in our Web IDE for GitLab-hosted algorithms.
+**Web IDE Support:** At this time we don't support editing source code in our Web IDE for GitLab-hosted algorithms.
 {: .notice-info}
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see GitLab listed as a repository host for new algorithms until your cluster administrator [creates a GitLab configuration](https://training.algorithmia.com/managing-advanced-workflows/807381).
@@ -424,10 +424,10 @@ By hosting your algorithm's source code on Bitbucket Server, you can take advant
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub.
 
-**Web IDE Support** At this time we don't support editing source code in our Web IDE for BitBucket Server-hosted algorithms.
+**Web IDE Support:** At this time we don't support editing source code in our Web IDE for BitBucket Server-hosted algorithms.
 {: .notice-info}
 
-**No Oauth Support** Bitbucket Server does not support OAuth, so a token-based flow is implemented to connect Bitbucket Server-hosted algorithms.
+**No Oauth Support:** Bitbucket Server does not support OAuth, so a token-based flow is implemented to connect Bitbucket Server-hosted algorithms.
 {: .notice-info}
 
 **Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. As such, you won't see Bitbucket Server listed as a repository host for new algorithms until your administrator [creates a Bitbucket Server configuration](https://training.algorithmia.com/managing-advanced-workflows/805805).
