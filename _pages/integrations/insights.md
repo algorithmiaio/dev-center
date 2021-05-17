@@ -7,7 +7,6 @@ tags: integrations
 show_related: false
 image:
   teaser: /icons/algo.svg
-permalink: /integrations/insights
 redirect_from:
   - /algorithmia-enterprise/algorithmia-insights
   - /integrations/insights
