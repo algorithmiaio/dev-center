@@ -65,7 +65,7 @@ For your algorithm, you'll replace the `ALGO_OWNER` and `ALGO_NAME` values with 
 
 If you've never cloned algorithm code before, you'll be asked to provide your Algorithmia account name and password to authenticate to the platform.
 
-**Enterprise Users:** If your Algorithmia instance is configured to use OIDC, you won't have a password. To obtain a password, navigate to your user settings page and click "Regenerate Account Password". Follow the instructions to obtain a password you can use to authenticate with your Algorithmia-hosted Git repositories.
+**Enterprise Users:** If your Algorithmia instance is configured to use OIDC, you won't have a password. To obtain a password, navigate to your account settings page and click "Regenerate Account Password". Follow the instructions to obtain a password you can use to authenticate with your Algorithmia-hosted Git repositories.
 {: .notice-info}
 
 Make any source code modifications you'd like and commit them to your repository's `master` branch.
@@ -161,13 +161,13 @@ If you wish to delete an algorithm whose source code is hosted on GitHub, have n
 
 #### Managing your GitHub authorization
 
-If you want to review your GitHub authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior GitHub authorizations, or to connect your account.
+If you want to review your GitHub authorization status, you can visit your account settings page. Simply scroll to the "Source Code Management" section to view any prior GitHub authorizations, or to connect your account.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/source_code_management/scm_user_settings.png" alt="User source code management settings" class="screenshot img-sm">
 
 #### Troubleshooting GitHub-hosted algorithms
 
-When your algorithm's source code is hosted externally, there's a chance that our connectivity with GitHub may be disrupted. The following are some scenarios under which the algorithm source code won't be available, to help you troubleshoot.
+If we experience a temporary disruption in connectivity with GitHub, your source code will be unavailable for modification during the duration of that disruption. The following are some additional scenarios under which algorithm source code won't be available, to help you troubleshoot.
 
 ##### Your repository's deploy key was removed
 
@@ -278,11 +278,11 @@ If you wish to delete an algorithm that hosts its source code on Bitbucket Cloud
 
 #### Managing your Bitbucket Cloud authorization
 
-If you want to review your Bitbucket Cloud authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account.
+If you want to review your Bitbucket Cloud authorization status, you can visit your account settings page. Simply scroll to the "Source Code Management" section to view any prior Bitbucket Cloud authorizations, or to connect your account.
 
 #### Troubleshooting Bitbucket Cloud-hosted algorithms
 
-When your algorithm's source code is hosted externally, there's a chance that our connectivity with Bitbucket Cloud may be disrupted. The following are some scenarios under which the algorithm source code won't be available, to help you troubleshoot.
+If we experience a temporary disruption in connectivity with Bitbucket Cloud, your source code will be unavailable for modification during the duration of that disruption. The following are some additional scenarios under which algorithm source code won't be available, to help you troubleshoot.
 
 ##### Your repository's access key was removed
 
@@ -377,11 +377,11 @@ If you wish to delete an algorithm that hosts its source code on GitLab, have no
 
 #### Managing your GitLab authorization
 
-If you want to review your GitLab authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior GitLab authorizations, or to connect your account.
+If you want to review your GitLab authorization status, you can visit your account settings page. Simply scroll to the "Source Code Management" section to view any prior GitLab authorizations, or to connect your account.
 
 #### Troubleshooting GitLab-hosted algorithms
 
-With your algorithm's source code is hosted externally, there's a chance that our connectivity with GitLab may be disrupted. The following are some scenarios under which the algorithm source code won't be available, to help you troubleshoot.
+If we experience a temporary disruption in connectivity with GitLab, your source code will be unavailable for modification during the duration of that disruption. The following are some additional scenarios under which algorithm source code won't be available, to help you troubleshoot.
 
 ##### Your repository's deploy key was removed
 
@@ -469,4 +469,4 @@ If you wish to delete an algorithm whose source code is hosted on Bitbucket Serv
 
 #### Managing your Bitbucket Server authorization
 
-If you want to review your Bitbucket Server authorization status, you can visit your user settings page. Simply scroll to the "Source Code Management" section to view any prior Bitbucket Server authorizations.
+If you want to review your Bitbucket Server authorization status, you can visit your account settings page. Simply scroll to the "Source Code Management" section to view any prior Bitbucket Server authorizations.
