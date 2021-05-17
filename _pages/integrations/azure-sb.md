@@ -6,7 +6,7 @@ categories: [integrations]
 tags: [integrations]
 show_related: true
 redirect_from:
-- 
+- /integrations/azure_listeners
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 
