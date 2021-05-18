@@ -2,7 +2,7 @@
 layout: article
 title: "Algorithmia Event Flows"
 excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
-categories: [event-flows]
+categories: [integrations]
 tags: [integrations]
 show_related: true
 redirect_from:

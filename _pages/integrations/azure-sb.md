@@ -2,7 +2,7 @@
 layout: article
 title: "Azure SB Message Broker"
 excerpt-short: "Set up algorithm event flows using an Azure Service Bus message broker"
-categories: [event-flows]
+categories: [integrations]
 tags: [integrations]
 show_related: true
 redirect_from:
