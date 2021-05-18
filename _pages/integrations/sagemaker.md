@@ -2,7 +2,7 @@
 layout: article
 title:  "SageMaker"
 excerpt: "Deploying Models from Sagemaker Notebooks to Algorithmia"
-categories: [training-integrations]
+categories: [integrations]
 tags: integrations
 show_related: false
 image:
