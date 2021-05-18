@@ -14,18 +14,6 @@
   url: /clients/
   nav_category: clients
 
-- title: Data API
-  url: /data/
-  nav_category: data-api
-
-- title: SQL Database Patterns
-  url: /sql-patterns/
-  nav_category: sql-patterns
-
-- title: Other Data Sources
-  url: /other-data-sources/
-  nav_category: other-data-sources
-
 - title: Integrations
   url: /integrations/
   nav_category: integrations
@@ -40,6 +28,18 @@
 
 - title: API Documentation
   url: http://docs.algorithmia.com
+
+- title: Native Data Integrations
+  url: /data
+  nav_category: data-api
+
+- title: SQL Database Patterns
+  url: /sql-patterns/
+  nav_category: sql-patterns
+
+- title: Other External Data
+  url: /other-data-sources/
+  nav_category: other-data-sources
 
 - title: Training Center
   url:  /training-center/
@@ -58,10 +58,10 @@
   url: /vmware/
 
 - title: Pricing
-  url: http://algorithmia.com/pricing
+  url: https://algorithmia.com/pricing
 
 - title: Release Notes
-  url: /release_notes/
+  url: /release-notes/
 
 - title: Support
   url: /support/

@@ -1,25 +1,27 @@
 ---
 layout: article
-title: "Azure SB Event Listeners"
-excerpt-short: "Set up an Event Listener to run an Algorithm with inputs from an Azure Service Bus Queue"
+title: "Azure SB Message Broker"
+excerpt-short: "Set up algorithm event flows using an Azure Service Bus message broker"
 categories: [integrations]
 tags: [integrations]
 show_related: true
+redirect_from:
+- /integrations/azure_listeners
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 
-[Read More about Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues)
+[Read more about Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues).
 
-This is only available for Enterprise installations of Algorithmia. 
+This feature is only available for Enterprise installations of Algorithmia. 
 {: .notice-enterprise}
 
 ## 1. Obtain a template file and account info from Algorithmia
 
 Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you will need during CloudFormation setup:
 
-* Azure Resource Manager(ARM) template for Service Bus Namespace and Queue
+* Azure Resource Manager (ARM) template for Service Bus Namespace and Queue
 * Custom Role definition file - QueueReceiver
-* Algorithmia Azure Account
+* Algorithmia Azure account
 
 ## 2. Invite Algorithmia account as guest account in your account’s Active Directory
 
@@ -68,7 +70,7 @@ Note: If the deployment fails, chances are there is already a namespace created 
 import Algorithmia
 
 def apply(input):
-    Algorithmia.client().file("data://<username>/event_output_directory/" + input.get("filename")).put(input.get("data"))
+    Algorithmia.client().file("data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")).put(input.get("data"))
 
 {% endhighlight %}
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_36.png">

@@ -11,6 +11,7 @@ image:
     teaser: /language_logos/snowflake_computing.png 
 redirect_from:
   - /data/snowflake/
+  - /other-data-sources/snowflake
 ---
 
 Algorithms can easily access databases hosted on the Snowflake data platform using the [Snowflake Connector for Python](https://pypi.org/project/snowflake-connector-python/). To see this in action on Algorithmia, check out the [SnowflakeAsyncOrchestrator]({{site.url}}/algorithms/algorithmiahq/SnowflakeAsyncOrchestrator) algorithm, which provides a reference architecture for performing an asynchronous database write operation. If you'd like to get started with a less complex example, you can follow along below. Note that to complete the following, you'll need an active account on Snowflake.

@@ -6,6 +6,8 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 show_related: true
 image:
     teaser: /icons/algo.svg
+redirect_from:
+- /release_notes
 ---
 
 ## GitLab, Bitbucket Cloud, and Bitbucket Server Source Control Management Integrations Release Notes ##
