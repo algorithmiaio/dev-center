@@ -7,8 +7,6 @@ tags: integrations
 show_related: false
 image:
   teaser: /icons/algo.svg
-redirect_from:
-- /integrations/sagemaker
 ---
 
 As an integration-first platform, we encourage you to leverage the best tools available at each step of the ML pipeline, and we've designed our platform to integrate seamlessly with upstream platforms.
