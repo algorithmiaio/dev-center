@@ -50,7 +50,7 @@ Q9nOA' \
 -d '{"first_name":"Test", "last_name":"User"}'
 
 ```
-##JWT payload specifics
+## JWT payload specifics
 
 -  RSA256 Encryption only
 -  JWKS should be verified by KID, legacy x5t is supported as well but not preferred.
