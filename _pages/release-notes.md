@@ -10,9 +10,9 @@ redirect_from:
 - /release_notes
 ---
 
-## GitLab, Bitbucket Cloud, and Bitbucket Server Source Control Management Integrations Release Notes ##
+## GitLab, Bitbucket Cloud, and Bitbucket Server Source Code Management Integrations ##
 
-We’ve added three new source control management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
+We’ve added three new source code management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
 
 Once your cluster administrator configures a connection to an SCM provider, you can immediately create algorithms backed by a Git repository on that provider.
 
@@ -20,7 +20,7 @@ With the implementation of GitLab, Bitbucket Cloud, and Bitbucket Server SCM int
 
 ---
 
-## Algorithmia Event Flows with Kafka Release Notes ##
+## Algorithmia Event Flows with Kafka ##
 
 We’ve just released a new way to create event-driven algorithm workflows using Apache Kafka, a cloud-agnostic open-source message broker. Now your team’s data scientists and application developers can easily enable Kafka event-driven jobs in a user-friendly workflow while providing your cluster administrators with more granular control over who has access to connect to your Kafka broker. Among other things, Algorithmia Event Flows enable automation of workflows from model monitoring to retraining, enabling you to optimize the performance of your models in production. If you don’t already use Kafka, contact us to learn more about your options for getting started.
 
@@ -34,7 +34,7 @@ Cluster administrators will also have a rich user interface to view the availabl
 
 ---
 
-## Security Enhancements Release Notes ##
+## Security Enhancements ##
 
 ### Introduction ###
 
