@@ -345,6 +345,33 @@ print(response)
 }</textarea>
 
   </div>
+  
+  <!-- GO -->
+  <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='go'" ng-cloak>
+  <pre class="getting-started-code"><code class="demo-code-sample hljs go"><span class="hljs-keyword">import</span> (
+  algorithmia <span class="hljs-string">"github.com/algorithmiaio/algorithmia-go"</span>
+)
+
+input := <span class="hljs-string">"Your Name"</span>
+
+<span class="hljs-keyword">var</span> client = algorithmia.NewClient(<span class="hljs-string">"API_KEY"</span>)
+algo, _ := client.Algo(<span class="hljs-string">"algo://ALGO_OWNER/ALGO_NAME"</span>)
+resp, _ := algo.Pipe(input)
+response := resp.(*algorithmia.AlgoResponse)
+fmt.Println(response.Result)</code></pre>
+<textarea class="copy-text" id="go-copy-text">import (
+algorithmia "github.com/algorithmiaio/algorithmia-go"
+)
+
+input := "Your Name"
+
+var client = algorithmia.NewClient("API_KEY")
+algo, _ := client.Algo("algo://ALGO_OWNER/ALGO_NAME")
+resp, _ := algo.Pipe(input)
+response := resp.(*algorithmia.AlgoResponse)
+fmt.Println(response.Result)</textarea>
+
+  </div>
 
   <!-- CSHARP -->
   <div class="tab-pane code__pane gs-pane" id="c-sharp" ng-show="lang==='c-sharp'" ng-cloak>
