@@ -26,6 +26,7 @@ Table of contents
 - [Creating your first algorithm](#creating-your-first-algorithm)
 - [Developing your algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
 - [Publishing your algorithm](#publishing-your-algorithm)
+- [Calling your algorithm](#calling-your-algorithm)
 - [Next steps](#next-steps)
 
 ## Creating your first algorithm
