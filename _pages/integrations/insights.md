@@ -32,7 +32,7 @@ Algorithmia Insights metrics fall into two categories:
 
 **Inference-related metrics** are defined by the algorithm author in algorithm code. Each metric is defined by a title, like `cute_cats_detected`, and a numeric value, like `24`. Multiple inference-related metrics can be reported at one time, and the set of metrics reported does not need to be the same from one algorithm execution to another.
 
-## Configuring a Kafka connection
+## Setting up Algorithmia Insights on your cluster
 
 The Kafka connection required for Insights is a global configuration on your Algorithmia cluster. If Insights isn't already available on your cluster, ask your cluster admin to [configure a connection to Kafka](https://training.algorithmia.com/exploring-the-admin-panel/687275).
 
