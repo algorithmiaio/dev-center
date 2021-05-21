@@ -68,7 +68,7 @@ import os
 import Algorithmia
 
 def apply(input):
-    return "My secret value".format(os.environ['MYSQL_PASSWORD'])
+    return "My secret value".format(os.environ["MYSQL_PASSWORD"])
 
 ```
 
