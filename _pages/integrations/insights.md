@@ -32,41 +32,9 @@ Algorithmia Insights metrics fall into two categories:
 
 **Inference-related metrics** are defined by the algorithm author in algorithm code. Each metric is defined by a title, like `cute_cats_detected`, and a numeric value, like `24`. Multiple inference-related metrics can be reported at one time, and the set of metrics reported does not need to be the same from one algorithm execution to another.
 
-## One-time administrator setup
+## Configuring a Kafka connection
 
-The first step in allowing Algorithmia Insights to be collected and reported for algorithms is to have the Algorithmia Platform Administrator connect your cluster to a Kafka broker / cluster to which metrics will be sent.
-
-The Algorithmia platform supports two Kafka connection configurations:
-
-- [SCRAM](https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism) (Salted Challenge Response Authentication Mechanism) over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Provides encrypted communications, authentication credential database breach protection, [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attack protection, and internationalization support. Please see the [Kafka SCRAM setup guide](https://kafka.apache.org/documentation/#security_sasl_scram) for configuring a Kafka broker / cluster to support this configuration.
-- Unencrypted / plaintext. Provides all of the features of Algorithmia Insights for use without encryption or authentication safeguards; allows for testing / prototyping as well as use in networks with existing robust protection against attacks.
-
-The first step to configuring your cluster for Algorithmia Insights is to navigate to the "Algorithmia Insights" administration page, which can be found under the "System Actions" section.
-
-From here, enter the information about your Kafka broker. The following information is needed for any connection type:
-
-- **Kafka URL** - a list of comma-separated [Kafka bootstrap servers](https://kafka.apache.org/documentation/#bootstrap.servers) used to establish the initial connection to the Kafka cluster. Algorithmia will make use of all servers irrespective of which servers are specified here for bootstrapping—this list only impacts the initial hosts used to discover the full set of servers. This list should be in the form `host1:port1,host2:port2,...` Since these servers are just used for the initial connection to discover the full cluster membership (which may change dynamically), this list need not contain the full set of servers (you may want more than one, though, in case a server is down).
-- **Topic Name** - the name of the [Kafka topic](https://kafka.apache.org/documentation/#intro_concepts_and_terms) to which Algorithmia Insights will be published.
-
-It is the Algorithmia Platform Administrator's responsibility to ensure that Kafka traffic (which operates over TCP) routes successfully from the Algorithmia Platform to all of the Kafka bootstrap servers in the **Kafka URL** list (on their specified ports) _and_ to all of the Kafka cluster members reported by those bootstrap servers (on their specified ports).
-
-For each execution of algorithms for which Algorithmia Insights is turned on, the Algorithmia Platform will perform multiple data send attempts to the Kafka broker / cluster over the course of four minutes. If, after that time, the data cannot be sent to the Kafka broker / cluster for _any_ reason (Kafka server offline, failed authenticated, network disconnections, etc), the data for that specific execution will be permanently lost.
-
-### Unencrypted / plaintext
-
-Unencrypted, plaintext connections do not require any additional configuration information.
-
-![Image of Kafka connection UI for unencrypted, plaintext connections](/developers/images/algorithmia-enterprise/algorithmia-insights/web-ui-kafka-connection-unencrypted-plaintext.png)
-
-### SCRAM / TLS
-
-Encrypted, SCRAM-authenticated connections also require:
-
-- **Username** - the username used to authenticate to the Kafka cluster
-- **Password** - the password used to authenticate to the Kafka cluster
-- **CA Certificate** - the Certificate Authority certificate used to sign the TLS certificates that the Kafka servers use for communication
-
-![Image of Kafka connection UI for encrypted, SCRAM connections](/developers/images/algorithmia-enterprise/algorithmia-insights/web-ui-kafka-connection-sasl-scram.png)
+The Kafka connection required for Insights is a global configuration on your Algorithmia cluster. If Insights isn't already available on your cluster, ask your cluster admin to [configure a connection to Kafka](https://training.algorithmia.com/exploring-the-admin-panel/687275).
 
 ## Using Algorithmia Insights in an algorithm
 
