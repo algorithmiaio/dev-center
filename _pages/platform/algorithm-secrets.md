@@ -62,14 +62,13 @@ The following demonstrates how you'd access a secret from an environment variabl
 Keep your secrets safe! We highly recommend that you never include secrets in your algorithm output. This example demonstrates how algorithms can leak sensitive data if secrets aren't handled correctly.
 {: .notice-warning}
 
-```
+{% highlight python %} 
 import os
 
 import Algorithmia
 
 def apply(input):
     return "My secret value".format(os.environ["MYSQL_PASSWORD"])
-
-```
+{% endhighlight %}
 
 ![Image of UI algorithm running with secret](/developers/images/post_images/algorithm_secrets/running_algorithm_with_secret.png)
