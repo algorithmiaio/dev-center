@@ -259,6 +259,6 @@ The New Relic connector algorithm will be added as a Subscriber for the same top
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/newrelic/queue_algo_connection.png" alt="Architecture of NewRelic-Algorithmia integration for model performance metrics" class="screenshot">
 
-The specific version of the New Relic algorithm will be enabled to consume from this queue.
+The specific version of the New Relic algorithm will be enabled to consume from this topic.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/newrelic/newrelic_queue.png" alt="Architecture of NewRelic-Algorithmia integration for model performance metrics" class="screenshot">
