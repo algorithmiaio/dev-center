@@ -66,7 +66,7 @@ To get started with the Algorithmia template, click on the **import dashboard** 
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/newrelic/import_dashboard_1.png" alt="Architecture of NewRelic-Algorithmia integration for model performance metrics" class="screenshot">
 
-On the popup page, paste the following JSON. Remember to update the fields that say "accountId": NEW_RELIC_ACCOUNT_ID with your own New Relic Account ID. 
+On the popup page, paste the following JSON. Remember to update the fields that say "accountId": NEW_RELIC_ACCOUNT_ID with your own New Relic Account ID integer. 
 
 ```json
 {
@@ -95,7 +95,7 @@ On the popup page, paste the following JSON. Remember to update the fields that 
             },
             "nrqlQueries": [
               {
-                "accountId": "NEW_RELIC_ACCOUNT_ID",
+                "accountId": NEW_RELIC_ACCOUNT_ID,
                 "query": "SELECT average(algorithmia.duration_milliseconds) FROM Metric TIMESERIES FACET `algorithm_name` LIMIT 10 SINCE 1800 seconds ago"
               }
             ],
@@ -122,7 +122,7 @@ On the popup page, paste the following JSON. Remember to update the fields that 
             },
             "nrqlQueries": [
               {
-                "accountId": "NEW_RELIC_ACCOUNT_ID",
+                "accountId": NEW_RELIC_ACCOUNT_ID,
                 "query": "SELECT count(algorithmia.duration_milliseconds) FROM Metric TIMESERIES FACET `algorithm_name` LIMIT 10 SINCE 1800 seconds ago"
               }
             ],
