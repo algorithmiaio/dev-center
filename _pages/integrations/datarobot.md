@@ -26,7 +26,7 @@ In this example, the exported DataRobot Prime model is in `MODEL_FILE.jar`, whic
 
 The workflow used in this code is standard for a Python algorithm, with the main exception being that we call the actual model using Java. Specifically, in order to run the JAR file, we shell out to the Java interpreter using the Python standard libary's `subprocess.Popen()` class. Essentially, this provides a Python wrapper for the Java model, enabling data scientists to work in Python but to use the JAR file from DataRobot.
 
-Note that the usage of the `Algorithmia.client()` object assumes that this code is being run on Algorithmia in the Web IDE. If developing locally, you'll need to add your API key and your cluster's domain name (i.e., `Algorithmia.client("API_KEY", "CLUSTER_DOMAIN"`).
+Note that this usage of the `Algorithmia.client()` object assumes that this code is being run on Algorithmia in the Web IDE. If developing locally, you'll need to add your API key and your cluster's domain name (i.e., `Algorithmia.client("API_KEY", "CLUSTER_DOMAIN"`).
 
 ```python
 import Algorithmia
