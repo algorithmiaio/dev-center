@@ -1,7 +1,7 @@
 ---
 layout: article
-title:  "Deploy Models via Jenkins CI/CD or GitHub Actions"
-excerpt: "Using CI/CD to continuously deploy your ML models via Jenkins or GitHub Actions"
+title:  "Deploy Models via CI/CD"
+excerpt: "Using CI/CD to continuously deploy your ML models via Jenkins, GitHub Actions, or GitLab CI/CD"
 categories: algorithm-development
 tags: [algo-dev]
 show_related: true
@@ -13,7 +13,7 @@ permalink: /algorithm-development/ci-cd/
 
 Continuous Integration & Deployment are standard practice in the world of software development, and Machine Learning is no exception—you need a robust CI/CD workflow to ensure that your latest models are deployed efficiently and correctly into production.
 
-Algorithmia supports deployment and redeployment via the [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management), and this is easily integrated into CI/CD tools such as Jenkins and GitHub Actions. With Algorithmia and your favorite CI/CD tool, your models are deployed as soon as they're ready, and they can be redeployed instantly whenever an approved retrained model is available.
+Algorithmia supports deployment and redeployment via the [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management), and this is easily integrated into CI/CD tools such as Jenkins, GitHub Actions and GitLab CI/CD. With Algorithmia and your favorite CI/CD tool, your models are deployed as soon as they're ready, and they can be redeployed instantly whenever an approved retrained model is available.
 
 For setting up automated workflows, you can check out the following examples for your preferred CI/CD system.
 
@@ -127,3 +127,69 @@ To start using this in your own model development repositories, we have two full
 
 For more details on the configuration and capabilities of our GitHub Action, check out our detailed documentation on the GitHub Actions marketplace.
 <a href="https://github.com/algorithmiaio/algorithmia-modeldeployment-action" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> TRY IT OUT: GitHub Actions for Model Training Repo</a>
+
+
+
+
+## GitLab CI/CD
+
+To deploy your algorithm files to Algorithmia everytime you push to your GitLab repository, make sure you have the following configured. 
+
+### Algorithm Files
+Similar to your default algorithm repo template, make sure your `src` folder and `requirements.txt` are in the root level of the repository. 
+
+### Gitlab CI file and Algorithmia CI scripts
+To get started with your pipelines, make sure you have the following at the root level of your repository:
+- `.gitlab-ci.yml` file 
+- `ci_entrypoint.py` file, as the entrypoint to your Algorithmia Deployment CI jobs
+- `algorithmia_ci` module directory, containing the scripts for deploying to Algorithmia and publishing a new version after runnning your defined tests.
+
+### Gitlab CI Environment Variables
+Go to your repository's Settings -> CI/CD page and expand the Variables section. Add the following CI/CD variables so that your pipeline job scripts can access these values in a secured manner.
+- `ALGO_NAME`: Algorithm name 
+- `ALGO_USER`: Algorithmia username
+- `ALGO_REPO_URL`: Repository host of the algorithm. Example: git.algorithmia.com
+- `ALGO_PUBLISH_SCHEMA`: Semantic versioning of choice. Can be "major", "minor", or "revision"
+- `API_ADDRESS`: The Algorithmia API cluster address to connect. Example: https://api.algorithmia.com
+- `API_KEY`: Algorithmia API key that has access to the configured algorithm and management capable. More information about Algorithmia API keys can be found [here](https://algorithmia.com/developers/platform/customizing-api-keys).
+
+
+### Test Case Files
+If you want to run tests before publishing a new version of your algorithm, you should add a new file called `TEST_CASES.json` at the root level of your repository. If you do not provide this file, then the CI/CD pipeline will omit the testing step.
+The required schema of this json file is shown below:
+
+#### Case Schema
+Your test cases should follow the following json schema
+```
+[
+ { 
+    "case_name": String,
+    "input": Any,
+    "expected_output": Any,
+    "type": String,
+    "tree": List
+  },
+  ...
+]
+```
+
+- `input` (required) - the raw input that will be passed into the algorithm. Typically this will be a JSON dictionary, JSON list, or a primitive type (like a string).
+- `expected_output` (required) - What we are comparing against the result of your algorithm, which can be scoped in conjunction with setting `tree`. 
+For types `GREATER_OR_EQUAL` and `LESS_OR_EQUAL` this must be a number value. For types `NO_EXCEPTION` and `EXCEPTION` this field is optional.
+- `type` (optional) - defines the type of matching that can be done, options include `EXACT_MATCH`, `GREATER_OR_EQUAL`, `LESS_OR_EQUAL`, `NO_EXCEPTION` and `EXCEPTION`. Defaults to `EXACT_MATCH`
+- `tree` (optional) - A list defining the json keys we should traverse in order to find the value you wish to compare against with `expected_output`.
+
+#### Example Case
+```json
+[
+    {
+      "case_name": "image_classifier_accuracy",
+      "input": {"image_data":  [...]},
+      "expected_output": 0.7,
+      "type": "GREATER_OR_EQUAL",
+      "tree": ["accuracy"],
+    }
+]
+```
+
+You can check out our repository for a [full working example](https://gitlab.com/algorithmiahq/gitlab-algo-with-cicd) and start using this in your own CI/CD pipelines.
