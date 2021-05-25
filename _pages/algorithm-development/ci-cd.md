@@ -174,7 +174,7 @@ Your test cases should follow the following JSON schema.
 ```
 
 - `input` (required) - the raw input that will be passed into the algorithm. Typically this will be a JSON dictionary, JSON list, or a primitive type (like a string).
-- `expected_output` (required) - What we are comparing against the result of your algorithm, which can be scoped in conjunction with setting `tree`. 
+- `expected_output` (required) - what we are comparing against the result of your algorithm, which can be scoped in conjunction with setting `tree`. 
 For types `GREATER_OR_EQUAL` and `LESS_OR_EQUAL` this must be a number value. For types `NO_EXCEPTION` and `EXCEPTION` this field is optional.
 - `type` (optional) - defines the type of matching that can be done, options include `EXACT_MATCH`, `GREATER_OR_EQUAL`, `LESS_OR_EQUAL`, `NO_EXCEPTION` and `EXCEPTION`. Defaults to `EXACT_MATCH`
 - `tree` (optional) - A list defining the json keys we should traverse in order to find the value you wish to compare against with `expected_output`.
