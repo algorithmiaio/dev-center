@@ -159,7 +159,7 @@ If you want to run tests before publishing a new version of your algorithm, you 
 The required schema of this json file is shown below:
 
 #### Case Schema
-Your test cases should follow the following json schema
+Your test cases should follow the following JSON schema.
 ```
 [
  { 
