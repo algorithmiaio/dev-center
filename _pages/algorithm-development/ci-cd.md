@@ -156,7 +156,7 @@ Go to your repository's **Settings** -> **CI/CD** page and expand the **Variable
 
 ### Test Case Files
 If you want to run tests before publishing a new version of your algorithm, you should add a new file called `TEST_CASES.json` at the root level of your repository. If you do not provide this file, then the CI/CD pipeline will omit the testing step.
-The required schema of this json file is shown below:
+The required schema of this JSON file is shown below.
 
 #### Case Schema
 Your test cases should follow the following JSON schema.
