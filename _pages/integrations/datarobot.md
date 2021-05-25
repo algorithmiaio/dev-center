@@ -2,8 +2,8 @@
 layout: article
 title:  "Data Robot"
 permalink: integrations/datarobot/
-excerpt: "Deploy your DataRobot models on Algorithmia"
-excerpt-short: "Deploy your DataRobot models on Algorithmia"
+excerpt: "Deploy your DataRobot Prime models on Algorithmia"
+excerpt-short: "Deploy your DataRobot Prime models on Algorithmia"
 categories: [integrations]
 tags: [integrations]
 show_related: false
