@@ -11,7 +11,7 @@ image:
 permalink: /algorithm-development/ci-cd/
 ---
 
-Continuous Integration & Deployment are standard practice in the world of software development, and Machine Learning is no exception—you need a robust CI/CD workflow to ensure that your latest models are deployed efficiently and correctly into production.
+Continuous Integration & Deployment are standard practice in the world of software development, and machine learning is no exception—you need a robust CI/CD workflow to ensure that your latest models are deployed efficiently and correctly into production.
 
 Algorithmia supports deployment and redeployment via the [the Algorithmia API]({{site.baseurl}}/algorithm-development/algorithm-management), and this is easily integrated into CI/CD tools such as Jenkins, GitHub Actions, and GitLab CI/CD. With Algorithmia and your favorite CI/CD tool, your models are deployed as soon as they're ready, and they can be redeployed instantly whenever an approved retrained model is available.
 
