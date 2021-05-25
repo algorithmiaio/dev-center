@@ -133,7 +133,7 @@ For more details on the configuration and capabilities of our GitHub Action, che
 
 ## GitLab CI/CD
 
-To deploy your algorithm files to Algorithmia everytime you push to your GitLab repository, make sure you have the following configured. 
+To deploy your algorithm files to Algorithmia every time you push to your GitLab repository, make sure you have the following configured. 
 
 ### Algorithm Files
 Similar to your default algorithm repo template, make sure your `src` folder and `requirements.txt` are in the root level of the repository. 
