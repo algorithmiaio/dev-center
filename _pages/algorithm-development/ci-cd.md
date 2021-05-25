@@ -145,7 +145,7 @@ To get started with your pipelines, make sure you have the following at the root
 - `algorithmia_ci` module directory, containing the scripts for deploying to Algorithmia and publishing a new version after runnning your defined tests
 
 ### Gitlab CI Environment Variables
-Go to your repository's Settings -> CI/CD page and expand the Variables section. Add the following CI/CD variables so that your pipeline job scripts can access these values in a secured manner.
+Go to your repository's **Settings** -> **CI/CD** page and expand the **Variables** section. Add the following CI/CD variables so that your pipeline job scripts can access these values in a secure manner.
 - `ALGO_NAME`: Algorithm name 
 - `ALGO_USER`: Algorithmia username
 - `ALGO_REPO_URL`: Repository host of the algorithm. Example: git.algorithmia.com
