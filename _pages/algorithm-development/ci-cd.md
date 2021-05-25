@@ -142,7 +142,7 @@ Similar to your default algorithm-repository template, make sure your `src` fold
 To get started with your pipelines, make sure you have the following at the root level of your repository:
 - `.gitlab-ci.yml` file 
 - `ci_entrypoint.py` file, as the entrypoint to your Algorithmia Deployment CI jobs
-- `algorithmia_ci` module directory, containing the scripts for deploying to Algorithmia and publishing a new version after runnning your defined tests.
+- `algorithmia_ci` module directory, containing the scripts for deploying to Algorithmia and publishing a new version after runnning your defined tests
 
 ### Gitlab CI Environment Variables
 Go to your repository's Settings -> CI/CD page and expand the Variables section. Add the following CI/CD variables so that your pipeline job scripts can access these values in a secured manner.
