@@ -136,7 +136,7 @@ For more details on the configuration and capabilities of our GitHub Action, che
 To deploy your algorithm files to Algorithmia every time you push to your GitLab repository, make sure you have the following configured. 
 
 ### Algorithm Files
-Similar to your default algorithm repo template, make sure your `src` folder and `requirements.txt` are in the root level of the repository. 
+Similar to your default algorithm-repository template, make sure your `src` folder and `requirements.txt` are in the root level of the repository. 
 
 ### Gitlab CI file and Algorithmia CI scripts
 To get started with your pipelines, make sure you have the following at the root level of your repository:
