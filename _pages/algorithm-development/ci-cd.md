@@ -151,7 +151,7 @@ Go to your repository's **Settings** -> **CI/CD** page and expand the **Variable
 - `ALGO_REPO_URL`: Repository host of the algorithm. Example: git.algorithmia.com
 - `ALGO_PUBLISH_SCHEMA`: Semantic versioning of choice. Can be "major", "minor", or "revision"
 - `API_ADDRESS`: The Algorithmia API cluster address to connect. Example: https://api.algorithmia.com
-- `API_KEY`: Algorithmia API key that has access to the configured algorithm and management capable. More information about Algorithmia API keys can be found [here](https://algorithmia.com/developers/platform/customizing-api-keys).
+- `API_KEY`: Algorithmia API key that has access to the configured algorithm and which is management capable. More information about Algorithmia API keys can be found [here](https://algorithmia.com/developers/platform/customizing-api-keys).
 
 
 ### Test Case Files
