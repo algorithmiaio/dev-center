@@ -34,6 +34,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
+    io-wait (0.1.0)
     jekyll (4.2.0)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -81,13 +82,20 @@ GEM
       fastimage (~> 2.1.7)
       nesty (~> 1.0.2)
       nokogiri (~> 1.11.0)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.5.2)
+      net-ftp (~> 0.1)
     multipart-post (2.1.1)
     nesty (1.0.2)
-    nokogiri (1.11.5)
+    net-ftp (0.1.2)
+      net-protocol
+      time
+    net-protocol (0.1.1)
+      io-wait
+      timeout
+    nokogiri (1.11.6)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    nokogiri (1.11.5-x86_64-linux)
+    nokogiri (1.11.6-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -112,6 +120,8 @@ GEM
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
+    time (0.1.0)
+    timeout (0.1.1)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
