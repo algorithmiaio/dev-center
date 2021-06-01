@@ -11,7 +11,7 @@ image:
 redirect_from:
   - /algorithmia-enterprise/algorithmia-insights
   - /integrations/insights
-order: 1
+nav_index: 1
 ---
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
