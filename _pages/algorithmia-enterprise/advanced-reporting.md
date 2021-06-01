@@ -1,4 +1,5 @@
 ---
+exclude_from_search: true
 layout: article
 title:  "Advanced Reporting"
 permalink: algorithmia-enterprise/advanced-reporting/
