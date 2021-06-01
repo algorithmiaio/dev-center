@@ -2,11 +2,13 @@
 layout: article
 title: "Algorithmia Event Flows"
 excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
-categories: [integrations]
-tags: [integrations]
+categories: event-flows
+tags: [integrations, event-flows]
+permalink: integrations/kafka
 show_related: true
 redirect_from:
-- /integrations/message-broker/
+  - /integrations/message-broker/
+  - /integrations/event-flows
 ---
 Create event-driven algorithm workflows to move towards automating your machine learning deployment and monitoring pipelines. We make it easy to ensure connections from your Algorithmia Enterprise cluster to your externally hosted message brokers are secure, provide observability features for easy debugging, and provide an intuitive user interface for data scientists and application developers to create algorithm workflows that respond to events such as new messages written to a queue, or successful algorithm runs. Algorithmia Event Flows allow you to create dynamic data processing and inference pipelines with a few easy steps.
 
