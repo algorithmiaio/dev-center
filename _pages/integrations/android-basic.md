@@ -1,7 +1,7 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Basic Android"
+title: "Android (Basic)"
 categories: app-development
 tags: [integrations, app-development]
 permalink: integrations/android-basic

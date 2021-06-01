@@ -1,7 +1,7 @@
 ---
 exclude_from_search: false
 layout: article
-title: "Android Deep Learning"
+title: "Android (Deep Learning)"
 categories: app-development
 tags: [integrations, app-development]
 permalink: integrations/android-dl

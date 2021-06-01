@@ -1,7 +1,7 @@
 ---
 exclude_from_search: true
 layout: article
-title:  "iOS Integration"
+title:  "iOS"
 categories: app-development
 tags: [integrations, app-development]
 permalink:

@@ -3,9 +3,14 @@ layout: article
 title: "VMware Support"
 show_related: false
 excerpt: "Algorithmia Enterprise VMware Support"
+categories: basics
+permalink: /platform/vmware/
+redirect_from:
+  - /vmware/
+  - /vmware-support/
 image:
-    teaser: /icons/algo.svg
-permalink: /vmware/
+    teaser: /icons/vmware.png
+	# teaser: /icons/vm
 ---
 
 <div class="syn-styles-supported">

@@ -40,6 +40,10 @@
   url: /other-data-sources/
   nav_category: other-data-sources
 
+- title: Model Training
+  url: /model-training/
+  nav_category: model-training
+
 - title: Event Flows
   url: /event-flows/
   nav_category: event-flows
@@ -48,17 +52,13 @@
   url: /monitoring-observability/
   nav_category: monitoring-&-observability
 
-- title: Model Training
-  url: /model-training/
-  nav_category: model-training
-
 - title: App Development
   url: /app-development/
   nav_category: app-development
 
-- title: Other Integrations
-  url: /integrations/
-  nav_category: integrations
+- title: Analytics
+  url: /analytics/
+  nav_category: analytics
 
 - title: Training Center
   url:  /training-center/
@@ -73,8 +73,8 @@
 #   url: /algorithmia-enterprise/
 #   nav_category: algorithmia-enterprise
 
-- title: VMware
-  url: /vmware/
+# - title: VMware
+#   url: /vmware/
 
 - title: Pricing
   url: https://algorithmia.com/pricing
