@@ -63,11 +63,11 @@
 - title: Training Center
   url:  /training-center/
 
-- title: Teams
-  url: /teams/
+# - title: Teams
+#   url: /teams/
 
-- title: Organizations
-  url: /platform/organizations/
+# - title: Organizations
+#   url: /platform/organizations/
 
 # - title: Algorithmia Enterprise
 #   url: /algorithmia-enterprise/
