@@ -2,8 +2,9 @@
 exclude_from_search: false
 layout: article
 title: "Basic Android"
-categories: integrations
-tags: [integrations]
+categories: app-development
+tags: [integrations, app-development]
+permalink: integrations/android-basic
 show_related: false
 excerpt: "A code walk-through of a simple Android app using Algorithmia."
 excerpt-short: "Build Android apps using Algorithmia."
@@ -13,6 +14,7 @@ image:
 github: https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration
 redirect_from:
   - /samples/basic-android/
+  - /tutorials/sample-apps/basic-android
 ---
 
 {% include toc.html %}

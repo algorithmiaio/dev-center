@@ -2,8 +2,9 @@
 layout: article
 title:  "Arize"
 excerpt: "Integrating with an ML observability platform"
-categories: [integrations]
-tags: integrations
+categories: [monitoring-&-observability]
+tags: [integrations, monitoring-observability]
+permalink: integrations/arize
 show_related: false
 image:
   teaser: /icons/algo.svg

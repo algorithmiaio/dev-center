@@ -6,6 +6,9 @@
 # - title: Getting Started
 #   url: /getting-started/
 
+# - title: Core Concepts
+#   url: /platform/
+
 - title: Platform
   url: /platform/
   nav_category: basics
@@ -40,6 +43,22 @@
 - title: Other External Data
   url: /other-data-sources/
   nav_category: other-data-sources
+
+- title: Monitoring & Observability
+  url: /monitoring-observability/
+  nav_category: monitoring-&-observability
+
+- title: Event Flows
+  url: /event-flows/
+  nav_category: event-flows
+
+- title: Model Training
+  url: /model-training/
+  nav_category: model-training
+
+- title: App Development
+  url: /app-development/
+  nav_category: app-development
 
 - title: Training Center
   url:  /training-center/
