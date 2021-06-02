@@ -70,11 +70,11 @@ kmsEncryptedApiKey =  null;
 
 Follow these steps to encrypt your Algorithmia API Key for use in your function.
 
-###### 1. Create a KMS key
+##### 1. Create a KMS key
 
 Follow [this AWS guide](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) to create your KMS key.
 
-###### 2. Give your lAWS Lambda function execution role permission for the `kms:Decrypt` action
+##### 2. Give your lAWS Lambda function execution role permission for the `kms:Decrypt` action
 
 > Example Role:
 
@@ -96,13 +96,13 @@ Follow [this AWS guide](http://docs.aws.amazon.com/kms/latest/developerguide/cre
 }
 {% endhighlight %}
 
-###### 3. Encrypt the event collector token using the AWS CLI
+##### 3. Encrypt the event collector token using the AWS CLI
 
 {% highlight bash %}
 aws kms encrypt --key-id alias/<KMS key name> --plaintext "YOUR_API_KEY"
 {% endhighlight %}
 
-###### 4. Copy the base-64 encoded, encrypted key (CiphertextBlob) to the `kmsEncryptedApiKey` variable
+##### 4. Copy the base-64 encoded, encrypted key (CiphertextBlob) to the `kmsEncryptedApiKey` variable
 
 {% highlight bash %}
 kmsEncryptedApiKey = "<kmsEncryptedApiKey>";

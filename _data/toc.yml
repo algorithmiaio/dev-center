@@ -6,17 +6,19 @@
 # - title: Getting Started
 #   url: /getting-started/
 
+# - title: Core Concepts
+#   url: /platform/
+
 - title: Platform
   url: /platform/
   nav_category: basics
 
+- title: API Documentation
+  url: http://docs.algorithmia.com
+
 - title: Client Guides
   url: /clients/
   nav_category: clients
-
-- title: Integrations
-  url: /integrations/
-  nav_category: integrations
 
 - title: Algorithm Development
   url: /algorithm-development/
@@ -25,9 +27,6 @@
 - title: Model Deployment
   url: /model-deployment/
   # nav_category: model-deployment
-
-- title: API Documentation
-  url: http://docs.algorithmia.com
 
 - title: Native Data Integrations
   url: /data
@@ -41,14 +40,34 @@
   url: /other-data-sources/
   nav_category: other-data-sources
 
+- title: Model Training
+  url: /model-training/
+  nav_category: model-training
+
+- title: Event Flows
+  url: /event-flows/
+  nav_category: event-flows
+
+- title: Monitoring & Observability
+  url: /monitoring-observability/
+  nav_category: monitoring-&-observability
+
+- title: App Development
+  url: /app-development/
+  nav_category: app-development
+
+- title: Analytics
+  url: /analytics/
+  nav_category: analytics
+
 - title: Training Center
-  url:  /training-center/
+  url: /training-center/
 
-- title: Teams
-  url: /teams/
+# - title: Teams
+#   url: /teams/
 
-- title: Organizations
-  url: /platform/organizations/
+# - title: Organizations
+#   url: /platform/organizations/
 
 # - title: Algorithmia Enterprise
 #   url: /algorithmia-enterprise/

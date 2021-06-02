@@ -2,11 +2,12 @@
 layout: article
 title:  "Arthur"
 excerpt: "Integrating with an external model observability platform"
-categories: [integrations]
-tags: integrations
+categories: [monitoring-&-observability]
+tags: [integrations, monitoring-observability]
+permalink: integrations/arthur
 show_related: false
 image:
-  teaser: /icons/algo.svg
+  teaser: /language_logos/arthur.png
 ---
 
 [Arthur](https://www.arthur.ai/) is an observability platform that provides proactive model monitoring to give you confidence and peace of mind that your AI deployments are performing at peak. Their platform provides a layer of performance monitoring, algorithmic bias detection, and explainability, even for black-box models, so you can quickly detect, diagnose, and fix any issues that arise in production.

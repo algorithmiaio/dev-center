@@ -1,11 +1,13 @@
 ---
 layout: article
 title:  "Teams"
-nav_index: 20
 image:
     teaser: /icons/algo.svg
-permalink: /teams/
+categories: basics
+permalink: /platform/teams/
 sitemap: false
+redirect_from:
+  - /teams/
 ---
 
 The following sections cover the basics of using the <a href="https://teams.algorithmia.com" target="_blank" rel="noopener noreferrer">Teams platform</a>, including how to create and invite people to a team, how to setup data connections and API keys, and how to manage your team with administrator features.
