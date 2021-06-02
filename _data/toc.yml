@@ -61,7 +61,7 @@
   nav_category: analytics
 
 - title: Training Center
-  url:  /training-center/
+  url: /training-center/
 
 # - title: Teams
 #   url: /teams/
@@ -73,8 +73,8 @@
 #   url: /algorithmia-enterprise/
 #   nav_category: algorithmia-enterprise
 
-# - title: VMware
-#   url: /vmware/
+- title: VMware
+  url: /vmware/
 
 - title: Pricing
   url: https://algorithmia.com/pricing
