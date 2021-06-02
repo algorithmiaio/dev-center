@@ -4,7 +4,7 @@ title: "VMware Support"
 show_related: false
 excerpt: "Algorithmia Enterprise VMware Support"
 image:
-  teaser: /icons/algo.svg
+  teaser: /icons/vm-logo.png
 permalink: /vmware/
 ---
 
