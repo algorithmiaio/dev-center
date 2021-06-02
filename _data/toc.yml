@@ -14,7 +14,7 @@
   nav_category: basics
 
 - title: API Documentation
-  url: http://docs.algorithmia.com
+  url: /api
 
 - title: Client Guides
   url: /clients/
