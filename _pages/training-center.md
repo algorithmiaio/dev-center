@@ -1,12 +1,14 @@
 ---
+excerpt: "The Training Center provides guided tutorials for all aspects of development on Algorithmia."
 exclude_from_search: false
 layout: article_page
-title:  "Training Center"
-show_related: false
-excerpt: "The Training Center provides guided tutorials for all aspects of development on Algorithmia."
 redirect_from:
 - /learningcenter/
 - /learning-center/
+- /learn/
+- /train/
+show_related: false
+title:  "Training Center"
 ---
 
 <a href="https://training.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>
@@ -19,22 +21,22 @@ If you're new to Algorithmia, the Training Center is a great place to get starte
 
 If you're an experienced algorithm developer and you'd like a more detailed explanation of a topic covered here in the Developer Center (this site), the Training Center is great resource as well!
 
-## What's New?
+## What's new?
 
 We're constantly publishing new content in our Training Center to teach you about new features, so there's always something to learn. Our latest tutorials are listed here:
 
-#### [Algorithmia Enterprise - Data Scientist Courses](https://training.algorithmia.com/page/data-scientist)
+#### [Algorithmia Enterprise - data scientist courses](https://training.algorithmia.com/page/data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
 * Using Data Sources
 * Using Organizations
 
-#### [Algorithmia Enterprise - Cluster Admin Courses](https://training.algorithmia.com/page/admin)
+#### [Algorithmia Enterprise - cluster admin courses](https://training.algorithmia.com/page/admin)
 * Exploring the Admin Panel
-* Managing Advanced Workflows
+* Managing Advanced Workflows and Configuration
 
-#### [Algorithmia Teams - Data Scientist Courses](https://training.algorithmia.com/page/teams-20-2-data-scientist)
+#### [Algorithmia Teams - data scientist courses](https://training.algorithmia.com/page/teams-20-2-data-scientist)
 * Exploring Algorithms
 * Developing Python Algorithms in the Web IDE
 * Developing Python Algorithms in a Local IDE
