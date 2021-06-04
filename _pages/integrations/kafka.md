@@ -1,14 +1,14 @@
 ---
-layout: article
-title: "Algorithmia Event Flows"
-excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
 categories: event-flows
-tags: [integrations, event-flows]
+excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
+layout: article
 permalink: integrations/kafka
-show_related: true
 redirect_from:
   - /integrations/message-broker/
   - /integrations/event-flows
+show_related: true
+tags: [integrations, event-flows]
+title: "Algorithmia Event Flows"
 ---
 
 With Algorithmia Event Flows, you can create dynamic, event-driven data processing and inference pipelines in just a few easy steps, helping you automate ML deployment and monitoring pipelines.
