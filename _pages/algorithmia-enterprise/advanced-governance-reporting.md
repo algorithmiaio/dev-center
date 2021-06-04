@@ -13,7 +13,7 @@ redirect_from:
 
 Advanced governance reporting provides functionality to aggregate algorithm execution metrics and make them searchable in order to easily review resource usage at the algorithm, account, and organization level.
 
-This feature is only available to users on [Algorithmia Enterprise](/enterprise) clusters where the feature has been enabled.
+This feature is only available to users on [Algorithmia Enterprise](/enterprise) clusters where the feature has been enabled. The feature is available beginning in Algorithmia version 20.5.53.
 {: .notice-enterprise}
 
 ## Use Cases
