@@ -28,9 +28,7 @@ Keep in mind that any Algorithmia collaborator who has access to an algorithm's 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 {: .notice-enterprise}
 
-Storing sensitive data on Algorithmia might not be suitable for an organization that uses a vaulting system like Hashicorp Vault or Azure Key Vault to manage secrets.
-
-Algorithmia Enterprise's Secret Store enables cluster admins to connect Algorithmia to external vaulting systems where secrets are managed and maintained by a DevOps team. This helps Data Science teams access secrets in accordance to an organization's security and compliance standards.
+If your organization uses an external vaulting system to manage secrets, storing these data within Algorithmia might not be suitable. Therefore, Algorithmia Enterprise's Secret Store enables cluster admins to connect Algorithmia to external vaulting systems such as Hashicorp Vault and Azure Key Vault, where secrets are managed and maintained by a DevOps team. This helps Data Science teams access secrets in accordance to an organization's security and compliance standards.
 
 ## Managing algorithm secrets
 
