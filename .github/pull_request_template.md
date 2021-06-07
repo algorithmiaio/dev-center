@@ -6,6 +6,7 @@ Additional context/notes if appropriate (e.g., specifics about what's changing, 
 - [ ] My PR title includes a relevant Jira ticket name
 - [ ] If no associated Jira ticket, my PR title is informative (individual commit messages are squashed in this repo)
 - [ ] Unnecessary text (Notes, TODOs, etc.) has been removed
+- [ ] YAML "front matter" properties are alphabetized
 - [ ] Screenshots, if present, are full-width and follow the [Screenshot guidelines](https://algorithmia.atlassian.net/wiki/spaces/CUSTOMERS/pages/1634861478/CFD+Style+Guide#Screenshots)
 - [ ] Grammar, style, tone, punctuation, etc. follow the Algorithmia [manual of style](https://docs.google.com/document/d/1PPVfgMkX7-EVGLPMhN1E485CAXu9QfhSLKM0lZhnZdU/edit?usp=sharing)
 - [ ] Headers are “Sentence case with Proper Nouns capitalized”
