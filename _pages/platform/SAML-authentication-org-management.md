@@ -14,21 +14,21 @@ redirect_from:
 
 Security Assertion Markup Language (SAML) is an open standard that allows an identity provider (IdP) to pass authorization credentials to a service provider (SP).
 
-SAML authentication allows a user to use SAML assertions in order to log in to the platform. If configured, permission tags can be extracted from the SAML assertion and can be used to facilitate external management of organization membership and user security roles.
+SAML authentication allows a user to use SAML assertions in order to authenticate to the platform. If configured, permission tags can be extracted from the SAML assertion and can be used to facilitate external management of organization membership and user security roles.
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users who have configured SAML and external organization management functionality only.
 {: .notice-enterprise}
 
 #### Use cases
--  Allowing user login through SAML
+-  Allowing user authentication through SAML
 -  Using an external management platform for user permission (admin/sudo)
 -  Using an external management platform for granting/revoking organization membership/administration privileges
 -  Creating local users that represent validated users verified through SAML
--  If the system is configured to accept these tags for SAML login and an attribute with the configured name is not included in your assertion, an error will be thrown. If an empty array is provided for this attribute then all permissions will be removed.
+-  If the system is configured to accept these tags for SAML authentication and an attribute with the configured name is not included in your assertion, an error will be thrown. If an empty array is provided for this attribute then all permissions will be removed.
 
-#### Logging in with SAML
+#### Authenticating with SAML
 
-To enact a service provider-based login please click on the "sign in with SAML" button on the login page. You will either be auto logged in or redirected to your identity provider to confirm your credentials.
+To enact a service provider-based authentication please click on the "sign in with SAML" button on the login page. You will either be authenticated automatically or redirected to your identity provider to confirm your credentials.
 
 ![SAML login button](/developers/images/post_images/saml/saml-login-button.png)
 
@@ -44,7 +44,7 @@ If the permission tags found in a user's assertion with the tag "memberTag1" are
 
 ### Adding organization management tags to organization objects
 
-When creating or updating an organization, you can provide a list of “tags” which are used in the configured SAML assertion attribute to signify which organizations the user is a member or admin of. Upon login with the SAML assertion, the system will automatically synchronize the user with the groups that share these tags. They can be comma delimited as shown below.
+When creating or updating an organization, you can provide a list of “tags” which are used in the configured SAML assertion attribute to signify which organizations the user is a member or admin of. Upon authentication with the SAML assertion, the system will automatically synchronize the user with the groups that share these tags. They can be comma delimited as shown below.
 
 ![Example of creating organization with permission tags](/developers/images/post_images/jwt-sync/create_org_perm_tags.png)
 
