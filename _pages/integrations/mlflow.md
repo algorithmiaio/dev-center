@@ -1,14 +1,15 @@
 ---
 layout: article
 title:  "MLFlow"
-permalink: clients/mlflow/
 excerpt: "Use MLFlow to deploy models to Algorithmia"
 excerpt-short: "Use MLFlow to deploy models to Algorithmia"
-categories: [integrations]
-tags: [integrations]
+categories: model-training
+tags: [integrations, model-training]
+permalink: integrations/mlflow
 show_related: true
 image:
     teaser: /language_logos/mlflow.svg
+redirect_from: clients/mlflow/
 ---
 
 [MLFlow](https://www.mlflow.org) is a platform for the Machine Learning Lifecycle.

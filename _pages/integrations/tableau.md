@@ -3,8 +3,9 @@ layout: article
 title: "Tableau"
 excerpt: "Take your data visualizations to another level by integrating Algorithmia into Tableau"
 excerpt-short: "Take your data visualizations to another level by integrating Algorithmia into Tableau"
-categories: [integrations]
-tags: [integrations]
+categories: analytics
+tags: [integrations, analytics]
+permalink: /integrations/tableau
 show_related: false
 image:
     teaser: /language_logos/tableau.png

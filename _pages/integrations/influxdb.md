@@ -1,14 +1,14 @@
 ---
 layout: article
 title:  "InfluxDB"
-permalink: integrations/influxdb/
 excerpt: "Monitor model performance metrics with InfluxDB"
 excerpt-short: "Monitor model performance metrics with InfluxDB"
-categories: [integrations]
-tags: [integrations]
+categories: [monitoring-&-observability]
+tags: [integrations, monitoring-observability]
+permalink: integrations/influxdb
 show_related: false
 image:
-    teaser: /language_logos/influxdata.svg
+  teaser: /language_logos/influxdata.svg
 ---
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
