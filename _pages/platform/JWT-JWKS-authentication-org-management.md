@@ -27,7 +27,7 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 
 #### Making a call with JWT
 
-JWTs are submitted using standard bearer tokens and will work for any v1 endpoint in the Algorithmia API. An example cURL command for executing an algorithm using a JWT is as follows. In this code, `CLUSTER_DOMAIN` would be replaced by the unique domain name of the Algorithmia cluster, `ALGO_OWNER` would be the name of the account or organization that owns the algorithm, `ALGO_NAME` would be the name of the algorithm, and `ALGO_VERSION` would be an optional version hash or semantic version (e.g., `0.1.1`).
+JWTs are submitted using standard bearer tokens and will work for any `/v1` endpoint in the Algorithmia API. An example cURL command for executing an algorithm using a JWT is as follows. In this code, `CLUSTER_DOMAIN` would be replaced by the unique domain name of the Algorithmia cluster, `ALGO_OWNER` would be the name of the account or organization that owns the algorithm, `ALGO_NAME` would be the name of the algorithm, and `ALGO_VERSION` would be an optional version hash or semantic version (e.g., `0.1.1`).
 
 ```sh
 curl https://CLUSTER_DOMAIN/v1/algo/ALGO_OWNER/ALGO_NAME/ALGO_VERSION \
