@@ -27,7 +27,7 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 
 #### Making a call with JWT
 
-JWT tokens are submitted using standard bearer tokens, an example curl command for executing an algorithm using JWT is as follows, JWT will work for any v1 endpoint:
+JWT tokens are submitted using standard bearer tokens, an example curl command for executing an algorithm using JWT is as follows, JWT will work for any `/v1` endpoint:
 
 ```sh
 curl https://algorithmiaTestServerExample/v1/algo/myGroupName/myAlgorithmName/0.1.1 \
