@@ -49,6 +49,8 @@ For each error, the caller and algorithm endpoint are listed along with the exac
 
 To expose additional details about the error and associated execution metadata, click the drop-down arrow to the right. The request ID, the worker node that handled the request, the first 128 characters of the input to the algorithm, and the expanded stack trace information are displayed.
 
+![Viewing algorithm runtime errors]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/account-profile-errors.png)
+
 ### Account
 
 This tab is only visible if you're **not** using the Algorithmia Enterprise platform.
