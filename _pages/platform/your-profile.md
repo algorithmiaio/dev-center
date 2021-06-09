@@ -1,29 +1,47 @@
 ---
-layout: article
-title:  "Account"
-excerpt: "Information about your api calls and credits."
 categories: basics
-nav_index: 10
-tags: [alg-dev-getting-started, app-dev-getting-started]
-show_related: true
+excerpt: "Information about your api calls and credits."
 image:
   teaser: /icons/algo.svg
-permalink: /platform/your-profile/
+layout: article
+nav_index: 10
+show_related: true
+tags: [alg-dev-getting-started, app-dev-getting-started]
+title:  "Account"
 redirect_from:
   - /basics/your-profile/
+permalink: /platform/your-profile/
 ---
 
-This guide will explain the information available in your account including api calls and credits.
+This guide will walk through the information that's available on your account profile page within Algorithmia's browser UI.
 
-## Your Profile
+## Accessing your account profile page
 
-To access your profile, click on the user drop down, located in the bottom left once you login to your account:
+To access your profile page from anywhere within Algorithmia's browser UI, click on the user icon in the bottom-left corner and click on your name at the top of the menu.
 
-![Accessing the user drop down]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
+![Accessing your profile page]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/user_drop_down.png)
 
-The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
+On the **Overview** tab, you'll find The main area of your profile also includes some basis stats like the number of API calls you have made and the number of times your algorithms have been called. Additionally, you can find quick links to the algorithms you've published.
 
-## Account
+## Profile page tabs
+
+### Overview
+
+On the overview page, you'll see any teams of which you're a member if you're using the Algorithmia Teams platform. You'll, also see a 
+
+### My Algorithms
+
+### Organizations
+
+### API Keys
+
+### Errors
+
+### Account
+
+### Settings
+
+
 
 The account section of your profile is where you'll find the information about your account usage and your credits.
 
