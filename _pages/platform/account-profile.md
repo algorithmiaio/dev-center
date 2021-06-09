@@ -14,7 +14,7 @@ redirect_from:
 permalink: /platform/account-profile/
 ---
 
-This guide will describe the information that's available on your account profile page within Algorithmia's browser UI.
+This page describes the information that's available on your account profile page within Algorithmia's browser UI.
 
 ## Accessing your account profile page
 
@@ -29,7 +29,7 @@ You can also access other accounts' profile pages, but some of the details descr
 
 ### Overview
 
-This tab displays a summary list of algorithms you own. If you're not on the Algorithmia Enterprise platform, this page also lists any teams of which you're a member, and displays information about your credit usage.
+This tab displays a summary list of algorithms you own. If you're not on the Algorithmia Enterprise platform, this page also lists any teams of which you're a member, and displays information about your [credit usage](#account).
 
 ### My Algorithms
 
@@ -37,15 +37,15 @@ This tab displays a paginated list of the algorithms you own, with options avail
 
 ### Organizations
 
-This tab lists any organizations of which you're a member. To learn about how to use organizations, see the [Organizations]({{site.baseurl}}//platform/organizations).
+This tab lists any organizations of which you're a member. To learn about how to use organizations, see [Organizations]({{site.baseurl}}//platform/organizations).
 
 ### API Keys
-This tab displays any API keys you own. Each key can be edited or deleted through the action menu at right in the corresponding row of the table. For information about how to use API keys, see [API Keys]({{site.baseurl}}//platform/customizing-api-keys).
+This tab displays the API keys you own. Each key can be edited or deleted through the action menu at the right of the corresponding row in the table. For information about how to use API keys, see [API Keys]({{site.baseurl}}//platform/customizing-api-keys).
 
 ### Errors
 Beginning in Algorithmia version 20.5.52, this tab displays runtime errors from algorithms that you've called. Specifically, it lists the 200 most recent algorithm runtime errors over the past seven days that've been called using any of your API keys.
 
-For each error, the caller and algorithm endpoint are listed along with the exact date and time that the error occurred. If the error is a [custom Algorithmia error type]({{site.baseurl}}/algorithm-development/algorithm-errors), that information is displayed as well. The error message is displayed in red below these details.
+For each error, the algorithm endpoint is listed along with the exact date and time that the error occurred. If the error is a [custom Algorithmia error type]({{site.baseurl}}/algorithm-development/algorithm-errors), that information is displayed as well. The error message is displayed in red below these details.
 
 To expose additional details about the error and associated execution metadata, click the drop-down arrow to the right. The request ID, the worker node that handled the request, the first 128 characters of the input to the algorithm, and the expanded stack trace information are displayed.
 
@@ -58,7 +58,7 @@ This tab is only visible if you're **not** using the Algorithmia Enterprise plat
 
 This tab displays information about your account usage and your credits.
 
-![Credits main]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/credits_main.png)
+![Credits main view]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/credits_main.png)
 
 The card on the left shows details about your account, such as the number of free credits remaining in the current 30-day cycle as well as the total number of credits available, including your purchased credits. You can also purchase more credits through this page by clicking the **Purchase Credits** button. The card to the right displays your payment information, if any, and allows you to update or remove your current payment method.
 
@@ -70,11 +70,11 @@ Below the account overview, you'll see a chart of your balance over time, then m
 
 This section displays the algorithms you've called, the date of each call, and associated usage statistics.
 
-The **number of calls** column lists the full number of times that you've called the algorithm, but you'll see that sometimes the **billed calls** column displays a lower value. This is because we don't bill API calls that result in an error.
+The **number of calls** column lists the number of times that you've called each algorithm, but you'll see that sometimes the **billed calls** column displays a lower value. This is because we don't bill API calls that result in an error.
 {: .notice-info}
 
 The **billed time** column lists the time billed, in seconds, which is the time it took for the algorithm to execute on the platform. We use this compute time and the royalty on the algorithm to calculate the value in the **cost in credits** column.
-![Usage]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/usage.png)
+![Algorithm usage]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/usage.png)
 
 For more information about pricing, see [Pricing]({{site.baseurl}}/pricing).
 
@@ -82,7 +82,7 @@ For more information about pricing, see [Pricing]({{site.baseurl}}/pricing).
 
 In this section, you'll find the records of the calls made to your algorithms.
 
-![earnings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/earning.png)
+![Account earnings]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/earning.png)
 
 Here, you'll see the algorithm listed by date, as well as its version number. This is important if you're updating your algorithms and notice that people are still calling old versions. Knowing which versions of your algorithms people are using can help you understand what backward compatibility you need as well as which versions are improvements for the algorithm callers.
 
@@ -92,7 +92,7 @@ In the case of earnings, you'll only see the number of billable calls and their 
 
 In this section you'll find the history of your credit refills, including any purchases you've made for more credits and any credits that have been granted to your account
 
-![Transactions]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/transactions.png)
+![Account credit transactions]({{site.cdnurl}}{{site.baseurl}}/images/post_images/your_profile/transactions.png)
 
 ### Settings
 
