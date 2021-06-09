@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Data Robot"
+title:  "DataRobot"
 permalink: integrations/datarobot/
 excerpt: "Deploy your DataRobot Prime models on Algorithmia"
 excerpt-short: "Deploy your DataRobot Prime models on Algorithmia"
