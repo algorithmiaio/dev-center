@@ -10,7 +10,8 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 title:  "Account"
 redirect_from:
   - /basics/your-profile/
-permalink: /platform/your-profile/
+  - /platform/your-profile/
+permalink: /platform/account-profile/
 ---
 
 This guide will walk through the information that's available on your account profile page within Algorithmia's browser UI.
