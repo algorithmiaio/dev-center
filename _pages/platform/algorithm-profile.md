@@ -1,17 +1,17 @@
 ---
-layout: article
-title:  "Algorithm Profiles"
-excerpt: "A walk through of the algorithm profile page."
 categories: basics
+excerpt: "A walk through of the algorithm profile page."
+layout: article
 nav_index: 20
 tags: [basics]
-show_related: true
 image:
     teaser: /icons/algo.svg
 permalink: /platform/algorithm-profile/
 redirect_from:
   - /basics/algorithm-profiles/
   - /basics/algorithm_profiles/
+show_related: true
+title:  "Algorithm Profile"
 ---
 
 Each algorithm is showcased through its profile page.
