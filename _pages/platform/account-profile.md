@@ -5,13 +5,13 @@ image:
   teaser: /icons/algo.svg
 layout: article
 nav_index: 10
+permalink: /platform/account-profile/
 show_related: true
-tags: [alg-dev-getting-started, app-dev-getting-started]
-title:  "Account"
 redirect_from:
   - /basics/your-profile/
   - /platform/your-profile/
-permalink: /platform/account-profile/
+tags: [alg-dev-getting-started, app-dev-getting-started]
+title: "Account Profile"
 ---
 
 This page describes the information that's available on your account profile page within Algorithmia's browser UI.
