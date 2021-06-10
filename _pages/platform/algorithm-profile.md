@@ -20,15 +20,15 @@ Below, we'll explain how to understand each portion of the algorithm profile by 
 
 ## Accessing an algorithm's profile page
 
-To access an algorithm's profile page, click the name of the algorithm from any part of the application. You'll only be able to see the profile page for algorithms that are public, that you own, or that are owned by an organization of which you're a member.
+To access an algorithm's profile page, click the name of the algorithm from any page where it appears within the application. You'll only be able to see the profile page for algorithms that are public, that you own, or that are owned by an organization of which you're a member.
 
 ## Profile page contents
 
 ### Algorithm Endpoint
 
-At the top of every algorithm profile page, the algorithm endpoint is listed with a "copy" (clipboard) icon next to it for convenience. The algorithm endpoint is globally unique within a cluster and consists of the algorithm owner, the algorithm name, and for published algorithms, the algorithm semantic version. Generically, this can be expressed as `ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]`. For the nudity detection algorithm, the endpoint is `sfw/NudityDetectioni2v/0.2.13`.
+At the top of every algorithm profile page, the algorithm endpoint is listed with a "copy" (clipboard) icon next to it for convenience. The algorithm endpoint is globally unique within a cluster. The string consists of the algorithm owner, the algorithm name, and for published algorithms, the algorithm semantic version. Generically, this can be expressed as `ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]`. For the nudity detection algorithm shown here, the endpoint is `sfw/NudityDetectioni2v/0.2.13`.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/header.png" alt="Algorithm Profile header" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/header.png" alt="Algorithm Profile algorithm endpoint" class="screenshot img-md">
 
 For non-enterprise users: If an algorithm charges a royalty, you'll see the amount in credits next to the algorithm name.
 {: .notice-warning }
@@ -39,23 +39,23 @@ At the top-right corner of every algorithm profile page it displays the number o
 
 Following an algorithm will subscribe you to comments and help you keep up to date with activity on that particular algorithm.
 
-Starring an algorithm indicates to the developer, as well as other users, that the algorithm is useful to you, and adds it to your starred algorithm list, which can be found in the ML service catalog on the left nav bar.
+Starring an algorithm indicates to the developer, as well as other users, that the algorithm is useful to you, and adds it to your starred algorithm list. Your starred algorithm list can be found in the ML service catalog (named **Algorithms** in the screenshot above) on the left nav bar.
 
 ### Overview
 
 #### Description text
 
-The algorithm description under the algorithm name is a concise setence telling users exactly what the algorithm does, e.g., "Detect Nudity In Pictures."
+The algorithm description under the algorithm name is a concise sentence that tells users exactly what the algorithm does (e.g., "Detect nudity in pictures.").
 
-This description also appears under the title of the algorithm in search results for quick reference.
+This description also appears under the title of the algorithm in algorithm search results, for quick reference.
 
 #### Tags
 
-Algorithm developers provide tags as the primary means for categorizing their algorithms. Tags also allow you to navigate to similar algorithms by clicking on any tag to see a list of algorithms with that tag.
+Algorithm developers provide tags as the primary means for categorizing their algorithms. Clicking on any tag will navigate you to a list of similarly tagged algorithms.
 
 #### Metrics
 
-This section includes the number and average duration of API calls, and the number of published versions. Click on the number of versions to see the release notes for each version.
+This section lists the number and average duration of API calls to the algorithm, and the number of published algorithm versions. Click on the number of versions to see the release notes for each version.
 
 #### Permissions
 
