@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "Setting up PyCharm for local algorithm development"
-permalink: algorithm-development/advanced-algorithm-development/pycharm/
-excerpt: "Developing your code locally using PyCharm as your IDE. Execute and test your algorithm."
-categories: [algo-dev]
-tags: [algo-dev]
-show_related: true
 author: kenny_daniel
+categories: [algo-dev]
+excerpt: "Developing your code locally using PyCharm as your IDE. Execute and test your algorithm."
 image:
     teaser: /post_images/local_development/local_development.png
+layout: article
+permalink: /algorithm-development/advanced-algorithm-development/pycharm/
+show_related: true
+tags: [algo-dev]
+title: "Setting up PyCharm for local algorithm development"
 ---
 
 # Algorithmia and PyCharm

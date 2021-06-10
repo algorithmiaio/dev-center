@@ -8,7 +8,7 @@ redirect_from:
 - /learn/
 - /train/
 show_related: false
-title:  "Training Center"
+title: "Training Center"
 ---
 
 <a href="https://training.algorithmia.com"><img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/learningcenter/lms_enterprise_wide.png" alt="The Training Center" class="screenshot img-md"></a>

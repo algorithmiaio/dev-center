@@ -1,12 +1,9 @@
 ---
-layout: article_page
-title:  "Client guides"
+author: steph_kim
 excerpt: "Guides to building an app using an algorithm from Algorithmia in: Python, R, Scala, Rust, Java, Ruby, JavaScript, Go, Swift, and Android."
-tags: [app-guide-overview]
+layout: article_page
 nav_overview: "Overview"
 nav_index: 0
-show_related: false
-author: steph_kim
 redirect_from:
   - /algorithm-development/client-guides/
   - /algorithm-development/guides/
@@ -14,6 +11,9 @@ redirect_from:
   - /application-development/guides/
   - /clients/cURL/
   - /application-development/lang-guides/
+show_related: false
+tags: [app-guide-overview]
+title:  "Client guides"
 ---
 
 

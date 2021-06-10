@@ -1,15 +1,15 @@
 ---
-layout: article
-title:  "Multithreading"
-permalink: algorithm-development/advanced-algorithm-development/multithreading/
+author: jon_peck
+categories: [algo-dev]
 excerpt: "Multithreading: call many Algorithms in parallel, from a parent Algorithm or Client"
 excerpt-short: "Multithreading: call many Algorithms in parallel"
-categories: [algo-dev]
-tags: [algo-dev]
-show_related: true
-author: jon_peck
 image:
     teaser: /post_images/multithreading/multithreading.png
+layout: article
+permalink: /algorithm-development/advanced-algorithm-development/multithreading/
+show_related: true
+tags: [algo-dev]
+title: "Multithreading"
 ---
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/multithreading/multithreading_wide.png" class="img-fill">

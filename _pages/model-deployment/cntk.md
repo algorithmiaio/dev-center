@@ -1,16 +1,14 @@
 ---
-layout: article
-title:  "CNTK"
-excerpt: "Deploying your CNTK model to Algorithmia."
-categories: deprecated
-tags: [algo-model-guide]
-show_related: true
 author: james_sutton
-permalink: /model-deployment/cntk/
-redirect_from:
-  - /model-deployment/cntk/
+categories: deprecated
+excerpt: "Deploying your CNTK model to Algorithmia."
 image:
     teaser: /language_logos/python.svg
+layout: article
+permalink: /model-deployment/cntk/
+show_related: true
+tags: [algo-model-guide]
+title:  "CNTK"
 ---
 
 

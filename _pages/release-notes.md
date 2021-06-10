@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "Release Notes"
 excerpt: "Find out what's changed in recent versions of Algorithmia."
-tags: [alg-dev-getting-started, app-dev-getting-started]
-show_related: true
 image:
     teaser: /icons/algo.svg
+layout: article
 redirect_from:
-- /release_notes
+- /release_notes/
+show_related: true
+title:  "Release Notes"
+tags: [alg-dev-getting-started, app-dev-getting-started]
 ---
 
 ## GitLab, Bitbucket Cloud, and Bitbucket Server Source Code Management Integrations ##

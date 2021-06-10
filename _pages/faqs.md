@@ -1,15 +1,14 @@
 ---
-layout: article
-title: "FAQs"
-exclude_from_search: true
-
-show_related: false
 excerpt: "Frequently asked questions"
+exclude_from_search: true
 image:
     teaser: /icons/Algorithmia_FAQs.png
+layout: article
 redirect_from:
   - /basics/algo-dev-faq/
   - /basics/platform-faq/
+show_related: false
+title: "FAQs"
 ---
 
 <div id="faqs-index">
