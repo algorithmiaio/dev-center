@@ -23,7 +23,7 @@ These docs are built on Jekyll. Learn more over at [the official Jekyll page](ht
 3. Visit `http://localhost:4000/developers/` or `http://localhost:4000/developers/api/`
 4. While the local server is running, the local repo is being watched and changes will be reflected in the locally served version within ~10 seconds upon page refresh. Some changes, however, for example changes to navigation bar structure, are not automatically reflected. To clear the cache and completely rebuild the site to see these changes reflected, stop the server (CMD/CTRL + C) and then restart as in step 2.
 
-*If this doesn't work (results in exit code != 0) and you've recently pulled down new code, try running `yarn setup` again from the top-level directory, as the dependencies may have changed.
+*If this doesn't work (results in exit code != 0) and you've recently pulled down new code, try updating the dependencies by rerunning `yarn` and then `yarn setup` from the top-level directory. Once, the dependencies update, rerun `yarn dev`.
 
 ### Running a prod build locally
 
