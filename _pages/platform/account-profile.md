@@ -1,6 +1,6 @@
 ---
 categories: basics
-excerpt: "Information about your api calls and credits."
+excerpt: "A walk through of your account profile page."
 image:
   teaser: /icons/algo.svg
 layout: article
