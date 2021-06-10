@@ -20,7 +20,7 @@ This feature is available to [Algorithmia Enterprise](/enterprise) users who hav
 {: .notice-enterprise}
 
 #### Use cases
--  Allowing user login through JWT
+-  Allowing user authentication through JWT
 -  Using an external management platform for user permission (admin/sudo)
 -  Using an external management platform for granting/revoking organization membership/administration privileges
 -  Creating local users that represent validated users verified through JWT
