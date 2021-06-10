@@ -14,23 +14,26 @@ show_related: true
 title:  "Algorithm Profile"
 ---
 
-Each algorithm is showcased through its profile page.
+This page describes the information that's available on each algorithm's profile page in Algorithmia's browser UI.
 
-Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of one of the most popular algorithms: [Nudity Detection i2v](https://algorithmia.com/algorithms/sfw/NudityDetectioni2v).
+Below, we'll explain how to understand each portion of the algorithm profile by walking through the profile of [Nudity Detection i2v](https://algorithmia.com/algorithms/sfw/NudityDetectioni2v), a popular algorithm on our platform.
 
-### Overview
+## Accessing an algorithm's profile page
+
+To access an algorithm's profile page, click the name of the algorithm anywhere that it appears in the UI. You'll only be able to see the profile page for algorithms that are public, that you own, or that are owned by an organization of which you're a member.
+
+## Profile page contents
+
+### Algorithm Endpoint
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/header.png" alt="Algorithm Profile header" class="screenshot img-md">
 
-#### Algorithm Name, Version, and Royalties
+At the top of every algorithm profile page, the algorithm endpoint is listed with a "copy" (clipboard) icon for convenience. The algorithm endpoint is globally unique within a cluster and consists of the algorithm owner, the algorithm name, and for published algorithms, the algorithm semantic version. Generically, we write this as `ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]`. Therefore, for the nudity detection algorithm, the endpoint is `sfw/NudityDetectioni2v/0.2.13`.
 
-Every algorithm page has a Username, Algorithm Name, and Semantic Version:
+For non-enterprise users: If the algorithm charges a royalty, you'll see the amount in credits next to the Algorithm Name.
+{: .notice-warning }
 
-```sfw/NudityDetectioni2v/0.2.13```
-
-If the algorithm charges a royalty, you'll see the amount in credits next to the Algorithm Name.
-
-"NudityDetectioni2v", you can see, charges a 2 credit royalty.
+### Overview
 
 #### Algorithm Description
 
@@ -82,7 +85,12 @@ Many algorithms also use this space to link to papers or other sites that more f
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png" alt="Algorithm Profile docs" class="screenshot">
 
-### Source Availability
+### Errors
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/header.png" alt="Algorithm Profile header" class="screenshot img-md">
+
+
+### Source
 
 Open source licensed algorithms will show an additional tab in the algorithm profile header that says "Source Code" so you can see how that algorithm was implemented.
 
@@ -137,6 +145,8 @@ In the row for each build is a menu, with options to view the detail page for th
 The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the compilation logs for the build.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png" alt="Algorithm Builds" class="screenshot">
+
+
 
 #### Wrapping Up
 
