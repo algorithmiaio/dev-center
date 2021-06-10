@@ -6,8 +6,9 @@ Additional context/notes if appropriate (e.g., specifics about what's changing, 
 - [ ] My PR title includes a relevant Jira ticket name
 - [ ] If no associated Jira ticket, my PR title is informative (individual commit messages are squashed in this repo)
 - [ ] Unnecessary text (notes, TODOs, etc.) has been removed
-- [ ] YAML "front matter" properties are alphabetized
-- [ ] YAML `permalink` and `redirect_from/to` properties have `/` at beginning and end (e.g., `/path/`)
+- [ ] For YAML "front matter":
+  - Properties are alphabetized
+  - `permalink` and `redirect_from/to` properties have `/` at beginning and end (e.g., `/path/`)
 - [ ] Screenshots, if present, follow the [Screenshot guidelines](https://algorithmia.atlassian.net/wiki/spaces/CUSTOMERS/pages/1634861478/CFD+Style+Guide#Screenshots) which means:
   - Full browser width (browser at 100% zoom and 10-12" width)
   - Max 1000px
