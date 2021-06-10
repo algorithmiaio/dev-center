@@ -1,15 +1,15 @@
 ---
-layout: article
-title: "Amazon SQS Message Broker"
-excerpt-short: "Set up algorithm event flows using an Amazon SQS message broker"
 categories: event-flows
-tags: [integrations, event-flows]
-permalink: integrations/amazon-sqs/
-show_related: true
+excerpt-short: "Set up algorithm event flows using an Amazon SQS message broker"
 image:
     teaser: /language_logos/amazon_sqs.png
+layout: article
+permalink: /integrations/amazon-sqs/
 redirect_from:
-- /integrations/event_listeners/
+  - /integrations/event_listeners/
+show_related: true
+tags: [integrations, event-flows]
+title: "Amazon SQS Message Broker"
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Amazon Simple Queue Service (SQS) Queue.

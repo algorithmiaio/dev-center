@@ -1,19 +1,19 @@
 ---
-layout: article
-title:  "AWS Lambda"
-permalink: clients/aws-lambda/
+categories: [clients, integrations]
 excerpt: "Run Algorithmia code in response to events with AWS Lambda"
 excerpt-short: "Run Algorithmia code in response to events with AWS Lambda"
-categories: [clients, integrations]
-tags: [clients, integrations]
-show_related: true
 image:
     teaser: /language_logos/aws_lambda.svg
+layout: article
+permalink: /clients/aws-lambda/
 redirect_from:
   - /application-development/client-guides/aws-lambda/
   - /application-development/guides/lambda/
   - /clients/lambda/
   - /application-development/lang-guides/aws-lambda/
+show_related: true
+tags: [clients, integrations]
+title: "AWS Lambda"
 ---
 
 This guide currently covers NodeJS on Lambda. Until the Python Blueprint is completed, please refer to our simplified [guide to Webhooks using Python on Lambda]({{site.baseurl}}/integrations/webhooks/#python--aws-lambda-example).

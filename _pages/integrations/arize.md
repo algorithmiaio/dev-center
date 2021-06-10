@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "Arize"
-excerpt: "Integrating with an ML observability platform"
 categories: [monitoring-&-observability]
-tags: [integrations, monitoring-observability]
-permalink: integrations/arize/
-show_related: false
+excerpt: "Integrating with an ML observability platform"
 image:
   teaser: /icons/algo.svg
+layout: article
+permalink: /integrations/arize/
+show_related: false
+tags: [integrations, monitoring-observability]
+title:  "Arize"
 ---
 
 [Arize AI](https://arize.gitbook.io/arize/) is an ML observability platform that provides real-time monitoring and explainability to help you understand how your models are performing in production. The platform uses an evaluation score, allowing you to upload offline training and validation baselines alongside online production data in order to connect drift changes to model performance changes, conduct root cause analyses of model failures and performance degradation, and analyze model bias, among other capabilities.

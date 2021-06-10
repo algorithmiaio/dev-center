@@ -1,15 +1,15 @@
 ---
-layout: article
-title: "Azure SB Message Broker"
-excerpt-short: "Set up algorithm event flows using an Azure Service Bus message broker"
 categories: [event-flows]
-tags: [integrations, event-flows]
-permalink: integrations/azure-sb/
-show_related: true
+excerpt-short: "Set up algorithm event flows using an Azure Service Bus message broker"
 image:
   teaser: /icons/azure-service-bus.png
+layout: article
+permalink: /integrations/azure-sb/
 redirect_from:
-- /integrations/azure_listeners/
+  - /integrations/azure_listeners/
+show_related: true
+tags: [integrations, event-flows]
+title: "Azure SB Message Broker"
 ---
 
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 

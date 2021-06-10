@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "Algorithm Bottlenecks: How to get the most out of your algorithms"
-permalink: algorithm-development/advanced-algorithm-development/dealing-with-bottlenecks/
-excerpt: "Examples on how to remove performance bottlenecks, from bandwidth to compute"
-categories: [algo-dev]
-tags: [algo-dev]
-show_related: true
 author: james_sutton
+categories: [algo-dev]
+excerpt: "Examples on how to remove performance bottlenecks, from bandwidth to compute"
 image:
-    teaser:  /post_images/dealing_with_bottlenecks/dealing_with_bottlenecks.png
+    teaser: /post_images/dealing_with_bottlenecks/dealing_with_bottlenecks.png
+layout: article
+permalink: /algorithm-development/advanced-algorithm-development/dealing-with-bottlenecks/
+show_related: true
+tags: [algo-dev]
+title: "Algorithm Bottlenecks: How to get the most out of your algorithms"
 ---
 
 # Removing algorithm performance bottlenecks in algorithm development

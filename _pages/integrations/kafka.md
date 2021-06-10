@@ -2,7 +2,7 @@
 categories: event-flows
 excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
 layout: article
-permalink: integrations/kafka/
+permalink: /integrations/kafka/
 redirect_from:
   - /integrations/message-broker/
   - /integrations/event-flows/

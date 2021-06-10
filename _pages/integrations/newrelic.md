@@ -5,10 +5,10 @@ excerpt-short: "Monitor model performance metrics with New Relic"
 image:
     teaser: /language_logos/newrelic.png
 layout: article
-permalink: integrations/newrelic/
+permalink: /integrations/newrelic/
 show_related: false
 tags: [integrations, monitoring-observability]
-title:  "New Relic"
+title: "New Relic"
 ---
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.

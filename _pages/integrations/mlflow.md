@@ -5,7 +5,7 @@ excerpt-short: "Use MLFlow to deploy models to Algorithmia"
 image:
     teaser: /language_logos/mlflow.svg
 layout: article
-permalink: integrations/mlflow/
+permalink: /integrations/mlflow/
 redirect_from: clients/mlflow/
 show_related: true
 tags: [integrations, model-training]

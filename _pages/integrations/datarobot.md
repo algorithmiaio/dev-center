@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "DataRobot"
+categories: [model-training]
 excerpt: "Deploy your DataRobot Prime models on Algorithmia"
 excerpt-short: "Deploy your DataRobot Prime models on Algorithmia"
-categories: [model-training]
-tags: [integrations, model-training]
-permalink: integrations/datarobot/
-show_related: false
+permalink: /integrations/datarobot/
 image:
     teaser: /language_logos/datarobot.svg
+layout: article
+show_related: false
+tags: [integrations, model-training]
+title:  "DataRobot"
 ---
 
 DataRobot Prime enables you to export a [DataRobot](https://www.datarobot.com/)-trained ML model for deployment to production on an external platform such as Algorithmia. To do this, DataRobot Prime creates a series of rules that approximate the original model and then encapsulates these rules into a Python module or Java class that can be exported for use externally.

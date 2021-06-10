@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "Batch Processing"
-permalink: algorithm-development/advanced-algorithm-development/batch-processing/
-excerpt: "Batch Processing: efficiently run predictions on large data volumes"
-categories: [algo-dev]
-tags: [algo-dev]
-show_related: true
 author: jon_peck
+categories: [algo-dev]
+excerpt: "Batch Processing: efficiently run predictions on large data volumes"
 image:
     teaser: /post_images/batch-processing/batch_processing.png
+layout: article
+permalink: /algorithm-development/advanced-algorithm-development/batch-processing/
+show_related: true
+title:  "Batch Processing"
+tags: [algo-dev]
 ---
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/batch-processing/batch_processing_wide.png" class="img-fill">

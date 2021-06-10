@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "Setting up Your Local Environment for Algorithm Development"
-permalink: algorithm-development/advanced-algorithm-development/local-development/
-excerpt: "Developing your code locally for use in an algorithm"
-categories: [algo-dev]
-tags: [algo-dev]
-show_related: true
 author: jon_peck
+categories: [algo-dev]
+excerpt: "Developing your code locally for use in an algorithm"
 image:
     teaser: /post_images/local_development/local_development.png
+layout: article
+permalink: /algorithm-development/advanced-algorithm-development/local-development/
+show_related: true
+tags: [algo-dev]
+title:  "Setting up Your Local Environment for Algorithm Development"
 ---
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/local_development/local_development_wide.png" class="img-fill">

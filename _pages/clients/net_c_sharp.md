@@ -1,13 +1,13 @@
 ---
-layout: article
-title: ".NET / C#"
-excerpt: "Add machine learning to your .NET / C# app with Algorithmia"
-permalink: clients/c_sharp_net/
 categories: clients
-tags: [clients]
-show_related: true
+excerpt: "Add machine learning to your .NET / C# app with Algorithmia"
 image:
     teaser: /language_logos/c_sharp_net.svg
+layout: article
+permalink: /clients/c_sharp_net/
+show_related: true
+tags: [clients]
+title: ".NET / C#"
 ---
 
 We now have an early version of a native .NET client for calling algorithms and interacting with our Data APIs.  This guide will give you a walkthrough of how to use the new .NET client.  The client is open-sourced and available on [GitHub](https://github.com/algorithmiaio/algorithmia-c-sharp).
