@@ -24,7 +24,7 @@ To access an algorithm's profile page, click the name of the algorithm from any 
 
 ## Profile page contents
 
-### Algorithm Endpoint
+### Algorithm endpoint
 
 At the top of every algorithm profile page, the algorithm endpoint is listed with a "copy" (clipboard) icon next to it for convenience. The algorithm endpoint is globally unique within a cluster. The string consists of the algorithm owner, the algorithm name, and for published algorithms, the algorithm semantic version. Generically, this can be expressed as `ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]`. For the nudity detection algorithm shown here, the endpoint is `sfw/NudityDetectioni2v/0.2.13`.
 
