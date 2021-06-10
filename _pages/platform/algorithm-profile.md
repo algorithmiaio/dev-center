@@ -10,6 +10,7 @@ permalink: /platform/algorithm-profile/
 redirect_from:
   - /basics/algorithm-profiles/
   - /basics/algorithm_profiles/
+  - /platform/algorithm_profiles/
 show_related: true
 title: "Algorithm Profile"
 ---
