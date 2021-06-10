@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "SageMaker"
-excerpt: "Deploying Models from Sagemaker Notebooks to Algorithmia"
 categories: [model-training]
-tags: [integrations, model-training]
-permalink: integrations/sagemaker/
-show_related: false
+excerpt: "Deploying Models from Sagemaker Notebooks to Algorithmia"
 image:
   teaser: /icons/sagemaker.png
+layout: article
+permalink: integrations/sagemaker/
+show_related: false
+tags: [integrations, model-training]
+title:  "SageMaker"
 ---
 
 As an integration-first platform, we encourage you to leverage the best tools available at each step of the ML pipeline, and we've designed our platform to integrate seamlessly with upstream platforms.

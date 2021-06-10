@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "Deep Dives"
-excerpt: "Best Practices and Deep Dives for Algorithm Development and Model Deployment"
-categories: algorithm-development
-tags: [algo-dev]
-show_related: false
 author: steph_kim
+categories: algorithm-development
+excerpt: "Best Practices and Deep Dives for Algorithm Development and Model Deployment"
 image:
   teaser: /icons/algo.svg
+layout: article
+show_related: false
+tags: [algo-dev]
+title:  "Deep Dives"
 ---
 
 <div class="row lang-tile-container">

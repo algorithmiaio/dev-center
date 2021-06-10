@@ -1,11 +1,10 @@
 ---
-layout: article
-title: "Algorithmia Support"
-
-show_related: false
 excerpt: "Support tiers"
 image:
     teaser: /icons/Algorithmia_FAQs.png
+layout: article
+show_related: false
+title: "Algorithmia Support"
 ---
 
 Algorithmia provides distinct levels of support depending on your subscription. Send us an email support request to [support@algorithmia.com](mailto:support@algorithmia.com). Please use your corporate domain email addresses if emailing us directly. 

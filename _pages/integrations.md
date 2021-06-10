@@ -1,10 +1,10 @@
 ---
-layout: article_page
-title:  "Integrations"
-excerpt: "Guides and Plugins to integrate Algorithmia into other services/apps"
-tags: [app-guide-overview]
-show_related: false
 author: jon_peck
+excerpt: "Guides and Plugins to integrate Algorithmia into other services/apps"
+layout: article_page
+show_related: false
+tags: [app-guide-overview]
+title:  "Integrations"
 ---
 
 <div class="row lang-tile-container">

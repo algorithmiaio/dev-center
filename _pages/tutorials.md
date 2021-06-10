@@ -1,9 +1,9 @@
 ---
+excerpt: "Tutorials and sample apps"
 exclude_from_search: true
 layout: article_page
-title:  "Tutorials"
 show_related: false
-excerpt: "Tutorials and sample apps"
+title: "Tutorials"
 ---
 
 Tutorials to help you get the most out of Algorithmia.

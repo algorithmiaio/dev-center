@@ -1,14 +1,14 @@
 ---
-layout: article
-title:  "New Relic"
+categories: [monitoring-&-observability]
 excerpt: "Monitor model performance metrics with New Relic"
 excerpt-short: "Monitor model performance metrics with New Relic"
-categories: [monitoring-&-observability]
-tags: [integrations, monitoring-observability]
-permalink: integrations/newrelic/
-show_related: false
 image:
     teaser: /language_logos/newrelic.png
+layout: article
+permalink: integrations/newrelic/
+show_related: false
+tags: [integrations, monitoring-observability]
+title:  "New Relic"
 ---
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.

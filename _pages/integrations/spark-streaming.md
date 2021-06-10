@@ -1,13 +1,13 @@
 ---
-layout: article
-title: "Spark Streaming"
-excerpt-short: "Integrate Deep Learning Models within Spark Streaming with Algorithmia"
 categories: [model-training]
-tags: [integrations, model-training]
-permalink: /integrations/spark-streaming/
-show_related: true
+excerpt-short: "Integrate Deep Learning Models within Spark Streaming with Algorithmia"
 image:
     teaser: /language_logos/spark_streaming.png
+layout: article
+permalink: /integrations/spark-streaming/
+show_related: true
+tags: [integrations, model-training]
+title: "Spark Streaming"
 ---
 
 With *Spark Streaming* and Algorithmia you'll be able to integrate deep learning algorithms on live streaming data.

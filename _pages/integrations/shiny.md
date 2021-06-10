@@ -1,20 +1,19 @@
 ---
-exclude_from_search: false
-layout: article
-title: "Shiny App"
-categories: app-development
-tags: [integrations, app-development]
-permalink: /integrations/shiny/
-show_related: false
 author: steph_kim
+categories: app-development
 excerpt: "Call Fourier Detrend algorithm in your Shiny app!"
 excerpt-short: "Call machine learning algorithms directly from R Shiny."
-
+exclude_from_search: false
+github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
 image:
     teaser: /language_logos/rstudio.svg
-github: https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example
+layout: article
+permalink: /integrations/shiny/
 redirect_from:
   - /tutorials/sample-apps/shiny-app
+show_related: false
+tags: [integrations, app-development]
+title: "Shiny App"
 ---
 
 The full sample code can be found in the GitHub repo: <a href="https://github.com/algorithmiaio/sample-apps/tree/master/shiny-r/fourier-detrend-example" class="btn btn-default btn-primary"><i class="fa fa-github" aria-hidden="true"></i> FORK</a>

@@ -1,12 +1,12 @@
 ---
-layout: article_page
-title:  "Platform"
-show_related: false
 excerpt: "Platform"
+layout: article_page
 redirect_from:
  - /basics/
  - /application-development/basic-guides/
  - /basics/algorithm_basics/
+show_related: false
+title:  "Platform"
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}

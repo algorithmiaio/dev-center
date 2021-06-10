@@ -1,18 +1,18 @@
 ---
-exclude_from_search: true
-layout: article
-title:  "iOS"
-categories: app-development
-tags: [integrations, app-development]
-permalink: /integrations/ios/
-show_related: false
 author: jon_peck
+categories: app-development
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."
 excerpt-short: "Build iOS/Swift apps using Algorithmia."
+exclude_from_search: true
+github: https://github.com/algorithmiaio/algorithmia-swift
 image:
   feature: /post_images/ios/swift.png
   teaser: /language_logos/swift.svg
-github: https://github.com/algorithmiaio/algorithmia-swift
+layout: article
+permalink: /integrations/ios/
+show_related: false
+tags: [integrations, app-development]
+title:  "iOS"
 ---
 
 {% include toc.html %}

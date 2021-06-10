@@ -1,11 +1,11 @@
 ---
-layout: article
-title: "VMware Support"
-show_related: false
 excerpt: "Algorithmia Enterprise VMware Support"
 image:
   teaser: /icons/vm-logo.png
+layout: article
 permalink: /vmware/
+show_related: false
+title: "VMware Support"
 ---
 
 <div class="syn-styles-supported">

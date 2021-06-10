@@ -1,15 +1,15 @@
 ---
-layout: article
-title:  "Algorithm Management"
+author: jon_peck
 excerpt: "Create, Update, Publish, and Delete Algorithms via the Algorithmia API"
 categories: algorithm-development
-tags: [algo-dev]
-show_related: false
-author: jon_peck
-redirect_from:
-  - /algorithm-development/algorithm-management-api/
 image:
   teaser: /icons/algo.svg
+layout: article
+  - /algorithm-development/algorithm-management-api/
+redirect_from:
+show_related: false
+tags: [algo-dev]
+title: "Algorithm Management"
 ---
 
 Using the Algorithmia API, you can create, publish, update, and inspect individual algorithms. Among other things, this allows you to train and deploy your models on Algorithmia completely within your preferred development environment—without ever interacting with Algorithmia's web-based UI.
