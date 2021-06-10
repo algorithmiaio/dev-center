@@ -4,7 +4,7 @@ title:  "SageMaker"
 excerpt: "Deploying Models from Sagemaker Notebooks to Algorithmia"
 categories: [model-training]
 tags: [integrations, model-training]
-permalink: integrations/sagemaker
+permalink: integrations/sagemaker/
 show_related: false
 image:
   teaser: /icons/sagemaker.png

@@ -8,8 +8,8 @@ show_related: true
 permalink: /algorithm-development/environments/
 redirect_from:
 - /model-deployment/matrix/
-- /model-deployment/environments
-- /environments
+- /model-deployment/environments/
+- /environments/
 ---
 
 ## Overview

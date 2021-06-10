@@ -5,7 +5,7 @@ excerpt: "Take your data visualizations to another level by integrating Algorith
 excerpt-short: "Take your data visualizations to another level by integrating Algorithmia into Tableau"
 categories: analytics
 tags: [integrations, analytics]
-permalink: /integrations/tableau
+permalink: /integrations/tableau/
 show_related: false
 image:
     teaser: /language_logos/tableau.png

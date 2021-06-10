@@ -1,12 +1,11 @@
 ---
 layout: article
 title:  "Datadog"
-permalink: integrations/datadog/
 excerpt: "Monitor model performance metrics with Datadog"
 excerpt-short: "Monitor model performance metrics with Datadog"
 categories: [monitoring-&-observability]
 tags: [integrations, monitoring-observability]
-permalink: integrations/datadog
+permalink: integrations/datadog/
 show_related: false
 image:
     teaser: /language_logos/datadog.svg

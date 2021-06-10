@@ -4,7 +4,7 @@ layout: article
 title: "Android (Deep Learning)"
 categories: app-development
 tags: [integrations, app-development]
-permalink: integrations/android-dl
+permalink: integrations/android-dl/
 show_related: false
 author: steph_kim
 excerpt: "Build an Android app that uses deep learning to find the make and model of a picture you take of a car!"
@@ -13,7 +13,7 @@ image:
   teaser: /post_images/android/android_robot.png
 github: https://github.com/algorithmiaio/sample-apps/tree/master/android/CarMakeModelApp
 redirect_from:
-  - tutorials/sample-apps/android-car-dl-app
+  - tutorials/sample-apps/android-car-dl-app/
 ---
 
 {% include toc.html %}

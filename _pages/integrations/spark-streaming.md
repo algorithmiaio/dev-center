@@ -4,7 +4,7 @@ title: "Spark Streaming"
 excerpt-short: "Integrate Deep Learning Models within Spark Streaming with Algorithmia"
 categories: [model-training]
 tags: [integrations, model-training]
-permalink: integrations/spark-streaming
+permalink: /integrations/spark-streaming/
 show_related: true
 image:
     teaser: /language_logos/spark_streaming.png

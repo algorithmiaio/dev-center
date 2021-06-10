@@ -4,8 +4,7 @@ layout: article
 title:  "iOS"
 categories: app-development
 tags: [integrations, app-development]
-permalink:
-   /integrations/ios
+permalink: /integrations/ios/
 show_related: false
 author: jon_peck
 excerpt: "A code walk-through of a simple iOS/Swift app using Algorithmia."

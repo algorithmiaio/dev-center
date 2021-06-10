@@ -4,7 +4,7 @@ title:  "Arthur"
 excerpt: "Integrating with an external model observability platform"
 categories: [monitoring-&-observability]
 tags: [integrations, monitoring-observability]
-permalink: integrations/arthur
+permalink: integrations/arthur/
 show_related: false
 image:
   teaser: /language_logos/arthur.png

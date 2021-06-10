@@ -5,7 +5,7 @@ excerpt: "Monitor model performance metrics with InfluxDB"
 excerpt-short: "Monitor model performance metrics with InfluxDB"
 categories: [monitoring-&-observability]
 tags: [integrations, monitoring-observability]
-permalink: integrations/influxdb
+permalink: integrations/influxdb/
 show_related: false
 image:
   teaser: /language_logos/influxdata.svg

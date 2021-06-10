@@ -4,8 +4,7 @@ layout: article
 title: "Shiny App"
 categories: app-development
 tags: [integrations, app-development]
-permalink:
-   /integrations/shiny
+permalink: /integrations/shiny/
 show_related: false
 author: steph_kim
 excerpt: "Call Fourier Detrend algorithm in your Shiny app!"

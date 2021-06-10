@@ -4,13 +4,12 @@ title: 'Algorithmia Insights'
 excerpt: 'Sending algorithm metrics to a customer-operated metrics collection system'
 categories: [monitoring-&-observability]
 tags: [integrations, monitoring-observability]
-# permalink: integrations/insights
 show_related: false
 image:
   teaser: /icons/algo.svg
+permalink: /integrations/insights/
 redirect_from:
-  - /algorithmia-enterprise/algorithmia-insights
-  - /integrations/insights
+  - /algorithmia-enterprise/algorithmia-insights/
 nav_index: 1
 ---
 
