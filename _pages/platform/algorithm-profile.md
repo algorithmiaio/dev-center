@@ -11,7 +11,7 @@ redirect_from:
   - /basics/algorithm-profiles/
   - /basics/algorithm_profiles/
 show_related: true
-title:  "Algorithm Profile"
+title: "Algorithm Profile"
 ---
 
 This page describes the information that's available on each algorithm's profile page in Algorithmia's browser UI.
@@ -59,39 +59,39 @@ This section lists the number and average duration of API calls to the algorithm
 
 #### Permissions
 
-This section includes information about licensing, internet accessibility, and visibility to others on the cluster. For a deeper dive, see [Permissions]({{site.baseurl}}/platform/permissions).
+This section includes information about the algorithm's licensing, internet accessibility, and visibility to other accounts on the cluster. For a deeper dive, see [Permissions]({{site.baseurl}}/platform/permissions).
 
 #### Run an example
 
-In this section there's a test console where you can experiment with the algorithm. Click the **Run Example** button to have the algorithm run on the sample input supplied in the left hand box, and the results will show in the output box on the right.
+In this section there's a test console where you can experiment with the algorithm. Click the **Run Example** button to have the algorithm run on the sample input supplied in the left-hand box, and the results will show in the output box on the right.
 
-You can experiment with your own input data as long as it's in a format the algorithm accepts. To know what the format is, visit the algorithm's [Docs](#docs) tab, where that type of information is documented.
+You can experiment with your own input data, but you'll want to make sure that it's in a format the algorithm accepts. To see details about the proper input format, visit the algorithm's [Docs](#docs) tab.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/console.png" alt="Algorithm Profile console" class="screenshot img-md">
 
 #### Install and use
 
-In this section you can toggle between 15 supported client languages to view code for installing the algo CLI, our command-line based tool, as well as the client code to call your algorithm from any of the supported client languages. To learn more about how this works, see our [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo).
+In this section you can toggle between our supported client languages to view code for installing the algo CLI, our command-line based tool, as well as client code to call your algorithm from an external application. To learn about how to call an algorithm, see our [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo).
 
 ### Docs
 
-This tab displays a rendering of the algorithm's README file, which is written in Markdown. If you have write access to the algorithm, you'll be able to edit the README through this interface. The documentation here should describe:
+This tab displays a rendering of the algorithm's README file, which is written in Markdown. If you have write access to the algorithm, you'll be able to edit the README through this interface. The documentation here should contain:
 
-* What the algorithm does
+* Description of what the algorithm does
 * Example(s) of expected input for the algorithm
 * Example(s) of expected output from the algorithm, given the example input(s)
 
-Many algorithms also use this space to link to research papers or other sites that more fully explain the technical implementation of the algorithm.
+Many algorithm developers also use this space to link to research papers or other sites that more fully explain the technical implementation of the algorithm.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/description.png" alt="Algorithm Profile docs" class="screenshot">
 
 ### Discussion
 
-This tab serves as a thread for any comments, questions, and answers pertaining to the algorithm.
+This tab serves as a forum for any comments, questions, and answers pertaining to the algorithm.
 
 ### Errors
 
-Beginning in Algorithmia version 20.5.52, non-admin users can see runtime errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster admin](https://training.algorithmia.com/managing-advanced-workflows/829681).
+Beginning in Algorithmia version 20.5.52, non-admin users can see runtime errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](https://training.algorithmia.com/managing-advanced-workflows/829681).
 
 This tab lists the 200 most recent algorithm runtime errors over the past seven days. For each error, the caller and algorithm endpoint are listed along with the exact date and time that the error occurred. If the error is a custom Algorithmia error type, that information is displayed as well. The error message is displayed in red below these details.
 
@@ -101,21 +101,19 @@ To expose additional details about the error and associated execution metadata, 
 
 ### Source Code
 
-This tab will be visible if you're viewing an open-source licensed algorithm, an algorithm you own, or an algorithm owned by an organization of which you're a member. Clicking this tab navigates you to our Web IDE, where you can see how the algorithm was implemented.
+This tab will be visible if you're viewing an open-source licensed algorithm, an algorithm you own, or an algorithm owned by an organization of which you're a member. Clicking this tab navigates you to our Web IDE. There, you can view the source code to see how the algorithm was implemented.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/viewsource.png" alt="Algorithm Profile View Source Code tab" class="screenshot">
 
 ## Profiles for owned algorithms
 
-In addition to the Source Code tab, profiles for algorithms owned by your account, or by organizations of which you're a member, will have three additional tabs, described below.
+Profiles for algorithms owned by your account, or by organizations of which you're a member, will have three additional tabs, described below.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/owned_algo_profile.png" alt="Owned Algorithm Profile" class="screenshot">
 
 ### Builds
 
-The Builds page lists all builds of your algorithm, beginning with the most recent.
-
-Builds are started when you push local commits to Algorithmia, or by using the **Build** option in the Algorithmia web IDE.
+This tab lists all builds of your algorithm, beginning with the most recent. Builds are started when you push local commits to Algorithmia, or by clicking the **Build** button in Algorithmia's Web IDE.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_builds_list.png" alt="Algorithm Builds" class="screenshot">
 
@@ -128,13 +126,13 @@ The following information is shown for each build:
 * The build's status
 * The version published from the build, if there is one
 
-If your latest build is successful and unpublished, you'll see a **Publish** option in the **Version** column. Clicking on this will start the publish process for that build, with the same steps described [here]({{site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
+If your latest build is successful and unpublished, you'll see a **Publish** option in the **Version** column. Clicking on this will start the publish process for that build, with the same steps as described [here]({{site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
 
-At the right of the row for each build is an action menu that provides options to view the detail page for the build, download the build's logs, or publish the build if it is publishable.
+At the right of the row for each build is an action menu that provides options to view the details page for the build, download the build's logs, or publish the build if it's publishable.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_menu.png" alt="Algorithm Builds" class="screenshot">
 
-The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the compilation logs for the build.
+The details page contains the same information and options as the builds list entry, with the addition of the callability of the build's version, if it has one, and the build's compilation logs.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_build_detail.png" alt="Algorithm Builds" class="screenshot">
 
@@ -146,11 +144,11 @@ This tab lists each published algorithm version (if any), its associated release
 
 The top of this tab includes information for working on an algorithm locally, as well as a tracker for the [algorithm checklist]({{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-checklist).
 
-Here you can also edit your algorithm's settings here, including source code visibility, license, algorithm environment, and other [permissions]({{site.baseurl}}/platform/permissions). Also displayed here is the algorithm's language, but note that this property cannot be changed once the algorithm is created.
+Here you can also edit your algorithm's settings, including source code visibility, license, algorithm environment, and other [permissions]({{site.baseurl}}/platform/permissions). The algorithm's language is also displayed here, but note that the language can't be changed once the algorithm is created.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algo_settings.png" alt="Algorithm Settings" class="screenshot">
 
-At the bottom of this tab is the option to delete the algorithm if it doesn't yet have a public published version.
+At the bottom of this tab is the option to delete the algorithm if it doesn't yet have a publicly published version.
 
 Use the **Delete Algorithm** button with care; deleted algorithms are gone forever!
 {: .notice-warning }
