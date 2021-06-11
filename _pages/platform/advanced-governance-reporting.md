@@ -1,5 +1,5 @@
 ---
-categories: [platform]
+categories: basics
 excerpt: "Gain insight into platform usage and enhance ML governance with Algorithmia's advanced reporting capabilities"
 excerpt-short: "Algorithmia advanced reporting for governance"
 layout: article
@@ -24,7 +24,7 @@ This feature is only available to users on [Algorithmia Enterprise](/enterprise)
 
 ## Metrics
 
-Governance reports contain both historical and aggregate data. Historical data is a roll-up from a time window of algorithm executions, while aggregate data represents a snapshot from the time the report is generated. The following metrics are displayed in governance reports:
+Governance reports contain both historical and aggregate data. Historical data is a roll-up from a time window of algorithm executions, while aggregate data represents a snapshot from the time the report is generated. The following metrics are available in governance reports:
 
 Historical data
 - Algorithmia-hosted storage size (MiB)
@@ -47,26 +47,34 @@ Aggregate data (aggregated at the organization level)
 
 ## Permissions
 
-The governance reporting feature is available to cluster admins and organization admins. In order for cost information to be estimated, a cluster admin must first [set the expected resource cost rates](https://training.algorithmia.com/exploring-the-admin-panel/836479#setting-cost-rates). If the cost rates haven't been set, all estimated costs will default to 0.
+The governance reporting feature is available to cluster admins and organization admins. In order for cost information to be estimated, a cluster admin must first [set expected resource cost rates](https://training.algorithmia.com/exploring-the-admin-panel/836479#setting-cost-rates). If the cost rates haven't been set, all estimated costs will default to 0.
 
 ### Cluster admin
 
-Cluster admins can view all resource consumption data captured within the platform. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
+Cluster admins can view all resource consumption data captured within the platform, grouped by organization, account, and algorithm. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
 
 ### Organization admin
 
-Organization admins can view information for their current organization. Information can be viewed for the organization as a whole or grouped by organization-owned algorithms or member accounts as needed.
+From an [organization's profile]({{site.baseurl}}/platform/organizations), organization admins can view resource consumption data for organizations for which they're an admin, for members of those organizations, and for algorithms owned by those organizations.
 
-Each metric listed above can be visualized by selecting it in the third dropdown.
+#### Organization-level reporting
 
-![Org admin page](/developers/images/post_images/advanced_reporting/governance_reporting_org_report.png)
+At the organization level, data can be grouped by organization-owned algorithm or member account as needed.
 
-All metrics are also displayed in tabular form below the plot, ordered by the selected metric from the dropdown, in order to help you understand resource usage within a specified time period.
+![Org admin org report](/developers/images/post_images/advanced_reporting/governance_reporting_org_report.png)
 
-![Org admin tabular data](/developers/images/post_images/advanced_reporting/governance_reporting_tabular.png)
+Each metric listed above can be visualized by selecting it in the third dropdown, as shown above under [Metrics](#metrics). All metrics are also displayed in tabular form below the plot, ordered by the selected metric, in order to help you understand resource usage within a specified time period.
 
-#### Algorithm details
+![Org admin tabular data](/developers/images/post_images/advanced_reporting/governance_reporting_tabular_report.png)
 
-Organization admins can also view information about usage for a specific version of an algorithm owned by their organization. Algorithm usage metrics can be viewed at the organization level or grouped by the individual accounts calling the algorithm.
+#### Account-level reporting
 
-![Algorithm details page](/developers/images/post_images/advanced_reporting/governance_reporting_algorithm_report.png)
+Organization admins can navigate to the [account profile]({{site.baseurl}}/platform/account-profile/) for an account that's a member of the organization to that specific account's resource usage. At the account level, data can be grouped by organization or algorithm.
+
+![Org admin account report](/developers/images/post_images/advanced_reporting/governance_reporting_account_report.png)
+
+#### Algorithm-level reporting
+
+Organization admins can also navigate to the [algorithm profile]({{site.baseurl}}/platform/algorithm-profile/) for an algorithm owned by their org to view information about usage for that specific algorithm. Algorithm usage metrics can be displayed at the organization level or grouped by the individual organization member account calling the algorithm.
+
+![Org admin algorithm report](/developers/images/post_images/advanced_reporting/governance_reporting_algorithm_report.png)
