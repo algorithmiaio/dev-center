@@ -17,7 +17,7 @@ Advanced governance reporting provides functionality to aggregate algorithm exec
 This feature is only available to users on [Algorithmia Enterprise](/enterprise) clusters where the feature has been enabled. The feature is available beginning in Algorithmia version 20.5.53.
 {: .notice-enterprise}
 
-## Use Cases
+## Use cases
 
 - View historical information about system resource usage at the algorithm, account, and organization level.
 - Support chargeback/showback efforts with report granularity down to the level of specific algorithm versions.
