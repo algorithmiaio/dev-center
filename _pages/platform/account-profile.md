@@ -11,7 +11,7 @@ redirect_from:
   - /basics/your-profile/
   - /platform/your-profile/
 tags: [alg-dev-getting-started, app-dev-getting-started]
-title: "Account Profile"
+title: "Accounts"
 ---
 
 This page describes the information that's available on your account profile page within Algorithmia's browser UI.

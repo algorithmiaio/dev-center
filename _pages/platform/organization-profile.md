@@ -1,22 +1,23 @@
 ---
-layout: article
-title: "Organization Profile"
-excerpt: "Understanding Organizations on Algorithmia"
 categories: basics
-nav_index: 25
-tags: [basics]
-show_related: true
+excerpt: "Understanding organizations on Algorithmia"
 image:
     teaser: /icons/algo.svg
+layout: article
+nav_index: 25
 permalink: /platform/organization-profile/
 redirect_from:
   - /basics/organization_profiles/
   - /platform/organizations/
+show_related: true
+tags: [basics]
+title: "Organizations"
 ---
 
-If you are looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open-source community, then our organizations feature is what you're looking for.
+If you're looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open-source community, then you should consider using our organizations feature.
 
 #### Use cases
+
 * Increase security with shared API keys within an organization
 * Avoid individual account ownership of algorithms
 * Separate and organize multiple teams or departments within a company using organizations

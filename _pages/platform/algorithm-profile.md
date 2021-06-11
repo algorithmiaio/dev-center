@@ -12,7 +12,7 @@ redirect_from:
   - /basics/algorithm_profiles/
   - /platform/algorithm_profiles/
 show_related: true
-title: "Algorithm Profile"
+title: "Algorithms"
 ---
 
 This page describes the information that's available on each algorithm's profile page in Algorithmia's browser UI.
