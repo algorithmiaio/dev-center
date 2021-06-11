@@ -10,6 +10,30 @@ title:  "Release Notes"
 tags: [alg-dev-getting-started, app-dev-getting-started]
 ---
 
+## Advanced Reporting for Governance
+
+The Advanced Reporting for Governance feature provides administrators the ability to view resource usage on the platform. Usage can be viewed at four different levels depending on your access permissions. If you’re an organization administrator, you can explore reporting at the organization and account level, and even down to the individual algorithm level. Cluster administrators are granted all of the above permissions, as well as being able to view reporting at the cluster level. We’ll start at the top level of the cluster roll-up.
+
+### Cluster-level reporting
+
+Only cluster administrators have access to cluster-level reporting. To use this feature, navigate to the “Governance Reporting” page in the administrator panel.
+
+As a first step, we recommend you add your hardware cost rate estimates to ensure you get accurate cost estimates based on your resource usage. To do this, click the “Resource Cost Rates” button in the top-right corner to view the values. To add or modify existing values, click the “Edit Values” button and input your values in the form. Submit your changes when you’re done and you’ll see cost estimates displayed in the report. Once you’re satisfied with the cost estimates, you can dive into the data.
+
+On the Advanced Reporting page, you’ll notice dropdowns to specify exactly which data you want to see. The first dropdown determines the date range, the next two determine how to group and filter the data, and the final dropdown determines the direction of ordering. These dropdowns determine which data are displayed in the plot as well as how those data are ordered in the table below. You’ll notice many grouping and filtering options available to help you determine the “who”, “what”, “when”, “how much”, and “how long” of platform resource usage. Finally, if you need to save, distribute, or export these metrics for use in another application, there’s a button to download a CSV of all data for the selected time period.
+
+### Organization-level reporting
+
+Organization administrators have a subset of the permissions granted to cluster administrators. Namely, they can view resource usage data for the organizations for which they’re an administrator, the accounts that are members of those organizations, and the algorithms owned by those organizations.
+
+To view Advanced Reporting at the organization level, navigate to the organization’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here you’ll see the same options for filtering and displaying data as listed above for cluster-level reporting, but it’ll be pre-filtered to only show data for that specific organization.
+
+To view Advanced Reporting at the account level, navigate to the account’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here, you’ll see the same options for filtering and displaying data but it’ll be pre-filtered to only show data for that specific account.
+
+To view Advanced Reporting at the algorithm level, navigate to the algorithm’s overview page and click on the “Reporting” tab, which is only visible to administrators. Here, you’ll see the same options for filtering and displaying data but it’ll be pre-filtered to only show data for that specific algorithm.
+
+---
+
 ## GitLab, Bitbucket Cloud, and Bitbucket Server Source Code Management Integrations ##
 
 We’ve added three new source code management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
