@@ -12,7 +12,7 @@ tags: [platform]
 title: "Advanced Governance Reporting"
 ---
 
-Advanced governance reporting provides functionality to aggregate algorithm execution metrics and make them searchable in order to easily review resource usage at the algorithm, account, and organization level.
+Advanced governance reporting provides functionality to aggregate algorithm execution metrics and make them searchable in order to easily view and report on resource usage at the algorithm, account, organization, and cluster level.
 
 This feature is only available to users on [Algorithmia Enterprise](/enterprise) clusters where the feature has been enabled. The feature is available beginning in Algorithmia version 20.5.53.
 {: .notice-enterprise}
@@ -55,11 +55,11 @@ Cluster admins can view all resource consumption data captured within the platfo
 
 ### Organization admin
 
-From an [organization's profile]({{site.baseurl}}/platform/organizations), organization admins can view resource consumption data for organizations for which they're an admin, for members of those organizations, and for algorithms owned by those organizations.
+Organization admins can view resource consumption data for organizations for which they're an admin, for members of those organizations, and for algorithms owned by those organizations.
 
 #### Organization-level reporting
 
-At the organization level, data can be grouped by organization-owned algorithm or member account as needed.
+From the **Reporting** tab of an [organization's profile]({{site.baseurl}}/platform/organizations), data can be grouped by organization-owned algorithm or member account as needed.
 
 ![Org admin org report](/developers/images/post_images/advanced_reporting/governance_reporting_org_report.png)
 
@@ -69,12 +69,12 @@ Each metric listed above can be visualized by selecting it in the third dropdown
 
 #### Account-level reporting
 
-Organization admins can navigate to the [account profile]({{site.baseurl}}/platform/account-profile/) for an account that's a member of the organization to that specific account's resource usage. At the account level, data can be grouped by organization or algorithm.
+Organization admins can navigate to the **Reporting** tab of the [account profile]({{site.baseurl}}/platform/account-profile/) for an account that's a member of the organization to see that specific account's resource usage. At the account level, data can be grouped by organization or algorithm.
 
 ![Org admin account report](/developers/images/post_images/advanced_reporting/governance_reporting_account_report.png)
 
 #### Algorithm-level reporting
 
-Organization admins can also navigate to the [algorithm profile]({{site.baseurl}}/platform/algorithm-profile/) for an algorithm owned by their org to view information about usage for that specific algorithm. Algorithm usage metrics can be displayed at the organization level or grouped by the individual organization member account calling the algorithm.
+Organization admins can also navigate to the **Reporting** tab of the [algorithm profile]({{site.baseurl}}/platform/algorithm-profile/) for an algorithm owned by their org to view information about usage for that specific algorithm. Algorithm usage metrics can be displayed at the organization level or grouped by the individual organization member account calling the algorithm.
 
 ![Org admin algorithm report](/developers/images/post_images/advanced_reporting/governance_reporting_algorithm_report.png)
