@@ -51,7 +51,7 @@ The governance reporting feature is available to cluster admins and organization
 
 ### Cluster admin
 
-Cluster admins can view all resource consumption data captured within the platform, grouped by organization, account, and algorithm. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
+Cluster admins can view all resource consumption data captured within the platform, grouped by organization, account, and algorithm. They can also view everything that an organization admin can view, as described below. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
 
 ### Organization admin
 
