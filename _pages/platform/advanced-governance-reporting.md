@@ -3,8 +3,8 @@ layout: article
 title:  "Advanced Governance Reporting"
 excerpt: "Gain insight into platform usage and enhance ML governance with Algorithmia's advanced reporting capabilities"
 excerpt-short: "Algorithmia advanced reporting for governance"
-categories: [algorithmia-enterprise]
-tags: [algorithmia-enterprise]
+categories: [platform]
+tags: [platform]
 show_related: false
 permalink: /platform/advanced-governance-reporting/
 redirect_from:
@@ -45,43 +45,19 @@ Aggregate data (aggregated at the organization level)
 
 ![Metrics drop-down](/developers/images/post_images/advanced_reporting/governance_reporting_metrics_list.png)
 
-## Setting cost
-
-In order to see calculated cost information, a cluster admin must first set the expected cost of resources. If the expected cost hasn't been set, all costs will default to 0.
-
-![Setting cost](/developers/images/post_images/advanced_reporting/governance_reporting_set_cost.png)
-
-Configurable expected cost rates* include:
-- GPU time (cost / GPU second)
-- CPU time (cost / CPU second)
-- Algorithmia-hosted data usage (cost / GiB)
-- Externally hosted (through data connector) data usage (cost / GiB)
-
-*Cost rates can be specified to the ten thousandth of a cost unit (i.e., 0.0001)
-
-![Showing cost](/developers/images/post_images/advanced_reporting/governance_reporting_view_cost.png)
-
 ## Permissions
+
+The governance reporting feature is available to cluster admins and organization admins. In order for cost information to be estimated, a cluster admin must first [set the expected resource cost rates](https://training.algorithmia.com/exploring-the-admin-panel/836479#setting-cost-rates). If the cost rates haven't been set, all estimated costs will default to 0.
 
 ### Cluster admin
 
-Cluster admins can view all information captured within the platform.
-
-![Cluster admin page](/developers/images/post_images/advanced_reporting/governance_reporting_cluster_admin.png)
-
-These data can be grouped by organization, organization-owned algorithm, or account as needed.
-
-![Group by selector](/developers/images/post_images/advanced_reporting/governance_reporting_groupby_list.png)
-
-These data can be visualized as a whole and displayed in tabular form ordered by any of the above-listed metrics in order to help understand system usage within the specified time period.
-
-![Tabular data](/developers/images/post_images/advanced_reporting/governance_reporting_tabular.png)
+Cluster admins can view all resource consumption data captured within the platform. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
 
 ### Organization admin
 
-Organization admins can view information for their current organization. Information can be viewed for the organization as a whole or grouped by organization-owned algorithms or member accounts if needed.
+Organization admins can view information for their current organization. Information can be viewed for the organization as a whole or grouped by organization-owned algorithms or member accounts as needed.
 
-This data can be visualized as a whole and can then be ordered in tabular form by any of the above-listed metrics in order to help understand system usage within a specified time period.
+Each metric listed above can be visualized by selecting it in the third dropdown; all metrics are also displayed in tabular form below the plot, ordered by the selected metric from the dropdown, in order to help you understand resource usage within a specified time period.
 
 ![Org admin page](/developers/images/post_images/advanced_reporting/governance_reporting_org_report.png)
 
