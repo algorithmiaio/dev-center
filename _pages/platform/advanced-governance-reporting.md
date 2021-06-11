@@ -57,9 +57,13 @@ Cluster admins can view all resource consumption data captured within the platfo
 
 Organization admins can view information for their current organization. Information can be viewed for the organization as a whole or grouped by organization-owned algorithms or member accounts as needed.
 
-Each metric listed above can be visualized by selecting it in the third dropdown; all metrics are also displayed in tabular form below the plot, ordered by the selected metric from the dropdown, in order to help you understand resource usage within a specified time period.
+Each metric listed above can be visualized by selecting it in the third dropdown.
 
 ![Org admin page](/developers/images/post_images/advanced_reporting/governance_reporting_org_report.png)
+
+All metrics are also displayed in tabular form below the plot, ordered by the selected metric from the dropdown, in order to help you understand resource usage within a specified time period.
+
+![Org admin tabular data](/developers/images/post_images/advanced_reporting/governance_reporting_tabular.png)
 
 #### Algorithm details
 
