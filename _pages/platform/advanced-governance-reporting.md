@@ -6,9 +6,10 @@ excerpt-short: "Algorithmia advanced reporting for governance"
 categories: [algorithmia-enterprise]
 tags: [algorithmia-enterprise]
 show_related: false
-permalink: /algorithmia-enterprise/advanced-governance-reporting/
+permalink: /platform/advanced-governance-reporting/
 redirect_from:
--  /basics/advanced-reporting/
+  - /basics/advanced-reporting/
+  - /algorithmia-enterprise/advanced-governance-reporting/
 ---
 
 Advanced governance reporting provides functionality to aggregate algorithm execution metrics and make them searchable in order to easily review resource usage at the algorithm, account, and organization level.
