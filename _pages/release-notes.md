@@ -10,6 +10,24 @@ title:  "Release Notes"
 tags: [alg-dev-getting-started, app-dev-getting-started]
 ---
 
+## Algorithm Execution Errors
+
+Non-admin users can now view algorithm execution errors from the last seven days for specific algorithms or from all algorithms they’ve called. These error logs can also be retrieved through the Algorithmia API.
+
+All errors are captured and included in the error log, allowing users to debug with a single glance. Errors from algorithms called in a pipeline are bubbled up to the top-level calling algorithm. Error details include timestamp, error type, execution metadata, stacktrace, and partial algorithm input.
+
+This feature is disabled by default and can be enabled globally on an Algorithmia cluster by a cluster administrator.
+
+### Algorithm-specific errors
+
+Each algorithm’s execution errors are displayed on the algorithm’s profile page in a dedicated tab. Errors are only visible to users who are viewing an algorithm they own or that’s owned by an organization of which they’re a member.
+
+### Account-level errors
+
+Algorithm execution errors are displayed on each user's account profile page in a dedicated tab. These errors are only visible to users viewing their own profile page (i.e., the profile page for the account into which they’re authenticated), and are only shown for algorithms that they’ve called using an API key they own.
+
+---
+
 ## Advanced Reporting for Governance
 
 The Advanced Reporting for Governance feature provides administrators the ability to view resource usage on the platform. Usage can be viewed at four different levels depending on your access permissions. If you’re an organization administrator, you can explore reporting at the organization and account level, and even down to the individual algorithm level. Cluster administrators are granted all of the above permissions, as well as being able to view reporting at the cluster level. We’ll start at the top level of the cluster roll-up.
