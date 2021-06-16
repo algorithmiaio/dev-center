@@ -1,16 +1,15 @@
 ---
-layout: article
-title:  "Secret Store"
-excerpt: "Use Algorithmia's Secret Store to save and access sensitive data"
 categories: basics
-nav_index: 40
-show_related: true
+excerpt: "Use Algorithmia's Secret Store to save and access sensitive data"
 image:
     teaser: /icons/algo.svg
+layout: article
 permalink: /platform/secret-store/
 redirect_from:
   - /basics/algorithm-secrets/
   - /platform/algorithm-secrets/
+show_related: true
+title:  "Secret Store"
 ---
 
 Algorithmia's Secret Store enables you to decouple sensitive data like passwords, access tokens, and credentials from your algorithm source code. With this feature, you can store your sensitive data securely on Algorithmia and access individual secret values from within your algorithms using environment variables.
