@@ -86,9 +86,9 @@ Our latest release includes a variety of new features that primarily focus on im
 
 We’re proud to share that we’ve expanded our security features to provide even greater protection for your business.
 
-#### Secret store for external resources ####
+#### Secret Store for external resources ####
 
-We’ve created a vault-based secret store, enabling you to create and manage credentials in a central location for access to data sources and web services. This will allow you to provide access to resources without the need to expose credentials or share them amongst the users that require access to sensitive information. Additionally, integrations with third-party vault tools to integrate with your internal vault implementation are being added.
+We’ve created a vault-based Secret Store, enabling you to create and manage credentials in a central location for access to data sources and web services. This will allow you to provide access to resources without the need to expose credentials or share them amongst the users that require access to sensitive information. Additionally, integrations with third-party vault tools to integrate with your internal vault implementation are being added.
 
 #### SSO upgrades ####
 
