@@ -92,13 +92,13 @@ This tab serves as a forum for any comments, questions, and answers pertaining t
 
 ### Errors
 
-Beginning in Algorithmia version 20.5.52, non-admin users can see runtime errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](https://training.algorithmia.com/managing-advanced-workflows/829681).
+Beginning in Algorithmia version 20.5.52, non-admin users can see execution errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](https://training.algorithmia.com/managing-advanced-workflows/829681).
 
-This tab lists the 200 most recent algorithm runtime errors over the past seven days. For each error, the caller and algorithm endpoint are listed along with the exact date and time that the error occurred. If the error is a custom Algorithmia error type, that information is displayed as well. The error message is displayed in red below these details.
+This tab lists the 200 most recent algorithm execution errors over the past seven days. For each error, the caller and algorithm endpoint are listed along with the exact date and time that the error occurred. If the error is a custom Algorithmia error type, that information is displayed as well. The error message is displayed in red below these details.
 
 To expose additional details about the error and associated execution metadata, click the drop-down arrow to the right. The request ID, the worker node that handled the request, the first 128 characters of the input to the algorithm, and the expanded stack trace information are displayed.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algorithm-profile-errors.png" alt="Algorithm Profile Runtime Errors" class="screenshot img-md">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algorithm_profiles/algorithm-profile-errors.png" alt="Algorithm Profile Execution Errors" class="screenshot img-md">
 
 ### Source Code
 
