@@ -6,8 +6,8 @@ layout: article
 redirect_from:
 - /release_notes/
 show_related: true
-title:  "Release Notes"
 tags: [alg-dev-getting-started, app-dev-getting-started]
+title:  "Release Notes"
 ---
 
 ## Algorithm Execution Errors
