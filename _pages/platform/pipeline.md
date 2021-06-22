@@ -21,7 +21,7 @@ When machine learning is run at scale, issues arise related to the large volume 
 
 - Volume: only call parts of the workflow when you need them, and cache or store results that you plan on reusing.
 - Variety: when you expand your model portfolio, you can use components from the beginning stages of existing workflows by simply pipelining them with your new models instead of actually replicating the code.
-- Versioning: when services are stored in a central location and pipelined together with various models, there's only one copy of each piece of the pipeline to update. Because services in multiple different pipelines may be calling the same upstream service, when the original upstream services is updated, all downstream services will have access to that updated version immediately, and code doesn't need to be changed in multiple places.
+- Versioning: when services are stored in a central location and pipelined together with various models, there's only one copy of each piece of the pipeline to update. Because services in multiple different pipelines may be calling the same upstream service, when the original upstream service is updated, all downstream services will have access to that updated version immediately, and code doesn't need to be changed in multiple places.
 
 This type of ML pipeline improves the performance and organization of the entire model portfolio, getting models into production quicker and making managing machine learning workflows easier to understand, debug, and modify. This goes hand-in-hand with the recent push for microservices architectures, branching off the main idea that by splitting your application into basic and siloed parts you can build more powerful software over time.
 
