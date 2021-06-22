@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "ML Pipelines"
-excerpt: "Creating ML pipelines with Algorithmia."
 categories: basics
-tags: [basics]
-show_related: true
+excerpt: "Creating ML pipelines with Algorithmia."
 image:
     teaser: /icons/algo.svg
-permalink: /platform/pipeline/
+layout: article
+permalink: /platform/pipelining/
+show_related: true
+tags: [basics]
+title: "ML Pipelines"
 ---
 
 # ML Pipelining in Algorithmia
