@@ -30,7 +30,7 @@ With an ML pipeline, each part of your workflow is abstracted into an independen
 With Algorithmia, pipelining machine learning is simple:
 
 - Function logic is packaged into "algorithm" microservices that are exposed as API endpoints; calling any microservice becomes as simple as `algorithm.pipe(input)`.
-- Pipelines can be input agnostic, since multiple languages and frameworks can be pipelined together. 
+- Algorithm inputs and outputs are expressed as JSON objects. This language-agnostic format means you can write algorithms in multiple languages, and/or using multiple frameworks, and pipeline them together seamlessly. 
 - You can set granular permissions for each algorithm and choose whether or not to allow that algorithm to call other algorithms on the platform.
 
 ## Example ML pipeline
