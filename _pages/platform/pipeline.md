@@ -25,7 +25,7 @@ When machine learning is run at scale, issues arise related to the large volume 
 
 This type of ML pipeline improves the performance and organization of the entire model portfolio, getting models into production quicker and making machine learning workflows easier to understand, debug, modify, and manage. This goes hand-in-hand with the recent push for microservices architectures, branching off the main idea that by splitting your application into more basic, isolated components, you can build more powerful software over time.
 
-With an ML pipeline, each part of your workflow is abstracted into an independent service. Then, each time you design a new workflow, you can pick and choose which elements you need and use them where you need them, and any changes made to individual services will be made in only one place.
+With an ML pipeline, each part of your workflow is abstracted into an independent service. Then, each time you design a new workflow, you can pick and choose whichever elements you need and use them where you need them, and any changes made to individual services need only be made in one place.
 
 With Algorithmia, pipelining machine learning is simple:
 
