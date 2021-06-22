@@ -17,7 +17,7 @@ Algorithmia was built from the ground up to support machine learning at scale, a
 1. Complex machine learning workflows should be divided into independent, reusable, modular parts that can then be connected to form a complete pipeline. This sort of modularity makes data scientists and engineers more efficient, cutting out redundant work as the component pieces are reusable and easy to work with.
 2. Complex machine learning workflows should be automated. This can be achieved by streamlining the process of transforming data, inputting it into a model where inference happens, and shuttling the output to the next step in the pipeline.
 
-When machine learning is run at scale, issues arise related to the large volume of data processed, the variety of services used, and the versions of these services. You can employ the following pipelining strategies to address these issues:
+When machine learning is run at scale, issues arise related to the large volume of data processed, the variety of services used, and the versioning of these services. You can employ the following pipelining strategies to address these issues:
 
 - Volume: only call parts of the workflow when you need them, and cache or store results that you plan on reusing.
 - Variety: when you expand your model portfolio, you can use components from the beginning stages of existing workflows by simply pipelining them with your new models instead of actually replicating the code.
