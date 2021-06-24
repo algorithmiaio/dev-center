@@ -56,7 +56,7 @@ RUN ./build.sh
 #
 # Final stage: use the build artifacts from previous stages
 #
-FROM node:14.15.4-slim
+FROM node:14.17.1-buster-slim
 
 WORKDIR /opt/src/app
 
@@ -68,6 +68,7 @@ COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
 COPY package.json yarn.lock ./
 
+RUN rm -rf node_modules
 RUN yarn --frozen-lockfile --production
 
 # Add deployment artifacts to the image.
