@@ -68,7 +68,6 @@ COPY server/prometheus.js ./server/prometheus.js
 COPY config ./config
 COPY package.json yarn.lock ./
 
-RUN rm -rf node_modules
 RUN yarn --frozen-lockfile --production
 
 # Add deployment artifacts to the image.
