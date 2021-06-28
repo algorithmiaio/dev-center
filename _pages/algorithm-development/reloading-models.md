@@ -99,6 +99,6 @@ def apply(input):
 model, last_reload_time = reload_model()
 ```
 
-### Alternative option: Uing CI/CD for model redeployments
+### Alternative option: Using CI/CD for model redeployments
 
 Alternatively, you can tackle this problem with automation beyond the actual algorithm code. If you wish to set up CI/CD, for example using a system such as GitHub Actions or Jenkins, see [Deploying Models via CI/CD]({{site.url}}{{site.baseurl}}/algorithm-development/ci-cd).
