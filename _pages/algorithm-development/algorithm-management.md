@@ -5,8 +5,8 @@ categories: algorithm-development
 image:
   teaser: /icons/algo.svg
 layout: article
-  - /algorithm-development/algorithm-management-api/
 redirect_from:
+  - /algorithm-development/algorithm-management-api/
 show_related: false
 tags: [algo-dev]
 title: "Algorithm Management"
