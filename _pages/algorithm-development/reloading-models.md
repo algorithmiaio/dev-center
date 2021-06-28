@@ -64,14 +64,14 @@ from sklearn.externals import joblib
 client = Algorithmia.client()
 
 def reload_model():
+    global model
     model_file = client.file('data://ALGO_OWNER/ALGO_NAME/MODEL_FILE.pkl').getFile().name
     model = joblib.load(model_file)
-    return model
 
 def apply(input):
     return int(model.predict(input))
 
-model = reload_model()
+reload_model()
 ```
 
 Next, we need a way to periodically call `reload_model()`. Once the algorithm is warmed up, on subsequent executions it only runs the code inside the scope of the `apply()` function. So, we'll add the logic to reload the model within the `apply()` function, checking against a `last_reload_time` timestamp that gets set when the model is reloaded. We'll also specify a time duration `reload_period` to specify how often we want to reload the model. The model-loading operation has latency associated with it and we don't want to incur that cost on every algorithm execution.
@@ -86,17 +86,17 @@ client = Algorithmia.client()
 reload_period = 3600 # 1 hour
 
 def reload_model():
+    global model, last_reload_time
     model_file = client.file('data://ALGO_OWNER/ALGO_NAME/MODEL_FILE.pkl').getFile().name
     model = joblib.load(model_file)
     last_reload_time = time.time()
-    return model, last_reload_time
 
 def apply(input):
     if time.time() - last_reload_time > reload_period:
         reload_model()
     return int(model.predict(input))
 
-model, last_reload_time = reload_model()
+reload_model()
 ```
 
 ### Alternative option: Using CI/CD for model redeployments
