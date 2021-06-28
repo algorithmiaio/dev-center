@@ -1,39 +1,38 @@
 ---
-layout: article
-title:  "Reloading Models"
-excerpt: "Reloading your ML Model when it changes"
 categories: algorithm-development
-tags: [algo-dev]
-show_related: true
-author: jpeck
+excerpt: "Reloading your ML Model when it changes"
 image:
   teaser: /icons/algo.svg
+layout: article
 permalink: /algorithm-development/reloading-models/
+show_related: true
+tags: [algo-dev]
+title:  "Reloading Models"
 ---
 
-Most Machine Learning Models will change at some point, and when they do, you want to make your retrained model available quickly and efficiently.
+Most machine learning models will change at some point, and when they do, you want to make your retrained models available quickly and efficiently.
 
-On Algorithmia, model files are pulled from file storage whenever a new instance of an Algorithm is warmed up. If your predictive code has not changed, and the new model file is backward-compatible, you can choose to simply replace the file. Newly warmed-up copies of your Algorithm will automatically utilize the new model file, returning new predictive values.
+On Algorithmia, model files are loaded from file storage whenever a new instance of an algorithm is created. If you retrain a model and you want your algorithm to use the new model file, if it's backward-compatible with your existing algorithm code, you may choose to simply overwrite the file at the source. New instances of your algorithm will then load this new model file, because it's located at the same data path.
 
-However, this does not force old copies of your Algorithm to unload... so, for a time, some predictions might use your old model, while others use the new one.
+However, this approach doesn't force existing algorithm instances to use the new model. If multiple algorithm replicas exist, some requests may be executed on instances that have an older model, while others use the new one.
 
-There are two ways to resolve this problem, depending on whether you want to force a version-number change on your Algorithm.
+There are two ways to resolve this problem, depending on whether you want to force a version-number change for your algorithm.
 
-### Option 1: Changing your Algorithm Version Number while Updating your Model
+### Option 1: Changing your algorithm version number while updating your model
 
-One of the benefits of versioning your Algorithm while updating your model is that users can choose which version to call, and won't be surprised by a sudden change in result values.
+One of the benefits of versioning your algorithm while updating your model is that users can choose which version to call, and won't be surprised by a sudden change in output.
 
 ##### 1. Upload your new model file with a new name, preferably one indicating a date or revision, e.g. "mymodel-201902".
 
-This can be done manually in [Hosted Data]({{site.url}}/data), or via the [File API](https://docs.algorithmia.com/#upload-a-file), or externally in your preferred cloud storage system if you have previously set up a [Data Connector]({{site.url}}{{site.baseurl}}/data/hosted).
+You can upload a model to a [hosted data collection]({{site.url}}/data) manually through the Algorithmia browser UI, or via the [data API](https://docs.algorithmia.com/#upload-a-file). If you've configured a data connector for a supported cloud storage platform, you can upload a file to that platform through the API as well.
 
-##### 2. Change your Algorithm's code to use this new filename.
+##### 2. Change your algorithm's code to use this new filename.
 
-Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [git repo]({{site.url}}{{site.baseurl}}/algorithm-development/source-code-management).
+Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [Git repository]({{site.url}}{{site.baseurl}}/algorithm-development/source-code-management).
 
-##### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
+##### 3. Republish your algorithm (which forces the algorithm's version number to be incremented).
 
-Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithmia API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management).  
+Click the **Publish** button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) method (or the equivalent method for your language of choice if not Python.) in the [Algorithmia API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management).  
 
 
 ### Option 2: Updating your Model immediately, without changing Version Numbers
