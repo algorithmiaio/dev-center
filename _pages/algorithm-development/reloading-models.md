@@ -1,6 +1,6 @@
 ---
 categories: algorithm-development
-excerpt: "Reloading your ML Model when it changes"
+excerpt: "Reloading your ML model file when it changes"
 image:
   teaser: /icons/algo.svg
 layout: article
