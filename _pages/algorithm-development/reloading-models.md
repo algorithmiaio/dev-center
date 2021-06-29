@@ -1,106 +1,104 @@
 ---
-layout: article
-title:  "Reloading Models"
-excerpt: "Reloading your ML Model when it changes"
 categories: algorithm-development
-tags: [algo-dev]
-show_related: true
-author: jpeck
+excerpt: "Reloading your ML model file when it changes"
 image:
   teaser: /icons/algo.svg
+layout: article
 permalink: /algorithm-development/reloading-models/
+show_related: true
+tags: [algo-dev]
+title:  "Reloading Models"
 ---
 
-Most Machine Learning Models will change at some point, and when they do, you want to make your retrained model available quickly and efficiently.
+Most machine learning models will change at some point, and when they do, you want to make your retrained models available quickly and efficiently.
 
-On Algorithmia, model files are pulled from file storage whenever a new instance of an Algorithm is warmed up. If your predictive code has not changed, and the new model file is backward-compatible, you can choose to simply replace the file. Newly warmed-up copies of your Algorithm will automatically utilize the new model file, returning new predictive values.
+On Algorithmia, model files are loaded from file storage whenever a new instance of an algorithm is created. When you retrain a model, you'll generally want your algorithm to use the new model file. If it's backward-compatible with your existing algorithm code, you may choose to simply overwrite the file at the source. New instances of your algorithm will then load this new model file, because it's located at the same data path.
 
-However, this does not force old copies of your Algorithm to unload... so, for a time, some predictions might use your old model, while others use the new one.
+However, this approach doesn't force existing algorithm instances to reload the new model file. If multiple replicas exist for the given algorithm, some requests may be executed on instances that have an older model.
 
-There are two ways to resolve this problem, depending on whether you want to force a version-number change on your Algorithm.
+There are two ways to circumvent this issue, depending on whether you want to force an algorithm version-number change.
 
-### Option 1: Changing your Algorithm Version Number while Updating your Model
+### Option 1: Changing your algorithm version number while updating your model
 
-One of the benefits of versioning your Algorithm while updating your model is that users can choose which version to call, and won't be surprised by a sudden change in result values.
+One of the benefits of versioning your algorithm while updating your model is that users can choose which version to call, and won't be surprised by a sudden change in output.
 
 ##### 1. Upload your new model file with a new name, preferably one indicating a date or revision, e.g. "mymodel-201902".
 
-This can be done manually in [Hosted Data]({{site.url}}/data), or via the [File API](https://docs.algorithmia.com/#upload-a-file), or externally in your preferred cloud storage system if you have previously set up a [Data Connector]({{site.url}}{{site.baseurl}}/data/hosted).
+You can upload a model to a [hosted data collection]({{site.url}}/data) manually through the Algorithmia browser UI, or via the [data API](https://docs.algorithmia.com/#upload-a-file). If you've configured a data connector for a supported cloud storage platform, you can upload a file to that platform through the API as well.
 
-##### 2. Change your Algorithm's code to use this new filename.
+##### 2. Change your algorithm's code to point at this new file.
 
-Either edit your Algorithm in the Web IDE, or push the modified code to your Algorithm's [git repo]({{site.url}}{{site.baseurl}}/algorithm-development/source-code-management).
+Either edit your algorithm in the Web IDE or push the modified code to your algorithm's [Git repository]({{site.url}}{{site.baseurl}}/algorithm-development/source-code-management).
 
-##### 3. Republish your Algorithm (which causes the version number of the Algorithm to change).
+##### 3. Republish your algorithm; this forces the algorithm's version number to be incremented.
 
-Click the "Publish" button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) in the [Algorithmia API]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management).  
+Click the **Publish** button in the Web IDE, or use the [algo.publish()](https://docs.algorithmia.com/?python#publish-an-algorithm) method (or the equivalent method for your language of choice if not Python) if using the Algorithmia's API to [manage your algorithm]({{site.url}}{{site.baseurl}}/algorithm-development/algorithm-management).
 
+### Option 2: Updating your model on the fly, without changing version numbers
 
-### Option 2: Updating your Model immediately, without changing Version Numbers
+If you'll be updating your model very often (e.g., via an automated process that retrains the model hourly from a live data feed), versioning your algorithm on every single model change may be impractical. In this case, you may want to add automatic model reloading into your algorithm. This requires writing some custom code.
 
-If you'll be updating your model very often (e.g. via an automated process that retrains the model hourly from a live data feed), versioning your Algorithm on every single model change can be impractical. In this case, you may want to add automatic model reloading into your Algorithm. This requires writing some custom code.
+For example, consider a simple scikit-learn algorithm that loads a model file from a hosted data collection, accepts some text as input, and returns a number.
 
-For example, consider a simple scikit-learn Algorithm which loads a model file from Hosted Data, accepts some text as input, and returns a number:
-
-{% highlight python %}
+```python
 import Algorithmia
 from sklearn.externals import joblib
 
 client = Algorithmia.client()
 
-modelFile = client.file('data://username/demo/mymodel.pkl').getFile().name
-model = joblib.load(modelFile)
+model_file = client.file('data://ALGO_OWNER/ALGO_NAME/MODEL_FILE.pkl').getFile().name
+model = joblib.load(model_file)
 
-def apply(text):
-    return int(model.predict(text))
-{% endhighlight %}
-  
-We need to alter this code so that instead of only loading the model file once on warm-up, it reloads the model periodically.
+def apply(input):
+    return int(model.predict(input))
+```
 
-We do so by adding a function to reload the model. We'll call this function once, in the outer scope, to make sure it gets loaded at warm-up:
+Let's alter this code so that instead of only loading the model file when the algorithm instance is first spun up, it reloads the model periodically.
 
-{% highlight python %}
+We can do this by explcitly adding a function `reload_model()`, and implementing some logic to determine how often the model is reloaded. First, to ensure that the model gets loaded when the algorithm first warms up, we'll call the `reload_model()` function once in the global scope.
+
+```python
 import Algorithmia
 from sklearn.externals import joblib
 
 client = Algorithmia.client()
 
 def reload_model():
-    modelFile = client.file('data://username/demo/mymodel.pkl').getFile().name
-    model = joblib.load(modelFile)
+    global model
+    model_file = client.file('data://ALGO_OWNER/ALGO_NAME/MODEL_FILE.pkl').getFile().name
+    model = joblib.load(model_file)
 
-def apply(text):
-    return int(model.predict(text))
-    
+def apply(input):
+    return int(model.predict(input))
+
 reload_model()
-{% endhighlight %}
+```
 
-Next, we need a way to periodically call **reload_model()**. Since the algorithm only runs code when it is actively called, we'll attach this to the **apply()** function, checking against a **last_reload_time**:
+Next, we need a way to periodically call `reload_model()`. Once the algorithm is warmed up, on subsequent executions it only runs the code inside the scope of the `apply()` function. So, we'll add the logic to reload the model within the `apply()` function, checking against a `last_reload_time` timestamp that gets set when the model is reloaded. We'll also specify a time duration `reload_period` to specify how often we want to reload the model. The model-loading operation has latency associated with it and we don't want to incur that cost on every algorithm execution.
 
-{% highlight python %}
-import Algorithmia
-from sklearn.externals import joblib
+```python
 import time
 
+import Algorithmia
+from sklearn.externals import joblib
+
 client = Algorithmia.client()
-model = None
-last_reload_time = None
 reload_period = 3600 # 1 hour
 
 def reload_model():
-    modelFile = client.file('data://username/demo/mymodel.pkl').getFile().name
-    model = joblib.load(modelFile)
-    reload_period = time.time()
+    global model, last_reload_time
+    model_file = client.file('data://ALGO_OWNER/ALGO_NAME/MODEL_FILE.pkl').getFile().name
+    model = joblib.load(model_file)
+    last_reload_time = time.time()
 
-def apply(text):
-    if (time.time() - last_reload_time > reload_period):
+def apply(input):
+    if time.time() - last_reload_time > reload_period:
         reload_model()
-    return int(model.predict(text))
-    
+    return int(model.predict(input))
+
 reload_model()
-{% endhighlight %}
+```
 
+### Alternative option: Using CI/CD for model redeployments
 
-### Alternative: use CI/CD for model redeployments
-
-If you wish to set up Continuous Integration/Deployment in a system such as Jenkins, see [Deploying Models via CI/CD]({{site.url}}{{site.baseurl}}/algorithm-development/ci-cd).
+Alternatively, you can tackle this problem with automation beyond the actual algorithm code. If you wish to set up CI/CD, for example using a system such as GitHub Actions or Jenkins, see [Deploying Models via CI/CD]({{site.url}}{{site.baseurl}}/algorithm-development/ci-cd).
