@@ -10,6 +10,12 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 title:  "Release Notes"
 ---
 
+## Third-Party Secret Provider Plugins
+
+We’re excited to announce that we now have documented example implementations of secret provider plugins for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
+
+---
+
 ## Algorithm Execution Errors
 
 Non-admin users can now view algorithm execution errors from the last seven days for specific algorithms or from all algorithms they’ve called. These error logs can also be retrieved through the Algorithmia API.

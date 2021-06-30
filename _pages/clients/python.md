@@ -253,7 +253,7 @@ Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-en
 
 Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
 
-In the case of an example credit scoring model, shown in this demo for <a href-"https://www.youtube.com/watch?v=pdKwtp-_n2M ">Algorithmia Insights</a>, reported metrics include the algorithm predictions:
+In the case of an example credit scoring model, shown in this demo for <a href="https://www.youtube.com/watch?v=pdKwtp-_n2M">Algorithmia Insights</a>, reported metrics include the algorithm predictions:
 
 {% highlight python %}
 # Report Algorithmia Insights
