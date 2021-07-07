@@ -24,6 +24,7 @@ Table of Contents
 * [Calling other algorithms](#calling-other-algorithms)
 * [Error handling](#error-handling)
 * [Algorithms with multiple files](#algorithms-with-multiple-files)
+* [Publishing Algorithmia Insights](#publishing-algorithmia-insights)
 * [Algorithm checklist](#algorithm-checklist)
 * [Publish algorithm](#publish-algorithm)
 * [Conclusion and resources](#conclusion-and-resources)
