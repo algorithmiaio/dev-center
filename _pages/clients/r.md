@@ -254,18 +254,6 @@ This will get the file as a JSON object, saving it to the variable `processed_te
 
 If the file was an image or some other binary data type, you could instead use the function `.getRaw()` to retrieve the file's content as raw bytes. For more methods on how to get a file using the Data API from a data collection refer to the [API Specification](/developers/api/#get-a-file-or-directory).
 
-## Publishing Algorithmia Insights
-
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
-{: .notice-enterprise}
-
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
-
-{% highlight r %}
-# Report Algorithmia Insights
-client$report_insights(list(faces_in_image=4)})
-{% endhighlight %}
-
 ## Additional functionality
 
 In addition to the functionality covered in this guide, the R Client Library provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.

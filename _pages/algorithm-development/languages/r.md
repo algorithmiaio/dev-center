@@ -20,6 +20,7 @@ Table of contents
 * [Managing dependencies](#managing-dependencies)
 * [I/O for your algorithms](#io-for-your-algorithms)
 * [Error handling](#error-handling)
+* [Publishing Algorithmia Insights](#publishing-algorithmia-insights)
 * [Algorithm checklist](#algorithm-checklist)
 * [Publish algorithm](#publish-algorithm)
 * [Conclusion and resources](#conclusion-and-resources)
@@ -392,6 +393,18 @@ algo$pipe(list())$error$message
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
+## Publishing Algorithmia Insights
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via the `report_insights` method of the Algorithmia client. For example, to report a list:
+
+{% highlight r %}
+# Report Algorithmia Insights
+client$report_insights(list(faces_in_image=4)})
+{% endhighlight %}
+
 ## Algorithm checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
@@ -428,5 +441,5 @@ In this guide we covered how to create an algorithm, work with different types o
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
 * [Algorithmia R client documentation]({{site.baseurl}}/clients/r)
-* [Hosted Data Source]({{site.baseurl}}/data)
-* [Algorithmia API Docs](http://docs.algorithmia.com/?r)
+* [Hosted data documentation]({{site.baseurl}}/data)
+* [Algorithmia API documentation](http://docs.algorithmia.com/?r)
