@@ -243,30 +243,6 @@ This will get the image as binary data, saving it to the variable `image_data`, 
 
 If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
-## Publishing Algorithmia Insights
-
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
-{: .notice-enterprise}
-
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
-
-Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
-
-In the case of an example credit scoring model, shown in this demo for <a href="https://www.youtube.com/watch?v=pdKwtp-_n2M">Algorithmia Insights</a>, reported metrics include the algorithm predictions:
-
-{% highlight python %}
-# Report Algorithmia Insights
-client.report_insights({"risk_score": risk_score, "approved": approved})
-{% endhighlight %}
-
-{% highlight python %}
-# Sample model output that is pushed to Insights
-{
-  "approved": 1,
-  "risk_score": 0.08
-}
-{% endhighlight %}
-
 ## Additional functionality
 
 In addition to the functionality covered in this guide, the Python Client Library provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.

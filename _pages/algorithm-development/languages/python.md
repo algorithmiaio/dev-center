@@ -304,6 +304,30 @@ from .secondary_file import auxillary_func, some_other_func
 from .sub_module.special_stuff import special_stuff
 ```
 
+## Publishing Algorithmia Insights
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
+
+Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
+
+In the case of an example credit scoring model, shown in this <a href="https://www.youtube.com/watch?v=pdKwtp-_n2M">demo for Algorithmia Insights</a>, reported metrics include the algorithm predictions:
+
+{% highlight python %}
+# Report Algorithmia Insights
+client.report_insights({"risk_score": risk_score, "approved": approved})
+{% endhighlight %}
+
+{% highlight python %}
+# Sample model output that is pushed to Insights
+{
+  "approved": 1,
+  "risk_score": 0.08
+}
+{% endhighlight %}
+
 ## Algorithm checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
