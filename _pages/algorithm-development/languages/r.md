@@ -1,30 +1,30 @@
 ---
-layout: article
-title:  "R"
-excerpt: "Build your algorithm in R"
-categories: languages
-tags: [algo-guide-lang]
-show_related: true
 author: steph_kim
+categories: languages
+excerpt: "Develop your algorithm in R"
 image:
     teaser: /language_logos/r.svg
+layout: article
+show_related: true
+tags: [algo-guide-lang]
+title:  "R"
 ---
 
 Before you get started learning about R algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
-Table of Contents
+Table of contents
 
-* [Available Libraries](#available-libraries)
-* [Write your First Algorithm](#write-your-first-algorithm)
-* [Saving and Loading R Models](#saving-and-loading-r-models)
-* [Managing Dependencies](#managing-dependencies)
-* [I/O for your Algorithms](#io-for-your-algorithms)
-* [Error Handling](#error-handling)
-* [Algorithm Checklist](#algorithm-checklist)
-* [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-and-resources)
+* [Available libraries](#available-libraries)
+* [Write your first algorithm](#write-your-first-algorithm)
+* [Saving and loading R models](#saving-and-loading-r-models)
+* [Managing dependencies](#managing-dependencies)
+* [I/O for your algorithms](#io-for-your-algorithms)
+* [Error handling](#error-handling)
+* [Algorithm checklist](#algorithm-checklist)
+* [Publish algorithm](#publish-algorithm)
+* [Conclusion and resources](#conclusion-and-resources)
 
-## Available Libraries
+## Available libraries
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
@@ -34,7 +34,7 @@ The full <a href="https://www.r-project.org/about.html" rel="noopener noreferrer
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/r">Algorithmia R language Client</a>.
 
-## Write your First Algorithm
+## Write your first algorithm
 
 If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
@@ -47,7 +47,8 @@ Go ahead and remove the boilerplate code below that's inside the algorithm() fun
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_r.png" alt="Algorithm console R" class="screenshot">
 
-## Saving and Loading R Models
+## Saving and loading R models
+
 When you have an R model that has been serialized as an .rds file, you can deploy it easily on Algorithmia. All you need to do is save your model:
 
 {% highlight r %}
@@ -61,7 +62,7 @@ Here are a couple of demos to show you how to load your hosted .rds file inside 
 * [Arima Time Series Forecasting Model](https://algorithmia.com/algorithms/demo/rdemo)
 * [Naive Bayes Iris Classication Model](https://algorithmia.com/algorithms/demo/irisrdemo)
 
-## Managing Dependencies
+## Managing dependencies
 
 Now that you have created your algorithm, you can add dependencies.
 
@@ -122,7 +123,7 @@ The Algorithmia dependency is already installed for your convenience and relies 
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-Note: if you see an error similar to: 
+Note: if you see an error similar to:
 {% highlight bash %}
 Error: Failed to start algorithm - Loading required package: methods
 Error: package or namespace load failed...
@@ -163,7 +164,7 @@ caret
 -t https://cran.r-project.org/src/contrib/nnet_7.3-12.tar.gz
 {% endhighlight %}
 
-## I/O for your Algorithms
+## I/O for your algorithms
 
 Now let's get started on the hands-on portion of the guide:
 
@@ -176,7 +177,7 @@ This path is based on your Algorithmia user name and the name of your algorithm,
 Note that Algorithmia uses `rjson` to automatically (de)serialize input and output for you. If you are used to using `jsonlite` or another JSON package, certain datastructures (especially matrices and dataframes) will be structured differently in the I/O. We recommend reviewing [this excellent guide](https://rstudio-pubs-static.s3.amazonaws.com/31702_9c22e3d1a0c44968a4a1f9656f1800ab.html) which explains the differences.
 {: .notice-warning}
 
-### Working with Basic Data Structures
+### Working with basic data structures
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
@@ -226,7 +227,7 @@ You should see the minimum and maximum of the numbers in the list returned in th
 {"max_num":6, "min_num":1}
 {% endhighlight %}
 
-### Working with Data Stored on Algorithmia
+### Working with data stored on Algorithmia
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
@@ -285,7 +286,7 @@ This guide uses a chapter from the public domain book [Burning Daylight, by Jack
 When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.
 {: .notice-info}
 
-#### Working with JSON Data
+#### Working with JSON data
 
 Note that we use the rjson package to parse JSON within your algorithm.
 
@@ -307,7 +308,7 @@ save_some_output_to(tempfile)
 client$file(file_uri)$putFile(tempfile)
 {% endhighlight %}
 
-### Calling Other Algorithms and Managing Data
+### Calling other algorithms and managing data
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/r">Algorithmia R Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/).
 
@@ -361,7 +362,7 @@ As you can see from these examples, fields that are passed into your algorithm b
 
 For an example that takes and processes image data check out the [Places 365 Classifier's source code](https://algorithmia.com/algorithms/deeplearning/Places365Classifier).
 
-## Error Handling
+## Error handling
 
 In the above code examples we showed how to create an AlgorithmError function which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard R library error and an error thrown by your algorithm:
 
@@ -391,13 +392,13 @@ algo$pipe(list())$error$message
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
-## Algorithm Checklist
+## Algorithm checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## Publish Algorithm
+## Publish algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -419,12 +420,11 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-## Conclusion and Resources
+## Conclusion and resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
-
-## Additional Resources
+## Additional resources
 
 * [Algorithmia CRAN package documentation](https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html)
 * [Algorithmia R client documentation]({{site.baseurl}}/clients/r)
