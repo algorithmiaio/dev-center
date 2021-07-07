@@ -273,33 +273,6 @@ This will get the image as binary data, saving it to the variable `image_data`, 
 
 If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
 
-## Publishing Algorithmia Insights
-
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
-{: .notice-enterprise}
-
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
-
-Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
-
-In the case of an example credit scoring model, shown in this demo for [Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
-
-{% highlight java %}
-// Report Algorithmia Insights
-client.reportInsights(new HashMap<String,Object>() { {
-    put("risk_score", risk_score);
-    put("approved", approved);
-} });
-{% endhighlight %}
-
-{% highlight json %}
-// Sample model output that is pushed to Insights
-{
-  "approved": 1,
-  "risk_score": 0.08
-}
-{% endhighlight %}
-
 ## Additional Functionality
 
 In addition to the functionality covered in this guide, the Java Client Library provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.

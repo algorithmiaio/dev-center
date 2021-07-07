@@ -19,6 +19,7 @@ Table of contents
 * [Managing dependencies](#managing-dependencies)
 * [I/O for your algorithms](#io-for-your-algorithms)
 * [Error handling](#error-handling)
+* [Publishing Algorithmia Insights](#publishing-algorithmia-insights)
 * [Algorithm checklist](#algorithm-checklist)
 * [Publish algorithm](#publish-algorithm)
 * [Conclusion and resources](#conclusion-and-resources)
@@ -357,6 +358,33 @@ throw new AlgorithmException("Invalid graph structure");
 Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an `AlgorithmException`.
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
+
+## Publishing Algorithmia Insights
+
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
+{: .notice-enterprise}
+
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
+
+Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
+
+In the case of an example credit scoring model, shown in this [demo for Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
+
+{% highlight java %}
+// Report Algorithmia Insights
+client.reportInsights(new HashMap<String,Object>() { {
+    put("risk_score", risk_score);
+    put("approved", approved);
+} });
+{% endhighlight %}
+
+{% highlight json %}
+// Sample model output that is pushed to Insights
+{
+  "approved": 1,
+  "risk_score": 0.08
+}
+{% endhighlight %}
 
 ## Algorithm checklist
 
