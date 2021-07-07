@@ -1,29 +1,29 @@
 ---
-layout: article
-title:  "Java"
-excerpt: "Build your algorithm in Java"
-categories: languages
-tags: [algo-guide-lang]
-show_related: true
 author: steph_kim
+categories: languages
+excerpt: "Build your algorithm in Java"
 image:
     teaser: /language_logos/java.svg
+layout: article
+show_related: true
+tags: [algo-guide-lang]
+title:  "Java"
 ---
 
 Before you get started learning about Java algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more.
 
-Table of Contents
+Table of contents
 
-* [Available Libraries](#available-libraries)
-* [Write your First Algorithm](#write-your-first-algorithm)
-* [Managing Dependencies](#managing-dependencies)
-* [I/O for your Algorithms](#io-for-your-algorithms)
-* [Error Handling](#error-handling)
-* [Algorithm Checklist](#algorithm-checklist)
-* [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-and-resources)
+* [Available libraries](#available-libraries)
+* [Write your first algorithm](#write-your-first-algorithm)
+* [Managing dependencies](#managing-dependencies)
+* [I/O for your algorithms](#io-for-your-algorithms)
+* [Error handling](#error-handling)
+* [Algorithm checklist](#algorithm-checklist)
+* [Publish algorithm](#publish-algorithm)
+* [Conclusion and resources](#conclusion-and-resources)
 
-## Available Libraries
+## Available libraries
 
 Algorithmia makes a number of libraries available to make algorithm development easier.
 
@@ -32,7 +32,7 @@ is available for you to use in your algorithms.
 
 Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform via the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a>.
 
-## Write your First Algorithm
+## Write your first algorithm
 
 If you've followed the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a>, you'll notice in your algorithm editor, there is boilerplate code that returns "Hello" and whatever you input to the console.
 
@@ -45,7 +45,7 @@ Go ahead and remove the boilerplate code below that's inside the apply() functio
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/algo_dev_lang/algorithm_console_java.png" alt="Algorithm console Java" class="screenshot">
 
-## Managing Dependencies
+## Managing dependencies
 
 Algorithmia supports adding 3rd party dependencies via Maven packages. Specifically, any packages from
 <a href="https://search.maven.org/artifact/com.algorithmia/algorithmia-client/">Maven Central</a> can be added to algorithms.
@@ -73,7 +73,7 @@ The Algorithmia dependency is already installed for your convenience. For more i
 
 This guide won't depend on any external dependencies so you can close the dependencies window.
 
-## I/O for your Algorithms
+## I/O for your algorithms
 
 Now let's get started on the hands-on portion of the guide:
 
@@ -83,7 +83,7 @@ It will output a JSON formatted object which the user will consume with an API c
 
 This path is based on your Algorithmia user name and the name of your algorithm, so if you are “AdaDeveloper” and your algorithm is “TokenizeText”, then the path for version 0.1.1 of your algorithm will be AdaDeveloper/TokenizeText/0.1.1
 
-### Working with Basic Data Structures
+### Working with basic data structures
 
 Below is a code sample showing how to create an algorithm working with basic user input.
 
@@ -125,7 +125,7 @@ You should see the value from the key returned in the console:
 "some/path/somefile.txt"
 {% endhighlight %}
 
-### Working with Data Stored on Algorithmia
+### Working with data stored on Algorithmia
 
 This next code snippet shows how to create an algorithm working with a data file that a user has stored using Algorithmia's [Hosted Data Source]({{site.baseurl}}/data/hosted).
 
@@ -276,7 +276,7 @@ save_some_output_to(tempfile);
 client.file(file_uri).put(tempfile);
 {% endhighlight %}
 
-### Calling Other Algorithms and Managing Data
+### Calling other algorithms and managing data
 
 To call other algorithms or manage data from your algorithm, use the <a href="{{site.baseurl}}/clients/java">Algorithmia Java Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the [Data API docs](http://docs.algorithmia.com/) and learn about Algorithmia's [Hosted Data Source]({{site.baseurl}}/data).
 
@@ -348,7 +348,7 @@ For an example that takes and processes image data check out the [Places 365 Cla
 Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
 {: .notice-warning}
 
-## Error Handling
+## Error handling
 
 {% highlight java %}
 throw new AlgorithmException("Invalid graph structure");
@@ -358,13 +358,13 @@ Algorithms can throw any exception, and they will be returned as an error via th
 
 For more information on error handling see the <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/algorithm-errors">Better Error Handling Guide</a>.
 
-## Algorithm Checklist
+## Algorithm checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 Both links will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.
 
-## Publish Algorithm
+## Publish algorithm
 
 Once you've developed your algorithm, you can publish it and make it available for others to use.
 
@@ -386,7 +386,7 @@ Under Semantic Versioning you can choose which kind of release your change shoul
 
 If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!
 
-## Conclusion and Resources
+## Conclusion and resources
 
 In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.
 
