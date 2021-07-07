@@ -1,13 +1,13 @@
 ---
-layout: article
-title:  "Python"
-excerpt: "Build your algorithm in Python"
-categories: languages
-tags: [algo-guide-lang]
-show_related: true
 author: steph_kim
+categories: languages
+excerpt: "Develop your algorithm in Python"
+layout: article
 image:
     teaser: /language_logos/python.svg
+show_related: true
+tags: [algo-guide-lang]
+title:  "Python"
 ---
 
 Before you get started learning about Python algorithm development, make sure you go through our <a href="{{site.baseurl}}/algorithm-development/algorithm-basics/your-first-algo">Getting Started Guide</a> to learn how to create your first algorithm, understand permissions available, versioning, using the CLI, and more. In this guide we'll cover algorithm development for Python in more depth, including making use of Algorithmia's [Algorithm Development Kit for Python](https://github.com/algorithmiaio/algorithmia-adk-python).
@@ -15,24 +15,24 @@ Before you get started learning about Python algorithm development, make sure yo
 Table of Contents
 
 * [What is an Algorithm Development Kit (ADK)?](#what-is-an-algorithm-development-kit-adk)
-* [Algorithm Project Structure](#adk-project-structure)
-* [Hello World](#hello-world)
-* [Loaded State](#loaded-state)
-* [Available Libraries](#available-libraries)
-* [Managing Dependencies](#managing-dependencies)
-* [I/O for your Algorithms](#io-for-your-algorithms)
-* [Calling Other Algorithms](#calling-other-algorithms)
-* [Error Handling](#error-handling)
-* [Algorithms with Multiple Files](#algorithms-with-multiple-files)
-* [Algorithm Checklist](#algorithm-checklist)
-* [Publish Algorithm](#publish-algorithm)
-* [Conclusion and Resources](#conclusion-and-resources)
+* [Algorithm project structure](#adk-project-structure)
+* [Hello world](#hello-world)
+* [Loaded state](#loaded-state)
+* [Available libraries](#available-libraries)
+* [Managing dependencies](#managing-dependencies)
+* [I/O for your algorithms](#io-for-your-algorithms)
+* [Calling other algorithms](#calling-other-algorithms)
+* [Error handling](#error-handling)
+* [Algorithms with multiple files](#algorithms-with-multiple-files)
+* [Algorithm checklist](#algorithm-checklist)
+* [Publish algorithm](#publish-algorithm)
+* [Conclusion and resources](#conclusion-and-resources)
 
 ## What is an Algorithm Development Kit (ADK)?
 
 An Algorithm Development Kit is a package that contains all of the necessary components to convert a regular application into one that can be executed and run on Algorithmia. To do that, an ADK must be able to communicate with Algorithmia's [langserver](https://github.com/algorithmiaio/langpacks/blob/develop/langpack_guide.md) service. To simplify development, an ADK exposes some optional functions, along with an `apply()` function that acts as the explicit entry point into your algorithm. Along with those basics, an ADK also exposes the ability to execute your algorithm locally, without `langserver`, which enables better debuggability.
 
-## Algorithm Project Structure
+## Algorithm project structure
 
 Algorithm development begins with your project's `src/Algorithm.py` file, where you'll import the Algorithmia ADK and implement the required functions. Each algorithm must contain an `apply()` function, which defines the input point of the algorithm. We use the `apply()` function in order to make different algorithms standardized. This makes them easily chained and helps authors think about designing their algorithms in a way that makes them easy to leverage and predictable for end users. When an algorithm is invoked via an API request, the body of the request is passed as `input` to our `apply()` function.
 
@@ -45,7 +45,7 @@ If youre a PyCharm user, you can refer to [this guide](https://algorithmia.com/d
 
 Let's look at an example to clarify some of these concepts.
 
-## Hello World
+## Hello world
 
 Below you'll find a `src/Algorithm.py` file which prints "hello" plus an input when it is invoked. We start by importing the Algorithmia ADK, and then defining our `apply()` function, followed by our call to the handler function `ADK()`, and finally calling `init()` to start the function.
 
@@ -61,7 +61,7 @@ algorithm.init("Algorithmia")
 
 When executed on the Algorithmia platform and providing the string "HAL 9000" as an input, this algorithm will output "hello HAL 9000". If executed locally, such as during development or debugging, the algorithm will print `hello Algorithmia` to `stdout` instead.
 
-## Loaded State
+## Loaded state
 
 When an algorithm is called, our platform checks whether there's already a running instance that's ready to handle the request, or whether a new one needs to be created. Spinning up a new algorithm instance involves overhead, and this can be substantial for algorithms with extensive code dependencies, or algorithms that need to load a significant amount of data into memory. Developing with an ADK allows you to make use of an optional `load()` function for preparing an algorithm for runtime operations, rather than performing these operations each time the algorithm is invoked.
 
@@ -88,7 +88,7 @@ In our load function we've created a `globals` object and added a key called `pa
 
 If a failure occurs while executing the `load()` function, the platform will raise a `loadingError`.
 
-## Available Libraries
+## Available libraries
 
 In addition to your own code in `src/Algorithm.py`, Algorithmia makes a number of libraries available to make algorithm development easier. We support multiple versions of Python and a variety of frameworks, and we continue to add new variants and broaden GPU support. A complete list of predefined environments can be found on the [Environment Matrix](/developers/algorithm-development/environments/) page, and are available through the "Environment" drop-down when creating a new algorithm.
 
@@ -98,7 +98,7 @@ In addition to the libraries and ML frameworks that we make available in our pre
 
 Also, algorithms can call other algorithms and manage data on the Algorithmia platform. You can learn more about calling algorithms in the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client Guide</a>.
 
-## Managing Dependencies
+## Managing dependencies
 
 Algorithmia supports adding third-party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file, where you can add the names of any dependencies you have. If you do add dependencies, you will still need to import those packages via the import statement to your algorithm file as you would do for any Python script.
 
@@ -116,11 +116,11 @@ If you're using Python 3, the syntax has changed for imports. You'll need to use
 `from .somefile import *` instead of in Python 2 where it's `from file import *`.
 {: .notice-warning}
 
-## I/O for your Algorithms
+## I/O for your algorithms
 
 Algorithm input is standardized across the Algorithmia platform. Algorithms take three basic types of input: strings, JSON, and binary data. You will need to parse the algorithm's `input` as part of your `apply()` or `load()` functions.
 
-### Working with Basic Data Structures
+### Working with basic data structures
 
 Below is a code sample showing how to work with basic user input in the `apply()` function. You'll also see some error handling, which we'll cover in more detail in the [Error Handling](#error-handling) section of this guide. Our input to this function is as follows:
 
@@ -156,7 +156,7 @@ If we were to run this code as part of our algorithm, we should see the minimum 
 {"max_num":6, "min_num":1}
 {% endhighlight %}
 
-### Working with Data Stored on Algorithmia
+### Working with data stored on Algorithmia
 
 This next code snippet shows how to create an algorithm that works with a data file stored in a [Hosted Data Collection]({{site.baseurl}}/data/hosted) on Algorithmia.
 
@@ -220,13 +220,13 @@ save_some_output_to(tempfile)
 client.file(file_uri).putFile(tempfile)
 {% endhighlight %}
 
-## Calling Other Algorithms
+## Calling other algorithms
 
 To call other algorithms from your algorithm you can use the <a href="{{site.baseurl}}/clients/python">Algorithmia Python Client</a>, which is automatically available to any algorithm you create on the Algorithmia platform. For more information on calling algorithms, you can refer to the [Python Client Guide](https://algorithmia.com/developers/clients/python#calling-an-algorithm).
 
 You may call up to {{site.data.stats.platform.max_num_parallel_algo_requests}} other algorithms, either in parallel or recursively.
 
-## Error Handling
+## Error handling
 
 In the above code examples we made use of an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:
 
@@ -304,19 +304,19 @@ from .secondary_file import auxillary_func, some_other_func
 from .sub_module.special_stuff import special_stuff
 ```
 
-## Algorithm Checklist
+## Algorithm checklist
 
 Before you are ready to publish your algorithm it's important to go through this [Algorithm Checklist]({{site.baseurl}}/algorithm-development/algorithm-checklist) and check out this blog post for <a href="https://algorithmia.com/blog/advanced-algorithm-design">Advanced Algorithm Development <i class="fa fa-external-link"></i></a>.
 
 These resources provide important information on best practices, including how to write a good algorithm description and how to add links to external documentation.
 
-## Publish Algorithm
+## Publish algorithm
 
 Once you've developed your algorithm, you can publish it, which makes it available for others to use.
 
 To learn how to publish your algorithm you can refer to the Algorithm Development [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo#publishing-your-algorithm).
 
-## Conclusion and Resources
+## Conclusion and resources
 
 In this guide we covered the basics of the ADK, how to create an algorithm and work with different types of data, and learned how to publish an algorithm. You can find [complete examples](https://github.com/algorithmiaio/algorithmia-adk-python#example-workflows) in the Algorithmia Python ADK repository on GitHub, inlcuding a [Pytorch based image classification example](https://github.com/algorithmiaio/algorithmia-adk-python#pytorch-based-image-classification).
 
