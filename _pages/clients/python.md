@@ -70,7 +70,7 @@ The first algorithm we'll call is a demo version of the algorithm used in the Al
 In order to call an Algorithm from Python, we need to first create an algorithm object. With the client already instantiated, we can run the following code to create an object:
 
 {% highlight python %}
-algo = client.algo('demo/Hello') 
+algo = client.algo("demo/Hello")
 {% endhighlight %}
 
 Then, we can use the `.pipe()` method to call the algorithm. We'll provide our input as the argument to the function, and then print the output using the `result` attribute:
@@ -159,7 +159,7 @@ Instead of your username you can also use '.my' when calling algorithms. For mor
 
 ### Upload data to a data collection
 
-Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`. 
+Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`.
 
 Next, create a variable that holds the location where you would like to upload the image as a URI:
 
@@ -245,10 +245,10 @@ If the file was text (an image, etc.), you could instead use the function `.getS
 
 ## Publishing Algorithmia Insights
 
-This feature is available to [Algorithmia Enterprise](/enterprise) users only. 
+This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 {: .notice-enterprise}
 
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client. 
+Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
 
 Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
 
