@@ -10,13 +10,15 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 title:  "Release Notes"
 ---
 
-## Third-Party Secret Provider Plugins
+## Q2 2021 Release Notes ##
 
-We’re excited to announce that we now have documented example implementations of secret provider plugins for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
+### Third-Party Secret Provider Plugins ###
+
+We’re excited to announce that we now have documented example implementations of [secret provider plugins](https://training.algorithmia.com/exploring-the-admin-panel/842511#secret-provider-plugins) for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
 
 ---
 
-## Algorithm Execution Errors
+### Algorithm Execution Errors ###
 
 Non-admin users can now view algorithm execution errors from the last seven days for specific algorithms or from all algorithms they’ve called. These error logs can also be retrieved through the Algorithmia API.
 
@@ -24,33 +26,33 @@ All errors are captured and included in the error log, allowing users to debug w
 
 This feature is disabled by default and can be enabled globally on an Algorithmia cluster by a cluster administrator.
 
-### Algorithm-specific errors
+#### Algorithm-specific errors ####
 
-Each algorithm’s execution errors are displayed on the algorithm’s profile page in a dedicated tab. Errors are only visible to users who are viewing an algorithm they own or that’s owned by an organization of which they’re a member.
+Each algorithm’s execution errors are displayed on the [algorithm’s profile page]({{site.baseurl}}/platform/algorithm-profile#errors) in a dedicated tab. Errors are only visible to users who are viewing an algorithm they own or that’s owned by an organization of which they’re a member.
 
-### Account-level errors
+#### Account-level errors ####
 
-Algorithm execution errors are displayed on each user's account profile page in a dedicated tab. These errors are only visible to users viewing their own profile page (i.e., the profile page for the account into which they’re authenticated), and are only shown for algorithms that they’ve called using an API key they own.
+Algorithm execution errors are displayed on each user's [account profile page]({{site.baseurl}}/platform/account-profile#errors) in a dedicated tab. These errors are only visible to users viewing their own profile page (i.e., the profile page for the account into which they’re authenticated), and are only shown for algorithms that they’ve called using an API key they own.
 
 ---
 
-## Advanced Reporting for Governance
+### Advanced Reporting for Governance ###
 
 The Advanced Reporting for Governance feature provides administrators the ability to view resource usage on the platform. Usage can be viewed at four different levels depending on your access permissions. If you’re an organization administrator, you can explore reporting at the organization and account level, and even down to the individual algorithm level. Cluster administrators are granted all of the above permissions, as well as being able to view reporting at the cluster level. We’ll start at the top level of the cluster roll-up.
 
-### Cluster-level reporting
+#### Cluster-level reporting ####
 
-Only cluster administrators have access to cluster-level reporting. To use this feature, navigate to the “Governance Reporting” page in the administrator panel.
+Only cluster administrators have access to [cluster-level reporting](https://training.algorithmia.com/exploring-the-admin-panel/836479). To use this feature, navigate to the "Governance Reporting" page in the administrator panel.
 
 As a first step, we recommend you add your hardware cost rate estimates to ensure you get accurate cost estimates based on your resource usage. To do this, click the “Resource Cost Rates” button in the top-right corner to view the values. To add or modify existing values, click the “Edit Values” button and input your values in the form. Submit your changes when you’re done and you’ll see cost estimates displayed in the report. Once you’re satisfied with the cost estimates, you can dive into the data. Note that only cluster administrators have access to set or modify cost rates, which are set at the cluster level.
 
 On the Advanced Reporting page, you’ll notice dropdowns to specify exactly which data you want to see. The first dropdown determines the date range, the next two determine how to group and filter the data, and the final dropdown determines the direction of ordering. These dropdowns determine which data are displayed in the plot as well as how those data are ordered in the table below. You’ll notice many grouping and filtering options available to help you determine the “who”, “what”, “when”, “how much”, and “how long” of platform resource usage. Finally, if you need to save, distribute, or export these metrics for use in another application, there’s a button to download a CSV of all data for the selected time period.
 
-### Organization-level reporting
+#### Organization-level reporting ####
 
 Organization administrators have a subset of the permissions granted to cluster administrators. Namely, they can view resource usage data for the organizations for which they’re an administrator, the accounts that are members of those organizations, and the algorithms owned by those organizations.
 
-To view Advanced Reporting at the organization level, navigate to the organization’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here you’ll see the same options for filtering and displaying data as listed above for cluster-level reporting, but it’ll be pre-filtered to only show data for that specific organization.
+To [view Advanced Reporting at the organization level]({{site.baseurl}}/platform/advanced-governance-reporting), navigate to the organization’s profile page and click on the "Reporting" tab, which is only visible to administrators. Here you’ll see the same options for filtering and displaying data as listed above for cluster-level reporting, but it’ll be pre-filtered to only show data for that specific organization.
 
 To view Advanced Reporting at the account level, navigate to the account’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here, you’ll see the same options for filtering and displaying data but it’ll be pre-filtered to only show data for that specific account.
 
@@ -58,31 +60,31 @@ To view Advanced Reporting at the algorithm level, navigate to the algorithm’s
 
 ---
 
-## GitLab, Bitbucket Cloud, and Bitbucket Server Source Code Management Integrations ##
+### GitLab, Bitbucket Cloud, and Bitbucket Server Source Code Management Integrations ###
 
 We’ve added three new source code management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
 
-Once your cluster administrator configures a connection to an SCM provider, you can immediately create algorithms backed by a Git repository on that provider.
+Once your cluster administrator [configures a connection to an SCM provider](https://training.algorithmia.com/exploring-the-admin-panel/687291#creating-scm-configurations), you can immediately create algorithms backed by a Git repository on that provider.
 
 With the implementation of GitLab, Bitbucket Cloud, and Bitbucket Server SCM integrations, users can now easily connect their hosted repositories to their Algorithmia accounts, which provides a seamless workflow from development to production. Customers that use these third-party SCM providers can leverage engineering best practices such as code reviews and dependency audits to ensure consistencies between development and production code, and CI/CD workflows to increase automation and testing of MLOps pipelines.
 
 ---
 
-## Algorithmia Event Flows with Kafka ##
+### Algorithmia Event Flows with Kafka ###
 
 We’ve just released a new way to create event-driven algorithm workflows using Apache Kafka, a cloud-agnostic open-source message broker. Now your team’s data scientists and application developers can easily enable Kafka event-driven jobs in a user-friendly workflow while providing your cluster administrators with more granular control over who has access to connect to your Kafka broker. Among other things, Algorithmia Event Flows enable automation of workflows from model monitoring to retraining, enabling you to optimize the performance of your models in production. If you don’t already use Kafka, contact us to learn more about your options for getting started.
 
 To enable event-driven workflows using Kafka, a cluster administrator must first configure a connection to a Kafka broker—this can be any externally hosted Kafka cluster. Once that step is completed, any member of an organization can create dynamic event-driven algorithm workflows. For instance, if you have a pipeline that requires data pre-processing, you can use Algorithmia Event Flows to run a data transformation algorithm on new data as it streams into your Kafka topic. That same algorithm can then publish the processed data to a completely different Kafka topic. Further down the pipeline, you can set up another algorithm to subscribe to that second topic, and it will ingest the cleaned data as its payload.
 
-Application developers and data scientists can now easily enable Kafka event-driven algorithm workflows to create rich data and inference pipelines. Using our streamlined user interface, they can view the available event workflows that their Algorithmia cluster administrator has configured for their organization-owned algorithms. 
+Application developers and data scientists can now easily enable Kafka event-driven algorithm workflows to create rich data and inference pipelines. Using our streamlined user interface, they can view the available event workflows that their Algorithmia cluster administrator has configured for their organization-owned algorithms.
 
-Information security teams can be confident that the credentials used to connect to their Kafka brokers are only used by their Algorithmia cluster administrators, and that no other user can connect to or configure that broker. 
+Information security teams can be confident that the credentials used to connect to their Kafka brokers are only used by their Algorithmia cluster administrators, and that no other user can connect to or configure that broker.
 
 Cluster administrators will also have a rich user interface to view the available organization-owned algorithms that are on the cluster and restrict the ability of specific algorithms to subscribe or publish data to a Kafka Topic to enhance the ability to control and audit data and machine learning pipelines.
 
 ---
 
-## Security Enhancements ##
+## Q1 2021 Release Notes ##
 
 ### Introduction ###
 
@@ -98,7 +100,7 @@ We’ve created a vault-based Secret Store, enabling you to create and manage cr
 
 #### SSO upgrades ####
 
-We now offer support for single sign-on (SSO) and Security Assertion Markup Language (SAML), allowing for a user’s login credentials to provide them access to multiple resources. This makes it possible for identity providers to securely pass authenticated identities and their attributes to service providers. 
+We now offer support for single sign-on (SSO) and Security Assertion Markup Language (SAML), allowing for a user’s login credentials to provide them access to multiple resources. This makes it possible for identity providers to securely pass authenticated identities and their attributes to service providers.
 
 We’ve also added Active Directory (AD) group synchronization to enable a centralized location for administering a user’s permissions and providing access to shared resources. This simplifies identity and access management, allowing for synchronization of organization membership, and granting of permission to resources on the cluster, based solely on the tags present in a user’s SAML assertion.
 
@@ -134,11 +136,11 @@ Many organizations today don’t have the ability to monitor model performance, 
 * Comply with internal and external audits and regulations
 * Reduce risk of model failure
 
-With Algorithmia Insights, you can use the monitoring and alerting tools of your choice, with no vendor lock-in. You have control over the data you choose to emit, and the system you connect to. You can access your metrics via Kafka and connect it to a real-time monitoring or alerting tool, or check out [Kafka Connect](https://docs.confluent.io/3.0.1/connect/intro.html#:~:text=Kafka%20Connect%20is%20a%20tool,into%20and%20out%20of%20Kafka.) to learn how to export your metrics offline to do analysis later. 
+With Algorithmia Insights, you can use the monitoring and alerting tools of your choice, with no vendor lock-in. You have control over the data you choose to emit, and the system you connect to. You can access your metrics via Kafka and connect it to a real-time monitoring or alerting tool, or check out [Kafka Connect](https://docs.confluent.io/3.0.1/connect/intro.html#:~:text=Kafka%20Connect%20is%20a%20tool,into%20and%20out%20of%20Kafka.) to learn how to export your metrics offline to do analysis later.
 
 ### New autoscaler and scheduler ###
 
-What has set us apart from other ML platforms in the market today is our ability to manage algorithm execution at scale. With this release, we have taken scaling to a whole new level by providing more robust worker management and algorithm execution pipelining, resulting in dramatically higher throughput and efficient worker utilization. Along with these performance and operational improvements comes new administrator pages, Grafana dashboards, and alerts. 
+What has set us apart from other ML platforms in the market today is our ability to manage algorithm execution at scale. With this release, we have taken scaling to a whole new level by providing more robust worker management and algorithm execution pipelining, resulting in dramatically higher throughput and efficient worker utilization. Along with these performance and operational improvements comes new administrator pages, Grafana dashboards, and alerts.
 
 Administrators will now be able to:
 
