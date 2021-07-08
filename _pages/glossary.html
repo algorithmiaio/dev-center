@@ -8,6 +8,7 @@
   <style>
     dt {
       font-weight: bold;
+      font-size: 20px;
       margin-bottom: 3px
     }
 
@@ -27,26 +28,47 @@
     }
   </style>
   <div id="glossary-usage">
-    <p>This glossary provides definitions for terms used across the Algorithmia platform.</p>
-    <p>Note that some terms have <code class="placeholder">PLACEHOLDER_STRING</code> values. These placeholders are used
-      in our UI and in code samples across our documentation. The values are denoted in uppercase to indicate that you
-      must replace them with your own values in your code. Note that linked glossary terms are hoverable and clickable;
-      on hover, they'll display the linked definition for convenience.
-    </p>
-    <p>
+    <p>This page provides brief definitions for many of the terms used across Algorithmia's platform and documentation.
+      We also provide definitions for some terms commonly used in the practice of MLOps. Things to note when using this
+      glossary:</p>
     <ul>
+      <li>
+        Some terms have associated <code class="placeholder">{PLACEHOLDER_STRING}</code> values. We use these
+        uppercase strings in our UI, and in code samples across our documentation, to denote generic values that must be
+        replaced with custom values in your code. Placeholders <code
+          class="placeholder">{/beginning/with-a-slash}</code> are endpoints from the
+        <code>https://algorithmia.com</code> <a class="glossary-hoverable" href="#base-url" title=""
+          parentId="dd-base-url">base URL</a> (or from <code>https://<a class="glossary-hoverable" href="#cluster-domain" title=""
+          parentId="dd-cluster-domain">CLUSTER_DOMAIN</a></code> for enterprise clusters; see below).
+      </li>
       <dl>
-        <dt id="example-glossary-term">Example Glossary Term <code class="placeholder">{PLACEHOLDER_STRING}</code>
-        <dd id="dd-example-glossary-term">
-          Definition with a hoverable link to <a class="glossary-hoverable" href="#another-glossary-term" title=""
-            parentId="another-glossary-term">another glossary term</a>.
-        </dd>
-        </dt>
-        <dt id="another-glossary-term">Another Glossary Term
-        <dd id="dd-another-glossary-term">
-          This text is displayed when hovered above.
-        </dd>
-        </dt>
+        <ul>
+          <dt id="example-term-with-placeholder">example term with placeholder <code
+              class="placeholder">{PLACEHOLDER_STRING}</code>
+          </dt>
+          <dd id="dd-example-term-with-placeholder">
+            Definition of first term.
+          </dd>
+          <dt id="example-term-with-endpoint">example term with endpoint placeholder <code
+              class="placeholder">{/endpoint}</code>
+          </dt>
+          <dd id="dd-example-term-with-endpoint">
+            Definition of second term.
+          </dd>
+        </ul>
+      </dl>
+      <li>
+        Some definitions reference other glossary terms. Links are hoverable and clickable; on hover, they'll display
+        the linked definition for quick reference, e.g.:
+      </li>
+      <dl>
+        <ul>
+          <dt id="example-term-with-link">example term with link</dt>
+          <dd id="dd-example-term-with-link">
+            This term has a hoverable link to the <a class="glossary-hoverable" href="#example-term-with-placeholder"
+              title="" parentId="dd-example-term-with-placeholder">example term</a> from above.
+          </dd>
+        </ul>
       </dl>
     </ul>
   </div>
@@ -70,17 +92,17 @@
       clear: both;
     }
 
-    /* Responsive layout - when the screen is less than 600px wide, make the
+    /* Responsive layout - when the screen is less than 950px wide, make the
      two columns stack on top of each other instead of next to each other */
-    /* @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1000px) {
       .column {
         width: 100%;
       }
-    } */
+    }
   </style>
 
   <div id="glossary-index" class="row">
-    <div class="column left" style="background-color: pink;">
+    <div class="column left">
       <ul>
         <li><a href="#account">account</a></li>
         <li><a href="#account-profile">account profile</a></li>
@@ -147,7 +169,7 @@
       </ul>
     </div>
 
-    <div class="column right" style="background-color: yellow;">
+    <div class="column right">
       <ul>
         <li><a href="#grafana">Grafana</a></li>
         <li><a href="#hosted-data-collection">hosted data collection</a></li>
@@ -556,7 +578,7 @@
       <dd id="dd-hot-algorithm">
         Definition
       </dd>
-      `
+
       <dt id="json-web-token">JSON Web Token (JWT) <code class="placeholder">{}</code></dt>
       <dd id="dd-json-web-token">
         Definition
@@ -604,8 +626,7 @@
         <a class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> model
         file that’s ready to be loaded into an algorithm and used for inference. Synonymous with <a
           class="glossary-hoverable" href="#serialized-model" title="" parentId="dd-serialized-model">serialized
-          model</a> and <a class="glossary-hoverable" href="#trained-model" title=""
-          parentId="dd-trained-model">trained
+          model</a> and <a class="glossary-hoverable" href="#trained-model" title="" parentId="dd-trained-model">trained
           model</a>.
       </dd>
 
