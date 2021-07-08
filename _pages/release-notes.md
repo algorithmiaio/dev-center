@@ -12,6 +12,9 @@ title:  "Release Notes"
 
 ## Q2 2021 Release Notes ##
 
+The following features are available in Algorithmia LTS version 21.0.
+{: .notice-info}
+
 ### Third-Party Secret Provider Plugins ###
 
 We’re excited to announce that we now have documented example implementations of [secret provider plugins](https://training.algorithmia.com/exploring-the-admin-panel/842511#secret-provider-plugins) for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
