@@ -45,7 +45,7 @@ The Advanced Reporting for Governance feature provides administrators the abilit
 
 #### Cluster-level reporting ####
 
-Only cluster administrators have access to [cluster-level reporting](https://training.algorithmia.com/exploring-the-admin-panel/836479). To use this feature, navigate to the "Governance Reporting" page in the administrator panel.
+Only cluster administrators have access to [cluster-level reporting](https://training.algorithmia.com/exploring-the-admin-panel/836479). To use this feature, navigate to the “Governance Reporting” page in the administrator panel.
 
 As a first step, we recommend you add your hardware cost rate estimates to ensure you get accurate cost estimates based on your resource usage. To do this, click the “Resource Cost Rates” button in the top-right corner to view the values. To add or modify existing values, click the “Edit Values” button and input your values in the form. Submit your changes when you’re done and you’ll see cost estimates displayed in the report. Once you’re satisfied with the cost estimates, you can dive into the data. Note that only cluster administrators have access to set or modify cost rates, which are set at the cluster level.
 
@@ -55,7 +55,7 @@ On the Advanced Reporting page, you’ll notice dropdowns to specify exactly whi
 
 Organization administrators have a subset of the permissions granted to cluster administrators. Namely, they can view resource usage data for the organizations for which they’re an administrator, the accounts that are members of those organizations, and the algorithms owned by those organizations.
 
-To [view Advanced Reporting at the organization level]({{site.baseurl}}/platform/advanced-governance-reporting), navigate to the organization’s profile page and click on the "Reporting" tab, which is only visible to administrators. Here you’ll see the same options for filtering and displaying data as listed above for cluster-level reporting, but it’ll be pre-filtered to only show data for that specific organization.
+To [view Advanced Reporting at the organization level]({{site.baseurl}}/platform/advanced-governance-reporting), navigate to the organization’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here you’ll see the same options for filtering and displaying data as listed above for cluster-level reporting, but it’ll be pre-filtered to only show data for that specific organization.
 
 To view Advanced Reporting at the account level, navigate to the account’s profile page and click on the “Reporting” tab, which is only visible to administrators. Here, you’ll see the same options for filtering and displaying data but it’ll be pre-filtered to only show data for that specific account.
 
