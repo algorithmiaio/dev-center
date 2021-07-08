@@ -13,7 +13,7 @@
     }
 
     dd {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     .placeholder {
@@ -76,13 +76,11 @@
   <hr />
 
   <style>
-    /* Create two equal columns that floats next to each other */
+    /* Create two equal columns that float next to each other */
     .column {
       float: left;
       width: 50%;
       padding: 10px;
-      /* height: 1200px; */
-      /* Should be removed. Only for demonstration */
     }
 
     /* Clear floats after the columns */
@@ -92,7 +90,7 @@
       clear: both;
     }
 
-    /* Responsive layout - when the screen is less than 950px wide, make the
+    /* Responsive layout - when the screen is less than 1000px wide, make the
      two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 1000px) {
       .column {
@@ -178,6 +176,7 @@
         <li><a href="#identity">identity</a></li>
         <li><a href="#kibana">Kibana</a></li>
         <li><a href="#machine-learning">machine learning (ML)</a></li>
+        <li><a href="#machine-learning-operations">machine learning operations (MLOps)</a></li>
         <li><a href="#master-node">master node</a></li>
         <li><a href="#message-broker">message broker</a></li>
         <li><a href="#message-broker-connection">message broker connection</a></li>
@@ -242,15 +241,9 @@
   <div id="glossary-definitions">
     <dl>
 
-      <dt id="uniqueId">item name <code class="placeholder">{PLACEHOLDER}</code></dt>
-      <dd id="dd-uniqueId">
-        Definition
-      </dd>
-
       <dt id="account">account <code class="placeholder">{ACCOUNT_NAME}</code></dt>
       <dd id="dd-account">
-        <a class="glossary-hoverable" href="#identity" title="" parentId="dd-identity">Identity</a> on the
-        Algorithmia
+        <a class="glossary-hoverable" href="#identity" title="" parentId="dd-identity">Identity</a> on the Algorithmia
         platform that may own and/or be used to access a resource (e.g., an <a class="glossary-hoverable"
           href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>).
       </dd>
@@ -281,317 +274,423 @@
 
       <dt id="algo-cli">algo CLI</dt>
       <dd id="dd-algo-cli">
-        Algorithmia’s command-line interface tool, called with algo [COMMAND [OPTIONS]].
+        Algorithmia’s command-line interface tool, called with <code>algo [COMMAND [OPTIONS]]</code>.
       </dd>
 
       <dt id="algorithm">algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm">
-        Definition
+        Microservice on Algorithmia that accepts an input, may return an output, and may have side effects. An algorithm
+        can only accept a JSON type as input, and if it returns an output, can only return a JSON type. Algorithms can
+        be pipelined together with other algorithms. The primary use case for algorithms on Algorithmia’s platform is to
+        provide functionality for loading and calling ML models for inference, but the scope of tasks that algorithms
+        can perform is not constrained to this. For example, algorithms can perform conventional deterministic
+        algorithmic routines (e.g., binary search), can read and write data, can be used to query or send data to an
+        external data source such as a database, can perform utility tasks such as downloading images and pre-processing
+        structured or unstructured data, and can be configured to orchestrate all of the above.
       </dd>
 
       <dt id="algorithm-build">algorithm build <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-build">
-        Definition
+        Specific compiled version of an algorithm, described by an algorithm build hash.
       </dd>
 
       <dt id="algorithm-build-hash">algorithm build hash <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-build-hash">
-        Definition
+        Unique value describing an algorithm version created from a specific Git commit when an algorithm builds
+        (compiles) successfully. Synonymous with algorithm version hash.
       </dd>
 
       <dt id="algorithm-build-uuid">algorithm build UUID <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-build-uuid">
-        Definition
+        Globally unique identifier for a specific algorithm build, in the format <code>1234-1234-1234-1234</code>.
       </dd>
 
       <dt id="algorithm-environment">algorithm environment <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-environment">
-        Definition
+        Predefined, optimized runtime configuration for an algorithm. Environments usually contain specific ML framework
+        dependencies optimized for Algorithmia’s architecture, and serve as a base upon which additional external
+        library
+        dependencies can be added if necessary.
       </dd>
 
       <dt id="algorithm-environment-uuid">algorithm environment UUID <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-environment-uuid">
-        Definition
+        Globally unique, cluster-specific identifier for a specific algorithm environment, in the format
+        1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d.
       </dd>
 
       <dt id="algorithm-endpoint">algorithm endpoint <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-endpoint">
-        Definition
+        Unique (within an Algorithmia cluster) name identifying a specific algorithm version, defined as
+        ALGO_OWNER/ALGO_NAME[/ALGO_VERSION], where ALGO_VERSION defaults to the latest published version if excluded.
       </dd>
 
       <dt id="algorithm-execution-request">algorithm execution request <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-execution-request">
-        Definition
+        Request made to execute an algorithm with an optional input.
+
       </dd>
 
       <dt id="algorithm-profile">algorithm profile <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-profile">
-        Definition
+        Profile page for an algorithm.
+
       </dd>
 
       <dt id="algorithm-instance">algorithm instance <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-instance">
-        Definition
+        Individual replica of an algorithm running on a worker node.
+
       </dd>
 
       <dt id="algorithm-language">algorithm language <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-language">
-        Definition
+        Programming language in which an algorithm is written.
+
       </dd>
 
       <dt id="algorithm-owner">algorithm owner <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-owner">
-        Definition
+        Account or org that owns an algorithm.
+
       </dd>
 
       <dt id="algorithm-pipelining">algorithm pipelining <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-pipelining">
-        Definition
+        When one algorithm calls another algorithm within an Algorithmia cluster.
       </dd>
 
       <dt id="algorithm-semantic-version">algorithm semantic version <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-semantic-version">
-        Definition
+        Specific published version of an algorithm build, where X, Y, and Z represent major version, minor version, and
+        revision.
+
       </dd>
 
       <dt id="algorithm-template">algorithm template <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-template">
-        Definition
+        Source code file or collection of files with boilerplate code that serves as a unified starting point for new
+        algorithms
+        that are created.
+
       </dd>
 
       <dt id="algorithm-uuid">algorithm UUID <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-uuid">
-        Definition
+        Globally unique identifier for a specific algorithm, in the format 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d.
+
       </dd>
 
       <dt id="algorithm-vanity-url">algorithm vanity URL <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-vanity-url">
-        Definition
+        Minimal URL for specific algorithm endpoint in a satellite deployment.
+
       </dd>
 
       <dt id="algorithm-version">algorithm version <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-version">
-        Definition
+        Generic name to refer to a specific algorithm build, which could be denoted by an algorithm semantic version or
+        an
+        algorithm version hash.
       </dd>
 
       <dt id="algorithm-version-hash">algorithm version hash <code class="placeholder">{}</code></dt>
       <dd id="dd-algorithm-version-hash">
-        Definition
+        Unique value describing an algorithm version created from a specific Git commit when an algorithm builds
+        (compiles)
+        successfully. Synonymous with algorithm build hash.
       </dd>
 
       <dt id="api">API <code class="placeholder">{}</code></dt>
       <dd id="dd-api">
-        Definition
+        <!-- use this span id for referencing this definition in hoverable links -->
+        <span id="dd-api-hoverable">Generic term for individual Algorithmia REST API service. API endpoints are
+          grouped based on the functionality they provide for interacting with resources.</span> Algorithmia has the
+        following
+        APIs:<br /><br />
+        <ul>
+          <li><code>algorithms</code> : algorithm operations</li>
+          <li><code>users</code> : account operations</li>
+          <li><code>organizations</code> : organization operations</li>
+          <li><code>scm</code> : source control management operations</li>
+          <li><code>secrets</code> : secret store operations</li>
+          <li><code>connectors</code> : data connector operations</li>
+          <li><code>data</code> : data API operations</li>
+          <li><code>eventlisteners</code> : event flow-based operations</li>
+          <li><code>eventmanagers</code> : message broker operations</li>
+          <li><code>builds</code> : algorithm build operations</li>
+          <li><code>auth</code> : authentication factor and authentication token management</li>
+          <li><code>usage</code> : cluster usage information</li>
+          <li><code>invites</code> : cluster invite code management</li>
+          <li><code>admin</code> : cluster administration operations</li>
+          <li><code>style</code> : cluster front-end style configuration</li>
+          <li><code>frontend</code> : cluster front end configuration</li>
+        </ul>
       </dd>
 
       <dt id="api-docs">API Docs <code class="placeholder">{}</code></dt>
       <dd id="dd-api-docs">
-        Definition
+        Documentation for Algorithmia’s API, listing all available endpoints. Description here.
       </dd>
 
       <dt id="api-endpoint">API endpoint <code class="placeholder">{}</code></dt>
       <dd id="dd-api-endpoint">
-        Definition
+        Resource URL not including the base URL, for example /v1/algorithms/{ALGO_OWNER}/{ALGO_NAME}/{ALGO_VERSION}.
       </dd>
 
       <dt id="api-key">API key <code class="placeholder">{}</code></dt>
       <dd id="dd-api-key">
-        Definition
+        Secret authentication token associated with a specific account or org. As a security best practice, this value
+        should be
+        stored in the environment variable ALGORITHMIA_API_KEY.
       </dd>
 
       <dt id="api-method">API method <code class="placeholder">{}</code></dt>
       <dd id="dd-api-method">
-        Definition
+        Verb used to indicate an interaction with a resource through the REST API. Algorithmia primarily uses GET, PUT,
+        POST,
+        DELETE, HEAD, and PATCH methods.
       </dd>
 
       <dt id="authenticated-resource-request">authenticated resource request</dt>
       <dd id="dd-authenticated-resource-request">
-        Definition
+        Request for a resource that includes one or more authentication factors.
       </dd>
 
       <dt id="authentication">authentication <code class="placeholder">{}</code></dt>
       <dd id="dd-authentication">
-        Definition
+        The act of signing on to the Algorithmia platform in order to gain access to an authentication token that can
+        then be used to send authenticated resource requests.
       </dd>
 
       <dt id="authentication-factor">authentication factor <code class="placeholder">{}</code></dt>
       <dd id="dd-authentication-factor">
-        Definition
+        Property used to authenticate into an account to access resources. Algorithmia uses passwords for authentication
+        into
+        our browser UI.
       </dd>
 
       <dt id="authentication-token">authentication token <code class="placeholder">{}</code></dt>
       <dd id="dd-authentication-token">
-        Definition
+        Special type of authentication factor that’s granted as a digital “receipt” upon successful authentication. A
+        token may
+        have a validity time limit and may represent a limited set of actions that can be taken on specific resources.
       </dd>
 
       <dt id="authorization">authorization <code class="placeholder">{}</code></dt>
       <dd id="dd-authorization">
-        Definition
+        The act of granting an identity access to specific resources.
       </dd>
 
       <dt id="base-api-url">base API URL <code class="placeholder">{}</code></dt>
       <dd id="dd-base-api-url">
-        Definition
+        Resource URL for /v1 API, not including the endpoint. For example https://api.algorithmia.com.
       </dd>
 
       <dt id="base-url">base URL <code class="placeholder">{}</code></dt>
       <dd id="dd-base-url">
-        Definition
+        Resource URL not including a specific endpoint. For example https://algorithmia.com.
       </dd>
 
       <dt id="blog">blog <code class="placeholder">{}</code></dt>
       <dd id="dd-blog">
-        Definition
+        Algorithmia site where we share practical, relevant information about AI/ML and the industry, describe new
+        product
+        features and partnerships, pose new ideas, and share success stories in order to connect and build credibility
+        with the
+        reader. Blog posts are actively updated to reflect the state of the platform as product features and best
+        practices
+        change. Like the Developer Center, the blog is a resource to which customers can return at any time for accurate
+        information. Description here.
       </dd>
 
       <dt id="browser-ui">browser UI <code class="placeholder">{}</code></dt>
       <dd id="dd-browser-ui">
-        Definition
+        Algorithmia’s browser-based user interface.
       </dd>
 
       <dt id="caller">caller <code class="placeholder">{CALLER_NAME}</code></dt>
       <dd id="dd-caller">
-        Definition
+        Account associated with the authentication token used to call an algorithm.
       </dd>
 
       <dt id="collection-owner">collection owner <code class="placeholder">{}</code></dt>
       <dd id="dd-collection-owner">
-        Definition
+        Account or org that owns a hosted data collection.
       </dd>
 
       <dt id="closed-source-algorithm">closed-source algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-closed-source-algorithm">
-        Definition
+        Algorithm published with source code only visible via authenticated resource requests from the account or org
+        that owns
+        the algorithm.
       </dd>
 
       <dt id="cluster">cluster <code class="placeholder">{}</code></dt>
       <dd id="dd-cluster">
-        Definition
+        Individual instance of Algorithmia’s platform.
       </dd>
 
       <dt id="cluster-admin-account">cluster admin account <code class="placeholder">{}</code></dt>
       <dd id="dd-cluster-admin-account">
-        Definition
+        Account with administrative privileges on the cluster. Cluster admin and org admin roles aren’t related.
+        [Engineering
+        also calls this “platform administrator”]
       </dd>
 
       <dt id="cluster-domain">cluster domain <code class="placeholder">{}</code></dt>
       <dd id="dd-cluster-domain">
-        Definition
+        Specific domain associated with an Algorithmia cluster. For example, algorithmia.com. For usage, see base URL.
       </dd>
 
       <dt id="cluster-operator">cluster operator <code class="placeholder">{}</code></dt>
       <dd id="dd-cluster-operator">
-        Definition
+        The DevOps customer persona that works with Algorithmia I&O to deploy, upgrade, and maintain Algorithmia’s
+        infrastructure in their Enterprise environment. (Cluster operators have access to environment variables and
+        other
+        configuration through the terminal vs. cluster admins who are just using the UI or API w/ and Admin API key.)
       </dd>
 
       <dt id="cold-algorithm">cold algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-cold-algorithm">
-        Definition
+        Algorithm for which no instances are currently ready to process algorithm execution requests.
       </dd>
 
       <dt id="constellation-distributed-serving">Constellation Distributed Serving</dt>
       <dd id="dd-constellation-distributed-serving">
-        Definition
+        Flexible Algorithmia deployment option in which a mothership (any Enterprise cluster with the option enabled) is
+        distinct and separate from the satellite(s) (a set of containers including algorithms (one satellite to many
+        algorithms), RabbitMQ, API server, and a configuration file) for production runtime, thereby decoupling
+        algorithm development from runtime execution. Constellation enables customers with high security, high
+        availability, or high performance workloads to easily deploy and serve models where they need to and in the
+        environment that works best for them.
       </dd>
 
       <dt id="consumer">consumer <code class="placeholder">{}</code></dt>
       <dd id="dd-consumer">
-        Definition
+        Not used. See subscriber.
       </dd>
 
       <dt id="contorl-plane-node">control plane node <code class="placeholder">{}</code></dt>
       <dd id="dd-contorl-plane-node">
-        Definition
+        Node in Algorithmia’s Kubernetes environment that manages cluster health and provisioning of general purpose
+        nodes and
+        worker nodes. Put another way, this node runs Kubernetes—the orchestration of the containers. [Note: this used
+        to be
+        called “master node” but officially is now called “Control Plane Node” in K8s, so it should be updated in both
+        our UI
+        and documentation to align with that.]
       </dd>
 
       <dt id="data-connector">data connector <code class="placeholder">{}</code></dt>
       <dd id="dd-data-connector">
-        Definition
+        Specific cloud storage provider to which algorithms can connect through a built-in configuration on
+        Algorithmia’s
+        platform.
       </dd>
 
       <dt id="data-source">data source <code class="placeholder">{}</code></dt>
       <dd id="dd-data-source">
-        Definition
+        Generic term for hosted data collection, data connector, and external data source.
+
       </dd>
 
       <dt id="data-uri">data URI <code class="placeholder">{}</code></dt>
       <dd id="dd-data-uri">
-        Definition
+        Identifier that describes the location of a hosted data collection or native data connector to the API. The
+        location may
+        be a file “bucket” (i.e., a folder or directory) or a file itself.
+
       </dd>
 
       <dt id="developer-center">Developer Center <code class="placeholder">{}</code></dt>
       <dd id="dd-developer-center">
-        Definition
+        Quick-reference Algorithmia documentation. Description here.
       </dd>
 
       <dt id="directory">directory <code class="placeholder">{}</code></dt>
       <dd id="dd-directory">
-        Definition
+        Generic term for “bucket” that can hold files. Used synonymously with folder.
       </dd>
 
       <dt id="event-flow">Event Flow <code class="placeholder">{}</code></dt>
       <dd id="dd-event-flow">
-        Definition
+        Publisher or subscriber algorithm configured to read records from or write records to a message broker.
       </dd>
 
       <dt id="event-listener">event listener <code class="placeholder">{}</code></dt>
       <dd id="dd-event-listener">
-        Definition
+        Not used. See event flow.
       </dd>
 
       <dt id="event-manager">event manager <code class="placeholder">{}</code></dt>
       <dd id="dd-event-manager">
-        Definition
+        Not used. See message broker.
       </dd>
 
       <dt id="external-data-source">external data source <code class="placeholder">{}</code></dt>
       <dd id="dd-external-data-source">
-        Definition
+        Data source to which algorithms can connect using external standard SDKs and APIs but to which Algorithmia
+        doesn’t
+        provide a built-in data connector. [We differentiate between native data connectors and external data sources
+        because
+        connectors are supported through the API.]
       </dd>
 
       <dt id="file">file <code class="placeholder">{}</code></dt>
       <dd id="dd-file">
-        Definition
+        A file of any type (text, JSON, binary, etc.) in local, hosted, cloud, or other storage.
       </dd>
 
       <dt id="folder">folder <code class="placeholder">{}</code></dt>
       <dd id="dd-folder">
-        Definition
+        Generic term for “bucket” that can hold files. Used synonymously with directory.
       </dd>
 
       <dt id="general-purpose-node">general purpose node <code class="placeholder">{}</code></dt>
       <dd id="dd-general-purpose-node">
-        Definition
+        Node in Algorithmia’s Kubernetes environment that manages and schedules Algorithmia services (with the exception
+        of
+        algorithm workers) providing services such as logging, storage, source code management, billing, etc.
       </dd>
 
       <dt id="grafana">Grafana <code class="placeholder">{}</code></dt>
       <dd id="dd-grafana">
-        Definition
+        Numeric metrics visualization dashboard provisioned with each Algorithmia Enterprise installation.
       </dd>
 
       <dt id="hosted-data-collection">hosted data collection <code class="placeholder">{}</code></dt>
       <dd id="dd-hosted-data-collection">
-        Definition
+        Object storage hosted on the Algorithmia platform. Data collections are not “file storage” in that they can’t
+        store
+        nested data or data with a “/” character in the path.
       </dd>
 
       <dt id="hot-algorithm">hot algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-hot-algorithm">
-        Definition
+        Algorithm instance actively handling an algorithm execution request.
       </dd>
 
       <dt id="json-web-token">JSON Web Token (JWT) <code class="placeholder">{}</code></dt>
       <dd id="dd-json-web-token">
-        Definition
+        Open, industry-standard RFC 7519 method for representing proof of secure communication between two parties. On
+        Algorithmia a JWT can be used as an authentication token to grant an identity access to perform authenticated
+        resource
+        requests. If configured, permission tags can be extracted from a JWT and used to facilitate external management
+        of
+        organization membership and user security roles.
       </dd>
 
       <dt id="identity">identity <code class="placeholder">{}</code></dt>
       <dd id="dd-identity">
-        Definition
+        Digital representation of a real-world entity that attempts to access a resource. This could be a human user, a
+        service
+        account, or a server, for example.
       </dd>
 
       <dt id="kibana">Kibana <code class="placeholder">{}</code></dt>
       <dd id="dd-kibana">
-        Definition
+        Log query and visualization tool provisioned with each Algorithmia Enterprise installation.
       </dd>
 
       <dt id="machine-learning">machine learning (ML) <code class="placeholder">{}</code></dt>
@@ -601,24 +700,30 @@
         following explicit instructions from humans.
       </dd>
 
+      <dt id="machine-learning-operations">machine learning operations (MLOps)
+      <dd id="dd-machine-learning-operations">
+        The discipline of delivering ML models through repeatable and efficient workflows.
+      </dd>
       <dt id="master-node">master node <code class="placeholder">{}</code></dt>
       <dd id="dd-master-node">
-        Definition
+        Not used. See control plane node.
       </dd>
 
       <dt id="message-broker">message broker <code class="placeholder">{}</code></dt>
       <dd id="dd-message-broker">
-        Definition
+        Event-processing tool that stores records from publishers in a log or queue and makes them available to be read
+        by
+        subscribers.
       </dd>
 
       <dt id="message-broker-connection">message broker connection <code class="placeholder">{}</code></dt>
       <dd id="dd-message-broker-connection">
-        Definition
+        Cluster-level connection to a message broker, configured by a cluster admin.
       </dd>
 
       <dt id="ml-service-catalog">ML service catalog <code class="placeholder">{}</code></dt>
       <dd id="dd-ml-service-catalog">
-        Definition
+        Library of versioned algorithms ready to be served for inference.
       </dd>
 
       <dt id="model">model <code class="placeholder">{MODEL_NAME}</code></dt>
@@ -632,152 +737,200 @@
 
       <dt id="model-explainability">model explainability <code class="placeholder">{}</code></dt>
       <dd id="dd-model-explainability">
-        Definition
+        Ability to explain how a model was built and the reasons for its outputs. In some contexts this is used
+        interchangeably
+        with model interpretability.
       </dd>
 
       <dt id="model-governance">model governance <code class="placeholder">{}</code></dt>
       <dd id="dd-model-governance">
-        Definition
+        Process for how a company controls access to models, implements policy surrounding models, and tracks activity
+        of
+        models.
       </dd>
 
       <dt id="model-interpretability">model interpretability <code class="placeholder">{}</code></dt>
       <dd id="dd-model-interpretability">
-        Definition
+        Ability to understand the cause of a model decision. This can also refer to the ability for a human to
+        understand and
+        predict a model’s output, or the ability to observe cause and effect by changing model parameters. In some
+        contexts this
+        is used interchangeably with model explainability.
       </dd>
 
       <dt id="model-monitoring">model monitoring <code class="placeholder">{}</code></dt>
       <dd id="dd-model-monitoring">
-        Definition
+        Ability to assess a model’s performance, accuracy, drift, and errors.
       </dd>
 
       <dt id="model-observability">model observability <code class="placeholder">{}</code></dt>
       <dd id="dd-model-observability">
-        Definition
+        Ability to assess the state of a model through metrics and logs, and to understand and diagnose the operational
+        health of a model.
       </dd>
 
       <dt id="model-validation">model validation <code class="placeholder">{}</code></dt>
       <dd id="dd-model-validation">
-        Definition
+        Ability to confirm that outputs of a model are acceptable given real-world inputs.
       </dd>
 
       <dt id="mothership-cluster">mothership cluster <code class="placeholder">{}</code></dt>
       <dd id="dd-mothership-cluster">
-        Definition
+        Standard Algorithmia Enterprise cluster, consisting of a number of services for algorithm creation, management,
+        and
+        execution. A mothership cluster runs in an Algorithmia-installed and configured Kubernetes cluster on customer
+        infrastructure.
       </dd>
 
       <dt id="node">node <code class="placeholder">{}</code></dt>
       <dd id="dd-node">
-        Definition
+        Generic term for control plane node, general purpose node, or worker node in Algorithmia’s Kubernetes
+        environment. A
+        node is a virtualized compute resource on which Algorithmia services are run.
       </dd>
 
       <dt id="open-source-algorithm">open-source algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-open-source-algorithm">
-        Definition
+        Algorithm published with source code visible via an authenticated resource request to the cluster if it’s a
+        public
+        algorithm. If it’s a private algorithm, the source code is only visible via authenticated resource requests from
+        the
+        account owning the algorithm.
       </dd>
 
       <dt id="orchestration-algorithm">orchestration algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-orchestration-algorithm">
-        Definition
+        Algorithm that receives an API request directly from a caller and calls other algorithms internally in a
+        pipeline.
+        Synonymous with parent algorithm and top-level algorithm.
       </dd>
 
       <dt id="org-organization">org/organization <code class="placeholder">{}</code></dt>
       <dd id="dd-org-organization">
-        Definition
+        Logical construct for sharing resource access with an arbitrary number of accounts on the cluster. An org must
+        have at
+        least one org admin, and orgs can’t be deleted once created. Accounts can be members of zero, one, or multiple
+        orgs.
       </dd>
 
       <dt id="org-admin">org admin <code class="placeholder">{}</code></dt>
       <dd id="dd-org-admin">
-        Definition
+        Account that has elevated privileges within a specific org of which it’s a member. Anyone who creates an org is
+        automatically given the org admin role, and an account can be an org admin for zero, one, or multiple orgs. Org
+        admin and cluster admin roles aren’t related.
       </dd>
 
       <dt id="org-profile">org profile <code class="placeholder">{}</code></dt>
       <dd id="dd-org-profile">
-        Definition
+        Profile page for an org.
       </dd>
 
       <dt id="parent-algorithm">parent algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-parent-algorithm">
-        Definition
+        Algorithm that receives an API request directly from a caller and calls other algorithms internally in a
+        pipeline.
+        Synonymous with orchestration algorithm and top-level algorithm.
       </dd>
 
       <dt id="password">password <code class="placeholder">{}</code></dt>
       <dd id="dd-password">
-        Definition
+        Authentication factor used to authenticate to access the resources associated with an account on the Algorithmia
+        platform.
       </dd>
 
       <dt id="platform-version">platform version <code class="placeholder">{}</code></dt>
       <dd id="dd-platform-version">
-        Definition
+        Semantic version of Algorithmia’s software, for example “20.4.7” or “v20.4.7”.
       </dd>
 
       <dt id="private-algorithm">private algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-private-algorithm">
-        Definition
+        Algorithm published privately that can only be called by the account or org that owns the algorithm.
+      </dd>
+
+      <dt id="producer">producer <code class="placeholder">{}</code></dt>
+      <dd id="dd-producer">
+        Not used. See publisher.
       </dd>
 
       <dt id="public-algorithm">public algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-public-algorithm">
-        Definition
+        Algorithm published publicly that can be called by any account or org on the cluster.
       </dd>
 
       <dt id="publisher">publisher <code class="placeholder">{}</code></dt>
       <dd id="dd-publisher">
-        Definition
+        Entity that sends records to a message broker. Synonymous with producer.
       </dd>
 
       <dt id="record">record <code class="placeholder">{}</code></dt>
       <dd id="dd-record">
-        Definition
+        Data or message sent to or retrieved from a message broker. Also used to refer to a row of data in a relational
+        database
+        table.
       </dd>
 
       <dt id="replica">replica <code class="placeholder">{}</code></dt>
       <dd id="dd-replica">
-        Definition
+        Individual instance of a specific algorithm running on a worker node.
       </dd>
 
       <dt id="reservation">reservation <code class="placeholder">{}</code></dt>
       <dd id="dd-reservation">
-        Definition
+        Algorithm instance kept warm to eliminate cold-start overhead. Reservations are only configurable by cluster
+        admins.
       </dd>
 
       <dt id="resource">resource <code class="placeholder">{}</code></dt>
       <dd id="dd-resource">
-        Definition
+        Data on the Algorithmia platform. Examples include algorithms, files stored on the platform or available through
+        the
+        platform, account information, etc.
       </dd>
 
       <dt id="resource-request">resource request <code class="placeholder">{}</code></dt>
       <dd id="dd-resource-request">
-        Definition
+        Attempt by an identity to access a resource on the Algorithmia platform. Examples include executing an
+        algorithm,
+        publishing a new version of an algorithm, reading from or writing to a data source, etc.
       </dd>
 
       <dt id="resource-uri">resource URI <code class="placeholder">{}</code></dt>
       <dd id="dd-resource-uri">
-        Definition
+        Full path at which a resource exists, equivalent to API base URL + API endpoint.
       </dd>
 
       <dt id="satellite-cluster">satellite cluster <code class="placeholder">{}</code></dt>
       <dd id="dd-satellite-cluster">
-        Definition
+        Minimal version of Algorithmia Enterprise cluster with a subset of services, including algorithms, a RabbitMQ
+        queuing
+        system, configuration information, and an API server to handle algorithm execution requests. A satellite cluster
+        runs in
+        a customer-provided Kubernetes cluster on customer infrastructure.
       </dd>
 
       <dt id="satellite-launce-instance">satellite launce instance <code class="placeholder">{}</code></dt>
       <dd id="dd-satellite-launce-instance">
-        Definition
+        Individual instance of a satellite deployment.
       </dd>
 
       <dt id="satellite-version">satellite version <code class="placeholder">{}</code></dt>
       <dd id="dd-satellite-version">
-        Definition
+        Version number associated with a specific satellite deployment. Each satellite version is configured with a
+        specific
+        list of included algorithms and authentication keys.
       </dd>
 
       <dt id="secret">secret <code class="placeholder">{}</code></dt>
       <dd id="dd-secret">
-        Definition
+        Sensitive value (e.g., password, token, access key, credential, etc.) stored encrypted in the secret store and
+        accessed
+        from algorithm source code through an environment variable.
       </dd>
 
       <dt id="secret-store">Secret Store <code class="placeholder">{}</code></dt>
       <dd id="dd-secret-store">
-        Definition
+        Secure, encrypted vault that stores sensitive information such as access keys to external services.
       </dd>
 
       <dt id="serialized-model">serialized model <code class="placeholder">{MODEL_NAME}</code></dt>
@@ -790,52 +943,67 @@
 
       <dt id="service-account">service account <code class="placeholder">{}</code></dt>
       <dd id="dd-service-account">
-        Definition
+        Account not associated with a specific human.
       </dd>
 
       <dt id="slot">slot <code class="placeholder">{}</code></dt>
       <dd id="dd-slot">
-        Definition
+        Deprecated. See replica.
       </dd>
 
       <dt id="scm-configuration">SCM configuration <code class="placeholder">{}</code></dt>
       <dd id="dd-scm-configuration">
-        Definition
+        Cluster-level details about an SCM provider, such as provider type and URLs, configured by a cluster admin using
+        a
+        key-value pair generated within the SCM provider’s platform. There may be zero, one, or multiple SCM
+        configurations for
+        one SCM provider.
       </dd>
 
       <dt id="scm-connection">SCM connection <code class="placeholder">{}</code></dt>
       <dd id="dd-scm-connection">
-        Definition
+        Account-levels details that contain credentials for connecting to an SCM provider.
       </dd>
 
       <dt id="scm-provider">SCM provider <code class="placeholder">{}</code></dt>
       <dd id="dd-scm-provider">
-        Definition
+        Third-party SCM system to which an SCM configuration can be created for hosting algorithm source code outside of
+        the
+        Algorithmia platform. See a list of supported providers here.
       </dd>
 
       <dt id="source-code-management">source code management (SCM) <code class="placeholder">{}</code></dt>
       <dd id="dd-source-code-management">
-        Definition
+        Process of tracking modifications to a source code repository. Synonymous with version control. Also synonymous
+        with
+        source control management; this term is used widely in the industry but for the purpose of consistency
+        Algorithmia
+        doesn’t use this term.
       </dd>
 
       <dt id="subscriber">subscriber <code class="placeholder">{}</code></dt>
       <dd id="dd-subscriber">
-        Definition
+        Entity that reads records from a message broker. Synonymous with consumer.
       </dd>
 
       <dt id="test-console">test console <code class="placeholder">{}</code></dt>
       <dd id="dd-test-console">
-        Definition
+        The purple console at the bottom of the Web IDE, where algorithms may be executed with sample input to test
+        their
+        functionality after building.
       </dd>
 
       <dt id="top-level-algorithm">top-level algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-top-level-algorithm">
-        Definition
+        Algorithm that receives an API request directly from a caller and calls other algorithms internally in a
+        pipeline.
+        Synonymous with orchestration algorithm and parent algorithm.
+
       </dd>
 
       <dt id="topic">topic <code class="placeholder">{}</code></dt>
       <dd id="dd-topic">
-        Definition
+        Feed within a message broker to which publishers send records and from which subscribers read records.
       </dd>
 
       <dt id="trained-model">trained model <code class="placeholder">{MODEL_NAME}</code></dt>
@@ -849,37 +1017,43 @@
 
       <dt id="training-center">Training Center <code class="placeholder">{}</code></dt>
       <dd id="dd-training-center">
-        Definition
+        Learning management system with tutorial-based training content.
       </dd>
 
       <dt id="user">user <code class="placeholder">{}</code></dt>
       <dd id="dd-user">
-        Definition
+        Human interacting with the Algorithmia platform. See identity.
       </dd>
 
       <dt id="user-account">user account <code class="placeholder">{}</code></dt>
       <dd id="dd-user-account">
-        Definition
+        Account associated with a specific user.
       </dd>
 
       <dt id="unilog">UNILOG <code class="placeholder">{}</code></dt>
       <dd id="dd-unilog">
-        Definition
+        Text-based metrics visualization dashboard. Unilog data is the aggregation of application and (some) Kubernetes
+        logs
+        from the various services in an Algorithmia cluster. These logs are used for debugging and stability monitoring
+        by
+        engineers, and can be accessed through Kibana by cluster admins only.
       </dd>
 
       <dt id="warm-algorithm">warm algorithm <code class="placeholder">{}</code></dt>
       <dd id="dd-warm-algorithm">
-        Definition
+        Algorithm instance running on a worker node and ready to handle API requests.
       </dd>
 
       <dt id="web-ide">Web IDE <code class="placeholder">{}</code></dt>
       <dd id="dd-web-ide">
-        Definition
+        Algorithmia’s built-in source code editor and test console, accessible through the “Source” tab from an
+        algorithm’s
+        profile page.
       </dd>
 
       <dt id="worker-node">worker node <code class="placeholder">{}</code></dt>
       <dd id="dd-worker-node">
-        Definition
+        Compute node in Algorithmia’s Kubernetes environment on which algorithm instances are run.
       </dd>
 
     </dl>
