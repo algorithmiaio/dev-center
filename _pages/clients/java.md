@@ -1,12 +1,9 @@
 ---
-layout: article
-title: "Java"
-excerpt: "Working in Java? Check out this Algorithmia Java client."
 categories: clients
-tags: [clients]
-show_related: true
+excerpt: "Working in Java? Check out this Algorithmia Java client."
 image:
     teaser: /language_logos/java.svg
+layout: article
 repository: https://github.com/algorithmiaio/algorithmia-java
 redirect_from:
   - /algorithm-development/client-guides/java/
@@ -15,6 +12,9 @@ redirect_from:
   - /application-development/client-guides/java/
   - /application-development/guides/java/
   - /application-development/lang-guides/java/
+show_related: true
+tags: [clients]
+title: "Java"
 ---
 
 The Algorithmia Java client provides a native Java interface to the Algorithmia API, letting developers manage and call algorithms, work with data in object stores using Algorithmia Data Sources, and access other features of the Algorithmia platform.
@@ -23,7 +23,7 @@ This guide will cover setting up the client, calling an algorithm using direct u
 
 To follow along you can create a new Java file in the IDE of your choice.
 
-## Set Up the Client
+## Set up the client
 
 The Algorithmia Java Client is published to Maven central. To get started, the Algorithmia Java Client can be added as a library through Maven using your IDE of choice or you can [download the JAR file](https://mvnrepository.com/artifact/com.algorithmia/algorithmia-client) and add it as a dependency in your POM file:
 
@@ -47,7 +47,7 @@ import com.algorithmia.*;
 AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY");
 {% endhighlight %}
 
-#### Specifying an On-Premises or Private Cloud Endpoint
+#### Specifying an on-premises or private cloud endpoint
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
 {: .notice-enterprise}
@@ -60,7 +60,7 @@ AlgorithmiaClient client = Algorithmia.client("YOUR_API_KEY", "https://mylocalen
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
 
-## Calling an Algorithm
+## Calling an algorithm
 
 Algorithms take three basic types of input whether they are invoked directly through the API or by using a client library: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the input and output sections of an algorithm's documentation for specifics.
 
@@ -114,7 +114,7 @@ Alternatively, you may work with raw JSON input by calling `pipeJson()`, and raw
 
 You might have noticed that in this example we included a version number when instantiating the algorithm. Pinning your code to a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
 
-### Request Options
+### Request options
 
 The client exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response. In the following example, we set the timeout to 60 seconds and disable `stdout` in the response:
 
@@ -125,7 +125,7 @@ algo.setStdout(false);
 
 You can find more details in [API Docs](/developers/api/) > [Invoke an Algorithm](/developers/api/#invoke-an-algorithm).
 
-### Error Handling
+### Error handling
 
 To be able to better develop across languages, Algorithmia has created a set of standardized errors that can be returned by either the platform or by the algorithm being run. In Java, API errors and Algorithm exceptions will result in calls to `pipe` throwing `APIException`:
 
@@ -150,7 +150,7 @@ Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} A
 
 Algorithm requests have a payload size limit of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
 
-## Working with Algorithmia Data Sources
+## Working with Algorithmia data sources
 
 For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/#data).
 
@@ -158,7 +158,7 @@ The Data API defines [connectors](/developers/api/#connectors) to a variety of s
 
 In this example, we'll upload an image to Algorithmia's [Hosted Data](/developers/data/hosted) storage provider, and use the [dlib/FaceDetection](https://algorithmia.com/algorithms/dlib/FaceDetection) algorithm to detect any faces in the image. The algorithm will create a new copy of the image with bounding boxes drawn around the detected faces, and then return a JSON object with details about the dimensions of the bounding boxes and a URI where you can download the resulting image.
 
-### Create a Data Collection
+### Create a data collection
 
 The documentation for "Face Detection" says that it takes a URL or a Data URI of the image to be processed, and a Data URI where the algorithm can store the result. We'll create a directory to host the input image, then update its [permissions](/developers/api/#update-collection-acl) so that its publicly accessible:
 
@@ -177,9 +177,9 @@ try {
 Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 {: .notice-info}
 
-### Upload Data to your Data Collection
+### Upload data to your data collection
 
-Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`. 
+Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`.
 
 Next, create a variable that holds the location where you would like to upload the image as a URI:
 
@@ -208,7 +208,7 @@ Confirm that the file was created by navigating to Algorithmia's [Hosted Data So
 
 You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 
-### Call the Algorithm
+### Call the algorithm
 
 Once the file has been uploaded, you are ready to call the algorithm. Create the algorithm object, then pass the required inputs—a JSON object, encoded as a string, with the image URI (which is stored in `img_file` in the code above) and a URI for the image output—to `.pipeJson()`.
 
@@ -272,33 +272,6 @@ try {
 This will get the image as binary data, saving it to the variable `image_data`, which might be useful when writing algorithms that are part of an image processing pipeline.
 
 If the file was text (an image, etc.), you could instead use the function `.getString()` to retrieve the file's content as a string. For more methods on how to get a file from a data collection using the Data API go to the [API Specification](/developers/api/#get-a-file-or-directory).
-
-## Publishing Algorithmia Insights
-
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
-{: .notice-enterprise}
-
-Inference-related metrics (a feature of [Algorithmia Insights](../algorithmia-enterprise/algorithmia-insights)) can be reported via using the `report_insights` method of the Algorithmia client.
-
-Depending on your algorithm, you might want to report on the algorithm payload for each API call (such as the features or number of features), the output of the algorithm to monitor data distributions of predictions, or probability of each inference.
-
-In the case of an example credit scoring model, shown in this demo for [Algorithmia Insights](https://www.youtube.com/watch?v=pdKwtp-_n2M), reported metrics include the algorithm predictions:
-
-{% highlight java %}
-// Report Algorithmia Insights
-client.reportInsights(new HashMap<String,Object>() { {
-    put("risk_score", risk_score);
-    put("approved", approved);
-} });
-{% endhighlight %}
-
-{% highlight json %}
-// Sample model output that is pushed to Insights
-{
-  "approved": 1,
-  "risk_score": 0.08
-}
-{% endhighlight %}
 
 ## Additional Functionality
 
