@@ -26,6 +26,19 @@
       color: inherit;
       border-bottom: 1px dotted;
     }
+
+    /* indent example terms*/
+    #glossary-usage dl {
+      margin-left: 3ch;
+    }
+
+    #glossary-usage dd {
+      margin-left: 3ch;
+    }
+
+    #glossary-definitions dd {
+      margin-left: 3ch;
+    }
   </style>
   <div id="glossary-usage">
     <p>This page provides brief definitions for many of the terms used across Algorithmia's platform and documentation.
@@ -37,39 +50,40 @@
         uppercase strings in our UI, and in code samples across our documentation, to denote generic values that must be
         replaced with custom values in your code. Placeholders <code
           class="placeholder">{/beginning/with-a-slash}</code> are <a class="glossary-hoverable" href="#api-endpoint"
-          title="" parentId="dd-api-endpoint">endpoints</a> from the <code>https://algorithmia.com</code> <a
-          class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">base URL</a> (or from
+          title="" parentId="dd-api-endpoint">endpoints</a> from the <a class="glossary-hoverable" href="#base-url"
+          title="" parentId="dd-base-url">base URL</a>, i.e.,
         <code>https://<a class="glossary-hoverable" href="#cluster-domain" title="" parentId="dd-cluster-domain">CLUSTER_DOMAIN</a></code>
-        for enterprise clusters; see below).
+        (or <code>https://algorithmia.com</code> for non-Enterprise clusters).
       </li>
-      <dl>
-        <ul>
-          <dt id="example-term-with-placeholder">example term with placeholder <code
-              class="placeholder">{PLACEHOLDER_STRING}</code>
-          </dt>
-          <dd id="dd-example-term-with-placeholder">
-            Definition of first term.
-          </dd>
-          <dt id="example-term-with-endpoint">example term with endpoint placeholder <code
-              class="placeholder">{/endpoint}</code>
-          </dt>
-          <dd id="dd-example-term-with-endpoint">
-            Definition of second term.
-          </dd>
-        </ul>
+      <dl class="indented-example">
+
+        <dt id="example-term-with-placeholder">example term with placeholder <code
+            class="placeholder">{PLACEHOLDER_STRING}</code>
+        </dt>
+        <dd id="dd-example-term-with-placeholder">
+          Definition of first term.
+        </dd>
+
+        <dt id="example-term-with-endpoint">example term with endpoint placeholder <code
+            class="placeholder">{/path/to/endpoint}</code>
+        </dt>
+        <dd id="dd-example-term-with-endpoint">
+          Definition of second term.
+        </dd>
+
       </dl>
       <li>
         Some definitions reference other glossary terms. Links are hoverable and clickable; on hover, they'll display
         the linked definition for quick reference, e.g.:
       </li>
-      <dl>
-        <ul>
-          <dt id="example-term-with-link">example term with link</dt>
-          <dd id="dd-example-term-with-link">
-            This term has a hoverable link to the <a class="glossary-hoverable" href="#example-term-with-placeholder"
-              title="" parentId="dd-example-term-with-placeholder">example term</a> from above.
-          </dd>
-        </ul>
+      <dl class="indented-example">
+
+        <dt id="example-term-with-link">example term with link</dt>
+        <dd id="dd-example-term-with-link">
+          This term has a hoverable link to the <a class="glossary-hoverable" href="#example-term-with-placeholder"
+            title="" parentId="dd-example-term-with-placeholder">example term</a> from above.
+        </dd>
+
       </dl>
     </ul>
   </div>
@@ -82,6 +96,7 @@
       float: left;
       width: 50%;
       padding: 10px;
+      column-gap: 0ch;
     }
 
     /* Clear floats after the columns */
@@ -399,7 +414,7 @@
         and revision.
       </dd>
 
-      <dt id="algorithm-template">algorithm template <code class="placeholder">{}</code></dt>
+      <dt id="algorithm-template">algorithm template</dt>
       <dd id="dd-algorithm-template">
         Source code file or collection of files with boilerplate code that serves as a unified starting point for new
         <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithms</a>
@@ -413,7 +428,7 @@
         <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
       </dd>
 
-      <dt id="algorithm-vanity-url">algorithm vanity URL <code class="placeholder">{}</code></dt>
+      <dt id="algorithm-vanity-url">algorithm vanity URL</dt>
       <dd id="dd-algorithm-vanity-url">
         Minimal URL for specific <a class="glossary-hoverable" href="#algorithm-endpoint" title=""
           parentId="dd-algorithm-endpoint">algorithm endpoint</a> in a <a class="glossary-hoverable"
@@ -515,7 +530,7 @@
           parentId="dd-authentication-factor">authentication factors</a>.
       </dd>
 
-      <dt id="authentication">authentication <code class="placeholder">{}</code></dt>
+      <dt id="authentication">authentication</dt>
       <dd id="dd-authentication">
         The act of signing on to the Algorithmia platform in order to gain access to an <a class="glossary-hoverable"
           href="#authentication-token" title="" parentId="dd-authentication-token">authentication
@@ -523,7 +538,7 @@
           title="" parentId="dd-authenticated-resource-request">authenticated resource requests</a>.
       </dd>
 
-      <dt id="authentication-factor">authentication factor <code class="placeholder">{}</code></dt>
+      <dt id="authentication-factor">authentication factor</dt>
       <dd id="dd-authentication-factor">
         Property used to authenticate into an <a class="glossary-hoverable" href="#account" title=""
           parentId="dd-account">account</a> to access <a class="glossary-hoverable" href="#resource" title=""
@@ -540,7 +555,7 @@
           class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resources</a>.
       </dd>
 
-      <dt id="authorization">authorization <code class="placeholder">{}</code></dt>
+      <dt id="authorization">authorization</dt>
       <dd id="dd-authorization">
         The act of granting an identity access to specific <a class="glossary-hoverable" href="#resource" title=""
           parentId="dd-resource">resources</a>.
@@ -622,13 +637,13 @@
           class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">base URL</a>.
       </dd>
 
-      <dt id="cluster-operator">cluster operator <code class="placeholder">{}</code></dt>
+      <dt id="cluster-operator">cluster operator</dt>
       <dd id="dd-cluster-operator">
-        The DevOps customer persona that works with Algorithmia I&O to deploy, upgrade, and maintain Algorithmia’s
+        DevOps customer persona that works with Algorithmia I&O to deploy, upgrade, and maintain Algorithmia’s
         infrastructure in their Enterprise environment.
       </dd>
 
-      <dt id="cold-algorithm">cold algorithm <code class="placeholder">{}</code></dt>
+      <dt id="cold-algorithm">cold algorithm</dt>
       <dd id="dd-cold-algorithm">
         <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> for which no
         <a class="glossary-hoverable" href="#algorithm-instance" title="" parentId="dd-algorithm-instance">instances</a>
@@ -651,7 +666,7 @@
         where they need to and in the environment that works best for them.
       </dd>
 
-      <dt id="consumer">consumer <code class="placeholder">{}</code></dt>
+      <dt id="consumer">consumer</dt>
       <dd id="dd-consumer">
         Not used. See <a class="glossary-hoverable" href="#subscriber" title="" parentId="dd-subscriber">subscriber</a>.
       </dd>
@@ -741,7 +756,7 @@
 
       <dt id="file">file <code class="placeholder">{FILE_NAME}</code></dt>
       <dd id="dd-file">
-        A file of any type (text, JSON, binary, etc.) in local, <a class="glossary-hoverable"
+        Generic term for file of any type (text, JSON, binary, etc.) in local, <a class="glossary-hoverable"
           href="#hosted-data-collection" title="" parentId="dd-hosted-data-collection">hosted</a>, cloud, or other
         storage.
       </dd>
@@ -985,7 +1000,7 @@
           parentId="dd-org-organization">org</a>.
       </dd>
 
-      <dt id="parent-algorithm">parent algorithm <code class="placeholder">{}</code></dt>
+      <dt id="parent-algorithm">parent algorithm</dt>
       <dd id="dd-parent-algorithm">
         <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> that receives an
         API request directly from a caller and calls other algorithms internally in a
@@ -996,7 +1011,7 @@
           algorithm</a>.
       </dd>
 
-      <dt id="password">password <code class="placeholder">{}</code></dt>
+      <dt id="password">password</dt>
       <dd id="dd-password">
         <a class="glossary-hoverable" href="#authentication-factor" title=""
           parentId="dd-authentication-factor">Authentication factor</a> used to <a class="glossary-hoverable"
@@ -1265,7 +1280,8 @@
       <dt id="web-ide">Web IDE</dt>
       <dd id="dd-web-ide">
         Algorithmia’s built-in source code editor and test console, accessible through the “Source” tab from an
-        algorithm’s profile page.
+        algorithm’s <a class="glossary-hoverable" href="#algorithm-profile" title=""
+          parentId="dd-algorithm-profile">profile</a>.
       </dd>
 
       <dt id="worker-node">worker node</dt>
