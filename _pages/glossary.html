@@ -1,19 +1,13 @@
-<html lang="en">
+<div>
 
-<head>
-  <title>Glossary</title>
-</head>
-
-<body>
   <style>
     dt {
       font-weight: bold;
       font-size: 20px;
-      margin-bottom: 3px
     }
 
     dd {
-      margin-bottom: 25px;
+      margin-bottom: 50px;
     }
 
     .placeholder {
@@ -49,9 +43,10 @@
         Some terms have associated <code class="placeholder">{PLACEHOLDER_STRING}</code> values. We use these
         uppercase strings in our UI, and in code samples across our documentation, to denote generic values that must be
         replaced with custom values in your code. Placeholders <code
-          class="placeholder">{/beginning/with-a-slash}</code> are <a class="glossary-hoverable" href="#api-endpoint"
-          title="" parentId="dd-api-endpoint">endpoints</a> from the <a class="glossary-hoverable" href="#base-url"
-          title="" parentId="dd-base-url">base URL</a>, i.e.,
+          class="placeholder">{/beginning/with-a-slash}</code>
+        are <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">endpoints</a> from
+        the
+        <a class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">base URL</a>, i.e.,
         <code>https://<a class="glossary-hoverable" href="#cluster-domain" title="" parentId="dd-cluster-domain">CLUSTER_DOMAIN</a></code>
         (or <code>https://algorithmia.com</code> for non-Enterprise clusters).
       </li>
@@ -91,32 +86,19 @@
   <hr />
 
   <style>
-    /* Create two equal columns that float next to each other */
-    .column {
-      float: left;
-      width: 50%;
-      padding: 10px;
-      column-gap: 0ch;
+    .glossary-index {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 4px;
     }
 
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* Responsive layout - when the screen is less than 1000px wide, make the
-     two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 1000px) {
-      .column {
-        width: 100%;
-      }
+    .glossary-index>div {
+      flex: 50%;
     }
   </style>
 
-  <div id="glossary-index" class="row">
-    <div class="column left">
+  <div class="glossary-index">
+    <div>
       <ul>
         <li><a href="#account">account</a></li>
         <li><a href="#account-profile">account profile</a></li>
@@ -183,7 +165,7 @@
       </ul>
     </div>
 
-    <div class="column right">
+    <div>
       <ul>
         <li><a href="#hosted-data-collection">hosted data collection</a></li>
         <li><a href="#hot-algorithm">hot algorithm</a></li>
@@ -285,9 +267,10 @@
           admin account</a>. An admin API key can be used to make specific administrative <a class="glossary-hoverable"
           href="#authenticated-resource-request" title="" parentId="dd-authenticated-resource-request">authenticated
           resource requests</a> through the <a class="glossary-hoverable" href="#api" title=""
-          parentId="dd-api">API</a>. Examples of admin-only requests include creating and deleting <a
-          class="glossary-hoverable" href="#user-account" title="" parentId="dd-user-account">user accounts</a> and <a
-          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">organizations</a>.
+          parentId="dd-api">API</a>.
+        Examples of admin-only requests include creating and deleting <a class="glossary-hoverable" href="#user-account"
+          title="" parentId="dd-user-account">user accounts</a> and <a class="glossary-hoverable"
+          href="#org-organization" title="" parentId="dd-org-organization">organizations</a>.
       </dd>
 
       <dt id="admin-panel">admin panel <code class="placeholder">{/admin}</code></dt>
@@ -380,7 +363,8 @@
       </dd>
 
       <dt id="algorithm-instance">algorithm instance <code
-          class="placeholder">{CALLER_NAME/ALGO_NAME/ALGO_VERSION}</code></dt>
+          class="placeholder">{CALLER_NAME/ALGO_NAME/ALGO_VERSION}</code>
+      </dt>
       <dd id="dd-algorithm-instance">
         Individual <a class="glossary-hoverable" href="#replica" title="" parentId="dd-replica">replica</a> of an <a
           class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> running on
@@ -410,8 +394,8 @@
       <dt id="algorithm-semantic-version">algorithm semantic version <code class="placeholder">{X.Y.Z}</code></dt>
       <dd id="dd-algorithm-semantic-version">
         Specific published version of an <a class="glossary-hoverable" href="#algorithm-build" title=""
-          parentId="dd-algorithm-build">algorithm build</a>, where X, Y, and Z represent major version, minor version,
-        and revision.
+          parentId="dd-algorithm-build">algorithm build</a>, where <code>X</code>, <code>Y</code>, and <code>Z</code>
+        represent major version, minor version, and revision, respectively.
       </dd>
 
       <dt id="algorithm-template">algorithm template</dt>
@@ -675,8 +659,9 @@
       <dd id="dd-control-plane-node">
         <a class="glossary-hoverable" href="#node" title="" parentId="dd-node">Node</a> in Algorithmia’s Kubernetes
         environment that manages <a class="glossary-hoverable" href="#cluster" title=""
-          parentId="dd-cluster">cluster</a> health and provisioning of <a class="glossary-hoverable"
-          href="#general-purpose-node" title="" parentId="dd-general-purpose-node">general purpose nodes</a> and
+          parentId="dd-cluster">cluster</a>
+        health and provisioning of <a class="glossary-hoverable" href="#general-purpose-node" title=""
+          parentId="dd-general-purpose-node">general purpose nodes</a> and
         <a class="glossary-hoverable" href="#worker-node" title="" parentId="dd-worker-node">worker nodes</a>. Put
         another way, this node runs Kubernetes—the orchestration of the containers. Note that this was previously named
         <a class="glossary-hoverable" href="#master-node" title="" parentId="dd-master-node">master node</a>.
@@ -787,7 +772,7 @@
       <dd id="dd-hosted-data-collection">
         Object storage hosted on the Algorithmia platform. Data collections are not “file storage” in that they can’t
         store
-        nested data or data with a “/” character in the path.
+        nested data or data with a “<code>/</code>” character in the path.
       </dd>
 
       <dt id="hot-algorithm">hot algorithm</dt>
@@ -1291,64 +1276,57 @@
           parentId="dd-algorithm-instance">algorithm instances</a> are run.
       </dd>
 
-    </dl>
-  </div>
-</body>
-<script>
-  // assign id to parent element, prepending "" to child element id
-  function assignParentId(parentNode) {
-    childElem = parentNode.childElem
+      <script>
+        // assign id to parent element, prepending "" to child element id
+        function assignParentId(parentNode) {
+          childElem = parentNode.childElem
 
 
-      .document.getElementById(childId).parentElement
-    parentElem.setAttribute("id", "" + childId)
-  }
+            .document.getElementById(childId).parentElement
+          parentElem.setAttribute("id", "" + childId)
+        }
 
-  // assign ids to all parent elements
-  function assignParentIds() {
-    terms = document.getElementsByTagName("dd")
-    for (let index = 0; index < terms.length; index++) {
-      assignParentId(terms[index]);
+        // assign ids to all parent elements
+        function assignParentIds() {
+          terms = document.getElementsByTagName("dd")
+          for (let index = 0; index < terms.length; index++) {
+            assignParentId(terms[index]);
+          }
+        }
 
-    }
-  }
+        function assignTitle(parentId) {
+          elem = document.getElementById(parentId)
+          if (elem) {
+            return elem.innerText;
+          }
+          console.log("missing parentId: " + parentId)
+          return ""
+        }
 
+        var glossTerms = document.getElementsByClassName("glossary-hoverable");
+        for (i = 0; i < glossTerms.length; i++) {
+          currentElem = glossTerms.item(i);
+          parentId = currentElem.attributes.getNamedItem("parentId").nodeValue;
+          glossTerms.item(i).title = assignTitle(parentId);
+        }
 
-  function assignTitle(parentId) {
-    elem = document.getElementById(parentId)
-    if (elem) {
-      return elem.innerText;
-    }
-    console.log("missing parentId: " + parentId)
-    return ""
-  }
+        function countIndexTerms() {
+          // pass
+        }
 
-  var glossTerms = document.getElementsByClassName("glossary-hoverable");
-  for (i = 0; i < glossTerms.length; i++) {
-    currentElem = glossTerms.item(i);
-    parentId = currentElem.attributes.getNamedItem("parentId").nodeValue;
-    glossTerms.item(i).title = assignTitle(parentId);
-  }
+        function countDefinitionTerms() {
+          // pass
+        }
 
-  function countIndexTerms() {
-    // pass
-  }
-
-  function countDefinitionTerms() {
-    // pass
-  }
-
-  // make sure that count of index items match count of glossary terms
-  function verifyTermCounts() {
-    // pass
-    indexCount = countIndexItems()
-    termCount = countTermItems()
-    if (indexCount !== termCount) {
-      console.log("Missing Index or Definition")
-      console.log("Index count: " + indexCount)
-      console.log("Term count: " + termCount)
-    }
-  }
-</script>
-
-</html>
+        // make sure that count of index items match count of glossary terms
+        function verifyTermCounts() {
+          // pass
+          indexCount = countIndexItems()
+          termCount = countTermItems()
+          if (indexCount !== termCount) {
+            console.log("Missing Index or Definition")
+            console.log("Index count: " + indexCount)
+            console.log("Term count: " + termCount)
+          }
+        }
+      </script>
