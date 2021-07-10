@@ -1270,23 +1270,6 @@
       </dd>
 
       <script>
-        // assign id to parent element, prepending "" to child element id
-        function assignParentId(parentNode) {
-          childElem = parentNode.childElem
-
-
-            .document.getElementById(childId).parentElement
-          parentElem.setAttribute("id", "" + childId)
-        }
-
-        // assign ids to all parent elements
-        function assignParentIds() {
-          terms = document.getElementsByTagName("dd")
-          for (let index = 0; index < terms.length; index++) {
-            assignParentId(terms[index]);
-          }
-        }
-
         function assignTitle(parentId) {
           elem = document.getElementById(parentId)
           if (elem) {
