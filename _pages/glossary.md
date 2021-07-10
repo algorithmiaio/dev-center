@@ -1,9 +1,9 @@
 ---
-layout: article
-title: 'Glossary'
 excerpt: 'Algorithmia terminology guide'
-tags: [glossary]
+layout: article
 permalink: /glossary/
+title: 'Glossary'
+tags: [glossary]
 ---
 
 {% include_relative glossary.html %}
