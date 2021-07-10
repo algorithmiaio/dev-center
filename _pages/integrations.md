@@ -1,5 +1,4 @@
 ---
-author: jon_peck
 excerpt: "A guide to Algorithmia's integrations with external tools, services, and platforms."
 layout: article_page
 show_related: false
