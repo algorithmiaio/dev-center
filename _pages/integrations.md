@@ -13,7 +13,7 @@ This page describes the specific capabilities of our platform with respect to a 
 
 <span id="enterprise-only"></span>
 
-Integrations denoted with a "*" are available to [Algorithmia Enterprise](/enterprise) users only.
+Integrations denoted with a "*" are available to Algorithmia Enterprise users only.
 {: .notice-enterprise}
 
 ### AuthN/Z protocols[*](#enterprise-only)
@@ -67,7 +67,7 @@ We're compatible with following platforms commonly used upstream in the ML pipel
 * MLFlow ([docs](/developers/clients/mlflow) \| [website](https://www.mlflow.org/))
 * SageMaker ([docs](/developers/integrations/sagemaker) \| [website](https://aws.amazon.com/sagemaker/))
 * Spark Streaming ([docs](/developers/integrations/spark-streaming) \| [website](https://spark.apache.org/docs/latest/streaming-programming-guide.html))
-* YData ([docs](https://algorithmia.com/blog/ydata-and-algorithmia-high-quality-data-meets-enterprise-mlops) \| [website](https://ydata.ai/))
+* YData ([blog](https://algorithmia.com/blog/ydata-and-algorithmia-high-quality-data-meets-enterprise-mlops) \| [website](https://ydata.ai/))
 
 ### Event-driven workflows[*](#enterprise-only)
 
@@ -79,7 +79,7 @@ We integrate natively with the following external message brokers. Algorithms ca
 
 ### Monitoring and observability[*](#enterprise-only)
 
-Non-[Enterprise](/enterprise) users may still use these services using standard SDKs without Kafka.
+Non-Enterprise users may use these monitoring and observability platforms directly from their algorithms (without Kafka) using standard SDKs.
 {: .notice-enterprise}
 
 With [Algorithmia Insights](/developers/integrations/insights), we have the built-in capability to export operational and **algorithm** inference metrics to external **Kafka** **message brokers** from which the data can be consumed by external platforms for **model monitoring, model observability**, and alerting. There are multiple platforms that integrate with Algorithmia for this purpose, including (but not limited to):
