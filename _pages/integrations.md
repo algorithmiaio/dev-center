@@ -1,10 +1,10 @@
 ---
 excerpt: "A guide to Algorithmia's integrations with external tools, services, and platforms."
 layout: article_page
+permalink: /integrations/
 show_related: false
 tags: [app-guide-overview]
 title:  "Integrations"
-permalink: /integrations/
 ---
 
 Algorithmia strives to integrate seamlessly with the services and products you're already using in your machine learning workflows. For many popular external services, protocols, and tools, we provide built-in, native integrations. For others, we provide documentation for patterns of integration.
