@@ -31,6 +31,9 @@
   url: /model-deployment/
   # nav_category: model-deployment
 
+- title: Integrations
+  url: /integrations/
+
 - title: Native Data Integrations
   url: /data/
   nav_category: data-api
