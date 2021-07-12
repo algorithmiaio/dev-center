@@ -16,7 +16,7 @@ Algorithmia's "algo CLI" command-line interface tool provides convenient methods
 
 This guide will show you how to configure the algo CLI in your terminal, how to execute algorithms and pass input, and how read data from and write data to hosted storage. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/).
 
-## Set Up the algo CLI client
+## Set up the algo CLI client
 
 ### Installation
 
@@ -209,6 +209,10 @@ The Algorithmia CLI will use the default profile when running commands unless an
 $ algo run ALGO_OWNER/ALGO_NAME -d "HAL 9000" --profile second_profile
 Hello HAL 9000
 ```
+
+## Listing available algorithm environments and downloading algorithm template files
+
+When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can use the algo CLI to list the algorithm environments that are available on any given Algorithmia cluster, as well as to download algorithm template files for those environemnts. The steps to [list environments and download template files](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/855746) are documented on our Training Center.
 
 ## Additional functionality
 
