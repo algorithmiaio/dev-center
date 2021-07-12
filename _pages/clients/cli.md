@@ -1,15 +1,15 @@
 ---
-layout: article
-title:  "CLI"
-excerpt: "Get familiar with the CLI client."
 categories: clients
-tags: [clients]
-show_related: true
+excerpt: "Get familiar with the CLI client."
 image:
     teaser: /language_logos/cli.svg
+layout: article
 redirect_from:
   - /application-development/client-guides/cli/
   - /application-development/guides/cli/
+show_related: true
+tags: [clients]
+title:  "CLI"
 ---
 
 The Algorithmia CLI provides a command-line interface to the Algorithmia API, letting developers manage and call algorithms, work with data in object stores using Algorithmia Data Sources, and access other features of the Algorithmia platform.
