@@ -212,7 +212,7 @@ Hello HAL 9000
 
 ## List algorithm languages and environments and download algorithm template files
 
-When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can use the algo CLI to list the algorithm languages on a specific cluster, select a language and list its corresponding algorithm environments, and then download algorithm template files if desired. The algo CLI makes this multi-step process straightforward, and the steps are documented in our Training Center ](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/855746).
+When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can use the algo CLI to list the algorithm languages on a specific cluster, select a language and list its corresponding algorithm environments, and then download algorithm template files if desired. The algo CLI makes this multi-step process straightforward, and the steps are documented in our [Training Center](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/855746).
 
 ## Additional functionality
 
