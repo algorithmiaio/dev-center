@@ -14,7 +14,10 @@
   nav_category: basics
 
 - title: API Documentation
-  url: /api
+  url: /api/
+
+- title: Glossary
+  url: /glossary/
 
 - title: Client Guides
   url: /clients/
@@ -29,7 +32,7 @@
   # nav_category: model-deployment
 
 - title: Native Data Integrations
-  url: /data
+  url: /data/
   nav_category: data-api
 
 - title: SQL Database Patterns
