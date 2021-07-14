@@ -1,200 +1,223 @@
 ---
-layout: article
-title:  "CLI"
-excerpt: "Get familiar with the CLI client."
 categories: clients
-tags: [clients]
-show_related: true
+excerpt: "Get familiar with the CLI client."
 image:
     teaser: /language_logos/cli.svg
+layout: article
 redirect_from:
   - /application-development/client-guides/cli/
   - /application-development/guides/cli/
+show_related: true
+tags: [clients]
+title:  "CLI"
 ---
 
-The Algorithmia CLI provides a command-line interface to the Algorithmia API, letting developers manage and call algorithms, work with data in object stores using Algorithmia Data Sources, and access other features of the Algorithmia platform.
+Algorithmia's "algo CLI" command-line interface tool provides convenient methods for interacting with the Algorithmia API, enabling you to manage and call algorithms, work with data in object stores, and access other resources on the Algorithmia platform.
 
-This guide will cover calling an algorithm using direct input, calling an algorithm that accesses data through Algorithmia Data Sources, and using Algorithmia's Hosted Data service. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/).
+This guide will show you how to configure the algo CLI in your terminal, how to execute algorithms and pass input, and how read data from and write data to hosted storage. For complete details about the Algorithmia API, please refer to the [API Docs](/developers/api/).
 
-## Set Up the Client
+## Set up the algo CLI client
 
 ### Installation
 
-The latest releases & changelog can be found [here](https://pypi.org/project/algorithmia/).
+The algo CLI can be installed using the python package manager pip:
 
-The CLI can be installed from the python package manager pip:
-
-{% highlight bash %}
+```shell
 pip install algorithmia
-{% endhighlight %}
+```
 
-If you’ll be running Python algorithms, also set the version via export LANGUAGE_VERSION=python2 or export LANGUAGE_VERSION=python3
+If you’ll be running Python algorithms, also set the version via `export LANGUAGE_VERSION=python3`.
 {: .notice-info}
 
-### Authentication
+See the [`algorithmia` repository on PyPI](https://pypi.org/project/algorithmia/) to view algo CLI release versions.
 
-To access the API you'll need an API key, which Algorithmia uses for fine-grained authentication across the platform. For this example, we'll use the `default-key` that was created along with your account, which has a broad set of permissions. Log in to Algorithmia and navigate to Home > [API Keys](/user#credentials) to find your key, or read the [API keys documentation](/developers/platform/customizing-api-keys) for more information.
+### Authentication and configuration
 
-Begin the configuration process by running the command `algo auth`. You will see an interactive prompt to guide you through setting up a default profile:
+Algorithmia uses API keys to enable fine-grained access control across the platform, and you'll need one to configure a profile to access Algorithmia resource programatically through the algo CLI.
 
-{% highlight bash %}
+For this example, you can use the `default-key` that's created along with your account. This key is created with a broad set of permissions and will suffice for configuring a default profile. To view and manage your API keys, log in to the Algorithmia browser UI and navigate to your [account profile](/developers/platform/account-profile) and then **API Keys**. Read the docs for additional information about [customizing API keys](/developers/platform/customizing-api-keys).
+
+Begin the configuration process by running the command `algo auth`. You'll see an interactive prompt, shown in the console output below, to guide you through setting up a default profile.
+
+If you're an Algorithmia Enterprise customer, you'll need to replace the default (`https://api.algorithmia.com`) [base API URL](/developers/glossary/base-api-url) with your own cluster-specific value. Note that it must contain the `api` prefix after the web protocol (`https://`), so if your domain is `https://algorithmia.companyname.com`, your base API URL will be `https://api.algorithmia.companyname.com`.
+
+You'll also need to enter a valid API key; the line to specify a CA certificate is optional and can be skipped by hitting *enter*/*return*.
+
+```shell
 $ algo auth
 Configuring authentication for profile: default
-enter API address [https://api.algorithmia.com]: 
+enter API address [https://api.algorithmia.com]:
 enter API key:
-(optional) enter path to custom CA certificate: 
-usage: algo [-h] [--profile PROFILE] {auth,clone,run,ls,rm,mkdir,rmdir,cp,cat,help} ...
-{% endhighlight %}
+(optional) enter path to custom CA certificate:
+```
 
-See [Using multiple profiles](#using-multiple-profiles) for instructions on how to set authenticate and use more than one profile with the Algorithmia CLI tool.
+To verify that the `default` profile was configured successfully, or at any later point to determine which account a profile `PROFILE_NAME` is associated with, you can run `algo ls --profile PROFILE_NAME`. This will print out the account name on the cluster.
 
-#### Specifying an On-Premises or Private Cloud Endpoint
+The steps above will configure a default profile for accessing resources from one account on one [Algorithmia cluster](/developers/glossary/cluster). If you'd like to configure the algo CLI to be able to use more than one profile to access resources, for example to use multiple different accounts on a cluster or even to access multiple clusters, see [Using multiple profiles](#using-multiple-profiles), below.
 
-This feature is available to [Algorithmia Enterprise](/enterprise) users only.
-{: .notice-enterprise}
+## Calling an algorithm
 
-If you are running [Algorithmia Enterprise](/enterprise), replace the default API Endpoint (`https://api.algorithmia.com`) with your own API endpoint URL. Note that it must contain the `api` prefix, so if your domain is ` https://algorithmia.companyname.com ` then your API Endpoint should be `https://api.algorithmia.companyname.com`
+Algorithms take three basic types of input whether they are invoked directly through the API or by using a client: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the algorithm's documentation for specifics.
 
-## Calling an Algorithm
+The first algorithm we'll call is a "Hello world" algorithm, which can be created as demonstrated in the algorithm development [Getting Started Guide](/developers/algorithm-development/your-first-algo). This simple algorithm takes a string as input and returns a string as output.
 
-Algorithms take three basic types of input whether they are invoked directly through the API or by using a client: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the input and output sections of an algorithm's documentation for specifics.
+You can run the following command to make the request, where `ALGO_OWNER` is replaced by the name of the account owning the algorithm, and `ALGO_NAME` is replaced by the name of the algorithm.
 
-The first algorithm we'll call is a demo version of the algorithm used in the Algorithm Development [Getting Started](/developers/algorithm-development/your-first-algo) guide, which is available at [demo/Hello](/algorithms/demo/Hello). Looking at the [algorithm's documentation](/algorithms/demo/Hello/docs), it takes a string as input and returns a string.
+```shell
+$ algo run ALGO_OWNER/ALGO_NAME -d "HAL 9000"
+```
 
-We can run the following command to make the request:
+This will print the phrase, `Hello HAL 9000`.
 
-{% highlight bash %}
-algo run demo/Hello -d "HAL 9000"
-{% endhighlight %}
+### Complex JSON inputs
 
-Which should print the phrase, `Hello HAL 9000`.
+You can provide JSON input directly to Algorithms invoked using the CLI. By default, if the data parses as JSON, the CLI will assume that it's JSON. You may also explicitly specify the input type as JSON using the `-j` flag.
 
-### Complex JSON Inputs
+Let's consider a natural language processing algorithm example algorithm that takes JSON input (this is the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm on Algorithmia's Marketplace cluster). The algorithm documentation tells us that the algorithm accepts a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, an Algorithmia [data URI](/developers/glossary/data-uri), or a web URL. We'll call the algorithm using the first option—a list of strings.
 
-We can provide JSON input directly to Algorithms invoked using the CLI. By default, if the data parses as JSON, the CLI will assume that it is JSON. You may also explicitly specify the input type as JSON using the `-j` flag.
+The docs indicate that the valid input format contains the key `docsList` and at least one document (text) string.
 
-Let's look at an example using a JSON input: the [nlp/LDA](https://algorithmia.com/algorithms/nlp/LDA) algorithm. The [algorithm docs](https://algorithmia.com/algorithms/nlp/LDA/docs) tell us that the algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a Data API file path, or a URL. We'll call this algorithm using a list of strings, following the format in the algorithm documentation:
+```json
+{
+  "docsList": [
+    "this is document 1",
+    "this is document 2",
+    ...
+  ]
+}
+```
 
-{% highlight bash %}
-algo run nlp/LDA/1.0.0 -j "{\"docsList\": [\"It's apple picking season\", \"The apples are ready for picking\"]}"
-{% endhighlight %}
+This algorithm can be called as follows; note that the entire JSON payload is double quoted, so internal double quotes (on strings) must be escaped.
 
-The output will be similar to `[{'picking': 2}, {'apple': 1}, {'apples': 1, 'ready': 1}, {'season': 1}]`, which is the list of relevant words and the number of occurrences.
+```shell
+$ algo run nlp/LDA/1.0.0 -j "{\"docsList\": [\"It's apple picking season\", \"The apples are ready for picking\"]}"
+```
 
-You might have noticed that in this example we included a version number when instantiating the algorithm. Pinning your code to a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
+The output will be in the format `[{'picking': 2}, {'apple': 1}, {'apples': 1, 'ready': 1}, {'season': 1}]`, which is the list of relevant words and their associated topic frequencies.
 
-### Request Options
+You might have noticed that in this example we included a [version number](/developers/glossary/algorithm-version) when instantiating the algorithm. Calling a specific version of the algorithm can be especially important in a production environment where the underlying implementation might change from version to version.
 
-The API exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response. From the CLI, we can provide these options as arguments. The CLI also lets us specify whether the output should be written to `stdout` or to a file. In the following example, we set the timeout to 60 seconds and disable `stdout` in the response, and write the results to a file called results.txt:
+### Request options
 
-{% highlight bash %}
-algo run demo/Hello -d "HAL 9000" --debug --timeout 60 --output results.txt
-{% endhighlight %}
+The Algorithmia API exposes options to configure algorithm requests. This includes support for specifying a non-default execution timeout duration as well as specifying an output file to which to write the response instead of printing to `stdout`. From the CLI, you can specify these options as arguments.
 
-You can find more details in [API Docs](/developers/api/?shell) > [Invoke an Algorithm](/developers/api/?shell#invoke-an-algorithm).
+In the following example, the `timeout` is set to 60 seconds and the the `output` is written to a file instead of printed to the console.
+
+```shell
+$ algo run ALGO_OWNER/ALGO_NAME -d "HAL 9000" --timeout 60 --output results.txt
+```
+
+You can find more details about optional flags under [API Docs](/developers/api/?shell) > [Invoke an Algorithm](/developers/api/?shell#invoke-an-algorithm).
 
 ### Limits
 
-Your account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit <a onclick="Intercom('show')">can be raised</a> if needed).
+By default, one account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit can be raised if needed).
 
-Requests are limited to a payload size of 10MB for input and 15MB for output. If you need to work with larger amounts of data, you can make use of the Algorithmia [Data API](/developers/api/#data).
+Requests are limited to a payload size of 10 MB for input and 15 MB for output. If you need to work with larger payloads, you can make use of Algorithmia's [data API](/developers/api/#data), described below.
 
-## Working with Algorithmia Data Sources
+## Working with Algorithmia data sources
 
-For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. Application developers can use Algorithmia's [Hosted Data](/developers/data/hosted) to store data as text, JSON, or binary, and access it via the Algorithmia [Data API](/developers/api/?shell#data).
+For some algorithms, passing input to the algorithm at request time is sufficient, while others might have larger data requirements or need to preserve state between calls. You can use Algorithmia's [hosted data](/developers/data/hosted) option to store text, JSON, and binary data and access it via Algorithmia's [data API](/developers/api/?shell#data).
 
-The Data API defines [connectors](/developers/api/?shell#connectors) to a variety of storage providers, including Algorithmia [Hosted Data](/developers/data/hosted), Amazon S3, Google Cloud Storage, Azure Storage Blobs, and Dropbox. After creating a connection in Data Sources, you can use the API to create, update, and delete directories and files and manage permissions across providers by making use of [Data URIs](/developers/api/#data-uris) in your code.
+The data API defines [connectors](/developers/api/?shell#connectors) to a variety of storage providers, including Algorithmia [hosted data](/developers/data/hosted), Amazon S3, Azure Blob Storage, Google Cloud Storage, and Dropbox. After configuring a connection under the Data Sources tab in the browser UI, you can use the API to manage permissions across providers and to create, update, and delete directories and files using [Data URIs](/developers/api/#data-uris).
 
-The CLI provides a set of familiar commands such as `ls`, `rm`, and `cp` for working with the [Data API](/developers/api/?shell#data). You can find complete documentation for these commands [here](https://github.com/algorithmiaio/algorithmia-python#the-algorithmia-data-api).
+The algo CLI supports a set of familiar shell commands such as `ls`, `rm`, and `cp` for working with the [Data API](/developers/api/?shell#data). You can find complete documentation for these commands in the [GitHub repository](https://github.com/algorithmiaio/algorithmia-python#the-algorithmia-data-api).
 
-In this example, we'll upload an image to Algorithmia's [Hosted Data](/developers/data/hosted) storage provider, and use the [dlib/FaceDetection](https://algorithmia.com/algorithms/dlib/FaceDetection) algorithm to detect any faces in the image. The algorithm will create a new copy of the image with bounding boxes drawn around the detected faces, and then return a JSON object with details about the dimensions of the bounding boxes and a URI where you can download the resulting image.
+In the example below, you'll upload an image to Algorithmia's [hosted data](/developers/data/hosted) storage provider, and then use a face detection algorithm (located on the Public Marketplace at [dlib/FaceDetection](https://algorithmia.com/algorithms/dlib/FaceDetection)) to detect any faces in the image. The algorithm will create a new copy of the image with bounding boxes drawn around the detected faces, and then return a JSON object with details about the dimensions of the bounding boxes and a URI for downloading the resulting image.
 
-### Create a Data Collection
+### Create a data collection
 
-The documentation for "Face Detection" says that it takes a URL or a Data URI of the image to be processed, and a Data URI where the algorithm can store the result. First, we'll create a directory to host the input image:
+In this example, you'll process an image that's been uploaded to a hosted data collection, so you'll need to first create a collection to host the input image.
 
-{% highlight bash %}
-algo mkdir .my/img_directory
-{% endhighlight %}
+```shell
+$ algo mkdir .my/img_directory
+```
 
-Instead of your username you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
+Instead of your account name you can also use '.my' when calling algorithms. For more information about the '.my' pseudonym check out the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
 {: .notice-info}
 
-We'll also need to update the directory's [permissions](/developers/api/#update-collection-acl) so that it's publicly accessible. In order to change your data collection permissions you can go to [Hosted Data](/data/hosted) and click on the collection you just created called **"img_directory"** and select from the dropdown at the top of the screen that will show three different types of permissions:
+### Upload data to the data collection
 
--   My Algorithms (called by any user)
--   Private (accessed only by me)
--   Public (available to anyone)
+You're now ready to upload an image file for processing. For this example, you can use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`. Then, upload this local file using the `cp` command to copy the file into hosted storage.
 
-### Upload Data to your Data Collection
+```
+$ algo cp ./friends.jpg data://.my/img_directory
+```
 
-Now we're ready to upload an image file for processing. For this example, we'll use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`. 
-
-Then upload your local file to the data collection using the `cp` command to copy the file into Hosted Data:
-
-{% highlight bash %}
-algo cp ./friends.jpg data://.my/img_directory
-{% endhighlight %}
-
-This method call will replace a file if it already exists at the specified location. If you wish to avoid replacing a file, check if the file exists before using this method.
+This approach will overwrite a file with the same name if it already exists at the specified location. If you wish to avoid overwriting an existing file, check if the file exists before using this command.
 {: .notice-warning}
 
-Confirm that the file was created by navigating to Algorithmia's [Hosted Data Source](/data/hosted) and finding your data collection and file.
+Note that you can also upload your data directly through the browser UI by clicking the **Upload Files** button from within a data collection.
 
-You can also upload your data through the UI on Algorithmia's [Hosted Data Source](/data/hosted). For instructions on how to do this go to the [Hosted Data Guide]({{site.baseurl}}/data/hosted).
+You can confirm visually that the file was uploaded to hosted storage by navigating to the collection in the browser UI under **Data Sources** > `My Hosted Data` > `img_directory`. You can also check by [listing the contents of the directory](https://algorithmia.com/developers/api/#list-directory-contents) using the data API.
 
-### Call the Algorithm
+### Format algorithm input
 
-Once the file has been uploaded, you are ready to call the algorithm, providing the inputs as specified in the [FaceDetection documentation](https://algorithmia.com/algorithms/dlib/FaceDetection/docs)—an image URI (which is stored in `img_file` in the code above) and a URI for the image output:
+The documentation for the face detection algorithm indicates that it accepts a list of one or more URLs or data URIs for images to be processed, and optionally, associated data URI(s) where the algorithm should save the processed image(s).
 
-{% highlight bash %}
-algo run dlib/FaceDetection/0.2.1 -j "{\"images\": [{\"url\": \"data://.my/img_directory/friends.jpg\",\"output\": \"data://.algo/temp/detected_faces.png\"}]}"
-{% endhighlight %}
+```json
+{
+  "images": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Barack_Obama#/media/File:DIG13623-230.jpg",
+      "output": "data://.algo/temp/detected_faces.png"
+    },
+    ...
+  ]
+}
+```
+### Call the algorithm
 
-Once the algorithm has completed, the response will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
+Once the file has been uploaded, you're ready to call the algorithm. Use the input format shown above, remembering to escape internal double quotes.
 
-Algorithms can create and store data in folders named with the algorithm name in the Algorithm Data collection. To access this folder from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm author and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/author/algoName/folder/fileName`.
+```
+$ algo run dlib/FaceDetection/0.2.1 -j "{\"images\": [{\"url\": \"data://.my/img_directory/friends.jpg\",\"output\": \"data://.algo/temp/detected_faces.png\"}]}"
+```
+
+Once algorithm execution has completed, the response will contain the dimensions of the bounding boxes for any detected faces and the data URI of the resulting processed image file, which you can then download (or provide as input to another algorithm in a pipeline) as desired.
+
+Algorithms can create and store data in collections named with the algorithm name under **Data Sources** > `Algorithm Data`. To access this storage location from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm owner and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/ALGO_OWNER/ALGO_NAME/COLLECTION_NAME/FILE_NAME`.
 {: .notice-info}
 
 ### Download the resulting file
 
-The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slightly to download the file by adding the algorithm name and author. We can then download the file:
+The data URI included in the algorithm output uses the `.algo` shortcut, so you'll need to modify it slightly to download the file locally, by adding the algorithm owner and name.
 
-{% highlight bash %}
-algo cp data://.algo/dlib/FaceDetection/temp/detected_faces.png ./detected_faces.png
-{% endhighlight %}
+```
+$ algo cp data://.algo/dlib/FaceDetection/temp/detected_faces.png ./detected_faces.png
+```
 
 ## Using multiple profiles
 
 ### Add additional profiles
 
-With the Algorithmia CLI, you can configure multiple custom profiles to use. To add a new profile, you will run through the same interactive prompt—simply add a profile name to the command to add a new profile.
+You can configure multiple custom profiles to use with the algo CLI. There are several reasons you might want to do this, for example to use different accounts on your cluster, or even to access different accounts on different clusters (for example Development and Production clusters) from the same terminal environment. To add a new profile, you'll run through the same interactive prompt as shown [above](#authentication-and-configuration), but you'll add the `profile` flag and specify the new profile name.
 
-{% highlight text %}
-$ algo auth --profile second_user
-Configuring authentication for profile: 'second_user'
-Enter API Endpoint [https://api.algorithmia.com]:
+```shell
+$ algo auth --profile second_profile
+Configuring authentication for profile: second_profile
+Enter API address [https://api.algorithmia.com]:
 Enter API Key:
-(optional) enter path to custom CA certificate: 
+(optional) enter path to custom CA certificate:
+```
 
-Profile is ready to use. Test with 'algo ls --profile second_user'
-{% endhighlight %}
+### Use non-default profiles
 
-Now you may use `algo ls --profile second_user` to list files in your `second_user` account. For more information, see the auth command help with `algo auth --help`.
+The Algorithmia CLI will use the default profile when running commands unless another profile is explicitly specified with `--profile` flag.
 
-### Using profiles in commands
+```shell
+$ algo run ALGO_OWNER/ALGO_NAME -d "HAL 9000" --profile second_profile
+Hello HAL 9000
+```
 
-When running commands, the Algorithmia CLI will use the default profile unless otherwise specified with the `--profile <profile>` option. See the following example:
+## List algorithm languages and environments and download algorithm template files
 
-{% highlight text %}
-$ algo run demo/Hello -d "HAL 9000" --profile second_user
-[Hello HAL 9000]
-{% endhighlight %}
+When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can use the algo CLI to list the algorithm languages on a specific cluster, select a language and list its corresponding algorithm environments, and then download algorithm template files if desired. The algo CLI makes this multi-step process straightforward, and the steps are documented in our [Training Center](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/855746).
 
-## Additional Functionality
+## Additional functionality
 
-In addition to the functionality covered in this guide, the API provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.
+In addition to the functionality covered in this guide, the API provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with third-party [source code management providers](/developers/algorithm-development/source-code-management). Visit the [API Docs](/developers/api) to view the complete API specification.
 
-## Next Steps
+## Next steps
 
-If you'd like to use a particular programming language for accessing the Algorithmia platform, you can refer to the rest of our [Client Guides](https://algorithmia.com/developers/clients), or if you're a data scientist or developer who will be building and deploying new algorithms, you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo/) guide.
+If you'd like to access Algorithmia resources programatically from external applications or scripts, we have [Client Guides](https://algorithmia.com/developers/clients) in many popular programming languages. To learn how to develop and deploy new algorithms, see our [Getting Started Guide](/developers/algorithm-development/your-first-algo/).

@@ -1,0 +1,1354 @@
+<div>
+
+  <style>
+    dt {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    dd {
+      margin-bottom: 50px;
+    }
+
+    .placeholder {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 300;
+    }
+
+    .glossary-hoverable {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px dotted;
+    }
+
+    /* indent example terms*/
+    #glossary-usage dl {
+      margin-left: 3ch;
+    }
+
+    #glossary-usage dd {
+      margin-left: 3ch;
+    }
+
+    #glossary-definitions dd {
+      margin-left: 3ch;
+    }
+  </style>
+  <div id="glossary-usage">
+    <p>This page provides brief definitions for many of the terms used across Algorithmia's platform and documentation.
+      We also provide definitions for some terms commonly used in the practice of MLOps. Things to note when using this
+      glossary:</p>
+    <ul>
+      <li>
+        Some terms have associated <code class="placeholder">{PLACEHOLDER_STRING}</code> values. We use these
+        uppercase strings in our UI, and in code samples across our documentation, to denote generic values that must be
+        replaced with custom values in your code. Placeholders <code
+          class="placeholder">{/beginning/with-a-slash}</code>
+        are <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">endpoints</a> from
+        the
+        <a class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">base URL</a>, i.e.,
+        <code>https://<a class="glossary-hoverable" href="#cluster-domain" title="" parentId="dd-cluster-domain">CLUSTER_DOMAIN</a></code>
+        (or <code>https://algorithmia.com</code> for non-Enterprise clusters).
+      </li>
+      <dl class="indented-example">
+
+        <dt id="example-term-with-placeholder">example term with placeholder <code
+            class="placeholder">{PLACEHOLDER_STRING}</code>
+        </dt>
+        <dd id="dd-example-term-with-placeholder">
+          Definition of first term.
+        </dd>
+
+        <dt id="example-term-with-endpoint">example term with endpoint placeholder <code
+            class="placeholder">{/path/to/endpoint}</code>
+        </dt>
+        <dd id="dd-example-term-with-endpoint">
+          Definition of second term.
+        </dd>
+
+      </dl>
+      <li>
+        Some definitions reference other glossary terms. Links are hoverable and clickable; on hover, they'll display
+        the linked definition for quick reference, e.g.:
+      </li>
+      <dl class="indented-example">
+
+        <dt id="example-term-with-link">example term with link</dt>
+        <dd id="dd-example-term-with-link">
+          This term has a hoverable link to the <a class="glossary-hoverable" href="#example-term-with-placeholder"
+            title="" parentId="dd-example-term-with-placeholder">example term</a> from above.
+        </dd>
+
+      </dl>
+    </ul>
+  </div>
+
+  <hr />
+
+  <style>
+    .glossary-index {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 4px;
+    }
+
+    .glossary-index>div {
+      flex: 50%;
+    }
+  </style>
+
+  <div class="glossary-index">
+    <div>
+      <ul>
+        <li><a href="#account">account</a></li>
+        <li><a href="#account-profile">account profile</a></li>
+        <li><a href="#admin-account">admin account</a></li>
+        <li><a href="#admin-api-key">admin API key</a></li>
+        <li><a href="#admin-panel">admin panel</a></li>
+        <li><a href="#algo-cli">algo CLI</a></li>
+        <li><a href="#algorithm">algorithm</a></li>
+        <li><a href="#algorithm-build">algorithm build</a></li>
+        <li><a href="#algorithm-build-hash">algorithm build hash</a></li>
+        <li><a href="#algorithm-build-uuid">algorithm build UUID</a></li>
+        <li><a href="#algorithm-environment">algorithm environment</a></li>
+        <li><a href="#algorithm-environment-specification">algorithm environment specification</a></li>
+        <li><a href="#algorithm-environment-specification-UUID">algorithm environment specification UUID</a></li>
+        <li><a href="#algorithm-environment-UUID">algorithm environment UUID</a></li>
+        <li><a href="#algorithm-endpoint">algorithm endpoint</a></li>
+        <li><a href="#algorithm-execution-request">algorithm execution request</a></li>
+        <li><a href="#algorithm-profile">algorithm profile</a></li>
+        <li><a href="#algorithm-instance">algorithm instance</a></li>
+        <li><a href="#algorithm-language">algorithm language</a></li>
+        <li><a href="#algorithm-owner">algorithm owner</a></li>
+        <li><a href="#algorithm-pipelining">algorithm pipelining</a></li>
+        <li><a href="#algorithm-semantic-version">algorithm semantic version</a></li>
+        <li><a href="#algorithm-template">algorithm template</a></li>
+        <li><a href="#algorithm-uuid">algorithm UUID</a></li>
+        <li><a href="#algorithm-vanity-url">algorithm vanity URL</a></li>
+        <li><a href="#algorithm-version">algorithm version</a></li>
+        <li><a href="#algorithm-version-hash">algorithm version hash</a></li>
+        <li><a href="#api">API</a></li>
+        <li><a href="#api-docs">API docs</a></li>
+        <li><a href="#api-endpoint">API endpoint</a></li>
+        <li><a href="#api-key">API key</a></li>
+        <li><a href="#authenticated-resource-request">authenticated resource request</a></li>
+        <li><a href="#authentication">authentication</a></li>
+        <li><a href="#authentication-factor">authentication factor</a></li>
+        <li><a href="#authentication-token">authentication token</a></li>
+        <li><a href="#authorization">authorization</a></li>
+        <li><a href="#base-api-url">base API URL</a></li>
+        <li><a href="#base-url">base URL</a></li>
+        <li><a href="#blog">blog</a></li>
+        <li><a href="#browser-ui">browser UI</a></li>
+        <li><a href="#caller">caller</a></li>
+        <li><a href="#collection-owner">collection owner</a></li>
+        <li><a href="#closed-source-algorithm">closed source algorithm</a></li>
+        <li><a href="#cluster">cluster</a></li>
+        <li><a href="#cluster-admin-account">cluster admin account</a></li>
+        <li><a href="#cluster-domain">cluster domain</a></li>
+        <li><a href="#cluster-operator">cluster operator</a></li>
+        <li><a href="#cold-algorithm">cold algorithm</a></li>
+        <li><a href="#commit">commit</a></li>
+        <li><a href="#constellation-distributed-serving">Constellation Distributed Serving</a></li>
+        <li><a href="#consumer">consumer</a></li>
+        <li><a href="#control-plane-node">control plane node</a></li>
+        <li><a href="#data-connector">data connector</a></li>
+        <li><a href="#data-source">data source</a></li>
+        <li><a href="#data-uri">data URI</a></li>
+        <li><a href="#developer-center">Developer Center</a></li>
+        <li><a href="#directory">directory</a></li>
+        <li><a href="#event-flow">Event Flow</a></li>
+        <li><a href="#event-listener">event listener</a></li>
+        <li><a href="#event-manager">event manager</a></li>
+        <li><a href="#external-data-source">external data source</a></li>
+        <li><a href="#file">file</a></li>
+        <li><a href="#folder">folder</a></li>
+        <li><a href="#general-purpose-node">general purpose node</a></li>
+        <li><a href="#grafana">Grafana</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <ul>
+        <li><a href="#hosted-data-collection">hosted data collection</a></li>
+        <li><a href="#hot-algorithm">hot algorithm</a></li>
+        <li><a href="#http-method">HTTP method</a></li>
+        <li><a href="#json-web-token">JSON Web Token (JWT)</a></li>
+        <li><a href="#identity">identity</a></li>
+        <li><a href="#kibana">Kibana</a></li>
+        <li><a href="#machine-learning">machine learning (ML)</a></li>
+        <li><a href="#machine-learning-operations">machine learning operations (MLOps)</a></li>
+        <li><a href="#master-node">master node</a></li>
+        <li><a href="#message-broker">message broker</a></li>
+        <li><a href="#message-broker-connection">message broker connection</a></li>
+        <li><a href="#ml-service-catalog">ML service catalog</a></li>
+        <li><a href="#model">model</a></li>
+        <li><a href="#model-deployment">model deployment</a></li>
+        <li><a href="#model-explainability">model explainability</a></li>
+        <li><a href="#model-governance">model governance</a></li>
+        <li><a href="#model-interpretability">model interpretability</a></li>
+        <li><a href="#model-monitoring">model monitoring</a></li>
+        <li><a href="#model-observability">model observability</a></li>
+        <li><a href="#model-validation">model validation</a></li>
+        <li><a href="#mothership-cluster">mothership cluster</a></li>
+        <li><a href="#node">node</a></li>
+        <li><a href="#open-source-algorithm">open-source algorithm</a></li>
+        <li><a href="#orchestration-algorithm">orchestration algorithm</a></li>
+        <li><a href="#org-organization">org/organization</a></li>
+        <li><a href="#org-admin-account">org admin account</a></li>
+        <li><a href="#org-profile">org profile</a></li>
+        <li><a href="#parent-algorithm">parent algorithm</a></li>
+        <li><a href="#password">password</a></li>
+        <li><a href="#platform-version">platform version</a></li>
+        <li><a href="#private-algorithm">private algorithm</a></li>
+        <li><a href="#producer">producer</a></li>
+        <li><a href="#public-algorithm">public algorithm</a></li>
+        <li><a href="#publisher">publisher</a></li>
+        <li><a href="#record">record</a></li>
+        <li><a href="#replica">replica</a></li>
+        <li><a href="#reservation">reservation</a></li>
+        <li><a href="#resource">resource</a></li>
+        <li><a href="#resource-request">resource request</a></li>
+        <li><a href="#resource-uri">resource URI</a></li>
+        <li><a href="#satellite-cluster">satellite cluster</a></li>
+        <li><a href="#satellite-launch-instance">satellite launch instance</a></li>
+        <li><a href="#satellite-version">satellite version</a></li>
+        <li><a href="#secret">secret</a></li>
+        <li><a href="#secret-store">Secret Store</a></li>
+        <li><a href="#serialized-model">serialized model</a></li>
+        <li><a href="#service-account">service account</a></li>
+        <li><a href="#slot">slot</a></li>
+        <li><a href="#scm-configuration">SCM configuration</a></li>
+        <li><a href="#scm-connection">SCM connection</a></li>
+        <li><a href="#scm-provider">SCM provider</a></li>
+        <li><a href="#source-code-management">source code management (SCM)</a></li>
+        <li><a href="#subscriber">subscriber</a></li>
+        <li><a href="#test-console">test console</a></li>
+        <li><a href="#top-level-algorithm">top-level algorithm</a></li>
+        <li><a href="#topic">topic</a></li>
+        <li><a href="#trained-model">trained model</a></li>
+        <li><a href="#training-center">Training Center</a></li>
+        <li><a href="#user">user</a></li>
+        <li><a href="#user-account">user account</a></li>
+        <li><a href="#unilog">UNILOG</a></li>
+        <li><a href="#warm-algorithm">warm algorithm</a></li>
+        <li><a href="#web-ide">Web IDE</a></li>
+        <li><a href="#worker-node">worker node</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+
+  <div id="glossary-definitions">
+    <dl>
+
+      <dt id="account">account <code class="placeholder">{ACCOUNT_NAME}</code></dt>
+      <dd id="dd-account">
+        <a class="glossary-hoverable" href="#identity" title="" parentId="dd-identity">Identity</a> on the Algorithmia
+        platform that may own and/or be used to access a <a class="glossary-hoverable" href="#resource" title=""
+          parentId="dd-resource">resource</a> (e.g., an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a>).
+      </dd>
+
+      <dt id="account-profile">account profile <code class="placeholder">{/users/ACCOUNT_NAME}</code></dt>
+      <dd id="dd-account-profile">
+        Profile page for an <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a>.
+      </dd>
+
+      <dt id="admin-account">admin account</dt>
+      <dd id="dd-admin-account">
+        See <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admin account</a> or <a class="glossary-hoverable"
+          href="#org-admin-account" title="" parentId="dd-org-admin-account">org admin account</a>.
+      </dd>
+
+      <dt id="admin-api-key">admin API key <code class="placeholder">{ADMIN_API_KEY}</code></dt>
+      <dd id="dd-admin-api-key">
+        Secret <a class="glossary-hoverable" href="#authentication-token" title=""
+          parentId="dd-authentication-token">authentication token</a> associated with a specific <a
+          class="glossary-hoverable" href="#cluster-admin-account" title="" parentId="dd-cluster-admin-account">cluster
+          admin account</a>. An admin API key can be used to make specific administrative <a class="glossary-hoverable"
+          href="#authenticated-resource-request" title="" parentId="dd-authenticated-resource-request">authenticated
+          resource requests</a> through the <a class="glossary-hoverable" href="#api" title=""
+          parentId="dd-api">API</a>.
+        Examples of admin-only requests include creating and deleting <a class="glossary-hoverable" href="#user-account"
+          title="" parentId="dd-user-account">user accounts</a> and <a class="glossary-hoverable"
+          href="#org-organization" title="" parentId="dd-org-organization">organizations</a>.
+      </dd>
+
+      <dt id="admin-panel">admin panel <code class="placeholder">{/admin}</code></dt>
+      <dd id="dd-admin-panel">
+        Navigation bar displaying administrative functionality available to a <a class="glossary-hoverable"
+          href="#cluster-admin-account" title="" parentId="dd-cluster-admin-account">cluster
+          admin</a>.
+      </dd>
+
+      <dt id="algo-cli">algo CLI</dt>
+      <dd id="dd-algo-cli">
+        Algorithmia’s command-line interface tool, called with <code>algo [COMMAND [OPTIONS]]</code>.
+      </dd>
+
+      <dt id="algorithm">algorithm <code class="placeholder">{ALGO_NAME}</code></dt>
+      <dd id="dd-algorithm">
+        Microservice on Algorithmia that accepts an input, returns an output, and may have side effects. An algorithm
+        can only accept a JSON type as input, and if it returns an output, can only return a JSON type. Algorithms can
+        be <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
+          parentId="dd-algorithm-pipelining">pipelined</a> together with other algorithms. The primary use case for
+        algorithms on Algorithmia’s platform is to provide functionality for loading and calling <a
+          class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> <a
+          class="glossary-hoverable" href="#model" title="" parentId="dd-model">models</a> for inference, but the scope
+        of tasks that algorithms can perform isn't constrained to this. For example, algorithms can perform conventional
+        deterministic algorithmic routines (e.g., binary search), can read and write data, can be used to query or send
+        data to an <a class="glossary-hoverable" href="#external-data-source" title=""
+          parentId="dd-external-data-source">external data source</a> such as a database, can perform utility tasks such
+        as downloading images and pre-processing structured or unstructured data, and can be configured to orchestrate
+        all of the above.
+      </dd>
+
+      <dt id="algorithm-build">algorithm build <code class="placeholder">{ALGO_BUILD}</code></dt>
+      <dd id="dd-algorithm-build">
+        Specific compiled version of an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a>, described by an <a class="glossary-hoverable"
+          href="#algorithm-build-hash" title="" parentId="dd-algorithm-build-hash">algorithm
+          build hash</a>.
+      </dd>
+
+      <dt id="algorithm-build-hash">algorithm build hash <code class="placeholder">{ALGO_VERSION_HASH}</code></dt>
+      <dd id="dd-algorithm-build-hash">
+        Unique value describing an <a class="glossary-hoverable" href="#algorithm-version" title=""
+          parentId="dd-algorithm-version">algorithm version</a> created from a specific Git commit when an <a
+          class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> builds (compiles)
+        successfully. Synonymous with <a class="glossary-hoverable" href="#algorithm-version-hash" title=""
+          parentId="dd-algorithm-version-hash">algorithm version hash</a>.
+      </dd>
+
+      <dt id="algorithm-build-uuid">algorithm build UUID <code class="placeholder">{BUILD_ID}</code></dt>
+      <dd id="dd-algorithm-build-uuid">
+        Globally unique identifier for a specific <a class="glossary-hoverable" href="#algorithm-build" title=""
+          parentId="dd-algorithm-build">algorithm build</a>, in the format <code>1234-1234-1234-1234</code>.
+      </dd>
+
+      <dt id="algorithm-environment">algorithm environment</dt>
+      <dd id="dd-algorithm-environment">
+        Predefined, optimized runtime configuration for an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a>. Environments usually contain specific <a class="glossary-hoverable"
+          href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> framework
+        dependencies optimized for Algorithmia’s architecture, and serve as a base upon which additional external
+        library dependencies can be added if necessary.
+      </dd>
+
+      <dt id="algorithm-environment-specification">algorithm environment specification</dt>
+      <dd id="dd-algorithm-environment-specification">
+        Template specifying runtime dependencies that are included in a specific <a class="glossary-hoverable"
+          href="#algorithm-environment" title="" parentId="dd-algorithm-environment">algorithm environment</a>.
+      </dd>
+
+      <dt id="algorithm-environment-specification-uuid">algorithm environment specification UUID <code
+          class="placeholder">{ENV_SPEC_ID}</code></dt>
+      <dd id="dd-algorithm-environment-specification-uuid">
+        Globally unique identifier for a specific <a class="glossary-hoverable"
+          href="#algorithm-environment-specification" title=""
+          parentId="dd-algorithm-environment-specification">algorithm environment specification</a>, in the format
+        <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
+      </dd>
+
+      <dt id="algorithm-environment-uuid">algorithm environment UUID <code class="placeholder">{ENV_ID}</code></dt>
+      <dd id="dd-algorithm-environment-uuid">
+        Globally unique identifier for a specific build of an <a class="glossary-hoverable"
+          href="#algorithm-environment-specification" title=""
+          parentId="dd-algorithm-environment-specification">algorithm environment specification</a>, in the format
+        <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
+      </dd>
+
+      <dt id="algorithm-endpoint">algorithm endpoint <code class="placeholder">{ALGO_ENDPOINT}</code></dt>
+      <dd id="dd-algorithm-endpoint">
+        Unique (within an Algorithmia cluster) name identifying a specific <a class="glossary-hoverable"
+          href="#algorithm-version" title="" parentId="dd-algorithm-version">algorithm version</a>, defined as
+        <code class="placeholder">ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]</code>, where <code
+          class="placeholder">ALGO_VERSION</code> defaults to the latest published version if excluded.
+      </dd>
+
+      <dt id="algorithm-execution-request">algorithm execution request</dt>
+      <dd id="dd-algorithm-execution-request">
+        Request made to execute an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a> with an optional input.
+      </dd>
+
+      <dt id="algorithm-profile">algorithm profile <code class="placeholder">{/algorithms/ALGO_OWNER/ALGO_NAME}</code>
+      </dt>
+      <dd id="dd-algorithm-profile">
+        Profile page for an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a>.
+      </dd>
+
+      <dt id="algorithm-instance">algorithm instance <code
+          class="placeholder">{CALLER_NAME/ALGO_NAME/ALGO_VERSION}</code>
+      </dt>
+      <dd id="dd-algorithm-instance">
+        Individual <a class="glossary-hoverable" href="#replica" title="" parentId="dd-replica">replica</a> of an <a
+          class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> running on
+        a <a class="glossary-hoverable" href="#worker-node" title="" parentId="dd-worker-node">worker node</a>.
+      </dd>
+
+      <dt id="algorithm-language">algorithm language <code class="placeholder">{ALGO_LANG}</code></dt>
+      <dd id="dd-algorithm-language">
+        Programming language in which an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a> is written.
+      </dd>
+
+      <dt id="algorithm-owner">algorithm owner <code class="placeholder">{ALGO_OWNER}</code></dt>
+      <dd id="dd-algorithm-owner">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> or <a
+          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a> that owns
+        an <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>.
+      </dd>
+
+      <dt id="algorithm-pipelining">algorithm pipelining</dt>
+      <dd id="dd-algorithm-pipelining">
+        When one <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> calls
+        another algorithm within an Algorithmia <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>.
+      </dd>
+
+      <dt id="algorithm-semantic-version">algorithm semantic version <code class="placeholder">{X.Y.Z}</code></dt>
+      <dd id="dd-algorithm-semantic-version">
+        Specific published version of an <a class="glossary-hoverable" href="#algorithm-build" title=""
+          parentId="dd-algorithm-build">algorithm build</a>, where <code>X</code>, <code>Y</code>, and <code>Z</code>
+        represent major version, minor version, and revision, respectively.
+      </dd>
+
+      <dt id="algorithm-template">algorithm template</dt>
+      <dd id="dd-algorithm-template">
+        Source code file or collection of files with boilerplate code that serves as a unified starting point for new
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithms</a>
+        that are created.
+      </dd>
+
+      <dt id="algorithm-uuid">algorithm UUID <code class="placeholder">{ALGO_ID}</code></dt>
+      <dd id="dd-algorithm-uuid">
+        Globally unique identifier for a specific <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a>, in the format
+        <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
+      </dd>
+
+      <dt id="algorithm-vanity-url">algorithm vanity URL</dt>
+      <dd id="dd-algorithm-vanity-url">
+        Minimal URL for specific <a class="glossary-hoverable" href="#algorithm-endpoint" title=""
+          parentId="dd-algorithm-endpoint">algorithm endpoint</a> in a <a class="glossary-hoverable"
+          href="#satellite-cluster" title="" parentId="dd-satellite-cluster">satellite</a> deployment.
+      </dd>
+
+      <dt id="algorithm-version">algorithm version <code class="placeholder">{ALGO_VERSION}</code></dt>
+      <dd id="dd-algorithm-version">
+        Generic name to refer to a specific <a class="glossary-hoverable" href="#algorithm-build" title=""
+          parentId="dd-algorithm-build">algorithm build</a>, which could be denoted by an <a class="glossary-hoverable"
+          href="#algorithm-semantic-version" title="" parentId="dd-algorithm-semantic-version">algorithm semantic
+          version</a> or an <a class="glossary-hoverable" href="#algorithm-version-hash" title=""
+          parentId="dd-algorithm-version-hash">algorithm version hash</a>.
+      </dd>
+
+      <dt id="algorithm-version-hash">algorithm version hash <code class="placeholder">{ALGO_VERSION_HASH}</code></dt>
+      <dd id="dd-algorithm-version-hash">
+        Unique value describing an <a class="glossary-hoverable" href="#algorithm-version" title=""
+          parentId="dd-algorithm-version">algorithm version</a> created from a specific Git commit when an <a
+          class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>
+        builds (compiles) successfully. Synonymous with <a class="glossary-hoverable" href="#algorithm-build-hash"
+          title="" parentId="dd-algorithm-build-hash">algorithm build hash</a>.
+      </dd>
+
+      <dt id="api">API <code class="placeholder">{/v1/openapispec}</code></dt>
+      <dd id="dd-api">
+        Generic term for individual Algorithmia REST API service. <a class="glossary-hoverable" href="#api-endpoint"
+          title="" parentId="dd-api-endpoint">API endpoints</a> are grouped based on the functionality they provide for
+        interacting with <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">cluster</a> <a
+          class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resources</a>. Algorithmia has the
+        following APIs:<br /><br />
+        <ul>
+          <li><code>algorithms</code> : <a class="glossary-hoverable" href="#algorithm" title=""
+              parentId="dd-algorithm">algorithm</a> operations</li>
+          <li><code>users</code> : <a class="glossary-hoverable" href="#account" title=""
+              parentId="dd-account">account</a> operations</li>
+          <li><code>organizations</code> : <a class="glossary-hoverable" href="#org-organization" title=""
+              parentId="dd-org-organization">organization</a> operations</li>
+          <li><code>scm</code> : <a class="glossary-hoverable" href="#source-code-management" title=""
+              parentId="dd-source-code-management">source code management</a> operations</li>
+          <li><code>secrets</code> : <a class="glossary-hoverable" href="#secret-store" title=""
+              parentId="dd-secret-store">Secret Store</a> operations</li>
+          <li><code>connectors</code> : <a class="glossary-hoverable" href="#data-connector" title=""
+              parentId="dd-data-connector">data connector</a> operations</li>
+          <li><code>data</code> : <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">data API</a>
+            operations</li>
+          <li><code>eventlisteners</code> : <a class="glossary-hoverable" href="#event-flow" title=""
+              parentId="dd-event-flow">Event Flow</a>-based operations</li>
+          <li><code>eventmanagers</code> : <a class="glossary-hoverable" href="#message-broker" title=""
+              parentId="dd-message-broker">message broker</a> operations</li>
+          <li><code>builds</code> : <a class="glossary-hoverable" href="#algorithm-build" title=""
+              parentId="dd-algorithm-build">algorithm build</a> operations</li>
+          <li><code>auth</code> : <a class="glossary-hoverable" href="#authentication-factor" title=""
+              parentId="dd-authentication-factor">authentication factor</a> and <a class="glossary-hoverable"
+              href="#authentication-token" title="" parentId="dd-authentication-token">authentication token</a>
+            management
+          </li>
+          <li><code>usage</code> : <a class="glossary-hoverable" href="#cluster" title=""
+              parentId="dd-cluster">cluster</a> usage information</li>
+          <li><code>invites</code> : <a class="glossary-hoverable" href="#cluster" title=""
+              parentId="dd-cluster">cluster</a> invite code management</li>
+          <li><code>admin</code> : <a class="glossary-hoverable" href="#cluster" title=""
+              parentId="dd-cluster">cluster</a> administration operations</li>
+          <li><code>style</code> : <a class="glossary-hoverable" href="#cluster" title=""
+              parentId="dd-cluster">cluster</a> front-end style configuration</li>
+          <li><code>frontend</code> : <a class="glossary-hoverable" href="#cluster" title=""
+              parentId="dd-cluster">cluster</a> front-end configuration</li>
+        </ul>
+      </dd>
+
+      <dt id="api-docs">API Docs <code class="placeholder">{/api}</code></dt>
+      <dd id="dd-api-docs">
+        Documentation for Algorithmia’s <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a>,
+        listing all available <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">API
+          endpoints</a>.
+      </dd>
+
+      <dt id="api-endpoint">API endpoint <code class="placeholder">{/path/to/endpoint}</code></dt>
+      <dd id="dd-api-endpoint">
+        <a class="glossary-hoverable" href="#resource-uri" title="" parentId="dd-resource-uri">Resource URI</a> not
+        including the <a class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">
+          base URL</a>, e.g., <code class="placeholder">/v1/algorithms/ALGO_OWNER/ALGO_NAME/ALGO_VERSION</code>.
+      </dd>
+
+      <dt id="api-key">API key <code class="placeholder">{API_KEY}</code></dt>
+      <dd id="dd-api-key">
+        Secret <a class="glossary-hoverable" href="#authentication-token" title=""
+          parentId="dd-authentication-token">authentication token</a> associated with a specific <a
+          class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> or <a
+          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a>. As a
+        security best practice, this value should be stored in the environment variable
+        <code>ALGORITHMIA_API_KEY</code>.
+      </dd>
+
+      <dt id="authenticated-resource-request">authenticated resource request</dt>
+      <dd id="dd-authenticated-resource-request">
+        Request for a <a class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resource</a> that
+        includes one or more <a class="glossary-hoverable" href="#authentication-factor" title=""
+          parentId="dd-authentication-factor">authentication factors</a>.
+      </dd>
+
+      <dt id="authentication">authentication</dt>
+      <dd id="dd-authentication">
+        The act of signing on to the Algorithmia platform in order to gain access to an <a class="glossary-hoverable"
+          href="#authentication-token" title="" parentId="dd-authentication-token">authentication
+          token</a> that can then be used to send <a class="glossary-hoverable" href="#authenticated-resource-request"
+          title="" parentId="dd-authenticated-resource-request">authenticated resource requests</a>.
+      </dd>
+
+      <dt id="authentication-factor">authentication factor</dt>
+      <dd id="dd-authentication-factor">
+        Property used to authenticate into an <a class="glossary-hoverable" href="#account" title=""
+          parentId="dd-account">account</a> to access <a class="glossary-hoverable" href="#resource" title=""
+          parentId="dd-resource">resources</a>. Algorithmia uses passwords for authentication into our browser UI.
+      </dd>
+
+      <dt id="authentication-token">authentication token <code class="placeholder">{AUTH_TOKEN}</code></dt>
+      <dd id="dd-authentication-token">
+        Special type of <a class="glossary-hoverable" href="#authentication-factor" title=""
+          parentId="dd-authentication-factor">authentication
+          factor</a> that’s granted as a digital “receipt” upon successful <a class="glossary-hoverable"
+          href="#authentication" title="" parentId="dd-authentication">authentication</a>. A token may have a validity
+        time limit and may represent a limited set of actions that can be taken on specific <a
+          class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resources</a>.
+      </dd>
+
+      <dt id="authorization">authorization</dt>
+      <dd id="dd-authorization">
+        The act of granting an <a class="glossary-hoverable" href="#identity" title=""
+          parentId="dd-identity">identity</a> access to specific <a class="glossary-hoverable" href="#resource" title=""
+          parentId="dd-resource">resources</a>.
+      </dd>
+
+      <dt id="base-api-url">base API URL <code class="placeholder">{BASE_API_URL | https://api.CLUSTER_DOMAIN}</code>
+      </dt>
+      <dd id="dd-base-api-url">
+        <a class="glossary-hoverable" href="#resource-uri" title="" parentId="dd-resource-uri">Resource URI</a> for
+        Algorithmia’s <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a>, not including a
+        specific <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">endpoint</a>,
+        e.g., <code>https://api.algorithmia.com</code>.
+      </dd>
+
+      <dt id="base-url">base URL <code class="placeholder">{BASE_URL | https://CLUSTER_DOMAIN}</code></dt>
+      <dd id="dd-base-url">
+        <a class="glossary-hoverable" href="#resource-uri" title="" parentId="dd-resource-uri">Resource URI</a> not
+        including a
+        specific <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">endpoint</a>,
+        e.g., <code>https://algorithmia.com</code>.
+      </dd>
+
+      <dt id="blog">blog <code class="placeholder">{/blog}</code></dt>
+      <dd id="dd-blog">
+        Algorithmia site where we share practical, relevant information about <a class="glossary-hoverable"
+          href="#machine-learning" title="" parentId="dd-machine-learning">ML</a>/<a class="glossary-hoverable"
+          href="#machine-learning-operations" title="" parentId="dd-machine-learning-operations">MLOps</a> and the
+        industry, describe new product features, and announce new partnerships. Algorithmia's blog is located at <a
+          href="https://algorithmia.com/blog" target="_blank" rel="noopener noreferrer">algorithmia.com/blog</a>.
+      </dd>
+
+      <dt id="browser-ui">browser UI</dt>
+      <dd id="dd-browser-ui">
+        Algorithmia’s browser-based user interface.
+      </dd>
+
+      <dt id="caller">caller <code class="placeholder">{CALLER_NAME}</code></dt>
+      <dd id="dd-caller">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> associated with the <a
+          class="glossary-hoverable" href="#authentication-token" title=""
+          parentId="dd-authentication-token">authentication token</a> used to call an <a class="glossary-hoverable"
+          href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>.
+      </dd>
+
+      <dt id="collection-owner">collection owner <code class="placeholder">{COLLECTION_OWNER}</code></dt>
+      <dd id="dd-collection-owner">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> or <a
+          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a> that owns
+        a <a class="glossary-hoverable" href="#hosted-data-collection" title=""
+          parentId="dd-hosted-data-collection">hosted data collection</a>.
+      </dd>
+
+      <dt id="closed-source-algorithm">closed-source algorithm</dt>
+      <dd id="dd-closed-source-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> published with
+        source code only visible via <a class="glossary-hoverable" href="#authenticated-resource-request" title=""
+          parentId="dd-authenticated-resource-request">authenticated resource requests</a> from the <a
+          class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> or <a
+          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a> that
+        owns the algorithm.
+      </dd>
+
+      <dt id="cluster">cluster</dt>
+      <dd id="dd-cluster">
+        Individual instance of Algorithmia’s platform.
+      </dd>
+
+      <dt id="cluster-admin-account">cluster admin account <code class="placeholder">{CLUSTER_ADMIN_NAME}</code></dt>
+      <dd id="dd-cluster-admin-account">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> that has administrative
+        privileges on the <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">cluster</a>.
+        Cluster admin and <a class="glossary-hoverable" href="#org-admin-account" title=""
+          parentId="dd-org-admin-account">org admin</a> roles aren’t related.
+      </dd>
+
+      <dt id="cluster-domain">cluster domain <code class="placeholder">{CLUSTER_DOMAIN}</code></dt>
+      <dd id="dd-cluster-domain">
+        Specific domain associated with an Algorithmia <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>, e.g., <code>algorithmia.com</code>. For usage, see <a
+          class="glossary-hoverable" href="#base-url" title="" parentId="dd-base-url">base URL</a>.
+      </dd>
+
+      <dt id="cluster-operator">cluster operator</dt>
+      <dd id="dd-cluster-operator">
+        DevOps customer persona that works with Algorithmia I&O to deploy, upgrade, and maintain Algorithmia’s
+        infrastructure in their Enterprise environment.
+      </dd>
+
+      <dt id="cold-algorithm">cold algorithm</dt>
+      <dd id="dd-cold-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> for which no
+        <a class="glossary-hoverable" href="#algorithm-instance" title="" parentId="dd-algorithm-instance">instances</a>
+        are currently ready to process <a class="glossary-hoverable" href="#algorithm-execution-request" title=""
+          parentId="dd-algorithm-execution-request">algorithm execution requests</a>.
+      </dd>
+
+      <dt id="commit">commit <code class="placeholder">{COMMIT_HASH}</code></dt>
+      <dd id="dd-commit">
+        In <a class="glossary-hoverable" href="#source-code-management" title=""
+          parentId="dd-source-code-management">source code management</a>, a set of changes saved (“committed”) to a
+        source code repository’s history. Algorithmia uses Git for source code management; in Git, commits contain
+        metadata about the relationship between a specific commit and other commits in the history of the
+        repository.
+      </dd>
+
+      <dt id="constellation-distributed-serving">Constellation Distributed Serving</dt>
+      <dd id="dd-constellation-distributed-serving">
+        Flexible Algorithmia deployment option in which a <a class="glossary-hoverable" href="#mothership-cluster"
+          title="" parentId="dd-mothership-cluster">mothership</a> (any Enterprise <a class="glossary-hoverable"
+          href="#cluster" title="" parentId="dd-cluster">cluster</a> with the option enabled) is distinct and separate
+        from the <a class="glossary-hoverable" href="#satellite-cluster" title=""
+          parentId="dd-satellite-cluster">satellite</a>(s) (a set of containers including <a class="glossary-hoverable"
+          href="#algorithm" title="" parentId="dd-algorithm">algorithms</a> (one satellite to
+        many algorithms), RabbitMQ, <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a> server,
+        and a configuration file) for production runtime, thereby decoupling algorithm development from runtime
+        execution. Constellation enables customers with high security, high availability, or high performance workloads
+        to easily deploy and serve <a class="glossary-hoverable" href="#model" title="" parentId="dd-model">models</a>
+        where they need to and in the environment that works best for them.
+      </dd>
+
+      <dt id="consumer">consumer</dt>
+      <dd id="dd-consumer">
+        Not used. See <a class="glossary-hoverable" href="#subscriber" title="" parentId="dd-subscriber">subscriber</a>.
+      </dd>
+
+      <dt id="control-plane-node">control plane node</dt>
+      <dd id="dd-control-plane-node">
+        <a class="glossary-hoverable" href="#node" title="" parentId="dd-node">Node</a> in Algorithmia’s Kubernetes
+        environment that manages <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>
+        health and provisioning of <a class="glossary-hoverable" href="#general-purpose-node" title=""
+          parentId="dd-general-purpose-node">general purpose nodes</a> and
+        <a class="glossary-hoverable" href="#worker-node" title="" parentId="dd-worker-node">worker nodes</a>. Put
+        another way, this node runs Kubernetes—the orchestration of the containers. Note that this was previously named
+        <a class="glossary-hoverable" href="#master-node" title="" parentId="dd-master-node">master node</a>.
+      </dd>
+
+      <dt id="data-connector">data connector <code class="placeholder">{CONNECTOR_ID}</code></dt>
+      <dd id="dd-data-connector">
+        Specific cloud storage provider to which <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithms</a> can connect natively through a built-in configuration on Algorithmia’s
+        platform.
+      </dd>
+
+      <dt id="data-source">data source</dt>
+      <dd id="dd-data-source">
+        Generic term for <a class="glossary-hoverable" href="#hosted-data-collection" title=""
+          parentId="dd-hosted-data-collection">hosted data collection</a>, <a class="glossary-hoverable"
+          href="#data-connector" title="" parentId="dd-data-connector">data connector</a>, or <a
+          class="glossary-hoverable" href="#external-data-source" title="" parentId="dd-external-data-source">external
+          data source</a>.
+      </dd>
+
+      <dt id="data-uri">data URI <code
+          class="placeholder">{CONNECTOR_ID://COLLECTION_OWNER/COLLECTION_NAME[/FILE_NAME]}</code></dt>
+      <dd id="dd-data-uri">
+        Identifier that describes the location of a <a class="glossary-hoverable" href="#hosted-data-collection"
+          title="" parentId="dd-hosted-data-collection">hosted data collection</a> or native <a
+          class="glossary-hoverable" href="#data-connector" title="" parentId="dd-data-connector">data connector</a> to
+        the <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a>. The location may be a <a
+          class="glossary-hoverable" href="#file" title="" parentId="dd-file">file</a> “bucket”
+        (i.e., a <a class="glossary-hoverable" href="#folder" title="" parentId="dd-folder">folder</a> or
+        <a class="glossary-hoverable" href="#directory" title="" parentId="dd-directory">directory</a>) or a file
+        itself.
+      </dd>
+
+      <dt id="developer-center">Developer Center <code class="placeholder">{/developers}</code></dt>
+      <dd id="dd-developer-center">
+        Quick-reference Algorithmia technical documentation.
+      </dd>
+
+      <dt id="directory">directory <code class="placeholder">{DIR_NAME}</code></dt>
+      <dd id="dd-directory">
+        Generic term for “bucket” that can hold <a class="glossary-hoverable" href="#file" title=""
+          parentId="dd-file">files</a>. Used synonymously with <a class="glossary-hoverable" href="#folder" title=""
+          parentId="dd-folder">folder</a>.
+      </dd>
+
+      <dt id="event-flow">Event Flow</dt>
+      <dd id="dd-event-flow">
+        <a class="glossary-hoverable" href="#publisher" title="" parentId="dd-publisher">Publisher</a> or <a
+          class="glossary-hoverable" href="#subscriber" title="" parentId="dd-subscriber">subscriber</a>
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> configured to
+        read <a class="glossary-hoverable" href="#record" title="" parentId="dd-record">records</a> from or write
+        records to a <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message
+          broker</a>.
+      </dd>
+
+      <dt id="event-listener">event listener</dt>
+      <dd id="dd-event-listener">
+        Not used. See <a class="glossary-hoverable" href="#event-flow" title="" parentId="dd-event-flow">Event Flow</a>.
+      </dd>
+
+      <dt id="event-manager">event manager</dt>
+      <dd id="dd-event-manager">
+        Not used. See <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message
+          broker</a>.
+      </dd>
+
+      <dt id="external-data-source">external data source</dt>
+      <dd id="dd-external-data-source">
+        <a class="glossary-hoverable" href="#data-source" title="" parentId="dd-data-source">Data source</a> to which <a
+          class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithms</a> can connect using
+        external standard SDKs and APIs but to which
+        Algorithmia doesn’t provide a built-in <a class="glossary-hoverable" href="#data-connector" title=""
+          parentId="dd-data-connector">data connector</a> accessible through the <a class="glossary-hoverable"
+          href="#api" title="" parentId="dd-api">API</a>.
+      </dd>
+
+      <dt id="file">file <code class="placeholder">{FILE_NAME}</code></dt>
+      <dd id="dd-file">
+        Generic term for file of any type (text, JSON, binary, etc.) in local, <a class="glossary-hoverable"
+          href="#hosted-data-collection" title="" parentId="dd-hosted-data-collection">hosted</a>, cloud, or other
+        storage.
+      </dd>
+
+      <dt id="folder">folder <code class="placeholder">{FOLDER_NAME}</code></dt>
+      <dd id="dd-folder">
+        Generic term for “bucket” that can hold <a class="glossary-hoverable" href="#file" title=""
+          parentId="dd-file">files</a>. Used synonymously with <a class="glossary-hoverable" href="#directory" title=""
+          parentId="dd-directory">directory</a>.
+      </dd>
+
+      <dt id="general-purpose-node">general purpose node</dt>
+      <dd id="dd-general-purpose-node">
+        <a class="glossary-hoverable" href="#node" title="" parentId="dd-node">Node</a> in Algorithmia’s Kubernetes
+        environment that manages and schedules Algorithmia services (with the exception
+        of <a class="glossary-hoverable" href="#worker-node" title="" parentId="dd-worker-node"> algorithm worker
+          nodes</a>) providing services such as logging, storage, <a class="glossary-hoverable"
+          href="#source-code-management" title="" parentId="dd-source-code-management">source code
+          management</a>, billing, etc.
+      </dd>
+
+      <dt id="grafana">Grafana</dt>
+      <dd id="dd-grafana">
+        Numeric metrics visualization dashboard provisioned with each Algorithmia Enterprise installation.
+      </dd>
+
+      <dt id="hosted-data-collection">hosted data collection <code class="placeholder">{COLLECTION_NAME}</code></dt>
+      <dd id="dd-hosted-data-collection">
+        Object storage hosted on the Algorithmia platform. Data collections are not “file storage” in that they can’t
+        store
+        nested data or data with a “<code>/</code>” character in the path.
+      </dd>
+
+      <dt id="hot-algorithm">hot algorithm</dt>
+      <dd id="dd-hot-algorithm">
+        <a class="glossary-hoverable" href="#algorithm-instance" title="" parentId="dd-algorithm-instance">Algorithm
+          instance</a> actively handling an <a class="glossary-hoverable" href="#algorithm-execution-request" title=""
+          parentId="dd-algorithm-execution-request">algorithm execution request</a>.
+      </dd>
+
+      <dt id="http-method">HTTP method</dt>
+      <dd id="dd-http-method">
+        Verb used to indicate an interaction with a <a class="glossary-hoverable" href="#resource" title=""
+          parentId="dd-resource">resource</a> through the REST <a class="glossary-hoverable" href="#api" title=""
+          parentId="dd-api">API</a>. Algorithmia primarily uses <code>GET</code>, <code>PUT</code>, <code>POST</code>,
+        <code>DELETE</code>, <code>HEAD</code>, and <code>PATCH</code> methods.
+      </dd>
+
+      <dt id="json-web-token">JSON Web Token (JWT) <code class="placeholder">{JSON_WEB_TOKEN}</code></dt>
+      <dd id="dd-json-web-token">
+        Open, industry-standard RFC 7519 method for representing proof of secure communication between two parties. On
+        Algorithmia a JWT can be used as an <a class="glossary-hoverable" href="#authentication-token" title=""
+          parentId="dd-authentication-token">authentication token</a> to grant an <a class="glossary-hoverable"
+          href="#identity" title="" parentId="dd-identity">identity</a> access to perform
+        <a class="glossary-hoverable" href="#authenticated-resource-request" title=""
+          parentId="dd-authenticated-resource-request">authenticated resource requests</a>. If configured, permission
+        tags can be extracted from a JWT and used to facilitate external management of <a class="glossary-hoverable"
+          href="#org-organization" title="" parentId="dd-org-organization">organization</a> membership and <a
+          class="glossary-hoverable" href="#user" title="" parentId="dd-user">user</a> security roles.
+      </dd>
+
+      <dt id="identity">identity</dt>
+      <dd id="dd-identity">
+        Digital representation of a real-world entity that attempts to access a <a class="glossary-hoverable"
+          href="#resource" title="" parentId="dd-resource">resource</a>. This could be a human <a
+          class="glossary-hoverable" href="#user" title="" parentId="dd-user">user</a>, a
+        <a class="glossary-hoverable" href="#service-account" title="" parentId="dd-service-account">service
+          account</a>, or a server, for example.
+      </dd>
+
+      <dt id="kibana">Kibana</dt>
+      <dd id="dd-kibana">
+        Log query and visualization tool provisioned with each Algorithmia Enterprise installation.
+      </dd>
+
+      <dt id="machine-learning">machine learning (ML)</dt>
+      <dd id="dd-machine-learning">
+        Application of artificial intelligence in which a computer system uses algorithms and statistical models to
+        analyze and draw inferences from patterns in data, learning and adapting in order to make decisions without
+        following explicit instructions from humans.
+      </dd>
+
+      <dt id="machine-learning-operations">machine learning operations (MLOps)
+      <dd id="dd-machine-learning-operations">
+        The discipline of delivering <a class="glossary-hoverable" href="#machine-learning" title=""
+          parentId="dd-machine-learning">ML</a> <a class="glossary-hoverable" href="#model" title=""
+          parentId="dd-model">models</a> through repeatable and efficient workflows.
+      </dd>
+
+      <dt id="master-node">master node</dt>
+      <dd id="dd-master-node">
+        Deprecated. See <a class="glossary-hoverable" href="#control-plane-node" title=""
+          parentId="dd-control-plane-node">control plane node</a>.
+      </dd>
+
+      <dt id="message-broker">message broker</dt>
+      <dd id="dd-message-broker">
+        Event-processing tool that stores <a class="glossary-hoverable" href="#record" title=""
+          parentId="dd-record">records</a> from <a class="glossary-hoverable" href="#publisher" title=""
+          parentId="dd-publisher">publishers</a> in a log or queue and makes them available to be read
+        by <a class="glossary-hoverable" href="#subscriber" title="" parentId="dd-subscriber">subscribers</a>.
+      </dd>
+
+      <dt id="message-broker-connection">message broker connection</dt>
+      <dd id="dd-message-broker-connection">
+        <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">Cluster</a>-level connection to a
+        <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message broker</a>,
+        configured by a <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admin</a>.
+      </dd>
+
+      <dt id="ml-service-catalog">ML service catalog <code class="placeholder">{/algorithms}</code></dt>
+      <dd id="dd-ml-service-catalog">
+        Library of versioned <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithms</a> ready to be served for inference.
+      </dd>
+
+      <dt id="model">model <code class="placeholder">{MODEL_FILE}</code></dt>
+      <dd id="dd-model">
+        <a class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> model
+        <a class="glossary-hoverable" href="#file" title="" parentId="dd-file">file</a> that’s ready to be loaded into
+        an <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> and used for
+        inference. Synonymous with <a class="glossary-hoverable" href="#serialized-model" title=""
+          parentId="dd-serialized-model">serialized
+          model</a> and <a class="glossary-hoverable" href="#trained-model" title="" parentId="dd-trained-model">trained
+          model</a>. Also used to refer to an <a class="glossary-hoverable" href="#machine-learning" title=""
+          parentId="dd-machine-learning">ML</a> model in a general sense.
+      </dd>
+
+      <dt id="model-deployment">model deployment</dt>
+      <dd id="dd-model-deployment">
+        Process of preparing trained <a class="glossary-hoverable" href="#model" title="" parentId="dd-model">models</a>
+        and deploying them so that they can be consumed programmatically by applications and/or other models.
+      </dd>
+
+      <dt id="model-explainability">model explainability</dt>
+      <dd id="dd-model-explainability">
+        Ability to explain how a <a class="glossary-hoverable" href="#model" title="" parentId="dd-model">model</a> was
+        built and the reasons for its outputs. In some contexts this is used
+        interchangeably with <a class="glossary-hoverable" href="#model-interpretability" title=""
+          parentId="dd-model-interpretability">model interpretability</a>.
+      </dd>
+
+      <dt id="model-governance">model governance</dt>
+      <dd id="dd-model-governance">
+        Process for how a company controls access to <a class="glossary-hoverable" href="#model" title=""
+          parentId="dd-model">models</a>, implements policy surrounding models, and tracks activity of models.
+      </dd>
+
+      <dt id="model-interpretability">model interpretability</dt>
+      <dd id="dd-model-interpretability">
+        Ability to understand the cause of a <a class="glossary-hoverable" href="#model" title=""
+          parentId="dd-model">model</a> decision. This can also refer to the ability for a human to understand and
+        predict a model’s output, or the ability to observe cause and effect by changing model parameters. In some
+        contexts this is used interchangeably with <a class="glossary-hoverable" href="#model-explainability" title=""
+          parentId="dd-model-explainability">model explainability</a>.
+      </dd>
+
+      <dt id="model-monitoring">model monitoring</dt>
+      <dd id="dd-model-monitoring">
+        Ability to assess a <a class="glossary-hoverable" href="#model" title="" parentId="dd-model">model's</a>
+        performance, accuracy, drift, and errors.
+      </dd>
+
+      <dt id="model-observability">model observability</dt>
+      <dd id="dd-model-observability">
+        Ability to assess the state of a <a class="glossary-hoverable" href="#model" title=""
+          parentId="dd-model">model</a> through metrics and logs, and to understand and diagnose the operational health
+        of a model.
+      </dd>
+
+      <dt id="model-validation">model validation</dt>
+      <dd id="dd-model-validation">
+        Ability to confirm that outputs of a <a class="glossary-hoverable" href="#model" title=""
+          parentId="dd-model">model</a> are acceptable given real-world inputs.
+      </dd>
+
+      <dt id="mothership-cluster">mothership cluster</dt>
+      <dd id="dd-mothership-cluster">
+        Standard Algorithmia Enterprise <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>, consisting of a number of services for <a class="glossary-hoverable"
+          href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> creation, management, and execution. A
+        mothership cluster runs in an Algorithmia-installed and configured Kubernetes cluster on customer infrastructure
+        as part of a <a class="glossary-hoverable" href="#constellation-distributed-serving" title=""
+          parentId="dd-constellation-distributed-serving">Constellation</a> deployment.
+      </dd>
+
+      <dt id="node">node</dt>
+      <dd id="dd-node">
+        Generic term for virtualized compute resource on which Algorithmia services are run. In Algorithmia’s Kubernetes
+        environment, a node may be a <a class="glossary-hoverable" href="#control-plane-node" title=""
+          parentId="dd-control-plane-node">control plane
+          node</a>, <a class="glossary-hoverable" href="#general-purpose-node" title=""
+          parentId="dd-general-purpose-node">general purpose node</a>, or <a class="glossary-hoverable"
+          href="#worker-node" title="" parentId="dd-worker-node">worker node</a>.
+      </dd>
+
+      <dt id="open-source-algorithm">open-source algorithm</dt>
+      <dd id="dd-open-source-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> published with
+        source code visible via an <a class="glossary-hoverable" href="#authenticated-resource-request" title=""
+          parentId="dd-authenticated-resource-request">authenticated resource request</a> to the <a
+          class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">cluster</a> if it’s a
+        <a class="glossary-hoverable" href="#public-algorithm" title="" parentId="dd-public-algorithm">public
+          algorithm</a>. If it’s a <a class="glossary-hoverable" href="#private-algorithm" title=""
+          parentId="dd-private-algorithm">private algorithm</a>, the source code is only visible via authenticated
+        resource requests from the <a class="glossary-hoverable" href="#account" title=""
+          parentId="dd-account">account</a>
+        that owns the algorithm.
+      </dd>
+
+      <dt id="orchestration-algorithm">orchestration algorithm</dt>
+      <dd id="dd-orchestration-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> that receives an
+        <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a> request directly from a <a
+          class="glossary-hoverable" href="#caller" title="" parentId="dd-caller">caller</a> and calls other algorithms
+        internally in a <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
+          parentId="dd-algorithm-pipelining">pipeline</a>. Synonymous with <a class="glossary-hoverable"
+          href="#parent-algorithm" title="" parentId="dd-parent-algorithm">parent algorithm</a> and <a
+          class="glossary-hoverable" href="#top-level-algorithm" title="" parentId="dd-top-level-algorithm">top-level
+          algorithm</a>.
+      </dd>
+
+      <dt id="org-organization">org/organization <code class="placeholder">{ORG_NAME}</code></dt>
+      <dd id="dd-org-organization">
+        Logical construct for sharing <a class="glossary-hoverable" href="#resource" title=""
+          parentId="dd-resource">resource</a> access with an arbitrary number of <a class="glossary-hoverable"
+          href="#account" title="" parentId="dd-account">accounts</a> on the <a class="glossary-hoverable"
+          href="#cluster" title="" parentId="dd-cluster">cluster</a>. An org must
+        have at least one <a class="glossary-hoverable" href="#org-admin-account" title=""
+          parentId="dd-org-admin-account">org admin</a>, and orgs can’t be deleted once created. Accounts can be members
+        of zero, one, or multiple orgs.
+      </dd>
+
+      <dt id="org-admin-account">org admin account<code class="placeholder">{ORG_ADMIN_NAME}</code></dt>
+      <dd id="dd-org-admin-account">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> that has elevated
+        privileges within a specific <a class="glossary-hoverable" href="#org-organization" title=""
+          parentId="dd-org-organization">org</a> of which it’s a member. Anyone who creates an org is
+        automatically given the org admin role, and an account can be an org admin for zero, one, or multiple orgs. Org
+        admin and <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admin</a> roles aren’t related.
+      </dd>
+
+      <dt id="org-profile">org profile <code class="placeholder">{/organizations/ORG_NAME}</code></dt>
+      <dd id="dd-org-profile">
+        Profile page for an <a class="glossary-hoverable" href="#org-organization" title=""
+          parentId="dd-org-organization">org</a>.
+      </dd>
+
+      <dt id="parent-algorithm">parent algorithm</dt>
+      <dd id="dd-parent-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> that receives an
+        API request directly from a caller and calls other algorithms internally in a
+        <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
+          parentId="dd-algorithm-pipelining">pipeline</a>. Synonymous with <a class="glossary-hoverable"
+          href="#orchestration-algorithm" title="" parentId="dd-orchestration-algorithm">orchestration algorithm</a> and
+        <a class="glossary-hoverable" href="#top-level-algorithm" title="" parentId="dd-top-level-algorithm">top-level
+          algorithm</a>.
+      </dd>
+
+      <dt id="password">password</dt>
+      <dd id="dd-password">
+        <a class="glossary-hoverable" href="#authentication-factor" title=""
+          parentId="dd-authentication-factor">Authentication factor</a> used to <a class="glossary-hoverable"
+          href="#authentication" title="" parentId="dd-authentication">authenticate</a> to access the <a
+          class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resources</a>
+        associated with an <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> on
+        an Algorithmia <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">cluster</a>.
+      </dd>
+
+      <dt id="platform-version">platform version</dt>
+      <dd id="dd-platform-version">
+        Semantic version of Algorithmia’s software, e.g., “20.4.7” or “v20.4.7”.
+      </dd>
+
+      <dt id="private-algorithm">private algorithm</dt>
+      <dd id="dd-private-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> published
+        privately that can only be called by the <a class="glossary-hoverable" href="#account" title=""
+          parentId="dd-account">account</a> or <a class="glossary-hoverable" href="#org-organization" title=""
+          parentId="dd-org-organization">org</a> that owns the algorithm, or from an account that's a member of an org
+        that owns the algorithm.
+      </dd>
+
+      <dt id="producer">producer</dt>
+      <dd id="dd-producer">
+        Not used. See <a class="glossary-hoverable" href="#publisher" title="" parentId="dd-publisher">publisher</a>.
+      </dd>
+
+      <dt id="public-algorithm">public algorithm</dt>
+      <dd id="dd-public-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> published
+        publicly that can be called by any <a class="glossary-hoverable" href="#authentication" title=""
+          parentId="dd-authentication">authenticated</a> <a class="glossary-hoverable" href="#account" title=""
+          parentId="dd-account">account</a> on the <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>.
+      </dd>
+
+      <dt id="publisher">publisher</dt>
+      <dd id="dd-publisher">
+        Entity that sends <a class="glossary-hoverable" href="#record" title="" parentId="dd-record">records</a> to a <a
+          class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message broker</a>.
+        Synonymous with <a class="glossary-hoverable" href="#producer" title="" parentId="dd-producer">producer</a>.
+      </dd>
+
+      <dt id="record">record</dt>
+      <dd id="dd-record">
+        Data or message sent to or retrieved from a <a class="glossary-hoverable" href="#message-broker" title=""
+          parentId="dd-message-broker">message broker</a>. Also used to refer to a row of data in a relational
+        database table.
+      </dd>
+
+      <dt id="replica">replica <code class="placeholder">{CALLER_NAME/ALGO_NAME/ALGO_VERSION}</code></dt>
+      <dd id="dd-replica">
+        Individual <a class="glossary-hoverable" href="#algorithm-instance" title=""
+          parentId="dd-algorithm-instance">instance</a> of a specific <a class="glossary-hoverable" href="#algorithm"
+          title="" parentId="dd-algorithm">algorithm</a> running on a <a class="glossary-hoverable" href="#worker-node"
+          title="" parentId="dd-worker-node">worker node</a>.
+      </dd>
+
+      <dt id="reservation">reservation</dt>
+      <dd id="dd-reservation">
+        <a class="glossary-hoverable" href="#algorithm-instance" title="" parentId="dd-algorithm-instance">Algorithm
+          instance</a> kept warm to eliminate cold-start overhead. Reservations are only configurable by <a
+          class="glossary-hoverable" href="#cluster-admin-account" title="" parentId="dd-cluster-admin-account">cluster
+          admins</a>.
+      </dd>
+
+      <dt id="resource">resource</dt>
+      <dd id="dd-resource">
+        Data on the Algorithmia platform. Examples include <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithms</a>, <a class="glossary-hoverable" href="#file" title=""
+          parentId="dd-file">files</a> stored on the platform or available through the platform, <a
+          class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> information, etc.
+      </dd>
+
+      <dt id="resource-request">resource request</dt>
+      <dd id="dd-resource-request">
+        Attempt by an <a class="glossary-hoverable" href="#identity" title="" parentId="dd-identity">identity</a> to
+        access a <a class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resource</a> on the
+        Algorithmia platform. Examples include executing an
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>,
+        publishing a new <a class="glossary-hoverable" href="#algorithm-version" title=""
+          parentId="dd-algorithm-version">version</a> of an algorithm, reading from or writing to a <a
+          class="glossary-hoverable" href="#data-source" title="" parentId="dd-data-source">data source</a>, etc.
+      </dd>
+
+      <dt id="resource-uri">resource URI <code class="placeholder">{BASE_API_URL/path/to/endpoint}</code></dt>
+      <dd id="dd-resource-uri">
+        Full path at which a <a class="glossary-hoverable" href="#resource" title="" parentId="dd-resource">resource</a>
+        exists, equivalent to <a class="glossary-hoverable" href="#base-api-url" title="" parentId="dd-base-api-url">
+          base API URL</a> + <a class="glossary-hoverable" href="#api-endpoint" title="" parentId="dd-api-endpoint">API
+          endpoint</a>.
+      </dd>
+
+      <dt id="satellite-cluster">satellite cluster <code class="placeholder">{SATELLITE_ID}</code></dt>
+      <dd id="dd-satellite-cluster">
+        Minimal version of Algorithmia Enterprise <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a> with a subset of services, including <a class="glossary-hoverable"
+          href="#algorithm" title="" parentId="dd-algorithm">algorithms</a>, a RabbitMQ queuing system, configuration
+        information, and an <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a> server to
+        handle <a class="glossary-hoverable" href="#algorithm-execution-request" title=""
+          parentId="dd-algorithm-execution-request">algorithm execution requests</a>. A satellite cluster runs in a
+        customer-provided Kubernetes cluster on customer infrastructure as part of a <a class="glossary-hoverable"
+          href="#constellation-distributed-serving" title=""
+          parentId="dd-constellation-distributed-serving">Constellation</a> deployment.
+      </dd>
+
+      <dt id="satellite-launch-instance">satellite launch instance <code class="placeholder">{LAUNCH_ID}</code></dt>
+      <dd id="dd-satellite-launch-instance">
+        Individual instance of a <a class="glossary-hoverable" href="#satellite-cluster" title=""
+          parentId="dd-satellite-cluster">satellite</a> deployment.
+      </dd>
+
+      <dt id="satellite-version">satellite version <code class="placeholder">{SATELLITE_VERSION}</code></dt>
+      <dd id="dd-satellite-version">
+        Version number associated with a specific <a class="glossary-hoverable" href="#satellite-cluster" title=""
+          parentId="dd-satellite-cluster">satellite</a> deployment. Each satellite version is configured with a
+        specific list of included <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithms</a> and <a class="glossary-hoverable" href="#authentication-factor"
+          title="" parentId="dd-authentication-factor">authentication</a> keys.
+      </dd>
+
+      <dt id="secret">secret <code class="placeholder">{SECRET_VALUE}</code></dt>
+      <dd id="dd-secret">
+        Sensitive value (e.g., password, token, access key, credential, etc.) stored encrypted in the <a
+          class="glossary-hoverable" href="#secret-store" title="" parentId="dd-secret-store">Secret Store</a> and
+        accessed from <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">algorithm</a>
+        source code through an environment variable.
+      </dd>
+
+      <dt id="secret-store">Secret Store</dt>
+      <dd id="dd-secret-store">
+        Secure, encrypted vault that stores sensitive information such as access keys to external services.
+      </dd>
+
+      <dt id="serialized-model">serialized model <code class="placeholder">{MODEL_FILE}</code></dt>
+      <dd id="dd-serialized-model">
+        <a class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> model
+        file that’s ready to be loaded into an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a> and used for inference. Synonymous with <a class="glossary-hoverable"
+          href="#model" title="" parentId="dd-model">model</a> and <a class="glossary-hoverable" href="#trained-model"
+          title="" parentId="dd-trained-model">trained model</a>.
+      </dd>
+
+      <dt id="service-account">service account <code class="placeholder">{ACCOUNT_NAME}</code></dt>
+      <dd id="dd-service-account">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> not associated with a
+        specific human.
+      </dd>
+
+      <dt id="slot">slot</dt>
+      <dd id="dd-slot">
+        Deprecated. See <a class="glossary-hoverable" href="#replica" title="" parentId="dd-replica">replica</a>.
+      </dd>
+
+      <dt id="scm-configuration">SCM configuration <code class="placeholder">{SCM_CONFIG_ID}</code></dt>
+      <dd id="dd-scm-configuration">
+        <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">Cluster</a>-level details about an
+        <a class="glossary-hoverable" href="#scm-provider" title="" parentId="dd-scm-provider">SCM provider</a>, such as
+        provider type and URLs, configured by a <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admin</a> using a key-value pair generated within the SCM
+        provider’s platform. There may be zero, one, or multiple SCM configurations for one SCM provider.
+      </dd>
+
+      <dt id="scm-connection">SCM connection</dt>
+      <dd id="dd-scm-connection">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a>-levels details that
+        contain credentials for connecting to an <a class="glossary-hoverable" href="#scm-provider" title=""
+          parentId="dd-scm-provider">SCM provider</a>.
+      </dd>
+
+      <dt id="scm-provider">SCM provider</dt>
+      <dd id="dd-scm-provider">
+        Third-party SCM system to which an <a class="glossary-hoverable" href="#scm-configuration" title=""
+          parentId="dd-scm-configuration">SCM configuration</a> can be created for hosting <a class="glossary-hoverable"
+          href="#algorithm" title="" parentId="dd-algorithm">algorithm</a> source code outside of the Algorithmia
+        platform.
+      </dd>
+
+      <dt id="source-code-management">source code management (SCM)</dt>
+      <dd id="dd-source-code-management">
+        Process of tracking modifications to a source code repository. Synonymous with version control and source
+        control management.
+      </dd>
+
+      <dt id="subscriber">subscriber</dt>
+      <dd id="dd-subscriber">
+        Entity that reads <a class="glossary-hoverable" href="#record" title="" parentId="dd-record">records</a> from a
+        <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message broker</a>.
+        Synonymous with <a class="glossary-hoverable" href="#consumer" title="" parentId="dd-consumer">consumer</a>.
+      </dd>
+
+      <dt id="test-console">test console</dt>
+      <dd id="dd-test-console">
+        The purple console at the bottom of the <a class="glossary-hoverable" href="#web-ide" title=""
+          parentId="dd-web-ide">Web IDE</a>, where <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithms</a> may be executed with sample input to test their functionality after
+        building.
+      </dd>
+
+      <dt id="top-level-algorithm">top-level algorithm</dt>
+      <dd id="dd-top-level-algorithm">
+        <a class="glossary-hoverable" href="#algorithm" title="" parentId="dd-algorithm">Algorithm</a> that receives an
+        <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a> request directly from a <a
+          class="glossary-hoverable" href="#caller" title="" parentId="dd-caller">caller</a> and calls other algorithms
+        internally in a <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
+          parentId="dd-algorithm-pipelining">pipeline</a>. Synonymous with <a class="glossary-hoverable"
+          href="#orchestration-algorithm" title="" parentId="dd-orchestration-algorithm">orchestration algorithm</a> and
+        <a class="glossary-hoverable" href="#parent-algorithm" title="" parentId="dd-parent-algorithm">parent
+          algorithm</a>.
+      </dd>
+
+      <dt id="topic">topic</dt>
+      <dd id="dd-topic">
+        Feed within a <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message
+          broker</a> to which <a class="glossary-hoverable" href="#publisher" title=""
+          parentId="dd-publisher">publishers</a> send <a class="glossary-hoverable" href="#record" title=""
+          parentId="dd-record">records</a> and from which <a class="glossary-hoverable" href="#subscriber" title=""
+          parentId="dd-subscriber">subscribers</a> read records.
+      </dd>
+
+      <dt id="trained-model">trained model <code class="placeholder">{MODEL_FILE}</code></dt>
+      <dd id="dd-trained-model">
+        <a class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> model
+        file that’s ready to be loaded into an <a class="glossary-hoverable" href="#algorithm" title=""
+          parentId="dd-algorithm">algorithm</a> and used for inference. Synonymous with <a class="glossary-hoverable"
+          href="#model" title="" parentId="dd-model">model</a> and <a class="glossary-hoverable"
+          href="#serialized-model" title="" parentId="dd-serialized-model">serialized model</a>.
+      </dd>
+
+      <dt id="training-center">Training Center</dt>
+      <dd id="dd-training-center">
+        Learning management system with tutorial-based training content, located at <a
+          href="https://training.algorithmia.com" target="_blank"
+          rel="noopener noreferrer">training.algorithmia.com</a>.
+      </dd>
+
+      <dt id="user">user</dt>
+      <dd id="dd-user">
+        Human interacting with the Algorithmia platform. See identity.
+      </dd>
+
+      <dt id="user-account">user account <code class="placeholder">{ACCOUNT_NAME}</code></dt>
+      <dd id="dd-user-account">
+        <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">Account</a> associated with a
+        specific user.
+      </dd>
+
+      <dt id="unilog">UNILOG</dt>
+      <dd id="dd-unilog">
+        Text-based metrics visualization dashboard. Unilog data is the aggregation of application and (some) Kubernetes
+        logs
+        from the various services in an Algorithmia <a class="glossary-hoverable" href="#cluster" title=""
+          parentId="dd-cluster">cluster</a>. These logs are used for debugging and stability monitoring by engineers,
+        and can be accessed through Kibana by <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admins</a> only.
+      </dd>
+
+      <dt id="warm-algorithm">warm algorithm</dt>
+      <dd id="dd-warm-algorithm">
+        Algorithm <a class="glossary-hoverable" href="#algorithm-instance" title=""
+          parentId="dd-algorithm-instance">instance</a> running on a
+        <a class="glossary-hoverable" href="#worker-node" title="" parentId="dd-worker-node">worker node</a> and ready
+        to handle <a class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a> requests.
+      </dd>
+
+      <dt id="web-ide">Web IDE</dt>
+      <dd id="dd-web-ide">
+        Algorithmia’s built-in source code editor and test console, accessible through the “Source” tab from an
+        algorithm’s <a class="glossary-hoverable" href="#algorithm-profile" title=""
+          parentId="dd-algorithm-profile">profile</a>.
+      </dd>
+
+      <dt id="worker-node">worker node</dt>
+      <dd id="dd-worker-node">
+        Compute <a class="glossary-hoverable" href="#node" title="" parentId="dd-node">node</a> in Algorithmia’s
+        Kubernetes environment on which <a class="glossary-hoverable" href="#algorithm-instance" title=""
+          parentId="dd-algorithm-instance">algorithm instances</a> are run.
+      </dd>
+
+      <script>
+        function assignTitle(parentId) {
+          elem = document.getElementById(parentId)
+          if (elem) {
+            return elem.innerText;
+          }
+          console.log("missing parentId: " + parentId)
+          return ""
+        }
+
+        var glossTerms = document.getElementsByClassName("glossary-hoverable");
+        for (i = 0; i < glossTerms.length; i++) {
+          currentElem = glossTerms.item(i);
+          parentId = currentElem.attributes.getNamedItem("parentId").nodeValue;
+          glossTerms.item(i).title = assignTitle(parentId);
+        }
+
+        function countIndexTerms() {
+          // pass
+        }
+
+        function countDefinitionTerms() {
+          // pass
+        }
+
+        // make sure that count of index items match count of glossary terms
+        function verifyTermCounts() {
+          // pass
+          indexCount = countIndexItems()
+          termCount = countTermItems()
+          if (indexCount !== termCount) {
+            console.log("Missing Index or Definition")
+            console.log("Index count: " + indexCount)
+            console.log("Term count: " + termCount)
+          }
+        }
+      </script>
