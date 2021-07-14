@@ -111,6 +111,9 @@
         <li><a href="#algorithm-build-hash">algorithm build hash</a></li>
         <li><a href="#algorithm-build-uuid">algorithm build UUID</a></li>
         <li><a href="#algorithm-environment">algorithm environment</a></li>
+        <li><a href="#algorithm-environment-specification">algorithm environment specification</a></li>
+        <li><a href="#algorithm-environment-specification-UUID">algorithm environment specification UUID</a></li>
+        <li><a href="#algorithm-environment-UUID">algorithm environment UUID</a></li>
         <li><a href="#algorithm-endpoint">algorithm endpoint</a></li>
         <li><a href="#algorithm-execution-request">algorithm execution request</a></li>
         <li><a href="#algorithm-profile">algorithm profile</a></li>
@@ -145,6 +148,7 @@
         <li><a href="#cluster-domain">cluster domain</a></li>
         <li><a href="#cluster-operator">cluster operator</a></li>
         <li><a href="#cold-algorithm">cold algorithm</a></li>
+        <li><a href="#commit">commit</a></li>
         <li><a href="#constellation-distributed-serving">Constellation Distributed Serving</a></li>
         <li><a href="#consumer">consumer</a></li>
         <li><a href="#control-plane-node">control plane node</a></li>
@@ -161,12 +165,12 @@
         <li><a href="#folder">folder</a></li>
         <li><a href="#general-purpose-node">general purpose node</a></li>
         <li><a href="#grafana">Grafana</a></li>
-        <li><a href="#hosted-data-collection">hosted data collection</a></li>
       </ul>
     </div>
 
     <div>
       <ul>
+        <li><a href="#hosted-data-collection">hosted data collection</a></li>
         <li><a href="#hot-algorithm">hot algorithm</a></li>
         <li><a href="#http-method">HTTP method</a></li>
         <li><a href="#json-web-token">JSON Web Token (JWT)</a></li>
@@ -179,6 +183,7 @@
         <li><a href="#message-broker-connection">message broker connection</a></li>
         <li><a href="#ml-service-catalog">ML service catalog</a></li>
         <li><a href="#model">model</a></li>
+        <li><a href="#model-deployment">model deployment</a></li>
         <li><a href="#model-explainability">model explainability</a></li>
         <li><a href="#model-governance">model governance</a></li>
         <li><a href="#model-interpretability">model interpretability</a></li>
@@ -332,6 +337,31 @@
         dependencies optimized for Algorithmia’s architecture, and serve as a base upon which additional external
         library dependencies can be added if necessary.
       </dd>
+
+      <dt id="algorithm-environment-specification">algorithm environment specification</dt>
+      <dd id="dd-algorithm-environment-specification">
+        Template specifying runtime dependencies that are included in a specific <a class="glossary-hoverable"
+          href="#algorithm-environment" title="" parentId="dd-algorithm-environment">algorithm environment</a>.
+      </dd>
+
+      <dt id="algorithm-environment-specification-uuid">algorithm environment specification UUID <code
+          class="placeholder">{ENV_SPEC_ID}</code></dt>
+      <dd id="dd-algorithm-environment-specification-uuid">
+        Globally unique identifier for a specific <a class="glossary-hoverable"
+          href="#algorithm-environment-specification" title=""
+          parentId="dd-algorithm-environment-specification">algorithm environment specification</a>, in the format
+        <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
+      </dd>
+      </dd>
+
+      <dt id="algorithm-environment-uuid">algorithm environment UUID <code class="placeholder">{ENV_ID}</code></dt>
+      <dd id="dd-algorithm-environment-uuid">
+        Globally unique identifier for a specific build of an <a class="glossary-hoverable"
+          href="#algorithm-environment-specification" title=""
+          parentId="dd-algorithm-environment-specification">algorithm environment specification</a>, in the format
+        <code>1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d</code>.
+      </dd>
+
 
       <dt id="algorithm-endpoint">algorithm endpoint <code class="placeholder">{ALGO_ENDPOINT}</code></dt>
       <dd id="dd-algorithm-endpoint">
@@ -626,6 +656,15 @@
         <a class="glossary-hoverable" href="#algorithm-instance" title="" parentId="dd-algorithm-instance">instances</a>
         are currently ready to process <a class="glossary-hoverable" href="#algorithm-execution-request" title=""
           parentId="dd-algorithm-execution-request">algorithm execution requests</a>.
+      </dd>
+
+      <dt id="commit">commit <code class="placeholder">{COMMIT_HASH}</code></dt>
+      <dd id="dd-commit">
+        In <a class="glossary-hoverable" href="#source-code-management" title=""
+          parentId="dd-source-code-management">source code management</a>, a set of changes saved (“committed”) to a
+        source code repository’s history. Algorithmia uses Git for source code management; in Git, commits contain
+        metadata about the relationship between a specific commit and other commits in the history of the
+        repository.
       </dd>
 
       <dt id="constellation-distributed-serving">Constellation Distributed Serving</dt>
@@ -1046,7 +1085,7 @@
         Individual <a class="glossary-hoverable" href="#algorithm-instance" title=""
           parentId="dd-algorithm-instance">instance</a> of a specific <a class="glossary-hoverable" href="#algorithm"
           title="" parentId="dd-algorithm">algorithm</a> running on a <a class="glossary-hoverable"
-          href="#algorithm-worker-node" title="" parentId="dd-algorithm-worker-node">worker node</a>.
+          href="#worker-node" title="" parentId="dd-worker-node">worker node</a>.
       </dd>
 
       <dt id="reservation">reservation</dt>
