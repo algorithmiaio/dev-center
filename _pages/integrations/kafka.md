@@ -11,12 +11,6 @@ tags: [integrations, event-flows]
 title: "Algorithmia Event Flows"
 ---
 
-With Algorithmia Event Flows, you can create dynamic, event-driven data processing and inference pipelines in just a few easy steps, helping you automate ML deployment and monitoring pipelines.
-
-Event Flows provides an easy way to establish secure connections from your Algorithmia Enterprise cluster to your externally hosted message brokers. We provide observability features for easy debugging, as well as an intuitive user interface (UI) for data scientists and application developers to create algorithm workflows that respond to events such as new messages written to a queue, or successful algorithm runs.
-
-This feature is only available in Enterprise installations of Algorithmia.
-{: .notice-enterprise}
 
 ## Creating and configuring a broker connection in the Algorithmia platform
 

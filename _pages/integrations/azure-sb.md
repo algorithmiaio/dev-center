@@ -12,7 +12,7 @@ tags: [integrations, event-flows]
 title: "Azure SB Message Broker"
 ---
 
-These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue. 
+These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue.
 [Read more about Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues).
 
 This feature is only available for Enterprise installations of Algorithmia. 
