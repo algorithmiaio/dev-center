@@ -3,21 +3,28 @@
 - title: Home
   url: /
 
+- title: Integrations
+  url: /integrations/
+
+- title: Glossary
+  url: /glossary/
+
 # - title: Getting Started
 #   url: /getting-started/
 
 # - title: Core Concepts
 #   url: /platform/
 
-- title: Platform
+- title: Platform Usage
   url: /platform/
   nav_category: basics
 
+- title: Platform Admin
+  url: /admin/
+  nav-category: admin
+
 - title: API Documentation
   url: /api/
-
-- title: Glossary
-  url: /glossary/
 
 - title: Client Guides
   url: /clients/
@@ -30,9 +37,6 @@
 - title: Model Deployment
   url: /model-deployment/
   # nav_category: model-deployment
-
-- title: Integrations
-  url: /integrations/
 
 - title: Native Data Integrations
   url: /data/
