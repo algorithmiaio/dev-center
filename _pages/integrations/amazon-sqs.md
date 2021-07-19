@@ -23,7 +23,7 @@ The following diagram displays the interaction between SQS and Algorithmia. When
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/workflow.png" alt="SQS and Algorithmia Workflow Diagram">
 
-To influence how much work Algorithmia will accept, you can tune either the maximum number of workers, or the user session limit. On the SQS side, the option for "Maximum Receives" determines how many times a message will loop through this system. Since each loop is 5 minutes, messages will queue on the SQS side for (5 minutes) \* (Max Receives).
+To influence how much work Algorithmia will accept, you can tune either the maximum number of workers or the user session limit. On the SQS side, the option for "Maximum Receives" determines how many times a message will loop through this system. Since each loop is 5 minutes, messages will queue on the SQS side for (5 minutes) \* (Max Receives).
 The [AWS documentation](https://aws.amazon.com/blogs/aws/amazon-sqs-new-dead-letter-queue/#:~:text=Maximum%20Receives%20%E2%80%93%20The%20maximum%20number,to%20the%20Dead%20Letter%20Queue.) specifies the Max Receives value as 10, but this can be increased up to 1000 to queue messages for more loops. When the Max Receives limit is hit, the message is delivered to the SQS Dead Letter Queue (DLQ).
 
 ## Setting up an Amazon SQS message broker
@@ -52,25 +52,25 @@ You'll need to have a user (or role that your user can assume) with the followin
 
 ### 3. Creating resources in AWS
 
-Open the [CloudFormation page](https://console.aws.amazon.com/cloudformation/home) in the AWS console.
+Open the <a href="https://console.aws.amazon.com/cloudformation/home" target="_blank" rel="noopener noreferrer">CloudFormation page</a> in the AWS console.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_0.png">
 
-Click the **Create stack** button.
+Click **Stacks** in the left-hand navigation menu, and then click **Create stack**.
 
-On the following page, select **Upload a template file** and then click **Choose file**. Navigate to the template file provided by Algorithmia (see step 1) and select it.
+On the resulting page, in the **Specify Template** section, select **Upload a template file** and then click **Choose file**. Navigate to the template file provided by Algorithmia (see [step 1](#1-obtaining-a-template-file-and-account-info-from-algorithmia)) and select it.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_1.png">
 
 Click **Next**.
 
-On the following page, enter the **Stack name**. This should be a unique name that identifies the package of Amazon resources used for this configuration.
+On the following page, enter a **Stack name**. This should be a unique name that identifies the package of Amazon resources used for this configuration.
 
-Enter the **AlgorithmiaAccountNumber**. This is Algorithmia’s AWS account number, provided to you by Algorithmia.
+Under **AlgorithmiaAccountNumber**, enter Algorithmia’s AWS account number, provided to you by Algorithmia.
 
-Enter the **QueueName**. This should be a unique name that identifies the SQS queue that'll be the source of payloads for the algorithm to run.
+Under **QueueDLQName**, enter a unique name that identifies the Amazon SQS queue that'll be a holding queue for payloads that weren't accepted by the Algorithmia algorithm for _any_ reason (invalid message format, Algorithmia platform downtime, etc.).
 
-Enter the **QueueDLQName**. This should be a unique name that identifies the Amazon SQS queue that'll be a holding queue for payloads that weren't accepted by the Algorithmia algorithm for _any_ reason (invalid message format, Algorithmia platform downtime, etc.).
+Under **QueueName**, enter a unique name that identifies the SQS queue that'll be the source of payloads for the algorithm to run.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_2.png">
 
@@ -102,7 +102,7 @@ Click the **Stack info** tab.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_10.png">
 
-After about 60 seconds, click the grey refresh wheel (<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_11.png">). It should show the **Stack status** as CREATE_COMPLETE. If not, wait another 60 seconds and click the wheel again.
+After about 60 seconds, click the grey refresh wheel (<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_11.png">). It should show the **Stack status** as "CREATE_COMPLETE". If not, wait another 60 seconds and click the wheel again.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_12.png">
 
@@ -113,34 +113,39 @@ Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you'l
 **NOTE:** Step 4 is to be completed within the **Algorithmia browser UI**.
 {: .notice-info}
 
-### 4. Creating an event configuration in Algorithmia
+### 4. Creating an Event Flow in Algorithmia
 
-Note that _any_ algorithm can publish data to or subscribe to an SQS message broker. On our platform we call these pub-sub configurations "event configurations", and the following demonstrates one possible example of how to set one up.
+Note that _any_ algorithm can publish data to or subscribe to an SQS message broker. On our platform we call these pub-sub configurations "Event Flows", and the following demonstrates one possible example of how to set one up.
 
-To begin, log in to the Algorithmia browser UI and create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. To learn how to complete the algorithm-creation step, see our [getting started guide](/algorithm-development/your-first-algo).
+#### Create an algorithm
 
-On the homepage for the newly created algorithm, click the **Source** tab to access the Web IDE.
+To begin, log in to the Algorithmia browser UI and create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. If you need a quick guide for creating an algorithm, see our [getting started guide](/algorithm-development/your-first-algo).
+
+On the newly created algorithm's profile, click the **Source** tab to access the Web IDE.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_18.png">
 
-Replace the original source code with the following, replacing `COLLECTION_OWNER` and `COLLECTION_NAME` with your account name and the name of the output collection, respectively. In the example screenshots below the code, `COLLECTION_OWNER` is "traack" and `COLLECTION_NAME` is "event_output_directory".
+In the source code below, replace the `COLLECTION_OWNER` and `COLLECTION_NAME` with your account name and the name of a data collection (which you'll create in the steps below), respectively. In the example screenshots below the code, `COLLECTION_OWNER` is `traack` and `COLLECTION_NAME` is `event_output_directory`.
 
-{% highlight python %}
+```python
 import Algorithmia
 
+client = Algorithmia.client()
+
 def apply(input):
-    Algorithmia.client().file("data://COLLECTION_OWNER/COLLECTION_NAME/"
-     + input.get("filename")).put(input.get("data"))
-{% endhighlight %}
+    data_uri = "data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")
+    client.file(data_uri).put(input.get("data"))
+```
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_19.png">
 
 Click the **Save** and **Build** buttons and then click **Publish** when the build completes.
 
-On the newly published algorithm's homepage, copy the full "path" to the algorithm, which will be `ALGO_OWNER/ALGO_NAME/ALGO_VERSION`; in the screenshot below, this is `traack/EventListenerAlgo/0.1.1`.
+On the newly published algorithm's profile, copy the algorithm endpoint, which will be in the form `ALGO_OWNER/ALGO_NAME/ALGO_VERSION`; in the screenshot below, this is `traack/EventListenerAlgo/0.1.1`.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_20.png">
 
+#### Create a hosted data collection
 Click the **Data Sources** menu item in the left sidebar.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_21.png">
@@ -153,23 +158,32 @@ Click the **New Collection** button in the top-right corner.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_23.png">
 
-In the dialog box that appears, enter the `COLLECTION_NAME` from above (in this case, "event_output_directory") and click **Create Collection**.
+In the dialog box that appears, enter the `COLLECTION_NAME` value from above (in this case, `event_output_directory`) and click **Create Collection**.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_24.png">
 
-Click the **Home** button the left sidebar.
+#### Create an Event Flow (Algorithmia versions >=25.5.53)
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_25.png">
+Navigate to your new algorithm's profile and click the **Events** tab and then the **Connect broker** button.
 
-Click on the **Create New** button and select **Event Configuration** (in Algorithmia versions prior to 25.5.53, this will be called **Event Listener**).
+In the modal, enter the **QueueURL** and **QueueConsumerARN** values from [step 3](#3-creating-resources-in-aws) for the **URI** and **ROLE ARN** fields, respectively.
+
+The **Algorithm** endpoint is auto-populated and the version number is optional. The **Algorithm timeout in seconds** field is also optional.
+
+#### Create an Event Listener (Algorithmia versions <25.5.53)
+
+In earlier versions of Algorithmia, this feature was called event listeners. This section documents the previous workflow.
+{: .notice-info}
+
+Navigate to the **Home** tab on the left-hand navigation panel. Click on the **Create New** button and select **Event Listener**.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_26.png">
 
-Enter the QueueURL and QueueConsumerARN into the **URI** and **ROLE ARN** fields in the modal.
+In the modal, enter the **QueueURL** and **QueueConsumerARN** into the **URI** and **ROLE ARN** fields, respectively.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_27.png">
 
-Enter the full path of your algorithm from above and click **Create New Event Configuration** (in Algorithmia versions prior to 25.5.53, this will be called **Create New Event Listener**. The following page will show your  newly created event configuration.
+Enter the full path to the algorithm you created above and click **Create New Event Listener**. The **Listeners** tab on the algorithm profile will now list your newly created event listener.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_28.png">
 
