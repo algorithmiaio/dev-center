@@ -106,7 +106,7 @@ After about 60 seconds, click the grey refresh wheel (<img src="{{site.cdnurl}}{
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_12.png">
 
-Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you'll use them when configuring the message broker in the Algorithmia browser user interface (UI) in the next step.
+Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you'll use them when connecting the message broker in the Algorithmia browser user interface (UI) in the [next step].
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_13.png">
 
@@ -162,17 +162,32 @@ In the dialog box that appears, enter the `COLLECTION_NAME` value from above (in
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_24.png">
 
-#### Create an Event Flow (Algorithmia versions >=25.5.53)
+#### Connect to SQS broker
+
+This section documents the workflow in Algorithmia versions >=25.5.53. See the section [below](#create-an-event-listener) for the previous event listeners-based workflow.
+{: .notice-info}
 
 Navigate to your new algorithm's profile and click the **Events** tab and then the **Connect broker** button.
 
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sqs_broker_button.png">
+
 In the modal, enter the **QueueURL** and **QueueConsumerARN** values from [step 3](#3-creating-resources-in-aws) for the **URI** and **ROLE ARN** fields, respectively.
 
-The **Algorithm** endpoint is auto-populated and the version number is optional. The **Algorithm timeout in seconds** field is also optional.
+The **Algorithm** endpoint field is auto-populated, and the full algorithm path is shown below the text input field. The version number is optional.
 
-#### Create an Event Listener (Algorithmia versions <25.5.53)
+Optionally, enter a value for **Algorithm timeout in seconds**.
 
-In earlier versions of Algorithmia, this feature was called event listeners. This section documents the previous workflow.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sqs_broker_modal.png">
+
+Click **Connect to Amazon SQS broker**. The **Events** tab on the algorithm profile will now list your newly created connection.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sqs_broker_events_tab.png">
+
+Click [here](#5-sending-messages-to-the-broker) to proceed to the next step to learn how to send messages to the newly connected broker.
+
+#### Create an Event Listener
+
+This section documents the workflow in Algorithmia versions <25.5.53, where Event Flows were called event listeners.
 {: .notice-info}
 
 Navigate to the **Home** tab on the left-hand navigation panel. Click on the **Create New** button and select **Event Listener**.
@@ -189,15 +204,22 @@ Enter the full path to the algorithm you created above and click **Create New Ev
 
 ### 5. Sending messages to the broker
 
-Many methods exist for sending messages to Amazon SQS queues. Here we show what it looks like in the AWS console. Open the [SQS page](https://console.aws.amazon.com/sqs/home) and click on the box to the left of the queue name that was created in step 2, above.
+Many methods exist for sending messages to Amazon SQS queues. Here we show what it looks like in the AWS console.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_29.png">
+Open the <a href="https://console.aws.amazon.com/sqs/home" target="_blank" rel="noopener noreferrer">SQS</a> page in the AWS console. Click on the name of the queue (**QueueName**) that was created above in [step 3](#3-creating-resources-in-aws), and click the **Send and receive messages** button.
 
-Click the **Queue Actions** drop-down button and select **Send a Message**.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws_console_send_messages.png">
 
-In the popup box, enter the message payload corresponding to the inputs for the related algorithm event configuration.
+In the **Send and receive messages** page, in the **Message body** field, enter the message payload to send to the algorithm you created above. In this case, it might be formatted like this.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_30.png">
+```
+{
+    "filename" : "some-new-file",
+    "data" : "file contents to store"
+}
+```
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws_console_sqs-message-body.png">
 
 Click **Send Message** and the payload will be consumed by Algorithmia and sent to the configured algorithm as input for execution.
 
