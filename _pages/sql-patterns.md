@@ -1,6 +1,6 @@
 ---
 author: noah_crowley
-excerpt: ""
+excerpt: "Patterns for accessing your SQL databases."
 layout: article_page
 nav_overview: "Overview"
 nav_index: 0
