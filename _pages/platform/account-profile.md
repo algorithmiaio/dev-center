@@ -1,8 +1,6 @@
 ---
 categories: basics
 excerpt: "A walk through of your account profile page."
-image:
-  teaser: /icons/algo.svg
 layout: article
 permalink: /platform/account-profile/
 show_related: true

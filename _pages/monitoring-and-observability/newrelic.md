@@ -1,5 +1,5 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Monitor model performance metrics with New Relic"
 excerpt-short: "Monitor model performance metrics with New Relic"
 image:

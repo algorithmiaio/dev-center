@@ -1,5 +1,5 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Sending algorithm metrics to a customer-operated metrics collection system"
 layout: article
 image:

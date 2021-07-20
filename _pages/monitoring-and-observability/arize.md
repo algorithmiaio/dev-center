@@ -1,5 +1,5 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Integrating with an ML observability platform"
 image:
   teaser: /icons/algo.svg
