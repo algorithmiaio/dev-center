@@ -224,10 +224,4 @@ In the **Send and receive messages** page, in the **Message body** field, enter 
 
 Click **Send Message** and the payload will be consumed by Algorithmia and sent to the configured algorithm as input for execution.
 
-To verify, open the he **Data Sources** menu item in the left sidebar and navigate to the directory `COLLECTION_NAME` that you configured above as the destination for your algorithm to write data.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_31.png">
-
-Note that the directory contains a file with the filename specified in the payload and that the contents of the file include the data from the payload.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_32.png">
+To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file`, with contents equal to `file contents to store`.
