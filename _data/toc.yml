@@ -9,6 +9,9 @@
 - title: Glossary
   url: /glossary/
 
+- title: API Documentation
+  url: /api/
+
 # - title: Getting Started
 #   url: /getting-started/
 
@@ -20,11 +23,8 @@
   nav_category: basics
 
 - title: Platform Administration
-  url: /admin/
+  url: /platform-administration/
   nav-category: admin
-
-- title: API Documentation
-  url: /api/
 
 - title: Client Guides
   url: /clients/
@@ -59,8 +59,8 @@
   nav_category: event-flows
 
 - title: Monitoring & Observability
-  url: /monitoring-observability/
-  nav_category: monitoring-&-observability
+  url: /monitoring-and-observability/
+  nav_category: monitoring-and-observability
 
 - title: App Development
   url: /app-development/

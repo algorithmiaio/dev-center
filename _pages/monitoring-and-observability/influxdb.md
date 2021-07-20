@@ -1,5 +1,5 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Monitor model performance metrics with InfluxDB"
 image:
   teaser: /language_logos/influxdata.svg

@@ -29,7 +29,7 @@ The [AWS documentation](https://aws.amazon.com/blogs/aws/amazon-sqs-new-dead-let
 
 ## Setting up an Amazon SQS message broker
 
-**NOTE:** Steps 1-3 are to be completed within the **AWS console**.
+**NOTE:** Steps 1-3 are to be completed within the <a href="https://console.aws.amazon.com/" target="_blank" rel="noreferrer noopener">AWS console</a>.
 {: .notice-info}
 
 ### 1. Obtaining a template file and account info from Algorithmia

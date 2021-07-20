@@ -1,5 +1,5 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Integrating with an external model observability platform"
 image:
   teaser: /language_logos/arthur.png
