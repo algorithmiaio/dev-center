@@ -1,6 +1,6 @@
 ---
-excerpt: "Configuring API Keys"
 categories: basics
+excerpt: "Configuring API Keys"
 layout: article
 permalink: /platform/customizing-api-keys/
 redirect_from:
