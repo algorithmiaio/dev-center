@@ -5,7 +5,7 @@ layout: article
 permalink: /event-flows/
 redirect_from: /integrations/event-flows/
 show_related: true
-tags: [event-flows]
+tags: [event-flows, integrations]
 title: "Algorithmia Event Flows"
 ---
 

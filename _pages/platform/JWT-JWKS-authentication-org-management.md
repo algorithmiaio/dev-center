@@ -1,15 +1,12 @@
 ---
-layout: article
-title:  "JWT-JWKS Authentication and Organization Management"
-excerpt: ""
 categories: basics
-nav_index: 40
-show_related: true
-image:
-teaser: /icons/algo.svg
+excerpt: "Use JSON Web Tokens for authentication"
+layout: article
 permalink: /platform/jwt-authentication/
 redirect_from:
--  /basics/jwt-authentication/
+- /basics/jwt-authentication/
+show_related: true
+title: "JWT-JWKS Authentication and Organization Management"
 ---
 
 JSON Web Tokens (JWTs) are an open, industry standard RFC 7519 method for representing proof of secure communication between two parties.
