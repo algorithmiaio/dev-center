@@ -5,7 +5,8 @@ excerpt-short: "Monitor model performance metrics with New Relic"
 image:
     teaser: /language_logos/newrelic.png
 layout: article
-permalink: /integrations/newrelic/
+permalink: /monitoring-and-observability/newrelic/
+redirect_from: /integrations/newrelic/
 show_related: false
 tags: [integrations, monitoring-observability]
 title: "New Relic"

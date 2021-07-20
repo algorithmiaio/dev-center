@@ -1,16 +1,17 @@
 ---
 categories: [monitoring-&-observability]
-excerpt: 'Sending algorithm metrics to a customer-operated metrics collection system'
+excerpt: "Sending algorithm metrics to a customer-operated metrics collection system"
 layout: article
 image:
   teaser: /icons/algo.svg
 nav_index: 1
-permalink: /integrations/insights/
+permalink: /monitoring-and-observability/insights/
 redirect_from:
+  - /integrations/insights/
   - /algorithmia-enterprise/algorithmia-insights/
 show_related: false
 tags: [integrations, monitoring-observability]
-title: 'Algorithmia Insights'
+title: "Algorithmia Insights"
 ---
 
 This feature is available to [Algorithmia Enterprise](/enterprise) users only.
