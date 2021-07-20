@@ -1,11 +1,13 @@
 ---
-categories: basics
+categories: admin
 excerpt: "Use JSON Web Tokens for authentication"
 layout: article
-permalink: /platform/jwt-authentication/
+permalink: /platform-admin/jwt-authentication/
 redirect_from:
-- /basics/jwt-authentication/
+  - /platform/jwt-authentication/
+  - /basics/jwt-authentication/
 show_related: true
+tags: [admin, authentication]
 title: "JWT-JWKS Authentication and Organization Management"
 ---
 
