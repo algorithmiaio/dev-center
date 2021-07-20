@@ -11,7 +11,7 @@ tags: [integrations, event-flows]
 title: "Apache Kafka Message Broker"
 ---
 
-This feature is only available for Enterprise installations of Algorithmia.
+This feature is only available in Enterprise installations of Algorithmia.
 {: .notice-enterprise}
 
 This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker.

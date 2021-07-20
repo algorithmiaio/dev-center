@@ -4,7 +4,6 @@ excerpt: "A walk through of your account profile page."
 image:
   teaser: /icons/algo.svg
 layout: article
-nav_index: 10
 permalink: /platform/account-profile/
 show_related: true
 redirect_from:
