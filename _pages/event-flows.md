@@ -2,7 +2,8 @@
 categories: event-flows
 excerpt-short: "Level up your ML pipeline automation with event-driven workflows."
 layout: article
-permalink: /event-flows/
+nav_overview: "Overview"
+nav_index: 0
 redirect_from: /integrations/event-flows/
 show_related: true
 tags: [event-flows, integrations]
