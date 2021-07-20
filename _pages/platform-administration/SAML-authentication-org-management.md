@@ -1,11 +1,13 @@
 ---
-categories: basics
+categories: admin
 excerpt: "Use SAML for authentication"
 layout: article
-permalink: /platform/saml-authentication/
-show_related: true
+permalink: /platform-admin/saml-authentication/
 redirect_from:
-- /basics/saml-authentication/
+  - /platform/saml-authentication/
+  - /basics/saml-authentication/
+show_related: true
+tags: [admin, authentication]
 title: "SAML Authentication and Organization Management"
 ---
 
