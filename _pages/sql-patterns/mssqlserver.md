@@ -1,23 +1,22 @@
 ---
-layout: article
-title:  "MS SQL Server"
-excerpt: "Run queries against MS SQL Server databases"
-categories: sql-patterns
-nav_index: 4
-tags: [sql-patterns]
-show_related: true
 author: jon_peck
+categories: sql-patterns
+excerpt: "Run queries against MS SQL Server databases"
 image:
     teaser: /language_logos/mssql.png
+layout: article
 redirect_from:
   - /data/mssqlserver/
+show_related: true
+tags: [sql-patterns]
+title: "MS SQL Server"
 ---
 
-If your algorithm needs to read or write data from a MsSqlServer database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
+If your algorithm needs to read or write data from a Microsoft SQL Server database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
 
 ### Option 1: Connect directly from within your own algorithm code
 
-There are a variety of MsSqlServer packages publicly available. For Python, we recommend [Pymssql](https://pymssql.org). For other languages, see the [libraries](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-libraries).
+There are a variety of SQL Server packages publicly available. For Python, we recommend [Pymssql](https://pymssql.org). For other languages, see the [libraries](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-libraries).
 
 We do not recommend storing your database credentials directly inside your algo, since this would require re-publishing it anytime they change, and would make them visible to anyone with access to your source code.
 
@@ -32,7 +31,7 @@ Inside this folder, create a `.json` file containing your connection credentials
 } 
 ```
 
-Then, inside your own algorithm, add a MsSqlServer library to your dependencies file (in this example, `pymssql`), then load the credentials from the JSON file and use them to make your DB connection:
+Then, inside your own algorithm, add a SQL Server library to your dependencies file (in this example, `pymssql`), then load the credentials from the JSON file and use them to make your DB connection:
 
 ```
 import Algorithmia
@@ -66,7 +65,7 @@ def apply(input):
 
 If you don't want to add database connection code directly into your algorithm, you can use our helper algorithms instead. Keep in mind that these incur the usual 1 credit per compute-second cost to run.
 
-First, configure your MsSqlServer Database connection via <a href="{{site.url}}/algorithms/util/MsSqlServerConfig">MsSqlServerConfig</a> ( <a href="{{site.url}}/algorithms/util/MsSqlServerConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{site.url}}/algorithms/util/MsSqlServerConfig">MsSqlServerConfig</a> as well.
+First, configure your SQL Server Database connection via <a href="{{site.url}}/algorithms/util/MsSqlServerConfig">MsSqlServerConfig</a> ( <a href="{{site.url}}/algorithms/util/MsSqlServerConfig/docs">docs</a>). Note that this creates credentials which are available only to you, so if another user wants to utilize this connection, they'll need to run <a href="{{site.url}}/algorithms/util/MsSqlServerConfig">MsSqlServerConfig</a> as well.
 
 Then, access the data in your DB via the <a href="{{site.url}}/algorithms/util/MsSqlServer">MsSqlServer</a> (<a href="{{site.url}}/algorithms/util/MsSqlServer/docs">docs</a>).
 

@@ -1,16 +1,15 @@
 ---
-layout: article
-title: 'MySQL'
-excerpt: 'Run queries against MySQL databases'
-categories: sql-patterns
-nav_index: 4
-tags: [sql-patterns]
-show_related: true
 author: jon_peck
+categories: sql-patterns
+excerpt: 'Run queries against MySQL databases'
 image:
   teaser: /language_logos/mysql.png
+layout: article
 redirect_from:
   - /data/mysql/
+show_related: true
+tags: [sql-patterns]
+title: "MySQL"
 ---
 
 If your algorithm needs to read or write data from a MySQL database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.

@@ -2,6 +2,7 @@
 categories: [monitoring-and-observability]
 excerpt: "Sending algorithm metrics to a customer-operated metrics collection system"
 layout: article
+nav_index: 0
 permalink: /monitoring-and-observability/insights/
 redirect_from:
   - /integrations/insights/

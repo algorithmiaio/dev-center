@@ -1,16 +1,15 @@
 ---
-layout: article
-title:  "PostgreSQL"
-excerpt: "Run queries against PostgreSQL databases"
-categories: sql-patterns
-nav_index: 4
-tags: [sql-patterns]
-show_related: true
 author: jon_peck
+categories: sql-patterns
+excerpt: "Run queries against PostgreSQL databases"
 image:
-    teaser: /language_logos/postgres.svg 
+    teaser: /language_logos/postgres.svg
+layout: article
 redirect_from:
   - /data/postgres/
+show_related: true
+tags: [sql-patterns]
+title: "PostgreSQL"
 ---
 
 If your algorithm needs to read or write data from a PostgreSQL database, you can do so by either making the database connection directly from within your own code, or by using our helper algorithms.
