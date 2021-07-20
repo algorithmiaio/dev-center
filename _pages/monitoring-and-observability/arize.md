@@ -2,7 +2,7 @@
 categories: [monitoring-and-observability]
 excerpt: "Integrating with an ML observability platform"
 image:
-  teaser: /icons/algo.svg
+  teaser: /language_logos/arize.png
 layout: article
 permalink: /monitoring-and-observability/arize/
 redirect_from: /integrations/arize/
