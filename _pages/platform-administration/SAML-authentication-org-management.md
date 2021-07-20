@@ -2,7 +2,7 @@
 categories: admin
 excerpt: "Use SAML for authentication"
 layout: article
-permalink: /platform-admin/saml-authentication/
+permalink: /platform-administration/saml-authentication/
 redirect_from:
   - /platform/saml-authentication/
   - /basics/saml-authentication/
