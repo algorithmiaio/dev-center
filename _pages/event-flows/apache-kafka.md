@@ -2,6 +2,8 @@
 categories: event-flows
 excerpt-short: "Set up algorithm Event Flows using an Apache Kafka message broker"
 layout: article
+image:
+    teaser: /language_logos/kafka.png
 permalink: /event-flows/apache-kafka/
 redirect_from:
  - /integrations/message-broker/
