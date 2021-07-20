@@ -1,8 +1,6 @@
 ---
 categories: basics
 excerpt: "Use Algorithmia's Secret Store to save and access sensitive data"
-image:
-    teaser: /icons/algo.svg
 layout: article
 permalink: /platform/secret-store/
 redirect_from:

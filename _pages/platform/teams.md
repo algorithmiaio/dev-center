@@ -1,8 +1,6 @@
 ---
 layout: article
 title:  "Teams"
-image:
-    teaser: /icons/algo.svg
 categories: basics
 permalink: /platform/teams/
 sitemap: false
