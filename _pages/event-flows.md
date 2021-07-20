@@ -1,5 +1,4 @@
 ---
-categories: event-flows
 excerpt-short: "Level up your ML pipeline automation with event-driven workflows."
 layout: article_page
 nav_overview: "Overview"
