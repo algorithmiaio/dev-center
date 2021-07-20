@@ -22,9 +22,6 @@ In order to use Event Flows with Kafka, a cluster administrator must first [conn
 
 Once at least one Kafka broker has been connected, members of Algorithmia organizations can activate event-driven workflows for any organization-owned algorithm that a cluster administrator has enabled.
 
-Note that in addition to Kafka, algorithmia supports [Amazon SQS](/developers/integrations/amazon-sqs/) and [Azure SB](/developers/integrations/azure-sb) message brokers.
-{: .notice-info}
-
 ## Enabling event-driven algorithm workflows
 
 Once a cluster administrator sets up a broker connection and allows publish or subscribe access to a specific topic for a specific organization-owned algorithm, members of that organization will be able to activate event flows for that algorithm.
