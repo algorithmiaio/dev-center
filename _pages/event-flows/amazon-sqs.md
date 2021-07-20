@@ -215,7 +215,7 @@ In the **Send and receive messages** page, in the **Message body** field, enter 
 
 ```
 {
-    "filename" : "some-new-file",
+    "filename" : "some-new-file.txt",
     "data" : "file contents to store"
 }
 ```
@@ -225,3 +225,5 @@ In the **Send and receive messages** page, in the **Message body** field, enter 
 Click **Send Message** and the payload will be consumed by Algorithmia and sent to the configured algorithm as input for execution.
 
 To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file`, with contents equal to `file contents to store`.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/amazon-sqs-file-contents.png">
