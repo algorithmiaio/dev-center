@@ -11,11 +11,17 @@ tags: [integrations, event-flows]
 title: "Azure Service Bus Message Broker"
 ---
 
+This feature is only available for Enterprise installations of Algorithmia.
+{: .notice-enterprise}
+
+This guide will walk you through setting up Algorithmia Event Flows using an Azure Service Bus (SB) message broker. Once configured, you can create event-driven workflows in which your algorithms subscribe to the SB queue, consuming its messages as algorithm input.
+
 These directions will help you to set up an Algorithmia Event Listener, which will run an algorithm with input payloads provided in an Azure Service Bus Queue.
 [Read more about Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues).
 
-This feature is only available for Enterprise installations of Algorithmia. 
-{: .notice-enterprise}
+Note that in addition to Kafka, algorithmia supports [Amazon SQS](/developers/integrations/amazon-sqs/) and [Azure SB](/developers/integrations/azure-sb) message brokers.
+{: .notice-info}
+
 
 ## 1. Obtain a template file and account info from Algorithmia
 

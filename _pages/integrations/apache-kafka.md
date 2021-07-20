@@ -11,11 +11,16 @@ tags: [integrations, event-flows]
 title: "Apache Kafka Message Broker"
 ---
 
+This feature is only available for Enterprise installations of Algorithmia.
+{: .notice-enterprise}
+
+This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker.
+
 ## Creating and configuring a broker connection in the Algorithmia platform
 
-In order to use Event Flows, a cluster administrator must first [connect an external message broker](https://training.algorithmia.com/exploring-the-admin-panel/807062) to the Algorithmia cluster.
+In order to use Event Flows with Kafka, a cluster administrator must first [connect an external Kafka broker](https://training.algorithmia.com/exploring-the-admin-panel/807062) to the Algorithmia cluster.
 
-Once at least one message broker has been connected, members of Algorithmia organizations can activate event-driven workflows for any organization-owned algorithm that a cluster administrator has enabled.
+Once at least one Kafka broker has been connected, members of Algorithmia organizations can activate event-driven workflows for any organization-owned algorithm that a cluster administrator has enabled.
 
 Note that in addition to Kafka, algorithmia supports [Amazon SQS](/developers/integrations/amazon-sqs/) and [Azure SB](/developers/integrations/azure-sb) message brokers.
 {: .notice-info}

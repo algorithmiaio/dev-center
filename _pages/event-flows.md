@@ -38,7 +38,7 @@ The configuration differences are summarized below. For details on how to config
 
 ### Apache Kafka
 
-To [use Kafka as a message broker](/developers/event-flows/kafka), the following three steps are required:
+To [use Kafka as a message broker](/developers/integrations/apache-kafka), the following three steps are required:
 
 1. A cluster administrator must [create a broker connection](https://training.algorithmia.com/exploring-the-admin-panel/807062) to an existing external Kafka broker. Note that with Event Flows, you can establish connections to multiple Kafka brokers from the same Algorithia cluster.
 2. A cluster administrator must "add" specific algorithms to specific topics on a connected broker to allow them to access these topics. Existing topics on connected brokers are listed automatically in the admin panel within the Algorithmia browser UI. Specifically, to enable algorithm access, the cluster administrator must:
@@ -48,4 +48,4 @@ To [use Kafka as a message broker](/developers/event-flows/kafka), the following
 
 ### Amazon SQS / Azure SB
 
-To use [Amazon SQS](/integrations/amazon-sqs/) or [Azure SB](/integrations/azure-sb/) as a message broker, simply connect the message broker under the algorithm profile's **Events** tab by specifying the relevant resource URIs.
+To use [Amazon SQS](/developers/integrations/amazon-sqs/) or [Azure SB](/developers/integrations/azure-sb/) as a message broker, simply connect the message broker under the algorithm profile's **Events** tab by specifying the relevant resource URIs.

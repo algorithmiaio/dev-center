@@ -11,10 +11,10 @@ tags: [integrations, event-flows]
 title: "Amazon SQS Message Broker"
 ---
 
-This guide will walk you through setting up an Amazon Simple Queue Service (SQS) message broker on Algorithmia. Once configured, you can create event-driven workflows in which your algorithms publish messages to and consume messages from the SQS queue.
-
 This feature is only available for Enterprise installations of Algorithmia.
 {: .notice-enterprise}
+
+This guide will walk you through setting up Algorithmia Event Flows using an [Amazon Simple Queue Service (SQS)](https://aws.amazon.com/sqs/) message broker. Once configured, you can create event-driven workflows in which your algorithms subscribe to the SQS queue, consuming its messages as algorithm input.
 
 ## How messages are read from SQS
 
