@@ -6,6 +6,7 @@ permalink: /monitoring-and-observability/insights/
 redirect_from:
   - /integrations/insights/
   - /algorithmia-enterprise/algorithmia-insights/
+  - /monitoring-and-observability/
 show_related: false
 tags: [integrations, monitoring-observability]
 title: "Algorithmia Insights"
