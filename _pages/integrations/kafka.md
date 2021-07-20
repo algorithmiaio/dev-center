@@ -1,16 +1,15 @@
 ---
 categories: event-flows
-excerpt-short: "Set up message broker connections and topics that can be enabled to process algorithm data"
+excerpt-short: "Set up algorithm Event Flows using an Apache Kafka message broker"
 layout: article
-permalink: /integrations/kafka/
+permalink: /integrations/apache-kafka/
 redirect_from:
-  - /integrations/message-broker/
-  - /integrations/event-flows/
+ - /integrations/message-broker/
+ - /integrations/kafka/
 show_related: true
 tags: [integrations, event-flows]
-title: "Algorithmia Event Flows"
+title: "Apache Kafka Message Broker"
 ---
-
 
 ## Creating and configuring a broker connection in the Algorithmia platform
 

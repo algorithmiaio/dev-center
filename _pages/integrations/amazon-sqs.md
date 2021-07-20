@@ -1,12 +1,11 @@
 ---
 categories: event-flows
-excerpt-short: "Set up algorithm event flows using an Amazon SQS message broker"
+excerpt-short: "Set up algorithm Event Flows using an Amazon SQS message broker"
 image:
     teaser: /language_logos/amazon_sqs.png
 layout: article
 permalink: /integrations/amazon-sqs/
-redirect_from:
-  - /integrations/event_listeners/
+redirect_from: /integrations/event_listeners/
 show_related: true
 tags: [integrations, event-flows]
 title: "Amazon SQS Message Broker"
