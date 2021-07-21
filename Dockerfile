@@ -56,7 +56,7 @@ RUN ./build.sh
 #
 # Final stage: use the build artifacts from previous stages
 #
-FROM node:14.17.1-buster-slim
+FROM node:14.17-buster-slim
 
 WORKDIR /opt/src/app
 
