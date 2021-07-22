@@ -58,7 +58,7 @@ You'll also need to define the following parameters, which are required in the s
 
 ### Exploring the CloudFormation template and required AWS permissions
 
-In this section we'll walk through the key components of the `client-aws-cloudformation-template.yaml` file, which is used by AWS CloudFormation to create the resource stack that supports Algorithmia Event Flows.
+In this section we'll walk through the key components of the `client-aws-cloudformation-template.yaml` file, which is used by AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows.
 
 #### Required permissions
 
