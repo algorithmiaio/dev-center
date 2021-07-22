@@ -29,9 +29,9 @@ Once at least one Kafka broker has been connected, members of Algorithmia organi
 
 ## Enabling event-driven algorithm workflows
 
-Once a cluster administrator sets up a broker connection and allows publish or subscribe access to a specific topic for a specific organization-owned algorithm, members of that organization will be able to activate event flows for that algorithm.
+Once a cluster administrator sets up a broker connection and allows publish or subscribe access to a specific topic for a specific organization-owned algorithm, members of that organization will be able to activate Event Flows for that algorithm.
 
-To get started, log in to the Algorithmia browser UI and click on the ML service catalog menu item on the left nav bar to view the list of available algorithms. Select an existing algorithm that's been configured with access to topics via the broker connection configuration (following the admin steps [above](#creating-and-configuring-a-broker-connection-in-the-algorithmia-platform)).
+To get started, log in to the Algorithmia browser UI and navigate to the profile of the algorithm you'd like to configure. Note that, as described in the cluster admin configuration steps linked [above](#creating-and-configuring-a-broker-connection-in-the-algorithmia-platform)), the algorithm must already be configured with access to a topic.
 
 Click on the **Events** tab to see a list of broker topics that the algorithm can access.
 
@@ -39,7 +39,7 @@ There are action buttons on the right side of each listed broker; these will dep
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-list.png" alt="Algorithm queue list">
 
-Clicking on the **Enable** or **Edit** button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the **Enable Connection** (or **Save Changes**) button to grant the algorithm access to the topic.
+Clicking on the **Enable** (or **Edit**) button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the **Enable Connection** (or **Save Changes**) button to grant the algorithm access to the topic.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-enable.png" alt="Algorithm queue enable">
 
