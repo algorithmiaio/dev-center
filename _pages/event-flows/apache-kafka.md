@@ -13,10 +13,13 @@ tags: [integrations, event-flows]
 title: "Apache Kafka Message Broker"
 ---
 
+This feature is currently in beta.
+{: .notice-info}
+
 This feature is only available in Enterprise installations of Algorithmia.
 {: .notice-enterprise}
 
-This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker.
+This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker. To learn about how Kafka can help you automate your machine learning workflows and maximize their business impact, [see our blog](https://algorithmia.com/blog/use-new-kafka-event-driven-algorithm-workflows-to-automate-models-in-production-and-maximize-their-impact).
 
 ## Creating and configuring a broker connection in the Algorithmia platform
 
@@ -36,12 +39,12 @@ There are action buttons on the right side of each listed broker; these will dep
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-list.png" alt="Algorithm queue list">
 
-Clicking on the **Enable** or **Edit** button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the **Enable Listener** or **Save Changes** button to grant the algorithm access to the topic.
+Clicking on the **Enable** or **Edit** button will present a dialog to select the appropriate algorithm version. Once a version is selected, submit it with the **Enable Connection** (or **Save Changes**) button to grant the algorithm access to the topic.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-enable.png" alt="Algorithm queue enable">
 
 Clicking the **Disable** button will present a confirmation dialog. Once confirmed, the algorithm will no longer have access to the topic.
 
-Clicking on the **Enable Dead Letter Queue** checkbox allows you to select a dead letter queue (DLQ) topic for an algorithm. Once a DLQ topic name has been selected, click the **Enable Listener** or **Save Changes** button to allow faulty messages to be sent to the selected DLQ topic name.
+Clicking on the **Enable Dead Letter Queue** checkbox allows you to select a dead letter queue (DLQ) topic for an algorithm. Once a DLQ topic name has been selected, click the **Enable Connection** (or **Save Changes**) button to allow faulty messages to be sent to the selected DLQ topic.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/message-broker/algorithm-queue-enable-dlq.png" alt="Algorithm queue enable a Dead Letter Queue topic">
