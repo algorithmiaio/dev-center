@@ -37,6 +37,7 @@ The process of configuring Event Flows with an SQS message broker involves sever
 1. Gather required information from Algorithmia and define required parameters.
 2. In the AWS Management Console, create a stack of resources (including an SQS queue) using a CloudFormation template or manually as the situation dictates.
 3. In the Algorithmia browser UI, connect an algorithm to the SQS queue to subscribe to messages published there.
+4. Send messages to the SQS queue to be consumed by the subscriber algorithm.
 
 ## 1. Gathering required information from Algorithmia and defining queue parameters
 
@@ -282,7 +283,7 @@ Enter the full path to the algorithm you created above and click **Create New Ev
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_28.png">
 
-### 5. Sending messages to the broker
+### 4. Send messages to the broker
 
 Many methods exist for sending messages to Amazon SQS queues. Here we show what it looks like in the AWS console.
 
