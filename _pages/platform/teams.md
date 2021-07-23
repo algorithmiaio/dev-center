@@ -1,11 +1,12 @@
 ---
-layout: article
-title:  "Teams"
 categories: basics
+excerpt: "All about Algorithmia's Teams tier"
+layout: article
 permalink: /platform/teams/
-sitemap: false
 redirect_from:
   - /teams/
+sitemap: false
+title: "Teams"
 ---
 
 The following sections cover the basics of using the <a href="https://teams.algorithmia.com" target="_blank" rel="noopener noreferrer">Teams platform</a>, including how to create and invite people to a team, how to setup data connections and API keys, and how to manage your team with administrator features.

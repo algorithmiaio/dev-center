@@ -1,5 +1,5 @@
 ---
-categories: [admin]
+categories: admin
 excerpt: "Use JSON Web Tokens for authentication"
 layout: article
 permalink: /platform-administration/jwt-authentication/

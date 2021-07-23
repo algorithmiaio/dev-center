@@ -1,5 +1,5 @@
 ---
-categories: [admin]
+categories: admin
 excerpt: "Use SAML for authentication"
 layout: article
 permalink: /platform-administration/saml-authentication/

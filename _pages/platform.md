@@ -6,7 +6,7 @@ redirect_from:
  - /application-development/basic-guides/
  - /basics/algorithm_basics/
 show_related: false
-title:  "Platform"
+title:  "Platform Features"
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}
