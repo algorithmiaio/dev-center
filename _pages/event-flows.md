@@ -58,7 +58,7 @@ To use [Amazon SQS](/developers/event-flows/amazon-sqs/) or [Azure SB](/develope
 ---
 
 **Q**: Can my algorithms subscribe to messages from Azure Event Hubs?<br/>
-**A**: Algorithmia doesn't currently have a native integration with Azure Event Hubs. On the Azure side, Event Flows currently only supports the [Azure Service Bus](/developers/event-flows/azure-sb/) messaging service.
+**A**: Yes. Although Algorithmia doesn't currently have a native integration with Azure Event Hubs, you can use one of Microsoft's official SDKs, for example the `azure-eventhub` [Python package](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send) or the `azure-messaging-eventhubs` [Java client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-java-get-started-send) to send and receive messages from within your algorithms.
 
 ---
 

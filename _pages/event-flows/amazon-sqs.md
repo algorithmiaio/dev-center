@@ -30,7 +30,7 @@ To influence how much work Algorithmia will accept, you can tune either the maxi
 
 On the SQS side, the option for **Maximum Receives** determines how many times a message will loop through the system before being delivered to the dead letter queue (DLQ). Since each loop is 5 minutes, messages will queue on the SQS side for (5 minutes) \* (Maximum Receives). The Maximum Receives value defaults to 10, but this can be increased up to 1000 to queue messages for more loops. See this [Amazon SQS – New Dead Letter Queue](https://aws.amazon.com/blogs/aws/amazon-sqs-new-dead-letter-queue/#:~:text=Maximum%20Receives%20%E2%80%93%20The%20maximum%20number,to%20the%20Dead%20Letter%20Queue.) blog post for additional details.
 
-## Event Flow configuration overview
+## SQS Event Flow configuration overview
 
 The process of configuring Event Flows with an SQS message broker involves several steps, some of which are to be completed in the AWS Management Console and some of which are to be completed in the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
 
@@ -51,7 +51,7 @@ You'll also need to define the following parameters, which are required in the s
 - **QueueName** (the name of the SQS queue)
 - **QueueDLQName** (the name of the SQS DLQ)
 
-## 2. Configuring a stack in the AWS Management Console
+## 2. Configuring resources in the AWS Management Console
 
 **NOTE:** The steps in this section are to be completed within the <a href="https://console.aws.amazon.com/" target="_blank" rel="noreferrer noopener">AWS Management Console</a>.
 {: .notice-info}
@@ -201,7 +201,7 @@ Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you'l
 
 Note that you can set up _any_ algorithm to subscribe to an SQS message broker so that the algorithm is executed when a message is published to that specific queue. On our platform we refer to this type of event-driven configuration as an Event Flow, and the following demonstrates one possible example of how to set one up.
 
-#### Create an algorithm
+### Create an algorithm
 
 To begin, log in to the Algorithmia browser UI and create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. On the newly created algorithm's profile, click the **Source** tab to access the source code in the Web IDE. If you're new to Algorithmia or need a quick refresher on how to create and modify algorithms, see our [getting started guide](/algorithm-development/your-first-algo).
 
@@ -225,7 +225,7 @@ On the newly published algorithm's profile, copy the algorithm endpoint, which w
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/algorithm-profile-algorithm-endpoint.png">
 
-#### Create a hosted data collection
+### Create a hosted data collection
 
 You'll now create a hosted data collection to which the algorithm above will write records received from the message broker. To begin, click the **Data Sources** menu item in the left sidebar.
 
@@ -243,7 +243,7 @@ In the dialog box that appears, enter the `COLLECTION_NAME` value from above (in
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_24.png">
 
-#### Connect to an SQS message broker
+### Connect to an SQS message broker
 
 This section documents the workflow in Algorithmia versions >=25.5.53. See the section [below](#create-an-event-listener) for the previous event listeners-based workflow.
 {: .notice-info}
@@ -266,7 +266,7 @@ Click **Connect to Amazon SQS broker**. The **Events** tab on the algorithm prof
 
 Click [here](#5-sending-messages-to-the-broker) to proceed to the next step to learn how to send messages to the newly connected broker.
 
-#### Create an Event Listener
+### Create an Event Listener
 
 This section documents the workflow in Algorithmia versions <25.5.53, where Event Flows were called event listeners.
 {: .notice-info}
@@ -283,7 +283,7 @@ Enter the full path to the algorithm you created above and click **Create New Ev
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_28.png">
 
-### 4. Send messages to the broker
+## 4. Sending messages to the broker
 
 Many methods exist for sending messages to Amazon SQS queues. Here we show what it looks like in the AWS console.
 
