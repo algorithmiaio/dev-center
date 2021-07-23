@@ -1,5 +1,5 @@
 ---
-excerpt: "Platform"
+excerpt: "Platform Basics"
 layout: article_page
 redirect_from:
  - /basics/
