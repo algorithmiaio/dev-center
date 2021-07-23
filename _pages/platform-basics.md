@@ -1,5 +1,5 @@
 ---
-excerpt: "Platform Basics"
+excerpt: "Learn about basic concepts on the Algorithmia platform."
 layout: article_page
 redirect_from:
  - /basics/
