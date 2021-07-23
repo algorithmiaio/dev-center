@@ -67,8 +67,15 @@ To use [Amazon SQS](/developers/event-flows/amazon-sqs/) or [Azure SB](/develope
 
 ---
 
+**Q**: In the current implementation of Kafka Event Flows, as a cluster admin I can only add published algorithms to a broker topic. If a user would like to test an algorithm build with a specific broker topic before publishing it, is there a way to enable that?<br/>
+**A**: There isn't currently a way to add unpublished algorithms to a topic for use with Event Flows. If you need to test a new algorithm build with Event Flows, we recommend publishing a new minor version for testing.
+
+---
+
 **Q**: Is there a way to get an overview of all the Event Flows that I've configured?<br/>
-**A**: Yes. The `users` API provides functionality for listing all Event Flows configured for algorithms owned by a specific acount. To list the Event Flows, you'll first need to get the value of your user ID. With this ID, you can then query the `event-listeners` endpoint to list your configured Event Flows. A cURL command to get the user ID is shown below. Note that this endpoint requires an [admin API key](/developers/glossary/#admin-api-key) `ADMIN_API_KEY` and you'll need to replace `CLUSTER_DOMAIN` and `ACCOUNT_NAME` with your [cluster domain](/developers/glossary/#cluster-domain) and your [account](/developers/glossary/#account) name, respectively.
+**A**: Yes. The `users` API provides functionality for listing all Event Flows configured for algorithms owned by a specific acount. To list the Event Flows, you'll first need to get the value of your user ID. With this ID, you can then query the `event-listeners` endpoint to list your configured Event Flows. You can use the commands below to achieve this.
+
+This first command can be used to get your user ID. Note that this endpoint requires an [admin API key](/developers/glossary/#admin-api-key) `ADMIN_API_KEY` and you'll need to replace `CLUSTER_DOMAIN` and `ACCOUNT_NAME` with your [cluster domain](/developers/glossary/#cluster-domain) and your [account](/developers/glossary/#account) name, respectively.
 
 ###### Request
 ```shell
@@ -87,7 +94,7 @@ curl -X GET https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME -H 'Authorization: 
 }
 ```
 
-You can now use this `id` value to replace `USER_ID` in the code below. Note that you'll now need to provide a standard (non-admin) [API key](/developers/glossary/#api-key).
+You can now use this `id` value to replace `USER_ID` in the code below. Note that the command below requires a standard (non-admin) [API key](/developers/glossary/#api-key).
 
 ###### Request
 ```shell
@@ -112,8 +119,3 @@ curl -X GET https://api.CLUSTER_DOMAIN/v1/users/USER_ID/event-listeners -H 'Auth
 
 **Q**: Is there a way to list all Event Flows that've been configured on the cluster as a whole?<br/>
 **A**: There's not currently an API endpoint or UI feature to list all Event Flows configured on the cluster. Event Flows can be listed at the account level only, as described above.
-
----
-
-**Q**: In the current implementation of Kafka Event Flows, as a cluster admin I can only add published algorithms to a broker topic. If a user would like to test an algorithm build with a specific broker topic before publishing it, is there a way to enable that?<br/>
-**A**: There isn't currently a way to add unpublished algorithms to a topic for use with Event Flows. If you need to test a new algorithm build with Event Flows, we recommend publishing a new minor version for testing.

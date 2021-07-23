@@ -126,10 +126,10 @@ Parameters:
     ConstraintDescription: must start with a letter and contain only alphanumeric characters or hyphens
 Outputs:
   QueueURL:
-    Description: URL of SQS Queue used to create Event Listener in Algorithmia Platform
+    Description: URL of SQS Queue used to create Event Flow in Algorithmia Platform
     Value: !Ref algoqueue
   QueueConsumerARN:
-    Description: ARN of role used to create Event Listener in Algorithmia Platform
+    Description: ARN of role used to create Event Flow in Algorithmia Platform
     Value: !GetAtt
       - algoqueuerole
       - Arn
