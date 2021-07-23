@@ -7,7 +7,7 @@ layout: article
 permalink: /integrations/arize/
 show_related: false
 tags: [integrations, monitoring-observability]
-title:  "Arize"
+title: "Arize"
 ---
 
 [Arize AI](https://arize.gitbook.io/arize/) is an ML observability platform that provides real-time monitoring and explainability to help you understand how your models are performing in production. The platform uses an evaluation score, allowing you to upload offline training and validation baselines alongside online production data in order to connect drift changes to model performance changes, conduct root cause analyses of model failures and performance degradation, and analyze model bias, among other capabilities.
@@ -136,7 +136,7 @@ if not collection.exists():
 client.file(collection_uri+"/"+model_file).putFile(model_file_path)
 ```
 
-The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above.
+The following represents the algorithm code that you would deploy on Algorithmia, not the training platform used above.
 {:.notice-info}
 
 ## Setting up your Algorithmia environment for model deployment
