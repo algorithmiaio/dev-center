@@ -29,10 +29,7 @@ The process of configuring Event Flows with an SB message broker involves severa
 
 ## 1. Gathering required information from Algorithmia
 
-Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you'll need during the setup process:
-
-* `GuestRole.json` (custom role definition file for QueueReceiver role)
-* Algorithmia account email address (email address of Azure account running Algorithmia cluster)
+Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the email address of the Azure account running your Algorithmia cluster.
 
 ## 2. Configuring resources in the Azure portal
 
@@ -41,10 +38,35 @@ Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the 
 
 ### Creating a custom role in your account
 
-Using the custom role definition file `GuestRole.json` from [step 1](#1-gathering-required-information-from-algorithmia), create the custom role in your account by completing the following:
+For this step, you'll need a custom role definition file `GuestRole.json` with the content below.
 
-* Authenticate with the Azure CLI
-* Run `$ az role definition create --role-definition GuestRole.json`
+```json
+{
+  "Name": "QueueReceiver",
+  "Id": "88888888-8888-8888-8888-888888888888",
+  "IsCustom": true,
+  "Description": "Can receive messages and get connection string",
+  "Actions": [
+    "Microsoft.ServiceBus/namespaces/queues/authorizationRules/listkeys/action",
+    "Microsoft.ServiceBus/namespaces/queues/read",
+    "Microsoft.ServiceBus/namespaces/read"
+  ],
+  "NotActions": [],
+  "DataActions": [
+    "Microsoft.ServiceBus/namespaces/messages/receive/action"
+  ],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/88888888-8888-8888-8888-888888888888"
+  ]
+}
+```
+
+With this file in place, authenticate with the Azure CLI and then create the custom QueueReceiver role in your account with the command below.
+
+```
+$ az role definition create --role-definition GuestRole.json
+```
 
 For more information on how to work with the Azure CLI to complete this step, <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli" target="_blank" rel="noopener noreferrer">visit the Azure Docs</a>. Note that this step can also be completed via PowerShell and REST API.
 
@@ -59,7 +81,7 @@ Create a new guest user account with the Algorithmia account's email address.
   * **Identity** &rarr; **Name**: first and last name of the guest user
   * **Identity** &rarr; **Email address**: email address obtained in [step 1](#1-gathering-required-information-from-algorithmia)
   * **Groups and roles** &rarr; **Groups**: add the guest user to one or more existing groups, or do it later
-  * **Groups and roles** &rarr; **Roles**: select the QueueReceiver role you created in [step 2](#2-create-the-custom-role-in-your-account)<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_34.png">
+  * **Groups and roles** &rarr; **Roles**: select the QueueReceiver role you created [above](#creating-a-custom-role-in-your-account)<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_34.png">
   * Click **Invite** to automatically send the invitation to the guest user. A "Successfully invited user" notification will appear in the upper-right corner. The user account is now added to the directory as a guest account with the custom role.
 
 ### Creating a Service Bus namespace and queue using an ARM template
@@ -70,37 +92,90 @@ To use this ARM template, search for the **Templates** service and click **+ Cre
 
 In the **General** page, provide a **Name** and **Description** for and click **OK**.
 
-Now paste the JSON configuration shown below into text field on the **ARM template** page and click **OK** and then **Add**.
+Now paste the JSON configuration shown below into the text field on the **ARM template** page and click **OK** and then **Add**.
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "serviceBusNamespaceName":"YourNamespaceName",
-    "serviceBusQueueName":"YourQueueName"
+    "serviceBusNamespaceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Service Bus namespace"
+      }
+    },
+    "serviceBusQueueName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Queue"
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "westus2",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
   },
-	"resources": [{
-		"apiVersion": "2017-04-01",
-		"name": "[parameters('serviceBusNamespaceName')]",
-		"type": "Microsoft.ServiceBus/namespaces",
-		"location": "[parameters('location')]",
-		"sku": {
-			"name": "Standard"
-		},
-		"properties": {},
-		"resources": [{
-            "apiVersion": "[variables('sbVersion')]",
-            "name": "[parameters('serviceBusQueueName')]",
-            "type": "Queues",
-            "dependsOn": [
-                "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
-            ],
-            "properties": {
-                "path": "[parameters('serviceBusQueueName')]"
+  "variables": {
+    "QueueAPName": "AccessPolicyQueue"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-04-01",
+      "name": "[parameters('serviceBusNamespaceName')]",
+      "type": "Microsoft.ServiceBus/namespaces",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {},
+      "resources": [
+        {
+          "apiVersion": "2017-04-01",
+          "name": "[parameters('serviceBusQueueName')]",
+          "type": "Queues",
+          "dependsOn": [
+            "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
+          ],
+          "properties": {
+            "lockDuration": "PT5M",
+            "maxSizeInMegabytes": "1024",
+            "requiresDuplicateDetection": "false",
+            "requiresSession": "false",
+            "defaultMessageTimeToLive": "P10675199DT2H48M5.4775807S",
+            "deadLetteringOnMessageExpiration": "false",
+            "duplicateDetectionHistoryTimeWindow": "PT10M",
+            "maxDeliveryCount": "10",
+            "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
+            "enablePartitioning": "false",
+            "enableExpress": "false"
+          },
+          "resources": [
+            {
+              "apiVersion": "2017-04-01",
+              "name": "[variables('QueueAPName')]",
+              "type": "authorizationRules",
+              "dependsOn": [
+                "[parameters('serviceBusQueueName')]"
+              ],
+              "properties": {
+                "Rights": ["Listen","Send","Manage"]
+              }
             }
-        }]
-	}]
+          ]
+        }
+      ]
+    }
+  ],
+  "outputs": {
+    "QueueConnectionString": {
+      "type": "string",
+      "value": "[listkeys(variables('QueueAPName'), '2017-04-01').primaryConnectionString]"
+    }
+  }
 }
 ```
 
