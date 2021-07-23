@@ -16,7 +16,7 @@ In this guide, we'll show you how to integrate Arize with Algorithmia so you can
 
 ## Overview
 
-The workflow documented below contains steps that you'll complete in a model training environment (e.g., a Jupyter notebook) outside of the Algorithmia platform, steps that you'll need to complete within Algorithmia, and steps that you'll complete from an external application once the Algorithm is set up. At a high level, the workflow looks like this:
+The workflow documented below contains steps that you'll complete in a model training environment (e.g., a Jupyter notebook) outside of the Algorithmia platform, steps that you'll need to complete within Algorithmia, and steps that you'll complete from an external application once the algorithm is built on Algorithmia. At a high level, the workflow looks like this:
 
 1. Train and serialize a model.
 2. Upload the model file to a data collection hotsed on Algorithmia or to some other data repository to make it available to be loaded into an algorithm.
@@ -26,7 +26,7 @@ The workflow documented below contains steps that you'll complete in a model tra
 The following code is intended to be executed on some training platform external to Algorithmia (e.g., in a Jupyter notebook).
 {:.notice-info}
 
-## Training and saving your model
+## Training and serializing your model
 
 To demonstrate the end-to-end workflow, we'll first walk through training a simple scikit-learn model, and then we'll show how to deploy that model on Algorithia and send metrics to Arize from within your algorithm.
 
@@ -109,16 +109,13 @@ shap_values = get_shap_values(clf, X, show_graph=True)
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/arize/shap_values.png" alt="Shap values plot in Jupyter notebook" class="screenshot">
 
-The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above.
-{:.notice-info}
+## Uploading your serialized model to Algorithmia
 
-## Uploading your trained model to Algorithmia
-
-Use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training environment. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
+You can use the following code to upload your model to a hosted data collection on Algorithmia, without ever leaving your training environment. Note that if you're running [Algorithmia Enterprise](/enterprise), you'll need to specify the API endpoint `CLUSTER_DOMAIN` when you create the Algorithmia `client` object; if not, delete the references to this variable.
 
 You'll need to replace the `COLLECTION_OWNER` string with the name of the user or org account that owns the data collection. You'll upload your model to that data collection and in your algorithm source code you'll replace the `COLLECTION_NAME` string with the name of that data collection. The Algorithmia API key you're using must have write access to this data collection. See our [Hosted Data](/developers/data/hosted) docs for information about how to use hosted data collections.
 
-Finally, this code assumes that you've set the `ALGORITHMIA_API_KEY` environment variable to the value of your Algorithmia API key:
+Finally, this code assumes that you've set the `ALGORITHMIA_API_KEY` environment variable to the value of your Algorithmia API key.
 
 ```python
 # Define where model and sample data will live.
@@ -129,7 +126,7 @@ COLLECTION_NAME = "COLLECTION_NAME"
 ALGORITHMIA_API_KEY = os.getenv("ALGORITHMIA_API_KEY")
 
 # Create a hosted data collection if it doesn't already exist.
-client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
+client = Algorithmia.client(ALGORITHMIA_API_KEY, "https://"CLUSTER_DOMAIN)
 collection_uri = "data://"+COLLECTION_OWNER+"/"+COLLECTION_NAME
 collection = client.dir(collection_uri)
 if not collection.exists():
@@ -139,9 +136,22 @@ if not collection.exists():
 client.file(collection_uri+"/"+model_file).putFile(model_file_path)
 ```
 
-## Setting up your Algorithmia environment
+The following represents the algorithm code that you would deploy on Algorithma, not the training platform used above.
+{:.notice-info}
 
-To begin, on Algorithmia you'll need to [create an algorithm](/developers/algorithm-development/your-first-algo) using an environment with Python 3.6 or later. In your algorithm's `requirements.txt` file, add the Arize Python library to add the monitoring capabilities provided by Arize, as well as the `shap` library and the standard ML dependencies `joblib` and `pandas`:
+## Setting up your Algorithmia environment for model deployment
+
+### Create an algorithm
+
+To begin, on Algorithmia you'll need to [create an algorithm](/developers/algorithm-development/your-first-algo) using an environment with Python 3.6 or later.
+
+### Set Arize secrets in the Secret Store
+
+In order to log metrics to Arize, you'll need a pair of Arize API keys, which are accessible through the [Arize Settings](https://app.arize.com/admin) page. In your newly create algorithm profile's **Settings** tab, set `ARIZE_API_KEY` and `ARIZE_ORG_KEY` as secrets so that they'll be made accessible to the algorithm as environment variables. For more information on how to set secret values, see our [Secret Store](/developers/platform/secret-store) documentation.
+
+### Define the algorithm's requirements
+
+ In your algorithm's `requirements.txt` file, add the Arize Python library to add the monitoring capabilities provided by Arize, as well as the `shap` library and the standard ML dependencies `joblib` and `pandas`.
 
 ```
 algorithmia>=1.0.0,<2.0
@@ -151,13 +161,13 @@ pandas<2.0,>=0.25.3
 shap==0.39.0
 ```
 
-## Deploying your model on Algorithmia
+If you're using the Web IDE, the requirements file can be accessed through the **Dependencies** button.
 
-Set the environment variables `ARIZE_API_KEY` and `ARIZE_ORG_KEY` with your Arize keys; these keys; these secrets are accessible through the [Arize Settings page](https://app.arize.com/admin).
+Recall from the code samples above that if you'll be interacting with Algorithmia from outside of the Web IDE, you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key. This API key only needs to have read access. 
 
-Remember from above that you must also set the `ALGORITHMIA_API_KEY` environment variable with the value of your Algorithmia API key if you're running the algorithm from outside of the Algorithmia Web IDE; this API key only needs to have read access. You must also replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the account name and collection name where the model is stored.
+### Write the algorithm's source code, build, and then publish
 
-The algorithm establishes a connection with Arize using the Arize `Client`, and then uses the `Client`'s `log_bulk_predictions()` and `log_bulk_shap_values()` methods to send Arize the predictions and SHAP values for monitoring:
+This algorithm establishes a connection with Arize using the Arize `Client`, and then uses the `Client`'s `log_bulk_predictions()` and `log_bulk_shap_values()` methods to send Arize the predictions and SHAP values for monitoring. Note that in the code below you must replace the `COLLECTION_OWNER` and `COLLECTION_NAME` strings with the name of the account that owns the collection where the mode is stored, and the collection name.
 
 ```python
 import os
@@ -170,13 +180,12 @@ import joblib
 import pandas as pd
 import shap
 
-
 # Define where model and sample data live.
 COLLECTION_OWNER = "COLLECTION_OWNER"
 COLLECTION_NAME = "COLLECTION_NAME"
 
 # Specify the exact model version your algorithm will be calling.
-# The timestamp (`1617923983`) will be different for your model. 
+# The timestamp (`1617923983`) will be different for your model.
 MODEL_NAME = "Algorithmia_Tutorial_Model_1617923983.joblib"
 
 # Load keys from environment variables and instantiate clients.
@@ -228,8 +237,10 @@ def apply(input):
     return res.to_json()
 ```
 
-The following code is intended to be executed back in the same external environment (Jupyter notebook or external training platform) that you used above to train your algorithm, once you've built the algorithm on Algorithmia.
+The following code is intended to show how you'd call the algorithm for inference from an external application. Here, we're demonstrating calling the algorithm from the same external environment (in our case a Jupyter notebook) that was used above. This code implies that the algorithm has been built on Algorithmia and that the same objects are available in the global namespace from above.
 {:.notice-info}
+
+## Calling your model for inference from an external application
 
 Once you've built your algorithm, you can call it using its hash version to test it out; this will be a value like `f35025657bdc37eb0d6ffeed62b0539ee21c8b4e`. If you build your algorithm in the Algorithmia Web IDE, this hash is displayed in the test console output upon successful build completion, but it's also available in the "Builds" tab on the algorithm's homepage. You can also publish the algorithm, in which case you'll be able to call the algorithm using a semantic version such as `1.0.0`.
 
@@ -245,7 +256,7 @@ ALGO_VERSION = "ALGO_VERSION"
 
 # Build algorithm identifier and instantiate client.
 ALGO_ENDPOINT = ALGO_OWNER+"/"+ALGO_NAME+"/"+ALGO_VERSION
-client = Algorithmia.client(ALGORITHMIA_API_KEY, CLUSTER_DOMAIN)
+client = Algorithmia.client(ALGORITHMIA_API_KEY, "https://"+CLUSTER_DOMAIN)
 algo = client.algo(ALGO_ENDPOINT)
 
 # Optionally set timeout parameters for testing purposes.
