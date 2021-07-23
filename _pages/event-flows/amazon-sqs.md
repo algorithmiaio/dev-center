@@ -41,10 +41,7 @@ The process of configuring Event Flows with an SQS message broker involves sever
 
 ## 1. Gathering required information from Algorithmia and defining queue parameters
 
-Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the following, which you'll need during CloudFormation setup:
-
-- `client-aws-cloudformation-template.yaml` (CloudFormation template file for stack creation)
-- **AlgorithmiaAccountNumber** (AWS account running Algorithmia cluster)
+Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the account number of the AWS account running your Algorithmia cluster. This number references below as **AlgorithmiaAccountNumber**.
 
 You'll also need to define the following parameters, which are required in the stack configuration process and which will be referenced in the descriptions below:
 
@@ -58,7 +55,85 @@ You'll also need to define the following parameters, which are required in the s
 
 ### Exploring the CloudFormation template and required AWS permissions
 
-In this section we'll walk through the key components of the `client-aws-cloudformation-template.yaml` file, which is used by AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows.
+In this section we'll walk through the key components of the CloudFormation template file that we'll be supplying to AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows. First, save the following YAML configuration into a file `client-aws-cloudformation-template.yaml`.
+
+```yaml
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  algoqueuedlq:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: !Ref QueueDLQName
+      MessageRetentionPeriod: '1209600'
+  algoqueue:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      MessageRetentionPeriod: '1209600'
+      QueueName: !Ref QueueName
+      RedrivePolicy:
+        maxReceiveCount: 10
+        deadLetterTargetArn: !GetAtt
+          - algoqueuedlq
+          - Arn
+    DependsOn:
+      - algoqueuedlq
+  algoqueuepolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: eventlistenerpolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: VisualEditor0
+            Effect: Allow
+            Action:
+              - 'sqs:ChangeMessageVisibility'
+              - 'sqs:DeleteMessage'
+              - 'sqs:GetQueueAttributes'
+              - 'sqs:ReceiveMessage'
+            Resource:
+              - !GetAtt
+                - algoqueue
+                - Arn
+      Roles:
+        - !Ref algoqueuerole
+  algoqueuerole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Sub
+                - 'arn:aws:iam::${AlgorithmiaAccountNumber}:root'
+                - AlgorithmiaAccountNumber: !Ref AlgorithmiaAccountNumber
+            Action: 'sts:AssumeRole'
+            Condition: {}
+Parameters:
+  AlgorithmiaAccountNumber:
+    Description: Algorithmia's AWS account number
+    Type: Number
+  QueueName:
+    Description: The name of the algorithm payload queue
+    Type: String
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-]*'
+    ConstraintDescription: must start with a letter and contain only alphanumeric characters or hyphens
+  QueueDLQName:
+    Description: The name of the queue which stores payloads which could not run by Event Listener
+    Type: String
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-]*'
+    ConstraintDescription: must start with a letter and contain only alphanumeric characters or hyphens
+Outputs:
+  QueueURL:
+    Description: URL of SQS Queue used to create Event Listener in Algorithmia Platform
+    Value: !Ref algoqueue
+  QueueConsumerARN:
+    Description: ARN of role used to create Event Listener in Algorithmia Platform
+    Value: !GetAtt
+      - algoqueuerole
+      - Arn
+```
 
 #### Required permissions
 
