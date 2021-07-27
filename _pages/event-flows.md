@@ -30,9 +30,10 @@ We currently support the following two "flavors" of message broker:
 
 These message brokers are categorized separately because their configuration and capabilities differ.
 
-In the Kafka workflow, a connection to an externally managed Kafka broker is configured at the cluster level and an algorithm is then associated with a topic on that broker. The connection must then be enabled at the algorithm level for the Event Flow to function. As an Event Flows message broker, Kafka supports both publisher and subscriber algorithm configurations.
+In the Kafka workflow, a connection to an externally managed Kafka broker is configured at the cluster level and an algorithm is then associated with a topic on that broker. The connection must then be enabled at the algorithm level for the Event Flow to function. In the SQS/SB workflow, no cluster-level configuration is required; the broker connection occurs only at the algorithm level.
 
-In the SQS/SB workflow, no cluster-level configuration is required; the broker connection occurs only at the algorithm level. Event flows using these message brokers currently only support a subscription-based workflow (i.e., algorithms cannot publish records to these brokers).
+**NOTE**: With a Kafka message broker, the Event Flows feature supports both publisher and subscriber algorithms. With SQS and SB message brokers, the feature currently only supports subscription-based workflows (i.e., algorithms can only read records from, and can't publish records to, these brokers).
+{: .notice-info}
 
 These configuration differences are summarized below. For details on how to configure Event Flows using each specific message broker, see the corresponding linked documentation.
 

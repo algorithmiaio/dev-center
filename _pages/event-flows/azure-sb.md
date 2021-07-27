@@ -20,7 +20,7 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Az
 
 ## SB Event Flow configuration overview
 
-The process of configuring Event Flows with an SB message broker involves several steps, some of which are to be completed in the Azure Portal and some of which are to be completed in the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
+The process of configuring Event Flows with an SB message broker involves several steps, some of which are to be completed within the Azure Portal and some of which are to be completed within the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
 
 1. Gather required information from Algorithmia and define required parameters.
 2. In the Azure Portal, create a group of resources (including an SB queue) using an  Azure Resource Manager (ARM) template or manually as the situation dictates.
@@ -33,10 +33,14 @@ Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the 
 
 ## 2. Configuring resources in the Azure portal
 
-**NOTE:** The steps in this section are to be completed within the <a href="https://portal.azure.com//" target="_blank" rel="noreferrer noopener">Azure Portal</a>.
+**NOTE:** The steps in this section are to be completed within the <a href="https://portal.azure.com/" target="_blank" rel="noreferrer noopener">Azure Portal</a>.
 {: .notice-info}
 
-### Creating a custom role in your account
+### Configure permissions
+**NOTE**: You only need to complete these permission configuration steps if you're creating a queue in a **different** Azure account than the one running your Algorithmia instance.
+{: .notice-info}
+
+#### Create a custom role in your account
 
 For this step, you'll need a custom role definition file `GuestRole.json` with the content below.
 
@@ -70,7 +74,7 @@ $ az role definition create --role-definition GuestRole.json
 
 For more information on how to work with the Azure CLI to complete this step, <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli" target="_blank" rel="noopener noreferrer">visit the Azure Docs</a>. Note that this step can also be completed via PowerShell and REST API.
 
-### Inviting the Algorithmia account as a guest account in your account’s Active Directory
+#### Inviting the Algorithmia account as a guest account in your account’s Active Directory
 
 Create a new guest user account with the Algorithmia account's email address.
 * Sign in to the Azure portal as an Azure AD administrator.
@@ -86,9 +90,9 @@ Create a new guest user account with the Algorithmia account's email address.
 
 ### Creating a Service Bus namespace and queue using an ARM template
 
-To begin using Azure SB, you must create a namespace with a name that's globally unique across Azure, and a queue to serve as a message broker. We provide the ARM template below to create these resources. For general information about Azure resource management, see <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview" target="_blank" rel="noopener noreferrer">What is Azure Resource Manager?</a> and <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview" target="_blank" rel="noopener noreferrer">What are ARM templates?</a>.
+To begin using Azure SB, you must create a namespace with a name that's globally unique across Azure, and a queue to serve as a message broker. We provide the ARM template below to create these resources. See <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview" target="_blank" rel="noopener noreferrer">What is Azure Resource Manager?</a> and <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview" target="_blank" rel="noopener noreferrer">What are ARM templates?</a> for general information about Azure resource management.
 
-To use this ARM template, search for the **Templates** service and click **+ Create**.
+To use this ARM template, search for the **Templates** service in the portal and click **+ Create**.
 
 In the **General** page, provide a **Name** and **Description** for and click **OK**.
 
@@ -179,11 +183,37 @@ Now paste the JSON configuration shown below into the text field on the **ARM te
 }
 ```
 
-The newly created template will now appear in the list on the **Templates** page. From the action menu at right of the template, click **Deploy**.
+The newly created template will now appear in the list on the **Templates** page (you may need to click the refresh button for it to show up). From the action menu at right of the new template, click **Deploy**.
 
-Fill in the **Namespace name** and **Queue name** with the values from the template, and choose an appropriate region.
+In the **Custom deployment** page, select the name of the **Resource group** containing the target Algorithmia cluster's resources.
 
-Note that if the deployment fails, it's possible that there's already an existing namespace in the same region with the same name that you chose. If the deployment error message indicates that this is the issue, you'll need to try redeploying with a different name until the deployment is successful.
+Fill in the **Service Bus Namespace Name** field in adherence with the <a href="https://docs.microsoft.com/en-us/rest/api/servicebus/create-namespace" target="_blank" rel="noreferrer noopener">namespace naming rules</a>; this namespace name must be unique across Azure.
+
+Fill in the **Service Bus Queue Name** field; this will be the name you use to identify your queue from the Algorithmia side.
+
+Fill in the **Location** field with an appropriate Azure region in which to create this deployment.
+
+Review your selections and click **Purchase** to deploy the resources. You can view the deployment status in the notifications area (the bell icon) at the upper-right corner.
+
+**NOTE**: If the deployment fails, it's possible that there's already an existing namespace in the same region with the same name that you chose. If the deployment error message indicates that this is the issue, you'll need to try redeploying with a different name until the deployment is successful.
+{: .notice-info}
+
+When the deployment is complete, click on the name of the resource group into which the namespace was deployed. You can filter by **service bus namespace** to see the newly created resource.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/azure-portal-resource-namespace.png">
+
+If you click into the namespace, you'll see the queue listed at the bottom.
+
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/azure-portal-resource-queue.png">
+
+In the left-hand navigation submenu under **Settings**, click **Shared access policies** and click on the **RootManageSharedAccessKey** policy, which should have the **Manage, Send, Listen** claims associated with it. Copy the **Primary Connection String** from the fly-out menu at right. This will be a value like:
+
+Endpoint=sb://test-azure-sb-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oq4/9ptgF9miVFWVRYyKaPO9Ao8qSrfVMzGFMvQzYX8=
+
+CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
+QUEUE_NAME = "<QUEUE NAME>"
+
+#### Creating resources manually
 
 If you aren't able to use the ARM template and need to create the SB resources manually, follow the steps in the Azure documentation to [create a Service Bus namespace and queue](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal).
 
