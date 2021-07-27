@@ -10,7 +10,7 @@ redirect_from:
  - /integrations/amazon-sqs/
 show_related: true
 tags: [integrations, event-flows]
-title: "Amazon SQS Message Broker"
+title: "Amazon SQS"
 ---
 
 This feature is only available in Enterprise installations of Algorithmia.
@@ -30,7 +30,7 @@ To influence how much work Algorithmia will accept, you can tune either the maxi
 
 On the SQS side, the option for **Maximum Receives** determines how many times a message will loop through the system before being delivered to the dead letter queue (DLQ). Since each loop is 5 minutes, messages will queue on the SQS side for (5 minutes) \* (Maximum Receives). The Maximum Receives value defaults to 10, but this can be increased up to 1000 to queue messages for more loops. See this [Amazon SQS – New Dead Letter Queue](https://aws.amazon.com/blogs/aws/amazon-sqs-new-dead-letter-queue/#:~:text=Maximum%20Receives%20%E2%80%93%20The%20maximum%20number,to%20the%20Dead%20Letter%20Queue.) blog post for additional details.
 
-## SQS Event Flow configuration overview
+## Event Flow configuration overview
 
 The process of configuring Event Flows with an SQS message broker involves several steps, some of which are to be completed in the AWS Management Console and some of which are to be completed in the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
 
@@ -278,7 +278,7 @@ Note that you can set up _any_ algorithm to subscribe to an SQS message broker s
 
 ### Create an algorithm
 
-To begin, log in to the Algorithmia browser UI and create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. On the newly created algorithm's profile, click the **Source** tab to access the source code in the Web IDE. If you're new to Algorithmia or need a quick refresher on how to create and modify algorithms, see our [getting started guide](/algorithm-development/your-first-algo).
+To begin, log in to the Algorithmia browser UI and create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. On the newly created algorithm's profile, click the **Source** tab to access the source code in the Web IDE. If you're new to Algorithmia or need a quick refresher on how to create and modify algorithms, see our [Getting Started Guide](/algorithm-development/your-first-algo).
 
 In the body of your algorithm, paste the source code below, replacing the `COLLECTION_OWNER` and `COLLECTION_NAME` with your account name and the name of a data collection (which you'll create in a subsequent step), respectively. In the screenshot below the sample code, these values are `Ezra` and `TestingSQSEventFlow`, respectively.
 

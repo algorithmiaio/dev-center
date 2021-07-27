@@ -10,7 +10,7 @@ redirect_from:
  - /integrations/azure-sb/
 show_related: true
 tags: [integrations, event-flows]
-title: "Azure Service Bus Message Broker"
+title: "Azure Service Bus"
 ---
 
 This feature is only available in Enterprise installations of Algorithmia.
@@ -18,7 +18,7 @@ This feature is only available in Enterprise installations of Algorithmia.
 
 This guide will walk you through setting up Algorithmia Event Flows using an [Azure Service Bus (SB)](https://azure.microsoft.com/services/service-bus/) message broker. Once configured, you can create event-driven workflows in which your algorithms subscribe to an SB queue and are automatically invoked with the contents of messages published to the queue.
 
-## SB Event Flow configuration overview
+## Event Flow configuration overview
 
 The process of configuring Event Flows with an SB message broker involves several steps, some of which are to be completed within the Azure Portal and some of which are to be completed within the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
 
@@ -74,7 +74,7 @@ $ az role definition create --role-definition GuestRole.json
 
 For more information on how to work with the Azure CLI to complete this step, <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli" target="_blank" rel="noopener noreferrer">visit the Azure Docs</a>. Note that this step can also be completed via PowerShell and REST API.
 
-#### Inviting the Algorithmia account as a guest account in your account’s Active Directory
+#### Invite the Algorithmia account as a guest account in your account’s Active Directory
 
 Create a new guest user account with the Algorithmia account's email address.
 * Sign in to the Azure portal as an Azure AD administrator.
@@ -88,7 +88,7 @@ Create a new guest user account with the Algorithmia account's email address.
   * **Groups and roles** &rarr; **Roles**: select the QueueReceiver role you created [above](#creating-a-custom-role-in-your-account)<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_34.png">
   * Click **Invite** to automatically send the invitation to the guest user. A "Successfully invited user" notification will appear in the upper-right corner. The user account is now added to the directory as a guest account with the custom role.
 
-### Creating a Service Bus namespace and queue using an ARM template
+### Create a Service Bus namespace and queue using an ARM template
 
 To begin using Azure SB, you must create a namespace with a name that's globally unique across Azure, and a queue to serve as a message broker. We provide the ARM template below to create these resources. See <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview" target="_blank" rel="noopener noreferrer">What is Azure Resource Manager?</a> and <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview" target="_blank" rel="noopener noreferrer">What are ARM templates?</a> for general information about Azure resource management.
 
@@ -213,7 +213,7 @@ Endpoint=sb://test-azure-sb-namespace.servicebus.windows.net/;SharedAccessKeyNam
 CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
 QUEUE_NAME = "<QUEUE NAME>"
 
-#### Creating resources manually
+#### Create resources manually
 
 If you aren't able to use the ARM template and need to create the SB resources manually, follow the steps in the Azure documentation to [create a Service Bus namespace and queue](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal).
 
@@ -226,7 +226,7 @@ Note that you can set up _any_ algorithm to subscribe to an SB message broker so
 
 ### Create an algorithm
 
-* Create a new Python 3.x Algorithm.
+* Create a new Python 3.x algorithm.
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_35.png">
 
 * In the web IDE replace the source with the following:
@@ -256,7 +256,7 @@ def apply(input):
 
     # Send a test message to the queue
     msg = Message(b'{"filename":"test","data":"test-data"}')
-    queue_client.send(msg)    
+    queue_client.send(msg)
 
 {% endhighlight %}
 

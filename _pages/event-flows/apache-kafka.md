@@ -10,7 +10,7 @@ redirect_from:
  - /integrations/kafka/
 show_related: true
 tags: [integrations, event-flows]
-title: "Apache Kafka Message Broker"
+title: "Apache Kafka"
 ---
 
 This feature is currently in beta.
