@@ -58,11 +58,6 @@ To use [Amazon SQS](/developers/event-flows/amazon-sqs/) or [Azure SB](/develope
 
 ---
 
-**Q**: Can my algorithms subscribe to messages from Azure Event Hubs?<br/>
-**A**: Yes. Although Algorithmia doesn't currently have a native integration with Azure Event Hubs, you can use one of Microsoft's official SDKs, for example the `azure-eventhub` [Python package](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send) or the `azure-messaging-eventhubs` [Java client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-java-get-started-send) to send and receive messages from within your algorithms.
-
----
-
 **Q**: What sort of administrative controls do I have over the SQS queues being used with Event Flows?<br/>
 **A**: There are no administrative controls within the Algorithmia platform itself that enable you to to explicitly prohibit algorithms from subcribing to SQS queues. However, the configuration on the AWS side will dictate which SQS queues are reachable from algorithms on your cluster. Specific AWS-side configurations must be completed if SQS queues are created in AWS accounts other than the AWS account running the Algorithia instance, so this provides a level of control in that algorithms can't connect to SQS queues in arbitrary AWS accounts. For a deep dive into understanding the various IAM configuration scenarios you might encounter when setting up Event Flows with SQS, see the [Amazon SQS message broker docs](/developers/event-flows/amazon-sqs#scenarios).
 
