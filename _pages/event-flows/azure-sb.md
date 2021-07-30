@@ -20,12 +20,12 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Az
 
 ## Event Flow configuration overview
 
-The process of configuring Event Flows with an SB message broker involves several steps, some of which are to be completed within the Azure Portal and some of which are to be completed within the Algorithmia browser user interface (UI). At a high level, the configuration steps are:
+The process of configuring Event Flows with an SB message broker involves multiple steps, some of which are to be completed on the Azure side and some of which are to be completed on the Algorithmia side. At a high level, the configuration steps are:
 
-1. Gather required information from Algorithmia and define required parameters.
-2. In the Azure Portal, create a group of resources (including an SB queue) using an  Azure Resource Manager (ARM) template or manually as the situation dictates.
-3. In the Algorithmia browser UI, connect an algorithm to the SB queue to subscribe to messages published there.
-4. Send messages to the SB queue to be consumed by the subscriber algorithm.
+1. Gather required information from Algorithmia.
+2. In Azure, create a group of resources (including an SB queue) using an  Azure Resource Manager (ARM) template or manually as the situation dictates.
+3. On Algorithmia, create an algorithm and connect it to the SB queue to subscribe to messages published there.
+4. Test the connection by sending messages to the SB queue to be consumed by the subscriber algorithm.
 
 ## 1. Gathering required information from Algorithmia
 
@@ -183,7 +183,7 @@ Now paste the JSON configuration shown below into the text field on the **ARM te
 }
 ```
 
-The newly created template will now appear in the list on the **Templates** page (you may need to click the refresh button for it to show up). From the action menu at right of the new template, click **Deploy**.
+The newly created template will now appear in the list on the **Templates** page. If it doesn't appear immediately, try clicking the gray refresh wheel (<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_11.png">). Once the template appears, from the action menu at right click **Deploy**.
 
 In the **Custom deployment** page, select the name of the **Resource group** containing the target Algorithmia cluster's resources.
 
@@ -219,7 +219,7 @@ If you aren't able to use the ARM template and need to create the SB resources m
 
 ## 3. Creating an Event Flow in Algorithmia
 
-**NOTE:** The steps in this section are to be completed within the Algorithmia browser UI.
+**NOTE:** The steps in this section are to be completed on Algorithmia, from within the browser user interface (UI) or through the API.
 {: .notice-info}
 
 Note that you can set up _any_ algorithm to subscribe to an SB message broker so that the algorithm is executed when a message is published to that specific queue. On our platform we refer to this type of event-driven configuration as an Event Flow, and the following demonstrates one possible example of how to set one up.
