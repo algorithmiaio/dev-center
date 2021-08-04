@@ -13,7 +13,7 @@ tags: [integrations, event-flows]
 title: "Azure Service Bus"
 ---
 
-This feature is only available in Enterprise installations of Algorithmia.
+This feature is only available in Algorithmia Enterprise installations.
 {: .notice-enterprise}
 
 This guide will walk you through setting up Algorithmia Event Flows using an [Azure Service Bus (SB)](https://azure.microsoft.com/services/service-bus/) message broker. Once configured, you can create event-driven workflows in which your algorithms subscribe to an SB queue and are automatically invoked with the contents of messages published to the queue.
@@ -23,7 +23,7 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Az
 The process of configuring Event Flows with an SB message broker involves multiple steps, some of which are to be completed on the Azure side and some of which are to be completed on the Algorithmia side. At a high level, the configuration steps are:
 
 1. Gather required information from Algorithmia.
-2. In Azure, create a group of resources (including an SB queue) using an  Azure Resource Manager (ARM) template or manually as the situation dictates.
+2. On Azure, create a group of resources (including an SB queue) using an  Azure Resource Manager (ARM) template or manually as the situation dictates.
 3. On Algorithmia, create an algorithm and connect it to the SB queue to subscribe to messages published there.
 4. Test the connection by sending messages to the SB queue to be consumed by the subscriber algorithm.
 

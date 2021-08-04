@@ -16,10 +16,10 @@ title: "Apache Kafka"
 This feature is currently in beta.
 {: .notice-info}
 
-This feature is only available in Enterprise installations of Algorithmia.
+This feature is only available in Algorithmia Enterprise installations.
 {: .notice-enterprise}
 
-This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker. To learn about how Kafka can help you automate your machine learning workflows and maximize their business impact, [see our blog](https://algorithmia.com/blog/use-new-kafka-event-driven-algorithm-workflows-to-automate-models-in-production-and-maximize-their-impact).
+This guide will walk you through setting up Algorithmia Event Flows using an [Apache Kafka](https://kafka.apache.org/) message broker. Once configured, you can create event-driven workflows in which your algorithms publish messages to, and subscribe to messages from, topics on the broker. To learn about how Kafka can help you automate and maximize the business impact of your machine learning workflows, [see our blog](https://algorithmia.com/blog/use-new-kafka-event-driven-algorithm-workflows-to-automate-models-in-production-and-maximize-their-impact).
 
 ## Creating and configuring a broker connection in the Algorithmia platform
 
