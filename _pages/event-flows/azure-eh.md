@@ -50,7 +50,7 @@ On the namespace page, from the left-hand navigation submenu under **Settings**,
 In the fly-out menu at right, copy the **Connection string–primary key**. This connection string enables your algorithm to communicate with Event Hubs. In the next step, you'll save this string value in your algorithm's Secret Store and access it from the code below as the `CONNECTION_STR` environment variable. Note that this is the connection string associated with the Event Hubs *namespace*, not the event hub itself. The value will look something like:
 
 ```
-Endpoint=sb://test-azure-eh-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+FehbdIzXYc6kMuX0iTfHk2scLMkCV4wWuZGeNI6mis=
+Endpoint=sb://test-azure-eh-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+FehbdIzXYc6Hk2sckMuX0iTfLV4wWuZMkCGeNImi6s=
 ```
 
 ## 2. Creating an Event Hubs publisher algorithm in Algorithmia

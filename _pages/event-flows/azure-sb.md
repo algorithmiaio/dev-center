@@ -209,7 +209,7 @@ If you click into the namespace, you'll see the queue listed at the bottom.
 In the left-hand navigation submenu under **Settings**, click **Shared access policies** and click on the **RootManageSharedAccessKey** policy, which should have the **Manage, Send, Listen** claims associated with it. Copy the **Primary Connection String** from the fly-out menu at right. You'll use this as the **Connection String** value when connecting to the queue from Algorithmia, and it will look something like:
 
 ```
-Endpoint=sb://test-azure-sb-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oq4/9ptgF9miVFWVRYyKaPO9Ao8qSrfVMzGFMvQzYX8=
+Endpoint=sb://test-azure-sb-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oq4/9pt9miVFgFWVaPO9ARYyKSro8qfVMzGFMvQzYX8=
 ```
 
 #### Create resources manually
@@ -278,7 +278,7 @@ Optionally, enter a value for **Algorithm timeout in seconds**.
 
 Click **Connect to Azure SB broker**. The **Events** tab on the algorithm profile will now list your newly created connection.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sqs_broker_events_tab.png">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sb_broker_events_tab.png">
 
 Click [here](#4-sending-messages-to-the-broker) to skip to the next step to learn how to send messages to the newly connected broker.
 
