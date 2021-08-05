@@ -15,6 +15,18 @@ title:  "Release Notes"
 The following features are available in Algorithmia LTS version 21.0.
 {: .notice-info}
 
+### New Platform Guides ###
+
+#### Glossary ####
+
+We’ve created a brand new [Glossary]({{site.baseurl}}/glossary) page to help explain the technical terminology we use across our platform. In addition to describing various Algorithmia-specific features, the glossary provides definitions for some common terms used more generally in the industry, so that you can better understand the language of MLOps. Where appropriate, glossary terms also define string placeholders that we’ll be incorporating into code samples across our documentation and user interface in order to provide a clear mapping between the glossary terms and the code you use to interact with resources on our platform.
+
+#### Integrations ####
+
+Our brand new [Integrations]({{site.baseurl}}/integrations) page contains descriptions of Algorithmia’s many documented integrations with third-party tools, services, and frameworks. The page serves as a starting point for understanding the natively integrated features that are available to you on the Algorithmia platform, as well as some of the patterns we’ve documented for using services and tools that don't have built-in integrations. From this page you can quickly access relevant documentation and assess which services might be most suitable for your Algorithmia workflows based on your current tooling and IT considerations.
+
+---
+
 ### Third-Party Secret Provider Plugins ###
 
 We’re excited to announce that we now have documented example implementations of [secret provider plugins](https://training.algorithmia.com/exploring-the-admin-panel/842511#secret-provider-plugins) for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
