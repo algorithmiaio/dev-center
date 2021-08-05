@@ -20,9 +20,9 @@ Because Algorithmia doesn't currently have a native integration with Azure Event
 
 The process of configuring Event Flows with an EH message broker involves multiple steps, some of which are to be completed on the Azure side and some of which are to be completed on the Algorithmia side. At a high level, the configuration steps are:
 
-1. In Azure, create an Event Hubs namespace and an event hub within it.
-2. On Algorithmia, create an algorithm to publish messages to the event hub and add the event hub's secret connection string to the algorithm's Secret Store.
-3. Test the connection by calling the algorithm with sample input.
+1. [On Azure, create an Event Hubs namespace and an event hub within it.](#1-configuring-resources-in-the-azure-portal)
+2. [On Algorithmia, create an algorithm to publish messages to the event hub](#2-creating-an-event-hubs-publisher-algorithm-in-algorithmia) and add the event hub's secret connection string to the algorithm's Secret Store.
+3. [Test the connection by calling the algorithm with sample input.](#3-sending-messages-to-the-broker)
 
 ## 1. Configuring resources in the Azure Portal
 
@@ -74,7 +74,7 @@ On the newly created algorithm's profile, click the **Settings** tab and find th
 
 #### Modify, build, and publish the algorithm
 
-Click the **Dependencies** button and add the Azure Event Hubs library, which Algorithmia will pull down automatically from PyPI when the algorithm is built. (If developing locally, you'll add this to the `requirements.txt` file.)
+Click the **Dependencies** button and add the Azure Event Hubs package, which Algorithmia will pull down automatically from PyPI when the algorithm is built. (If developing locally, you'll add this to the `requirements.txt` file.)
 
 ```
 algorithmia>=1.0.0,<2.0
@@ -127,9 +127,9 @@ async def run(input):
 
 Click the **Save** and **Build** buttons, and then **Publish** the algorithm.
 
-## 3. Sending messages to the event hub
+## 3. Sending messages to the broker
 
-To send a test message, run the algorithm with input in the following format.
+To send a test message, call the algorithm with input in the following format.
 
 ```
 {"events": ["first event", "second event", "..."]}

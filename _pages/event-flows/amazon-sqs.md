@@ -22,10 +22,10 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Am
 
 The process of configuring Event Flows with an SQS message broker involves multiple steps, some of which are to be completed on the AWS side and some of which are to be completed on the Algorithmia side. At a high level, the configuration steps are:
 
-1. Gather required information from Algorithmia and define required parameters.
-2. On AWS, create a stack of resources (including an SQS queue) using a CloudFormation template or manually as the situation dictates.
-3. On Algorithmia create an algorithm and connect it to the SQS queue to subscribe to messages published there.
-4. Test the connection by sending messages to the SQS queue to be consumed by the subscriber algorithm.
+1. [Gather required information from Algorithmia](#1-gathering-required-information-from-algorithmia).
+2. [On AWS, create a stack of resources](#2-configuring-resources-in-the-aws-management-console) (including an SQS queue) using a CloudFormation template or manually as the situation dictates.
+3. [On Algorithmia create an algorithm and connect it to the SQS queue](#3-creating-an-event-flow-in-algorithmia) to subscribe to messages published there.
+4. [Test the connection by sending messages](#4-sending-messages-to-the-broker) to the SQS queue to be consumed by the subscriber algorithm.
 
 ## How messages are read from SQS
 
@@ -50,7 +50,7 @@ Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the 
 
 In this section we'll walk through the key components of the CloudFormation template file that we'll be supplying to AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows.
 
-To begin, save the following YAML template as a local file `client-aws-cloudformation-template.yaml`.
+To begin, save the following YAML stack-creation template as a local file `client-aws-cloudformation-template.yaml`.
 
 ```yaml
 AWSTemplateFormatVersion: 2010-09-09
@@ -295,23 +295,21 @@ Click the **Save** and **Build** buttons and then click **Publish** when the bui
 
 On the newly published algorithm's profile, copy the algorithm endpoint, which will be in the form `ALGO_OWNER/ALGO_NAME/ALGO_VERSION`; in the screenshot below, this is `ezra/testSQSEventFlow/0.2.0`.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/algorithm-profile-algorithm-endpoint.png" alt="algorithm profile algorithm endpoint">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/algorithm-profile-algorithm-endpoint-sqs-subscriber.png" alt="algorithm profile algorithm endpoint">
 
 ### Create a hosted data collection
 
-Now create a hosted data collection to which the algorithm above will write records read from the message broker. To begin, click the **Data Sources** menu item in the left-hand navigation bar.
+Now create a hosted data collection to which the algorithm above will write the records read from the message broker. To begin, click the **Data Sources** menu item in the left-hand navigation bar. Click **New Data Source** and then **Hosted Data Collection**.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_21.png" alt="Algorithmia data sources tab">
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/create-hosted-data-collection.png" alt="Create Algorithmia hosted data collection">
 
-Click **My Hosted Data** on the main screen.
+In the dialog box that appears, enter the `COLLECTION_NAME` value from above (in this case, `TestingSQSEventFlow`) and click **Create Collection**.
 
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_22.png" alt="Algorithmia hosted data">
-
-Click the **New Collection** button in the top-right corner. In the dialog box that appears, enter the `COLLECTION_NAME` value from above (in this case, `TestingSQSEventFlow`) and click **Create Collection**.
+<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/new-collection-sqs-event-flow.png" alt="New hosted data collection dialog">
 
 ### Connect to an SQS message broker
 
-This section documents the workflow in Algorithmia versions >=25.5.53. See the section [below](#create-an-event-listener) for the previous event listeners-based workflow.
+This section documents the workflow in Algorithmia versions >=20.5.53. See the section [below](#create-an-event-listener) for the previous event listeners-based workflow.
 {: .notice-info}
 
 Navigate to your new algorithm's profile and click the **Events** tab and then the **Connect broker** button.
@@ -334,10 +332,10 @@ Click [here](#4-sending-messages-to-the-broker) to skip to the next step to lear
 
 ### Create an Event Listener
 
-This section documents the workflow in Algorithmia versions <25.5.53, where Event Flows were called event listeners.
+This section documents the workflow in Algorithmia versions <20.5.53, where Event Flows were called event listeners.
 {: .notice-info}
 
-Navigate to the **Home** tab on the left-hand navigation panel. Click on the **Create New** button and select **Event Listener**.
+Navigate to the **Home** tab on the left-hand navigation menu. Click on the **Create New** button and select **Event Listener**. Select **Amazon SQS** from the dropdown.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_26.png">
 
@@ -351,7 +349,7 @@ Enter the full path to the algorithm you created above and click **Create New Ev
 
 ## 4. Sending messages to the broker
 
-Many methods exist for sending messages to Amazon SQS queues. Here we show how to do it in the AWS console for the purposes of this demonstration.
+Many methods exist for sending messages to Amazon SQS queues. For the purposes of this demonstration, here we show how to do it in the AWS console.
 
 Open the <a href="https://console.aws.amazon.com/sqs/home" target="_blank" rel="noopener noreferrer">SQS</a> page in the AWS console. Click on the name of the queue (**QueueName**) that was created [above](#creating-a-stack-with-cloudformation-in-the-aws-console), and click the **Send and receive messages** button.
 
@@ -361,8 +359,8 @@ In the **Send and receive messages** page, in the **Message body** field enter t
 
 ```
 {
-    "filename" : "some-new-file.txt",
-    "data" : "file contents to store"
+    "filename": "some-new-file.txt",
+    "data": "file contents to store"
 }
 ```
 
@@ -370,6 +368,6 @@ In the **Send and receive messages** page, in the **Message body** field enter t
 
 Click **Send Message** and the payload will be consumed by Algorithmia and sent to the configured algorithm as input for execution.
 
-To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file`, with contents equal to `file contents to store`.
+To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file`, with contents equal to the string `file contents to store`.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/amazon-sqs-file-contents.png">
