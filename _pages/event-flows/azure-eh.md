@@ -26,7 +26,7 @@ The process of configuring Event Flows with an EH message broker involves multip
 
 ## 1. Configuring resources in the Azure Portal
 
-**NOTE:** The steps in this section are to be completed within the <a href="https://portal.azure.com/" target="_blank" rel="noreferrer noopener">Azure Portal</a> or using the Azure CLI.
+**NOTE:** The steps in this section are to be completed within the <a href="https://portal.azure.com/" target="_blank" rel="noreferrer noopener">Azure Portal</a>.
 {: .notice-info}
 
 ### Creating an Event Hubs namespace and an event hub
@@ -35,7 +35,7 @@ To begin, create an event hub [using the Azure portal](https://docs.microsoft.co
 
 ### Gathering required parameters
 
-When the resource deployment described [above](#-creating-an-event-hubs-namespace-and-event-hub) is complete, click on the name of the resource group into which the namespace was deployed. You can filter by **event hubs namespace** to see the newly created namespace resource.
+When the resource deployment described in the links [above](#creating-an-event-hubs-namespace-and-an-event-hub) is complete, click on the name of the resource group into which the namespace was deployed. You can filter by **event hubs namespace** to see the newly created namespace resource.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/azure-portal-resourcs-event-hubs-namespace.png">
 
@@ -47,13 +47,11 @@ On the namespace page, from the left-hand navigation submenu under **Settings**,
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/azure-portal-event-hubs-namespace.png">
 
-In the fly-out menu at right, copy the **Connection string–primary key**, which will be a value like:
+In the fly-out menu at right, copy the **Connection string–primary key**. This connection string enables your algorithm to communicate with Event Hubs. In the next step, you'll save this string value in your algorithm's Secret Store and access it from the code below as the `CONNECTION_STR` environment variable. Note that this is the connection string associated with the Event Hubs *namespace*, not the event hub itself. The value will look something like:
 
 ```
-Endpoint=sb://test-azure-eh-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+FehbdIzXYc6kMuXcLMkCfH0iTkZGeNI2sV4wWu6mis=
+Endpoint=sb://test-azure-eh-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+FehbdIzXYc6kMuX0iTfHk2scLMkCV4wWuZGeNI6mis=
 ```
-
-This connection string enables your algorithm to communicate with Event Hubs. In the next step, you'll save this string value in your algorithm's Secret Store and access it from the code below as the `CONNECTION_STR` environment variable. Note that this is the connection string associated with the Event Hubs *namespace*, not the event hub itself.
 
 ## 2. Creating an Event Hubs publisher algorithm in Algorithmia
 
@@ -131,7 +129,7 @@ Click the **Save** and **Build** buttons, and then **Publish** the algorithm.
 
 To send a test message, call the algorithm with input in the following format.
 
-```
+```json
 {"events": ["first event", "second event", "..."]}
 ```
 

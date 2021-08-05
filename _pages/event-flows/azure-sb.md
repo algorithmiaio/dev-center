@@ -324,7 +324,7 @@ azure-servicebus==7.3.1
 
 In the body of your algorithm, paste the source code below, replacing the `QUEUE_NAME` value with the **Queue Name** string from the [SB message broker connection](#connect-to-an-sb-broker) step above. For more details on how to use this SDK, including how to send messages in batches, see <a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues" target="_blank" rel="noreferrer noopener">Azure's Service Bus SDK documentation</a>.
 
-```
+```python
 import os
 
 import Algorithmia
@@ -368,7 +368,7 @@ Click the **Save** and **Build** buttons, and then **Publish** the algorithm.
 
 To send a test message, call the algorithm with input in the following format.
 
-```
+```json
 {
     "filename": "some-new-file.txt",
     "data": "file contents to store"

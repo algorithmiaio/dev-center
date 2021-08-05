@@ -357,7 +357,7 @@ Open the <a href="https://console.aws.amazon.com/sqs/home" target="_blank" rel="
 
 In the **Send and receive messages** page, in the **Message body** field enter the message payload to send to the algorithm you created above. For our example here, it might be formatted like this.
 
-```
+```json
 {
     "filename": "some-new-file.txt",
     "data": "file contents to store"
