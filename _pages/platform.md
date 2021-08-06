@@ -1,12 +1,12 @@
 ---
-excerpt: "Platform"
+excerpt: "Learn about basic concepts on the Algorithmia platform."
 layout: article_page
 redirect_from:
  - /basics/
  - /application-development/basic-guides/
  - /basics/algorithm_basics/
 show_related: false
-title:  "Platform"
+title:  "Platform Features"
 ---
 
 {% assign basics_tags = "basics" | split:"|" %}

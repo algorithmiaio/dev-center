@@ -20,11 +20,11 @@ Integrations denoted with a "*" are available to Algorithmia Enterprise users on
 
 We support the following [Single Sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) protocols for controlling resource access:
 
-* JSON Web Token / JSON Web Key Set (JWT/JWKS) ([docs](/developers/platform/jwt-authentication) \| [website](https://jwt.io/))
+* JSON Web Token / JSON Web Key Set (JWT/JWKS) ([docs](/developers/platform-administration/jwt-authentication) \| [website](https://jwt.io/))
   * JWT/JWKS can be used as authentication tokens, enabling external management of group membership through group sync.
 * OpenID Connect (OIDC) ([website](https://auth0.com/docs/protocols/openid-connect-protocol))
   * OIDC can be used for obtaining authentication tokens.
-* Security Assertion Markup Language (SAML) ([docs](/developers/platform/saml-authentication) \| [website](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language))
+* Security Assertion Markup Language (SAML) ([docs](/developers/platform-administration/saml-authentication) \| [website](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language))
   * SAML providers can be used to obtain authentication tokens, enabling external management of group membership. We are SAML 2.0 compliant and support major identity providers such as Microsoft active directory (AD) and Google.
 
 ### CI/CD tools

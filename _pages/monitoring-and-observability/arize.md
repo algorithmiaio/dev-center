@@ -1,10 +1,11 @@
 ---
-categories: [monitoring-&-observability]
+categories: [monitoring-and-observability]
 excerpt: "Integrating with an ML observability platform"
 image:
-  teaser: /icons/algo.svg
+  teaser: /language_logos/arize.png
 layout: article
-permalink: /integrations/arize/
+permalink: /monitoring-and-observability/arize/
+redirect_from: /integrations/arize/
 show_related: false
 tags: [integrations, monitoring-observability]
 title: "Arize"
@@ -28,7 +29,7 @@ The following code is intended to be executed on some training platform external
 
 ## Training and serializing your model
 
-To demonstrate the end-to-end workflow, we'll first walk through training a simple scikit-learn model, and then we'll show how to deploy that model on Algorithia and send metrics to Arize from within your algorithm.
+To demonstrate the end-to-end workflow, we'll first walk through training a simple scikit-learn model, and then we'll show how to deploy that model on Algorithmia and send metrics to Arize from within your algorithm.
 
 As with any Algorithmia algorithm, you can use the platform and tools of your choice for training your model. The code below represents one possible training workflow in a Jupyter notebook. To work with this code, see the [GitHub repo](https://github.com/algorithmiaio/demo-arize).
 

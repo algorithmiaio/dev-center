@@ -1,15 +1,14 @@
 ---
+categories: admin
+excerpt: "Use SAML for authentication"
 layout: article
-title:  "SAML Authentication and Organization Management"
-excerpt: ""
-categories: basics
-nav_index: 40
-show_related: true
-image:
-teaser: /icons/algo.svg
-permalink: /platform/saml-authentication/
+permalink: /platform-administration/saml-authentication/
 redirect_from:
--  /basics/saml-authentication/
+  - /platform/saml-authentication/
+  - /basics/saml-authentication/
+show_related: true
+tags: [admin, authentication]
+title: "SAML Authentication and Organization Management"
 ---
 
 Security Assertion Markup Language (SAML) is an open standard that allows an identity provider (IdP) to pass authorization credentials to a service provider (SP).

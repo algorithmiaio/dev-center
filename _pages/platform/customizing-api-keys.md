@@ -1,19 +1,17 @@
 ---
-layout: article
-title:  "API Keys"
-excerpt: "Configuring API Keys"
 categories: basics
-nav_index: 50
-tags: [basics]
-show_related: true
-image:
-  teaser: /icons/algo.svg
+excerpt: "Configuring API Keys"
+layout: article
 permalink: /platform/customizing-api-keys/
 redirect_from:
   - /basics/customizing-api-keys/
+  - /api-keys/
+show_related: true
+title:  "API Keys"
+tags: [basics]
 ---
 
-To call algorithms and interact with the Data API, you'll use an API key for authenticatication. 
+To call algorithms and interact with the Data API, you'll use an API key for authenticatication.
 
 This guide will show how to create new API keys and customize API access to suit your security needs.
 
@@ -25,7 +23,7 @@ To view your API keys, go to "Manage API Keys" under your account profile:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/my_api_keys_from_profile.png" alt="My API Keys from Profile Menu" class="screenshot">
 
-When you sign up for an Algorithmia account, a default API key is automatically created called: `default-key`. 
+When you sign up for an Algorithmia account, a default API key is automatically created called: `default-key`.
 
 This key will show up in the code snippets on an algorithm profile page when you are signed in, allowing you to easily make calls to the algorithm either through the web console or by copying the code directly to include in your program.
 
@@ -42,7 +40,7 @@ Click the "Create New" button to the right of your username. Choose "API Key" wh
 
 ## Access options
 
-Each API key can be customized to enable or restrict access depending on your needs. 
+Each API key can be customized to enable or restrict access depending on your needs.
 
 **Best Practice:** each application should have a its own API key with customized settings for that application's specific use case.
 
@@ -68,15 +66,15 @@ In cases where an entry is a subset of another entry, and therefore redundant, a
 
 ### Caller origin & hostname
 
-Another way to customize your API key access is to restrict the permissions on where API calls can originate. 
+Another way to customize your API key access is to restrict the permissions on where API calls can originate.
 
 There are two options you can check in the dialog, native clients and web browser:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/api_keys/call_origin.png" alt="caller origin" class="screenshot img-sm">
 
-If you are only calling Algorithmia through a client, you can leave that box checked and your key will work as you make API calls. 
+If you are only calling Algorithmia through a client, you can leave that box checked and your key will work as you make API calls.
 
-However, if you plan to use this key on a website where you will be making CORS requests, select the web browser permission. 
+However, if you plan to use this key on a website where you will be making CORS requests, select the web browser permission.
 
 When you check that box, another field will appear allowing for more customization:
 
