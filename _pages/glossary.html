@@ -76,7 +76,7 @@
         <dt id="example-term-with-link">example term with link</dt>
         <dd id="dd-example-term-with-link">
           This term has a hoverable link to the <a class="glossary-hoverable" href="#example-term-with-placeholder"
-            title="" parentId="dd-example-term-with-placeholder">example term</a> from above.
+            title="" parentId="dd-example-term-with-placeholder">example term with placeholder</a> from above.
         </dd>
 
       </dl>
@@ -112,8 +112,8 @@
         <li><a href="#algorithm-build-uuid">algorithm build UUID</a></li>
         <li><a href="#algorithm-environment">algorithm environment</a></li>
         <li><a href="#algorithm-environment-specification">algorithm environment specification</a></li>
-        <li><a href="#algorithm-environment-specification-UUID">algorithm environment specification UUID</a></li>
-        <li><a href="#algorithm-environment-UUID">algorithm environment UUID</a></li>
+        <li><a href="#algorithm-environment-specification-uuid">algorithm environment specification UUID</a></li>
+        <li><a href="#algorithm-environment-uuid">algorithm environment UUID</a></li>
         <li><a href="#algorithm-endpoint">algorithm endpoint</a></li>
         <li><a href="#algorithm-execution-request">algorithm execution request</a></li>
         <li><a href="#algorithm-profile">algorithm profile</a></li>
@@ -213,15 +213,16 @@
         <li><a href="#satellite-cluster">satellite cluster</a></li>
         <li><a href="#satellite-launch-instance">satellite launch instance</a></li>
         <li><a href="#satellite-version">satellite version</a></li>
+        <li><a href="#scm-configuration">SCM configuration</a></li>
+        <li><a href="#scm-connection">SCM connection</a></li>
+        <li><a href="#scm-provider">SCM provider</a></li>
         <li><a href="#secret">secret</a></li>
         <li><a href="#secret-store">Secret Store</a></li>
         <li><a href="#serialized-model">serialized model</a></li>
         <li><a href="#service-account">service account</a></li>
         <li><a href="#slot">slot</a></li>
-        <li><a href="#scm-configuration">SCM configuration</a></li>
-        <li><a href="#scm-connection">SCM connection</a></li>
-        <li><a href="#scm-provider">SCM provider</a></li>
         <li><a href="#source-code-management">source code management (SCM)</a></li>
+        <li><a href="#standard-api-key">standard API key</a></li>
         <li><a href="#subscriber">subscriber</a></li>
         <li><a href="#test-console">test console</a></li>
         <li><a href="#top-level-algorithm">top-level algorithm</a></li>
@@ -265,16 +266,15 @@
 
       <dt id="admin-api-key">admin API key <code class="placeholder">{ADMIN_API_KEY}</code></dt>
       <dd id="dd-admin-api-key">
-        Secret <a class="glossary-hoverable" href="#authentication-token" title=""
-          parentId="dd-authentication-token">authentication token</a> associated with a specific <a
-          class="glossary-hoverable" href="#cluster-admin-account" title="" parentId="dd-cluster-admin-account">cluster
-          admin account</a>. An admin API key can be used to make specific administrative <a class="glossary-hoverable"
-          href="#authenticated-resource-request" title="" parentId="dd-authenticated-resource-request">authenticated
-          resource requests</a> through the <a class="glossary-hoverable" href="#api" title=""
-          parentId="dd-api">API</a>.
-        Examples of admin-only requests include creating and deleting <a class="glossary-hoverable" href="#user-account"
-          title="" parentId="dd-user-account">user accounts</a> and <a class="glossary-hoverable"
-          href="#org-organization" title="" parentId="dd-org-organization">organizations</a>.
+        <a class="glossary-hoverable" href="#api-key" title="" parentId="dd-api-key">API key</a> associated with a
+        specific <a class="glossary-hoverable" href="#cluster-admin-account" title=""
+          parentId="dd-cluster-admin-account">cluster admin account</a>. An admin API key can be used to make specific
+        administrative <a class="glossary-hoverable" href="#authenticated-resource-request" title=""
+          parentId="dd-authenticated-resource-request">authenticated resource requests</a> through the <a
+          class="glossary-hoverable" href="#api" title="" parentId="dd-api">API</a>. Examples of admin-only requests
+        include creating and deleting <a class="glossary-hoverable" href="#user-account" title=""
+          parentId="dd-user-account">user accounts</a> and <a class="glossary-hoverable" href="#org-organization"
+          title="" parentId="dd-org-organization">organizations</a>.
       </dd>
 
       <dt id="admin-panel">admin panel <code class="placeholder">{/admin}</code></dt>
@@ -517,13 +517,12 @@
           base URL</a>, e.g., <code class="placeholder">/v1/algorithms/ALGO_OWNER/ALGO_NAME/ALGO_VERSION</code>.
       </dd>
 
-      <dt id="api-key">API key <code class="placeholder">{API_KEY}</code></dt>
+      <dt id="api-key">API key</dt>
       <dd id="dd-api-key">
-        Secret <a class="glossary-hoverable" href="#authentication-token" title=""
+        Generic term for a secret <a class="glossary-hoverable" href="#authentication-token" title=""
           parentId="dd-authentication-token">authentication token</a> associated with a specific <a
-          class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> or <a
-          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a>. As a
-        security best practice, this value should be stored in the environment variable
+          class="glossary-hoverable" href="#identity" title="" parentId="dd-identity">identity</a>. As a
+        security best practice, we recommend storing this value in the environment variable
         <code>ALGORITHMIA_API_KEY</code>.
       </dd>
 
@@ -666,7 +665,9 @@
         repository.
       </dd>
 
-      <dt id="constellation-distributed-serving">Constellation Distributed Serving</dt>
+      <dt id="constellation-distributed-serving">Constellation Distributed Serving <span
+          style="color: purple;">BETA</span>
+      </dt>
       <dd id="dd-constellation-distributed-serving">
         Flexible Algorithmia deployment option in which a <a class="glossary-hoverable" href="#mothership-cluster"
           title="" parentId="dd-mothership-cluster">mothership</a> (any Enterprise <a class="glossary-hoverable"
@@ -678,7 +679,9 @@
         and a configuration file) for production runtime, thereby decoupling algorithm development from runtime
         execution. Constellation enables customers with high security, high availability, or high performance workloads
         to easily deploy and serve <a class="glossary-hoverable" href="#model" title="" parentId="dd-model">models</a>
-        where they need to and in the environment that works best for them.
+        where they need to and in the environment that works best for them. <em><strong>NOTE</strong>: Constellation
+          requires a separate license and fee. To learn more about Constellation and to get set up using this feature
+          with your Algorithmia installation, please contact your customer success manager.</em>
       </dd>
 
       <dt id="consumer">consumer</dt>
@@ -878,10 +881,10 @@
 
       <dt id="message-broker-connection">message broker connection</dt>
       <dd id="dd-message-broker-connection">
-        <a class="glossary-hoverable" href="#cluster" title="" parentId="dd-cluster">Cluster</a>-level connection to a
-        <a class="glossary-hoverable" href="#message-broker" title="" parentId="dd-message-broker">message broker</a>,
-        configured by a <a class="glossary-hoverable" href="#cluster-admin-account" title=""
-          parentId="dd-cluster-admin-account">cluster admin</a>.
+        Connection between Algorithmia and a <a class="glossary-hoverable" href="#message-broker" title=""
+          parentId="dd-message-broker">message broker</a>, configured at either the <a class="glossary-hoverable"
+          href="#cluster" title="" parentId="dd-cluster">cluster</a> or <a class="glossary-hoverable" href="#algorithm"
+          title="" parentId="dd-algorithm">algorithm</a> level, depending on the message broker type.
       </dd>
 
       <dt id="ml-service-catalog">ML service catalog <code class="placeholder">{/algorithms}</code></dt>
@@ -1003,8 +1006,7 @@
           href="#account" title="" parentId="dd-account">accounts</a> on the <a class="glossary-hoverable"
           href="#cluster" title="" parentId="dd-cluster">cluster</a>. An org must
         have at least one <a class="glossary-hoverable" href="#org-admin-account" title=""
-          parentId="dd-org-admin-account">org admin</a>, and orgs can’t be deleted once created. Accounts can be members
-        of zero, one, or multiple orgs.
+          parentId="dd-org-admin-account">org admin</a>, and accounts can be members of zero, one, or multiple orgs.
       </dd>
 
       <dt id="org-admin-account">org admin account<code class="placeholder">{ORG_ADMIN_NAME}</code></dt>
@@ -1218,6 +1220,15 @@
       <dd id="dd-source-code-management">
         Process of tracking modifications to a source code repository. Synonymous with version control and source
         control management.
+      </dd>
+
+      <dt id="standard-api-key">standard API key <code class="placeholder">{STD_API_KEY}</code></dt>
+      <dd id="dd-standard-api-key">
+        <a class="glossary-hoverable" href="#api-key" title="" parentId="dd-api-key">API key</a> associated with a
+        specific <a class="glossary-hoverable" href="#account" title="" parentId="dd-account">account</a> or <a
+          class="glossary-hoverable" href="#org-organization" title="" parentId="dd-org-organization">org</a>. As a
+        security best practice, this value should be stored in the environment variable
+        <code>ALGORITHMIA_API_KEY</code>.
       </dd>
 
       <dt id="subscriber">subscriber</dt>

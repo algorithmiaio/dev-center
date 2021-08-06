@@ -1,22 +1,16 @@
 ---
-layout: article
-title:  "Permissions"
-excerpt: "All about permissions on the platform."
 categories: basics
-nav_index: 40
-tags: [basics, alg-dev-getting-started, app-dev-getting-started]
-show_related: true
-image:
-    teaser: /icons/algo.svg
+excerpt: "All about permissions on the platform."
+layout: article
 permalink: /platform/permissions/
 redirect_from:
   - /basics/permissions/
+show_related: true
+tags: [basics, alg-dev-getting-started, app-dev-getting-started]
+title: "Permissions"
 ---
 
-
-### Permissions
-
-Permissions can be found on the algorithm description page. The algorithm's author can indicate if the algorithm will require Internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm's permissions section on the description page for more information.
+Permissions can be found on an algorithm's profile. The algorithm's author can indicate if the algorithm will require internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm's permissions section on the description page for more information.
 
 #### <i class="fa fa-globe" style="margin-right:5px"></i>Internet Access
 

@@ -4,7 +4,7 @@ title: "Home"
 excerpt: "Resources to get started with Algorithmia"
 exclude_from_search: true
 redirect_from:
-  - /guides/sentiment-analysis/
+- /guides/sentiment-analysis/
 ---
 
 
@@ -13,54 +13,61 @@ redirect_from:
     <div class="col-md-12">
       {% include breadcrumbs.html %}
       <h1 class="syn-text-3xl" id="page-title">Getting Started</h1>
-      <p class="syn-header-2">Learn how to deploy models into production quickly, securely, and cost-effectively.</p>
-  <!--     <p class="syn-body-1">The Algorithmia platform allows you to operationalize and manage your machine learning lifecycle while working with existing workflows and team processes to ensure you are delivering business value from your AI initiatives.</p> -->
-      <p class="syn-body-1">Using Algorithmia's APIs or 
-      user interface, you can turn your machine learning models or utility functions into production ready REST API endpoints in a few lines of code.</p>
-      <p>Algorithmia also offers advanced features that make it easy to integrate into your current CI/CD pipelines, perform model monitoring, understand infrastructure needs through advanced reporting, and more.</p>
-      <p>If you are new to Algorithmia, <a href="https://algorithmia.com/pricing" class="syn-link-no-decoration">learn more</a> about the right solution for you and your business.
-      </p>
+      <p class="syn-header-2">Welcome to our Developer Center, where you can learn how to deploy models into production
+        quickly, securely, and cost-effectively to deliver business value from your machine learning
+        and artifiical intelligence initiatives.</p>
+      <!-- <p>If you're new to Algorithmia, <a href="https://algorithmia.com/pricing" class="syn-link-no-decoration">learn
+          more</a> about the right solution for you and your business.</p> -->
+    </div>
+  </section>
+  <section>
+    <div class="col-md-12">
+      <h2 class="syn-text-2xl">Integration Support</h2>
+      <p class="syn-body-1">We've built our platform with flexibility as a top priority, enabling you to operationalize,
+        manage, and govern your machine learning workflows all within existing processes and using existing tools and
+        services.</p>
+      <p>See our <a href="/developers/integrations">Integration Guide</a> to learn how to integrate Algorithmia
+        with your existing data stores, CI/CD pipelines, monitoring and observability tools, message brokers, source
+        code management systems, identity providers, and more.</p>
     </div>
   </section>
   <section>
     <div class="col-md-12">
       <h2 class="syn-text-2xl">Quickstart Guides</h2>
-      <p class="syn-body-1">Get started creating your first algorithm through the <a href="{{ site.baseurl }}/algorithm-development/your-first-algo">Algorithmia GUI</a> or the <a href="{{ site.baseurl }}/api/#create-an-algorithm">Algorithmia API.</a></p>
-
-      <p class="syn-body-1">Connect your algorithm to <a href="{{ site.baseurl }}/data">Data Sources</a> that host your serialized model file, or other data on which your algorithm relies.</p>
-
-      <p class="syn-body-1">For details on language-specific algorithm development, check out our <a href="{{ site.baseurl }}/algorithm-development/languages">Algorithm Development Guides</a> for dependency management, error handling, and managing data within your algorithm.
-
-      <p class="syn-body-1">When you are ready to put your model into production, you can learn best practices around using popular <a href="{{ site.baseurl }}/model-deployment">machine learning frameworks</a> such as <a href="{{ site.baseurl }}/model-deployment/tensorflow">Tensorflow</a>, <a href="{{ site.baseurl }}/model-deployment/pytorch">PyTorch</a>, and more.</p>
+      <p class="syn-body-1">Using Algorithmia's APIs or browser user interface (UI), you can turn your machine learning
+        models or utility functions into production-ready, scalable REST API endpoints in a few lines of code. Get
+        started creating your first algorithm using Algorithmia's <a
+          href="{{ site.baseurl }}/algorithm-development/your-first-algo">browser UI</a> or <a
+          href="{{ site.baseurl }}/api/#create-an-algorithm">API</a>.</p>
+      <p class="syn-body-1">Learn how to connect algorithms to <a href="{{ site.baseurl }}/data">data sources</a>, where
+        you can store serialized model files and any other data on which your algorithms rely.</p>
+      <p class="syn-body-1">For details on language-specific algorithm development and dependency management, check out
+        our <a href="{{ site.baseurl }}/algorithm-development/languages">Algorithm Development Guides</a>.</p>
+      <p class="syn-body-1">Check out our <a href="/developers/model-deployment/">Model Deployment Guides</a> to learn
+        recommended patterns and best practices for using popular machine learning frameworks with Algorithmia.</p>
     </div>
   </section>
   <section>
     <!--For larger screens-->
     <div class="col-md-5 hidden-sm hidden-xs">
-      <p class="syn-body-1">Once you deploy your model, learn how to call your versioned algorithm using our <a href="{{ site.baseurl }}/getting-started">QuickStart Guide</a> or find details for working with our <a href="{{ site.baseurl }}/clients">many SDKs</a>.</p>
+      <p class="syn-body-1">Once you deploy your model, see our <a href="{{ site.baseurl }}/getting-started">quickstart
+          guide for how to call algorithms</a> or see more detailed information for working with our <a
+          href="{{ site.baseurl }}/clients">language-specific SDKs</a> to integrate Algorithmia into your external
+        applications.</p>
     </div>
     <div class="col-md-7">
-    <pre class="code_snippet">
+      <pre class="code_snippet">
     import Algorithmia
-    input = "YOUR_USERNAME"
-    client = Algorithmia.client("YOUR_API_KEY")
+    input = "YOUR_NAME"
+    client = Algorithmia.client("API_KEY")
     algo = client.algo("demo/Hello/")
     print(algo.pipe(input))
     </pre>
     </div>
     <!--For smaller screens-->
     <div class="col-sm-12 hidden-md hidden-lg hidden-xl">
-      <p class="syn-body-1">Check out our <a href="{{ site.baseurl }}/clients">Client Guides</a> to learn how to call algorithms in the language of your choice.</p>
-    </div>
-  </section>
-  <section>
-    <div class="col-md-12">
-      <h2 class="syn-text-2xl">Advanced Features and Integrations</h2>
-        <p class="syn-body-1">Enterprise <a href="{{ site.baseurl }}/algorithmia-enterprise/usage-metrics">Platform Usage Reporting</a> for enhanced governance including chargebacks and showbacks.</p> 
-        <p class="syn-body-1">Flexible integration solution for machine learning model performance monitoring with <a href="{{ site.baseurl }}/algorithmia-enterprise/algorithmia-insights">Algorithmia Insights</a>.</p> 
-        <p class="syn-body-1">Event-driven jobs using <a href="{{ site.baseurl }}/integrations/event_listeners"> AWS SQS</a> or <a href="{{ site.baseurl }}/integrations/azure_listeners">Azure Service Bus Queue</a> with Algorithmia Event Listeners for Enterprise.</p>
-        <p class="syn-body-1">Support for optimizing your algorithm workflows with<a href="{{ site.baseurl }}/algorithm-development/advanced-algorithm-development/batch-processing"> batch processing</a>.</p>
-        <p class="syn-body-1">Create or integrate with your current <a href="{{ site.baseurl }}/algorithm-development/ci-cd">CI/CD pipeline</a> using Jenkins, GitHub Actions, and other tools.</p>
+      <p class="syn-body-1">Check out our <a href="{{ site.baseurl }}/clients">Client Guides</a> to learn how to call
+        algorithms in the language of your choice.</p>
     </div>
   </section>
 </div>
