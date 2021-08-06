@@ -2,16 +2,13 @@
 categories: basics
 excerpt: "A walk through of the algorithm profile page."
 layout: article
-nav_index: 20
-tags: [basics]
-image:
-    teaser: /icons/algo.svg
 permalink: /platform/algorithm-profile/
 redirect_from:
   - /basics/algorithm-profiles/
   - /basics/algorithm_profiles/
   - /platform/algorithm_profiles/
 show_related: true
+tags: [basics]
 title: "Algorithms"
 ---
 

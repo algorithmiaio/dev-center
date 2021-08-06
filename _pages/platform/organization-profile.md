@@ -1,10 +1,7 @@
 ---
 categories: basics
 excerpt: "Understanding organizations on Algorithmia"
-image:
-    teaser: /icons/algo.svg
 layout: article
-nav_index: 25
 permalink: /platform/organization-profile/
 redirect_from:
   - /basics/organization_profiles/

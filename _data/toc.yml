@@ -3,21 +3,28 @@
 - title: Home
   url: /
 
+- title: Integrations
+  url: /integrations/
+
+- title: Glossary
+  url: /glossary/
+
+- title: API Documentation
+  url: /api/
+
 # - title: Getting Started
 #   url: /getting-started/
 
 # - title: Core Concepts
 #   url: /platform/
 
-- title: Platform
+- title: Platform Features
   url: /platform/
   nav_category: basics
 
-- title: API Documentation
-  url: /api/
-
-- title: Glossary
-  url: /glossary/
+- title: Platform Administration
+  url: /platform-administration/
+  nav-category: admin
 
 - title: Client Guides
   url: /clients/
@@ -30,9 +37,6 @@
 - title: Model Deployment
   url: /model-deployment/
   # nav_category: model-deployment
-
-- title: Integrations
-  url: /integrations/
 
 - title: Native Data Integrations
   url: /data/
@@ -55,8 +59,8 @@
   nav_category: event-flows
 
 - title: Monitoring & Observability
-  url: /monitoring-observability/
-  nav_category: monitoring-&-observability
+  url: /monitoring-and-observability/
+  nav_category: monitoring-and-observability
 
 - title: App Development
   url: /app-development/

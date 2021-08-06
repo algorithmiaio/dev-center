@@ -1,16 +1,13 @@
 ---
-layout: article
-title:  "Versioning"
-excerpt: "All about versioning on the platform."
 categories: basics
-nav_index: 30
-tags: [basics, alg-dev-getting-started, app-dev-getting-started]
-show_related: true
-image:
-    teaser: /icons/algo.svg
+excerpt: "All about versioning on the platform."
+layout: article
 permalink: /platform/versioning/
 redirect_from:
-  - /basics/versioning/
+- /basics/versioning/
+show_related: true
+tags: [basics, alg-dev-getting-started, app-dev-getting-started]
+title: "Versioning"
 ---
 
 ### Version Scheme

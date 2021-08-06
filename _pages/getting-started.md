@@ -8,7 +8,7 @@ redirect_from:
   - /basics/getting-started/
 show_related: true
 tags: [app-dev-getting-started]
-title:  "Getting Started"
+title: "Getting Started"
 ---
 
 Welcome to Getting Started with the Algorithmia API. This guide will show you how to call an algorithm via our API in a few lines of code using our supported language clients.

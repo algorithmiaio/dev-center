@@ -1,12 +1,12 @@
 ---
 author: noah_crowley
-excerpt: ""
+excerpt: "Patterns for accessing your SQL databases."
 layout: article_page
 nav_overview: "Overview"
 nav_index: 0
 show_related: false
 tags: [sql-patterns-overview]
-title:  "SQL Database Patterns"
+title: "SQL Database Patterns"
 ---
 
 We recommend two main patterns when working with SQL databases. You can make your database connection directly from within your own code, storing credentials outside of your source using [Hosted Data]({{site.baseurl}}/data/hosted) and the Algorithmia [Data API]({{site.baseurl}}/developers/api/#data). Or, for supported databases like [MySQL]({{site.baseurl}}/sql-patterns/mysql/), [PostgreSQL]({{site.baseurl}}/sql-patterns/postgresql), and [MS SQL Server]({{site.baseurl}}/sql-patterns/mssqlserver), you can make use of our helper algorithms to automatically store per-user credentials and make queries while keeping database connection code outside of your algorithm.
