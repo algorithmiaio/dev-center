@@ -287,9 +287,7 @@ As described [above](#template-components), once you've created the resource sta
     ]
 }
 ```
-
-If you're not familiar with working with IAM policies, see the AWS documentation for [creating an IAM policy using the JSON editor](https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) and [attaching an IAM policy to an identity](https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) to complete this step.
-
+If you're not familiar with working with IAM policies, see the AWS documentation for <a href="https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor" target="_blank" rel="noreferrer noopener">creating an IAM policy using the JSON editor</a> and <a href="https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console" target="_blank" rel="noreferrer noopener">attaching an IAM policy to an identity</a> to complete this step.
 
 ## 3. Creating an Event Flow in Algorithmia
 
