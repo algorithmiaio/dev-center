@@ -23,7 +23,7 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Am
 The process of configuring Event Flows with an SQS message broker involves multiple steps, some of which are to be completed on the AWS side and some of which are to be completed on the Algorithmia side. At a high level, the configuration steps are:
 
 1. [Gather required information from Algorithmia](#1-gathering-required-information-from-algorithmia).
-2. [On AWS, create a stack of resources](#2-configuring-resources-in-the-aws-management-console) (including an SQS queue) using a CloudFormation template or manually as the situation dictates.
+2. [On AWS, create a stack of resources](#2-configuring-resources-on-aws) (including an SQS queue) using a CloudFormation template or manually as the situation dictates.
 3. [On Algorithmia create an algorithm and connect it to the SQS queue](#3-creating-an-event-flow-in-algorithmia) to subscribe to messages published there.
 4. [Test the connection by sending messages](#4-sending-messages-to-the-broker) to the SQS queue to be consumed by the subscriber algorithm.
 
@@ -41,16 +41,41 @@ On the SQS side, the option for **Maximum Receives** determines how many times a
 
 Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the account number of the AWS account running your Algorithmia cluster. This number references below as **AlgorithmiaAccountNumber**.
 
-## 2. Configuring resources in the AWS Management Console
+## 2. Configuring resources on AWS
 
 **NOTE:** The steps in this section are to be completed within the <a href="https://console.aws.amazon.com/" target="_blank" rel="noreferrer noopener">AWS Management Console</a>.
 {: .notice-info}
 
-### Exploring the CloudFormation template and required AWS permissions
+### Required permissions
 
-In this section we'll walk through the key components of the CloudFormation template file that we'll be supplying to AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows.
+The CloudFormation template that we'll walk through below describes the creation of CloudFormation, IAM, and SQS resources. In order to use the template you'll need to be a user (or assume a role) with the following AWS permissions:
 
-To begin, save the following YAML stack-creation template as a local file `client-aws-cloudformation-template.yaml`.
+- **CloudFormation**: CreateStack and DescribeStacks (on all resources)
+- **IAM**: CreateRole, GetRole, and PutRolePolicy (on all resources)
+- **SQS**: CreateQueue, GetQueueAttributes, and SetQueueAttributes (on all resources)
+
+#### Scenarios
+
+The following are the two possible scenarios that describe the relationship between the AWS account that creates the SQS queue and the AWS account running the Algorithmia cluster from which the queue is accessed:
+
+1. The SQS queue is created within the account that's running the Algorithmia cluster.
+2. The SQS queue is created within a **different** account than the one running the Algorithmia cluster.
+
+The configuration steps are essentially the same for these two scenarios, but before diving into CloudFormation, it's helpful to consider these scenarios separately to understand where the differences are so that you configure the permissions correctly.
+
+##### Scenario #1: Queue created in the same AWS account
+
+If you create SQS resources within the account running your Algorithmia instance, it's assumed by default that the instance profile running Algorithmia is trusted because it's in the same account. If you're using the CloudFormation template, you don't need to concern yourself with configuring the trust relationship. After the CloudFormation step, you'll attach a policy to the instance profile to allow it to assume the appropriate role to take actions on the target SQS queue.
+
+##### Scenario #2: Queue created in a different AWS account
+
+If you create an SQS queue in a different account than the one running the Algorithmia instance, establishing the trust relationship is essential because it tells AWS that the account associated with the instance profile is allowed to take actions on the target queue. There's otherwise no implicit relationship between the two accounts. Again, if you're using the CloudFormation template, you don't need to concern yourself with configuring the trust relationship. Similar to Scenario #1, you'll attach a policy to the instance profile to allow it to assume the appropriate role to take actions on the target queue, in this case a queue from a *different* account.
+
+### Understanding the CloudFormation template
+
+In this section we'll walk through the key components of the CloudFormation template file that we'll be using with AWS CloudFormation to create the stack of resources that support Algorithmia Event Flows.
+
+To begin, save the following YAML template as a local file `client-aws-cloudformation-template.yaml`.
 
 ```yaml
 AWSTemplateFormatVersion: 2010-09-09
@@ -130,44 +155,17 @@ Outputs:
       - Arn
 ```
 
-#### Required permissions
-
-Note that the template above describes the creation of CloudFormation, IAM, and SQS resources, so in order to use the template you'll need to be a user (or assume a role) with the following AWS permissions:
-
-**CloudFormation**: CreateStack and DescribeStacks (on all resources)
-
-**IAM**: CreateRole, GetRole, and PutRolePolicy (on all resources)
-
-**SQS**: CreateQueue, GetQueueAttributes, and SetQueueAttributes (on all resources)
-
 #### Template components
 
-##### Scenarios
+To understand the resource stack, let's begin by considering an instance of Algorithmia Enterprise running in some AWS account called `ACCOUNT_AE`. All nodes in this Algorithmia instance run with the same IAM instance profile, which has a set of IAM policies attached to it.
 
-There are two possible scenarios that describe the relationship between the AWS account that creates the SQS queue and the account running the Algorithmia cluster that'll be using the queue as a message broker.
+Let's also suppose that you're in [Scenario #2](#scenario-2-queue-created-in-a-different-aws-account), creating an SQS queue in some other AWS account called `ACCOUNT_SQS`. This account needs an IAM role and policy created to allow for reading, acknowledging, and deleting messages from the target SQS queue. Let's call this role `READ_SQS`; it must be created within `ACCOUNT_SQS`, specifying the appropriate permissions on the SQS queue.
 
-1. The SQS queue is created within the account that's running the Algorithmia cluster.
-2. The SQS queue is created within a **different** account than the one running the Algorithmia cluster.
-
-##### Scenario #1: Queue created in the same AWS account
-
-CloudFormation configures SQS with the appropriate IAM permissions to ensure that your Algorithmia cluster is able to take actions on messages from the target queue. As written, the CloudFormation template supports Scenario #1. That is to say that from within the account running Algorithmia, you can use the CloudFormation template as provided to create all the resources you need, without any additional steps.
-
-If you're in this scenario and don't need to explore the details of the resources being created, you can skip ahead to [Creating a stack with CloudFormation](#creating-a-stack-with-cloudformation).
-
-##### Scenario #2: Queue created in a different AWS account
-
-If you create an SQS queue in a different account than the one running the Algorithmia cluster, you'll need to understand a few key components of the CloudFormation template in order to appropriately configure SQS to work with Event Flows.
-
-Let's begin by considering an AWS-hosted instance of Algorithmia Enterprise running in some AWS account called `ACCOUNT_AE`. All nodes in this Algorithmia instance run with the same IAM instance profile, which has a set of IAM policies attached to it.
-
-The following diagram is a visual representation of the AWS account and associated resources, which will be explained below.
+The following diagram is a visual representation of this configuration, and we'll continue to explore it below.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/iam-sqs-relationships.png" alt="SQS and Algorithmia permission diagram">
 
-Let's also suppose that you create an SQS queue (to be used as a message broker with Event Flows) in some other AWS account called `ACCOUNT_SQS`. This account needs an IAM role and policy created that allows reading, acknowledging, and deleting messages from the SQS queue. Let's call this role `READ_SQS`. It must be created within the `ACCOUNT_SQS` account, specifying the appropriate permissions on the SQS queue **QueueName** (note that this is the name of the queue specified [above](#1-gathering-required-information-from-algorithmia-and-defining-queue-parameters)).
-
-Here's what the `READ_SQS` permission policy looks like.
+Here's what the `READ_SQS` permission policy looks like in JSON. (**NOTE: This policy is created by CloudFormation.**)
 
 ```json
 {
@@ -190,9 +188,11 @@ Here's what the `READ_SQS` permission policy looks like.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-role-perms-json.png" alt="Role READ_SQS permission policy">
 
-In order to consume messages from the queue created in `ACCOUNT_SQS`, `ACCOUNT_AE` must attach an IAM policy allowing Algorithmia's instance profile to assume the `READ_SQS` role. Let's call this policy `ASSUME_READ_SQS`; it must be created within `ACCOUNT_AE` to allow it to assume this specific role from `ACCOUNT_SQS`.
+Note that further down in this guide, the `READ_SQS` role ARN will be used both for the [AssumeRole policy](#attaching-an-assumerole-policy) that you'll attach to `ACCOUNT_AE` and in Algorithmia's browser UI when you [connect the SQS message broker](#connect-to-an-sqs-message-broker).
 
-Here's what the `ASSUME_READ_SQS` permission policy looks like.
+In order to consume messages from the queue created in `ACCOUNT_SQS`, the `ACCOUNT_AE` Algorithmia instance profile must attach an IAM policy allowing it to assume the `READ_SQS` role from above. Let's call this policy `ASSUME_READ_SQS`; it must be created within `ACCOUNT_AE` to allow the instance profile to assume this specific role from `ACCOUNT_SQS`.
+
+Here's what the `ASSUME_READ_SQS` permission policy looks like in JSON. (**NOTE: You must attach this policy to the `ACCOUNT_AE` profile**; we'll walk through this [below](#attaching-an-assumerole-policy).)
 
 ```json
 {
@@ -208,21 +208,21 @@ Here's what the `ASSUME_READ_SQS` permission policy looks like.
 }
 ```
 
-On the `ACCOUNT_SQS` side, the `READ_SQS` role must designate `ACCOUNT_AE` as a **Trusted entity** so that the `READ_SQS` role can be assumed by roles from `ACCOUNT_AE`. The **trust relationship** can be configured under **IAM** &rarr; **Roles** &rarr; {`READ_SQS`} &rarr; **Trust relationships**. You can also access the role-configuration page for the `READ_SQS` role through **CloudFormation** &rarr; **Stacks** &rarr; {**Stack name**} &rarr; **Resources** (the role will by **Type** `AWS::IAM::Role` in the table under this tab). Note that setting a trust relationship is only necessary in this scenario where `Account_AE` is different from `Account_SQS`.
+On the `ACCOUNT_SQS` side, the `READ_SQS` role must designate `ACCOUNT_AE` as a **Trusted entity** so that the `READ_SQS` role can be assumed by roles from `ACCOUNT_AE`. (**NOTE: This trust relationship will be configured by CloudFormation**.) Note that if you aren't using CloudFormation, setting a trust relationship is only necessary in [Scenario #2](#scenario-2-queue-created-in-a-different-aws-account) where `Account_AE` is different from `Account_SQS`.
+
+If necessary, the **trust relationship** can be edited under **IAM** &rarr; **Roles** &rarr; {`READ_SQS`} &rarr; **Trust relationships**. You can also access the role-configuration page for the `READ_SQS` role through **CloudFormation** &rarr; **Stacks** &rarr; {**Stack name**} &rarr; **Resources** (the role will by **Type** `AWS::IAM::Role` in the table under this tab).
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-trust-relationships.png" alt="Trust relationships trusted entities">
 
-Further down in this guide when you [connect the SQS message broker](#connect-to-an-sqs-message-broker) in Algorithmia's browser UI, the **Role ARN** for this `READ_SQS` role is what you'll be entering in the **ROLE ARN** field.
-
-### Creating a stack with CloudFormation in the AWS Console
+### Creating a stack with CloudFormation
 
 Open the <a href="https://console.aws.amazon.com/cloudformation/home" target="_blank" rel="noopener noreferrer">CloudFormation</a> page in the AWS console.
 
-Click **Stacks** in the left-hand navigation menu, and then click **Create stack**.
+Click **Stacks** in the left-hand navigation menu, and then click **Create stack**. If you already have resources provisioned, you may need to specify whether to create the stack using those existing resources. In this guide we'll create the stack with new resources, so in the dropdown select the **With new resources (standard)** option.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-create-stack.png" alt="CloudFormation create stack">
 
-On the resulting page, in the **Specify Template** section, select **Upload a template file** and then click **Choose file**. Navigate to the `client-aws-cloudformation-template.yaml` template file that you saved [above](#exploring-the-cloudformation-template-and-required-aws-permissions) and select it for upload.
+On the resulting page, in the **Specify template** section, leave the default **Template is ready** option selected in the first box and select **Upload a template file** in the second box. Click **Choose file**, navigate to the `client-aws-cloudformation-template.yaml` template file that you saved locally [above](#exploring-the-cloudformation-template-and-required-aws-permissions), and select it for upload.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-specify-template.png" alt="CloudFormation upload template file">
 
@@ -232,6 +232,10 @@ On the following page, enter a **Stack name**. This should be a unique name that
 
 Under **AlgorithmiaAccountNumber**, enter Algorithmia’s AWS account number, [provided to you by Algorithmia](#1-gathering-required-information-from-algorithmia).
 
+The **AlgorithmiaAccountNumber** is the account number of the AWS account running the Algorithmia instance, regardless of [where the SQS queue is created](#scenarios).
+{: .notice-info}
+
+
 Under **QueueDLQName**, enter a unique name that identifies the Amazon SQS queue that'll be a holding queue for payloads that weren't accepted by the Algorithmia algorithm for _any_ reason (invalid message format, Algorithmia platform downtime, etc.).
 
 Under **QueueName**, enter a unique name that identifies the SQS queue that'll be the source of payloads for the algorithm to run.
@@ -240,7 +244,7 @@ Under **QueueName**, enter a unique name that identifies the SQS queue that'll b
 
 Click **Next**.
 
-The next page allows you to **Configure stack options**. If you need to use a specific IAM role that has the permissions specified above in [Required Permissions](#required-permissions), enter that role in the **Permissions** section. Otherwise, leave it blank.
+The next page allows you to **Configure stack options**. If you need to use a specific IAM role that has the permissions specified [above](#2-configuring-resources-on-aws), enter that role in the **Permissions** section. Otherwise, leave it blank.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-iam-permissions.png" alt="CloudFormation configure stack options">
 
@@ -260,13 +264,36 @@ The next page will indicate that the stack creation is in progress.
 
 After about 60 seconds, click the gray refresh wheel (<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_11.png" alt="refresh icon">). It should show the **Stack status** as "CREATE_COMPLETE". If not, wait another 60 seconds and click the wheel again.
 
-Click the **Outputs** tab. Copy the **QueueURL** and **QueueConsumerARN**; you'll use them below when [connecting the SQS message broker](#connect-to-an-sqs-message-broker) to an algorithm in the Algorithmia browser UI.
+<span id="outputs"></span>
+
+Click the **Outputs** tab. Copy the **QueueConsumerARN** and **QueueURL**; you'll use them below both for the [AssumeRole policy](#attaching-an-assumerole-policy) that you'll attach to `ACCOUNT_AE` and in Algorithmia's browser UI when you [connect the SQS message broker](#connect-to-an-sqs-message-broker).
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws-console-stack-outputs.png" alt="CloudFormation stack output">
 
+### Attaching an AssumeRole policy
+
+As described [above](#template-components), once you've created the resource stack with CloudFormation, you'll need to attach the following policy to the Algorithma instance profile account, replacing the `Resource` value with the role ARN for the `READ_SQS` role created. The following policy template is the same as that shown above.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::ACCOUNT_SQS:role/READ_SQS",
+            "Effect": "Allow",
+            "Sid": "VisualEditor0"
+        }
+    ]
+}
+```
+
+If you're not familiar with working with IAM policies, see the AWS documentation for [creating an IAM policy using the JSON editor](https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) and [attaching an IAM policy to an identity](https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) to complete this step.
+
+
 ## 3. Creating an Event Flow in Algorithmia
 
-**NOTE:** The steps in this section are to be completed on Algorithmia, from within the browser user interface (UI) or through the API. In this guide, we'll demonstrate what the workflow looks like in the UI.
+**NOTE**: The steps in this section are to be completed on Algorithmia, from within the browser user interface (UI) or through the API. In this guide, we'll demonstrate what the workflow looks like in the UI.
 {: .notice-info}
 
 Note that you can set up _any_ algorithm to subscribe to an SQS message broker so that the algorithm is executed when a message is published to that specific queue. On our platform we refer to this type of event-driven configuration as an Event Flow, and the following demonstrates one possible example of how to set one up.
@@ -275,9 +302,9 @@ Note that you can set up _any_ algorithm to subscribe to an SQS message broker s
 
 Create a Python 3.x algorithm with a generic Python 3.7 algorithm environment and default settings. If you're new to Algorithmia or need a quick refresher on how to create and modify algorithms, see our [Getting Started Guide](/algorithm-development/your-first-algo).
 
-On the newly created algorithm's profile, click the **Source** tab to access the source code in the Web IDE.
+On the newly created algorithm's profile, click the **Source Code** tab to access the algorithm's source code in the Web IDE.
 
-In the body of your algorithm, paste the source code below, replacing the `COLLECTION_OWNER` and `COLLECTION_NAME` with your Algorithmia account name and the name of a data collection (which you'll create in a subsequent step), respectively. In the screenshot below the sample code, these values are `Ezra` and `TestingSQSEventFlow`, respectively.
+In the body of your algorithm, paste the code below, replacing `COLLECTION_OWNER` and `COLLECTION_NAME` with your Algorithmia account name and the name of a data collection (which you'll create in the next section), respectively. In the screenshot below the sample code, these respective values are `ezra` and `TestingSQSEventFlow`.
 
 ```python
 import Algorithmia
@@ -299,7 +326,7 @@ On the newly published algorithm's profile, copy the algorithm endpoint, which w
 
 ### Create a hosted data collection
 
-Now create a hosted data collection to which the algorithm above will write the records read from the message broker. To begin, click the **Data Sources** menu item in the left-hand navigation bar. Click **New Data Source** and then **Hosted Data Collection**.
+Now create a hosted data collection to which the algorithm above will write the records read from the SQS message broker. To begin, click the **Data Sources** menu item in the left-hand navigation bar. Click **New Data Source** and then **Hosted Data Collection**.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/create-hosted-data-collection.png" alt="Create Algorithmia hosted data collection">
 
@@ -316,9 +343,9 @@ Navigate to your new algorithm's profile and click the **Events** tab and then t
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/connect_sqs_broker_button.png">
 
-In the modal, enter the **QueueURL** and **QueueConsumerARN** values from [step 3](#3-creating-resources-in-aws) for the **URI** and **ROLE ARN** fields, respectively.
+In the modal, enter the **QueueURL** and **QueueConsumerARN** [stack output](#outputs) values for the **URI** and **ROLE ARN** fields, respectively.
 
-The **Algorithm** endpoint field is auto-populated, and the full algorithm path is shown below the text input field. The version number is optional.
+The **Algorithm** endpoint field is auto-populated, and the full algorithm path is shown below the text input field. The version number is optional if the algorithm is published publicly. If it's only published privately, you'll either need to specify a semantic version, a version hash, or the string `latestPrivate`.
 
 Optionally, enter a value for **Algorithm timeout in seconds**.
 
@@ -332,14 +359,14 @@ Click [here](#4-sending-messages-to-the-broker) to skip to the next step to lear
 
 ### Create an Event Listener
 
-This section documents the workflow in Algorithmia versions <20.5.53, where Event Flows were called event listeners.
+This section documents the workflow in Algorithmia versions <20.5.53, where Event Flows were called event listeners. See the section [above](#connect-to-an-sqs-message-broker) for the updated Event Flows workflow.
 {: .notice-info}
 
 Navigate to the **Home** tab on the left-hand navigation menu. Click on the **Create New** button and select **Event Listener**. Select **Amazon SQS** from the dropdown.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_26.png">
 
-In the modal, enter the **QueueURL** and **QueueConsumerARN** into the **URI** and **ROLE ARN** fields, respectively.
+In the modal, enter the **QueueURL** and **QueueConsumerARN** [stack output](#outputs) values for the **URI** and **ROLE ARN** fields, respectively.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/image_27.png">
 
@@ -349,13 +376,13 @@ Enter the full path to the algorithm you created above and click **Create New Ev
 
 ## 4. Sending messages to the broker
 
-Many methods exist for sending messages to Amazon SQS queues. For the purposes of this demonstration, here we show how to do it in the AWS console.
+Many methods exist for sending messages to Amazon SQS queues. For the purposes of this demonstration, here we show how to send messages in the AWS console.
 
-Open the <a href="https://console.aws.amazon.com/sqs/home" target="_blank" rel="noopener noreferrer">SQS</a> page in the AWS console. Click on the name of the queue (**QueueName**) that was created [above](#creating-a-stack-with-cloudformation-in-the-aws-console), and click the **Send and receive messages** button.
+Open the <a href="https://console.aws.amazon.com/sqs/home" target="_blank" rel="noopener noreferrer">SQS</a> page in the AWS console. Click on the name of the target queue (**QueueName** from above) and click the **Send and receive messages** button.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/aws_console_send_messages.png">
 
-In the **Send and receive messages** page, in the **Message body** field enter the message payload to send to the algorithm you created above. For our example here, it might be formatted like this.
+In the **Send and receive messages** page, in the **Message body** field enter the message payload to send to the algorithm you created above. For the example code above, you can use the following format.
 
 ```json
 {
@@ -368,6 +395,6 @@ In the **Send and receive messages** page, in the **Message body** field enter t
 
 Click **Send Message** and the payload will be consumed by Algorithmia and sent to the configured algorithm as input for execution.
 
-To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file`, with contents equal to the string `file contents to store`.
+To verify, open the **Data Sources** menu item in the left sidebar and navigate to the `COLLECTION_NAME` data collection that you configured above as the destination for your algorithm to write data. Based on the payload shown above in the **Message body** section, the collection should contain the file `some-new-file.txt`, with contents equal to the string `file contents to store`.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/amazon-sqs-file-contents.png">
