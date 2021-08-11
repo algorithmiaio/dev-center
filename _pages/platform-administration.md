@@ -1,10 +1,6 @@
 ---
 excerpt: "Learn how to administer an Algorithmia cluster."
 layout: article_page
-redirect_from:
- - /admin/
- - /administration/
- - /platform-admin/
 show_related: false
 title: "Platform Administration"
 ---
