@@ -57,7 +57,7 @@ The matrix below lists the algorithm environments that are currently available o
   </div>
 </div>
 
-We’re always adding new optimized runtime environments to support our customers using the latest language and framework versions. Therefore, in addition to those listed above, we also have the following environments available to our Enterprise customers. If there is a specific environment listed below that you'd like to use, or if you need a custom environment that isn't available, please ask your customer success manager so that we can get it built and installed on your cluster.
+We’re always adding new optimized runtime environments to support our customers using the latest language and framework versions. Therefore, in addition to those listed above, we also have the following environments available to our Enterprise customers. **If there is a specific environment listed below that you'd like to use, or if you need a custom environment that isn't available, please ask your customer success manager** so that we can get it built and installed on your cluster.
 
 <div class="syn-styles-supported">
   <div class="syn-table-container scrollable-x" markdown="1">
