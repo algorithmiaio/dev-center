@@ -10,43 +10,38 @@ tags: [basics, alg-dev-getting-started, app-dev-getting-started]
 title: "Versioning"
 ---
 
-### Version Scheme
+### Versioning scheme
 
-Every algorithm uses the same versioning scheme: `<major>.<minor>.<revision>`. Versions allow algorithm developers the ability to update and improve their algorithms while maintaining a dependable version for app developers to call. The Algorithmia platform also enforces certain restrictions based on versioning.
+Every algorithm uses the same versioning scheme: `<major>.<minor>.<revision>`. Versioning allows you the ability to update and improve an algorithm while maintaining dependable, immutable* versions to be executed. The Algorithmia platform also enforces certain restrictions based on versioning. (*Algorithmia guarantees immutability for the source code of published algorithms, but data that algorithms access does not have this immutability guarantee.)
 
-#### Revisions
+#### Major versions
 
-Revisions are intended for publishing backward-compatible bug fixes.
+Major versions are to be used when publishing breaking changes to an algorithm. For new major versions, algorithm permissions can be modified.
 
-Revisions will always carry the same price and visibility to ensure that existing users of an algorithm continue to have access to an algorithm and its bug fixes at a predictable price.
+#### Minor versions
 
-#### Minor Versions
+Minor versions are to be used when publishing new functionality in a backward-compatible manner. New minor versions will always have the same permissions as previous minor versions within the same major version.
 
-Minor versions are for publishing new functionality in a backwards-compatible manner.
+#### Revision versions
 
-Algorithm developers may elect to change the royalty cost for a new minor version of an algorithm, but a new minor version will always have the same permissions as previous minor versions.
+Revision versions are to be used for publishing backward-compatible bug fixes. New revision versions always carry the same visibility as previous revisions, ensuring that existing users of an algorithm version continue to have access to that algorithm and its associated bug fixes if calling it without specifying a specific revision version (see below).
 
-#### Major Versions
+### Versioned API calls
 
-Major version changes are for publishing breaking changes to an algorithm.
+Algorithmia clients support requesting a particular algorithm version by specifying the [algorithm endpoint](/developers/glossary#algorithm-endpoint) with the format `ALGO_OWNER/ALGO_NAME[/ALGO_VERSION]`, e.g., `util/echo/0.2.1`. Below are several ways that the version can be specified.
 
-Algorithm developers may change the cost and permissions of an algorithm for new major versions.
+#### Fully-specified semantic version
 
+If you specify the version as `<major>.<minor>.<revision>` (e.g., `util/echo/0.2.1`), you'll ensure that exactly that algorithm is used.
 
-### Versioned API Calls
-
-All algorithms are versioned the Algorithmia clients support specifying a version by specifying the algorithm URI with the format `<username>/<algoname>/<version>`, e.g., `util/echo/0.2.1`. There are several ways that the version can be expressed:
-
-#### Fully-specified version
-
-Specifying the version as `<major>.<minor>.<revision>` (e.g. `util/echo/0.2.1`) ensures that your API call always calls exactly that version.
-
-It is recommend that application devlopers use a fully-specified version when calling an algorithm from a production service. This ensures that your application is not affected by changes in pricing, permissions, or functionality.
+It's recommend that you supply a fully-specified [semantic version](/developers/glossary#algorithm-semantic-version) when calling an algorithm from a production service. This ensures that your application is not affected by changes in algorithm permissions or functionality.
 {: .notice-info}
 
-#### Semver-compatible version
+#### Partially specified semantic version
 
-By specifying the version as `<major>.<minor>` without a revision number (e.g. `util/echo/0.2`), your API call will use the latest `0.2` version which ensures that the price and permissions of the API calls remain the same. This is useful when you want to automatically benefit from bug fixes and you have confidence that the author will maintain backward compatibility with those bug fixes.
+If you specify the version as `<major>.<minor>` without a revision number (e.g., `util/echo/0.2`), the latest *publicly published* `0.2` version will be used, ensuring that the permissions of the algorithm remain constant. This is useful when you want to automatically benefit from bug fixes and you have confidence that the author will maintain backward compatibility with those bug fixes.
+
+Note that we don't support calling *privately published* algorithms using partially specified semantic versions, because it could introduce confusion as to which algorithm a caller is referring to, depending on their permissions. To understand this better, see the explanation in the [FAQ section below](#faqs).
 
 #### Latest public version
 
@@ -54,8 +49,26 @@ By specifying the version as `latest` (e.g. `util/echo/latest`) or by not specif
 
 #### Latest private version
 
-For algorithms you or your organizations own, specifying `latestPrivate` as the version allows you call the latest version that is published privately. This is primarily useful when you maintain a private algorithm and the application that uses it.
+For algorithms that you or your organizations own and only publish privately, specifying `latestPrivate` as the version allows you to call the latest private version at a constant endpoint. This is primarily useful when you maintain a private algorithm and the application that uses it.
 
-#### SHA version
+#### SHA (algorithm version hash) version
 
-For algorithms you or your organizations own, you may specify the version using the full SHA (e.g. `4be0e18fba270e4aaa7cff20555268903f69a11b`) of a successful build. This is useful for testing your algorithms during development.
+For algorithms that you or your organizations own, you may specify the version using the full SHA (e.g., `4be0e18fba270e4aaa7cff20558905263f69a11b`) of a successful build. This is useful for testing your algorithms during development. Note that on our platform we also refer to the SHA as the [algorithm version hash](/developers/glossary#algorithm-version-hash).
+
+## FAQs
+
+**Q**: <em>Can you elaborate on why you don't allow partially specified semantic versions for private algorithms?</em>
+
+**A**: Absolutely! Suppose that `User1` is a member of an organization `Org1`, and `User2` isn't. `Org1` owns an algorithm called `OrgAlgo`.
+
+Let's suppose that there are these two versions of `OrgAlgo`:
+
+- `Org1/OrgAlgo/1.0.1` is published publicly on the cluster
+- `Org1/OrgAlgo/1.0.2` is published privately, accessible only to members of `Org1`
+
+If we allowed partially specified semantic versions, the following behavior would be possible:
+
+- `User1` calls `Org1/OrgAlgo/1.0`; because they have access to the private version, their request goes to `Org1/OrgAlgo/1.0.1`.
+- `User2` calls `Org1/OrgAlgo/1.0`; because they have access only to the public version, their request goes to `Org1/OrgAlgo/1.0.2`.
+
+In this scenario, the users call the same endpoint but gets a different version. We avoid this unpredictable behavior by not supporting this construct at all for private algorithms.
