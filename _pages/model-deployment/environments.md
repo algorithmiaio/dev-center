@@ -76,7 +76,6 @@ We’re always adding new optimized runtime environments to support our customer
 |r36|R 3.6|--|--|--|algorithmiahq/ubuntu:16.04|
 |scala-2-sbt-1.3.3|Scala 2.x|--|--|--|algorithmiahq/ubuntu:16.04|
 |java11|Java 11.0|--|--|--|algorithmiahq/ubuntu:20.04|
-|csharp-dotnet-core2|C# .NET Core 2.x|--|--|--|ubuntu:16.04|
 
   </div>
 </div>
