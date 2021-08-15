@@ -34,7 +34,7 @@ Algorithmia's language clients support requesting a particular algorithm version
 
 If you specify the version as `<major>.<minor>.<revision>` (e.g., `util/echo/0.2.1`), you'll ensure that exactly that algorithm is used.
 
-It's recommend that you supply a fully specified [semantic version](/developers/glossary#algorithm-semantic-version) when calling an algorithm from a production service. This ensures that your application is not affected by changes in algorithm permissions or functionality.
+It's recommended that you supply a fully specified [semantic version](/developers/glossary#algorithm-semantic-version) when calling an algorithm from a production service. This ensures that your application is not affected by changes in algorithm permissions or functionality.
 {: .notice-info}
 
 #### Partially specified semantic version
