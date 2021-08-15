@@ -53,7 +53,7 @@ For algorithms that you or your organizations own and only publish privately, sp
 
 #### SHA (algorithm version hash) version
 
-For algorithms that you or your organizations own, you may specify the version using the full SHA (e.g., `4be0e18fba270e4aaa7cff20558905263f69a11b`) of a successful build. This is useful for testing your algorithms during development without needing to actually publish them. Note that on our platform we also refer to the SHA as the [algorithm version hash](/developers/glossary#algorithm-version-hash).
+For algorithms that you or your organizations own, you may specify the version using the full SHA (e.g., `4be0e18fba270e4aaa7cff20558905263f69a11b`) of a successful build. This is useful for testing your algorithms during development without needing to publish them. Note that on our platform we also refer to the SHA as the [algorithm version hash](/developers/glossary#algorithm-version-hash).
 
 ## FAQs
 
