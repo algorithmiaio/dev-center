@@ -13,12 +13,20 @@ services:
 stages:
   - build
   - push
+  - scan
+
+before_script:
+  - mkdir ~/.docker
+  - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
 
 #
 # Build
 #
 
 build:
+  except:
+    variables:
+      - $DEPENDENCY_CHECK == "true" # don't run a build when checking dependencies, because this will be based on a previously built sha
   stage: build
   image:
     name: docker:19.03.8
@@ -50,13 +58,25 @@ build:
 #
 
 push:
+  except:
+    variables:
+      - $DEPENDENCY_CHECK == "true" # don't run a build when checking dependencies, because this will be based on a previously built sha
   stage: push
   image:
     name: docker:19.03.8
     entrypoint: [""]
-  before_script:
-    - mkdir ~/.docker
-    - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
   script:
     - docker load -i image/golduck.tar
     - docker push $IMAGE_TAG
+
+osPackages:
+  stage: scan
+  image: algorithmiahq/vulnerability-scanner:latest
+  services:
+    - docker:18-dind
+  rules:
+    - if: '$DEPENDENCY_CHECK == "true"'
+    - when: manual
+      allow_failure: true
+  script:
+    - report-os-package-security-vulnerabilities $IMAGE_TAG UXENG 'Developer Center'
