@@ -12,7 +12,7 @@ tags: [platform]
 title: "Advanced Governance Reporting"
 ---
 
-Advanced governance reporting provides functionality to aggregate algorithm execution metrics and make them searchable in order to easily view and report on resource usage at the algorithm, account, organization, and cluster level.
+Advanced governance reporting provides functionality to aggregate execution metrics for organization-owned algorithms and make them searchable in order to easily view and report on resource usage at the algorithm, account, organization, and cluster level.
 
 This feature is only available to users on [Algorithmia Enterprise](/enterprise) clusters where the feature has been enabled. The feature is available beginning in Algorithmia version 20.5.57.
 {: .notice-enterprise}
@@ -24,7 +24,7 @@ This feature is only available to users on [Algorithmia Enterprise](/enterprise)
 
 ## Metrics
 
-Governance reports contain both historical and aggregate data. Historical data is a roll-up from a time window of algorithm executions, while aggregate data represents a snapshot from the time the report is generated. The following metrics are available in governance reports:
+Governance reports contain both historical and aggregate data. Historical data is a roll-up from a time window of algorithm executions, while aggregate data represents a snapshot from the time the report is generated. The data-aggregation job is run daily on the cluster, so the aggregated data has day-level granularity, from midnight to midnight. The following metrics are available in governance reports:
 
 Historical data
 - Algorithmia-hosted storage size (MiB)
