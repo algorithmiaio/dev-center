@@ -1,4 +1,4 @@
-[DOCS-XXX](https://algorithmia.atlassian.net/jira/software/projects/DOCS/boards/16/backlog) - Brief description / title of ticket
+[DOCS-XXX](https://algorithmia.atlassian.net/browse/DOCS-XXX) - Brief description / title of ticket
 
 Additional context/notes if appropriate (e.g., specifics about what's changing, links to epic or other PRs, etc.)
 
