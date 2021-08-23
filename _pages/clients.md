@@ -9,7 +9,6 @@ redirect_from:
   - /algorithm-development/guides/
   - /application-development/client-guides/
   - /application-development/guides/
-  - /clients/cURL/
   - /application-development/lang-guides/
 show_related: false
 tags: [app-guide-overview]
