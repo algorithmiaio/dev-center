@@ -14,7 +14,10 @@ title: "Azure Event Hubs"
 
 This guide will walk you through setting up an algorithm to send messages to [Azure Event Hubs (EH)](https://azure.microsoft.com/services/event-hubs/), Azure's high-throughput data-streaming and event-ingestion service. Once configured, you can create workflows in which your algorithms publish data to an event hub, unlocking downstream storage, processing, and analytics capabilities on Azure.
 
-Because Algorithmia doesn't currently have a native integration with Azure Event Hubs, you can use one of Microsoft's official SDKs, for example the `azure-eventhub` [Python client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send) or the `azure-messaging-eventhubs` [Java client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-java-get-started-send) to send and receive messages from within your algorithms. The workflow demonstrated here uses the Python SDK, which is [available on PyPI](https://pypi.org/project/azure-eventhub/), to send messages. To see our other message broker integrations, see [Event Flows](/developers/event-flows).
+Because Algorithmia doesn't currently have a native Event Flows integration with Azure Event Hubs, you can use one of Microsoft's official SDKs, for example the `azure-eventhub` [Python client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send) or the `azure-messaging-eventhubs` [Java client library](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-java-get-started-send) to send and receive messages from within your algorithms. The workflow demonstrated here uses the Python SDK, which is [available on PyPI](https://pypi.org/project/azure-eventhub/), to send messages. To see our other message broker integrations, see [Event Flows](/developers/event-flows).
+
+**NOTE:** Although we currently don't support Azure Event Hubs natively for Event Flows, beginning in Algorithmia version 20.5.57 you can use Event Hubs as a message broker for [Algorithmia Insights](/developers/monitoring-and-observability/insights).
+{: .notice-info}
 
 ## Event Flow configuration overview
 
@@ -58,7 +61,7 @@ Endpoint=sb://test-azure-eh-namespace.servicebus.windows.net/;SharedAccessKeyNam
 **NOTE:** The steps in this section are to be completed on Algorithmia, from within the browser user interface (UI) or through the API.
 {: .notice-info}
 
-As noted above, in this workflow we're using Microsoft's `azure-eventhub` Python SDK to send messages to Event Hubs from within an algorithm. For more information on how to use this library to send and receive messages, see Microsoft's [Quickstart Guide](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send).
+As noted above, in this workflow we're using Microsoft's `azure-eventhub` Python SDK to send messages to EH from within an algorithm. For more information on how to use this library to send and receive messages, see Microsoft's [Quickstart Guide](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-python-get-started-send).
 
 ### Create an algorithm
 
