@@ -111,7 +111,7 @@ You can find more details about optional flags under [API Docs](/developers/api/
 
 ### Limits
 
-By default, one account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit can be raised if needed).
+By default, one account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit can be increased if needed).
 
 Requests are limited to a payload size of 10 MB for input and 15 MB for output. If you need to work with larger payloads, you can make use of Algorithmia's [data API](/developers/api/#data). See [considerations for transferring large data payloads](https://training.algorithmia.com/using-data-sources/688899#considerations-for-transferring-large-data-payloads) for more details.
 
