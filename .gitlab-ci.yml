@@ -80,3 +80,15 @@ osPackages:
       allow_failure: true
   script:
     - report-os-package-security-vulnerabilities $IMAGE_TAG UXENG 'Developer Center'
+
+nodeCodeLibraries:
+  stage: scan
+  image: algorithmiahq/vulnerability-scanner:latest
+  services:
+    - docker:18-dind
+  rules:
+    - if: '$DEPENDENCY_CHECK == "true"'
+    - when: manual
+      allow_failure: true
+  script:
+    - report-node-security-vulnerabilities UXENG 'Developer Center'

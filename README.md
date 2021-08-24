@@ -127,10 +127,11 @@ Per the [Third-Party Component Maintenance Policy](https://algorithmia.atlassian
 
 Scanning and Jira ticket creation is performed by a script:
 -   `report-os-package-security-vulnerabilities algorithmiahq/dev-center:<version> UXENG "Developer Center"` - scans OS packages
+-   `report-node-security-vulnerabilities algorithmiahq/dev-center:<version> UXENG "Developer Center"` - scans Node code libraries
 
-This script is part of the [CI-tools repository](https://github.com/algorithmiaio/ci-tools/blob/traack-add-single-image-vulnerability-scanner/vulnerabilities/tools/report-os-package-security-vulnerabilities) and is packaged for use in the `algorithmiahq/vulnerability-scanner:latest` Docker image.
+These scripts are part of the [CI-tools repository](https://github.com/algorithmiaio/ci-tools/blob/traack-add-single-image-vulnerability-scanner/vulnerabilities/tools/report-os-package-security-vulnerabilities) and are packaged for use in the `algorithmiahq/vulnerability-scanner:latest` Docker image.
 
-Running the script with `--no-jira` appended will run scanning and CLI reporting of vulnerabilities without Jira ticket creation; for example: `report-os-package-security-vulnerabilities algorithmiahq/dev-center:<version> UXENG "Developer Center" --no-jira`.
+Running a script with `--no-jira` appended will run scanning and CLI reporting of vulnerabilities without Jira ticket creation; for example: `report-os-package-security-vulnerabilities algorithmiahq/dev-center:<version> UXENG "Developer Center" --no-jira`.
 
 ## Environment variables
 
