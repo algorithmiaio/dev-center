@@ -34,6 +34,9 @@ The process of configuring Event Flows with an EH message broker involves multip
 
 ### Creating an Event Hubs namespace and an event hub
 
+**NOTE:** If you're familiar with the [Apache Kafka](/developers/event-flows/apache-kafka) platform, it can be helpful to understand the name mapping between Kafka and Event Hubs. In simple terms, an Event Hubs namespace is analogous to a Kafka cluster, and an event hub is analogous to a Kafka topic.
+{: .notice-info}
+
 To begin, create an event hub [using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) or [using the Azure CLI](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-quickstart-cli). This will entail first deploying an Event Hubs namespace and then creating an event hub within the namespace. Because we'll be sending messages using the Python SDK directly from an algorithm and not natively through Algorithmia's internal infrastructure, the event hub can exist in any Azure account to which you have access. In other words, the Azure account in which the event hub is created doesn't need to be the account running the Algorithmia platform, and no additional permission-configuration steps are required.
 
 ### Gathering required parameters
