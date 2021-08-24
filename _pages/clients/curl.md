@@ -32,7 +32,7 @@ The first algorithm you'll call in this guide is the boilerplate [hello world](h
 Note that if you're working with a private Algorithmia Enterprise cluster, you'll need to replace `algorithmia.com` with your [cluster-specific domain name](/developers/glossary#cluster-domain) and the algorithm endopint will need to be changed to `/v1/algo/ALGO_OWNER/ALGO_NAME`, where `ALGO_OWNER` is the [name of your account](/developers/glossary#algorithm-owner)) and `ALGO_NAME` is the [name of your algorithm](/developers/glossary#algorithm).
 
 ```shell
-curl https://api.algorithmia.com/v1/algo/demo/hello \
+$ curl https://api.algorithmia.com/v1/algo/demo/hello \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -46,7 +46,7 @@ When executed with a valid API key, this will print the phrase `Hello HAL 9000` 
 Let's explore an example using the more complicated JSON input associated with a [natural language processing (NLP)](https://algorithmia.com/algorithms/nlp/LDA) algorithm. This algorithm takes a list of documents and returns a number of topics that are relevant to those documents. The documents can be a list of strings, a [data URI](/developers/glossary#data-uri), or a URL. Suppose you want to call this algorithm using a list of strings; you could achieve this with the cURL command below.
 
 ```shell
-curl https://api.CLUSTER_DOMAIN/v1/algo/nlp/LDA/1.0.0 \
+$ curl https://api.CLUSTER_DOMAIN/v1/algo/nlp/LDA/1.0.0 \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -67,7 +67,7 @@ Notice that in the command above, the API endpoint includes a version number `AL
 The API exposes options for configuring algorithm requests. This includes support for changing the execution timeout or indicating that the API should include `stdout` in the response. With cURL, you can provide these options as URL parameters. The example below shows how to set the timeout to 60 seconds and disable `stdout` in the response for the hello world algorithm from above.
 
 ```shell
-curl 'https://api.algorithmia.com/v1/algo/demo/hello?timeout=60&stdout=false' \
+$ curl 'https://api.algorithmia.com/v1/algo/demo/hello?timeout=60&stdout=false' \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -81,7 +81,7 @@ You can find more details under [API Docs](/developers/api/?shell) &rarr; [Invok
 To be able to better develop across languages, we've created a set of standardized error classes that can be returned by either the platform itself or by the individual algorithm being run. If an error occurs while invoking the API, the HTTP response will include an `error` field with error information.
 
 ```shell
-curl https://api.algorithmia.com/v1/algo/ALGO_OWNER/DOES_NOT_EXIST \
+$ curl https://api.algorithmia.com/v1/algo/ALGO_OWNER/DOES_NOT_EXIST \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -111,7 +111,7 @@ In this example, you'll upload an image to Algorithmia's [hosted data](/develope
 The [documentation](https://algorithmia.com/algorithms/dlib/FaceDetection/docs) for the face detection algorithm says that as input it takes a URL or a data URI of the image to be processed, and a data URI where the algorithm can store the result. We'll first execute a `POST` request to create a directory to host the input image. Then, we'll execute a `PATCH` request with the appropriate ACL to update the directory's [permissions](/developers/api/#update-collection-acl) so that it's publicly accessible.
 
 ```shell
-curl 'https://api.algorithmia.com/v1/data/.my' \
+$ curl 'https://api.algorithmia.com/v1/data/.my' \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -121,7 +121,7 @@ curl 'https://api.algorithmia.com/v1/data/.my' \
 The response indicates the URI of the new collection: `{"result": "data://.my/img_directory"}`
 
 ```shell
-curl 'https://api.algorithmia.com/v1/connector/data/.my/img_directory' \
+$ curl 'https://api.algorithmia.com/v1/connector/data/.my/img_directory' \
     -X PATCH \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -136,7 +136,7 @@ Note that, as demonstrated above, instead of your account name you can also use 
 Now you're ready to upload an image file for processing. For this example, you can use [this photo of a group of friends](https://unsplash.com/photos/Q_Sei-TqSlc). Download the image and save it locally as `friends.jpg`, and then upload the local file to the data collection using the following `PUT` command.
 
 ```shell
-curl 'https://api.algorithmia.com/v1/connector/data/.my/img_directory/friends.jpg' \
+$ curl 'https://api.algorithmia.com/v1/connector/data/.my/img_directory/friends.jpg' \
     -X PUT \
     -H 'Authorization: Simple STD_API_KEY' \
     --data-binary @PATH/TO/LOCAL_DIRECTORY/friends.jpg
@@ -153,8 +153,8 @@ You can also upload your data through the Algorithmia's browser UI; see the [hos
 
 Once the file has been uploaded, you are ready to call the algorithm, providing the inputs as specified in the [FaceDetection documentation](https://algorithmia.com/algorithms/dlib/FaceDetection/docs)—an image URI (which is stored in `img_file` in the code above) and a URI for the image output:
 
-{% highlight bash %}
-curl https://api.algorithmia.com/v1/algo/dlib/FaceDetection/0.2.1 \
+```shell
+$ curl https://api.algorithmia.com/v1/algo/dlib/FaceDetection/0.2.1 \
     -X POST \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
@@ -166,27 +166,27 @@ curl https://api.algorithmia.com/v1/algo/dlib/FaceDetection/0.2.1 \
         }
     ]
 }'
+```
 
-{% endhighlight %}
+Once the algorithm execution completes, the response will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
 
-Once the algorithm has completed, the response will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
-
-Algorithms can create and store data in folders named with the algorithm name in the Algorithm Data collection. To access this folder from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm author and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/author/algoName/folder/fileName`.
+Algorithms can create and store data in folders named with the algorithm name in the algorithm data collection. To access files in this location from within an executing algorithm, the `.algo` shortcut can be used, as in the input example above. When accessing data from a client context, the algorithm owner and name can be used along with the `.algo` shortcut to download data, in the format `data://.algo/ALGO_OWNER/ALGO_NAME/COLLECTION_NAME/FILE_NAME`.
 {: .notice-info}
 
 ### Download the resulting file
 
 The URI included in the algorithm output uses the `.algo` shortcut, so we'll need to modify it slightly to download the file by adding the algorithm name and author. We can then attempt to download the file and write it to disk:
 
-{% highlight bash %}
-curl -O https://api.algorithmia.com/v1/connector/data/.algo/dlib/FaceDetection/temp/detected_faces.png \
+```shell
+$ curl https://api.algorithmia.com/v1/connector/data/.algo/dlib/FaceDetection/temp/detected_faces.png \
+    -O # save image locally with remote file name
     -H 'Authorization: Simple STD_API_KEY'
-{% endhighlight %}
+```
 
 ## Additional Functionality
 
-In addition to the functionality covered in this guide, the API provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with [source control](/developers/algorithm-development/source-code-management). You can also visit the [API Docs](/developers/api) to view the complete API specification.
+In addition to the functionality covered in this guide, the API provides a complete interface to the Algorithmia platform, including [managing algorithms](/developers/algorithm-development/algorithm-management), administering [organizations](/developers/platform/organizations), and working with external [source code management](/developers/algorithm-development/source-code-management) providers. You can also visit the [API Docs](/developers/api) to view the complete API specification.
 
 ## Next Steps
 
-If you'd like to use a particular programming language for accessing the Algorithmia platform, you can refer to the rest of our [Client Guides](https://algorithmia.com/developers/clients), or if you're a data scientist or developer who will be building and deploying new algorithms, you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo/) guide.
+If you'd like to use a particular programming language for accessing the Algorithmia platform, you can refer to the rest of our [Client Guides](https://algorithmia.com/developers/clients). If you'll be building and deploying new algorithms on the platform, , you can move on to the [Algorithm Development > Getting Started](/developers/algorithm-development/your-first-algo/) guide.
