@@ -159,13 +159,13 @@ $ curl https://api.algorithmia.com/v1/algo/dlib/FaceDetection/0.2.1 \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Simple STD_API_KEY' \
     -d '{
-    "images": [
+      "images": [
         {
             "url": "data://.my/img_directory/friends.jpg",
             "output": "data://.algo/temp/detected_faces.png"
         }
-    ]
-}'
+      ]
+    }'
 ```
 
 Once the algorithm execution completes, the response will contain the dimensions of the bounding boxes for any detected faces and the URI for the resulting file, which you can then download (or provide as input to another algorithm in a pipeline).
