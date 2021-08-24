@@ -179,8 +179,8 @@ The URI included in the algorithm output uses the `.algo` shortcut, so we'll nee
 
 ```shell
 $ curl https://api.algorithmia.com/v1/connector/data/.algo/dlib/FaceDetection/temp/detected_faces.png \
+    -H 'Authorization: Simple STD_API_KEY' \
     -O # save image locally with remote file name
-    -H 'Authorization: Simple STD_API_KEY'
 ```
 
 ## Additional Functionality
