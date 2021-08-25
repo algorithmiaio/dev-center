@@ -27,7 +27,7 @@ Algorithmia Insights is currently supported for [Python 3.x](/developers/algorit
 Algorithmia Insights metrics fall into two categories:
 
 - **Operational metrics** include (but are not limited to) execution time, request ID, algorithm owner, algorithm name, algorithm version, timestamp, etc. When Algorithmia Insights is enabled for a particular algorithm version, these metrics are automatically collected and reported without any additional action necessary on behalf of the algorithm developer.
-- **Inference-related metrics** are defined in the algorithm source code itself. Each metric is defined by a title (e.g, `"cute_cats_detected"`) and the numeric value associated with that parameter in the code (e.g., the variable `cute_cats_detected`, which in this case hopefully evaluates to a large number like `24`). Multiple inference-related metrics can be reported at one time (see [Restrictions](#restrictions) below). Furthermore, because  metrics reporting is all defined within the code itself, the exact set of metrics reported does not need to be the same from one algorithm execution to another.
+- **Inference-related metrics** are defined in the algorithm source code itself. Each metric is defined by a title (e.g, `"cute_cats_detected"`) and the numeric value associated with that parameter in the code (e.g., the variable `cute_cats_detected`, which in this case hopefully evaluates to a large number like `24`). Multiple inference-related metrics can be reported at one time (see [Restrictions](#restrictions) below). Furthermore, because metrics reporting is all defined within the code itself, the exact set of metrics reported does not need to be the same from one algorithm execution to another.
 
 ## Setting up Algorithmia Insights on your cluster
 
