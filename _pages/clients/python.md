@@ -112,6 +112,8 @@ The client exposes options that can configure algorithm requests. This includes 
 algo.set_options(timeout=60, stdout=False)
 {% endhighlight %}
 
+Note that if you choose to return `stdout` (which might be helpful for debugging if your algorithm contains calls to `print` or `logging`), it will be available as a line-break (`\n`) separated string in `response.result.metadata.stdout`.
+
 You can find more details in [API Docs](/developers/api/?python) > [Invoke an Algorithm](/developers/api/?python#invoke-an-algorithm).
 
 ### Error handling
