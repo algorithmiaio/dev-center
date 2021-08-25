@@ -11,7 +11,9 @@ tags: [integrations, monitoring-observability]
 title: "Arize"
 ---
 
-[Arize AI](https://arize.gitbook.io/arize/) is an ML observability platform that provides real-time monitoring and explainability to help you understand how your models are performing in production. The platform uses an evaluation score, allowing you to upload offline training and validation baselines alongside online production data in order to connect drift changes to model performance changes, conduct root cause analyses of model failures and performance degradation, and analyze model bias, among other capabilities.
+Arize AI is an [ML observability](https://arize.com/model-monitoring) platform that helps ML practitioners successfully take models from research to production, with ease. Arize’s automated [model monitoring](https://arize.com/ml-monitoring) and analytics platform helps ML teams quickly detect issues the moment they emerge, troubleshoot why they happened, and improve overall model performance. By connecting offline training and validation datasets to online production data in a central inference store, ML teams are able to streamline [model validation](https://arize.com/ml-model-failure-modes), [drift detection](https://arize.com/take-my-drift-away), [data quality checks](https://arize.com/data-quality-monitoring/), and [model performance management](https://arize.com/monitor-your-model-in-production/).
+
+Arize AI acts as the guardrail on deployed AI, providing transparency and introspection into historically black-box systems to ensure more effective and [responsible AI](https://www.forbes.com/sites/aparnadhinakaran/?sh=5d7691024958). To learn more about Arize or ML observability and monitoring, visit their [blog](https://arize.com/blog) and [resource hub](https://arize.com/resource-hub/)
 
 In this guide, we'll show you how to integrate Arize with Algorithmia so you can bring their real-time monitoring capabilities to your algorithms. To make use of this integration, you'll need to have an [Arize account](https://arize.com/request-access/) configured.
 
