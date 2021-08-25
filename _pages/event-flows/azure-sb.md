@@ -42,12 +42,12 @@ Contact [support@algorithmia.com](mailto:support@algorithmia.com) to obtain the 
 
 #### Create a custom role in your account
 
-To begin, save the following JSON custom role definition as a local file `GuestRole.json`.
+To begin, save the following JSON custom role definition as a local file `GuestRole.json`. You'll need to replace `SUBSCRIPTION_ID` with your Azure account's unique **Subscription ID** value. This can be found under the **Subscriptions** service in the Azure portal, and it will be a UUID of the format `51a70446-0c61-4017-577a-9327a28bcb73`.
 
 ```json
 {
   "Name": "QueueReceiver",
-  "Id": "88888888-8888-8888-8888-888888888888",
+  "Id": "SUBSCRIPTION_ID",
   "IsCustom": true,
   "Description": "Can receive messages and get connection string",
   "Actions": [
@@ -61,7 +61,7 @@ To begin, save the following JSON custom role definition as a local file `GuestR
   ],
   "NotDataActions": [],
   "AssignableScopes": [
-    "/subscriptions/88888888-8888-8888-8888-888888888888"
+    "/subscriptions/SUBSCRIPTION_ID"
   ]
 }
 ```
