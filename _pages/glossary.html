@@ -292,8 +292,8 @@
       <dt id="algorithm">algorithm <code class="placeholder">{ALGO_NAME}</code></dt>
       <dd id="dd-algorithm">
         Microservice on Algorithmia that accepts an input, returns an output, and may have side effects. An algorithm
-        can only accept a JSON type as input, and if it returns an output, can only return a JSON type. Algorithms can
-        be <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
+        can only accept a JSON blob, plain text, or binary data as input, and if it returns an output, can only return
+        these same formats. Algorithms can be <a class="glossary-hoverable" href="#algorithm-pipelining" title=""
           parentId="dd-algorithm-pipelining">pipelined</a> together with other algorithms. The primary use case for
         algorithms on Algorithmia’s platform is to provide functionality for loading and calling <a
           class="glossary-hoverable" href="#machine-learning" title="" parentId="dd-machine-learning">ML</a> <a
