@@ -2,7 +2,7 @@
 #
 # Stage 1: build API docs
 #
-FROM ruby:2.7.2 AS docs-builder
+FROM ruby:3.0.2 AS docs-builder
 
 RUN apt-get update && apt-get install -y nodejs \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
