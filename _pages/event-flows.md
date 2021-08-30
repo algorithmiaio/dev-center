@@ -111,11 +111,11 @@ curl -X GET https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME -H 'Authorization: 
 ```json
 {
   "id": "08d3d78a-012e-41d2-813e-670066c153be",
-  "username": "ezra",
-  "email": "ecitron@algorithmia.io",
-  "fullname": "Ezra Citron",
+  "username": "ACCOUNT_NAME",
+  "email": "demo_account@algorithmia.com",
+  "fullname": "Demo Account",
   "company_role": "engineer",
-  "self_link": "https://api.algorithmia.com/v1/users/ezra",
+  "self_link": "https://api.algorithmia.com/v1/users/ACCOUNT_NAME",
   "resource_type": "user"
 }
 ```
@@ -134,8 +134,8 @@ curl -X GET https://api.CLUSTER_DOMAIN/v1/users/USER_ID/event-listeners -H 'Auth
     "sourceType": "AmazonSQS",
     "sourceURI": "https://sqs.us-west-2.amazonaws.com/783449028191/demo-queue",
     "algoName": "testSQSEventFlow",
-    "algoOwner": "ezra",
-    "listenerOwner": "ezra",
+    "algoOwner": "ACCOUNT_NAME",
+    "listenerOwner": "ACCOUNT_NAME",
     "credentials": "arn:aws:iam::783449028191:role/demo-sqs-event-flow-algoqueuerole-C4YBAFWYH69Q"
   }
 ]
