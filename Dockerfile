@@ -2,7 +2,7 @@
 #
 # Stage 1: build API docs
 #
-FROM ruby:3.0.2 AS docs-builder
+FROM ruby:2.7.2 AS docs-builder
 
 RUN apt-get update && apt-get install -y nodejs \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -31,7 +31,7 @@ FROM ubuntu:20.04 as dev-center-builder
 
 # Prevent below apt-get line from requiring user interaction
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && \
+RUN apt-get update && apt upgrade && \
   apt-get install -y \
   openssl \
   ruby \
