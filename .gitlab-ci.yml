@@ -44,7 +44,8 @@ build:
       -t $BUILDER_TAG
       -t $IMAGE_TAG
       --file $CI_PROJECT_DIR/Dockerfile
-      --cache-from $BUILDER_TAG
+      --no-cache
+      --pull
       $CI_PROJECT_DIR
     - docker push $BUILDER_TAG
     - mkdir image
