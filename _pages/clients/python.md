@@ -61,6 +61,16 @@ client = Algorithmia.client("YOUR_API_KEY", "https://mylocalendpoint")
 
 Alternately, you can ensure that each of your servers interacting with your Algorithmia Enterprise instance have an environment variable named `ALGORITHMIA_API` and the client will use it.  The fallback API endpoint is always the hosted Algorithmia marketplace service at [https://api.algorithmia.com/](https://api.algorithmia.com/)
 
+#### Using a custom CA certificate for SSL
+
+You can specify a custom certificate authority (CA) certificate when you instantiate the Algorithmia client with:
+
+{% highlight python %}
+client = Algorithmia.client(ca_cert="PATH/TO/cacert.pem")
+{% endhighlight %}
+
+Note that the Algorithmia Python client uses the third-party requests library under the hood. If you supply a certificate file for a new client instance and the `REQUESTS_CA_BUNDLE` environment variable is already set, the supplied certificate will take priority over the bundle.
+
 ## Calling an algorithm
 
 Algorithms take three basic types of input whether they are invoked directly through the API or by using a client library: strings, JSON, and binary data. In addition, individual algorithms might have their own I/O requirements, such as using different data types for input and output, or accepting multiple types of input, so consult the input and output sections of an algorithm's documentation for specifics.
