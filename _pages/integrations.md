@@ -59,7 +59,7 @@ We support the use of third-party SDKs that you provide to access any data syste
 
 ### External model training and data platforms
 
-We're compatible with following platforms commonly used upstream in the ML pipeline:
+We're compatible with the following platforms commonly used upstream in the ML pipeline:
 
 * DataBricks ([website](https://databricks.com/))
 * DataRobot ([docs](/developers/integrations/datarobot) \| [website](https://www.datarobot.com/platform/))

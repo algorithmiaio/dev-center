@@ -86,14 +86,14 @@
 - title: VMware
   url: /vmware/
 
-- title: Pricing
-  url: https://algorithmia.com/pricing
+# - title: Pricing
+#   url: https://algorithmia.com/pricing
 
 - title: Release Notes
   url: /release-notes/
 
-- title: Support
-  url: /support/
+# - title: Support
+#   url: /support/
 
 - title: FAQ
   url: /faqs/

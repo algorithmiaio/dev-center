@@ -5,7 +5,8 @@ FROM ubuntu:20.04 as dev-center-builder
 
 # Prevent below apt-get line from requiring user interaction
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt upgrade && \
+RUN apt-get update && \
+  apt-get upgrade -y && \
   apt-get install -y \
   openssl \
   ruby \
