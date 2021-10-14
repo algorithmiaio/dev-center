@@ -1,8 +1,6 @@
 ---
-excerpt-short: "Test"
 nav_index: 0
 layout: nil
-show_related: false
 title: "API"
 ---
 {% if site.isLocalDev %}
