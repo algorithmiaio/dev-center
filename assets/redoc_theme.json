@@ -1,0 +1,14 @@
+{
+"colors":
+  {
+  "rightPanel":
+    {
+      "backgroundColor": "#DFC350",
+      "textColor": "#445AFF"
+    },
+  "http":
+    {
+      "get": "#DFC350"
+    }
+  }
+}

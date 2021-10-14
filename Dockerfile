@@ -1,31 +1,5 @@
-
 #
-# Stage 1: build API docs
-#
-FROM ruby:2.7.2 AS docs-builder
-
-RUN apt-get update && apt-get install -y nodejs \
-  && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /opt/builds
-COPY ./api-docs .
-
-RUN gem install bundler && gem update --system
-
-# Install dependencies
-RUN bundle install
-
-# Autoprefixer gem requires recent version of Node.
-RUN apt-get update -yq \
-    && apt-get install curl gnupg -yq \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash \
-    && apt-get install nodejs -yq
-
-# Build docs
-RUN bundle exec middleman build --clean
-
-#
-# Stage 2: build dev center
+# Stage 1: build dev center
 #
 FROM ubuntu:20.04 as dev-center-builder
 
@@ -61,7 +35,6 @@ FROM node:14.17-buster-slim
 WORKDIR /opt/src/app
 
 COPY --from=dev-center-builder /opt/builds/sites ./sites
-COPY --from=docs-builder /opt/builds/build ./docs
 
 COPY server/index.js ./server/index.js
 COPY server/prometheus.js ./server/prometheus.js
