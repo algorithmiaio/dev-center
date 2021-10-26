@@ -569,6 +569,32 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "enabled": false,
+                "id": "github",
+                "oauth": {
+                  "client_id": "89fsdy7hsdf8tsgd6",
+                  "client_secret": "..."
+                },
+                "provider": "github",
+                "urls": {
+                  "api": "https://api.github.com",
+                  "ssh": "ssh://git@github.com",
+                  "web": "https://github.com"
+                }
+              }'
 
   /v1/admin/scms/{scmId}:
     parameters:
@@ -594,6 +620,21 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Updating an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+              -X PATCH \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "enabled": true
+              }'
 
     delete:
       summary: Delete an SCM configuration
@@ -614,6 +655,17 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
   /v1/admin/scms/{scmId}/default:
     parameters:
@@ -638,6 +690,17 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Setting the default SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID/default \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
   /v1/admin/secret-provider:
     get:
@@ -953,6 +1016,54 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            ...
+
+            ## create an algorithm
+
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.create(
+              details = {
+                "label": "My First Algorithm"
+              },
+              settings = {
+                "language": "python3-1",
+                "environment": "cpu",
+                "source_visibility": "closed",
+                "license": "apl",
+                "network_access": "full",
+                "pipeline_enabled": True
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "details": {
+                  "label": "My First Algorithm"
+                },
+                "name": "ALGO_NAME",
+                "settings": {
+                  "language": "python3-1",
+                  "environment": "cpu",
+                  "source_visibility": "closed",
+                  "license": "apl",
+                  "network_access": "full",
+                  "pipeline_enabled": true
+                }
+              }'
 
     # TODO: fix namespace conflict, these are actually /algorithms/{algorithmId} with algoIdParam
     get:
@@ -972,6 +1083,22 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            print(algo.info()) # Prints an algorithm object
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -H 'Authorization: Simple STD_API_KEY'
 
     put:
       summary: Update an algorithm
@@ -1037,6 +1164,47 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.update(
+              details = {
+                "label": "My Updated Algorithm"
+              },
+              settings = {
+                "environment": "gpu",
+                "license": "apl",
+                "network_access": "full",
+                "pipeline_enabled": True,
+                "source_visibility": "closed"
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -X PUT
+            -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "details": {
+                  "label": "My Updated Algorithm"
+                },
+                "settings": {
+                  "environment": "gpu",
+                  "license": "apl",
+                  "network_access": "full",
+                  "pipeline_enabled": true,
+                  "source_visibility": "closed"
+                }
+              }'
 
     delete:
       summary: Delete an algorithm
@@ -1059,6 +1227,17 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an algorithm is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{algorithmId}/builds:
     parameters:
@@ -1116,6 +1295,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing algorithm builds is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{algorithmId}/builds/{buildid}:
     parameters:
@@ -1142,6 +1331,17 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single build is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_ID/builds/BUILD_ID \
+              -H 'Authorization: Simple STD_API_KEY'
+
 
   /v1/algorithms/{username}/{algoname}/builds/{buildid}:
     parameters:
@@ -1169,6 +1369,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single build is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds/BUILD_ID \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{algorithmId}/builds/{buildid}/logs:
     parameters:
@@ -1195,6 +1405,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm build's logs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_ID/builds/BUILD_ID/logs \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{username}/{algoname}/builds/{buildid}/logs:
     parameters:
@@ -1222,6 +1442,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm build's logs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds/BUILD_ID/logs \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{algorithmId}/compile:
     parameters:
@@ -1373,6 +1603,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm's SCM provider status is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/scm/status \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/algorithms/{algorithmId}/scm/webhook:
     parameters:
@@ -1492,6 +1732,24 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            # Query parameters may be passed as options.
+            # Prints the last ten versions of the algorithm.
+            print(algo.versions(limit=10))
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions \
+              -H 'Authorization: Simple STD_API_KEY'
 
     post:
       summary: Publish an algorithm's last successful build
@@ -1516,6 +1774,43 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.publish(
+              settings = {
+                "algorithm_callability": "private"
+              },
+              version_info = {
+                "release_notes": "A few bug fixes.",
+                "sample_input": "testing",
+                "version_type": "minor"
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions \
+              -X POST \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "settings": {
+                  "algorithm_callability": "private"
+                },
+                "version_info": {
+                  "version_type": "minor",
+                  "release_notes": "A few bug fixes.",
+                  "sample_input": "42"
+                }
+              }'
 
   /v1/algorithms/{algorithmId}/versions/{algohash}/registry:
     parameters:
@@ -1595,6 +1890,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single version is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions/ALGO_VERSION_HASH \
+              -H "Authorization: Simple API_KEY"
 
   /v1/algorithms/{algorithmId}/secrets:
     parameters:
@@ -1878,6 +2183,51 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            ## Getting file contents
+
+            # Download file and get the file handle
+            exampleFile = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").getFile()
+
+            # Get file's contents as a string
+            exampleText = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").getString()
+
+            # Get local file's contents as a string
+            exampleText = client.file("file://example.txt").getString()
+
+            # Get file's contents as JSON
+            exampleJson = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").getJson()
+
+            # Get file's contents as a byte array
+            exampleBytes = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").getBytes()
+
+            ## Getting directory contents
+
+            # Get directory's contents as a string
+            exampleText = client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getString()
+
+            # Get directory's contents as JSON
+            exampleJson =  client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getJson()
+
+            # Get directory's contents as a byte array
+            exampleBytes = client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getBytes()
+        - lang: Shell
+          label: cURL
+          source: |
+            ## Getting file contents
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -H 'Authorization: Simple STD_API_KEY'
+
+            ## Getting directory contents
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME \
+              -H 'Authorization: Simple STD_API_KEY'
 
     delete:
       summary: Delete a file or directory
@@ -1901,6 +2251,22 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            exampleFile = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png")
+            exampleFile.delete()
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.txt \
+              -X DELETE \
+              -H 'Authorization: Simple STD_API_KEY'
 
     head:
       summary: Check if a file exists
@@ -1922,6 +2288,22 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            if client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").exists():
+              print("File exists!")
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -I \
+              -H 'Authorization: Simple STD_API_KEY'
 
     patch:
       summary: Update a directory ACL
@@ -1948,6 +2330,30 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            from Algorithmia.acl import ReadAcl
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            example_collection = client.dir("data://COLLECTION_OWNER/COLLECTION_NAME")
+
+            example_collection.update_permissions(ReadAcl.private)
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME \
+              -X PATCH \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "acl": {
+                  "read": []
+                }
+              }'
 
     post:
       summary: Create a directory
@@ -1973,6 +2379,33 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            from Algorithmia.acl import ReadAcl
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            example_collection = client.dir("data://COLLECTION_OWNER/COLLECTION_NAME")
+
+            example_collection.create(ReadAcl.public)
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER \
+              -X POST \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "name": "COLLECTION_NAME",
+                "acl": {
+                  "read": [
+                    "user://*"
+                  ]
+                }
+              }'
 
     put:
       summary: Upload a file
@@ -1998,6 +2431,36 @@ paths:
       security:
         - ApiKeyAuth: [ ]
         - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            # Uploading a local file
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").putFile("/my/local/path/example.png")
+
+            # Uploading text
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").put("Hello world!")
+
+            # Uploading a dict as JSON
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.json").putJson({"hello": "world"})
+        - lang: Shell
+          label: cURL
+          source: |
+            # Uploading text
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.txt \
+              -X PUT \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -d 'Leader of the Autobots'
+
+            # Uploading a local file
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -X PUT \
+              -H 'Authorization: Simple STD_API_KEY' \
+              --data-binary @example.png
 
   /v1/organizations:
     get:
@@ -2017,6 +2480,16 @@ paths:
           $ref: '#/components/responses/Error'
         403:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing organizations is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
     post:
       summary: Create an organization
@@ -2039,6 +2512,25 @@ paths:
           $ref: '#/components/responses/Error'
         409:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "org_contact_name": "Example User",
+                "org_email": "support@example.com",
+                "org_label": "Example Organization",
+                "org_name": "ORG_NAME",
+                "org_url": "https://example.com"
+              }'
 
   /v1/organizations/{orgName}:
     parameters:
@@ -2062,6 +2554,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Getting an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
     put:
       summary: Update an organization
@@ -2098,6 +2600,18 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
 
   /v1/organizations/{orgName}/keys:
     parameters:
@@ -2155,6 +2669,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
   /v1/organizations/{orgName}/members/{username}:
     parameters:
@@ -2179,6 +2703,17 @@ paths:
           $ref: '#/components/responses/Error'
         404:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Adding organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members/ACCOUNT_NAME \
+              -X PUT \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
     delete:
       summary: Remove a user from an organization
@@ -2196,6 +2731,17 @@ paths:
           $ref: '#/components/responses/Error'
         404:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members/ACCOUNT_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
   /v1/organizations/{orgName}/members/{username}/keys:
     parameters:
@@ -2390,6 +2936,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing SCMs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/scms \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/scms/{scmId}:
     get:
@@ -2414,6 +2970,16 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Getting SCM configuration information is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/scms/SCM_CONFIG_ID \
+              -H 'Authorization: Simple STD_API_KEY'
 
   /v1/scms/{scmId}/oauth/start:
     get:
@@ -2590,6 +3156,16 @@ paths:
           $ref: '#/components/responses/Error'
         403:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing users is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
     post:
       summary: Create a user
@@ -2611,6 +3187,25 @@ paths:
           $ref: '#/components/responses/Error'
         409:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "company_name": "Algorithmia",
+                "company_role": "Example User",
+                "email": "example@example.com",
+                "fullname": "Example User",
+                "username": "ACCOUNT_NAME"
+              }'
 
   /v1/users/{username}:
     parameters:
@@ -2628,6 +3223,16 @@ paths:
           $ref: '#/components/responses/User'
         409:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Retrieving a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
     put:
       summary: Update a user
@@ -2643,6 +3248,25 @@ paths:
           $ref: '#/components/responses/User'
         404:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Updating a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -X PUT \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "company_name": "Algorithmia",
+                "company_role": "Updated Role",
+                "email": "example@example.com",
+                "fullname": "Example User",
+                "username": "ACCOUNT_NAME"
+              }'
 
     delete:
       summary: Delete a user
@@ -2660,6 +3284,17 @@ paths:
           $ref: '#/components/responses/Error'
         500:
           $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
 
   /v1/users/{username}/algorithms:
     parameters:
@@ -4687,9 +5322,11 @@ components:
           type: string
           readOnly: true
         repository_https_url:
+          description: The HTTPS URL of the algorithm's Git repository (if the repository is hosted externally to the Algorithmia platform).
           type: string
           readOnly: true
         repository_ssh_url:
+          description: The SSH URL of the algorithm's Git repository (if the repository is hosted externally to the Algorithmia platform).
           type: string
           readOnly: true
         scm:
@@ -5386,7 +6023,8 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ImagePushStatus'
+            items:
+              $ref: '#/components/schemas/ImagePushStatus'
 
     AlgorithmInvocationResultResponse:
       description: Returns the result of invoking an algorithm.
