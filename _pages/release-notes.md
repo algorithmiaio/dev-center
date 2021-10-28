@@ -10,6 +10,17 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 title:  "Release Notes"
 ---
 
+## Q3 2021 Release Notes ##
+
+The following features are available in Algorithmia LTS version 21.1.[TODO].
+{: .notice-info}
+
+### New API Documentation ###
+
+We’ve migrated our static API documentation to a framework based on the open-source tool [Redoc](https://github.com/Redocly/redoc). The new API docs are rendered dynamically from your cluster-specific API spec file at `https://CLUSTER_DOMAIN/v1/openapispec`. When you view your cluster-specific API docs at `https://CLUSTER_DOMAIN/developers/api`, you'll now be viewing only the functionality available in your deployed version of Algorithmia. As before, cURL and Python code samples are shown for select endpoints.
+
+The new docs are available beginning in Algorithmia version 21.1.[TODO] and immediately at our [public API docs site](https://algorithmia.com/developers/api). Note that the public API docs include only a subset of endpoints available to enterprise customers, as not all features are included in our multi-tenant offering.
+
 ## Q2 2021 Release Notes ##
 
 The following features are available in Algorithmia LTS version 21.0.
