@@ -83,17 +83,17 @@
   url: /administration/admin-panel/
   nav_category: admin-panel
 
-- title: Admin - Configuration
-  url: /administration/configuration/
-  nav_category: configuration
+# - title: Admin - Configuration
+#   url: /administration/configuration/
+#   nav_category: configuration
 
-- title: Admin - SCM
-  url: /administration/source-code-management/
-  nav_category: scm
+# - title: Admin - SCM
+#   url: /administration/source-code-management/
+#   nav_category: scm
 
-- title: Admin - Troubleshooting
-  url: /administration/troubleshooting/
-  nav_category: migration
+# - title: Admin - Troubleshooting
+#   url: /administration/troubleshooting/
+#   nav_category: migration
 
 - title: Platform Administration
   url: /platform-administration/
