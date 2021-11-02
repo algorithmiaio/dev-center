@@ -1,0 +1,6421 @@
+openapi: 3.0.0
+servers:
+  - url: '{apiServerUrl}'
+    variables:
+      apiServerUrl:
+        default: https://api.algorithmia.com
+        description: URL to send API requests to
+info:
+  version: '1.5.1'
+  title: Algorithmia Management APIs
+  description: APIs for managing actions on the Algorithmia platform
+  termsOfService: 'https://algorithmia.com/terms'
+  contact:
+    name: Algorithmia Support Team
+    url: 'https://algorithmia.com/contact'
+    email: support@algorithmia.com
+externalDocs:
+  description: Developer Center
+  url: https://algorithmia.com/developers
+tags:
+  - name: algorithms
+    description: Algorithm operations
+  - name: users
+    description: User operations
+  - name: organizations
+    description: Organization operations
+  - name: scm
+    description: Source code management operations
+  - name: secrets
+    description: Secret store operations
+  - name: connectors
+    description: Data connector operations
+  - name: data
+    description: Data API operations
+  - name: eventlisteners
+    description: Event listener operations
+  - name: builds
+    description: Algorithm build operations
+  - name: auth
+    description: Authentication and API key management
+  - name: usage
+    description: Platform usage information
+  - name: invites
+    description: Platform invite code management
+  - name: admin
+    description: Platform administration operations
+  - name: style
+    description: Platform front-end style configuration
+  - name: frontend
+    description: Platform front-end configuration
+  - name: registries
+    description: Optional registries images for mirroring
+paths:
+  /v1/admin/insights-connection:
+    get:
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - connections
+      summary: Get the currently configured Insights connection
+      operationId: getConnection
+      responses:
+        200:
+          $ref: '#/components/responses/ConnectionConfigurationResponse'
+    post:
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - connections
+      summary: Set the Insights connection configuration
+      operationId: updateConnection
+      requestBody:
+        $ref: '#/components/requestBodies/ConnectionConfigurationRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/ConnectionConfigurationResponse'
+        500:
+          $ref: '#/components/responses/Error'
+    delete:
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - connections
+      summary: Delete all configured Insights connections
+      operationId: deleteAllConnections
+      responses:
+        204:
+          description: The configuration was deleted successfully.
+
+  /v1/admin/invites:
+    get:
+      summary: Get a list of invite codes
+      tags:
+        - invites
+      operationId: getInvites
+      responses:
+        200:
+          $ref: '#/components/responses/InviteCodeResponse'
+
+    post:
+      summary: Add an invite code
+      tags:
+        - invites
+      operationId: addInvite
+      requestBody:
+        $ref: '#/components/requestBodies/InviteCodeRequestBody'
+      responses:
+        400:
+          $ref: '#/components/responses/Error'
+        200:
+          description: The invite code was added successfully
+
+  /v1/admin/invites/{invite_code}:
+    delete:
+      summary: Delete an invite code
+      tags:
+        - invites
+      operationId: deleteInvite
+      parameters:
+        - in: path
+          name: invite_code
+          description: the invite code to delete
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successfully deleted invite code
+        400:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/reservations:
+    get:
+      summary: List reservations
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - admin
+        - reservations
+      operationId: getReservations
+      responses:
+        200:
+          $ref: '#/components/responses/ReservationsResponse'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create a reservation
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - admin
+        - reservations
+      operationId: createReservation
+      requestBody:
+        $ref: '#/components/requestBodies/ReservationCreateRequestBody'
+      responses:
+        200:
+          description: Successfully created the reservation
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/reservations/{reservation_id}:
+    delete:
+      summary: Delete a reservation
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      tags:
+        - admin
+        - reservations
+      operationId: deleteReservation
+      parameters:
+        - in: path
+          name: reservation_id
+          description: The reservation to delete
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successfully deleted the reservation
+        400:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/usage:
+    get:
+      summary: List usage information for users/orgs including caller
+      description: Returns paginated algorithm usage information for a given date range for users and organizations on the cluster.
+      tags:
+        - admin
+        - usage
+      operationId: getFullUsage
+      parameters:
+        - in: query
+          name: user
+          description: user or organization names
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          required: false
+        - in: query
+          name: start_date
+          description: start date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: end_date
+          description: end date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: marker
+          description: Encoded pagination cursor
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: page_size
+          description: maximum number of results to return in one query
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          $ref: '#/components/responses/FullUsageResultResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/usage/algorithms:
+    get:
+      summary: List usage information for users/orgs by algorithm
+      description: Returns paginated algorithm usage information for a given date range.
+      tags:
+        - admin
+        - usage
+      operationId: getAlgorithmUsageResult
+      parameters:
+        - in: query
+          name: user
+          description: user or organization names
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          required: false
+        - in: query
+          name: start_date
+          description: start date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: end_date
+          description: end date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: marker
+          description: Encoded pagination cursor
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: page_size
+          description: maximum number of results to return in one query
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmUsageResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/legacy-algorithms:
+    get:
+      summary: Get legacy algorithm usage information
+      description: Returns usage information on legacy algorithms
+      tags:
+        - admin
+        - usage
+      operationId: getLegacyAlgorithmiUsageResult
+      responses:
+        200:
+          $ref: '#/components/responses/LegacyAlgorithmUsageResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/usage/users:
+    get:
+      summary: List algorithm usage information for users/orgs grouped by user/org
+      tags:
+        - admin
+        - usage
+      operationId: getUserUsageResult
+      parameters:
+        - in: query
+          name: user
+          description: user or organization names
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          required: false
+        - in: query
+          name: start_date
+          description: start date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: end_date
+          description: end date of query range in UTC format (2021-03-22T00:00:00.000Z)
+          schema:
+            type: string
+            format: date-time
+          required: true
+        - in: query
+          name: marker
+          description: Encoded pagination cursor
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: page_size
+          description: maximum number of results to return in one query
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          $ref: '#/components/responses/UserUsageResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/features:
+    get:
+      summary: List available feature flags
+      tags:
+        - admin
+      operationId: featureFlagList
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/usernameQueryParam'
+      responses:
+        200:
+          $ref: '#/components/responses/FeatureFlagListResponse'
+        404:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/features/{featureName}:
+    parameters:
+      - $ref: '#/components/parameters/featureNameParam'
+
+    put:
+      summary: Enable/disable a feature flag globally
+      tags:
+        - admin
+      operationId: toggleFeatureFlag
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/usernameQueryParam'
+      requestBody:
+        $ref: '#/components/requestBodies/FeatureFlagToggle'
+      responses:
+        204:
+          description: Flag value updated.
+        404:
+          $ref: '#/components/responses/Error'
+
+  /v1/organizations/{orgName}/algorithms-host-usernames:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: List AlgorithmHostUsername "algorithm-id / functional-id" pairs
+      tags:
+        - organizations
+      operationId: getHostUsernames
+      security:
+        - AdminApiKeyAuth: [ ]
+        - CookieAuth: [ ]
+      responses:
+        200: # Successful with a AlgorithmHostUsername json returned
+          $ref: '#/components/responses/AlgorithmHostUsernameResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    put:
+      summary: Add a list of AlgorithmHostUsername "algorithm-id / functional-id" pairs
+      tags:
+        - organizations
+      operationId: setHostUsernames
+      security:
+        - AdminApiKeyAuth: [ ]
+        - CookieAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/HostUpdateRequestBody'
+      responses:
+        204:
+          description: Mappings were succesfully updated
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/organizations/{orgName}/algorithms-host-usernames/{algorithmId}:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+      - $ref: '#/components/parameters/algoIdParam'
+    delete:
+      summary: Delete functional-ids associated with an algorithm
+      tags:
+        - organizations
+      operationId: deleteHostUsernames
+      security:
+        - AdminApiKeyAuth: [ ]
+        - CookieAuth: [ ]
+      responses:
+        204:
+          description: Mappings were succesfully deleted
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/organization_host_information:
+    put:
+      summary: Update an organization host information mapping
+      tags:
+        - admin
+        - organizations
+      operationId: update
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/OrganizationHostInformation'
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/organization_host_information/{orgName}:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: Get an organization host information mapping
+      tags:
+        - admin
+        - organizations
+      operationId: getByOrgName
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200: # Successful with a OrganizationHostInformation json returned
+          $ref: '#/components/responses/OrganizationHostInformation'
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create an organization host information mapping
+      tags:
+        - admin
+        - organizations
+      operationId: createOrganizationHostInformation
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrganizationHostInformation'
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete an organization host information mapping
+      tags:
+        - admin
+        - organizations
+      operationId: delete
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        400:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/scms:
+    post:
+      summary: Create an SCM configuration
+      tags:
+        - admin
+        - scm
+      operationId: createScm
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/ScmCreateRequestBody'
+      responses:
+        201:
+          $ref: '#/components/responses/ScmResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        409:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "enabled": false,
+                "id": "github",
+                "oauth": {
+                  "client_id": "89fsdy7hsdf8tsgd6",
+                  "client_secret": "..."
+                },
+                "provider": "github",
+                "urls": {
+                  "api": "https://api.github.com",
+                  "ssh": "ssh://git@github.com",
+                  "web": "https://github.com"
+                }
+              }'
+
+  /v1/admin/scms/{scmId}:
+    parameters:
+      - $ref: '#/components/parameters/scmIdParam'
+
+    patch:
+      summary: Update an SCM configuration
+      tags:
+        - admin
+        - scm
+      operationId: updateScm
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/ScmUpdateRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/ScmResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Updating an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+              -X PATCH \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "enabled": true
+              }'
+
+    delete:
+      summary: Delete an SCM configuration
+      description: Note that at least one SCM (source code management) configuration must be enabled at any given time. If the SCM configuration is currently enabled, is being used by an algorithm, or is an "internal" SCM configuration, this call will fail and an appropriate error code will be returned.
+      tags:
+        - admin
+        - scm
+      operationId: deleteScm
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The SCM was deleted successfully.
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+  /v1/admin/scms/{scmId}/default:
+    parameters:
+      - $ref: '#/components/parameters/scmIdParam'
+
+    post:
+      summary: Set an SCM configuration as the default
+      description: Sets the specified SCM (source code management) configuration to be the default for the cluster and removes this designation from the previous default SCM configuration. If the SCM configuration in question is currently disabled, this call will fail.
+      tags:
+        - admin
+        - scm
+      operationId: setDefaultScm
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The SCM was marked as the default.
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Setting the default SCM configuration is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID/default \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+  /v1/admin/secret-provider:
+    get:
+      summary: List secret providers
+      tags:
+        - admin
+        - secrets
+      operationId: adminListSecretProviders
+      responses:
+        200:
+          $ref: '#/components/responses/ListProviderInfoResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: createSecretProvider
+      requestBody:
+        $ref: '#/components/requestBodies/SecretProviderRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/ProviderInfoResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/secret-provider/{providerId}:
+    parameters:
+      - $ref: '#/components/parameters/providerIdParam'
+
+    get:
+      summary: Get a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: getSecretProvider
+      responses:
+        200:
+          $ref: '#/components/responses/ProviderInfoResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Update a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: updateProvider
+      requestBody:
+        $ref: '#/components/requestBodies/SecretProviderRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/ProviderInfoResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: deleteProvider
+      responses:
+        204:
+          description: The secret provider was deleted
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/users/{username}/keys:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+    post:
+      summary: Add a specific API key for a user
+      tags:
+        - admin
+      operationId: importApiKey
+      responses:
+        200:
+          $ref: '#/components/responses/CreateApiKeyResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/plugins/secret-provider/{providerId}:
+    parameters:
+      - $ref: '#/components/parameters/providerIdParam'
+
+    get:
+      summary: Check if a .jar file has been uploaded for a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: checkSecretProviderForJar
+      responses:
+        200:
+          description: A .jar file exists
+        400:
+          description: A .jar file does not exists
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Upload a .jar file for a secret provider
+      tags:
+        - admin
+        - secrets
+      operationId: uploadJarForSecretProvider
+      responses:
+        200:
+          description: The .jar was uploaded successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/admin/plugins/secret-provider/{providerId}/default:
+    parameters:
+      - $ref: '#/components/parameters/providerIdParam'
+
+    post:
+      summary: Set a secret provider as the default
+      tags:
+        - admin
+        - secrets
+      operationId: setDefaultSecretProvider
+      responses:
+        204:
+          description: The secret provider was marked as the default
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algo/{algorithmId}/{algoCallableVersion}:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+      - $ref: '#/components/parameters/algoCallableVersionParam'
+      - description: Specifies the amount of time in seconds to wait for the algorithm to respond before returning an error. Defaults to 300 (5 min.)
+        in: query
+        name: timeout
+        required: false
+        schema:
+          default: 300
+          type: number
+      - description: Specifies whether data passed to `stdout` during invocation should be returned to the caller. This parameter is only respected when the caller is the algorithm owner.
+        in: query
+        name: stdout
+        required: false
+        schema:
+          type: boolean
+      - description: Allows customization of the response. `raw` signfies that you wish the algorithm's response to be returned to you without a JSON wrapper, while `void` signifies that you do not wish to wait for an algorithm response. In the latter case, the call will return immediately once the invocation has begun.
+        in: query
+        name: output
+        required: false
+        schema:
+          type: string
+          enum:
+            - raw
+            - void
+
+    post:
+      summary: Make a request to an algorithm by immutable identifier
+      tags:
+        - algorithms
+      operationId: callAlgorithmById
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+          application/text:
+            schema:
+              type: string
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmInvocationResultResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+
+  /v1/algo/{username}/{algoname}/{algoCallableVersion}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+      - $ref: '#/components/parameters/algoCallableVersionParam'
+      - description: Specifies the amount of time in seconds to wait for the algorithm to respond before returning an error. Defaults to 300 (5 min.)
+        in: query
+        name: timeout
+        required: false
+        schema:
+          default: 300
+          type: number
+      - description: Specifies whether data passed to `stdout` during invocation should be returned to the caller. This parameter is only respected when the caller is the algorithm owner.
+        in: query
+        name: stdout
+        required: false
+        schema:
+          type: boolean
+      - description: Allows customization of the response. `raw` signfies that you wish the algorithm's response to be returned to you without a JSON wrapper, while `void` signifies that you do not wish to wait for an algorithm response. In the latter case, the call will return immediately once the invocation has begun.
+        in: query
+        name: output
+        required: false
+        schema:
+          type: string
+          enum:
+            - raw
+            - void
+
+    post:
+      summary: Make a request to an algorithm
+      tags:
+        - algorithms
+      description: This is the primary method to execute a request for an algorithm
+      operationId: callAlgorithm
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+          application/text:
+            schema:
+              type: string
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmInvocationResultResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+
+  /v1/algorithms/{username}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+
+    post:
+      summary: Create an algorithm
+      tags:
+        - algorithms
+      operationId: createAlgorithm
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRequest'
+      responses:
+        201:
+          $ref: '#/components/responses/HashResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            ...
+
+            ## create an algorithm
+
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.create(
+              details = {
+                "label": "My First Algorithm"
+              },
+              settings = {
+                "language": "python3-1",
+                "environment": "cpu",
+                "source_visibility": "closed",
+                "license": "apl",
+                "network_access": "full",
+                "pipeline_enabled": True
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "details": {
+                  "label": "My First Algorithm"
+                },
+                "name": "ALGO_NAME",
+                "settings": {
+                  "language": "python3-1",
+                  "environment": "cpu",
+                  "source_visibility": "closed",
+                  "license": "apl",
+                  "network_access": "full",
+                  "pipeline_enabled": true
+                }
+              }'
+
+    # TODO: fix namespace conflict, these are actually /algorithms/{algorithmId} with algoIdParam
+    get:
+      summary: Get an algorithm
+      tags:
+        - algorithms
+      operationId: getAlgorithmById
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/VersionResponse'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            print(algo.info()) # Prints an algorithm object
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -H 'Authorization: Simple STD_API_KEY'
+
+    put:
+      summary: Update an algorithm
+      tags:
+        - algorithms
+      operationId: updateAlgorithmById
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/HashResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    get:
+      summary: Get algorithm metadata
+      tags:
+        - algorithms
+      operationId: getAlgorithm
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/VersionResponse'
+
+    put:
+      summary: Update algorithm metadata
+      tags:
+        - algorithms
+      operationId: updateAlgorithm
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/HashResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.update(
+              details = {
+                "label": "My Updated Algorithm"
+              },
+              settings = {
+                "environment": "gpu",
+                "license": "apl",
+                "network_access": "full",
+                "pipeline_enabled": True,
+                "source_visibility": "closed"
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -X PUT
+            -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "details": {
+                  "label": "My Updated Algorithm"
+                },
+                "settings": {
+                  "environment": "gpu",
+                  "license": "apl",
+                  "network_access": "full",
+                  "pipeline_enabled": true,
+                  "source_visibility": "closed"
+                }
+              }'
+
+    delete:
+      summary: Delete an algorithm
+      tags:
+        - algorithms
+      operationId: deleteAlgorithm
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The algorithm was successfully deleted.
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an algorithm is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{algorithmId}/builds:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    get:
+      summary: Get algorithm builds by algorithm ID
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmByIdBuilds
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/PagedBuildsListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/builds:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    get:
+      summary: Get algorithm builds by algorithm name
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmBuilds
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/PagedBuildsListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing algorithm builds is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{algorithmId}/builds/{buildid}:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+      - $ref: '#/components/parameters/buildId'
+
+    get:
+      summary: Get an algorithm build by algorithm ID and build ID
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmByIdBuildById
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/BuildResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single build is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_ID/builds/BUILD_ID \
+              -H 'Authorization: Simple STD_API_KEY'
+
+
+  /v1/algorithms/{username}/{algoname}/builds/{buildid}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+      - $ref: '#/components/parameters/buildId'
+
+    get:
+      summary: Get an algorithm build by algorithm name and build ID
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmBuildById
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/BuildResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single build is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds/BUILD_ID \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{algorithmId}/builds/{buildid}/logs:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+      - $ref: '#/components/parameters/buildId'
+
+    get:
+      summary: Get algorithm build logs by algorithm ID and build ID
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmByIdBuildLogs
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/BuildLogsResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm build's logs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_ID/builds/BUILD_ID/logs \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{username}/{algoname}/builds/{buildid}/logs:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+      - $ref: '#/components/parameters/buildId'
+
+    get:
+      summary: Get algorithm build logs by algorithm name and build ID
+      tags:
+        - algorithms
+        - builds
+      operationId: getAlgorithmBuildLogs
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/BuildLogsResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm build's logs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/builds/BUILD_ID/logs \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{algorithmId}/compile:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    post:
+      summary: Compile an algorithm by algorithm ID
+      tags:
+        - algorithms
+        - builds
+      operationId: compileAlgorithmById
+      description: Compiles the latest available source code for an algorithm, resulting in a new hash version of an algorithm available for publishing. For BitBucket it's necessary to provide additional information in the request body.
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/BuildRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/VersionResponse'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/compile:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    post:
+      summary: Compile an algorithm by algorithm name
+      tags:
+        - algorithms
+        - builds
+      operationId: compileAlgorithm
+      description: Compiles the latest available source code for an algorithm, resulting in a new hash version of an algorithm available for publishing.
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/BuildRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/VersionResponse'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{algorithmId}/errors:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    get:
+      summary: Get algorithm errors by algorithm ID
+      tags:
+        - algorithms
+      operationId: getAlgorithmErrorsByAlgorithmId
+      security:
+        - CookieAuth: []
+        - ApiKeyAuth: []
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmErrorListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/errors:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    get:
+      summary: Get algorithm errors by algorithm name
+      tags:
+        - algorithms
+      operationId: getAlgorithmErrorsByAlgorithmName
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmErrorListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/log:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+      - $ref: '#/components/parameters/sinceSha'
+      - $ref: '#/components/parameters/untilSha'
+
+    get:
+      summary: List commits for a repository
+      tags:
+        - algorithms
+        - builds
+      operationId: commitLogForRepository
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/RepositoryCommitLogResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/scm/status:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    get:
+      summary: Get algorithm SCM provider connection status
+      tags:
+        - algorithms
+        - builds
+        - scm
+      operationId: getAlgorithmScmConnectionStatus
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ScmConnectionStatusResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Obtaining an algorithm's SCM provider status is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/scm/status \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/algorithms/{algorithmId}/scm/webhook:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    post:
+      summary: Receive SCM repository events by algorithm ID
+      description: This endpoint is called exclusively by SCM providers who wish to inform us of changes to repositories backing algorithms.
+      tags:
+        - algorithms
+        - scm
+      operationId: receiveAlgorithmByIdScmRepositoryEvent
+      security:
+        - GithubAuth: [ ]
+          GithubEventIdentification: [ ] ## We need BOTH headers for a valid request
+        - XGitlabEvent: [ ]
+        - XBitbucketKey: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/ScmWebhookRequestBody'
+      responses:
+        202:
+          $ref: '#/components/responses/ScmWebhookIgnoredResponse'
+        204:
+          description: Webhook received.
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/scm/webhook:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    post:
+      summary: Receive SCM repository events by algorithm name
+      description: This endpoint is called exclusively by SCM providers who wish to inform us of changes to repositories backing algorithms.
+      tags:
+        - algorithms
+        - scm
+      operationId: receiveScmRepositoryEvent
+      security:
+        - GithubAuth: [ ]
+          GithubEventIdentification: [ ] ## We need BOTH headers for a valid request
+        - XGitlabEvent: [ ]
+        - XBitbucketKey: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/ScmWebhookRequestBody'
+      responses:
+        202:
+          $ref: '#/components/responses/ScmWebhookIgnoredResponse'
+        204:
+          description: Webhook received.
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{algorithmId}/versions:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    post:
+      summary: Publish an algorithm's last successful build
+      tags:
+        - algorithms
+      operationId: publishAlgorithmById
+      requestBody:
+        $ref: '#/components/requestBodies/VersionRequest'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200: # Successful
+          $ref: '#/components/responses/VersionResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/versions:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+
+    get:
+      summary: Get algorithm versions
+      tags:
+        - algorithms
+      operationId: getAlgorithmVersions
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+        - $ref: '#/components/parameters/publishedParam'
+        - $ref: '#/components/parameters/callableParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/PagedVersionsListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            # Query parameters may be passed as options.
+            # Prints the last ten versions of the algorithm.
+            print(algo.versions(limit=10))
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions \
+              -H 'Authorization: Simple STD_API_KEY'
+
+    post:
+      summary: Publish an algorithm's last successful build
+      tags:
+        - algorithms
+      operationId: publishAlgorithm
+      requestBody:
+        $ref: '#/components/requestBodies/VersionRequest'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200: # Successful
+          $ref: '#/components/responses/VersionResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            algo = client.algo("ALGO_OWNER/ALGO_NAME")
+
+            algo.publish(
+              settings = {
+                "algorithm_callability": "private"
+              },
+              version_info = {
+                "release_notes": "A few bug fixes.",
+                "sample_input": "testing",
+                "version_type": "minor"
+              }
+            )
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions \
+              -X POST \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "settings": {
+                  "algorithm_callability": "private"
+                },
+                "version_info": {
+                  "version_type": "minor",
+                  "release_notes": "A few bug fixes.",
+                  "sample_input": "42"
+                }
+              }'
+
+  /v1/algorithms/{algorithmId}/versions/{algohash}/registry:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+      - $ref: '#/components/parameters/algoHashParam'
+
+    get:
+      summary: Get the image push status of an algorithm
+      tags:
+        - algorithms
+      operationId: GetAlgorithmImagePushStatus
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmImagePushStatusResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Republish an algorithm
+      tags:
+        - algorithms
+      operationId: RepublishAlgorithm
+      requestBody:
+        $ref: '#/components/requestBodies/RegistryPublishAuthRequestBody'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        204:
+          description: the operation completed successfully
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{username}/{algoname}/versions/{algohash}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+      - $ref: '#/components/parameters/algoParam'
+      - $ref: '#/components/parameters/algoHashParam'
+
+    get:
+      summary: Get an algorithm by hash version
+      tags:
+        - algorithms
+      operationId: getAlgorithmHashVersion
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/VersionResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying information about a single version is not currently supported in our Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/versions/ALGO_VERSION_HASH \
+              -H "Authorization: Simple API_KEY"
+
+  /v1/algorithms/{algorithmId}/secrets:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+
+    get:
+      summary: Get all secrets for an algorithm
+      tags:
+        - algorithms
+        - secrets
+      operationId: getAlgorithmSecrets
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmSecretListResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create a secret for an algorithm
+      tags:
+        - algorithms
+        - secrets
+      operationId: createAlgorithmSecret
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/AlgorithmSecretCreateRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmSecretResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/algorithms/{algorithmId}/secrets/{secretId}:
+    parameters:
+      - $ref: '#/components/parameters/algoIdParam'
+      - $ref: '#/components/parameters/secretIdParam'
+
+    put:
+      summary: Edit a secret for an algorithm
+      tags:
+        - algorithms
+        - secrets
+      operationId: editAlgorithmSecret
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/AlgorithmSecretEditRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmSecretResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete a secret for an algorithm
+      tags:
+        - algorithms
+        - secrets
+      operationId: deleteAlgorithmSecret
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The secret was deleted successfully
+
+  /v1/config/favicon:
+    get:
+      summary: Get favicon for the Algorithmia instance
+      tags:
+        - style
+      operationId: getFavicon
+      responses:
+        200:
+          description: Get user-uploaded custom favicon
+        303:
+          description: Redirect to default Algorithmia favicon
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Update favicon for the Algorithmia instance
+      tags:
+        - style
+      operationId: updateFavicon
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        201:
+          description: Favicon was updated successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete favicon for the Algorithmia instance
+      tags:
+        - style
+      operationId: deleteFavicon
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: Favicon was deleted successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/config/frontend:
+    get:
+      summary: List front-end config entries
+      tags:
+        - frontend
+      operationId: getFrontendConfigEntries
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+      responses:
+        200: # Successful with a paged list of frontend config entries returned
+          $ref: '#/components/responses/PagedResultList'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+
+  /v1/config/frontend/{keyname}:
+    parameters:
+      - $ref: '#/components/parameters/configKeyParam'
+
+    get:
+      summary: Get a front-end config entry
+      tags:
+        - frontend
+      operationId: getConfigEntry
+      responses:
+        200:
+          $ref: '#/components/responses/FrontendConfigurationEntry'
+        409:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete a front-end config entry
+      tags:
+        - frontend
+      operationId: deleteConfigEntry
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The delete action was completed successfully.
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    put:
+      summary: Update or insert a front-end config entry
+      tags:
+        - frontend
+      operationId: updateConfigEntry
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/FrontendConfigurationEntry'
+      responses:
+        200: # Successful with user content returned
+          $ref: '#/components/responses/FrontendConfigurationEntry'
+        404:
+          $ref: '#/components/responses/Error'
+
+  /v1/config/logo:
+
+    get:
+      summary: Get logo for the Algorithmia instance
+      tags:
+        - style
+      operationId: getLogo
+      responses:
+        200:
+          description: Get user-uploaded custom logo
+        303:
+          description: Redirect to default Algorithmia logo
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Update logo for the Algorithmia instance
+      tags:
+        - style
+      operationId: updateLogo
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        201:
+          description: Logo was updated successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete logo for the Algorithmia instance
+      tags:
+        - style
+      operationId: deleteLogo
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: Logo was deleted successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/connector/{connectorId}/{connectorPath}:
+    parameters:
+      - $ref: '#/components/parameters/connectorIdParameter'
+      - $ref: '#/components/parameters/connectorPathParameter'
+
+    get:
+      summary: Get file contents or directory listing
+      tags:
+        - connectors
+        - data
+      operationId: getFileOrDirectory
+      parameters:
+        - $ref: '#/components/parameters/aclQueryParameter'
+        - $ref: '#/components/parameters/markerParam'
+      responses:
+        200:
+          $ref: '#/components/responses/FileOrDirectoryResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            ## Getting file contents
+
+            # Download file and get the file handle
+            exampleFile = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").getFile()
+
+            # Get file's contents as a string
+            exampleText = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").getString()
+
+            # Get local file's contents as a string
+            exampleText = client.file("file://example.txt").getString()
+
+            # Get file's contents as JSON
+            exampleJson = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").getJson()
+
+            # Get file's contents as a byte array
+            exampleBytes = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").getBytes()
+
+            ## Getting directory contents
+
+            # Get directory's contents as a string
+            exampleText = client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getString()
+
+            # Get directory's contents as JSON
+            exampleJson =  client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getJson()
+
+            # Get directory's contents as a byte array
+            exampleBytes = client.file("data://COLLECTION_OWNER/COLLECTION_NAME").getBytes()
+        - lang: Shell
+          label: cURL
+          source: |
+            ## Getting file contents
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -H 'Authorization: Simple STD_API_KEY'
+
+            ## Getting directory contents
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME \
+              -H 'Authorization: Simple STD_API_KEY'
+
+    delete:
+      summary: Delete a file or directory
+      tags:
+        - connectors
+        - data
+      operationId: deleteFileOrDirectory
+      parameters:
+        - $ref: '#/components/parameters/forceDeletionQueryParameter'
+      responses:
+        200:
+          $ref: '#/components/responses/FileDeletionResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            exampleFile = client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png")
+            exampleFile.delete()
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.txt \
+              -X DELETE \
+              -H 'Authorization: Simple STD_API_KEY'
+
+    head:
+      summary: Check if a file exists
+      tags:
+        - connectors
+        - data
+      operationId: verifyFileExistence
+      responses:
+        200:
+          description: File exists.
+          headers:
+            X-Data-Type:
+              schema:
+                $ref: '#/components/schemas/FileType'
+            X-Error-Message:
+              description: Should any errors occur finding the file, they will be cited in this header.
+              schema:
+                type: string
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            if client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").exists():
+              print("File exists!")
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -I \
+              -H 'Authorization: Simple STD_API_KEY'
+
+    patch:
+      summary: Update a directory ACL
+      description: Update the ACL for an Algorithmia-hosted data collection. Note that, at this time, this endpoint is not supported for any other connector beyond Algorithmia's own hosted data solution.
+      tags:
+        - connectors
+        - data
+      operationId: updateDirectoryAcl
+      requestBody:
+        $ref: '#/components/requestBodies/DirectoryAclRequestBody'
+      responses:
+        200:
+          description: ACL updated. Response body is empty.
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            from Algorithmia.acl import ReadAcl
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            example_collection = client.dir("data://COLLECTION_OWNER/COLLECTION_NAME")
+
+            example_collection.update_permissions(ReadAcl.private)
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME \
+              -X PATCH \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "acl": {
+                  "read": []
+                }
+              }'
+
+    post:
+      summary: Create a directory
+      tags:
+        - connectors
+        - data
+      operationId: createDirectory
+      requestBody:
+        $ref: '#/components/requestBodies/CreateDirectoryRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/FileOrDirectoryCreationResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+            from Algorithmia.acl import ReadAcl
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            example_collection = client.dir("data://COLLECTION_OWNER/COLLECTION_NAME")
+
+            example_collection.create(ReadAcl.public)
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER \
+              -X POST \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "name": "COLLECTION_NAME",
+                "acl": {
+                  "read": [
+                    "user://*"
+                  ]
+                }
+              }'
+
+    put:
+      summary: Upload a file
+      tags:
+        - connectors
+        - data
+      operationId: uploadFile
+      requestBody:
+        $ref: '#/components/requestBodies/FileUploadRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/FileOrDirectoryCreationResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      security:
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            import Algorithmia
+
+            client = Algorithmia.client("STD_API_KEY", "https://api.CLUSTER_DOMAIN")
+
+            # Uploading a local file
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.png").putFile("/my/local/path/example.png")
+
+            # Uploading text
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.txt").put("Hello world!")
+
+            # Uploading a dict as JSON
+            client.file("data://COLLECTION_OWNER/COLLECTION_NAME/example.json").putJson({"hello": "world"})
+        - lang: Shell
+          label: cURL
+          source: |
+            # Uploading text
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.txt \
+              -X PUT \
+              -H 'Authorization: Simple STD_API_KEY' \
+              -d 'Leader of the Autobots'
+
+            # Uploading a local file
+            curl https://api.CLUSTER_DOMAIN/v1/connector/data/COLLECTION_OWNER/COLLECTION_NAME/example.png \
+              -X PUT \
+              -H 'Authorization: Simple STD_API_KEY' \
+              --data-binary @example.png
+
+  /v1/organizations:
+    get:
+      summary: List organizations
+      tags:
+        - organizations
+      operationId: getOrganizations
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200: # Successful with a paged list of organizations returned
+          $ref: '#/components/responses/PagedResultList'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing organizations is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+    post:
+      summary: Create an organization
+      description: Creates an organization. The calling user is automatically added as a member of the org and is granted org admin permissions.
+      tags:
+        - organizations
+      operationId: createOrganization
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/Organization'
+      responses:
+        200:
+          $ref: '#/components/responses/Organization'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        409:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "org_contact_name": "Example User",
+                "org_email": "support@example.com",
+                "org_label": "Example Organization",
+                "org_name": "ORG_NAME",
+                "org_url": "https://example.com"
+              }'
+
+  /v1/organizations/{orgName}:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: Get an organization
+      tags:
+        - organizations
+      operationId: getOrganization
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/Organization'
+        409:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Getting an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+    put:
+      summary: Update an organization
+      tags:
+        - organizations
+      operationId: edit
+      requestBody:
+        $ref: '#/components/requestBodies/Organization'
+      responses:
+        204:
+          description: The Organization was updated
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete an organization
+      tags:
+        - organizations
+      operationId: deleteOrganization
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204: # Successful with no content returned. Also the response if the given org doesn't exist
+          description: The delete action was completed successfully
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting an organization is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+
+  /v1/organizations/{orgName}/keys:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: List API keys of organization members
+      tags:
+        - organizations
+      operationId: listKeys
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ApiKeyListResponse'
+        404:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create an AlgorithmKey for an organization
+      tags:
+        - organizations
+      operationId: createKeyForOrganization
+      security:
+        - CookieAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrgApiKey'
+      responses:
+        200:
+          $ref: '#/components/responses/CreateApiKeyResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+
+  /v1/organizations/{orgName}/members:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: List organization members
+      tags:
+        - organizations
+      operationId: listMembers
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200: # Successful with a paged list of organizations returned
+          $ref: '#/components/responses/PagedResultList'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Querying organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+  /v1/organizations/{orgName}/members/{username}:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+      - $ref: '#/components/parameters/usernameParam'
+
+    put:
+      summary: Add a user to an organization
+      tags:
+        - organizations
+      operationId: addOrganizationMember
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          description: The user was already a member of this organization
+        201:
+          description: User was succesfully added to the organization
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Adding organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members/ACCOUNT_NAME \
+              -X PUT \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+    delete:
+      summary: Remove a user from an organization
+      tags:
+        - organizations
+      operationId: removeOrganizationMember
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: User was successfully removed from the organization, was not a member of the organization, or did not exist
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting organization members is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/organizations/ORG_NAME/members/ACCOUNT_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+  /v1/organizations/{orgName}/members/{username}/keys:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+      - $ref: '#/components/parameters/usernameParam'
+
+    post:
+      summary: Create an organization-owned API key for a user
+      tags:
+        - organizations
+      operationId: addOrganizationApiKey
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/CreateApiKey'
+      responses:
+        201:
+          $ref: '#/components/responses/CreateApiKeyResponse'
+        400:
+          $ref: '#/components/responses/Error'
+
+  /v1/organization/types:
+    get:
+      summary: List organization types
+      tags:
+        - organizations
+      operationId: getAllOrganizationTypes
+      responses:
+        200: # Successful with a list of organization types returned
+          $ref: '#/components/responses/OrganizationTypeListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create an organization type
+      tags:
+        - organizations
+      operationId: create
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/OrganizationType'
+      responses:
+        200:
+          $ref: '#/components/responses/OrganizationType'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+
+  /v1/organization/types/{orgTypeName}:
+    parameters:
+      - $ref: '#/components/parameters/orgTypeNameParam'
+
+    delete:
+      summary: Remove an organization type
+      tags:
+        - organizations
+      operationId: deleteByName
+      responses:
+        204:
+          description: OrganizationTypeDeleted
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+
+  /v1/organizations/{orgName}/utility-algorithms:
+    parameters:
+      - $ref: '#/components/parameters/orgnameParam'
+
+    get:
+      summary: List utility algorithms
+      tags:
+        - algorithms
+        - organizations
+      operationId: getUtilityAlgorithms
+      responses:
+        200: # Successful with a paged list of algorithms returned
+          $ref: '#/components/responses/AlgorithmListResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/registries:
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      tags:
+        - registries
+      summary: Add a new registry configuration
+      description: A registry configuration can be linked to algorithms.
+      operationId: createRegistry
+      responses:
+        200:
+          $ref: '#/components/responses/RegistryResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRegistryRequest'
+    get:
+      summary: List registry configurations
+      description: A registry configuration can be linked to algorithms.
+      operationId: get
+      tags:
+        - registries
+      responses:
+        200: # Successful with list of registries returned
+          $ref: '#/components/responses/RegistryNoAuthListResponse'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/registries/{registryId}:
+    put:
+      security:
+        - AdminApiKeyAuth: []
+      tags:
+        - registries
+      summary: Update a registry configuration
+      description: A registry configuration can be linked to algorithms.
+      operationId: updateRegistry
+      parameters:
+        - $ref: '#/components/parameters/registryIdParam'
+      responses:
+        200:
+          $ref: '#/components/responses/RegistryResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateRegistryRequest'
+    delete:
+      security:
+        - AdminApiKeyAuth: []
+      tags:
+        - registries
+      summary: Delete a registry
+      description: A registry configuration can be linked to algorithms.
+      operationId: deleteRegistry
+      parameters:
+        - $ref: '#/components/parameters/registryIdParam'
+      responses:
+        200:
+          description: Registry deleted
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms:
+    get:
+      operationId: listScms
+      tags:
+        - scm
+      summary: List SCM configurations
+      description: List SCM (source code management) provider configurations for the Algorithmia instance
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ScmListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing SCMs is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/scms \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/scms/{scmId}:
+    get:
+      summary: Get SCM configuration information
+      description: Retrieve information about a single SCM (source code management) configuration by its ID
+      tags:
+        - scm
+      operationId: getScm
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ScmResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Getting SCM configuration information is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/scms/SCM_CONFIG_ID \
+              -H 'Authorization: Simple STD_API_KEY'
+
+  /v1/scms/{scmId}/oauth/start:
+    get:
+      summary: Initiate SCM configuration authorization
+      description: Applies only to SCM (source code management) providers that leverage an OAuth authorization flow. Allows a user to begin the OAuth authorization flow for a given SCM configuration, thereby allowing Algorithmia to access any necessary SCM provider resources, such as repositories, deploy keys, and webhooks, on their behalf.
+      tags:
+        - scm
+      operationId: initiateScmAuthorization
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+      responses:
+        303:
+          description: Indicates the URL the user should follow to begin the OAuth process.
+          headers:
+            Location:
+              schema:
+                type: string
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms/{scmId}/oauth/finish:
+
+    get:
+      summary: Complete SCM configuration authorization
+      description: Applies only to SCM (source code management) providers that leverage an OAuth authorization flow. Once a user has successfully authorized with the SCM provider's authorization server, said server will call this endpoint and supply the authorization code as a query parameter.
+      tags:
+        - scm
+      operationId: completeScmAuthorization
+      parameters:
+        - $ref: '#/components/parameters/oauthAuthorizationCodeParam'
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+      responses:
+        200:
+          description: User connected
+        400:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms/{scmId}/oauth/status:
+
+    get:
+      summary: Get SCM configuration authorization status
+      description: Applies only to SCM (source code management) providers that leverage an OAuth authorization flow. If the calling user has completed the authorization flow for the SCM configuration in question, this endpoint describes the SCM username that represents the user, as well as any organizations they have access to. If the calling user has not completed the authorization flow, we return an `authorization_status` of `unauthorized`.
+      tags:
+        - scm
+      operationId: getScmStatus
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ScmUserOAuthStatusResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms/{scmId}/oauth/revoke:
+    post:
+      summary: Revoke SCM configuration authorization
+      description: Applies only to SCM (source code management) providers that leverage an OAuth authorization flow. If the calling user has completed the authorization flow for the SCM configuration in question, this endpoint prompts us to invalidate and discard said access token. After this has occurred, all algorithms created by the user will continue to function, but the user will no longer be able to create algorithms backed by the SCM configuration.
+      tags:
+        - scm
+      operationId: revokeScmAuthorization
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        204:
+          description: Access token revoked.
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms/{scmId}/token/connect:
+
+    post:
+      summary: Create SCM authorized connection
+      tags:
+        - scm
+      operationId: addScmConnection
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          description: Authorization successful.
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/scms/{scmId}/token/status:
+
+    get:
+      summary: Get SCM authorization status
+      tags:
+        - scm
+      operationId: scmTokenStatus
+      parameters:
+        - $ref: '#/components/parameters/scmIdParam'
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ScmUserOAuthStatusResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/secret-provider:
+    get:
+      summary: List secret providers
+      tags:
+        - secrets
+      operationId: listSecretProviders
+      responses:
+        200:
+          $ref: '#/components/responses/ListProviderInfoResponse'
+        401:
+          $ref: '#/components/responses/Error'
+
+  /v1/users:
+    get:
+      summary: List users
+      tags:
+        - users
+      operationId: getUsers
+      parameters:
+        - $ref: '#/components/parameters/limitParam'
+        - $ref: '#/components/parameters/markerParam'
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/PagedResultList'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Listing users is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+    post:
+      summary: Create a user
+      tags:
+        - users
+      operationId: createUser
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/User'
+      responses:
+        200:
+          $ref: '#/components/responses/User'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        409:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Creating a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users \
+              -X POST \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "company_name": "Algorithmia",
+                "company_role": "Example User",
+                "email": "example@example.com",
+                "fullname": "Example User",
+                "username": "ACCOUNT_NAME"
+              }'
+
+  /v1/users/{username}:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+
+    get:
+      summary: Get a user
+      tags:
+        - users
+      operationId: getUser
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/User'
+        409:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Retrieving a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+    put:
+      summary: Update a user
+      tags:
+        - users
+      operationId: updateUser
+      security:
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/User'
+      responses:
+        200:
+          $ref: '#/components/responses/User'
+        404:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Updating a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -X PUT \
+              -H 'Authorization: Simple ADMIN_API_KEY' \
+              -H 'Content-Type: application/json' \
+              -d '{
+                "company_name": "Algorithmia",
+                "company_role": "Updated Role",
+                "email": "example@example.com",
+                "fullname": "Example User",
+                "username": "ACCOUNT_NAME"
+              }'
+
+    delete:
+      summary: Delete a user
+      tags:
+        - users
+      operationId: deleteUser
+      security:
+        - AdminApiKeyAuth: [ ]
+      responses:
+        204:
+          description: The delete action was completed successfully.
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+      x-codeSamples:
+        - lang: Python
+          label: Python
+          source: |
+            # Deleting a user is not currently supported by the Python client library.
+        - lang: Shell
+          label: cURL
+          source: |
+            curl https://api.CLUSTER_DOMAIN/v1/users/ACCOUNT_NAME \
+              -X DELETE \
+              -H 'Authorization: Simple ADMIN_API_KEY'
+
+  /v1/users/{username}/algorithms:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+    get:
+      summary: List algorithms for a user or organization
+      tags:
+        - algorithms
+      operationId: listAlgorithmsForUser
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmListResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        409:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{username}/connectors:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+
+    post:
+      summary: Create a connector
+      description: Creates a data connector for a user.
+      tags:
+        - connectors
+      operationId: createConnectorForUserById
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/ConnectorCreateRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/ConnectorResponse'
+        400:
+          $ref: '#/components/responses/Error'
+        409:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{userId}/errors:
+    parameters:
+      - $ref: '#/components/parameters/userIdParam'
+
+    get:
+      summary: Get algorithm errors for a user
+      tags:
+        - algorithms
+      operationId: getAlgorithmErrorsByUserId
+      security:
+        - CookieAuth: [ ]
+        - ApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/AlgorithmErrorListResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{userId}/event-listeners:
+    parameters:
+      - $ref: '#/components/parameters/userIdParam'
+
+    get:
+      summary: List event listeners configured for a user
+      tags:
+        - eventlisteners
+      operationId: getEventListenersForUserById
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/PagedResultList'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    post:
+      summary: Create an event listener for a user
+      tags:
+        - eventlisteners
+      operationId: postEventListenersForUserById
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/EventListenerBody'
+      responses:
+        200:
+          $ref: '#/components/responses/EventListener'
+        400:
+          $ref: '#/components/responses/Error'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{userId}/event-listeners/{eventListenerId}:
+    parameters:
+      - $ref: '#/components/parameters/userIdParam'
+      - $ref: '#/components/parameters/eventListenerIdParam'
+
+    get:
+      summary: Get an event listener configured for a user
+      tags:
+        - eventlisteners
+      operationId: getEventListenerByIdForUserById
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/EventListener'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    put:
+      summary: Update an event listener configured for a user
+      tags:
+        - eventlisteners
+      operationId: updateEventListenerForUserById
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/EventListener'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        404:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+    delete:
+      summary: Delete an event listener configured for a user
+      tags:
+        - eventlisteners
+      operationId: deleteEventListenerForUserById
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200:
+          description: The delete action was completed successfully.
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+        500:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{username}/keys:
+    parameters:
+      - $ref: '#/components/parameters/usernameParam'
+    get:
+      summary: List API keys for a user
+      tags:
+        - auth
+      operationId: getKeysForUser
+      security:
+        - CookieAuth: [ ]
+      responses:
+        200:
+          $ref: '#/components/responses/ApiKeyListResponse'
+    post:
+      summary: Create an API key for a user
+      tags:
+        - auth
+      operationId: createKeyForUser
+      security:
+        - CookieAuth: [ ]
+      requestBody:
+        $ref: '#/components/requestBodies/CreateApiKey'
+      responses:
+        200:
+          $ref: '#/components/responses/CreateApiKeyResponse'
+        401:
+          $ref: '#/components/responses/Error'
+
+  /v1/users/{userId}/notifications:
+    get:
+      summary: Get notifications for a user
+      tags:
+        - notifications
+      operationId: getUserNotifications
+      parameters:
+        - in: query
+          name: event_types
+          description: The notification types wanted
+          schema:
+            type: string
+            format: comma-seperated #EX: "algorithm-creation,algorithm-release"
+          required: true
+        - $ref: '#/components/parameters/userIdParam'
+        - in: query
+          name: limit
+          description: Limits the number of results 1-100
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: since
+          description: Limits the results to after the date
+          schema:
+            type: string
+            format: date-time
+          required: false
+      security:
+        - CookieAuth: [ ]
+        - AdminApiKeyAuth: [ ]
+      responses:
+        200: # Successful with a paged list of organizations returned
+          $ref: '#/components/responses/NotificationContextResponse'
+        401:
+          $ref: '#/components/responses/Error'
+        403:
+          $ref: '#/components/responses/Error'
+components:
+
+  schemas:
+    UtilityAlgorithm:
+      description: Result of getting an algorithm from the db for utilities
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        algoname:
+          type: string
+        username:
+          type: string
+
+    AlgorithmCallability:
+      type: string
+      enum:
+        - public
+        - private
+
+    AlgorithmSecretCreateRequest:
+      type: object
+      properties:
+        short_name:
+          type: string
+        description:
+          type: string
+        owner_type:
+          type: string
+        owner_id:
+          type: string
+          format: uuid
+        secret_key:
+          type: string
+        secret_value:
+          type: string
+        provider_id:
+          type: string
+      required:
+        - id
+        - short_name
+        - description
+        - owner_type
+        - owner_id
+        - secretKey
+
+    AlgorithmSecretEditRequest:
+      type: object
+      properties:
+        short_name:
+          type: string
+        description:
+          type: string
+        secret_key:
+          type: string
+        secret_value:
+          type: string
+      required:
+        - id
+        - short_name
+        - description
+        - secretKey
+
+    AlgorithmSecretList:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlgorithmSecretResult'
+
+    AlgorithmSecretResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        short_name:
+          type: string
+        description:
+          type: string
+        owner_type:
+          type: string
+        owner_id:
+          type: string
+          format: uuid
+        default_secret_value_id:
+          type: string
+          format: uuid
+        provider_id:
+          type: string
+          format: uuid
+
+    AlgorithmAsynchronousInvocationResult:
+      description: Result of calling a specific algorithm as an asynchronous operation, e.g. by passing the `output` query parameter set to `void`.
+      type: object
+      properties:
+        async:
+          type: boolean
+        request_id:
+          type: string
+      required:
+        - async
+        - request_id
+
+    AlgorithmErrorEntry:
+      description: A single algorithm error response
+      type: object
+      properties:
+        logs:
+          type: string
+          readOnly: true
+
+    AlgorithmHostUsername:
+      type: object
+      properties:
+        algorithm_id:
+          type: string
+        functional_id:
+          type: string
+      required:
+        - algorithm_id
+        - functional_id
+
+    AlgorithmHostUsernameUpdates:
+      type: object
+      properties:
+        updates:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlgorithmHostUsername'
+
+    AlgorithmInvocationResult:
+      oneOf:
+        - $ref: '#/components/schemas/AlgorithmAsynchronousInvocationResult'
+        - $ref: '#/components/schemas/AlgorithmSynchronousInvocationResult'
+
+    AlgorithmSynchronousInvocationResultOneOf:
+      description: Wrapper object AlgorithmSynchronousInvocationResult
+      oneOf:
+        - type: string
+        - type: object
+    AlgorithmSynchronousInvocationResult:
+      description: Result of calling a specific algorithm as a synchronous operation.
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+            stacktrace:
+              type: string
+        metadata:
+          type: object
+          properties:
+            content_type:
+              type: string
+              enum:
+                - binary
+                - json
+                - text
+                - void
+            duration:
+              type: number
+            stdout:
+              type: string
+          required:
+            - duration
+        result:
+          $ref: '#/components/schemas/AlgorithmSynchronousInvocationResultOneOf'
+
+    ApiKeyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApiKey'
+
+    ApiKey:
+      type: object
+      properties:
+        username:
+          type: string
+        key_label:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        api_key_mask:
+          type: string
+        api_key:
+          type: string
+        key_type:
+          $ref: '#/components/schemas/ApiKeyType'
+        permissions:
+          $ref: '#/components/schemas/AuthPermissions'
+        owner_name:
+          type: string
+      required:
+        - username
+        - key_label
+        - created_at
+        - api_key_mask
+        - api_key
+        - key_type
+
+    ApiKeyCreation:
+      type: object
+      properties:
+        key_label:
+          type: string
+        key_type:
+          $ref: '#/components/schemas/ApiKeyType'
+        permissions: # Required for AlgorithmKeys
+          $ref: '#/components/schemas/AuthPermissions'
+      required:
+        - key_type
+
+    ApiKeyType:
+      type: string
+      enum:
+        - ManagementKey # This will deprecated and replaced by PlatformAdminKey
+        - PlatformAdminKey
+        - AlgorithmKey
+
+    AuthPermissions:
+      type: object
+      properties:
+        allow_data:
+          type: boolean
+        allow_data_write:
+          type: boolean
+        allow_algo:
+          type: boolean
+        allow_web_algo:
+          type: boolean
+        referer_host:
+          type: string
+        allow_algo_management:
+          type: boolean
+        algo_acl:
+          type: array
+          items:
+            type: string
+      required:
+        - allow_data
+        - allow_data_write
+        - allow_algo
+        - allow_web_algo
+        - algo_acl
+
+    Build:
+      type: object
+      required: [ 'build_id', 'status','commit_sha','started_at' ]
+      properties:
+        status:
+          type: string
+          enum:
+            - in-progress
+            - succeeded
+            - failed
+          readOnly: true
+        build_id:
+          type: string
+          readOnly: true
+        commit_sha:
+          type: string
+          readOnly: true
+        started_at:
+          type: string
+          format: date-time
+          readOnly: true
+        finished_at:
+          type: string
+          format: date-time
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+        version_info:
+          $ref: '#/components/schemas/BuildVersionInfo'
+        registry_status:
+          $ref: '#/components/schemas/ImagePushStatus'
+
+    BuildLogs:
+      type: object
+      properties:
+        logs:
+          type: string
+          readOnly: true
+
+    BuildVersionInfo:
+      type: object
+      required: [ 'semantic_version' ]
+      properties:
+        semantic_version:
+          type: string
+          readOnly: true
+
+    Commit:
+      description: Individual commit to a repository
+      type: object
+      required: [ 'id', 'short_message', 'message', 'author' ]
+      properties:
+        id:
+          type: string
+        short_message:
+          type: string
+        message:
+          type: string
+        author:
+          type: string
+
+    Compilation:
+      type: object
+      required: [ 'successful' ]
+      properties:
+        successful:
+          type: boolean
+          readOnly: true
+        output:
+          type: string
+          readOnly: true
+
+    ConnectionConfiguration:
+      type: object
+      required: [ 'broker_url','topic' ]
+      properties:
+        broker_url:
+          type: string
+        topic:
+          type: string
+        broker_username:
+          type: string
+        broker_password:
+          type: string
+        ca_certificate:
+          type: string
+        sasl_mechanism:
+          type: string
+        id:
+          type: string
+          format: uuid
+
+    Connector:
+      type: object
+      required: [ 'username', 'protocol', 'cred_type', 'cred_data' ]
+      properties:
+        username:
+          type: string
+        label:
+          type: string
+        protocol:
+          type: string
+          enum:
+            - s3
+            - dropbox
+            - azureblob
+            - gs
+        is_default:
+          type: boolean
+        cred_data:
+          type: string
+          enum:
+            - IAMConnectorCredential
+            - SASConnectorCredential
+            - ServiceAccountConnectorCredential
+            - OAuthConnectorCredential
+        cred_type:
+          type: string
+          enum:
+            - iam
+            - oauth
+            - sas
+            - serviceaccount
+        path:
+          type: string
+          default: '*'
+        writeable:
+          type: boolean
+          default: false
+
+    IAMConnectorCredential:
+      type: object
+      required: [ 'access_key_id', 'secret_access_key' ]
+      properties:
+        access_key_id:
+          type: string
+        secret_access_key:
+          type: string
+
+    ImagePushStatus:
+      type: object
+      required: [ 'status', 'updated_at' ]
+      properties:
+        status:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        status_message:
+          type: string
+        registry_id:
+          type: string
+
+    RegistryPublishAuth:
+      type: object
+      required: [ 'registry_id' ]
+      properties:
+        registry_username:
+          type: string
+        registry_password:
+          type: string
+        registry_id:
+          type: string
+
+    SASConnectorCredential:
+      type: object
+      required: [ 'storage_uri', 'sas_token', 'container_name' ]
+      properties:
+        storage_uri:
+          type: string
+        sas_token:
+          type: string
+        container_name:
+          type: string
+
+    ServiceAccountConnectorCredential:
+      type: object
+      required: [ 'email', 'private_key_id', 'private_key' ]
+      properties:
+        email:
+          type: string
+        private_key_id:
+          type: string
+        private_key:
+          type: string
+
+    OAuthConnectorCredential:
+      type: object
+      required: [ 'access_token' ]
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+
+    BuildRequest:
+      type: object
+      properties:
+        sshPrivateKey:
+          type: string
+        commitSha:
+          type: string
+        registry_push_credentials:
+          $ref: '#/components/schemas/RegistryPublishAuth'
+
+    ConnectorResponse:
+      type: object
+      properties:
+        connector_id:
+          type: string
+        username:
+          type: string
+        label:
+          type: string
+        protocol:
+          type: string
+          enum:
+            - s3
+            - dropbox
+            - azureblob
+            - gs
+        is_default:
+          type: boolean
+        permissions:
+          type: array
+          items:
+            type: string
+
+    SCMSUserPassOrSecretToken:
+      description: One of object for SCM credentials for create request
+      oneOf:
+        - $ref: '#/components/schemas/SCMSUserPass'
+        - $ref: '#/components/schemas/SCMSSecretToken'
+
+    CreateRequest:
+      type: object
+      required: [ 'name', 'details','settings' ]
+      properties:
+        name:
+          type: string
+        details:
+          $ref: '#/components/schemas/Details'
+        settings:
+          $ref: '#/components/schemas/SettingsMandatory'
+        source:
+          $ref: '#/components/schemas/SourceCreate'
+        scmsCredentials:
+          $ref: '#/components/schemas/SCMSUserPassOrSecretToken'
+        version_info:
+          type: object
+          properties:
+            sample_input:
+              type: string
+
+    Details:
+      type: object
+      properties:
+        summary:
+          type: string
+        label:
+          type: string
+        tagline:
+          type: string
+      required:
+        - label
+
+    Environment:
+      type: string
+      enum:
+        - cpu
+        - gpu
+
+    EventListener:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true # shouldn't be included in POST request
+        sourceType:
+          $ref: "#/components/schemas/EventListenerSourceType"
+        sourceURI:
+          maxLength: 255
+          type: string
+        algoName:
+          maxLength: 255
+          type: string
+        algoOwner:
+          maxLength: 255
+          type: string
+        algoVersion:
+          maxLength: 255
+          type: string
+        algoTimeoutSeconds:
+          type: integer
+          default: 420
+        listenerOwner:
+          maxLength: 255
+          type: string
+          readOnly: true # can't change listener owner once set
+        credentials:
+          maxLength: 255
+          type: string
+      required: [ 'sourceType', 'sourceURI', 'algoName', 'algoOwner', 'algoVersion', "credentials" ]
+
+    EventListenerRequest:
+      required:
+        - algoName
+        - algoOwner
+        - credentials
+        - sourceType
+        - sourceURI
+      type: object
+      properties:
+        algoName:
+          maxLength: 255
+          type: string
+        algoOwner:
+          maxLength: 255
+          type: string
+        algoVersion:
+          maxLength: 255
+          type: string
+        algoTimeoutSeconds:
+          type: integer
+          default: 420
+        credentials:
+          maxLength: 255
+          type: string
+        sourceType:
+          $ref: "#/components/schemas/EventListenerSourceType"
+        sourceURI:
+          maxLength: 255
+          type: string
+
+    EventListenerSourceType:
+      type: string
+      enum:
+        - AmazonSQS
+        - AzureSB
+
+    FeatureFlagToggle:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+      required:
+        - enabled
+
+    FullUsageRow:
+      type: object
+      properties:
+        algorithm_called:
+          type: string
+        caller:
+          type: string
+        algorithm_version:
+          type: string
+        total_calls:
+          type: string
+        algorithm_owner:
+          type: string
+        total_errors:
+          type: integer
+          format: int64
+        total_error_duration:
+          type: number
+          format: double
+        total_duration:
+          type: number
+          format: double
+        machine_type:
+          type: string
+          enum: [ cpu, gpu ]
+      required:
+        - algorithm_called
+        - caller
+        - algorithm_version
+        - total_calls
+        - algorithm_owner
+        - total_errors
+        - total_error_duration
+        - total_duration
+        - machine_type
+
+    UserUsageRow:
+      type: object
+      properties:
+        caller:
+          type: string
+        total_calls:
+          type: string
+        total_errors:
+          type: integer
+          format: int64
+        total_error_duration:
+          type: number
+          format: double
+        total_duration:
+          type: number
+          format: double
+      required:
+        - caller
+        - total_calls
+        - total_errors
+        - total_error_duration
+        - total_duration
+
+    AlgorithmUsageRow:
+      type: object
+      properties:
+        algorithm_called:
+          type: string
+        algorithm_version:
+          type: string
+        total_calls:
+          type: string
+        algorithm_owner:
+          type: string
+        total_errors:
+          type: integer
+          format: int64
+        total_error_duration:
+          type: number
+          format: double
+        total_duration:
+          type: number
+          format: double
+        machine_type:
+          type: string
+          enum: [ cpu, gpu ]
+      required:
+        - algorithm_called
+        - algorithm_version
+        - total_calls
+        - algorithm_owner
+        - total_errors
+        - total_error_duration
+        - total_duration
+        - machine_type
+
+    LegacyAlgorithmUsageRow:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        algoname:
+          type: string
+        language:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        lastCompiledAt:
+          type: string
+          format: date-time
+
+    Directory:
+      type: object
+      properties:
+        acl:
+          $ref: '#/components/schemas/DirectoryAcl'
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/File'
+        folders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Folder'
+        marker:
+          type: string
+
+    DirectoryAcl:
+      description: Specifies who may access the data in this directory. `user://*` signifies all users may read from this directory, whereas `algo://.my/*` signifies only the directory owner's algorithms may access the data (no matter the caller of the algorithm). An empty array signifies only the directory owner themselves may access the data.
+      properties:
+        read:
+          type: array
+          items:
+            type: string
+            enum:
+              - user://*
+              - algo://.my/*
+      type: object
+
+    CreateDirectoryRequest:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/ResourceName'
+        acl:
+          $ref: '#/components/schemas/DirectoryAcl'
+      required:
+        - name
+
+    DirectoryAclUpdateRequest:
+      type: object
+      properties:
+        acl:
+          $ref: '#/components/schemas/DirectoryAcl'
+      required:
+        - acl
+
+    File:
+      type: object
+      properties:
+        filename:
+          type: string
+        last_modified:
+          type: string
+          format: date-time
+        size:
+          type: number
+      required:
+        - filename
+        - last_modified
+        - size
+
+    FileType:
+      description: Describes whether a returned entity contains a file or a directory.
+      enum:
+        - file
+        - directory
+      type: string
+
+    Folder:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
+
+    FullUsageResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/FullUsageRow'
+        next_marker:
+          type: string
+      required:
+        - results
+
+    UserUsageResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserUsageRow'
+        next_marker:
+          type: string
+      required:
+        - results
+
+    AlgorithmUsageResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlgorithmUsageRow'
+        next_marker:
+          type: string
+      required:
+        - results
+
+    LegacyAlgorithmUsageResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/LegacyAlgorithmUsageRow'
+      required:
+        - results
+
+    AlgorithmListResult:
+      type: array
+      items:
+        $ref: '#/components/schemas/UtilityAlgorithm'
+
+    OrganizationTypeListResult:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrganizationType'
+
+    Error:
+      type: object
+      properties:
+        id:
+          type: string
+        code:
+          type: integer
+          enum:
+            - 1000 # AlgorithmNotFound
+            - 1001 # AlgorithmNameDoesNotExist
+            - 1002 # AlgorithmNameHasBeenTaken
+            - 1003 # PackageSetNotFound
+            - 1004 # PackageSetBuildNotFound
+            - 1005 # PackageNotFound
+            - 1006 # ForbiddenPackageSetUpdate
+            - 1007 # VersionAlreadyPublished
+            - 1008 # ScmFailedToCreateRepository
+            - 1009 # AlgorithmIdDoesNotExist
+            - 1010 # AlgorithmBuildNotFound
+            - 1011 # AlgorithmBuildLogsNotFound
+            - 1012 # VersionTagAlreadyExists
+            - 1013 # VersionTagDoesntExist
+            - 1014 # VersionDoesNotExists
+            - 1015 # ReservedTagName
+            - 1016 # TagIsAVersion
+            - 1017 # AlgorithmVisibilityNotFound
+            - 2001 # NotAuthorized
+            - 2002 # NotAuthenticated
+            - 2011 # PackageNameAlreadyExists
+            - 2012 # InvalidBuildStatus
+            - 2013 # MalformedJson
+            - 2014 # InvalidBuildImage
+            - 2015 # InvalidRequest
+            - 2016 # MalformedPackageSetContentsJson
+            - 2017 # InvalidPackageSetStatus
+            - 2018 # BadScmConnectionUpdateRequest
+            - 3000 # UserNotFound
+            - 3001 # MalformedUserJson
+            - 3003 # UsernameHasBeenTaken
+            - 3004 # EmailAddressHasBeenTaken
+            - 3005 # MissingRequiredFields
+            - 3007 # InconsistentUsername
+            - 3008 # UpdatingEmailNotAllowed
+            - 3009 # InvalidSignUpForm
+            - 3010 # MalformedPackageCreateJson
+            - 3100 # OrganizationNotFound
+            - 3101 # OrganizationAlreadyExists
+            - 3102 # OrganizationRequiresOwner
+            - 3103 # MalformedOrganizationJson
+            - 3104 # CanNotReserveUserForOrganization
+            - 3105 # FaviconSizeLimitExceeded
+            - 3106 # InvalidFileUpload
+            - 3107 # LogoSizeLimitExceeded
+            - 3108 # OrganizationTypeNotFound
+            - 3109 # OrganizationTypeAlreadyExists
+            - 3110 # UnableToDeleteAuthSimple
+            - 3300 # OrganizationHostInformationNotFound
+            - 3301 # OrganizationHostInformationAlreadyExists
+            - 3302 # MalformedOrganizationHostInformationJson
+            - 4001 # UnknownAlgorithmLanguage
+            - 4002 # UnsupportedAlgorithmLanguage
+            - 4003 # MalformedPackageSetJson
+            - 4004 # UnsupportedMachineType
+            - 4005 # PackageSetNameHasBeenTaken
+            - 4006 # PackageSetNameDoesNotExist
+            - 4007 # DuplicatePackageSetContents
+            - 4008 # ScmConnectionNotFound
+            - 4009 # ScmConfigurationNotFound
+            - 4020 # ScmBadCreatePayloadError
+            - 4021 # ScmBadUpdatePayloadError
+            - 4040 # ScmEnabledError
+            - 4041 # ScmDefaultError
+            - 4042 # ScmDisabledError
+            - 4043 # ScmInUseError
+            - 4044 # ScmConflictError
+            - 4045 # ScmDisallowedOperationError
+            - 4050 # ScmOAuthUnsupportedError
+            - 4051 # ScmOAuthMissingParamsError
+            - 4052 # ScmOAuthInvalidAuthorizationCodeError
+            - 4070 # ScmWebhookPayloadMalformedError
+            - 4080 # ScmNotAuthorizedError
+            - 4081 # ScmNotAuthenticatedError
+            - 4082 # ScmBadRequestError
+            - 4083 # ScmUnknownError
+            - 4084 # ScmConnectionError
+            - 5001 # InternalServerError
+            - 5002 # InvalidMarker
+            - 5003 # InvalidLimit
+            - 5004 # ConfigEntryNotFound
+            - 6001 # InputValidationError
+            - 8000 # MalformedAlgorithmSecretRequestJson
+            - 8001 # SecretMetadataConstraintViolation
+            - 8002 # DefaultSecretProviderNotFound
+            - 8003 # CreateSecretNotSupported
+            - 8004 # CreateRequiresSecretValue
+            - 8005 # CannotModifyInternalSecretProvider
+            - 8006 # SecretProviderNotFound
+            - 8007 # EditSecretFailed
+            - 8008 # SecretNotFound
+            - 8009 # SecretProviderFailed
+            - 8010 # UnableToDeleteSecret
+            - 8011 # UnableToSetDefaultSecretProvider
+            - 8012 # SecretProviderDisabled
+            - 8013 # UnableToDeleteDefaultSecretProvider
+            - 8014 # EditSecretNotSupported
+            - 8060 # MissingQueryParameterEventTypes
+            - 8061 # QueryParameterError
+        message:
+          type: string
+      required:
+        - code
+        - message
+
+    FeatureFlagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FeatureFlag'
+
+    FeatureFlag:
+      type: object
+      properties:
+        name:
+          type: string
+        enabled:
+          type: boolean
+
+    FrontendConfigurationEntry:
+      required:
+        - keyname
+        - value
+        - resource_type
+      type: object
+      properties:
+        keyname:
+          type: string
+        value:
+          type: string
+        created_at:
+          type: number
+          readOnly: true
+        updated_at:
+          type: number
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+
+    HashResponse:
+      type: object
+      properties:
+        id:
+          description: An immutable UUID which can be used to execute an algorithm.
+          type: string
+          minLength: 36
+          maxLength: 36
+        name:
+          type: string
+        details:
+          $ref: '#/components/schemas/Details'
+        settings:
+          $ref: '#/components/schemas/Settings'
+        source:
+          $ref: '#/components/schemas/Source'
+        self_link:
+          type: string
+
+    NewInviteCode:
+      type: object
+      required: [ 'inviteCode' ]
+      properties:
+        inviteCode:
+          type: string
+        signupCredits:
+          type: integer
+        comments:
+          type: string
+        expiresAt:
+          type: string
+
+    InviteCode:
+      type: object
+      properties:
+        inviteCode:
+          type: string
+        signupCredits:
+          type: integer
+        comments:
+          type: string
+        expiresAt:
+          type: string
+        createdAt:
+          type: string
+        createdBy:
+          type: string
+
+    ConnectionConfigurationRequest:
+      oneOf:
+        - $ref: '#/components/schemas/KafkaSaslSslConnectionConfiguration'
+        - $ref: '#/components/schemas/KafkaPlaintextUnauthenticatedConnectionConfiguration'
+
+    KafkaPlaintextUnauthenticatedConnectionConfiguration:
+      type: object
+      required: [ 'connection_type','broker_url','topic' ]
+      properties:
+        connection_type:
+          type: string
+          enum:
+            - kafka_sasl_ssl
+            - kafka_unauthenticated_plaintext
+        broker_url:
+          type: string
+        topic:
+          type: string
+        id:
+          type: string
+          format: uuid
+
+    KafkaSaslSslConnectionConfiguration:
+      type: object
+      required: [ 'connection_type','broker_url','topic','broker_username','broker_password' ]
+      properties:
+        connection_type:
+          type: string
+          enum:
+            - kafka_sasl_ssl
+            - kafka_unauthenticated_plaintext
+        broker_url:
+          type: string
+        topic:
+          type: string
+        broker_username:
+          type: string
+        broker_password:
+          type: string
+        ca_certificate:
+          type: string
+        sasl_mechanism:
+          type: string
+          enum:
+            - SCRAM-SHA-256
+            - SCRAM-SHA-512
+            - PLAIN
+        id:
+          type: string
+          format: uuid
+
+    License:
+      type: string
+      enum:
+        - apl
+        - apache2
+        - gpl3
+        - mit
+
+    Language:
+      type: string
+      enum:
+        - java
+        - javascript
+        - python2-langpack
+        - python3-1
+        - r
+        - ruby
+        - rust
+        - scala
+
+    NetworkAccess:
+      type: string
+      enum:
+        - isolated
+        - full
+
+    Notification:
+      type: object
+      required:
+        - notification_id
+        - notification_type
+        - created_at
+        - notification_context
+      properties:
+        notification_id:
+          type: string
+          format: uuid
+          maxLength: 100
+        notification_type:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        read_at:
+          type: string
+          format: date-time
+        notification_context:
+          $ref: '#/components/schemas/NotificationContext'
+
+    NotificationContext:
+      type: object
+      required:
+        - algorithm_id
+        - username
+        - algoname
+      properties:
+        algorithm_id:
+          type: string
+          format: uuid
+          maxLength: 100
+        username:
+          type: string
+        algoname:
+          type: string
+        semantic_version:
+          type: integer
+
+    Organization:
+      type: object
+      required:
+        - org_name
+        - org_label
+        - org_contact_name
+        - org_email
+        - type_id
+      properties:
+        org_name:
+          type: string
+          maxLength: 30
+        org_label:
+          type: string
+          maxLength: 100
+        org_contact_name:
+          type: string
+          maxLength: 100
+          pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+        org_email:
+          type: string
+          maxLength: 100
+          pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,6}$'
+        org_url:
+          type: string
+          maxLength: 100
+        type_id:
+          type: string
+          format: uuid
+          maxLength: 100
+        stripe_customer_id:
+          type: string
+        external_admin_group:
+          type: array
+          items:
+            type: string
+        external_member_group:
+          type: array
+          items:
+            type: string
+        external_executor_group:
+          type: array
+          items:
+            type: string
+        owner_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+        self_link:
+          type: string
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+
+    OrganizationApiKeyCreation:
+      type: object
+      required:
+        - permissions
+        - key_label
+      properties:
+        key_label:
+          type: string
+        permissions:
+          $ref: '#/components/schemas/AuthPermissions'
+
+    OrganizationHostInformation:
+      type: object
+      required:
+        - org_id
+        - host_username
+        - host_user_id
+      properties:
+        id:
+          type: string
+          format: uuid
+        org_id:
+          type: string
+          format: uuid
+        host_username:
+          type: string
+        host_user_id:
+          type: string
+
+    CreateOrganizationHostInformation:
+      type: object
+      required:
+        - host_username
+        - host_user_id
+      properties:
+        host_username:
+          type: string
+        host_user_id:
+          type: string
+
+    OrganizationType:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+
+    OrganizationMember:
+      type: object
+      required:
+        - username
+        - role
+        - user_link
+        - resource_type
+      properties:
+        username:
+          type: string
+          maxLength: 30
+          pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+        role:
+          type: string
+          enum: [ owner,member,invited,unknown ]
+        user_link:
+          type: string
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+
+    PagedBuildsList:
+      description: Paged Algorthm Builds List
+      type: object
+      properties:
+        next_link:
+          type: string
+        marker:
+          type: string
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Build'
+
+    PagedResultListObjects:
+      description: Objects that can be paged over
+      oneOf:
+        - $ref: '#/components/schemas/EventListener'
+        - $ref: '#/components/schemas/FrontendConfigurationEntry'
+        - $ref: '#/components/schemas/Organization'
+        - $ref: '#/components/schemas/OrganizationMember'
+        - $ref: '#/components/schemas/User'
+
+    PagedResultList:
+      type: object
+      properties:
+        next_link:
+          type: string
+        marker:
+          type: string
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PagedResultListObjects'
+            discriminator:
+              propertyName: resource_type
+              mapping:
+                eventListener: '#/components/schemas/EventListener'
+                frontendConfigurationEntry: '#/components/schemas/FrontendConfigurationEntry'
+                organization: '#/components/schemas/Organization'
+                organizationMember: '#/components/schemas/OrganizationMember'
+                user: '#/components/schemas/User'
+
+    PagedVersionsList:
+      description: Paged Algorthm Versions List Response
+      type: object
+      properties:
+        next_link:
+          type: string
+        marker:
+          type: string
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/VersionResponse'
+
+    ProviderInfo:
+      description: A single ProviderInfo object
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        moduleName:
+          type: string
+        factoryClassName:
+          type: string
+        interfaceVersion:
+          type: string
+        isEnabled:
+          type: boolean
+        isDefault:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        modified:
+          type: string
+          format: date-time
+      required:
+        - name
+        - description
+        - moduleName
+        - factoryClassName
+        - interfaceVersion
+        - isEnabled
+        - isDefault
+    RegistryCreate:
+      description: Details for creating a registry
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 32
+        registry_url:
+          type: string
+          maxLength: 128
+        registry_username:
+          type: string
+          maxLength: 64
+        registry_password:
+          type: string
+          maxLength: 64
+      required:
+        - registry_url
+    RegistryUpdate:
+      description: Details for updating a registry
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 32
+        registry_url:
+          type: string
+          maxLength: 128
+        registry_username:
+          type: string
+          maxLength: 64
+        registry_password:
+          type: string
+          maxLength: 64
+      required:
+        - registry_url
+    RegistryWithoutAuth:
+      description: A registry without the authentication information
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        created_at:
+          type: string
+          format: date-time
+        name:
+          type: string
+          maxLength: 32
+        registry_url:
+          type: string
+          maxLength: 128
+    RepositoryCommitLog:
+      description: Log of commits to a repository
+      type: object
+      required: [ 'commits' ]
+      properties:
+        commits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Commit'
+
+    Reservation:
+      description: Sticky slot reservation for an algorithm
+      type: object
+      required: [ 'reservation_id', 'username', 'algoname', 'num_slots', 'version_type', 'algo_id', 'algorithm_id', 'version_hash' ]
+      properties:
+        reservation_id:
+          type: string
+        billable_to:
+          type: string
+        billable_to_uuid:
+          type: string
+        algoname:
+          type: string
+        username:
+          type: string
+        version_type:
+          type: string
+        num_slots:
+          type: integer
+        algo_id:
+          type: string
+        algorithm_id:
+          type: string
+        version_hash:
+          type: string
+
+    ReservationCreate:
+      description: Create reservation object
+      type: object
+      required: [ 'username', 'algoname', 'calling_user', 'version_type', 'num_slots' ]
+      properties:
+        username:
+          type: string
+        algoname:
+          type: string
+        calling_user:
+          type: string
+        version_type:
+          type: string
+        num_slots:
+          type: integer
+        version_identifier:
+          type: string
+
+    ResourceName:
+      maxLength: 30
+      pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+      type: string
+
+    ScmConfiguration:
+      type: object
+      description: Information necessary to support SCM (source code management) providers that must authorize users via OAuth.
+      properties:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+          writeOnly: true
+        project_key:
+          type: string
+
+    ScmConfigurationRequestDto:
+      type: object
+      description: Represents new SCM integration.
+      properties:
+        id:
+          type: string
+        enabled:
+          type: boolean
+          default: true
+        name:
+          type: string
+        provider:
+          type: string
+          enum:
+            - internal
+            - github
+            - gitlab
+            - bitbucket
+            - bitbucket-cloud
+        scm:
+          $ref: '#/components/schemas/ScmBitbucketConfiguration'
+        oauth:
+          $ref: '#/components/schemas/ScmOAuthConfiguration'
+        urls:
+          $ref: '#/components/schemas/ScmUrls'
+      required:
+        - provider
+        - urls
+
+    ScmConfigurationResponseDto:
+      type: object
+      description: Represents a single SCM integration. The `scm` fields returns the ScmBitbucketConfiguration only on create requests, on all other requests it is mapped into `ScmOAuthConfiguration` because we can't tell between the two based on DB data.
+      properties:
+        id:
+          type: string
+        enabled:
+          type: boolean
+          default: true
+        name:
+          type: string
+        default:
+          type: boolean
+          readOnly: true
+        provider:
+          type: string
+          enum:
+            - internal
+            - github
+            - gitlab
+            - bitbucket
+            - bitbucket-cloud
+        scm:
+          $ref: '#/components/schemas/ScmConfiguration'
+        urls:
+          $ref: '#/components/schemas/ScmUrls'
+      required:
+        - id
+        - provider
+
+    ScmConnectionStatus:
+      type: object
+      properties:
+        scm_connection_status:
+          type: string
+          enum:
+            - active
+            - deploy_key_error
+            - provider_internal_error
+          readOnly: true
+        repository_public_deploy_key:
+          type: string
+          readOnly: true
+        repository_webhook_secret:
+          type: string
+          readOnly: true
+        repository_webhook_url:
+          type: string
+          readOnly: true
+
+    ScmOAuthConfiguration:
+      type: object
+      description: Information necessary to support SCM (source code management) providers that must authorize users via OAuth.
+      properties:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+          writeOnly: true
+
+    ScmBitbucketConfiguration:
+      type: object
+      description: Information necessary to support Bitbucket Server integration.
+      properties:
+        project_key:
+          type: string
+
+    SCMSUserPass:
+      type: object
+      description: Credentials for authentication in SCM (source code management) system
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required:
+        - username
+        - password
+
+    SCMSSecretToken:
+      type: object
+      description: Credentials for authentication in SCM (source code management) system
+      properties:
+        secretToken:
+          type: string
+      required:
+        - secretToken
+
+    ScmUpdateRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        urls:
+          $ref: '#/components/schemas/ScmUrls'
+
+    ScmUrls:
+      type: object
+      description: >
+        Information necessary to support SCM (source code management) endpoints for Oauth, viewing source, making API calls, and cloning Git repositories via SSH.
+
+        The `web` URL should point to the website for the GitHub/GitLab/Bitbucket instance you wish to use. For example, `https://github.com` for public GitHub. Should be filled with the value from the `api` field.
+
+        The `api` URL should point to the base API endpoint for the GitHub/GitLab/Bitbucket instance you wish to use. For example, `https://api.github.com` for public GitHub. Note that GitHub Enterprise places the API under a path, e.g. `https://my-ghe-instance.com/api/v3`. For Bitbucket, this is the only Server URL we need ex. `https://my-bitbucket-server.com`
+
+        The `ssh` URL should be of the format `ssh://git@server.com`, replacing `server.com` with the custom domain for your GitHub/GitLab/Bitbucket instance. For Bitbucket, this field needs the following format: `ssh://git@my-bitbucket-server.com`. If the user supplied a custom SSH server address, ex `custom-domain.com:5000`, then this needs to be adjusted to `ssh://git@custom-domain.com:5000`
+      properties:
+        web:
+          type: string
+        api:
+          type: string
+        ssh:
+          type: string
+      required:
+        - web
+        - api
+        - ssh
+
+    ScmUserOAuthStatus:
+      type: object
+      description: Information about a user's authorization status for the given SCM configuration.
+      properties:
+        authorization_status:
+          type: string
+          enum:
+            - authorized
+            - unauthorized
+        scm_username:
+          type: string
+        scm_organizations:
+          type: array
+          items:
+            type: object
+            properties:
+              scm_org_username:
+                type: string
+              access_level:
+                type: string
+
+    Settings:
+      type: object
+      properties:
+        algorithm_callability:
+          $ref: '#/components/schemas/AlgorithmCallability'
+        source_visibility:
+          $ref: '#/components/schemas/SourceVisibility'
+        environment:
+          $ref: '#/components/schemas/Environment'
+        package_set:
+          type: string
+        algorithm_environment:
+          description: the environment id (not the environment specification id) returned from AEMS
+          type: string
+          format: uuid
+        license:
+          $ref: '#/components/schemas/License'
+        royalty_microcredits:
+          type: integer
+          minimum: 0
+          readOnly: true
+        network_access:
+          $ref: '#/components/schemas/NetworkAccess'
+        pipeline_enabled:
+          type: boolean
+
+    SecretProviderRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        moduleName:
+          type: string
+        factoryClassName:
+          type: string
+        interfaceVersion:
+          type: string
+        configuration:
+          type: object
+          properties:
+            key:
+              type: string
+        isEnabled:
+          type: boolean
+        isDefault:
+          type: boolean
+      required:
+        - name
+        - description
+        - moduleName
+        - factoryClassName
+        - interfaceVersion
+        - isEnabled
+        - isDefault
+
+    SettingsMandatory:
+      type: object
+      required: [ 'source_visibility','license','network_access','pipeline_enabled' ]
+      properties:
+        source_visibility:
+          $ref: '#/components/schemas/SourceVisibility'
+        language:
+          $ref: '#/components/schemas/Language'
+        environment:
+          $ref: '#/components/schemas/Environment'
+        package_set:
+          type: string
+        algorithm_environment:
+          description: the environment id (not the environment specification id) returned from AEMS
+          type: string
+          format: uuid
+        license:
+          $ref: '#/components/schemas/License'
+        royalty_microcredits:
+          type: integer
+          minimum: 0
+          readOnly: true
+        network_access:
+          $ref: '#/components/schemas/NetworkAccess'
+        pipeline_enabled:
+          type: boolean
+        algorithm_callability:
+          $ref: '#/components/schemas/AlgorithmCallability'
+
+    SettingsPublish:
+      type: object
+      properties:
+        algorithm_callability:
+          $ref: '#/components/schemas/AlgorithmCallability'
+        source_visibility:
+          $ref: '#/components/schemas/SourceVisibility'
+        license:
+          $ref: '#/components/schemas/License'
+        royalty_microcredits:
+          type: integer
+          minimum: 0
+        network_access:
+          $ref: '#/components/schemas/NetworkAccess'
+        pipeline_enabled:
+          type: boolean
+
+    Source:
+      type: object
+      description: Represents information about how the algorithm's source code is managed. Upon algorithm creation, the `scm` property is set to the currently enabled default SCM (source code management) configuration for the cluster.
+      properties:
+        repository_name:
+          description: The name of the repo that will be created in the chosen SCM system.
+          type: string
+          readOnly: true
+        repository_owner:
+          description: The ID of the relevant owner as stored by the SCM system in use.
+          type: string
+          readOnly: true
+        repository_https_url:
+          description: The HTTPS URL of the algorithm's Git repository (if the repository is hosted externally to the Algorithmia platform).
+          type: string
+          readOnly: true
+        repository_ssh_url:
+          description: The SSH URL of the algorithm's Git repository (if the repository is hosted externally to the Algorithmia platform).
+          type: string
+          readOnly: true
+        scm:
+          $ref: '#/components/schemas/ScmConfigurationResponseDto'
+      required:
+        - scm
+
+    SourceCreate:
+      type: object
+      description: Describes properties of the Source schema that may be provided at algorithm creation time.
+      properties:
+        repository_name:
+          type: string
+        repository_owner:
+          type: string
+        scm:
+          type: string
+        initial_commit_message:
+          type: string
+        existing_repository_name:
+          type: string
+      required:
+        - scm
+
+    SourceVisibility:
+      type: string
+      description: >
+        For algorithms hosting source code within the Algorithmia platform, this determines if users other than the algorithm owner will be able to view (but not edit) the algorithm's source code.
+        For algorithms hosting their source code on external repository host, this value will determine if the repository is initially created as a private repository (e.g. `closed`) or if it will be public (e.g. `open`).
+        Note that, once you've created an algorithm using an external repository host like GitHub, Gitlab or Bitbucket, any updates to its source visibility must be made via the repository host itself (e.g. via the SCM UI or API).
+      enum:
+        - open
+        - closed
+
+    UpdateRequest:
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/Details'
+        settings:
+          $ref: '#/components/schemas/Settings'
+        version_info:
+          type: object
+          properties:
+            sample_input:
+              type: string
+
+    User:
+      type: object
+      required:
+        - username
+        - email
+        - resource_type
+      properties:
+        id:
+          type: string
+          maxLength: 36
+          minLength: 36
+        fullname:
+          type: string
+          maxLength: 100
+        email:
+          type: string
+          maxLength: 100
+          pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,6}$'
+        username:
+          type: string
+          maxLength: 30
+          pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+        company_name:
+          type: string
+          maxLength: 100
+        company_role:
+          type: string
+          maxLength: 200
+        self_link:
+          type: string
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+
+    VersionInfo:
+      type: object
+      properties:
+        semantic_version:
+          type: string
+          readOnly: true
+        git_hash:
+          type: string
+          readOnly: true
+        version_uuid:
+          type: string
+          readOnly: true
+        release_notes:
+          type: string
+        sample_input:
+          type: string
+        sample_output:
+          type: string
+          readOnly: true
+        insights_enabled:
+          type: boolean
+
+    VersionInfoPublish:
+      type: object
+      properties:
+        version_type:
+          $ref: '#/components/schemas/VersionType'
+        release_notes:
+          type: string
+          writeOnly: true
+        sample_input:
+          type: string
+          writeOnly: true
+        sample_output:
+          type: string
+          writeOnly: true
+        insights_enabled:
+          type: boolean
+          default: false
+
+    VersionRequest:
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/Details'
+        settings:
+          $ref: '#/components/schemas/SettingsPublish'
+        version_info:
+          $ref: '#/components/schemas/VersionInfoPublish'
+        registry_push_credentials:
+          $ref: '#/components/schemas/RegistryPublishAuth'
+
+    VersionResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        details:
+          $ref: '#/components/schemas/Details'
+        settings:
+          $ref: '#/components/schemas/Settings'
+        source:
+          $ref: '#/components/schemas/Source'
+        version_info:
+          $ref: '#/components/schemas/VersionInfo'
+        build:
+          $ref: '#/components/schemas/Build'
+        compilation:
+          $ref: '#/components/schemas/Compilation'
+        self_link:
+          type: string
+          readOnly: true
+        resource_type:
+          type: string
+          readOnly: true
+
+    VersionType:
+      type: string
+      writeOnly: true
+      enum:
+        - major
+        - minor
+        - revision
+
+  parameters:
+
+    aclQueryParameter:
+      description: Whether the ACL should be included in the response.
+      in: query
+      name: acl
+      required: false
+      schema:
+        default: false
+        type: boolean
+
+    algoHashParam:
+      name: algohash
+      in: path
+      description: Algorithm hash
+      required: true
+      schema:
+        type: string
+
+    algoIdParam:
+      name: algorithmId
+      in: path
+      description: Algorithm UUID
+      required: true
+      schema:
+        type: string
+        format: uuid
+        pattern: '^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+
+    algoParam:
+      name: algoname
+      in: path
+      description: Algorithm name
+      required: true
+      schema:
+        type: string
+
+    algoCallableVersionParam:
+      description: >
+        The specific version of the algorithm you wish to call. May be left blank, in which case the latest publicly published version will be used.
+
+        Examples:
+
+        - `latestPrivate`: Resolves to the latest version you have published privately.
+
+        - `06147a5f7726757845d04d5b24b6e2b1c797fc74`: Resolves to a specific hash version of your algorithm. Useful for testing a specific algorithm build.
+
+        - `1.1.1`: Fully specified semantic version.
+
+        - `1.2.*`: Specified to the minor version level. Will resolve to the latest publicly published version with minor version of 1.2.
+
+        - `1.*`:	Specified to the major version level. Will resolve to the latest publicly published version with major version of 1.
+      in: path
+      name: algoCallableVersion
+      required: true
+      schema:
+        pattern: '(^$|latestPrivate|^[a-z0-9]?$|^\d(\.(\d+|\*))?(\.(\d+|\*))?$)'
+        type: string
+
+    buildId:
+      name: buildid
+      in: path
+      description: Build ID
+      required: true
+      schema:
+        type: string
+
+    callableParam:
+      name: callable
+      in: query
+      description: Algorithm version's callable visibility
+      required: false
+      schema:
+        type: boolean
+
+    commitHashParam:
+      name: commitHash
+      in: path
+      description: Algorithm commit hash
+      required: true
+      schema:
+        type: string
+
+    configKeyParam:
+      name: keyname
+      in: path
+      description: "The keyname for the config map entry"
+      required: true
+      schema:
+        type: string
+        maxLength: 64
+        pattern: '^[\w][\w-.]*[\w]$'
+
+    connectorIdParameter:
+      description: >
+        Specifies the connector you wish to interact with.
+
+        For Algorithmia-hosted data, simply supply `data`. Otherwise, provide your connector's ID. A connector's ID is represented as its connector type, the `+` character, and its label (unless it is the default connector for its type, see below.) Thus, a non-default S3 connector with the label "test" would be identified as "s3+test".
+
+        You can use your default connector for a given storage provider by passing the following identifiers:
+
+        - `azureblob`: Your default Azure Blob connector.
+
+        - `dropbox`: Your default Dropbox connector, if Dropbox is enabled for your Algorithmia instance.
+
+        - `gs`: Your default Google Cloud Storage connector.
+
+        - `s3`: Your default AWS S3 connector.
+      in: path
+      name: connectorId
+      required: true
+      schema:
+        type: string
+        pattern: '^(azureblob|data|dropbox|gs|s3){1}(\+[a-zA-Z0-9]+)?$'
+
+    connectorPathParameter:
+      description: Describes the file path you wish to operate on within your chosen data connector.
+      in: path
+      name: connectorPath
+      required: true
+      schema:
+        type: string
+        pattern: '^([^\/]+\/?)*$'
+
+    eventListenerIdParam:
+      description: The ID of an event listener
+      in: path
+      name: eventListenerId
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+
+    featureNameParam:
+      description: The name of the feature flag
+      in: path
+      name: featureName
+      required: true
+      schema:
+        type: string
+
+    forceDeletionQueryParameter:
+      description: If you pass `true` for this parameter, will delete the directory even if it contains files.
+      in: query
+      name: force
+      required: false
+      schema:
+        type: boolean
+
+    limitParam:
+      name: limit
+      in: query
+      description: The number of results to return in a single page
+      schema:
+        type: integer
+        minimum: 1
+
+    markerParam:
+      name: marker
+      in: query
+      description: Encoded pagination cursor
+      schema:
+        type: string
+
+    oauthAuthorizationCodeParam:
+      in: query
+      name: code
+      description: OAuth authorization code which we will be exchanged for an access token.
+      schema:
+        type: string
+      required: true
+
+    orgnameParam:
+      name: orgName
+      in: path
+      description: Organization name
+      required: true
+      schema:
+        type: string
+        maxLength: 30
+        pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+
+    orgTypeNameParam:
+      name: orgTypeName
+      in: path
+      description: Organization Type name
+      required: true
+      schema:
+        type: string
+        maxLength: 30
+        pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+
+    providerIdParam:
+      name: providerId
+      in: path
+      description: Secret UUID
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+
+    publishedParam:
+      name: published
+      in: query
+      description: Algorithm version's published state
+      required: false
+      schema:
+        type: boolean
+
+    registryIdParam:
+      name: registryId
+      in: path
+      description: Registry ID
+      required: true
+      schema:
+        type: string
+
+    scmIdParam:
+      name: scmId
+      in: path
+      description: SCM ID
+      required: true
+      schema:
+        type: string
+
+    secretIdParam:
+      name: secretId
+      in: path
+      description: Secret UUID
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+
+    sinceSha:
+      name: since
+      in: query
+      description: The first commit SHA of the repository to list in the commits. This is included in the result list.
+      schema:
+        type: string
+
+    untilSha:
+      name: until
+      in: query
+      description: The last commit SHA of the repository to list in the commits. This is included in the result list.
+      schema:
+        type: string
+
+    userIdParam:
+      name: userId
+      in: path
+      description: The user's ID
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+
+    usernameParam:
+      name: username
+      in: path
+      description: The username of the user or organization
+      required: true
+      schema:
+        type: string
+        maxLength: 30
+        pattern: '^[a-zA-Z][a-zA-Z0-9_]*$'
+
+    usernameQueryParam:
+      name: username
+      in: query
+      description: The username of the user or organization
+      required: false
+      schema:
+        type: string
+
+  requestBodies:
+    BuildRequest:
+      description: A build request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BuildRequest'
+
+    ConnectionConfigurationRequestBody:
+      description: A connection configuration that maps to a SASL configuration or a Plain Text Authentication
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ConnectionConfigurationRequest'
+
+    ConnectorCreateRequestBody:
+      description: Attempting to create a data connector for a specific user or organization
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Connector'
+
+    CreateApiKey:
+      description: Create API Key Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiKeyCreation'
+
+    CreateOrgApiKey:
+      description: Create API Key for an Organization Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationApiKeyCreation'
+
+    CreateRegistryRequest:
+      description: Parameters to create a new registry for mirroring
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegistryCreate'
+
+    UpdateRegistryRequest:
+      description: Parameters to update a new registry for mirroring
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegistryUpdate'
+
+    CreateRequest:
+      description: Algorithm Create Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateRequest'
+
+    DirectoryAclRequestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DirectoryAclUpdateRequest'
+
+    CreateDirectoryRequestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateDirectoryRequest'
+
+    EventListenerBody:
+      description: Request with event listener
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EventListenerRequest'
+
+    FeatureFlagToggle:
+      description: Feature flag toggle
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FeatureFlagToggle'
+
+    FileUploadRequestBody:
+      content:
+        '*/*':
+          schema:
+            type: string
+            format: binary
+
+    FrontendConfigurationEntry:
+      description: Request with config entry
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FrontendConfigurationEntry'
+
+    InviteCodeRequestBody:
+      description: Request to create new invite code
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NewInviteCode'
+
+    Organization:
+      description: Request with Organization
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Organization'
+
+    OrganizationHostInformation:
+      description: Request with organization host information mapping
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationHostInformation'
+
+    CreateOrganizationHostInformation:
+      description: Request to create new organization host information mapping
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateOrganizationHostInformation'
+
+    OrganizationType:
+      description: Request with OrganizationType
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationType'
+
+    RegistryPublishAuthRequestBody:
+      description: Credentials for accessing an external docker registry
+      required: false
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegistryPublishAuth'
+
+    ReservationCreateRequestBody:
+      description: Create a reservation for an algorithm
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReservationCreate'
+
+    ScmCreateRequestBody:
+      description: Attempting to create an SCM configuration of the type `internal` will return an `ScmDisallowedOperationError`, as this is a special class of SCM leveraged by Algorithmia directly.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScmConfigurationRequestDto'
+
+    ScmUpdateRequestBody:
+      description: The enabled property or the scmUrls may be updated. If you attempt to disable an SCM that is currently the default, this call will fail, and you will be returned an appropriate error code. You must pass all 3 valid scmUrls or none
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScmUpdateRequest'
+
+    ScmWebhookRequestBody:
+      description: Contains information for the event that triggered this webhook
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+
+    AlgorithmSecretCreateRequestBody:
+      description: Algorithm Secret Create Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmSecretCreateRequest'
+
+    AlgorithmSecretEditRequestBody:
+      description: Algorithm Secret Edit Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmSecretEditRequest'
+
+    SecretProviderRequestBody:
+      description: Request for creating and updating secret providers
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SecretProviderRequest'
+
+    UpdateRequest:
+      description: Algorithm Update Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateRequest'
+
+    HostUpdateRequestBody:
+      description: AlgorithmHostUsername Update Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmHostUsernameUpdates'
+
+    User:
+      description: Request with User
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+
+    VersionRequest:
+      description: Publish Version Request
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/VersionRequest'
+
+  responses:
+    AlgorithmHostUsernameResponse:
+      description: Algorithm Host Username List
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/AlgorithmHostUsername'
+
+    AlgorithmImagePushStatusResponse:
+      description: Algorithm Image Push Status
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/ImagePushStatus'
+
+    AlgorithmInvocationResultResponse:
+      description: Returns the result of invoking an algorithm.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmInvocationResult'
+
+    AlgorithmUsageResponse:
+      description: Algorithm usage information
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmUsageResult'
+
+    LegacyAlgorithmUsageResponse:
+      description: Legacay Algorithm usage information
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LegacyAlgorithmUsageResult'
+
+    ApiKeyListResponse:
+      description: List of API keys
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiKeyList'
+
+    AlgorithmListResponse:
+      description: Returns a list of utility algorithms
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmListResult'
+
+    AlgorithmSecretListResponse:
+      description: Returns a list of AlgorithmSecrets.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmSecretList'
+
+    AlgorithmSecretResponse:
+      description: A secret object without the value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmSecretResult'
+
+    OrganizationTypeListResponse:
+      description: List of OrganizationType
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationTypeListResult'
+
+    BuildLogsResponse:
+      description: Build Logs Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BuildLogs'
+
+    BuildResponse:
+      description: Build Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Build'
+
+    ConnectionConfigurationResponse:
+      description: Response containing a Connection Configuration
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ConnectionConfiguration'
+
+    AlgorithmErrorListResponse:
+      description: List of algorithm errors response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AlgorithmErrorEntry'
+
+    CreateApiKeyResponse:
+      description: Response containing a generated API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiKey'
+
+    ConnectorResponse:
+      description: Response containing a Connector
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ConnectorResponse'
+
+    Error:
+      description: Error response for all non-200 response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                $ref: '#/components/schemas/Error'
+
+    EventListener:
+      description: Event Listener Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EventListener'
+
+    FeatureFlagListResponse:
+      description: Response with feature flag list
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FeatureFlagList'
+
+    FileDeletionResponse:
+      description: Returns the number of successful deletions under `result`, and number of failed deletions under `error`
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  deleted:
+                    type: number
+              result:
+                type: object
+                properties:
+                  deleted:
+                    type: number
+
+    FileOrDirectoryResponse:
+      description: Returns either a `directory` or raw file data, depending on path specified
+      headers:
+        X-Data-Type:
+          schema:
+            $ref: '#/components/schemas/FileType'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Directory'
+        '*/*':
+          schema:
+            type: string
+            format: binary
+
+    FileOrDirectoryCreationResponse:
+      description: Describes the location of a successfully uploaded file
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+
+    FrontendConfigurationEntry:
+      description: Front-end config representation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FrontendConfigurationEntry'
+
+    FullUsageResultResponse:
+      description: Full usage report response to caller
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FullUsageResult'
+
+    HashResponse:
+      description: Create, Update Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HashResponse'
+
+    InviteCodeResponse:
+      description: Invite code response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/InviteCode'
+
+    ListProviderInfoResponse:
+      description: Provider Info response
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/ProviderInfo'
+
+    NotificationContextResponse:
+      description: Notification response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/NotificationContext'
+
+    Organization:
+      description: Organization response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Organization'
+
+    OrganizationHostInformation:
+      description: OrganizationHostInformation response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationHostInformation'
+
+    OrganizationType:
+      description: OrganizationType response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrganizationType'
+
+    PagedBuildsListResponse:
+      description: Builds Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedBuildsList'
+
+    PagedResultList:
+      description: Response for all paginated list apis
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedResultList'
+
+    PagedVersionsListResponse:
+      description: Create, Update Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedVersionsList'
+
+    ProviderInfoResponse:
+      description: Provider Info response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProviderInfo'
+
+    RegistryResponse:
+      description: A configured registry
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegistryWithoutAuth'
+
+    RegistryNoAuthListResponse:
+      description: A list of all registries
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/RegistryWithoutAuth'
+
+    RepositoryCommitLogResponse:
+      description: Log of commits to a repository
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RepositoryCommitLog'
+
+    ReservationsResponse:
+      description: Reservations response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reservation'
+
+    ScmConnectionStatusResponse:
+      description: Returns information about an algorithm's connection to its backing SCM provider.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScmConnectionStatus'
+
+    ScmListResponse:
+      description: Returns a list of SCMs.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScmConfigurationResponseDto'
+
+    ScmResponse:
+      description: Returns a single SCM
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScmConfigurationResponseDto'
+
+    ScmUserOAuthStatusResponse:
+      description: Returns information about a user's authorization status for the given SCM configuration.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScmUserOAuthStatus'
+
+    ScmWebhookIgnoredResponse:
+      description: The incoming webhook is not actionable
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              reason:
+                type: string
+
+    User:
+      description: User response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+
+    UserUsageResponse:
+      description: User usage information
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserUsageResult'
+
+    VersionResponse:
+      description: Publish Response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/VersionResponse'
+
+  securitySchemes:
+
+    CookieAuth:
+      type: apiKey
+      in: cookie
+      name: ALGO_SESSION{cookieNameSuffix}
+
+    AdminApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+
+    GithubAuth:
+      type: apiKey
+      in: header
+      name: X-Hub-Signature
+
+    GithubEventIdentification:
+      type: apiKey
+      in: header
+      name: X-GitHub-Event
+
+    XGitlabEvent:
+      type: apiKey
+      in: header
+      name: X-Gitlab-Event
+
+    XBitbucketKey:
+      type: apiKey
+      in: header
+      name: X-Event-Key

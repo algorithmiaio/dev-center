@@ -92,25 +92,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// API Docs - resolve before trailing slash redirect so assets don't break
-
-if (isProduction) {
-  app.use(
-    '/developers/api',
-    express.static(path.join(__dirname, '../docs/'), {
-      redirect: false,
-    })
-  );
-} else {
-  app.use(
-    '/developers/api/',
-    require('http-proxy-middleware')({
-      target: config.env.stage.apiDocsUrl,
-      pathRewrite: { '^/developers/api/': '' },
-    })
-  );
-}
-
 // Remove trailing slashes, UNLESS
 // A) We're in local dev mode, in which case we need the slashes to communicate with the Jekyll server
 // B) Request is for an API docs landing, which needs the slash to not break assets

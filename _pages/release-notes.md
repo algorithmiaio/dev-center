@@ -10,6 +10,17 @@ tags: [alg-dev-getting-started, app-dev-getting-started]
 title:  "Release Notes"
 ---
 
+## Q3 2021 Release Notes ##
+
+The following features are available in Algorithmia LTS version 21.1.13.
+{: .notice-info}
+
+### New API Documentation ###
+
+We’ve migrated our static API documentation to a framework based on the open-source tool [Redoc](https://github.com/Redocly/redoc). The new API docs are rendered dynamically from your cluster-specific API spec file at `https://CLUSTER_DOMAIN/v1/openapispec`. When you view your cluster-specific API docs at `https://CLUSTER_DOMAIN/developers/api`, you'll now be viewing only the functionality available in your deployed version of Algorithmia. As before, cURL and Python code samples are shown for select endpoints.
+
+The new docs are available beginning in Algorithmia version 21.1.13 and immediately at our [public API docs site](https://algorithmia.com/developers/api). Note that the public API docs include only a subset of endpoints available to enterprise customers, as not all features are included in our multi-tenant offering.
+
 ## Q2 2021 Release Notes ##
 
 The following features are available in Algorithmia LTS version 21.0.
@@ -174,11 +185,11 @@ This release will provide more insight into algorithm execution as well as the c
 
 ### Introduction ###
 
-We are pleased to present several new features and upgrades this quarter, most notably around security and governance of machine learning systems. This release showcases advanced security options that enable customers to operate Algorithmia in restrictive environments, including AWS C2S, AWS GovCloud, VMware, authenticated proxies, customer-provided OS images, private Docker registries, private dependency mirrors, and private certificate authorities. 
+We are pleased to present several new features and upgrades this quarter, most notably around security and governance of machine learning systems. This release showcases advanced security options that enable customers to operate Algorithmia in restrictive environments, including AWS C2S, AWS GovCloud, VMware, authenticated proxies, customer-provided OS images, private Docker registries, private dependency mirrors, and private certificate authorities.
 
 This new version of Algorithmia Enterprise also includes support for the latest AWS and Azure GPU hardware, user local debugging improvements, and integration to PyCharm.
 
-Algorithmia now allows local debugging in the desktop tools developers use today. We want our users’ workflows to be seamless: they can write and run local tests for algorithms, pass local data files as input to algorithms, and integrate with development environments like PyCharm. Integrations like these allow developers to use flexible tooling and develop faster with fewer defects. 
+Algorithmia now allows local debugging in the desktop tools developers use today. We want our users’ workflows to be seamless: they can write and run local tests for algorithms, pass local data files as input to algorithms, and integrate with development environments like PyCharm. Integrations like these allow developers to use flexible tooling and develop faster with fewer defects.
 
 ### Azure event listeners ###
 
@@ -190,15 +201,15 @@ The feature is in the main algorithm dashboard under tab event listeners, and li
 
 ### Algorithm environments ###
 
-We have improved the way algorithm runtime environments are built, tested, and provided to users, by creating a new system to deliver environments and languages that can be executed within an Algorithmia cluster; we’ve ensured that these environments can be executed in any enterprise cluster. 
+We have improved the way algorithm runtime environments are built, tested, and provided to users, by creating a new system to deliver environments and languages that can be executed within an Algorithmia cluster; we’ve ensured that these environments can be executed in any enterprise cluster.
 
 #### Using the feature ####
 
 ##### For admins #####
 
-Algorithm Environments are maintained by Algorithmia, and can be imported into a given cluster through the admin panel. Cluster administrators can choose to import any environment available in the list to their cluster based on the needs of their users and security concerns for the operator. 
+Algorithm Environments are maintained by Algorithmia, and can be imported into a given cluster through the admin panel. Cluster administrators can choose to import any environment available in the list to their cluster based on the needs of their users and security concerns for the operator.
 
-Admins will see a new page for Algorithm Environments, which will allow them to import these new languages. 
+Admins will see a new page for Algorithm Environments, which will allow them to import these new languages.
 
 Once logged into Algorithmia, navigate to the Admin Panel and click on “Add Environment” to see the list of available environments; then click on the desired environment(s) to add, and then click “Add Environment” to import it.
 
@@ -208,7 +219,7 @@ The specified environment will now be available in the list of environments, and
 
 ##### Non admins #####
 
-When making new algorithms, users will see language options that are now called Environments. 
+When making new algorithms, users will see language options that are now called Environments.
 
 ### Improved debugging of algorithms (local and UI) ###
 
@@ -237,7 +248,7 @@ Below comprises the list of new instances:
 
 ### SSO enhancements ###
 
-Algorithmia supports several authentication options for Enterprise customers. Additional configuration options are now available for integration with Single Sign On solutions via OpenID Connect and LDAP.  
+Algorithmia supports several authentication options for Enterprise customers. Additional configuration options are now available for integration with Single Sign On solutions via OpenID Connect and LDAP.
 
 Enterprise customers who integrate with a Single Sign On solution via OpenID Connect or LDAP can now also choose whether to restrict browsing of the platform only to authenticated users, and whether to disable local username/password authentication.
 
@@ -245,9 +256,9 @@ Enterprise customers who integrate with a Single Sign On solution via OpenID Con
 
 Want to know what's going on in your cluster? Need access to raw information for debugging incidents? Is proactive alerting of errors to your cluster admins important? Ever wish as a cluster admin that you could hook into your existing tools for collecting and aggregating log data? Have you ever hoped you could see product usage and trends?
 
-UNILOG is an administration tool for easily accessing debug log information (or flowing into an external log collection system) for the Algorithmia platform and compute infrastructure. Not only will UNILOG give you a deeper understanding of what is happening in the Algorithmia platform, but it will also provide our on-call staff the ability to assist our enterprise customers in fine-tuning or resolving any issue that may arise. Another part of it is a saved query system that provides an automated way to execute queries on log data to generate metrics and alerts. UNILOG has a web-based user interface for viewing and searching debug log information for the Algorithmia platform. 
+UNILOG is an administration tool for easily accessing debug log information (or flowing into an external log collection system) for the Algorithmia platform and compute infrastructure. Not only will UNILOG give you a deeper understanding of what is happening in the Algorithmia platform, but it will also provide our on-call staff the ability to assist our enterprise customers in fine-tuning or resolving any issue that may arise. Another part of it is a saved query system that provides an automated way to execute queries on log data to generate metrics and alerts. UNILOG has a web-based user interface for viewing and searching debug log information for the Algorithmia platform.
 
-Additionally, cluster administrators can configure their Algorithmia installation to send debug logs to the log collection tool of their choice (any with a syslog integration). 
+Additionally, cluster administrators can configure their Algorithmia installation to send debug logs to the log collection tool of their choice (any with a syslog integration).
 
 #### Using the feature ####
 
@@ -257,9 +268,9 @@ Collecting debug log information is significantly faster and easier for cluster 
 
 ### Entity model update ###
 
-We have taken a different approach to how we store and access algorithms. The Entity Model Update project provides UUID for algorithms, users, and hosted collections to decouple the algorithm from entity owners and entity names. Hosted data collections can now be assigned to the algorithm as default and accessed via `data://.algo/default`. 
+We have taken a different approach to how we store and access algorithms. The Entity Model Update project provides UUID for algorithms, users, and hosted collections to decouple the algorithm from entity owners and entity names. Hosted data collections can now be assigned to the algorithm as default and accessed via `data://.algo/default`.
 
-Calling algorithms, performing builds, and other CRUD operations that were previously only available through a combination of owner/algorithm name will now be accessed by the algorithms UUID as well as the ability to assign algorithms to hosted collections by default. 
+Calling algorithms, performing builds, and other CRUD operations that were previously only available through a combination of owner/algorithm name will now be accessed by the algorithms UUID as well as the ability to assign algorithms to hosted collections by default.
 
 
 ### On Premises InfoSec Compliance ###
@@ -286,9 +297,9 @@ The new Pyrometer, Web Server, and API Server dashboards allow cluster administr
 ## Q1 2020 Release Notes ##
 
 ### Introduction ###
-2020 is going to be a big year at Algorithmia. We are working on features that empower our customers in tooling flexibility, connectivity, security, and ML management so they can focus on extracting value from ML. 
+2020 is going to be a big year at Algorithmia. We are working on features that empower our customers in tooling flexibility, connectivity, security, and ML management so they can focus on extracting value from ML.
 
-Our first release of 2020 comprises a diverse feature set that increases the options our customers have for frictionless ML deployment and model auditing. Several of these features are iterations on previously released features because we want to continuously strive for more for our customers. 
+Our first release of 2020 comprises a diverse feature set that increases the options our customers have for frictionless ML deployment and model auditing. Several of these features are iterations on previously released features because we want to continuously strive for more for our customers.
 
 ### Q1 Features ###
 * Source Code Management – GitHub Integration
@@ -300,14 +311,14 @@ We are pleased to announce that we have expanded our source code management offe
 
 Once enabled by your administrator, you will be able to select a GitHub (or GitHub Enterprise) instance when creating an algorithm, which will create a new GitHub repository for your algorithm.
 
-All updates to the repository's default branch will automatically precipitate new builds for your algorithm. By leveraging GitHub with Algorithmia, algorithm developers can leverage existing GitHub workflows they already have and access the entire suite of GitHub features, including [GitHub Actions,](https://github.com/features/actions) and still ensure that source code visibility is restricted to those with proper GitHub permissions. 
- 
+All updates to the repository's default branch will automatically precipitate new builds for your algorithm. By leveraging GitHub with Algorithmia, algorithm developers can leverage existing GitHub workflows they already have and access the entire suite of GitHub features, including [GitHub Actions,](https://github.com/features/actions) and still ensure that source code visibility is restricted to those with proper GitHub permissions.
+
 #### Where to learn more ####
 Algorithmia administrators can learn more about integrating GitHub with Algorithmia [here.](/developers/algorithmia-enterprise/scms) Once configured, users need simply select the GitHub repository host when creating an algorithm:
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/release_notes/Source_Code_Manage.png" alt="Source code management" class="screenshot">
 
-This feature is available now in our 
+This feature is available now in our
 deployment and will ship to users during this release.
 
 
@@ -321,11 +332,11 @@ This feature is ideal for customers who want to use Algorithmia Enterprise in th
 Talk to us about how AE for VMWare fits into your organization’s data center strategy!
 
 Algorithmia Enterprise for VMWare is available to all enterprise customers now.
- 
- 
+
+
 ### Platform Usage Reports ###
 
-Given a customizable date range (which defaults to the past 7 days), users can now view platform usage from three different perspectives: all usage, algorithms, and users. 
+Given a customizable date range (which defaults to the past 7 days), users can now view platform usage from three different perspectives: all usage, algorithms, and users.
 
 You asked and we delivered.
 
@@ -357,7 +368,7 @@ When you click on a row in the all usage table, you will see the complete set of
 * error duration: total number of seconds the algorithm ran for calls in which it returned an error (for this caller)
 * hardware: whether the algorithm runs on a CPU or GPU instance
 
-One caveat to the total compute time: each call is rounded up to the nearest second. For instance, if in the given date range, a user calls a certain algorithm twice, and the first call took 2.04 seconds and the second call took 2.08 seconds, the total time for those two calls is 4.12 seconds, which the table will round up and display as 5 seconds. 
+One caveat to the total compute time: each call is rounded up to the nearest second. For instance, if in the given date range, a user calls a certain algorithm twice, and the first call took 2.04 seconds and the second call took 2.08 seconds, the total time for those two calls is 4.12 seconds, which the table will round up and display as 5 seconds.
 
 Also note that if a call takes less than one second, the call’s duration will be rounded up to a full second. So calling Hello World 23 times would most likely result in a total duration of 23 seconds being displayed. The motivation for this is that in the [public version of Algorithmia](https://algorithmia.com/algorithms) we only charge by credits. One credit = one second, so if a user makes a call that lasts less than a second we still charge for the full second.
 
@@ -401,7 +412,7 @@ There are two updates to API key terminology this release.
 
 First, we no longer refer to our standard API keys as “Simple API Keys.” They are now simply “API Keys.”
 
-Second, “Management API Keys” has been changed to “Admin API Keys.” This naming better fits the purpose for which these keys were designed, and is intended to minimize confusion for our enterprise administrators. 
+Second, “Management API Keys” has been changed to “Admin API Keys.” This naming better fits the purpose for which these keys were designed, and is intended to minimize confusion for our enterprise administrators.
 
 -----
 
@@ -524,7 +535,7 @@ Projects for this release focused on providing greater flexibility and data conn
 * Support for .NET Core and .NET Standard
 * Update algorithm settings
 * New data storage connectors
-* User work limits and queuing 
+* User work limits and queuing
 
 ### Image Per Algorithm ###
 

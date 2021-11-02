@@ -45,10 +45,6 @@ docker build --no-cache -t algorithmiahq/dev-center:local-dev-jekyll-server -f l
 docker push algorithmiahq/dev-center:local-dev-jekyll-server
 ```
 
-## Submodules
-
-The [Algorithmia API Docs](https://github.com/algorithmiaio/api-docs) are included as a submodule of this project. If you make updates in this repository that you would like reflected in the Dev Center, `cd` into the submodule directory and check out the commit with your updates. Then `cd` back to the `dev-center` directory, run `git add [submodule directory]`, and commit.
-
 ## Making changes
 
 ### Project organization
@@ -110,6 +106,10 @@ You can find more variables in the `_data/stats.yml` file.
 ### CDN
 
 Image and video assets can be prefixed with `{{site.cdnurl}}` to automatically serve them via CDN. Note that it can take over 24h for the CDN's cache to clear, so if replacing an asset which is already in the CDN, consider renaming the asset to force its immediate reloading.
+
+### API Docs
+
+The API docs are built using [Redoc](https://redoc.ly/docs). During local development, the API docs are generated using `/assets/openapispec.yml`. In test and prod environments, the docs are generated using `https://SITE_URL/v1/openapispec`.
 
 ### Plugins
 
