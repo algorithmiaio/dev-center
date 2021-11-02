@@ -66,7 +66,7 @@ If there's a conflict between the md5 hash calculated at runtime and the hash ca
 
 You don't want your algorithm in production to get tampered with; for example, imagine if an attacker subtly adjusted your model to do something illegal or malicious! By default, any data file object with `fail_on_tamper` set to `True` will throw an exception on md5 mismatch.
 
-### Back to the code
+### Using the `load` function to leverage the model manifest in your algorithms
 
 Now that we've walked through the various elements of this custom model manifest structure, let's take a look at how we can actually use it in an algorithm.
 
