@@ -4,7 +4,7 @@ layout: article
 title: Algorithm Executions
 ---
 
-On your cluster, there may be tens, hundreds, or even thousands of algorithm instances running at any given moment. The Algorithm Executions page provides a cluster-wide snapshot view of these running instances, displaying execution counts grouped by algorithm and caller (i.e., user account). Metrics are aggregated at the caller-by-algorithm version hash level, meaning that counts are listed for each individual algorithm build invoked by each individual caller. To view historical algorithm-execution data, see the [platform usage](./687299) page.
+On your cluster, there may be tens, hundreds, or even thousands of algorithm instances running at any given moment. The Algorithm Executions page provides a cluster-wide snapshot view of these running instances, displaying execution counts grouped by algorithm and caller (i.e., user account). Metrics are aggregated at the caller-by-algorithm version hash level, meaning that counts are listed for each individual algorithm build invoked by each individual caller. To view historical algorithm-execution data, see [Governance Reporting](/developers/administration/admin-panel/governance-reporting/).
 
 ![Admin Panel - Algorithm Executions]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1608485000992.png)
 

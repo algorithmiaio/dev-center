@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: troubleshooting
 layout: article
 title: "Troubleshooting: Information Gathering"
 ---

@@ -4,7 +4,7 @@ layout: article
 title: Algorithm Categories
 ---
 
-The Categories page provides functionality to manage the algorithm categories that are displayed on the main algorithm library page (the default title of this page will be "Algorithms" unless it's changed using the [UI Customization](./687293) options). You can use this feature to categorize algorithms based on whatever dimensions you choose. Some possibilities are to categorize algorithms based on their use case (e.g., in the screenshot below) or by the project to which they apply within your company.
+The Categories page provides functionality to manage the algorithm categories that are displayed on the main algorithm library page (the default title of this page will be "Algorithms" unless it's changed using the [UI Customization](/developers/administration/admin-panel/ui-customization/) options). You can use this feature to categorize algorithms based on whatever dimensions you choose. Some possibilities are to categorize algorithms based on their use case (e.g., in the screenshot below) or by the project to which they apply within your company.
 
 ![Admin Panel - Categories]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1609267091463.png)
 

@@ -1,12 +1,12 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Migration Scripts
 ---
 
 ## User migration
 
-To migrate users from one cluster to another, you can use the following script, which is also available [as a GitHub Gist](https://gist.github.com/lemonez/92e549bffd233d1648d6aff34f307b49).
+To migrate users from one cluster to another, you can use the code provided in [this GitHub Gist](https://gist.github.com/lemonez/92e549bffd233d1648d6aff34f307b49).
 
 ## Algorithm migration
 
@@ -18,17 +18,17 @@ Algorithm metadata includes information related to ownership, permissions, versi
 
 Algorithm source code is anything included in an algorithm's code repository, i.e., anything tracked by Git. This includes the algorithm code itself (including the requirements file, any tests, and any associated helper modules/files that you include beyond the main file with the `apply()` function), and the algorithm's Git history (which is stored in its `.git` directory).
 
-Unlike metadata, with which you can interact through the API, algorithm source code is managed using Git. Regardless of where the source code is hosted, every algorithm on the platform has a Git URL that can be used to clone the algorithm to work on it locally, and this URL is available immediately once the algorithm is created, even if the source code hasn't yet been modified. If you're unfamiliar with how this works and where to find the Git URL, see our course on [developing algorithms](/developing-python-algorithms-in-the-web-ide/693712#git-url).
+Unlike metadata, with which you can interact through the API, algorithm source code is managed using Git. Regardless of where the source code is hosted, every algorithm on the platform has a Git URL that can be used to clone the algorithm to work on it locally, and this URL is available immediately once the algorithm is created, even if the source code hasn't yet been modified. If you're unfamiliar with how this works and where to find the Git URL, see [Source Code Management](/developers/algorithm-development/source-code-management).
 
 Note that algorithm source code (the part tracked by Git) doesn't include files (data, model, configuration, or otherwise) stored in hosted data collections, so those resources must be migrated separately (this can be done using the API).
 
-When you create an algorithm on the platform, you must [choose where the source code will be hosted](https://algorithmia.com/developers/algorithm-development/source-code-management), as mentioned in the previous lesson. The algorithm is initialized with the metadata you supply (or whatever default values are configured) as well as template algorithm code to get you started in whatever language you've chosen.
+When you create an algorithm on the platform, you must [choose where the source code will be hosted](/developers/algorithm-development/source-code-management), as mentioned in the previous lesson. The algorithm is initialized with the metadata you supply (or whatever default values are configured) as well as template algorithm code to get you started in whatever language you've chosen.
 
 ### Workflow for algorithm migration or promotion
 
 As described in the previous lesson, there are several scenarios in which you might choose to migrate algorithm source code between Algorithmia clusters or between accounts within a cluster, for example to switch SCM providers. In all of these scenarios, source code and metadata are handled in separate steps, and there are several things to consider to ensure that everything matches up between source and destination environments. Note that the terms "source" and "destination" refer generically to any two Algorithmia algorithms; these could be algorithms on "development" and "production" clusters, or even algorithms owned by two different accounts on the same cluster.
 
-In this section, you'll learn the steps necessary to migrate algorithm source code, and then you'll see an example code snippet that can be used to automate this workflow. Note that the workflow described below is applicable to a generic "algorithm migration" process, but also applies to the more specific "algorithm promotion" use case; these two workflows are exactly the same, with one basic difference, which is described below in step 9\. With minor modifications, this workflow could accommodate pushing code to an arbitrary number of destination clusters, for example to support the "development and production + HA" use case described in the [course introduction.](./768878)
+In this section, you'll learn the steps necessary to migrate algorithm source code, and then you'll see an example code snippet that can be used to automate this workflow. Note that the workflow described below is applicable to a generic "algorithm migration" process, but also applies to the more specific "algorithm promotion" use case; these two workflows are exactly the same, with one basic difference, which is described below in step 9. With minor modifications, this workflow could accommodate pushing code to an arbitrary number of destination clusters, for example to support the "development and production + HA" use case described on the [Migration Overview](/developers/administration/admin-config/migration-overview#development-and-production--ha) page.
 
 #### Steps
 

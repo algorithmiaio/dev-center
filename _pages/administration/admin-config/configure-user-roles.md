@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Manage User Roles
 ---
@@ -28,9 +28,9 @@ To add the cluster viewer role to a user account, you can use the following comm
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/admin/roles/**ACCOUNT_NAME**/cluster_viewer \
+<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/admin/roles/ACCOUNT_NAME/cluster_viewer \
     -X POST \
-    -H 'Authorization: Simple **ADMIN_API_KEY**'
+    -H 'Authorization: Simple ADMIN_API_KEY'
 </pre>
 
 </div>
@@ -43,9 +43,9 @@ To remove the cluster viewer role so that a user account regains standard user p
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/admin/roles/**ACCOUNT_NAME**/cluster_viewer \
+<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/admin/roles/ACCOUNT_NAME/cluster_viewer \
     -X DELETE \
-    -H 'Authorization: Simple **ADMIN_API_KEY**'
+    -H 'Authorization: Simple ADMIN_API_KEY'
 </pre>
 
 </div>

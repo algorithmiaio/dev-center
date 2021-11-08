@@ -1,10 +1,14 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Push algorithm images to external registries
 ---
 
-<span style="color: #843fa1; font-size: 16pt;">NOTE: This feature is currently in **beta**.</span>
+This feature is currently in **beta**.
+{: .notice-info}
+
+This feature is only available in Algorithmia Enterprise installations.
+{: .notice-enterprise}
 
 In order to enable our Algorithmia Enterprise customers to use an enterprise-managed container-scanning infrastructure, we enable you to assign an external registry configuration to an algorithm. This allows you to store the algorithm container image in your enterprise container registry when the algorithm is published, and Algorithmia will then serve calls to that algorithm using that container image stored in your registry.
 

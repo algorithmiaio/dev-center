@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Configure Logging Output Plugins
 ---
@@ -119,7 +119,7 @@ title: Configure Logging Output Plugins
 </div>
 <p>&nbsp;</p>
 <h3><span style="font-weight: 400;">Optional filtering</span></h3>
-<p><span style="font-weight: 400;">The following is an example of how some of these variables might be used if you'd like to filter the log output such that logs from specific services are forwarded to specific outputs. Specifically, this uses an <a href="https://github.com/algorithmiaio/unilog-logstash/blob/56ee68e774902bfd0d65a31e3db9db82ee172e98/deploy/schema/plan.schema.json"><code>if</code></a></span><span style="font-weight: 400;"> statement to put only algorithm build and execution logs into the Kafka output, but all logs still flow to syslog.</span></p>
+<p>The following is an example of how some of these variables might be used if you'd like to filter the log output such that logs from specific services are forwarded to specific outputs. Specifically, this uses an <code>if</code> statement to put only algorithm build and execution logs into the Kafka output, but all logs still flow to syslog.</p>
 <div class="syn-code-block">
 <pre class="code_snippet">if[kubernetes.labels.app] == "langserver" and [kubernetes.container.name] == &ldquo;algo-builder&rdquo;{
   kafka {

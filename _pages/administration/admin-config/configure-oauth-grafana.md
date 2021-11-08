@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Configure OAuth for Grafana
 ---

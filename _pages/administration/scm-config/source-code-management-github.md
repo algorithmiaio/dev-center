@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: scm
 layout: article
 title: Create a GitHub Configuration
 ---

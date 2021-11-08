@@ -4,7 +4,7 @@ layout: article
 title: Governance Reporting
 ---
 
-Beginning in Algorithmia version 20.5.57, the **Governance Reporting** page provides you with granular reporting capabilities, enabling you to view organization-owned algorithm resource usage at the cluster, organization, and algorithm level. For additional details, see the [Advanced Governance Reporting](https://algorithmia.com/developers/platform/advanced-governance-reporting) docs in our Developer Center.
+Beginning in Algorithmia version 20.5.57, the **Governance Reporting** page provides you with granular reporting capabilities, enabling you to view organization-owned algorithm resource usage at the cluster, organization, and algorithm level. For additional details, see the page documentation [user-facing Governance Reporting features](/developers/platform/advanced-governance-reporting).
 
 ## Setting cost rates
 
@@ -47,7 +47,7 @@ In the second dropdown, you can select the level at which you'd like the data to
 
 ### Selecting a metric
 
-In the third dropdown you can select the metric for which you'd like to view data; the metrics available are displayed in the screenshot below, and more information about these metrics is available in the [Advanced Governance Reporting](https://algorithmia.com/developers/platform/advanced-governance-reporting#metrics) docs in our Developer Center.
+In the third dropdown you can select the metric for which you'd like to view data; the metrics available are displayed in the screenshot below, and more information about these metrics is available in the [user-facing Governance Reporting feature docs](/developers/platform/advanced-governance-reporting#metrics).
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1623361756199.png)
 

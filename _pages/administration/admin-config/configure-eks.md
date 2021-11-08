@@ -1,12 +1,16 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Configure an Amazon Elastic Kubernetes Service (EKS) Cluster
 ---
 
-The following isn't intended to be complete documentation for provisioning a managed Amazon EKS cluster. Rather, we provide links here to appropriate documentation to get you started, and provide details for how to enable ingress on an existing cluster so as to allow the appropriate network access for [Constellation Distributed Serving](https://training.algorithmia.com/exploring-the-admin-panel/849126).
+The following isn't intended to be complete documentation for provisioning a managed Amazon EKS cluster. Rather, we provide links here to appropriate documentation to get you started, and provide details for how to enable ingress on an existing cluster so as to allow the appropriate network access for [Constellation Distributed Serving](/developers/administration/admin-panel/constellation).
 
-<span style="color: #843fa1; font-size: 16pt;">NOTE: This feature (and its associated documentation) is currently in **beta**.</span>
+This feature (and its associated documentation) is currently in **beta**.
+{: .notice-info}
+
+This feature is only available in Algorithmia Enterprise installations.
+{: .notice-enterprise}
 
 ## Table of contents
 
@@ -86,25 +90,25 @@ Once the stack is created, generate the `kubeconfig` file by setting AWS creden
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ aws eks --region **REGION** update-kubeconfig --name **CLUSTER_NAME**
+<pre class="code_snippet">$ aws eks --region REGION update-kubeconfig --name CLUSTER_NAME
 </pre>
 
 </div>
 
-Create an Elastic Container Registry (ECR) with all repositories required for the satellite. You'll get the `SATELLITE_ID` value from the Algorithmia side; see the [Satellite deployment](https://training.algorithmia.com/exploring-the-admin-panel/849126#satellite-deployment) section of the Constellation Distributed Serving documentation.
+Create an Elastic Container Registry (ECR) with all repositories required for the satellite. You'll get the `SATELLITE_ID` value from the Algorithmia side; see the [Satellite deployment](/developers/administration/admin-panel/constellation#satellite-deployment) section of the Constellation Distributed Serving documentation.
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ aws ecr create-repository --repository-name **ECR_NAME**/satellite-**SATELLITE_ID** \
-    --image-scanning-configuration scanOnPush=false --region **REGION**
-$ aws ecr create-repository --repository-name **ECR_NAME**/rabbitmq \
-    --image-scanning-configuration scanOnPush=false --region **REGION**
-$ aws ecr create-repository --repository-name **ECR_NAME**/codex-install \
-    --image-scanning-configuration scanOnPush=false --region **REGION**
-$ aws ecr create-repository --repository-name **ECR_NAME**/execution-engine \
-    --image-scanning-configuration scanOnPush=false --region **REGION**
-$ aws ecr create-repository --repository-name **ECR_NAME**/algorithm-queue-reader \
-    --image-scanning-configuration scanOnPush=false --region **REGION**
+<pre class="code_snippet">$ aws ecr create-repository --repository-name ECR_NAME/satellite-SATELLITE_ID \
+    --image-scanning-configuration scanOnPush=false --region REGION
+$ aws ecr create-repository --repository-name ECR_NAME/rabbitmq \
+    --image-scanning-configuration scanOnPush=false --region REGION
+$ aws ecr create-repository --repository-name ECR_NAME/codex-install \
+    --image-scanning-configuration scanOnPush=false --region REGION
+$ aws ecr create-repository --repository-name ECR_NAME/execution-engine \
+    --image-scanning-configuration scanOnPush=false --region REGION
+$ aws ecr create-repository --repository-name ECR_NAME/algorithm-queue-reader \
+    --image-scanning-configuration scanOnPush=false --region REGION
 </pre>
 
 </div>
@@ -113,9 +117,9 @@ $ aws ecr create-repository --repository-name **ECR_NAME**/algorithm-queue-reade
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ aws ecr get-login-password --region **REGION** \
-    | docker login --username **AWS_ACCOUNT_ID** --password-stdin \
-      **AWS_ACCOUNT_ID**.dkr.ecr.**REGION**.amazonaws.com
+<pre class="code_snippet">$ aws ecr get-login-password --region REGION \
+    | docker login --username AWS_ACCOUNT_ID --password-stdin \
+      AWS_ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com
 </pre>
 
 </div>
@@ -126,8 +130,8 @@ Note that if you need to modify administrative permissions on the EKS cluster af
 
 <pre class="code_snippet">- groups:
   - system:masters
-    rolearn: arn:aws:iam::**AWS_ACCOUNT_ID**:role/**USER_ARN**
-    username: arn:aws:iam::**AWS_ACCOUNT_ID**:role/**USER_ARN** </pre>
+    rolearn: arn:aws:iam::AWS_ACCOUNT_ID:role/USER_ARN
+    username: arn:aws:iam::AWS_ACCOUNT_ID:role/USER_ARN </pre>
 
 </div>
 
@@ -173,7 +177,7 @@ If configured correctly, the `Ingress` resource should have an address defined:
 
 <pre class="code_snippet">$ kubectl get ingress -n algo execution-engine
 NAME               CLASS    HOSTS   ADDRESS                                                               PORTS   AGE
-execution-engine   <none>   *       k8s-algo-executio-3b5a580f3b-4934167255.us-east-2.elb.amazonaws.com   80      21h
+execution-engine   &lt;none&gt;   *       k8s-algo-executio-3b5a580f3b-4934167255.us-east-2.elb.amazonaws.com   80      21h
 </pre>
 
 </div>

@@ -4,7 +4,7 @@ layout: article
 title: Broker Manager
 ---
 
-Beginning in Algorithmia version 20.5.51, the Broker Manager page contains functionality for cluster admins to configure connections to Kafka message brokers that are managed externally from the Algorithmia platform, for use with [Algorithmia Event Flows](https://algorithmia.com/developers/integrations/event-flows). Once these broker connections are configured, non-admin cluster users can [leverage them to architect event-driven workflows](https://algorithmia.com/developers/integrations/kafka).
+Beginning in Algorithmia version 20.5.51, the Broker Manager page contains functionality for cluster admins to configure connections to Kafka message brokers that are managed externally from the Algorithmia platform, for use with [Algorithmia Event Flows](/developers/event-flows). Once these broker connections are configured, non-admin cluster users can leverage them to architect event-driven workflows.
 
 ## Creating broker connections
 
@@ -14,7 +14,7 @@ The Broker Manager page displays a list of configured broker connections.
 
 To **create a new broker connection**, click on the **Connect Broker** button. In the modal, shown below, fill in the appropriate configuration options and click the **Connect to Kafka Broker** button to make the connection. When successful, the new connection will appear in the list of configured brokers.
 
-Note that in addition to Kafka, Algorithmia supports [Amazon SQS](https://algorithmia.com/developers/integrations/amazon-sqs/) and [Azure SB](https://algorithmia.com/developers/integrations/azure-sb) message brokers.
+Note that in addition to Kafka, Algorithmia supports [Amazon SQS](/developers/event-flows/amazon-sqs/) and [Azure SB](/developers/event-flows/azure-sb) message brokers.
 
 ![Creating a broker connection](https://cdn.algorithmia.com/developers/images/post_images/message-broker/broker-connection-create.png)
 
@@ -38,4 +38,4 @@ To edit the topic details, click on the **Edit** button at the top of the side 
 
 ## Enable event-driven algorithm workflows
 
-Once you've set up a broker connection and allowed access to queues for a specific organization-owned algorithm, members of that organization will be able to enable those queues with a version of that specific algorithm. To learn about how to enable event flows, see our [Event Flows docs](https://algorithmia.com/developers/integrations/message-broker). For troub<span style="font-family: inherit; font-size: 1em;">leshooting, see the</span> [Logs](./687279#viewing-event-listener-logs) <span style="font-family: inherit; font-size: 1em;">page.</span>
+Once you've set up a broker connection and allowed access to queues for a specific organization-owned algorithm, members of that organization will be able to enable those queues with a version of that specific algorithm. To learn about how to enable event flows, see our [Event Flows docs](/developers/event-flows). For troubleshooting, see [Logs](/developers/administration/admin-panel/logs/).

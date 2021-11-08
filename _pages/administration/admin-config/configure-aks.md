@@ -1,12 +1,16 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Configure an Azure Kubernetes Service (AKS) Cluster
 ---
 
-This page contains information for configuring a managed AKS cluster with the appropriate network access for use with [Constellation Distributed Serving](https://training.algorithmia.com/exploring-the-admin-panel/849126).
+This page contains information for configuring a managed AKS cluster with the appropriate network access for use with [Constellation Distributed Serving](/developers/administration/admin-panel/constellation).
 
-<span style="color: #843fa1; font-size: 16pt;">NOTE: This feature (and its associated documentation) is currently in **beta**.</span>
+This feature (and its associated documentation) is currently in **beta**.
+{: .notice-info}
+
+This feature is only available in Algorithmia Enterprise installations.
+{: .notice-enterprise}
 
 ## Table of Contents
 
@@ -61,7 +65,7 @@ Once you've successfully authenticated, run the following command to pull your A
 <div class="syn-code-block">
 
 <pre class="code_snippet">$ az aks get-credentials --overwrite-existing \
-    --resource-group <RESOURCE_GROUP_NAME> --name <AKS_CLUSTER_NAME>
+    --resource-group RESOURCE_GROUP_NAME --name AKS_CLUSTER_NAME
  </pre>
 
 </div>
@@ -151,7 +155,7 @@ The command to do this looks like:
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ kubectl edit ingress --kubeconfig=<PATH_TO_kubeconfig> -n <NAMESPACE> execution-engine
+<pre class="code_snippet">$ kubectl edit ingress --kubeconfig=PATH_TO_kubeconfig -n NAMESPACE execution-engine
 </pre>
 
 </div>
@@ -160,9 +164,9 @@ If configured correctly, you'll see something like the following with the public
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ kubectl get ingress --kubeconfig=<PATH_TO_kubeconfig> -n <NAMESPACE>
+<pre class="code_snippet">$ kubectl get ingress --kubeconfig=PATH_TO_kubeconfig -n NAMESPACE
 NAME               CLASS    HOSTS    ADDRESS         PORTS   AGE
-execution-engine   <none>   *        20.85.156.122   80      14m
+execution-engine   &lt;none&gt;   *        20.85.156.122   80      14m
 </pre>
 
 </div>
@@ -174,4 +178,4 @@ Note that the path-matching pattern for the `PathPrefix` `Ingress` type isn't a
 *   `/v1/algo/*` will forward any `/v1/algo/.*` route
 *   `/v1/algo/.*` will match the literal route `/v1/algo/.*`
 
-Once you have local access to your AKS cluster and its kubeconfig file and you've enabled cluster ingress, navigate back to the [Constellation](https://training.algorithmia.com/exploring-the-admin-panel/849126) docs to proceed with deploying a Constellation satellite to your AKS cluster.
+Once you have local access to your AKS cluster and its kubeconfig file and you've enabled cluster ingress, navigate back to the [Constellation](/developers/administration/admin-panel/constellation) docs to proceed with deploying a Constellation satellite to your AKS cluster.

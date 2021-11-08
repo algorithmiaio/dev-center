@@ -4,7 +4,11 @@ layout: article
 title: Constellation Distributed Serving
 ---
 
-<span style="color: #843fa1; font-size: 16pt;">NOTE: This feature (and its associated documentation) is currently in **beta** and requires a separate license and fee. To learn more and to get set up using Constellation with your Algorithmia installation, please contact your customer success manager.</span>
+This feature (and its associated documentation) is currently in **beta** and requires a separate license and fee. To learn more and to get set up using Constellation with your Algorithmia installation, please contact your customer success manager.
+{: .notice-enterprise}
+
+This feature is only available in Algorithmia Enterprise installations.
+{: .notice-enterprise}
 
 ## Table of Contents
 
@@ -54,7 +58,7 @@ To configure a new satellite of algorithms, click on the **New satellite** butto
 
 Next, you can add algorithms by clicking the **Add an algorithm** button, and another modal will pop up for adding your algorithm information.
 
-**Note that you'll need to have an [Admin API key](https://algorithmia.com/developers/platform/customizing-api-keys#admin-api-keys) configured in your account in order to add algorithms.**
+**Note that you'll need to have an [Admin API key](f/developers/platform/customizing-api-keys#admin-api-keys) configured in your account in order to add algorithms.**
 
 In the **Algorithm** field you'll provide the name of the account or organization that owns the algorithm, the name of the algorithm, and the algorithm version hash (SHA-1), in the format `ALGO_OWNER/ALGO_NAME/ALGO_VERSION_HASH`.
 
@@ -117,7 +121,7 @@ Note that removing a launch instance will not delete the launched instance; it'l
 
 ## Satellite deployment
 
-Once a satellite has been [configured in the mothership UI](#configuring-a-satellite-deployment) as indicated above, it must be deployed to a Kubernetes cluster. See [Configuring Azure Kubernetes Service (AKS)](https://training.algorithmia.com/managing-advanced-workflows/892931) or [Configuring Amazon Elastic Kubernetes Service (EKS)](https://training.algorithmia.com/managing-advanced-workflows/892934) for provider-specific Kubernetes configuration details. To summarize, the following are required:
+Once a satellite has been [configured in the mothership UI](#configuring-a-satellite-deployment) as indicated above, it must be deployed to a Kubernetes cluster. See [Configuring Azure Kubernetes Service (AKS)](/developers/administration/admin-config/configure-aks/) or [Configuring Amazon Elastic Kubernetes Service (EKS)](/developers/administration/admin-config/configure-eks/) for provider-specific Kubernetes configuration details. To summarize, the following are required:
 
 *   A **target** <span style="font-family: inherit; font-size: 1em;">**Kubernetes cluster**, where you must:</span>
     *   Be running Kubernetes 1.18.x
@@ -126,7 +130,7 @@ Once a satellite has been [configured in the mothership UI](#configuring-a-satel
     *   Provision adequate pod space to run all pods for the satellite (5 pods for the system + N pods for your algorithms based on the number of replicas)
     *   [Enable application ingress](#kubernetes-configuration) for the environment as described below
 *   A **target kubernetes namespace** within that cluster, in which objects will be created; this references below as `NAMESPACE`
-*   A **kubeconfig** <span style="font-family: inherit; font-size: 1em;">file that can be used to access and create resources within that cluster; see [Connecting to an AKS cluster](https://training.algorithmia.com/managing-advanced-workflows/892931#connecting-to-an-aks-cluster) for instructions on how to obtain this using the</span> Azure CLI
+*   A **kubeconfig** <span style="font-family: inherit; font-size: 1em;">file that can be used to access and create resources within that cluster; see [Connecting to an AKS cluster](/developers/administration/admin-config/configure-aks/#connecting-to-an-aks-cluster) for instructions on how to obtain this using the</span> Azure CLI
 *   A private **docker container registry** (and **login credentials**) to which images needed for the satellite can be pushed during installation, and from which images will be pulled during cluster operation
 
 Once the above configuration is in place, you must launch a codex-install container (version >= 1.10.4).
@@ -136,19 +140,19 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 *   <span style="font-weight: 400;">Images will be pulled from the registry where system images are stored</span>
 
-*   <span style="font-weight: 400;">Perform a</span> `docker login <CONTAINER_REGISTRY_NAME>` <span style="font-weight: 400;">to ensure images can be pushed to the needed container registry</span>
+*   <span style="font-weight: 400;">Perform a `docker login CONTAINER_REGISTRY_NAME` to ensure images can be pushed to the needed container registry</span>
 
 <span style="font-weight: 400;">Then perform the following:</span>
 
 *   <span style="font-weight: 400;">Identify the **Satellite ID** and **Launch ID** you want to deploy using the [Constellation admin page](#satellite-configuration)</span><span style="font-weight: 400;">. Click on the name of an existing satellite; the values are displayed as in the screenshot below.</span>
 
-<span style="font-weight: 400;">![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1624487644396.png)</span>
+![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1624487644396.png)
 
-*   <span style="font-weight: 400;">Using the ID values from above, run the command below. This will download artifacts like Docker images and a plan file that’ll be needed later, and store them in </span>the directory `/home/algo/deployment/current/satellite/<SATELLITE_ID>/<LAUNCH_ID>`. <span style="font-weight: 400;">These files can be quite large, so the download process may take some time.</span> Note that you'll need to run this and subsequent commands from a machine that has network access to the target Kubernetes cluster, so you may need to copy these files onto a machine that has such network access.
+*   <span style="font-weight: 400;">Using the ID values from above, run the command below. This will download artifacts like Docker images and a plan file that’ll be needed later, and store them in </span>the directory `/home/algo/deployment/current/satellite/SATELLITE_ID/LAUNCH_ID`. These files can be quite large, so the download process may take some time. Note that you'll need to run this and subsequent commands from a machine that has network access to the target Kubernetes cluster, so you may need to copy these files onto a machine that has such network access.
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> get <ADMIN_API_KEY>
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID get ADMIN_API_KEY
 </pre>
 
 </div>
@@ -158,8 +162,8 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> \
-    configure stage.container_registry=<some.customer.foo:1234/registry>
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID \
+    configure stage.container_registry=&lt;some.customer.foo:1234/registry&gt;
 </pre>
 
 </div>
@@ -168,7 +172,7 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> \
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID \
     configure .stage.kubernetes.kubeconfig_path=/home/algo/cust8s.conf
 </pre>
 
@@ -178,8 +182,8 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> \
-    configure .stage.kubernetes.namespace=<NAMESPACE_NAME>
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID \
+    configure .stage.kubernetes.namespace=NAMESPACE_NAME
 </pre>
 
 </div>
@@ -188,8 +192,8 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> \
-    configure .stage.fqdn=<foo.customer.com>
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID \
+    configure .stage.fqdn=&lt;foo.customer.com&gt;
 </pre>
 
 </div>
@@ -198,35 +202,25 @@ Once the above configuration is in place, you must launch a codex-install contai
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ algo-install satellite <SATELLITE_ID> <LAUNCH_ID> deploy
+<pre class="code_snippet">$ algo-install satellite SATELLITE_ID LAUNCH_ID deploy
 </pre>
 
 </div>
 
-At this point, Kubernetes resources should be created, but you may need to configure the **Kubernetes ingress** <span style="font-weight: 400;">based on the requirements of your Kubernetes cluster, cloud provider, or</span>`IngressController`<span style="font-weight: 400;">s.</span>
+At this point, Kubernetes resources should be created, but you may need to configure the **Kubernetes ingress** based on the requirements of your Kubernetes cluster, cloud provider, or `IngressController`.
 
 ## Kubernetes configuration
 
-For detailed guides on how to configure Kubernetes with appropriate network access for use with Constellation Distributed Serving, please see the respective pages for [Azure Kubernetes Service (AKS)](https://training.algorithmia.com/managing-advanced-workflows/892931) and [Amazon Elastic Kubernetes Service (EKS)](https://training.algorithmia.com/managing-advanced-workflows/892934).
+For detailed guides on how to configure Kubernetes with appropriate network access for use with Constellation Distributed Serving, please see the respective pages for [Azure Kubernetes Service (AKS)](/developers/administration/admin-config/configure-aks) and [Amazon Elastic Kubernetes Service (EKS)](/developers/administration/admin-config/configure-eks/).
 
 ## FAQ
 
-* * *
-
-**Q**<span style="font-family: inherit; font-size: 1em;">: Can I use different cloud platforms for the mothership cluster and the satellite clusters? For example, can I create a satellite in my mothership Algorithmia cluster that's deployed on AWS infrastructure and then deploy that satellite into an AKS environment?</span>
-
-<div>
+**Q**: Can I use different cloud platforms for the mothership cluster and the satellite clusters? For example, can I create a satellite in my mothership Algorithmia cluster that's deployed on AWS infrastructure and then deploy that satellite into an AKS environment?
 
 **A**: Yes. There's no tie between mothership and satellite, and there's nothing cloud provider-specific about satellites at this point in time.
 
-</div>
-
-<div>
-
-* * *
+\*\*\*\*
 
 **Q**: Where are the logs written from my satellite cluster?
 
 **A**: It's up to you to configure your Kubernetes cluster with a log-forwarding agent if desired. Our applications log to `stdout`.
-
-</div>

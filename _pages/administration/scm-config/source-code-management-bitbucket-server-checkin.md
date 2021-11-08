@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: scm
 layout: article
 title: Create a Bitbucket Server (build-on-checkin) Configuration
 ---

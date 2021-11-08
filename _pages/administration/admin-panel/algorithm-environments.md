@@ -4,9 +4,9 @@ layout: article
 title: Algorithm Environments
 ---
 
-Algorithm environments are the runtime foundations for algorithms, and Algorithmia comes [pre-packaged with predefined base environments](/developing-python-algorithms-in-a-local-ide/906833) in several languages including Scala, R, Java, and many versions of Python. Python environments are additionally differentiated by their support for specific versions of third-party libraries and ML frameworks such as TensorFlow and PyTorch, and their access to specific hardware that provides advanced computation capabilities.
+Algorithm environments are the runtime foundations for algorithms, and Algorithmia comes pre-packaged with [predefined base environments](/developers/algorithm-development/environments) in several languages including Scala, R, Java, and many versions of Python. Python environments are additionally differentiated by their support for specific versions of third-party libraries and ML frameworks such as TensorFlow and PyTorch, and their access to specific hardware that provides advanced computation capabilities.
 
-Environments aren't a limitation, but rather an optimization. You can always manually specify dependencies and we'll ensure that they're available in your algorithm by pulling them down from the central repository corresponding to your language of choice (for Python algorithms, for example, we use pip to pull dependencies from PyPI). Using predefined environments streamlines the development experience on the platform. It also maximizes the platform's performance, as algorithms created with predefined environments have faster build times and faster load times from a cold start. For more details on algorithm environments and how they're intended to be used, see the lesson on [how to create an algorithm](/developing-python-algorithms-in-the-web-ide/693712#environment).
+Environments aren't a limitation, but rather an optimization. You can always manually specify dependencies and we'll ensure that they're available in your algorithm by pulling them down from the central repository corresponding to your language of choice (for Python algorithms, for example, we use pip to pull dependencies from PyPI). Using predefined environments streamlines the development experience on the platform. It also maximizes the platform's performance, as algorithms created with predefined environments have faster build times and faster load times from a cold start. For more details on algorithm environments and how they're intended to be used, see how to create an algorithm in our [Getting Started Guide](/developers/algorithm-development/your-first-algo).
 
 ## Listing currently installed environments
 
@@ -52,8 +52,8 @@ Use the following command to list the available environments on the cluster to g
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/v1/algorithm-environments/edge/environments/available \
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**'
+<pre class="code_snippet">$ curl https://CLUSTER_DOMAIN/v1/algorithm-environments/edge/environments/available \
+    -H 'Authorization: Simple|Bearer CLUSTER_ADMIN_AUTH_TOKEN'
 </pre>
 
 </div>
@@ -65,7 +65,7 @@ Use the following command to list the available environments on the cluster to g
 <pre class="code_snippet">[
   {
     "id": "d7e931d9-f54e-4093-bfc8-b6bc0b3c72af",
-    "environment_specification_id": "**02b3117b-08c3-4575-8982-a7038c139c5e**",
+    "environment_specification_id": "02b3117b-08c3-4575-8982-a7038c139c5e",
     "display_name": "Python 3.7 + PyTorch 1.7.x",
     "description": "Python 3.7 installation with CUDA 10.1 and PyTorch 1.7.x installed",
     "created_at": "2021-04-06T22:34:20.723",
@@ -92,9 +92,9 @@ Use the following command to enable an environment on the cluster, replacing `EN
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/v1/algorithm-environments/edge/environment-specifications/**ENV_SPEC_ID**/syncs \
+<pre class="code_snippet">$ curl https://CLUSTER_DOMAIN/v1/algorithm-environments/edge/environment-specifications/ENV_SPEC_ID/syncs \
     -X POST
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**'
+    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN'
 </pre>
 
 </div>
@@ -109,9 +109,9 @@ Use the following command to disable an environment on the cluster, replacing `E
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**CLUSTER_DOMAIN**/v1/algorithm-environments/edge/environment-specifications/**ENV_SPEC_ID** \
+<pre class="code_snippet">$ curl https://CLUSTER_DOMAIN/v1/algorithm-environments/edge/environment-specifications/ENV_SPEC_ID \
     -X DELETE
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**'
+    -H 'Authorization: Simple|Bearer CLUSTER_ADMIN_AUTH_TOKEN'
 </pre>
 
 </div>

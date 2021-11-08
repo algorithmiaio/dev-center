@@ -55,7 +55,7 @@ There are a few ways to find the runner resource associated with an algorithm ex
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1628549934477.png)
 
-If you can’t find it on the **Algorithm Executions** page, [search for the resource hash in Kibana](/exploring-the-admin-panel/687279#searching-for-an-algorithm-runners-resource-hash).
+If you can’t find it on the **Algorithm Executions** page, [search for the resource hash in Kibana](/developers/administration/admin-panel/logs#searching-for-an-algorithm-runners-resource-hash).
 
 ## Check the algorithm status dashboard
 

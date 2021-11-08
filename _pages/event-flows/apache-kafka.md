@@ -13,7 +13,7 @@ tags: [integrations, event-flows]
 title: "Apache Kafka"
 ---
 
-This feature is currently in beta.
+This feature is currently in **beta**.
 {: .notice-info}
 
 This feature is only available in Algorithmia Enterprise installations.

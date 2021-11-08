@@ -1,5 +1,5 @@
 ---
-categories: admin-panel
+categories: admin-config
 layout: article
 title: Migration Overview
 ---
@@ -26,7 +26,7 @@ If you require both of the scenarios described above, you might provision more t
 
 ### Changing Git repository hosts
 
-When you create an algorithm, you must choose whether the source code will be hosted internally on the Algorithmia platform or using one of our supported [source code management (SCM) providers](https://algorithmia.com/developers/algorithm-development/source-code-management). If you create an algorithm and choose to host the source code using the internal SCM system but you later decide to use another SCM provider, or if you need to change providers for any reason, you'll need to migrate the resources to an algorithm backed by a repository on the new provider.
+When you create an algorithm, you must choose whether the source code will be hosted internally on the Algorithmia platform or using one of our supported [source code management (SCM) providers](/developers/algorithm-development/source-code-management). If you create an algorithm and choose to host the source code using the internal SCM system but you later decide to use another SCM provider, or if you need to change providers for any reason, you'll need to migrate the resources to an algorithm backed by a repository on the new provider.
 
 ### Troubleshooting
 
@@ -34,8 +34,8 @@ When you're troubleshooting algorithm runtime issues and need to modify source c
 
 ### Using organizations
 
-It's worth noting that by using orgs within your cluster, you can achieve some of the isolation and access control restrictions provided by having multiple clusters. For more information on how to use orgs to manage access to resources, see the related lesson in our [course on using organizations](/using-organizations/688851).
+It's worth noting that by using orgs within your cluster, you can achieve some of the isolation and access control restrictions provided by having multiple clusters. For more information on how to use orgs to manage access to resources, see [Organizations](/developers/platform/organization-profile/).
 
 ## Next steps
 
-Scenarios such as these require repeatable, automated processes for regularly migrating resources between clusters and for promoting production-ready code from development environments. This course explores some of the considerations involved in migrating resources, and provides guidance for leveraging Algorithmia's API and source code management system to support and manage repeatable workflows.
+Scenarios such as these require repeatable, automated processes for regularly migrating resources between clusters and for promoting production-ready code from development environments. The [Migration Scripts](/developers/administration/admin-config/migration-scripts) page explores some of the considerations involved in migrating resources, and provides guidance for leveraging Algorithmia's API and source code management system to support and manage repeatable workflows.
