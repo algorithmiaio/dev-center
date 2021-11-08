@@ -1,6 +1,10 @@
-_Note: This admin panel page opens in a new tab outside of Algorithmia._
+---
+categories: admin-panel
+layout: article
+title: Metrics
+---
 
-# Metrics
+_Note: This admin panel page opens in a new tab outside of Algorithmia._
 
 The Metrics page, accessed from the System Health panel, is a Grafana dashboard containing several metrics charts. These pre-configured charts display information about API calls, errors, and the timing of API calls in CPU and GPU environments. The pre-configured charts are described below. To learn how to access Grafana, see the [dashboard](./687276) page.
 

@@ -1,4 +1,8 @@
-# Create a Bitbucket Server (build-on-checkin) configuration
+---
+categories: admin-panel
+layout: article
+title: Create a Bitbucket Server (build-on-checkin) Configuration
+---
 
 This page contains instructions for creating a Bitbucket Server configuration so that users will have the option to select Bitbucket Server as the source code repository host for new algorithms they create.
 
@@ -17,7 +21,7 @@ To create a Bitbucket Server SCM configuration on Algorithmia, you'll first need
 
 1.  Log in to Bitbucket Server as an administrator and open the admin dashboard.
 2.  Open the **Server settings** tab.
-3.  Enter the base URL for the Bitbucket Server instance, including the `https://` part in the string.  
+3.  Enter the base URL for the Bitbucket Server instance, including the `https://` part in the string.
     ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1620743991129.png)
 4.  Enable HTTPS and SSH access by checking the appropriate boxes. We recommend configuring SSH on a different port than the web interface. ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1620743119246.png)
 

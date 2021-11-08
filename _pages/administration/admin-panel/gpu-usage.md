@@ -1,4 +1,8 @@
-## GPU Usage
+---
+categories: admin-panel
+layout: article
+title: GPU Usage
+---
 
 The GPU Usage page displays a table listing which algorithms are assigned to which GPU worker nodes. The table lists the following information:
 

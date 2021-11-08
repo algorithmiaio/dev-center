@@ -1,4 +1,8 @@
-# Errors
+---
+categories: admin-panel
+layout: article
+title: Algorithm Errors
+---
 
 The Errors page displays a log of error messages that users on the cluster have received when executing algorithms. These errors are aggregated across all users and consolidated into a single searchable, time-indexed table.
 
@@ -37,7 +41,7 @@ Because of the consideration above, the user-facing errors feature is disabled b
 <pre class="code_snippet">curl -X PUT https://api.**CLUSTER_DOMAIN**/v1/admin/features/algorithm-errors \
   -H 'Content-Type: application/json'
   -H 'Authorization: **ADMIN_API_KEY**'
-  -d '{"enabled": true}' 
+  -d '{"enabled": true}'
 </pre>
 
 </div>

@@ -1,4 +1,8 @@
-# Triage Overview
+---
+categories: admin-panel
+layout: article
+title: "Troubleshooting: Triage Overview"
+---
 
 This page serves as a guide to help you understand, narrow down, and solve algorithm- and platform-related issues.
 

@@ -1,23 +1,26 @@
-# Constellation Distributed Serving
+---
+categories: admin-panel
+layout: article
+title: Constellation Distributed Serving
+---
 
 <span style="color: #843fa1; font-size: 16pt;">NOTE: This feature (and its associated documentation) is currently in **beta** and requires a separate license and fee. To learn more and to get set up using Constellation with your Algorithmia installation, please contact your customer success manager.</span>
 
 ## Table of Contents
 
-- [Constellation Distributed Serving](#constellation-distributed-serving)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Satellite configuration](#satellite-configuration)
-    - [Creating a satellite deployment](#creating-a-satellite-deployment)
-      - [Adding algorithms to a satellite](#adding-algorithms-to-a-satellite)
-    - [Configuring a satellite deployment](#configuring-a-satellite-deployment)
-      - [Editing a satellite's algorithms](#editing-a-satellites-algorithms)
-      - [Creating a new launch instance](#creating-a-new-launch-instance)
-    - [Editing a launch instance](#editing-a-launch-instance)
-    - [Removing a launch instance](#removing-a-launch-instance)
-  - [Satellite deployment](#satellite-deployment)
-  - [Kubernetes configuration](#kubernetes-configuration)
-  - [FAQ](#faq)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Satellite configuration](#satellite-configuration)
+  - [Creating a satellite deployment](#creating-a-satellite-deployment)
+    - [Adding algorithms to a satellite](#adding-algorithms-to-a-satellite)
+  - [Configuring a satellite deployment](#configuring-a-satellite-deployment)
+    - [Editing a satellite's algorithms](#editing-a-satellites-algorithms)
+    - [Creating a new launch instance](#creating-a-new-launch-instance)
+  - [Editing a launch instance](#editing-a-launch-instance)
+  - [Removing a launch instance](#removing-a-launch-instance)
+- [Satellite deployment](#satellite-deployment)
+- [Kubernetes configuration](#kubernetes-configuration)
+- [FAQ](#faq)
 
 ## Overview
 
@@ -89,7 +92,7 @@ Note that editing algorithms for a satellite will increment the latest satellite
 
 #### Creating a new launch instance
 
-To create a new launch instance, click on the **New launch instance** button.  
+To create a new launch instance, click on the **New launch instance** button.
 Select the **Satellite version** for your new launch instance, and provide an **Instance name** and **Description**. Click **Create launch instance** and you should see your new launch instance under the **Launch instances** tab.
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1624485185460.png)

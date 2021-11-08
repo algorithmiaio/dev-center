@@ -1,4 +1,8 @@
-# Manage user roles
+---
+categories: admin-panel
+layout: article
+title: Manage User Roles
+---
 
 ## Overview of the "cluster viewer" role
 

@@ -1,4 +1,8 @@
-# Dashboard
+---
+categories: admin-panel
+layout: article
+title: Dashboard
+---
 
 The Dashboard page displays an overview of your cluster's capacity usage and overall health. The metrics are collected using [Prometheus](https://prometheus.io/), an open-source systems-monitoring and alerting tool originally built at SoundCloud. The metrics collected by Prometheus are visualized in your Algorithmia instance using [Grafana](https://grafana.com/grafana), an open-source real-time metrics-visualization and alerting tool that is bundled with your Algorithmia installation.
 

@@ -1,4 +1,8 @@
-# Configure an Amazon Elastic Kubernetes Service (EKS) cluster
+---
+categories: admin-panel
+layout: article
+title: Configure an Amazon Elastic Kubernetes Service (EKS) Cluster
+---
 
 The following isn't intended to be complete documentation for provisioning a managed Amazon EKS cluster. Rather, we provide links here to appropriate documentation to get you started, and provide details for how to enable ingress on an existing cluster so as to allow the appropriate network access for [Constellation Distributed Serving](https://training.algorithmia.com/exploring-the-admin-panel/849126).
 
@@ -6,12 +10,11 @@ The following isn't intended to be complete documentation for provisioning a man
 
 ## Table of contents
 
-- [Configure an Amazon Elastic Kubernetes Service (EKS) cluster](#configure-an-amazon-elastic-kubernetes-service-eks-cluster)
-  - [Table of contents](#table-of-contents)
-  - [Creating an Amazon EKS cluster](#creating-an-amazon-eks-cluster)
-  - [Connecting to an Amazon EKS cluster](#connecting-to-an-amazon-eks-cluster)
-  - [Enabling ingress to an Amazon EKS cluster](#enabling-ingress-to-an-amazon-eks-cluster)
-    - [Ingress path-matching patterns](#ingress-path-matching-patterns)
+- [Table of contents](#table-of-contents)
+- [Creating an Amazon EKS cluster](#creating-an-amazon-eks-cluster)
+- [Connecting to an Amazon EKS cluster](#connecting-to-an-amazon-eks-cluster)
+- [Enabling ingress to an Amazon EKS cluster](#enabling-ingress-to-an-amazon-eks-cluster)
+  - [Ingress path-matching patterns](#ingress-path-matching-patterns)
 
 ## Creating an Amazon EKS cluster
 
@@ -95,7 +98,7 @@ Create an Elastic Container Registry (ECR) with all repositories required for th
 <pre class="code_snippet">$ aws ecr create-repository --repository-name **ECR_NAME**/satellite-**SATELLITE_ID** \
     --image-scanning-configuration scanOnPush=false --region **REGION**
 $ aws ecr create-repository --repository-name **ECR_NAME**/rabbitmq \
-    --image-scanning-configuration scanOnPush=false --region **REGION** 
+    --image-scanning-configuration scanOnPush=false --region **REGION**
 $ aws ecr create-repository --repository-name **ECR_NAME**/codex-install \
     --image-scanning-configuration scanOnPush=false --region **REGION**
 $ aws ecr create-repository --repository-name **ECR_NAME**/execution-engine \

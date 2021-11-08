@@ -1,4 +1,8 @@
-# Banner
+---
+categories: admin-panel
+layout: article
+title: Banner
+---
 
 The Banner page provides functionality for displaying a site banner to users on your cluster. Standard banner colors associated with several alert types are provided for convenience, but custom hexadecimal color values of the form `#RRGGBB` can be provided as well. Colors are informational only and have no effect on the functionality of the banner.
 

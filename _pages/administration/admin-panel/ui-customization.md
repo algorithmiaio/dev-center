@@ -1,4 +1,10 @@
-# UI Customization
+---
+categories: admin-panel
+layout: article
+title: UI Customization
+---
+
+
 
 The UI Customization page provides functionality for customizing the appearance of the platform interface for users on your cluster. The following customization options are available:
 

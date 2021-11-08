@@ -1,4 +1,8 @@
-# Push algorithm images to external registries
+---
+categories: admin-panel
+layout: article
+title: Push algorithm images to external registries
+---
 
 <span style="color: #843fa1; font-size: 16pt;">NOTE: This feature is currently in **beta**.</span>
 

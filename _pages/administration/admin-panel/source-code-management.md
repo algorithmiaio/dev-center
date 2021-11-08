@@ -1,4 +1,8 @@
-# Source Code Management
+---
+categories: admin-panel
+layout: article
+title: Source Code Management
+---
 
 On Algorithmia, the source code for each algorithm is stored in an individual Git repository, which may include an arbitrary number of files. You can choose to use Algorithmia's internal Git server to host your algorithm source code; this is Algorithmia's default source code management (SCM) system and it's available on all Algorithmia clusters.
 

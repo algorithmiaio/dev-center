@@ -1,6 +1,10 @@
-_Note: This admin panel page opens in a new tab outside of Algorithmia._
+---
+categories: admin-panel
+layout: article
+title: Logs
+---
 
-# Logs
+_Note: This admin panel page opens in a new tab outside of Algorithmia._
 
 The **Logs** item on the admin panel opens a Kibana dashboard. In the new tab that opens, click on the hamburger menu icon (three horizontal lines) in the upper-left corner to access the navigation bar, and then click **Discover** under the **Analytics** section. The dashboard is also available directly at `https://CLUSTER_DOMAIN/admin/logs/app/discover`, where `CLUSTER_DOMAIN` is the specific domain name of your Algorithmia cluster.
 

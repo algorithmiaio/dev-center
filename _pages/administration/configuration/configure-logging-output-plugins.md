@@ -1,4 +1,9 @@
-<h1>Configure logging output plugins</h1>
+---
+categories: admin-panel
+layout: article
+title: Configure Logging Output Plugins
+---
+
 <h2><span style="font-weight: 400;">Overview</span></h2>
 <p><span style="font-weight: 400;">In the past, logs from all Algorithmia services were forwarded to ElasticSearch via Logstash. Acknowledging that customers want the flexibility to use their own pre-existing log-aggregation systems, we&rsquo;ve now added support for Logstash output plugins so that Algorithmia can be configured, through the installer itself, to forward logs to other external systems. This provides developers a more convenient way to access logging output for key operations on the platform, including the algorithm build process and the process of testing the runtime behavior of an already built algorithm.</span></p>
 <p><span style="font-weight: 400;">The key changes are as follows:</span></p>
@@ -25,90 +30,90 @@
     "unilog_syslog_output_enabled"
       "type" "boolean"
       "default" "false"
-    
-    "unilog_syslog_host" 
+
+    "unilog_syslog_host"
       "type" "string"
-    
-    "unilog_syslog_port" 
+
+    "unilog_syslog_port"
       "type" "integer"
       "default" 514
-    
-    "unilog_syslog_security_protocol" 
+
+    "unilog_syslog_security_protocol"
       "type" "string"
       "default" "ssl-tcp"
-    
-    "unilog_syslog_key_file_name" 
+
+    "unilog_syslog_key_file_name"
       "type" "string"
-    
-    "unilog_syslog_key_passphrase" 
+
+    "unilog_syslog_key_passphrase"
       "type" "string"
-    
-    "unilog_syslog_cert_file_name" 
+
+    "unilog_syslog_cert_file_name"
       "type" "string"
-    
-    "unilog_syslog_cacert_file_name" 
+
+    "unilog_syslog_cacert_file_name"
       "type" "string"
-    
-    "unilog_syslog_codec" 
+
+    "unilog_syslog_codec"
       "type" "string"
       "default" "json"
-    
+
     # used to set an if statement to filter logs based on content
-    "unilog_syslog_if_statement" 
+    "unilog_syslog_if_statement"
       "type" "string"
-      
-    "unilog_kafka_output_enabled" 
+
+    "unilog_kafka_output_enabled"
       "type" "boolean"
       "default" "false"
-    
-    "unilog_kafka_trust_file_name" 
+
+    "unilog_kafka_trust_file_name"
       "type" "string"
-    
-    "unilog_kafka_truststore_password" 
+
+    "unilog_kafka_truststore_password"
       "type" "string"
-    
-    "unilog_kafka_truststore_type" 
+
+    "unilog_kafka_truststore_type"
       "type" "string"
       "default" "JKS"
-    
-    "unilog_kafka_key_file_name" 
+
+    "unilog_kafka_key_file_name"
       "type" "string"
-    
-    "unilog_kafka_key_password" 
+
+    "unilog_kafka_key_password"
       "type" "string"
-    
-    "unilog_kafka_jaas_file_name" 
+
+    "unilog_kafka_jaas_file_name"
       "type" "string"
-    
-    "unilog_kafka_id" 
+
+    "unilog_kafka_id"
       "type" "string"
-    
-    "unilog_kafka_topic" 
+
+    "unilog_kafka_topic"
       "type" "string"
-    
-    "unilog_kafka_codec" 
+
+    "unilog_kafka_codec"
       "type" "string"
       "default" "json"
-    
-    "unilog_kafka_security_protocol" 
+
+    "unilog_kafka_security_protocol"
       "type" "string"
-    
-    "unilog_kafka_bootstrap_server" 
+
+    "unilog_kafka_bootstrap_server"
       "type" "string"
-    
-    "unilog_kafka_if_statement" 
+
+    "unilog_kafka_if_statement"
         "type" "string"
-    
-    "unilog_input_generic" 
+
+    "unilog_input_generic"
       "type" "string"
-    
-    "unilog_filter_generic" 
+
+    "unilog_filter_generic"
       "type" "string"
-    
-    "unilog_output_generic" 
+
+    "unilog_output_generic"
       "type" "string"
-    
-    "secret_mount_file_names" 
+
+    "secret_mount_file_names"
       "type" "string"
 </pre>
 </div>
@@ -131,7 +136,7 @@
     jaas_path =&gt; "/log-export-config/kafka.example.sasl.jaas"
     security_protocol =&gt; "SASL_SSL"
   }
-}  
+}
   syslog {
     host =&gt; "syslog.host.foo"
     port =&gt; "443"

@@ -1,4 +1,8 @@
-# Algorithm Environments
+---
+categories: admin-panel
+layout: article
+title: Algorithm Environments
+---
 
 Algorithm environments are the runtime foundations for algorithms, and Algorithmia comes [pre-packaged with predefined base environments](/developing-python-algorithms-in-a-local-ide/906833) in several languages including Scala, R, Java, and many versions of Python. Python environments are additionally differentiated by their support for specific versions of third-party libraries and ML frameworks such as TensorFlow and PyTorch, and their access to specific hardware that provides advanced computation capabilities.
 

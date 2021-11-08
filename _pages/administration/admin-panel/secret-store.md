@@ -1,4 +1,8 @@
-# Secret Store
+---
+categories: admin-panel
+layout: article
+title: Secret Store
+---
 
 Algorithmia's Secret Store enables you to securely store sensitive data like credentials and access tokens to be accessed from within your algorithms. To learn how to set and modify secrets and how to then retrieve them from within your algorithms, see our [Developer Center docs](https://algorithmia.com/developers/platform/algorithm-secrets). Note that the Secret Store is first available in Algorithmia version 20.5.52.
 

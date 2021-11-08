@@ -1,4 +1,8 @@
-# GPU Limits
+---
+categories: admin-panel
+layout: article
+title: GPU Limits
+---
 
 The GPU Limits page provides functionality for setting limits on the total amount of GPU memory that specific algorithms may consume. GPU algorithms can be very memory hungry, so these limits can be set to better manage GPU algorithms' memory usage and ensure that memory isn't being over-allocated.
 

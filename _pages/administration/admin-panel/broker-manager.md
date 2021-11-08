@@ -1,4 +1,8 @@
-# Broker Manager
+---
+categories: admin-panel
+layout: article
+title: Broker Manager
+---
 
 Beginning in Algorithmia version 20.5.51, the Broker Manager page contains functionality for cluster admins to configure connections to Kafka message brokers that are managed externally from the Algorithmia platform, for use with [Algorithmia Event Flows](https://algorithmia.com/developers/integrations/event-flows). Once these broker connections are configured, non-admin cluster users can [leverage them to architect event-driven workflows](https://algorithmia.com/developers/integrations/kafka).
 

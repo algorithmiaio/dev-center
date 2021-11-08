@@ -1,4 +1,8 @@
-# Information gathering
+---
+categories: admin-panel
+layout: article
+title: "Troubleshooting: Information Gathering"
+---
 
 If you've [triaged your issue](./890641) to narrow down the possibilities and haven't reached a satisfactory resolution, please contact our support team as outlined on our [Support Page](https://algorithmia.com/developers/support).
 

@@ -1,4 +1,8 @@
-# Create a GitLab configuration
+---
+categories: admin-panel
+layout: article
+title: Create a GitLab Configuration
+---
 
 This page contains instructions for creating a GitLab configuration so that users will have the option to select GitLab as the source code repository host for new algorithms they create.
 
@@ -9,7 +13,7 @@ This page contains instructions for creating a GitLab configuration so that user
 3.  Select **Applications** from the options at left.
 4.  Enter a unique **name** (e.g., "Algorithmia") to identify the application.
 5.  Enter a valid **redirect URI**. The format of this is `https://CLUSTER_DOMAIN/v1/scms/oauth/finish`, where `CLUSTER_DOMAIN` is the domain name of your Algorithmia cluster (e.g., `algorithmia.com`).
-6.  Check the following boxes as shown below, to grant Algorithmia the necessary permissions to create and manage GitLab repositories for algorithm source code:  
+6.  Check the following boxes as shown below, to grant Algorithmia the necessary permissions to create and manage GitLab repositories for algorithm source code:
 
     *   api
     *   read_user

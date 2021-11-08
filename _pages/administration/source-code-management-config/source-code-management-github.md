@@ -1,4 +1,8 @@
-# Create a GitHub configuration
+---
+categories: admin-panel
+layout: article
+title: Create a GitHub Configuration
+---
 
 This page contains instructions for creating a GitHub configuration so that users will have the option to select GitHub as the source code repository host for new algorithms they create.
 

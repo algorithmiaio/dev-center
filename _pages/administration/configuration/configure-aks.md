@@ -1,4 +1,8 @@
-# Configure an Azure Kubernetes Service (AKS) cluster
+---
+categories: admin-panel
+layout: article
+title: Configure an Azure Kubernetes Service (AKS) Cluster
+---
 
 This page contains information for configuring a managed AKS cluster with the appropriate network access for use with [Constellation Distributed Serving](https://training.algorithmia.com/exploring-the-admin-panel/849126).
 
@@ -6,12 +10,11 @@ This page contains information for configuring a managed AKS cluster with the ap
 
 ## Table of Contents
 
-- [Configure an Azure Kubernetes Service (AKS) cluster](#configure-an-azure-kubernetes-service-aks-cluster)
-  - [Table of Contents](#table-of-contents)
-  - [Creating an AKS cluster](#creating-an-aks-cluster)
-  - [Connecting to an AKS cluster](#connecting-to-an-aks-cluster)
-  - [Enabling ingress to an AKS cluster](#enabling-ingress-to-an-aks-cluster)
-    - [Ingress path-matching patterns](#ingress-path-matching-patterns)
+- [Table of Contents](#table-of-contents)
+- [Creating an AKS cluster](#creating-an-aks-cluster)
+- [Connecting to an AKS cluster](#connecting-to-an-aks-cluster)
+- [Enabling ingress to an AKS cluster](#enabling-ingress-to-an-aks-cluster)
+  - [Ingress path-matching patterns](#ingress-path-matching-patterns)
 
 ## Creating an AKS cluster
 

@@ -1,4 +1,8 @@
-# Troubleshooting Strategies
+---
+categories: admin-panel
+layout: article
+title: "Troubleshooting: Strategies"
+---
 
 ## Debug an algorithm in another account
 

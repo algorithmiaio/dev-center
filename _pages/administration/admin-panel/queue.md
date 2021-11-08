@@ -1,6 +1,10 @@
-_Note: This admin panel page opens in a new tab outside of Algorithmia._
+---
+categories: admin-panel
+layout: article
+title: Queue
+---
 
-## Queue
+_Note: This admin panel page opens in a new tab outside of Algorithmia._
 
 The Queue page, which can be accessed from the System Health panel, is a Grafana dashboard that provides a live visual display of the internals of Algorithmia's scheduling system. Queueing typically occurs when the number of requests exceeds the capacity of the cluster's worker nodes. Algorithmia's scheduling system uses a RabbitMQ message broker and a FIFO (first in first out) queueing protocol—requests are processed in the order in which they are received.
 

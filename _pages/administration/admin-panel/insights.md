@@ -1,4 +1,8 @@
-# <span style="font-weight: 400;">Insights</span>
+---
+categories: admin-panel
+layout: article
+title: Insights
+---
 
 Insights is an algorithm metrics pipeline that enables you to monitor and manage algorithms in production using external monitoring and observability tools. You can use Insights for both operational and inference-related metrics, for example to capture algorithm execution times and prediction accuracy, in order to monitor performance, anomalies, and model drift. Insights is a global configuration on your Algorithmia cluster; once enabled, you can use it with any algorithm that has Insights enabled, and each algorithm request will generate an Insights payload along with the normal API response.
 

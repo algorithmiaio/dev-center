@@ -1,4 +1,8 @@
-# Reservations
+---
+categories: admin-panel
+layout: article
+title: Reservations
+---
 
 A reservation is an assigned worker node slot pre-loaded with an algorithm instance, which includes any underlying model file, data, and code dependencies. The Reservations page provides an interface for managing reservations on your cluster.
 

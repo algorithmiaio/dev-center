@@ -1,4 +1,8 @@
-# Configuring OAuth for Grafana
+---
+categories: admin-panel
+layout: article
+title: Configure OAuth for Grafana
+---
 
 The following variables have been added to the installer. These variables correlate 1:1 with the options exposed in the official [Generic OAuth authentication](https://grafana.com/docs/grafana/latest/auth/generic-oauth/) Grafana plugin.
 

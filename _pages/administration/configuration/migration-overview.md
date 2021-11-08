@@ -1,4 +1,8 @@
-# Migration overview
+---
+categories: admin-panel
+layout: article
+title: Migration Overview
+---
 
 Algorithmia is designed to be deployed in environments with the strictest of security requirements, and the infrastructure of each installation operates in complete isolation from other installations. Every Algorithmia instance (cluster) is provisioned with its own isolated database; resources (i.e., algorithms, data, and accounts) created on one cluster are not shared with other clusters.
 

@@ -1,4 +1,8 @@
-# Common issues
+---
+categories: admin-panel
+layout: article
+title: "Troubleshooting: Common Issues"
+---
 
 ## JSON serialization of input/output
 

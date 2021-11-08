@@ -1,4 +1,8 @@
-# Governance Reporting
+---
+categories: admin-panel
+layout: article
+title: Governance Reporting
+---
 
 Beginning in Algorithmia version 20.5.57, the **Governance Reporting** page provides you with granular reporting capabilities, enabling you to view organization-owned algorithm resource usage at the cluster, organization, and algorithm level. For additional details, see the [Advanced Governance Reporting](https://algorithmia.com/developers/platform/advanced-governance-reporting) docs in our Developer Center.
 

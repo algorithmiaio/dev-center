@@ -1,4 +1,8 @@
-# Users
+---
+categories: admin-panel
+layout: article
+title: Users
+---
 
 The Users page provides functionality for managing and debugging issues that arise related to specific accounts, sending notifications within the platform, and setting concurrent session limits. To download information for all the accounts on your cluster, click the "Download CSV" button. 
 

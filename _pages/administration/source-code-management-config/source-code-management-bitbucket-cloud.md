@@ -1,4 +1,8 @@
-# Create a Bitbucket Cloud configuration
+---
+categories: admin-panel
+layout: article
+title: Create a Bitbucket Cloud Configuration
+---
 
 This page contains instructions for creating a Bitbucket Cloud configuration so that users will have the option to select Bitbucket Cloud as the source code repository host for new algorithms they create.
 

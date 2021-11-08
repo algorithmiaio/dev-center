@@ -1,4 +1,8 @@
-# Create a Bitbucket Server (build-via-API) configuration
+---
+categories: admin-panel
+layout: article
+title: Create a Bitbucket Server (build-via-API) Configuration
+---
 
 This page contains instructions for creating a Bitbucket Server configuration so that users will have the option to select Bitbucket Server as the source code repository host for new algorithms they create.
 
@@ -8,23 +12,22 @@ See the [Bitbucket Server (build-on-checkin)](./805805) page for details on how 
 
 ## Table of Contents
 
-- [Create a Bitbucket Server (build-via-API) configuration](#create-a-bitbucket-server-build-via-api-configuration)
-  - [Table of Contents](#table-of-contents)
-  - [Bitbucket Server setup](#bitbucket-server-setup)
-    - [Prerequisites](#prerequisites)
-    - [Configuring server access](#configuring-server-access)
-    - [Configuring a project](#configuring-a-project)
-    - [Configuring SSH key authentication](#configuring-ssh-key-authentication)
-    - [A note about Bitbucket Server user accounts](#a-note-about-bitbucket-server-user-accounts)
-  - [Algorithmia setup](#algorithmia-setup)
-    - [A note about authentication tokens](#a-note-about-authentication-tokens)
-    - [Creating a Bitbucket Server SCM configuration](#creating-a-bitbucket-server-scm-configuration)
-  - [Listing SCM configurations](#listing-scm-configurations)
-  - [Updating SCM configurations](#updating-scm-configurations)
-  - [Deleting SCM configurations](#deleting-scm-configurations)
-  - [Creating Bitbucket Server-backed algorithms via API (version 1 method)](#creating-bitbucket-server-backed-algorithms-via-api-version-1-method)
-      - [How to create an SSH key](#how-to-create-an-ssh-key)
-  - [Triggering builds for Bitbucket Server-backed algorithms](#triggering-builds-for-bitbucket-server-backed-algorithms)
+- [Table of Contents](#table-of-contents)
+- [Bitbucket Server setup](#bitbucket-server-setup)
+  - [Prerequisites](#prerequisites)
+  - [Configuring server access](#configuring-server-access)
+  - [Configuring a project](#configuring-a-project)
+  - [Configuring SSH key authentication](#configuring-ssh-key-authentication)
+  - [A note about Bitbucket Server user accounts](#a-note-about-bitbucket-server-user-accounts)
+- [Algorithmia setup](#algorithmia-setup)
+  - [A note about authentication tokens](#a-note-about-authentication-tokens)
+  - [Creating a Bitbucket Server SCM configuration](#creating-a-bitbucket-server-scm-configuration)
+- [Listing SCM configurations](#listing-scm-configurations)
+- [Updating SCM configurations](#updating-scm-configurations)
+- [Deleting SCM configurations](#deleting-scm-configurations)
+- [Creating Bitbucket Server-backed algorithms via API (version 1 method)](#creating-bitbucket-server-backed-algorithms-via-api-version-1-method)
+    - [How to create an SSH key](#how-to-create-an-ssh-key)
+- [Triggering builds for Bitbucket Server-backed algorithms](#triggering-builds-for-bitbucket-server-backed-algorithms)
 
 ## Bitbucket Server setup
 
@@ -458,7 +461,7 @@ In a file `build_trigger.json`, formatted as shown below, paste your SSH key (`S
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X POST -k https://api.**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_OWNER**/**ALGO_NAME**/compile \  
+<pre class="code_snippet">$ curl -X POST -k https://api.**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_OWNER**/**ALGO_NAME**/compile \
     -H 'Authorization: Simple|Bearer **ORG_ADMIN_AUTH_TOKEN**'
     -H 'Content-type: application/json' \
     -d @build_trigger.json

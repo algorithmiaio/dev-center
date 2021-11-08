@@ -1,4 +1,8 @@
-# Nodes
+---
+categories: admin-panel
+layout: article
+title: Nodes
+---
 
 The Nodes page provides an interface through which you can view your Algorithmia cluster's Kubernetes node configuration and manage basic configuration properties if required.
 

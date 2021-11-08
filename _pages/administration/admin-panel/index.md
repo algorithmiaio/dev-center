@@ -1,4 +1,8 @@
-# Overview
+---
+categories: admin-panel
+layout: article
+title: Admin Panel Overview
+---
 
 If your Algorithmia account has cluster admin privileges, you'll have access to the admin panel, which provides immediate access to a variety of tools to administer and manage resources on your cluster.
 

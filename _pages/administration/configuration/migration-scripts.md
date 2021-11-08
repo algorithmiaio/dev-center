@@ -1,4 +1,8 @@
-# Migration Scripts
+---
+categories: admin-panel
+layout: article
+title: Migration Scripts
+---
 
 ## User migration
 
