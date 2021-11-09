@@ -89,7 +89,7 @@ This tab serves as a forum for any comments, questions, and answers pertaining t
 
 ### Errors
 
-Beginning in Algorithmia version 20.5.57, non-admin users can see execution errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](https://training.algorithmia.com/managing-advanced-workflows/829681).
+Beginning in Algorithmia version 20.5.57, non-admin users can see execution errors from algorithms that they own or that are owned by an organization of which they're a member. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](/developers/administration/admin-panel/algorithm-errors#enabling-user-facing-errors).
 
 This tab lists the 200 most recent algorithm execution errors over the past seven days. For each error, the caller and algorithm endpoint are listed along with the exact date and time that the error occurred. If the error is a custom Algorithmia error type, that information is displayed as well. The error message is displayed in red below these details.
 

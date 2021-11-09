@@ -31,7 +31,7 @@ Algorithmia Insights metrics fall into two categories:
 
 ## Setting up Algorithmia Insights on your cluster
 
-The external broker connection required for Insights is a global configuration on your Algorithmia cluster. If Insights isn't already available on your cluster, ask your cluster admin to [configure a broker connection](https://training.algorithmia.com/exploring-the-admin-panel/687275).
+The external broker connection required for Insights is a global configuration on your Algorithmia cluster. If Insights isn't already available on your cluster, ask your cluster admin to [configure a broker connection](/developers/administration/admin-panel/broker-manager#creating-broker-connections).
 
 ## Using Algorithmia Insights in an algorithm
 

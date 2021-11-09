@@ -37,10 +37,12 @@ This tab displays a paginated list of the algorithms you own, with options avail
 This tab lists any organizations of which you're a member. To learn about how to use organizations, see [Organizations]({{site.baseurl}}//platform/organizations).
 
 ### API Keys
+
 This tab displays the API keys you own. Each key can be edited or deleted through the action menu at the right of the corresponding row in the table. For information about how to use API keys, see [API Keys]({{site.baseurl}}//platform/customizing-api-keys).
 
 ### Errors
-Beginning in Algorithmia version 20.5.57, this tab displays execution errors from algorithms that you've called. Specifically, it lists the 200 most recent algorithm execution errors over the past seven days that've been called using any of your API keys. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](https://training.algorithmia.com/managing-advanced-workflows/829681).
+
+Beginning in Algorithmia version 20.5.57, this tab displays execution errors from algorithms that you've called. Specifically, it lists the 200 most recent algorithm execution errors over the past seven days that've been called using any of your API keys. Note that this feature is disabled by default and can only be [enabled by a cluster administrator](/developers/administration/admin-panel/algorithm-errors#enabling-user-facing-errors).
 
 For each error, the algorithm endpoint is listed along with the exact date and time that the error occurred. If the error is a [custom Algorithmia error type]({{site.baseurl}}/algorithm-development/algorithm-errors), that information is displayed as well. The error message is displayed in red below these details.
 

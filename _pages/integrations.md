@@ -20,11 +20,11 @@ Integrations denoted with a "*" are available to Algorithmia Enterprise users on
 
 We support the following [Single Sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) protocols for controlling resource access:
 
-* JSON Web Token / JSON Web Key Set (JWT/JWKS) ([docs](/developers/platform-administration/jwt-authentication) \| [website](https://jwt.io/))
+* JSON Web Token / JSON Web Key Set (JWT/JWKS) ([docs](/developers/administration/admin-config/jwt-authentication) \| [website](https://jwt.io/))
   * JWT/JWKS can be used as authentication tokens, enabling external management of group membership through group sync.
 * OpenID Connect (OIDC) ([website](https://auth0.com/docs/protocols/openid-connect-protocol))
   * OIDC can be used for obtaining authentication tokens.
-* Security Assertion Markup Language (SAML) ([docs](/developers/platform-administration/saml-authentication) \| [website](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language))
+* Security Assertion Markup Language (SAML) ([docs](/developers/administration/admin-config/saml-authentication) \| [website](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language))
   * SAML providers can be used to obtain authentication tokens, enabling external management of group membership. We are SAML 2.0 compliant and support major identity providers such as Microsoft active directory (AD) and Google.
 
 ### CI/CD tools
@@ -95,14 +95,14 @@ With [Algorithmia Insights](/developers/integrations/insights), we have the buil
 
 We have a secure, encrypted, built-in solution in which you can store secrets for use by algorithms at execution time. We also integrate with external secret-management systems, including (but not limited to):
 
-* Azure Key Vault[*](#enterprise-only) ([docs](https://training.algorithmia.com/exploring-the-admin-panel/842511#azure-key-vault) \| [website](https://azure.microsoft.com/en-us/services/key-vault/))
-* Hashicorp Vault[*](#enterprise-only) ([docs](https://training.algorithmia.com/exploring-the-admin-panel/842511#hashicorp-vault) \| [website](https://www.vaultproject.io/))
+* Azure Key Vault[*](#enterprise-only) ([docs](/developers/administration/admin-panel/secret-store/#azure-key-vault) \| [website](https://azure.microsoft.com/en-us/services/key-vault/))
+* Hashicorp Vault[*](#enterprise-only) ([docs](/developers/administration/admin-panel/secret-store/#hashicorp-vault) \| [website](https://www.vaultproject.io/))
 
 ### Source code management (SCM) providers
 
 We can host your source code within Algorithmia internally, and we also integrate natively with the following Git-based SCM providers, enabling you to host your algorithm source code on these platforms:
 
 * Bitbucket Cloud ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-cloud) \| [website](https://bitbucket.org/product/))
-* Bitbucket Server[*](#enterprise-only) ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-cloud) \| [website](https://www.atlassian.com/software/bitbucket/enterprise))
+* Bitbucket Server[*](#enterprise-only) ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-server) \| [website](https://www.atlassian.com/software/bitbucket/enterprise))
 * GitHub / GitHub Enterprise ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-github) \| [website (GitHub)](https://github.com/) \| [website (GitHub Enterprise)](https://github.com/enterprise))
 * GitLab ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-github) \| [website](https://about.gitlab.com/))

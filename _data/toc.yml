@@ -22,10 +22,6 @@
   url: /platform/
   nav_category: basics
 
-- title: Platform Administration
-  url: /platform-administration/
-  nav-category: admin
-
 - title: Client Guides
   url: /clients/
   nav_category: clients
@@ -82,6 +78,26 @@
 # - title: Algorithmia Enterprise
 #   url: /algorithmia-enterprise/
 #   nav_category: algorithmia-enterprise
+
+- title: Admin - Panel
+  url: /administration/admin-panel/
+  nav_category: admin-panel
+
+- title: Admin - Configuration
+  url: /administration/admin-config/
+  nav_category: admin-config
+
+- title: Admin - SCM Configuration
+  url: /administration/scm-config/
+  nav_category: scm
+
+- title: Admin - Troubleshooting
+  url: /administration/troubleshooting/
+  nav_category: troubleshooting
+
+# - title: Platform Administration
+#   url: /platform-administration/
+#   nav-category: admin
 
 - title: VMware
   url: /vmware/

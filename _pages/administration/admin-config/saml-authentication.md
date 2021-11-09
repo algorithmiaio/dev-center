@@ -1,11 +1,12 @@
 ---
-categories: admin
+categories: admin-config
 excerpt: "Use SAML for authentication"
 layout: article
-permalink: /platform-administration/saml-authentication/
+permalink: /administration/admin-config/saml-authentication/
 redirect_from:
   - /platform/saml-authentication/
   - /basics/saml-authentication/
+  - /platform-administration/saml-authentication/
 show_related: true
 tags: [admin, authentication]
 title: "SAML Authentication and Organization Management"

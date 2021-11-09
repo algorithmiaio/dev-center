@@ -65,7 +65,7 @@ Algorithmia doesn't come provisioned with its own Kafka broker, so to [use Kafka
 
 Regardless of your exact Kafka configuration, the following three steps are required:
 
-1. A cluster admin must [create a broker connection](https://training.algorithmia.com/exploring-the-admin-panel/807062) to an existing external Kafka broker. Note that with Event Flows, you can establish connections to multiple Kafka brokers from the same Algorithmia cluster.
+1. A cluster admin must [create a broker connection](/developers/administration/admin-panel/broker-manager#creating-broker-connections) to an existing external Kafka broker. Note that with Event Flows, you can establish connections to multiple Kafka brokers from the same Algorithmia cluster.
 2. A cluster admin must "add" a specific algorithm to a specific topic on a connected broker to allow that algorithm to access that topic. Existing topics on connected brokers are listed automatically in the admin panel within the Algorithmia browser UI. Specifically, to enable algorithm access, the cluster admin must:
     1. Add the algorithm of interest to the desired topic.
     2. Select whether the algorithm of interest will publish messages to, or subscribe to messages from, the topic.
