@@ -95,9 +95,9 @@
   url: /administration/troubleshooting/
   nav_category: troubleshooting
 
-- title: Platform Administration
-  url: /platform-administration/
-  nav-category: admin
+# - title: Platform Administration
+#   url: /platform-administration/
+#   nav-category: admin
 
 - title: VMware
   url: /vmware/

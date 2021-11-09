@@ -1,5 +1,5 @@
 ---
-categories: admin
+categories: admin-config
 excerpt: "Use JSON Web Tokens for authentication"
 layout: article
 permalink: /administration/admin-config/jwt-authentication/
