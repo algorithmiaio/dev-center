@@ -14,6 +14,6 @@ The table lists the following information:
 *   **Heartbeat**: the time since the last heartbeat with the control plane
 *   **Last Transition**: timestamp of last status transition
 
-To view Grafana charts for a node, click the vertical ellipsis to the right of the corresponding row. To generate a usage report showing the monthly average number of workers consumed on the cluster, navigate to the [System Version](./687283) page.
+To view Grafana charts for a node, click the vertical ellipsis to the right of the corresponding row. To generate a usage report showing the monthly average number of workers consumed on the cluster, navigate to the [System Version](/developers/administration/admin-panel/system-version) page.
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1616795127683.png)

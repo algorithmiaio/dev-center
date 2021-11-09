@@ -8,7 +8,7 @@ This page contains instructions for creating a Bitbucket Server configuration so
 
 Note that there are two types of Bitbucket Server providers you can use. With the "build-via-API" provider type described on this page, a separate API call is required for triggering an actual algorithm build after the source code is pushed to the repository's master branch. At the end of this page are example code and commands showing how to trigger a build.
 
-See the [Bitbucket Server (build-on-checkin)](./805805) page for details on how to set up a configuration with the other provider type.
+See the [Bitbucket Server (build-on-checkin)](/developers/administration/scm-config/source-code-management-bitbucket-server-checkin) page for details on how to set up a configuration with the other provider type.
 
 ## Table of Contents
 

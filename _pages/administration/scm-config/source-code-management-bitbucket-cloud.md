@@ -32,7 +32,7 @@ You'll need the **application ID** and **secret** values <span style="font-fami
 
 ## Algorithmia setup
 
-Once you've created an OAuth consumer in Bitbucket Cloud as described above, log in to Algorithmia as a cluster admin and navigate to the [Source Code Management](/exploring-the-admin-panel/687291#managing-scm-provider-options) page from the admin panel. Click **Add SCM Configuration** and select Bitbucket Cloud from the drop-down.
+Once you've created an OAuth consumer in Bitbucket Cloud as described above, log in to Algorithmia as a cluster admin and navigate to the [Source Code Management](/developers/administration/admin-panel/source-code-management) page from the admin panel. Click **Add SCM Configuration** and select Bitbucket Cloud from the drop-down.
 
 Enter the base website, API, and SSH endpoint URLs. The pre-filled values that appear are just placeholders, so you must actually enter the paths in each field even if you just want the defaults.
 
@@ -46,4 +46,4 @@ Under the **OAuth information** section, enter the values from the consumer con
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1621526714884.png)
 
-Once you've created the configuration, it'll show up in the list of SCM configurations on the [Source Code Management](/exploring-the-admin-panel/687291#managing-scm-provider-options) page.
+Once you've created the configuration, it'll show up in the list of SCM configurations on the [Source Code Management](/developers/administration/admin-panel/source-code-management) page.

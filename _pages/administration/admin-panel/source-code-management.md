@@ -6,7 +6,7 @@ title: Source Code Management
 
 On Algorithmia, the source code for each algorithm is stored in an individual Git repository, which may include an arbitrary number of files. You can choose to use Algorithmia's internal Git server to host your algorithm source code; this is Algorithmia's default source code management (SCM) system and it's available on all Algorithmia clusters.
 
-You can also use supported third-party SCM providers to host your algorithm source code. The Source Code Management page provides functionality to manage these configurations, which users will then be able to choose between on an algorithm-by-algorithm basis depending on specific project requirements. To learn how to use external SCM configurations with algorithms, see our [SCM docs](https://algorithmia.com/developers/algorithm-development/source-code-management).
+You can also use supported third-party SCM providers to host your algorithm source code. The Source Code Management page provides functionality to manage these configurations, which users will then be able to choose between on an algorithm-by-algorithm basis depending on specific project requirements. To learn how to use external SCM configurations with algorithms, see our [docs on using SCM providers](/developers/algorithm-development/source-code-management).
 
 Note that if you use a third-party SCM provider to host an algorithm's source code, you won't be able to use our Web IDE to interact with it. Instead, if you navigate to the **Source Code** tab on an algorithm's homepage within the browser UI, you'll be navigated to that algorithm's repository on the website of the SCM provider that's hosting that algorithm's code.
 
@@ -20,18 +20,18 @@ The current SCM configurations on your cluster appear on the **Source Code Manag
 
 We currently have integrated support for the SCM providers listed below. The steps for creating an SCM configuration differ slightly between providers, but the general process is that you'll configure an OAuth application* on the provider's platform, and use the associated key-value pair to create the SCM configuration within Algorithmia using the **Add SCM Configuration** button in the screenshot above. An OAuth application allows individual users to authorize Algorithmia to act on their behalf. We securely store any authorization obtained, and only use it when necessary (such as when creating a new repository for an algorithm). (*Bitbucket server does not use OAuth, as indicated below.)
 
-Click on the respective link below to navigate to the SCM provider-specific configuration documentation. Note that the "build-on-checkin via webhook" providers are configured so that when code is pushed to Algorithmia (checked in to the master branch), a new build is triggered automatically. When pushing code for an algorithm backed by the "direct compile via API" Bitbucket Server provider, a separate API call is required for triggering the actual build. For further description of what this workflow looks like on the side of an algorithm developer, see the [Developer Center docs](https://algorithmia.com/developers/algorithm-development/source-code-management) specific to the provider configuration of interest.
+Click on the respective link below to navigate to the SCM provider-specific configuration documentation. Note that the "build-on-checkin via webhook" providers are configured so that when code is pushed to Algorithmia (checked in to the master branch), a new build is triggered automatically. When pushing code for an algorithm backed by the "direct compile via API" Bitbucket Server provider, a separate API call is required for triggering the actual build. For further description of what this workflow looks like on the side of an algorithm developer, see the [SCM docs](/developers/algorithm-development/source-code-management) specific to the provider configuration of interest.
 
 OAuth-based providers:
 
-*   [GitHub / GitHub Enterprise](/managing-advanced-workflows/807370) (build-on-checkin via webhook)
-*   [GitLab](/managing-advanced-workflows/807381) (build-on-checkin via webhook)
-*   [Bitbucket Cloud](/managing-advanced-workflows/807382) (build-on-checkin via webhook)
+*   [GitHub / GitHub Enterprise](/developers/administration/scm-config/source-code-management-github) (build-on-checkin via webhook)
+*   [GitLab](/developers/administration/scm-config/source-code-management-gitlab) (build-on-checkin via webhook)
+*   [Bitbucket Cloud](/developers/administration/scm-config/source-code-management-bitbucket-cloud) (build-on-checkin via webhook)
 
 Non-OAuth based providers:
 
-*   [Bitbucket Server](/managing-advanced-workflows/805805) (build-on-checkin via webhook)
-*   [Bitbucket Server](/managing-advanced-workflows/843874) (direct build via API)
+*   [Bitbucket Server](/developers/administration/scm-config/source-code-management-bitbucket-server-checkin) (build-on-checkin via webhook)
+*   [Bitbucket Server](/developers/administration/scm-config/source-code-management-bitbucket-server-api) (direct build via API)
 
 _<span style="color: #7e8c8d;">NOTE: Integrated support for GitLab and Bitbucket (Cloud and Server) is available beginning in Algorithmia Version 20.5.52.</span>_
 

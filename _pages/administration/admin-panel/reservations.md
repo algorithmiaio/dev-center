@@ -46,4 +46,4 @@ To remove a reservation, click the action menu for the reservation in question a
 
 ![Admin Panel - Remove Reservation]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1609359637045.png)
 
-If you'd like to configure reservations programmatically, you can do so using an admin API key with [this Python code](https://gist.github.com/zeryx/5d4f89029c15b92b127bcb82808d412a).
+If you'd like to configure reservations programmatically, you can do so using an admin API key with [this Python script](https://gist.github.com/zeryx/5d4f89029c15b92b127bcb82808d412a).

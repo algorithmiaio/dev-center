@@ -6,7 +6,7 @@ title: Create a Bitbucket Server (build-on-checkin) Configuration
 
 This page contains instructions for creating a Bitbucket Server configuration so that users will have the option to select Bitbucket Server as the source code repository host for new algorithms they create.
 
-Note that there are two types of Bitbucket Server providers you can use. With this "build-on-checkin via webhook" provider type, when algorithm source code is pushed to the repository's master branch, the build is triggered automatically. To see what this workflow looks like on the side of the algorithm developer, see the [Bitbucket Server SCM docs](https://algorithmia.com/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-server) on our Developer Center. See the [Bitbucket Server (build-via-API)](./843874) page for details on how to set up a configuration with the other provider type.
+Note that there are two types of Bitbucket Server providers you can use. With this "build-on-checkin via webhook" provider type, when algorithm source code is pushed to the repository's master branch, the build is triggered automatically. To see what this workflow looks like on the side of the algorithm developer, see the [docs for using the Bitbucket Server SCM](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-server). See the [Bitbucket Server (build-via-API)](/developers/administration/scm-config/source-code-management-bitbucket-server-api) page for details on how to set up a configuration with the other provider type.
 
 ## Bitbucket Server setup
 
@@ -47,7 +47,7 @@ Once the server is set up correctly, you can create a new project where all Algo
 
 ## Algorithmia setup
 
-Once you've created an access token within Bitbucket Server as described above, log in to Algorithmia as a cluster admin and navigate to the [Source Code Management](/exploring-the-admin-panel/687291#managing-scm-provider-options) page from the admin panel. Click the **Add SCM Configuration** button and select Bitbucket Server from the drop-down.
+Once you've created an access token within Bitbucket Server as described above, log in to Algorithmia as a cluster admin and navigate to the [Source Code Management](/developers/administration/admin-panel/source-code-management) page from the admin panel. Click the **Add SCM Configuration** button and select Bitbucket Server from the drop-down.
 
 Enter the base website, API, and SSH endpoint URLs specific to your Bitbucket Server instance.
 
@@ -61,4 +61,4 @@ Under the **OAuth information** section, enter the values from the token configu
 
 ![]({{site.url}}/developers/images/post_images/algo-images-admin/algo-1621526272064.png)
 
-Once you've created the configuration, it'll show up in the list of SCM configurations on the [Source Code Management](/exploring-the-admin-panel/687291#managing-scm-provider-options) page.
+Once you've created the configuration, it'll show up in the list of SCM configurations on the [Source Code Management](/developers/administration/admin-panel/source-code-management) page.

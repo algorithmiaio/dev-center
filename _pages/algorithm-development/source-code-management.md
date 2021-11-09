@@ -33,7 +33,7 @@ Using a non-OAuth based SCM provider
 
 - [Hosting source code on Bitbucket Server](#hosting-source-code-on-bitbucket-server)
 
-**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. Please consult your cluster administrator to have them [create an external SCM configuration](https://training.algorithmia.com/exploring-the-admin-panel/687291).
+**Enterprise Users:** By default, on new Algorithmia clusters algorithm source code can only be hosted internally within the Algorithmia platform. Please consult your cluster administrator to have them [create an external SCM configuration](/developers/administration/admin-panel/source-code-management#creating-scm-configurations).
 {: .notice-info}
 
 If you haven't used Git before, we recommend [this Git tutorial series](https://try.github.io/) by GitHub. You don't need to know how to use Git to get started on Algorithmia. However, we recommend having at least a basic familiarity with it, as it's a powerful and widely used collaboration tool and is required to use some of our more advanced functionality.

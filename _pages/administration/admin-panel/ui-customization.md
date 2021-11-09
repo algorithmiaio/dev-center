@@ -4,8 +4,6 @@ layout: article
 title: UI Customization
 ---
 
-
-
 The UI Customization page provides functionality for customizing the appearance of the platform interface for users on your cluster. The following customization options are available:
 
 *   **Favicon**: the icon that appears in the browser tab; to reset, click "Change" and select a local image file such as a PNG

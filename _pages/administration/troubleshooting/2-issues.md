@@ -1,7 +1,7 @@
 ---
 categories: troubleshooting
 layout: article
-title: "Troubleshooting: Common Issues"
+title: "2) Common Issues"
 ---
 
 ## JSON serialization of input/output

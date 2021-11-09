@@ -24,7 +24,7 @@ Users authenticated into the browser UI are alerted of notifications in the lowe
 
 As a security, cost-control, and performance-management feature, as an admin you can limit the number of concurrent sessions (connections from a single account) that any given account is able to initialize. For instance, you may choose to throttle down an account's active session limit to control costs, or throttle it up to enabled increased degrees of parallelism.
 
-The maximum concurrent session limit defaults to 80\. There's no predefined upper-bound to this limit; to determine what a reasonable upper-bound is for your cluster, you'll need to take into account <span style="font-family: inherit; font-size: 1em;">cluster- and workload-specific</span> <span style="font-family: inherit; font-size: 1em;">considerations such as</span><span style="font-family: inherit; font-size: 1em;">how many workers are available, the resource requirements of specific algorithms you'll be calling (which will determine how many replicas can run</span> <span style="font-family: inherit; font-size: 1em;">on the same machine), and the execution durations of the algorithms you'll be calling.</span>
+The maximum concurrent session limit defaults to 80. There's no predefined upper-bound to this limit; to determine what a reasonable upper-bound is for your cluster, you'll need to take into account <span style="font-family: inherit; font-size: 1em;">cluster- and workload-specific</span> <span style="font-family: inherit; font-size: 1em;">considerations such as</span><span style="font-family: inherit; font-size: 1em;">how many workers are available, the resource requirements of specific algorithms you'll be calling (which will determine how many replicas can run</span> <span style="font-family: inherit; font-size: 1em;">on the same machine), and the execution durations of the algorithms you'll be calling.</span>
 
 To change an account's concurrent session limit, click on the action menu and select "Update Work Limits" from the drop-down list. In the modal, enter a positive integer to set a new limit and select the "Update" button to submit the changes.
 
@@ -78,4 +78,4 @@ To disable the "sudo user" role on the cluster, set the `process.env.IS_SUDO_USE
 
 1.  "Sudo" won't show up as a user role in the Users page.
 2.  Cluster admins won't have the menu option to "Add to Sudo Users" or "Remove from Sudo Users" on the Users action menus for each user in the Users page.
-3.  The entire "Sudo users" section and "Add sudo user" input will be hidden in the UI on the [Administrators](./687295) page.
+3.  The entire "Sudo users" section and "Add sudo user" input will be hidden in the UI on the [Administrators](/developers/administration/admin-panel/administrators) page.

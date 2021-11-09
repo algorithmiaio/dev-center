@@ -4,7 +4,7 @@ layout: article
 title: Secret Store
 ---
 
-Algorithmia's Secret Store enables you to securely store sensitive data like credentials and access tokens to be accessed from within your algorithms. To learn how to set and modify secrets and how to then retrieve them from within your algorithms, see our [Developer Center docs](https://algorithmia.com/developers/platform/algorithm-secrets). Note that the Secret Store is first available in Algorithmia version 20.5.52.
+Algorithmia's Secret Store enables you to securely store sensitive data like credentials and access tokens to be accessed from within your algorithms. To learn how to set and modify secrets and how to then retrieve them from within your algorithms, see [docs for using the Secret Store](https://algorithmia.com/developers/platform/algorithm-secrets). Note that the Secret Store is first available in Algorithmia version 20.5.52.
 
 The **Secret Store** page in the admin panel contains information on how to create plugins so that you can add external secret providers.
 
@@ -60,7 +60,7 @@ In the upper-right corner, click the **New Provider** button and fill out the fo
 
 To upload a JAR file via the API, you can use the `/v1/admin/secret-provider` endpoint.
 
-The code sample below shows how you can create a secret provider with cURL. Note that you'll need to substitute `ADMIN_API_KEY` with a valid [admin API key](https://algorithmia.com/developers/platform/customizing-api-keys#admin-api-keys), and `CLUSTER_DOMAIN` with your specific cluster's domain name. The remaining parameters match the field names from the section above, where `moduleName` is the name of the JAR file that you uploaded, and the key-value pairs specified under `configuration` are plugin-specific required parameters that depend on the secret provider (the specifics are listed in the READMEs for each respective [plugin example](#example-plugin-implementations)).
+The code sample below shows how you can create a secret provider with cURL. Note that you'll need to substitute `ADMIN_API_KEY` with a valid [admin API key](/developers/platform/customizing-api-keys#admin-api-keys), and `CLUSTER_DOMAIN` with your specific cluster's domain name. The remaining parameters match the field names from the section above, where `moduleName` is the name of the JAR file that you uploaded, and the key-value pairs specified under `configuration` are plugin-specific required parameters that depend on the secret provider (the specifics are listed in the READMEs for each respective [plugin example](#example-plugin-implementations)).
 
 <div class="syn-code-block">
 
@@ -122,9 +122,10 @@ An example implementation of an Azure Key Vault plugin is available in [this Git
 
 ##### Key-value pairs
 
-When you [create a new provider](#how-to-import-a-secret-provider-plugin) and upload the plugin module, you'll need to specify the following key-value pairs. These are passed directly to the corresponding options of the [Azure KeyVault java SDK](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-java?tabs=azure-cli#authenticate-and-create-a-clientr) `SecretClientBuilder` class via the `ClientSecretCredentialBuilder.`
+When you [create a new provider](#how-to-import-a-secret-store-provider-plugin) and upload the plugin module, you'll need to specify the following key-value pairs. These are passed directly to the corresponding options of the [Azure KeyVault java SDK](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-java?tabs=azure-cli#authenticate-and-create-a-clientr) `SecretClientBuilder` class via the `ClientSecretCredentialBuilder.`
 
 *   **vault_url**: the Azure Key Vault URL
 *   **client_id**: the Azure Client ID (UUID)
 *   **client_secret**: the Azure token to authenticate to Azure
 *   **tenant_id**: the Azure tenant ID (UUID)
+*

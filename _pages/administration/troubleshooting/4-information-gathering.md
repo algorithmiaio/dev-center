@@ -1,10 +1,10 @@
 ---
 categories: troubleshooting
 layout: article
-title: "Troubleshooting: Information Gathering"
+title: "4) Information Gathering"
 ---
 
-If you've [triaged your issue](./890641) to narrow down the possibilities and haven't reached a satisfactory resolution, please contact our support team as outlined on our [Support Page](https://algorithmia.com/developers/support).
+If you've [triaged your issue](/developers/administration/troubleshooting/overview) to narrow down the possibilities and haven't reached a satisfactory resolution, please contact our support team as outlined on our [Support Page](https://algorithmia.com/developers/support).
 
 The details below provide a guideline for the type of information that we need from you in order to resolve your issue as efficiently as possible. We also provide this information as a condensed troubleshooting guide; we find that many issues are resolved through the process of gathering this information. Please provide any of the following details that you think may be relevant for us to troubleshoot your issue.
 

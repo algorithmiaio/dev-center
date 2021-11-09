@@ -1,7 +1,7 @@
 ---
 categories: troubleshooting
 layout: article
-title: "Troubleshooting: Triage Overview"
+title: "1) Triage Overview"
 ---
 
 This page serves as a guide to help you understand, narrow down, and solve algorithm- and platform-related issues.
