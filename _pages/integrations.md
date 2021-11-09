@@ -95,14 +95,14 @@ With [Algorithmia Insights](/developers/integrations/insights), we have the buil
 
 We have a secure, encrypted, built-in solution in which you can store secrets for use by algorithms at execution time. We also integrate with external secret-management systems, including (but not limited to):
 
-* Azure Key Vault[*](#enterprise-only) ([docs](https://training.algorithmia.com/exploring-the-admin-panel/842511#azure-key-vault) \| [website](https://azure.microsoft.com/en-us/services/key-vault/))
-* Hashicorp Vault[*](#enterprise-only) ([docs](https://training.algorithmia.com/exploring-the-admin-panel/842511#hashicorp-vault) \| [website](https://www.vaultproject.io/))
+* Azure Key Vault[*](#enterprise-only) ([docs](/developers/administration/admin-panel/secret-store/#azure-key-vault) \| [website](https://azure.microsoft.com/en-us/services/key-vault/))
+* Hashicorp Vault[*](#enterprise-only) ([docs](/developers/administration/admin-panel/secret-store/#hashicorp-vault) \| [website](https://www.vaultproject.io/))
 
 ### Source code management (SCM) providers
 
 We can host your source code within Algorithmia internally, and we also integrate natively with the following Git-based SCM providers, enabling you to host your algorithm source code on these platforms:
 
 * Bitbucket Cloud ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-cloud) \| [website](https://bitbucket.org/product/))
-* Bitbucket Server[*](#enterprise-only) ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-cloud) \| [website](https://www.atlassian.com/software/bitbucket/enterprise))
+* Bitbucket Server[*](#enterprise-only) ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-bitbucket-server) \| [website](https://www.atlassian.com/software/bitbucket/enterprise))
 * GitHub / GitHub Enterprise ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-github) \| [website (GitHub)](https://github.com/) \| [website (GitHub Enterprise)](https://github.com/enterprise))
 * GitLab ([docs](/developers/algorithm-development/source-code-management#hosting-source-code-on-github) \| [website](https://about.gitlab.com/))

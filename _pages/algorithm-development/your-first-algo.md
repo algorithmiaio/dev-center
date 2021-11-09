@@ -14,7 +14,7 @@ redirect_from:
   - /basics/your_first_algo/
 ---
 
-In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia. For a more detailed walk-through of algorithm development, see the [Algorithmia Enterprise tutorial](https://training.algorithmia.com/developing-python-algorithms-in-the-web-ide) or the [Algorithmia Teams tutorial](https://training.algorithmia.com/path/teams-20-2-data-scientist/teams-20-2-developing-python-algorithms-in-the-web-ide) on our [Training Center](https://training.algorithmia.com).
+In this quick-start guide, we'll walk through the process of developing a classic "Hello World" algorithm on Algorithmia.
 
 We'll develop an algorithm in Python, but all the steps shown here are the same in all programming languages supported on the platform. To see specific code examples in the languages we support, check out <a href="{{site.baseurl}}/algorithm-development/languages">Algorithm Development Languages</a>.
 
@@ -24,10 +24,16 @@ Note: this guide uses Algorithmia's browser UI to create and deploy your algorit
 Table of contents
 
 - [Creating your first algorithm](#creating-your-first-algorithm)
+  - [Owner and name](#owner-and-name)
+  - [Source code](#source-code)
+  - [Environment](#environment)
+  - [Settings](#settings)
 - [Developing your algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
 - [Publishing your algorithm](#publishing-your-algorithm)
 - [Calling your algorithm](#calling-your-algorithm)
 - [Next steps](#next-steps)
+  - [Language guides](#language-guides)
+  - [Connecting to data](#connecting-to-data)
 
 ## Creating your first algorithm
 
@@ -346,7 +352,7 @@ print(response)
 }</textarea>
 
   </div>
-  
+
   <!-- GO -->
   <div class="tab-pane code__pane gs-pane" id="go" ng-show="lang==='go'" ng-cloak>
   <pre class="getting-started-code"><code class="demo-code-sample hljs go"><span class="hljs-keyword">import</span> (
@@ -496,4 +502,4 @@ As you saw in this guide, you can create simple algorithms that don't read or wr
 
 As an integration-first platform, we encourage you to connect to whatever data source(s) you're already using. We also enable you to host data directly on our platform for lower-latency access, and we even have several native integrations with cloud-hosted data platforms.
 
-See our <a href="http://docs.algorithmia.com/#data">Data API</a> docs and our <a href="{{site.baseurl}}/data">Developer Center</a> docs to get started connecting to data sources, or take the [Algorithmia Enterprise tutorial](https://training.algorithmia.com/using-data-sources) or the [Algorithmia Teams tutorial](https://training.algorithmia.com/path/teams-20-2-data-scientist/teams-20-2-using-data-sources) on our [Training Center](https://training.algorithmia.com) for a deeper dive.
+See our [Data API docs](/developers/api/#tag/data) and our [Developer Center data docs](/developers/data) to get started connecting to data sources.

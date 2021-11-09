@@ -40,7 +40,7 @@ Our brand new [Integrations]({{site.baseurl}}/integrations) page contains descri
 
 ### Third-Party Secret Provider Plugins ###
 
-We’re excited to announce that we now have documented example implementations of [secret provider plugins](https://training.algorithmia.com/exploring-the-admin-panel/842511#secret-provider-plugins) for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
+We’re excited to announce that we now have documented example implementations of [secret provider plugins](/developers/administration/admin-panel/secret-store#secret-provider-plugins) for Hashicorp Vault and Azure Key Vault. This enables Algorithmia Enterprise customers to use their existing accounts in these third-party vaulting systems to store and manage their sensitive data, and for their Algorithmia algorithms to access those secrets at run time. To use this feature, a cluster administrator must first configure the new secret provider by uploading the secret provider plugin module through the Secret Store page in the admin panel.
 
 ---
 
@@ -68,7 +68,7 @@ The Advanced Reporting for Governance feature provides administrators the abilit
 
 #### Cluster-level reporting ####
 
-Only cluster administrators have access to [cluster-level reporting](https://training.algorithmia.com/exploring-the-admin-panel/836479). To use this feature, navigate to the “Governance Reporting” page in the administrator panel.
+Only cluster administrators have access to [cluster-level reporting](/developers/administration/admin-panel/governance-reporting). To use this feature, navigate to the “Governance Reporting” page in the administrator panel.
 
 As a first step, we recommend you add your hardware cost rate estimates to ensure you get accurate cost estimates based on your resource usage. To do this, click the “Resource Cost Rates” button in the top-right corner to view the values. To add or modify existing values, click the “Edit Values” button and input your values in the form. Submit your changes when you’re done and you’ll see cost estimates displayed in the report. Once you’re satisfied with the cost estimates, you can dive into the data. Note that only cluster administrators have access to set or modify cost rates, which are set at the cluster level.
 
@@ -90,7 +90,7 @@ To view Advanced Reporting at the algorithm level, navigate to the algorithm’s
 
 We’ve added three new source code management (SCM) integrations: GitLab, Bitbucket Cloud, and Bitbucket Server. These new integrations expand on our current SCM integration with GitHub Enterprise. By using a single source of truth for your machine learning codebase, you can now take advantage of all the enhanced governance and management features that GitLab and Bitbucket Cloud’s CI/CD workflows offer, and with the Bitbucket Server integration, you can do your development work in the SCM system that you’re most comfortable using.
 
-Once your cluster administrator [configures a connection to an SCM provider](https://training.algorithmia.com/exploring-the-admin-panel/687291#creating-scm-configurations), you can immediately create algorithms backed by a Git repository on that provider.
+Once your cluster administrator [configures a connection to an SCM provider](/developers/administration/admin-panel/source-code-management#creating-scm-configurations), you can immediately create algorithms backed by a Git repository on that provider.
 
 With the implementation of GitLab, Bitbucket Cloud, and Bitbucket Server SCM integrations, users can now easily connect their hosted repositories to their Algorithmia accounts, which provides a seamless workflow from development to production. Customers that use these third-party SCM providers can leverage engineering best practices such as code reviews and dependency audits to ensure consistencies between development and production code, and CI/CD workflows to increase automation and testing of MLOps pipelines.
 

@@ -47,11 +47,11 @@ Aggregate data (aggregated at the organization level)
 
 ## Permissions
 
-The governance reporting feature is available to cluster admins and organization admins. In order for cost information to be estimated, a cluster admin must first [set expected resource cost rates](https://training.algorithmia.com/exploring-the-admin-panel/836479#setting-cost-rates). If the cost rates haven't been set, all estimated costs will default to 0.
+The governance reporting feature is available to cluster admins and organization admins. In order for cost information to be estimated, a cluster admin must first [set expected resource cost rates](/developers/administration/admin-panel/governance-reporting#setting-cost-rates). If the cost rates haven't been set, all estimated costs will default to 0.
 
 ### Cluster admin
 
-Cluster admins can view all resource consumption data captured within the platform, grouped by organization, account, and algorithm. They can also view everything that an organization admin can view, as described below. For more details, see the [cluster admin docs](https://training.algorithmia.com/exploring-the-admin-panel/836479).
+Cluster admins can view all resource consumption data captured within the platform, grouped by organization, account, and algorithm. They can also view everything that an organization admin can view, as described below. For more details, see the [cluster admin docs](/developers/administration/admin-panel/governance-reporting#pulling-and-viewing-usage-data).
 
 ### Organization admin
 

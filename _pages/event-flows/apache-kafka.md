@@ -23,7 +23,7 @@ This guide will walk you through setting up Algorithmia Event Flows using an [Ap
 
 ## Creating and configuring a broker connection in the Algorithmia platform
 
-In order to use Event Flows with Kafka, a cluster administrator must first [connect an external Kafka broker](https://training.algorithmia.com/exploring-the-admin-panel/807062) to the Algorithmia cluster.
+In order to use Event Flows with Kafka, a cluster administrator must first [connect an external Kafka broker](/developers/administration/admin-panel/broker-manager#creating-broker-connections) to the Algorithmia cluster.
 
 Once at least one Kafka broker has been connected, members of Algorithmia organizations can activate event-driven workflows for any organization-owned algorithm that a cluster administrator has enabled.
 

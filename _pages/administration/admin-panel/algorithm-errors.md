@@ -28,7 +28,7 @@ At the bottom-right corner of the table is a drop-down list of error types that 
 
 For more information on how to interpret Algorithmia-specific error types, see the [Errors docs](/developers/algorithm-development/algorithm-errors).
 
-## User-facing errors
+## Enabling user-facing errors
 
 Beginning in Algorithmia version 20.5.57, cluster admins have the ability to enable users to see algorithm errors, which in previous versions are only visible through the admin panel. This is a cluster-level feature, meaning it's either enabled or disabled globally on your cluster.
 

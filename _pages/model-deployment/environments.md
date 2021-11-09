@@ -12,9 +12,6 @@ tags: [algo-model-guide]
 title:  "Algorithm Environments"
 ---
 
-**NOTE:** The list of currently available environments, previously hosted on this page, can now be found on our [Training Center](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/906833).
-{: .notice-info}
-
 ## Overview
 Algorithmia supports seven languages for writing algorithms: Python, R, Java, Scala, Ruby, Rust, and JavaScript. When you create an algorithm, you must select one of these languages.
 
@@ -36,4 +33,45 @@ However, we recommend not doing this, and instead choosing the appropriate prede
 
 The algorithm runtime environment you select should match up as closely as possible with your code dependencies, in order to provide the most streamlined development experience and the best algorithm performance. With the base environment selected, you can then add any other required dependencies in whichever way is standard for your language.
 
-For a list of the algorithm environments that are currently available, see the [Currently available environments](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/906833). To create an algorithm with a predefined environment through the API, see [Using a predefined language environment](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/698050#predefined-environment).
+To create an algorithm with a predefined environment through the API, see [Using a predefined language environment](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/698050#predefined-environment). The algorithm environments that are currently available are listed below.
+
+## View currently available environments
+
+In the previous lesson, we guided you through how to list the environments available on your cluster for each particular language. On this page, we provide a list of available environments that we've created and that can be made available to you to upon request. Once we provide you with the requested environment, you'll be able to [install it on your cluster](/developers/administration/admin-panel/algorithm-environments/#installing-environments) so that your users can select it when they create new algorithms.
+
+### Environments available on all clusters
+
+The matrix below lists the algorithm environments that are currently available on every Algorithmia cluster by default. To create an algorithm with a predefined environment through the API, see [Using a Predefined Language Environment](/developing-python-algorithms-in-a-local-ide/698050#predefined-environment).
+
+|Environment|Language|Framework|Pinned Dependencies|CUDA/cuDNN|Base Image|
+|--- |--- |--- |--- |--- |--- |
+|python37|Python 3.7|--|--|--|algorithmiahq/ubuntu:18.04|
+|python37-gpu|Python 3.7|--|--|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+|pytorch-1.4.x|Python 3.7.1|PyTorch 1.4|numpy==1.16.0|10.1 / 7|nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04|
+|pytorch-1.5.x|Python 3.7.1|PyTorch 1.5|numpy==1.16.0|10.2 / 7|nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04|
+|pytorch-1.6.x|Python 3.7.1|PyTorch 1.6|numpy==1.16.0|10.2 / 7|nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04|
+|spacy-2.0.18|Python 3.7.1|Spacy 2.0.18|--|--|ubuntu:16.04|
+|tensorflow-gpu-1.14|Python 3.7|Tensorflow 1.14|keras==2.1.4|10.0 / 7|nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04|
+|tensorflow-gpu-2.1|Python 3.7|Tensorflow 2.1|keras==2.3.1|10.1 / 7|nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04|
+|tensorflow-gpu-2.3|Python 3.7|Tensorflow 2.3|--|10.1 / 7|nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04|
+|selenium3.141.x-python|Python 3.7.1|Selenium 3.141.0|phantomjs2.1.1, chromedriver2.41, geckodriver==0.26.0|--|ubuntu:16.04|
+|python27|Python 2.7.15|--|--|--|ubuntu:16.04|
+|python27-cuda90-cudnn7|Python 2.7.15|--|--|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+
+### Environments available by request
+
+We're always adding new optimized runtime environments to support our customers using the latest language and framework versions. Therefore, in addition to those listed above, we also have the following environments available to our Enterprise customers. **If there's a specific environment listed below that you'd like to use, or if you need a custom environment that isn't available, please ask your customer success manager** so that we can get it built and installed on your cluster.
+
+|Environment|Language|Framework|Pinned Dependencies|CUDA/cuDNN|Base Image|
+|--- |--- |--- |--- |--- |--- |
+|allennlp-0.8|Python 3.7|AllenNLP 0.8|spacy2.0.18, pytorch1.0.0||ubuntu:16.04|
+|apex-0.1|Python 3.7|Apex 0.1|pytorch==1.3|10.1 / 7|nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04|
+|mxnet-cu90-1.3.1|Python 3.7|MXNet 1.3.1|--|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+|pytorch-1.0.0|Python 3.7|PyTorch 1.0.0|--|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+|tensorrt-6.0-cuda10.0|Python 3.7|TensorRT 6.0.x||10.0 / 7|nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04|
+|python36|Python 3.6|--|--|--|algorithmiahq/ubuntu:16.04|
+|python36-gpu|Python 3.6|--|--|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+|tensorflow-gpu-1.12|Python 3.6|TensorFlow 1.12|keras==2.1.4|9.0 / 7|nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04|
+|r36|R 3.6|--|--|--|algorithmiahq/ubuntu:16.04|
+|scala-2-sbt-1.3.3|Scala 2.x|--|--|--|algorithmiahq/ubuntu:16.04|
+|java11|Java 11.0|--|--|--|algorithmiahq/ubuntu:20.04|

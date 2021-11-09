@@ -36,15 +36,11 @@ The profile overview provides a rich source of information about an organization
 * All earnings from algorithms owned by an organization are rolled up into the organization's account.
 * You must be invited into an organization by an organization administrator.
 
-To learn more about organizations, see [how to use organizations](https://training.algorithmia.com/using-organizations).
-
 ### Creating an organization
 
 To create a new organization from within Algorithmia's browser UI, click the **Create New** button in the upper-right corner and select **Organization**. You can also create a new organization by clicking the **+** icon on the left and selecting **Organization**.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/new_organization.png" alt="create organization" class="screenshot img-sm">
-
-For specifics on how to fill out the form, see [how to create an organization](https://training.algorithmia.com/using-organizations/708000).
 
 Once your organization has been created you can edit all the provided information as well as add a logo and a Terms of Use document.
 
@@ -60,8 +56,6 @@ If you invite a user that already has an account, then you must invite them usin
 {: .notice-warning }
 
 As an organization owner, you can view any pending invitations by clicking on the **Invitations** tab.
-
-To learn more about how to grow and manage organization membership, see [how to manage your organization](https://training.algorithmia.com/using-organizations/707999).
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_invite_user.png" alt="Inviting Users" class="screenshot">
 
