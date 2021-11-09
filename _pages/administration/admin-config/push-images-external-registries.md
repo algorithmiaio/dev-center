@@ -26,15 +26,15 @@ An external registry is configured at the cluster level and is then associated w
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/registries \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/registries \
     -X POST \
-    -H "Authorization: Simple **CLUSTER_ADMIN_API_KEY**" \
+    -H "Authorization: Simple CLUSTER_ADMIN_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-      "registry_url": "**REGISTRY_URL**",
-      "registry_username": "**REGISTRY_USERNAME**",
-      "registry_password": "**REGISTRY_PASSWORD**",
-      "name": "**REGISTRY_NAME**"
+      "registry_url": "REGISTRY_URL",
+      "registry_username": "REGISTRY_USERNAME",
+      "registry_password": "REGISTRY_PASSWORD",
+      "name": "REGISTRY_NAME"
     }'
 </pre>
 
@@ -57,15 +57,15 @@ In order to modify an external registry, you'll need the following:
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/registries/**REGISTRY_ID** \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/registries/REGISTRY_ID \
     -X PUT \
-    -H "Authorization: Simple **CLUSTER_ADMIN_API_KEY**" \
+    -H "Authorization: Simple CLUSTER_ADMIN_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-      "registry_url": "**REGISTRY_URL**",
-      "registry_username": "**REGISTRY_USERNAME**",
-      "registry_password": "**REGISTRY_PASSWORD**",
-      "name": "**REGISTRY_NAME**"
+      "registry_url": "REGISTRY_URL",
+      "registry_username": "REGISTRY_USERNAME",
+      "registry_password": "REGISTRY_PASSWORD",
+      "name": "REGISTRY_NAME"
     }'
 </pre>
 
@@ -86,15 +86,15 @@ If no credentials are supplied, the credentials associated with the registry wil
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/algorithms/**ALGO_ID**/compile \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/algorithms/ALGO_ID/compile \
     -X POST \
-    -H "Authorization: Simple **STD_API_KEY**" \
+    -H "Authorization: Simple STD_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
       "registry_push_credentials": {
-        "registry_username": "**REGISTRY_USERNAME**",
-        "registry_password": "**REGISTRY_PASSWORD**",
-        "registry_id": "**REGISTRY_ID**"
+        "registry_username": "REGISTRY_USERNAME",
+        "registry_password": "REGISTRY_PASSWORD",
+        "registry_id": "REGISTRY_ID"
       }
 }
 </pre>
@@ -116,9 +116,9 @@ If no credentials are supplied, the credentials associated with the registry wil
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/algorithms/**ALGO_OWNER**/**ALGO_NAME**/version \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/algorithms/ALGO_OWNER/ALGO_NAME/version \
     -X POST \
-    -H "Authorization: Simple **STD_API_KEY**" \
+    -H "Authorization: Simple STD_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
       "settings": {
@@ -130,9 +130,9 @@ If no credentials are supplied, the credentials associated with the registry wil
         "sample_input": "42"
       },
       "registry_push_credentials": {
-        "registry_username": "**REGISTRY_USERNAME**",
-        "registry_password": "**REGISTRY_PASSWORD**",
-        "registry_id": "**REGISTRY_ID**"
+        "registry_username": "REGISTRY_USERNAME",
+        "registry_password": "REGISTRY_PASSWORD",
+        "registry_id": "REGISTRY_ID"
       }
     }'
 </pre>
@@ -159,15 +159,15 @@ In the case of a failure to push the algorithm image to the external registry du
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/algorithms/**ALGO_ID**/versions/**ALGO_VERSION_HASH**/registry \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/algorithms/ALGO_ID/versions/ALGO_VERSION_HASH/registry \
     -X POST \
-    -H "Authorization: Simple **STD_API_KEY**" \
+    -H "Authorization: Simple STD_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
       "registry_push_credentials": {
-        "registry_username": "**REGISTRY_USERNAME**",
-        "registry_password": "**REGISTRY_PASSWORD**",
-        "registry_id": "**REGISTRY_ID**"
+        "registry_username": "REGISTRY_USERNAME",
+        "registry_password": "REGISTRY_PASSWORD",
+        "registry_id": "REGISTRY_ID"
       }'
     }'</pre>
 
@@ -175,22 +175,46 @@ In the case of a failure to push the algorithm image to the external registry du
 
 ## Getting the status of an algorithm image push to an external registry
 
-The image push process can take several minutes, so we provide a route to get the image push status. In order to do this, you'll need the following:
+The image-push process can take several minutes, so we provide a route to get the image push status. In order to do this, you'll need the following:
 
 1.  The [algorithm UUID](https://algorithmia.com/developers/glossary#algorithm-uuid); this references below as `ALGO_ID`
 2.  The [algorithm version hash](https://algorithmia.com/developers/glossary#algorithm-version-hash); this references below as `ALGO_HASH_VERSION`.
+
+This route will return a list of image push statuses for each registry that has been configured for the provided algorithm version hash. Any subsequent pushes to the same registry will overwrite the existing entry for that (`ALGO_HASH_VERSION`, `REGISTRY_ID`) combination.
 
 **REST request**
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/algorithms/**ALGO_ID**/versions/**ALGO_VERSION_HASH**/registry \
-    -H "Authorization: Simple **STD_API_KEY**"
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/algorithms/ALGO_ID/versions/ALGO_VERSION_HASH/registry \
+    -H "Authorization: Simple STD_API_KEY"
 </pre>
 
 </div>
 
-## Deleting an external registry
+## Pulling an image during algorithm execution
+
+When an algorithm is executed, the **latest** image push status will be used to determine which registry to pull the image from. This means that if an image is re-pushed to a sandbox registry after the image is pushed to the prod registry, the sandbox registry image will be pulled during algorithm execution. This represents a unique corner case that isn't expected, but it's possible.
+
+## Ensuring images get pulled
+
+Our current design ensures that every time an algorithm pod is launched on a node, the container image will be pulled from the external registry. This is ensured by using an `imagePullPolicy: Always` policy as described in the [Kubernetes docs](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy). The kubelet will ping the external registry to determine the current expected image tag. If the exact same image digest is already on the host, the complete image won't be re-downloaded but the registry will be pinged and validated.
+
+Therefore, restarting all of the worker nodes (VMs) in the cluster will ensure that all algorithm-runner pods on the cluster are restarted, and the kubelet will ping the external registry (though possibly not pull all of the bytes of data). To do this:
+
+1.  Get a list of all worker nodes via `kubectl get nodes -l algorithmia.com/role=algorithm-worker`
+2.  For each worker node, one by one:
+
+1.  `kubectl drain --ignore-daemonsets --delete-local-data=true NODE_NAME`
+2.  Wait for that command to complete
+3.  Restart that worker node
+4.  `kubectl uncordon NODE_NAME`
+
+Alternatively the VMs could be completely replaced in the cluster by provisioning a new VM, and following standard procedures for getting a machine to join the Kubernetes cluster.
+
+Then, for any algorithm version image that one wants to get pulled, simply call the algorithm as any user. This will ensure a deployment gets created, and so a pod will be scheduled on a recently restarted machine.
+
+# Deleting an external registry
 
 In order to delete an external registry, you'll need the the ID of the registry; this references below as `REGISTRY_ID` and can be retrieved through a `GET` request to `/v1/registries`.
 
@@ -198,9 +222,9 @@ In order to delete an external registry, you'll need the the ID of the registry;
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://**YOUR-SERVER-NAME.com**/v1/registries/**REGISTRY_ID** \
+<pre class="code_snippet">$ curl https://YOUR-SERVER-NAME.com/v1/registries/REGISTRY_ID \
     -X DELETE \
-    -H "Authorization: Simple **CLUSTER_ADMIN_API_KEY**"
+    -H "Authorization: Simple CLUSTER_ADMIN_API_KEY"
 </pre>
 
 </div>
