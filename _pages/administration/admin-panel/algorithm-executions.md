@@ -16,7 +16,7 @@ The execution metrics table lists the following information:
 *   **Caller**: the account used to call a given algorithm, either directly or internally through another algorithm (the account is determined by the API key used to call the algorithm)
 *   **Current Replicas**: the number of concurrent algorithm instances currently loaded for a given algorithm for each specific caller
 *   **Max Replicas**: the maximum number of algorithm instances available for a given algorithm for each specific caller
-*   **Reserved**: the number of warm algorithm instances for a given algorithm for each specific caller (see the [reservations](./687290) page to learn why you might want to use reserved instances, and how to configure and manage them)
+*   **Reserved**: the number of warm algorithm instances for a given algorithm for each specific caller (see [Reservations](/developers/administration/admin-panel/reservations) to learn why you might want to use reserved instances, and how to configure and manage them)
 
 To revert the table to the default sort order and update the algorithm execution counts, click the refresh icon at the top-right corner. To view details for a specific algorithm version hash and caller, click on the corresponding row in the table.
 

@@ -92,7 +92,7 @@ Begin by adding the code below to a file `add_bitbucket_scm.json`, making sure t
 *   Replace all occurrences of `BB_SERVER_DOMAIN` under `urls` with the URL specific to your Bitbucket Server instance.
 *   Replace `BB_CONFIGURED_SSH_PORT` with the SSH port number that you've configured.
 
-Note that `"provider": "bitbucket"` here refers to Bitbucket _**Server**_. (Algorithmia also has a [Bitbucket _**Cloud**_ configuration](./807382), which would be specifically denoted by `"provider": "bitbucket**__cloud_**"`.) In the request, you'll need to replace `CLUSTER_DOMAIN` with your Algorithmia cluster-specific domain, and `**CLUSTER_ADMIN_AUTH_TOKEN**` as described [above](#a-note-about-authentication-tokens).
+Note that `"provider": "bitbucket"` here refers to Bitbucket _**Server**_. (Algorithmia also has a [Bitbucket _**Cloud**_ configuration](/developers/administration/scm-config/source-code-management-bitbucket-cloud/), which would be specifically denoted by `"provider": "bitbucket**__cloud_**"`.) In the request, you'll need to replace `CLUSTER_DOMAIN` with your Algorithmia cluster-specific domain, and `**CLUSTER_ADMIN_AUTH_TOKEN**` as described [above](#a-note-about-authentication-tokens).
 
 **Contents of `add_bitbucket_scm.json`**
 
@@ -101,12 +101,12 @@ Note that `"provider": "bitbucket"` here refers to Bitbucket _**Server**_. (Algo
 <pre class="code_snippet">{
   "provider": "bitbucket",
   "scm": {
-    "project_key": "**PRJ**"
+    "project_key": "PRJ"
   },
   "urls": {
-    "web": "https://**BB_SERVER_DOMAIN**",
-    "api": "https://**BB_SERVER_DOMAIN**",
-    "ssh": "ssh://git@**BB_SERVER_DOMAIN**:**BB_CONFIGURED_SSH_PORT**"
+    "web": "https://BB_SERVER_DOMAIN",
+    "api": "https://BB_SERVER_DOMAIN",
+    "ssh": "ssh://git@BB_SERVER_DOMAIN:BB_CONFIGURED_SSH_PORT"
   }
 }
 </pre>
@@ -117,8 +117,8 @@ Note that `"provider": "bitbucket"` here refers to Bitbucket _**Server**_. (Algo
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X POST -k https://**CLUSTER_DOMAIN**/v1/admin/scms \
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**' \
+<pre class="code_snippet">$ curl -X POST -k https://CLUSTER_DOMAIN/v1/admin/scms \
+    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN' \
     -H 'Content-type: application/json' \
     -d @add_bitbucket_scm.json
 </pre>
@@ -155,8 +155,8 @@ You can use the command below to list SCM configurations on your cluster.
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X GET -k https://**CLUSTER_DOMAIN**/v1/scms \
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**' \
+<pre class="code_snippet">$ curl -X GET -k https://CLUSTER_DOMAIN/v1/scms \
+    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN' \
     -H 'Content-type: application/json'
 </pre>
 
@@ -236,9 +236,9 @@ Note that:
 <pre class="code_snippet">{
   "enabled": true,
   "urls": {
-    "web": "https://**NEW_BB_SERVER_DOMAIN**",
-    "api": "https://**NEW_BB_SERVER_DOMAIN**",
-    "ssh": "ssh://git@**NEW_BB_SERVER_DOMAIN**:**BB_CONFIGURED_SSH_PORT**"
+    "web": "https://NEW_BB_SERVER_DOMAIN",
+    "api": "https://NEW_BB_SERVER_DOMAIN",
+    "ssh": "ssh://git@NEW_BB_SERVER_DOMAIN:BB_CONFIGURED_SSH_PORT"
   }
 }
 </pre>
@@ -254,8 +254,8 @@ In the following command, make sure to:
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X PATCH https://**CLUSTER_DOMAIN**/v1/admin/scms/**SCM_CONFIG_ID** \
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**' \
+<pre class="code_snippet">$ curl -X PATCH https://CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN' \
     -H 'Content-type: application/json' \
     -d @patch_scm_config.json
 </pre>
@@ -275,8 +275,8 @@ In the following command, make sure to:
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X DELETE https://**CLUSTER_DOMAIN**/v1/admin/scms/**SCM_CONFIG_ID** \
-    -H 'Authorization: _Simple|Bearer_ **CLUSTER_ADMIN_AUTH_TOKEN**' \
+<pre class="code_snippet">$ curl -X DELETE https://CLUSTER_DOMAIN/v1/admin/scms/SCM_CONFIG_ID \
+    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN' \
     -H 'Content-type: application/json'
 </pre>
 
@@ -296,27 +296,27 @@ To create an algorithm through the API, begin by adding your algorithm metadata 
 <div class="syn-code-block">
 
 <pre class="code_snippet">{
-  "name": "**ALGO_NAME**",
+  "name": "ALGO_NAME",
   "details": {
-    "summary": "**Summary of what your algorithm does.**",
-    "label": "**ALGO_NAME**",
-    "tagline": "**Tag line for your algorithm.**"
+    "summary": "Summary of what your algorithm does.",
+    "label": "ALGO_NAME",
+    "tagline": "Tag line for your algorithm."
   },
   "settings": {
     "source_visibility": "open",
-    "username": "**ALGO_OWNER**",
-    "algorithm_environment": "**ENV_ID**",
+    "username": "ALGO_OWNER",
+    "algorithm_environment": "ENV_ID",
     "license": "apl",
     "network_access": "isolated",
     "pipeline_enabled": true
   },
   "source": {
-    "scm": "**SCM_CONFIG_ID**",
-    "initial_commit_message":"**your commit message**"
+    "scm": "SCM_CONFIG_ID",
+    "initial_commit_message":"your commit message"
   },
   "scmsCredentials": {
-    "username": "**BB_PROJECT_OWNER_USERNAME**",
-    "password": "**BB_PROJECT_OWNER_PASSWORD**"
+    "username": "BB_PROJECT_OWNER_USERNAME",
+    "password": "BB_PROJECT_OWNER_PASSWORD"
   }
 }
 </pre>
@@ -327,8 +327,8 @@ To create an algorithm through the API, begin by adding your algorithm metadata 
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X POST -k https://**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_OWNER** \
-    -H 'Authorization: _Simple|Bearer_ **ORG_ADMIN_AUTH_TOKEN** \
+<pre class="code_snippet">$ curl -X POST -k https://CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER \
+    -H 'Authorization: _Simple|Bearer_ ORG_ADMIN_AUTH_TOKEN \
     -H 'Content-type: application/json' \
     -d @create_algo_on_bitbucket.json
 </pre>
@@ -401,7 +401,7 @@ Bitbucket v5.6.x supports two key types—DSA and RSA2—and the key you generat
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ ssh-keygen -t rsa -b 2048 -m PEM -f **bb55-key**</pre>
+<pre class="code_snippet">$ ssh-keygen -t rsa -b 2048 -m PEM -f bb55-key</pre>
 
 </div>
 
@@ -413,7 +413,7 @@ Convert the private key to single-line format and copy it to the clipboard as sh
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' **bb55-key** | pbcopy</pre>
+<pre class="code_snippet">awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' bb55-key | pbcopy</pre>
 
 </div>
 
@@ -425,8 +425,8 @@ Note that in the REST request in **Option A**, below, the algorithm UUID (`ALGO_
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl https://api.**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_OWNER**/**ALGO_NAME** \
-    -H 'Authorization: _Simple|Bearer_ **ORG_ADMIN_AUTH_TOKEN**'
+<pre class="code_snippet">$ curl https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME \
+    -H 'Authorization: _Simple|Bearer_ ORG_ADMIN_AUTH_TOKEN'
 </pre>
 
 </div>
@@ -438,8 +438,8 @@ In a file `build_trigger.json`, formatted as shown below, paste your SSH key (`S
 <div class="syn-code-block">
 
 <pre class="code_snippet">{
-  "sshPrivateKey": "-----BEGIN RSA PRIVATE KEY-----\n**SSH_KEY_VALUE**\n-----END RSA PRIVATE KEY-----\n",
-  "commitSha": "**BB_COMMIT_HASH**"
+  "sshPrivateKey": "-----BEGIN RSA PRIVATE KEY-----\nSSH_KEY_VALUE\n-----END RSA PRIVATE KEY-----\n",
+  "commitSha": "BB_COMMIT_HASH"
 }
 </pre>
 
@@ -449,8 +449,8 @@ In a file `build_trigger.json`, formatted as shown below, paste your SSH key (`S
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X POST -k https://api.**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_ID**/compile \
-    -H 'Authorization: Simple|Bearer **ORG_ADMIN_AUTH_TOKEN**'
+<pre class="code_snippet">$ curl -X POST -k https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_ID/compile \
+    -H 'Authorization: Simple|Bearer ORG_ADMIN_AUTH_TOKEN'
     -H 'Content-type: application/json' \
     -d @build_trigger.json
 </pre>
@@ -461,8 +461,8 @@ In a file `build_trigger.json`, formatted as shown below, paste your SSH key (`S
 
 <div class="syn-code-block">
 
-<pre class="code_snippet">$ curl -X POST -k https://api.**CLUSTER_DOMAIN**/v1/algorithms/**ALGO_OWNER**/**ALGO_NAME**/compile \
-    -H 'Authorization: Simple|Bearer **ORG_ADMIN_AUTH_TOKEN**'
+<pre class="code_snippet">$ curl -X POST -k https://api.CLUSTER_DOMAIN/v1/algorithms/ALGO_OWNER/ALGO_NAME/compile \
+    -H 'Authorization: Simple|Bearer ORG_ADMIN_AUTH_TOKEN'
     -H 'Content-type: application/json' \
     -d @build_trigger.json
 </pre>

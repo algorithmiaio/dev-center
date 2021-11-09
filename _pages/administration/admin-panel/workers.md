@@ -4,7 +4,7 @@ layout: article
 title: Workers
 ---
 
-The Workers page lists information about your cluster's Kubernetes worker nodes. To view the pods running on a worker node, see the [nodes](./687281) page.
+The Workers page lists information about your cluster's Kubernetes worker nodes. To view the pods running on a worker node, see [Nodes](/developers/administration/admin-panel/nodes).
 
 The table lists the following information:
 
