@@ -111,9 +111,19 @@ You can find more details about optional flags under [API Docs](/developers/api/
 
 ### Limits
 
-By default, one account can make up to {{site.data.stats.platform.max_num_algo_requests}} Algorithmia requests at the same time (this limit can be increased if needed).
+By default, one account can make up to {{site.data.stats.platform.max_num_algo_requests}} concurrent [algorithm execution requests](/developers/glossary#algorithm-execution-request) (this limit can be increased if needed).
 
-Requests are limited to a payload size of 10 MB for input and 15 MB for output. If you need to work with larger payloads, you can make use of Algorithmia's [data API](/developers/api/#data). See [considerations for transferring large data payloads](https://training.algorithmia.com/using-data-sources/688899#considerations-for-transferring-large-data-payloads) for more details.
+Algorithmia has a 10-MB maximum input data payload limit and a 15-MB maximum output data payload limit. Therefore, to transfer large image files into and out of your algorithm, you may need to upload your data (JSON, JPEG, etc.) to a hosted data collection, passing the data URI to the algorithm as input instead of passing the data itself, and then reading the data from within the algorithm. See Algorithmia's [data API docs](/developers/api/#data) for sample code.
+
+Note that these limits are actually slightly nuanced. When you send an input payload to an algorithm, that data is base64-encoded by the Algorithmia API client. So, for example, a 5-MB sequence of the letter "a" actually ends up as 6 MB of data transferred. You can verify this in a Python shell as shown below.
+
+```python
+>>> import base64
+>>> len(base64.standard_b64encode(b"a"*1024*1024*5))/1024/1024
+6.666667938232422
+```
+
+If your payload has unicode characters, they occupy several bytes each. When these characters are encoded, the discrepancy in payload size will be even larger than that shown above. Therefore, if sending and receiving large payloads, you might run up against these limits, even if the file size itself is not greater than the exact input or output limits.
 
 ## Working with Algorithmia data sources
 
@@ -210,9 +220,9 @@ $ algo run ALGO_OWNER/ALGO_NAME -d "HAL 9000" --profile second_profile
 Hello HAL 9000
 ```
 
-## List algorithm languages and environments and download algorithm template files
+## Listing algorithm languages and environments and downloading algorithm template files
 
-When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can use the algo CLI to list the algorithm languages on a specific cluster, select a language and list its corresponding algorithm environments, and then download algorithm template files if desired. The algo CLI makes this multi-step process straightforward, and the steps are documented in our [Training Center](https://training.algorithmia.com/developing-python-algorithms-in-a-local-ide/855746).
+When you create an algorithm, you can choose to use a predefined [algorithm environment](/developers/algorithm-development/environments) that's been optimized for the Algorithmia platform with specific ML library dependencies baked in. You can [use the algo CLI to list the algorithm languages](/developers/algorithm-development/environments/#list-languages-and-environments-and-download-algorithm-template-files) on a specific cluster, select a language and list its corresponding algorithm environments, and then download algorithm template files if desired. The algo CLI makes this multi-step process straightforward.
 
 ## Additional functionality
 
