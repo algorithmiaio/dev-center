@@ -24,7 +24,7 @@ In the UI, go to your account profile and click the **Settings** tab. Scroll to 
 
 ## 2. Create an algorithm backed by an external SCM
 
-In order to create the algorithm, you'll need the `id` of the SCM configuration, which references in the code below as `SCM_CONFIG_ID`. A cluster admin will need to provide this value, as described above. You'll then follow the standard process for creating an algorithm, but you'll specify some additional information to indicate that you'd like the algorithm to be backed by a this specific external SCM, meaning that the source code will be hosted on the external platform and not in Algorithmia's internal SCM server.
+In order to create the algorithm, you'll need the `id` of the SCM configuration, which references in the code below as `SCM_CONFIG_ID`. A cluster admin will need to provide this value, as described above. You'll then follow the standard process for creating an algorithm, but you'll specify some additional information to indicate that you'd like the algorithm to be backed by this specific external SCM, meaning that the source code will be hosted on the external platform and not in Algorithmia's internal SCM server.
 
 ### Checking your account's SCM authorization status
 
