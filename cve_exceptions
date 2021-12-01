@@ -1,25 +1,25 @@
 CVE-dummy-cve # lines should be formatted with the CVE in the left , followed by a hash then a comment about the date of VP of E approval for the exception
-CVE-2019-18276 # Patch not backported - bash:5.0-4	
-CVE-2016-2781 # Patch not backported - coreutils:8.30-3	
+CVE-2019-18276 # Patch not backported - bash:5.0-4
+CVE-2016-2781 # Patch not backported - coreutils:8.30-3
 CVE-2018-12886 # Patch not backported - gcc-8-base:8.3.0-6
 CVE-2019-15847 # Patch not backported - gcc-8-base:8.3.0-6, libgcc1:8.3.0-6, libstdc++6:8.3.0-6
-CVE-2019-14855 # GnuPG 2.0 and above does not use SHA-1 by default therefore are not directly affected by this flaw. - gpgv:2.2.12-1+deb10u1	
-CVE-2021-33574 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2021-35942 # Use strtoul instead of atoi so that overflow can be detected - libc-bin:2.28-10, libc6:2.28-10	
+CVE-2019-14855 # GnuPG 2.0 and above does not use SHA-1 by default therefore are not directly affected by this flaw. - gpgv:2.2.12-1+deb10u1
+CVE-2021-33574 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2021-35942 # Use strtoul instead of atoi so that overflow can be detected - libc-bin:2.28-10, libc6:2.28-10
 CVE-2020-1751 # This flaw did not affect the versions of `glibc` as shipped with Red Hat Enterprise Linux 5, 6, and 7, as they did not include the vulnerable code, which was introduced in a later version of the package.
- - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2020-1752 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2021-3326 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2018-20796 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2019-1010022 # maintainer does not consider this a security vulnerability, but rather an enhancement request: https://sourceware.org/bugzilla/show_bug.cgi?id=22850#c3 - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2019-1010023 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2019-9192 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2020-6096 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10	
-CVE-2018-12886 # Patch not backported - libgcc1:8.3.0-6, libstdc++6:8.3.0-6	
+ - libc-bin:2.28-10, libc6:2.28-10
+CVE-2020-1752 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2021-3326 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2018-20796 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2019-1010022 # maintainer does not consider this a security vulnerability, but rather an enhancement request: https://sourceware.org/bugzilla/show_bug.cgi?id=22850#c3 - libc-bin:2.28-10, libc6:2.28-10
+CVE-2019-1010023 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2019-9192 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2020-6096 # Patch not backported - libc-bin:2.28-10, libc6:2.28-10
+CVE-2018-12886 # Patch not backported - libgcc1:8.3.0-6, libstdc++6:8.3.0-6
 CVE-2018-6829 # Recommends secondary encryption - libgcrypt20:1.8.4-5+deb10u1
-CVE-2019-12290 # Patch not backported - libidn2-0:2.0.5-1+deb10u1	
-CVE-2019-17543 # Patch not backported - liblz4-1:1.8.3-1+deb10u1	
-CVE-2017-11164 # Patch not backported - libpcre3:2:8.39-12	
+CVE-2019-12290 # Patch not backported - libidn2-0:2.0.5-1+deb10u1
+CVE-2019-17543 # Patch not backported - liblz4-1:1.8.3-1+deb10u1
+CVE-2017-11164 # Patch not backported - libpcre3:2:8.39-12
 CVE-2017-7245 # Patch not backported - libpcre3:2:8.39-12
 CVE-2017-7246 # Patch not backported - libpcre3:2:8.39-12
 CVE-2019-20838 # Patch not backported - libpcre3:2:8.39-12
@@ -30,3 +30,4 @@ CVE-2019-19882 # Cannot find patch - login:1:4.5-1.1, passwd:1:4.5-1.1
 CVE-2011-4116 # Patch not backported - perl-base:5.28.1-6+deb10u1
 CVE-2005-2541 # Red Hat's official stance: "This is the documented and expected behaviour of tar" so this isn't going to be fixed - tar:1.30+dfsg-6
 CVE-2019-9923 # Red Hat's official stance: "This is the documented and expected behaviour of tar" so this isn't going to be fixed - tar:1.30+dfsg-6
+CVE-2021-39537 # Response from bug finder: might be a CVE, but the impact should be much lower. There is no code execution. - libncursesw6:6.1+20181013-2+deb10u2, libtinfo6:6.1+20181013-2+deb10u2, ncurses-base:6.1+20181013-2+deb10u2, ncurses-bin:6.1+20181013-2+deb10u2
