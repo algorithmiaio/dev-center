@@ -11,6 +11,6 @@ show_related: false
 title: "Training Center"
 ---
 
-Algorithmia's learning management system has been deprecated. Please see <a href="https://university.datarobot.com" target="_blank" rel="noopener noreferrer">DataRobot University</a> for tutorial-based training content to get you up and running with Algorithmia.
+Algorithmia's learning management system has been deprecated. If you're looking for content related to [platform administration](/developers/administration/admin-panel/admin-panel-overview/), it now lives here on the Developer Center and can be found near the bottom of the left-hand navigation panel.
 
-If you're looking for content related to [platform administration](/developers/administration/admin-panel/admin-panel-overview/), it now lives here on the Developer Center and can be found near the bottom of the left-hand navigation panel.
+For tutorial-based training content to get you up and running with DataRobot, please see <a href="https://university.datarobot.com" target="_blank" rel="noopener noreferrer">DataRobot University</a>.
