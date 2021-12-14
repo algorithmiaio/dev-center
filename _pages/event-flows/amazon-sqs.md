@@ -306,12 +306,13 @@ In the body of your algorithm, paste the code below, replacing `COLLECTION_OWNER
 
 ```python
 import Algorithmia
-
-client = Algorithmia.client()
+from Algorithmia import ADK
 
 def apply(input):
-    data_uri = "data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")
-    client.file(data_uri).put(input.get("data"))
+    Algorithmia.client().file("data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")).put(input.get("data"))
+
+algorithm = ADK(apply)
+algorithm.init("Algorithmia")
 ```
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/algorithmia-web-ide-example-code.png" alt="create algorithm Web IDE">
