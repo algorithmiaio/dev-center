@@ -233,12 +233,13 @@ In the body of your algorithm, paste the source code below, replacing the `COLLE
 
 ```python
 import Algorithmia
-
-client = Algorithmia.client()
+from Algorithmia import ADK
 
 def apply(input):
-    data_uri = "data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")
-    client.file(data_uri).put(input.get("data"))
+    Algorithmia.client().file("data://COLLECTION_OWNER/COLLECTION_NAME/" + input.get("filename")).put(input.get("data"))
+
+algorithm = ADK(apply)
+algorithm.init("Algorithmia")
 ```
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/eventlisteners/algorithmia-web-ide-azure-sb-subscriber.png">
@@ -326,19 +327,19 @@ In the body of your algorithm, paste the source code below, replacing the `QUEUE
 
 ```python
 import os
+import json
 
 import Algorithmia
+from Algorithmia import ADK
 from azure.servicebus import ServiceBusClient, ServiceBusMessage
 
-CONNECTION_STR = os.getenv("CONNECTION_STR")
+CONNECTION_STR = "CONNECTION_STR"
 QUEUE_NAME = "QUEUE_NAME"
-
 
 def send_single_message(sender, message):
     # Send the message to the queue
     sender.send_messages(message)
     print("Sent a single message.")
-
 
 def apply(input):
     """Send a message to the queue.
@@ -348,7 +349,7 @@ def apply(input):
     """
 
     # Create a Service Bus message
-    message = ServiceBusMessage(input.get("data"))
+    message = ServiceBusMessage(json.dumps(input))
     # Create a Service Bus client using the connection string
     servicebus_client = ServiceBusClient.from_connection_string(
       conn_str=CONNECTION_STR,
@@ -360,6 +361,9 @@ def apply(input):
             # Send one message
             send_single_message(sender, message)
     return "Sent a message to the queue."
+    
+algorithm = ADK(apply)
+algorithm.init("Algorithmia")    
 ```
 
 Click the **Save** and **Build** buttons, and then **Publish** the algorithm.
