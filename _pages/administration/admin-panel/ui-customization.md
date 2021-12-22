@@ -18,7 +18,7 @@ When the desired changes have been made, click "Save Changes" and refresh the pa
 
 ## Enabling/disabling dark mode
 
-Beginning in Algorithmia version 21.3, administrators can enable dark mode at the cluster level. The feature can be enabled through the admin API with an [admin API key](/developers/platform/customizing-api-keys#admin-api-keys), using the following cURL command. Note that you must substitute `CLUSTER_DOMAIN` with your Algorithmia cluster domain name (e.g., `algorithmia.com`) and you must substitute a valid value for `ADMIN_API_KEY`.
+Beginning in Algorithmia version 21.3.1, administrators can enable dark mode at the cluster level. The feature can be enabled through the admin API with an [admin API key](/developers/platform/customizing-api-keys#admin-api-keys), using the following cURL command. Note that you must substitute `CLUSTER_DOMAIN` with your Algorithmia cluster domain name (e.g., `algorithmia.com`) and you must substitute a valid value for `ADMIN_API_KEY`.
 
 <div class="syn-code-block">
 
