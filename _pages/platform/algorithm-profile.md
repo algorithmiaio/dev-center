@@ -73,7 +73,7 @@ In this section, you can toggle between our supported client languages to view c
 
 ### Docs
 
-This tab displays a rendering of the algorithm's README file, which is written in Markdown. If you have written access to the algorithm, you'll be able to edit the README through this interface. The documentation here should contain:
+This tab displays a rendering of the algorithm's README file, which is written in Markdown. If you have write access to the algorithm, you'll be able to edit the README through this interface. The documentation here should contain:
 
 * Description of what the algorithm does
 * Example(s) of expected input for the algorithm
