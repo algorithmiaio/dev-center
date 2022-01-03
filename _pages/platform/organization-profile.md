@@ -11,7 +11,7 @@ tags: [basics]
 title: "Organizations"
 ---
 
-If you're looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open-source community, then you should consider using our organization's feature.
+If you're looking to share algorithms privately or publish algorithms on behalf of an organization, such as a university, private company, or open-source community, then you should consider using our organizations feature.
 
 #### Use cases
 
