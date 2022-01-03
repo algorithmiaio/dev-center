@@ -50,7 +50,7 @@ Once your organization has been created you can edit all the provided informatio
 
 ### Inviting users to an organization
 
-You can invite users to your organization by clicking the **Invite Member** button at the upper-right corner of the organization profile. You can invite members either by using their Algorithmia account name or by providing their email addresses. Users invited by account name will receive an email and as well as an in-platform notification to join the organization.
+You can invite users to your organization by clicking the **Invite Member** button at the upper-right corner of the organization profile. You can invite a member either by using their Algorithmia account name or by providing their email address. Users invited by account name will receive an email and as well as an in-platform notification to join the organization.
 
 If you invite a user that already has an account, then you must invite them using their account name, not their email. Otherwise, they'll receive an email invite to sign up for the platform and join your organization, even though they already have an account.
 {: .notice-warning }
