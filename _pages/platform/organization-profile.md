@@ -70,13 +70,3 @@ Once members of your organization have created an algorithm and submitted it for
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
 
 **Note:** Every new version of the algorithm to be published will require independent approval.
-
-At this time you'll be able to set the royalty (if any) if you're using our non-Enterprise platform and finalize publishing.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
-
-### Checking earnings
-
-If you're using our non-Enterprise platform, to view your organization's earnings and a breakdown of all algorithms that are called, click on **View Earnings** on your organization's profile.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="screenshot img-md">
