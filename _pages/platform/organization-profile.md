@@ -26,7 +26,7 @@ The following sections cover the basics of using organizations on the Algorithmi
 
 ## Profile page contents
 
-The profile overview provides a rich source of information about an organization. In the overview, you can find the name of an organization, its members, and a list of the algorithms under its ownershipt. If you're an administrator for the organization, you'll also be able to invite and delete members, as well as edit basic information about the organization.
+The profile overview provides a rich source of information about an organization. In the overview, you can find the name of an organization, its members, and a list of the algorithms under its ownership. If you're an administrator for the organization, you'll also be able to invite and delete members, as well as edit basic information about the organization.
 
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_profile.png" alt="Organizations profile" class="screenshot img-md">
 
@@ -50,7 +50,7 @@ Once your organization has been created you can edit all the provided informatio
 
 ### Inviting users to an organization
 
-You can invite users to your organization by clicking the **Invite Member** button at the upper-right corner of the organization profile. You can invite members either by using their Algorithmia account name or by providing their email address. Users invited by account name will receive an email and as well as an in-platform notification to join the organization.
+You can invite users to your organization by clicking the **Invite Member** button at the upper-right corner of the organization profile. You can invite a member either by using their Algorithmia account name or by providing their email address. Users invited by account name will receive an email and as well as an in-platform notification to join the organization.
 
 If you invite a user that already has an account, then you must invite them using their account name, not their email. Otherwise, they'll receive an email invite to sign up for the platform and join your organization, even though they already have an account.
 {: .notice-warning }
@@ -70,13 +70,3 @@ Once members of your organization have created an algorithm and submitted it for
 <img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo.png" alt="Approving Algorithms" class="screenshot img-sm">
 
 **Note:** Every new version of the algorithm to be published will require independent approval.
-
-At this time you'll be able to set the royalty (if any) if you're using our non-Enterprise platform, and finalize publishing.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_approve_algo_royalty.png" alt="Set royalty for team algorithms" class="screenshot">
-
-### Checking earnings
-
-If you're using our non-Enterprise platform, to view your organization's earnings and a break down of all algorithms that are called, click on **View Earnings** on your organization's profile.
-
-<img src="{{site.cdnurl}}{{site.baseurl}}/images/post_images/organizations/organization_earnings.png" alt="Check earnings" class="screenshot img-md">

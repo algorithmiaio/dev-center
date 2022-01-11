@@ -94,7 +94,7 @@ Use the following command to enable an environment on the cluster, replacing `EN
 
 <pre class="code_snippet">$ curl https://CLUSTER_DOMAIN/v1/algorithm-environments/edge/environment-specifications/ENV_SPEC_ID/syncs \
     -X POST
-    -H 'Authorization: _Simple|Bearer_ CLUSTER_ADMIN_AUTH_TOKEN'
+    -H 'Authorization: Simple|Bearer CLUSTER_ADMIN_AUTH_TOKEN'
 </pre>
 
 </div>

@@ -11,6 +11,9 @@ tags: [integrations, model-training]
 title:  "DataRobot"
 ---
 
+COMING SOON: Improved Java scoring code support and deeper integrations with DataRobot to support seamless deployment of DataRobot models on the Algorithmia platform.
+{: .notice-info}
+
 DataRobot Prime enables you to export a [DataRobot](https://www.datarobot.com/)-trained ML model for deployment to production on an external platform such as Algorithmia. To do this, DataRobot Prime creates a series of rules that approximate the original model and then encapsulates these rules into a Python module or Java class that can be exported for use externally.
 
 For details on how to export a model using DataRobot Prime, see this [DataRobot blog post](https://community.datarobot.com/t5/resources/exporting-models-with-datarobot-prime/ta-p/4629).
@@ -22,7 +25,7 @@ algorithmia>=1.0.0,<2.0
 six
 ```
 
-In this example, the exported DataRobot Prime model is in `MODEL_FILE.jar`, which has been uploaded to the hosted data collection `COLLECTION_NAME`, owned by the Algorithmia account `COLLECTION_OWNER`. 
+In this example, the exported DataRobot Prime model is in `MODEL_FILE.jar`, which has been uploaded to the hosted data collection `COLLECTION_NAME`, owned by the Algorithmia account `COLLECTION_OWNER`.
 
 The workflow used in this code is standard for a Python algorithm, with the main exception being that we call the actual model using Java. Specifically, in order to run the JAR file, we shell out to the Java interpreter using the Python standard libary's `subprocess.Popen()` class. Essentially, this provides a Python wrapper for the Java model, enabling data scientists to work in Python but to use the JAR file from DataRobot.
 
