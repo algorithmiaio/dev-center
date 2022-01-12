@@ -31,6 +31,7 @@ Table of contents
 - [Developing your algorithm in the Web IDE](#developing-your-algorithm-in-the-web-ide)
 - [Publishing your algorithm](#publishing-your-algorithm)
 - [Calling your algorithm](#calling-your-algorithm)
+- [Quick Reference: Local Development vs. Web IDE](#quick-reference-local-development-vs-web-ide)
 - [Next steps](#next-steps)
   - [Language guides](#language-guides)
   - [Connecting to data](#connecting-to-data)
@@ -487,6 +488,23 @@ $ch = curl_init();
   </div>
 </div>
 {% endraw %}
+
+## Quick Reference: Local Development vs. Web IDE
+
+Every developer has a different workflow, and Algorithmia is built with flexibility in mind. When you're developing on our platform, you may find that you use your local environment for the majority of your work but that sometimes it's convenient to jump into the Web IDE, for example to make minor changes.
+
+Both local and Web IDE development are backed by Git version control, so you can use a normal Git workflow as you would with any other remote repositories. Note that, just like in any other distributed version control scenario, if you use both a local environment and the Web IDE to make changes in the same file(s) at the same time, you may end up with merge conflicts. If you do commit and push code locally via Git while the Web IDE is open to the same repository, simply reload the page to view the latest version.
+
+The following table provides a quick-reference comparison for understanding how algorithm management actions completed using the local workflow map to actions in the browser UI.
+
+|Action|Git and/or Python Client|Browser UI/Web IDE|
+|--- |--- |--- |
+|Create an algorithm|`algo.create(...)`|**Create New** button → **Algorithm** button|
+|Save an algorithm change without a commit|("save/write file" command)|(no equivalent functionality)|
+|Save an algorithm change with a commit|`git commit`|**Save** button|
+|Build an algorithm|`algo.compile()` / `git push`|**Build** button (also creates a commit)|
+|Publish an algorithm|`algo.publish(...)`|**Publish** button|
+|Call an algorithm|`algo.pipe(...)`|(input directly in test console)|
 
 ## Next steps
 

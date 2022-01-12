@@ -50,11 +50,11 @@ When super powers are enabled, a banner will show up at the top of the screen to
 
 ### Using sudo privileges
 
-Sudo privileges can be used to call private versions of algorithms owned by other accounts. <span style="font-family: inherit; font-size: 1em;">To call an algorithm with sudo privileges, add the</span> `?sudo=true` <span style="font-family: inherit; font-size: 1em;">parameter to the endpoint URL in the API call.</span>
+Sudo privileges can be used to call private versions of algorithms owned by other accounts. To call an algorithm with sudo privileges, add the `?sudo=true` parameter to the endpoint URL in the API call.
 
-<span style="font-family: inherit; font-size: 1em;">This can</span> be useful for testing and debugging, and can help to avoid several less-than-ideal debugging work-arounds. For example, you can use the `sudo` flag to avoid having to "impersonate" another account (see section below) and/or use API keys from other accounts, which makes it impossible to correctly attribute usage. It also makes it unnecessary to publish an algorithm publicly or add an account to a particular org just to enable that account to temporarily call a specific algorithm.
+This can be useful for testing and debugging, and can help to avoid several less-than-ideal debugging work-arounds. For example, you can use the `sudo` flag to avoid having to "impersonate" another account (see section below) and/or use API keys from other accounts, which makes it impossible to correctly attribute usage. It also makes it unnecessary to publish an algorithm publicly or add an account to a particular org just to enable that account to temporarily call a specific algorithm.
 
-When you call algorithms with the `sudo=true` flag, you call the algorithm **_as if_** <span style="font-family: inherit; font-size: 1em;">you're calling it from the owning account, so you get access</span> to private data and private versions. For example, if<span style="font-family: inherit; font-size: 1em;">the algorithm uses</span> `data://.my/foo`<span style="font-family: inherit; font-size: 1em;">,</span> `.my` <span style="font-family: inherit; font-size: 1em;">will refer to the algorithm owner, not the caller (your account, in this case) like usual.</span> <span style="font-family: inherit; font-size: 1em;">Sudo calls show up in the logs with the sudo flag, but the usage data isn't attributed to the account that actually owns the algorithm.</span>
+When you call algorithms with the `sudo=true` flag, you call the algorithm **_as if_** you're calling it from the owning account, so you get access to private data and private versions. For example, if the algorithm uses `data://.my/foo`, `.my` will refer to the algorithm owner, not the caller (your account, in this case) like usual. Sudo calls show up in the logs with the sudo flag, but the usage data isn't attributed to the account that actually owns the algorithm.
 
 ### Impersonating other accounts
 

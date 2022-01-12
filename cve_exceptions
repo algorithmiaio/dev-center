@@ -32,3 +32,8 @@ CVE-2005-2541 # Red Hat's official stance: "This is the documented and expected 
 CVE-2019-9923 # Red Hat's official stance: "This is the documented and expected behaviour of tar" so this isn't going to be fixed - tar:1.30+dfsg-6
 CVE-2021-33560 # Patch not backported - libgcrypt20:1.8.4-5+deb10u1
 CVE-2021-43618 # Patch not backported - libgmp10:2:6.1.2+dfsg-4
+CVE-2021-39537 # Response from bug finder: might be a CVE, but the impact should be much lower. There is no code execution. - libncursesw6:6.1+20181013-2+deb10u2, libtinfo6:6.1+20181013-2+deb10u2, ncurses-base:6.1+20181013-2+deb10u2, ncurses-bin:6.1+20181013-2+deb10u2
+CVE-2020-7608 # Recommended to require schema validation and avoid unsafe - yargs-parser:11.1.1
+CVE-2021-33560 # Patch not backported - libgcrypt20:1.8.4-5+deb10u1
+CVE-2021-43618 # Patch not backported - libgmp10:2:6.1.2+dfsg-4
+CVE-2020-16156 # # Recommendation: The first line of protection is to not use untrusted mirrors - perl-base:5.28.1-6+deb10u1

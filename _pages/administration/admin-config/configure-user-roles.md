@@ -77,7 +77,7 @@ This action requires cluster administrator privileges. A sample API request to a
 <div class="syn-code-block">
 <pre class="code_snippet">$ curl https://CLUSTER_DOMAIN/v1/organizations \
     -X POST \
-    -H "Authorization: ADMIN_API_KEY" \
+    -H "Authorization: Simple ADMIN_API_KEY" \
     -d '{
       "org_name":"TestOrg",
       "org_label":"A Test Organization",

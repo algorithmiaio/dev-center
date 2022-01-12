@@ -40,7 +40,7 @@ Because of the consideration above, the user-facing errors feature is disabled b
 
 <pre class="code_snippet">curl -X PUT https://api.CLUSTER_DOMAIN/v1/admin/features/algorithm-errors \
   -H 'Content-Type: application/json'
-  -H 'Authorization: ADMIN_API_KEY'
+  -H 'Authorization: Simple ADMIN_API_KEY'
   -d '{"enabled": true}'
 </pre>
 

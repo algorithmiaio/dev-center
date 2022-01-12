@@ -33,11 +33,11 @@ For non-enterprise users: If an algorithm charges a royalty, you'll see the amou
 
 ### Stars and follows
 
-At the top-right corner of every algorithm profile page it displays the number of stars and followers an algorithm has.
+At the top-right corner of every algorithm profile page, it displays the number of stars and followers an algorithm has.
 
 Following an algorithm will subscribe you to comments and help you keep up to date with activity on that particular algorithm.
 
-Starring an algorithm indicates to the developer, as well as other users, that the algorithm is useful to you, and adds it to your starred algorithm list. Your starred algorithm list can be found in the ML service catalog (named **Algorithms** in the screenshot above) on the left nav bar.
+Starring an algorithm indicates to the developer, as well as other users, that the algorithm is useful to you, and adds it to your starred algorithm list. Your starred algorithm list can be found in the ML service catalog (named **Algorithms** in the screenshot above) on the left navbar.
 
 ### Overview
 
@@ -61,7 +61,7 @@ This section includes information about the algorithm's licensing, internet acce
 
 #### Run an example
 
-In this section there's a test console where you can experiment with the algorithm. Click the **Run Example** button to have the algorithm run on the sample input supplied in the left-hand box, and the results will show in the output box on the right.
+In this section, there's a test console where you can experiment with the algorithm. Click the **Run Example** button to have the algorithm run on the sample input supplied in the left-hand box, and the results will show in the output box on the right.
 
 You can experiment with your own input data, but you'll want to make sure that it's in a format the algorithm accepts. To see details about the proper input format, visit the algorithm's [Docs](#docs) tab.
 
@@ -69,7 +69,7 @@ You can experiment with your own input data, but you'll want to make sure that i
 
 #### Install and use
 
-In this section you can toggle between our supported client languages to view code for installing the algo CLI, our command-line based tool, as well as client code to call your algorithm from an external application. To learn about how to call an algorithm, see our [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo).
+In this section, you can toggle between our supported client languages to view code for installing the algo CLI, our command-line-based tool, as well as client code to call your algorithm from an external application. To learn about how to call an algorithm, see our [Getting Started Guide]({{site.baseurl}}/algorithm-development/your-first-algo).
 
 ### Docs
 
