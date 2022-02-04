@@ -1266,10 +1266,10 @@ mark.js@^8.11.1:
   resolved "https://registry.yarnpkg.com/mark.js/-/mark.js-8.11.1.tgz#180f1f9ebef8b0e638e4166ad52db879beb2ffc5"
   integrity sha1-GA8fnr74sOY45BZq1S24eb6y/8U=
 
-marked@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
-  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
+marked@^4.0.10:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.12.tgz#2262a4e6fd1afd2f13557726238b69a48b982f7d"
+  integrity sha512-hgibXWrEDNBWgGiK18j/4lkS6ihTe9sxtV4Q1OQppb/0zzyPSzoFANBa5MfsG/zgsWklmNnhm0XACZOH/0HBiQ==
 
 mathml-tag-names@^2.1.3:
   version "2.1.3"
@@ -1280,11 +1280,6 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
-
-memoize-one@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
-  integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
 
 meow@^9.0.0:
   version "9.0.0"
@@ -1597,10 +1592,10 @@ once@^1.3.0, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-openapi-sampler@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/openapi-sampler/-/openapi-sampler-1.1.0.tgz#73e45a599e8f7892be5a728ff21e784b8d2284bd"
-  integrity sha512-/LhZYKNBWphLEpbAG5BdpBZbIbmLgC4vTiTj8N/MV0LF9ptmKOiJ2nETVlacNjXHt7iqDgZDELJCIoZ3q5ZG6A==
+openapi-sampler@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/openapi-sampler/-/openapi-sampler-1.1.1.tgz#7bba7000a03cd8a4630bfbe5b3ef258990c78400"
+  integrity sha512-WAFsl5SPYuhQwaMTDFOcKhnEY1G1rmamrMiPmJdqwfl1lr81g63/befcsN9BNi0w5/R0L+hfcUj13PANEBeLgg==
   dependencies:
     "@types/json-schema" "^7.0.7"
     json-pointer "^0.6.1"
@@ -1909,12 +1904,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-redoc@^2.0.0-rc.57:
-  version "2.0.0-rc.57"
-  resolved "https://registry.yarnpkg.com/redoc/-/redoc-2.0.0-rc.57.tgz#71c60aec46ff9a270b63ba959d216cfd4e9f7952"
-  integrity sha512-f8XIqvZF1agphq6xmOU9jTDVNDFHJt3MzDq1lUgZojb/7YY4eqLyDi6er/yCWYkY9DuB+v2jHCOn5UUbMuKAfg==
+redoc@^2.0.0-rc.63:
+  version "2.0.0-rc.63"
+  resolved "https://registry.yarnpkg.com/redoc/-/redoc-2.0.0-rc.63.tgz#d1bea51d3fdf2a6f5371a9bf7f06253ac5c1a487"
+  integrity sha512-PsoPqRyNqHi7+jKUyFBwJhHrzjMl4N5vieTeBloRGbhWuY3PPH2DJ3ihgrLfdEV0glzq/LMTaqfarm8WLqCc4Q==
   dependencies:
-    "@babel/runtime" "^7.14.0"
     "@redocly/openapi-core" "^1.0.0-beta.54"
     "@redocly/react-dropdown-aria" "^2.0.11"
     classnames "^2.3.1"
@@ -1924,10 +1918,9 @@ redoc@^2.0.0-rc.57:
     json-pointer "^0.6.1"
     lunr "^2.3.9"
     mark.js "^8.11.1"
-    marked "^0.7.0"
-    memoize-one "^5.2.1"
+    marked "^4.0.10"
     mobx-react "^7.2.0"
-    openapi-sampler "^1.0.1"
+    openapi-sampler "^1.1.1"
     path-browserify "^1.0.1"
     perfect-scrollbar "^1.5.1"
     polished "^4.1.3"
@@ -1936,6 +1929,7 @@ redoc@^2.0.0-rc.57:
     react-tabs "^3.2.2"
     slugify "~1.4.7"
     stickyfill "^1.1.1"
+    style-loader "^3.3.1"
     swagger2openapi "^7.0.6"
     url-template "^2.0.8"
 
@@ -2269,6 +2263,11 @@ strip-json-comments@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+style-loader@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-3.3.1.tgz#057dfa6b3d4d7c7064462830f9113ed417d38575"
+  integrity sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==
 
 style-search@^0.1.0:
   version "0.1.0"

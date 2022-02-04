@@ -27,7 +27,7 @@
     "cross-env": "^7.0.3",
     "express": "^4.17.2",
     "prom-client": "^14.0.1",
-    "redoc": "^2.0.0-rc.57",
+    "redoc": "^2.0.0-rc.63",
     "request-stats": "^3.0.0"
   },
   "engines": {
