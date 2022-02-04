@@ -1,4 +1,4 @@
-FROM node:14.17-buster-slim
+FROM node:17.3-buster-slim
 
 COPY package.json yarn.lock ./
 
