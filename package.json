@@ -19,8 +19,8 @@
     "http-proxy-middleware": "^2.0.2",
     "mocha": "^9.2.0",
     "shelljs": "^0.8.5",
-    "stylelint": "^13.12.0",
-    "stylelint-config-sass-guidelines": "^8.0.0"
+    "stylelint": "^14.3.0",
+    "stylelint-config-sass-guidelines": "^9.0.1"
   },
   "dependencies": {
     "bunyan": "^1.8.15",
