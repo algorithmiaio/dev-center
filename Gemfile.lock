@@ -4,7 +4,7 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     em-websocket (0.5.2)
@@ -38,7 +38,7 @@ GEM
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     fastimage (2.2.4)
-    ffi (1.14.2)
+    ffi (1.15.4)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     git (1.10.2)
@@ -46,9 +46,9 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http_parser.rb (0.6.0)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    jekyll (4.2.0)
+    jekyll (4.2.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -81,7 +81,7 @@ GEM
     libv8 (3.16.14.19)
     libv8 (3.16.14.19-x86_64-linux)
     liquid (4.0.3)
-    listen (3.4.1)
+    listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
@@ -109,14 +109,14 @@ GEM
     public_suffix (4.0.6)
     racc (1.6.0)
     rake (13.0.6)
-    rb-fsevent (0.10.4)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rchardet (1.8.0)
     redcarpet (3.5.1)
     ref (2.0.0)
     rexml (3.2.5)
-    rouge (3.26.0)
+    rouge (3.26.1)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
     sassc (2.4.0)
@@ -129,7 +129,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
-    unicode-display_width (1.7.0)
+    unicode-display_width (1.8.0)
 
 PLATFORMS
   ruby
@@ -138,7 +138,7 @@ PLATFORMS
 DEPENDENCIES
   gemoji
   git
-  jekyll (= 4.2)
+  jekyll (= 4.2.1)
   jekyll-last-modified-at
   jekyll-redirect-from
   jekyll-sitemap
