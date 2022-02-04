@@ -14,7 +14,7 @@
     "reset:cache": "rm -rf .jekyll-cache && rm -rf .jekyll-metadata && rm -rf _site"
   },
   "devDependencies": {
-    "axios": "^0.21.2",
+    "axios": "^0.25.0",
     "chai": "^4.3.4",
     "http-proxy-middleware": "^0.20.0",
     "mocha": "^6.2.0",
