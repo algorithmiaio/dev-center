@@ -1,4 +1,5 @@
 const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
 const querystring = require('querystring');
 const Bunyan = require('bunyan');
@@ -115,7 +116,7 @@ app.get('*', (req, res, next) => {
 
 if (!isProduction) {
   app.use(
-    require('http-proxy-middleware')({
+    createProxyMiddleware({
       target: config.env.stage.devCenterUrl,
       changeOrigin: true,
     })
@@ -150,7 +151,7 @@ app.use(/^\/developers/, (req, res, next) => {
 
   const basePath = path.join(
     __dirname,
-    `../sites/${usePublic ? 'public' : 'enterprise'}`,
+    `../sites/${!usePublic ? 'public' : 'enterprise'}`,
     'developers'
   );
 
