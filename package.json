@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bunyan": "^1.8.15",
+    "concurrently": "^7.0.0",
     "cross-env": "^7.0.3",
     "express": "^4.17.2",
     "prom-client": "^14.0.1",
