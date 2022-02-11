@@ -35,3 +35,6 @@ CVE-2020-7608 # Recommended to require schema validation and avoid unsafe - yarg
 CVE-2021-33560 # Patch not backported - libgcrypt20:1.8.4-5+deb10u1
 CVE-2021-43618 # Patch not backported - libgmp10:2:6.1.2+dfsg-4
 CVE-2020-16156 # # Recommendation: The first line of protection is to not use untrusted mirrors - perl-base:5.28.1-6+deb10u1
+CVE-2022-23218 # Buffer copy issue. Patch created, not yet implemented. We also are diligent about adding character caps on our inputs. This should be irrelivent to us - libc-bin:2.28-10, libc6:2.28-10
+CVE-2022-23219 # Buffer copy issue. Patch created, not yet implemented. We also are diligent about adding character caps on our inputs. This should be irrelivent to us - libc-bin:2.28-10, libc6:2.28-10
+CVE-2020-16156 # using default CPAN - perl-base:5.28.1-6+deb10u1
