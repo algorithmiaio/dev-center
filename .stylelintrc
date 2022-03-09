@@ -17,17 +17,17 @@
           "box-sizing",
           "interpolation-mode",
           "text-size-adjust",
-          "transform",
-        ],
-      },
+          "transform"
+        ]
+      }
     ],
     "scss/dollar-variable-pattern": null,
     "selector-max-id": 2,
-    "selector-no-qualifying-type": null,
+    "selector-no-qualifying-type": null
   },
   "ignoreFiles": [
     "_sass/vendor/**/*.scss",
     "css/pygments-github.css",
-    "css/vendors.css",
-  ],
+    "css/vendors.css"
+  ]
 }
