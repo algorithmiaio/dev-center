@@ -151,7 +151,7 @@ app.use(/^\/developers/, (req, res, next) => {
 
   const basePath = path.join(
     __dirname,
-    `../sites/${!usePublic ? 'public' : 'enterprise'}`,
+    `../sites/${usePublic ? 'public' : 'enterprise'}`,
     'developers'
   );
 
