@@ -168,3 +168,29 @@ header.syn-page-header.nav-open .syn-page-header-nav.mobile-nav-container {
 .utility-header {
   border-bottom: 1px solid #eef0f2;
 }
+
+.syn-btn.theme-primary.contained.custom-btn {
+  border-radius: 0.25rem;
+  background-color: rgb(72, 51, 102);
+}
+
+.syn-btn.theme-primary.contained.custom-btn:hover {
+  background-color: #6b547b;
+}
+
+a.custom-btn-mobile {
+  background-color: #483366;
+  color: #fff;
+  padding: 0.5rem 0;
+  margin: 1rem 1rem 0;
+  display: block;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+a.custom-btn-mobile:hover {
+  background-color: #6b547b;
+  color: #fff;
+  text-decoration: none;
+}
