@@ -3,7 +3,7 @@ categories: [monitoring-and-observability]
 excerpt: "Monitor model performance metrics with New Relic"
 excerpt-short: "Monitor model performance metrics with New Relic"
 image:
-    teaser: /language_logos/newrelic.png
+    teaser: /language_logos/new_relic_logo.png
 layout: article
 permalink: /monitoring-and-observability/newrelic/
 redirect_from: /integrations/newrelic/
@@ -31,7 +31,7 @@ With your dashboards, monitors, and alerts on New Relic you can analyze your mod
 
 In this workflow, your algorithm’s metrics are streamed to a Kafka topic using Algorithmia Insights. You have another algorithm—the New Relic connector—that can transform and send any Insights payload to New Relic Metrics for the configured account. Using [Algorithmia Event Flows](https://algorithmia.com/developers/integrations/message-broker/), your New Relic connector algorithm is configured to get called when a new message is sent to your Kafka topic collecting Insights.
 
-With this event flow, when your Insights-enabled algorithms are run, the New Relic connector algorithm gets called with your algorithms’ Insights payloads. The connector algorithm then transforms your Insights metrics and sends them to your New Relic account.
+With this event flow, when your Insights-enabled algorithms are run, the [New Relic connector](https://newrelic.com/instant-observability/mlops-algorithmia/d0e829a6-ede4-4933-9065-9f0c56f8aa7e) algorithm gets called with your algorithms’ Insights payloads. The connector algorithm then transforms your Insights metrics and sends them to your New Relic account.
 
 ## Setup
 
